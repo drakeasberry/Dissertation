@@ -1,6 +1,4 @@
-# hello-world
-GitHub First Attempt
+# Dissertation Code / Information - No Research Data
 
-Hello again!
+This directory contains all the python coding and PsychoPy experiments built for my Dissertation at the University of Arizona in 2019. However, no participant data is stored in this directory.
 
-This is about me, but not going to actually say anything....
