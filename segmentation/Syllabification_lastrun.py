@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v3.0.5),
-    on Wed Feb 27 15:04:48 2019
+    on Wed Feb 27 17:49:53 2019
 If you publish work using this script please cite the PsychoPy publications:
     Peirce, JW (2007) PsychoPy - Psychophysics software in Python.
         Journal of Neuroscience Methods, 162(1-2), 8-13.
@@ -43,7 +43,7 @@ filename = _thisDir + os.sep + u'data/%s_%s_%s' % (expInfo['participant'], expIn
 # An ExperimentHandler isn't essential but helps with data saving
 thisExp = data.ExperimentHandler(name=expName, version='',
     extraInfo=expInfo, runtimeInfo=None,
-    originPath='/Users/drakeasberry/Desktop/Segmentation/Syllabification_lastrun.py',
+    originPath='/Users/drakeasberry/github/Dissertation_Experiments/segmentation/Syllabification_lastrun.py',
     savePickle=True, saveWideText=True,
     dataFileName=filename)
 # save a log file for detail verbose info
@@ -282,7 +282,6 @@ while continueRoutine:
         startPrac.frameNStart = frameN  # exact frame index
         startPrac.status = STARTED
         # keyboard checking is just starting
-        win.callOnFlip(startPrac.clock.reset)  # t=0 on next screen flip
         event.clearEvents(eventType='keyboard')
     if startPrac.status == STARTED:
         theseKeys = event.getKeys(keyList=['space'])
@@ -291,8 +290,6 @@ while continueRoutine:
         if "escape" in theseKeys:
             endExpNow = True
         if len(theseKeys) > 0:  # at least one key was pressed
-            startPrac.keys = theseKeys[-1]  # just the last key pressed
-            startPrac.rt = startPrac.clock.getTime()
             # a response ends the routine
             continueRoutine = False
     
@@ -317,13 +314,6 @@ while continueRoutine:
 for thisComponent in pracInsComponents:
     if hasattr(thisComponent, "setAutoDraw"):
         thisComponent.setAutoDraw(False)
-# check responses
-if startPrac.keys in ['', [], None]:  # No response was made
-    startPrac.keys=None
-thisExp.addData('startPrac.keys',startPrac.keys)
-if startPrac.keys != None:  # we had a response
-    thisExp.addData('startPrac.rt', startPrac.rt)
-thisExp.nextEntry()
 # the Routine "pracIns" was not non-slip safe, so reset the non-slip timer
 routineTimer.reset()
 
@@ -587,7 +577,6 @@ while continueRoutine:
         startExpTrials.frameNStart = frameN  # exact frame index
         startExpTrials.status = STARTED
         # keyboard checking is just starting
-        win.callOnFlip(startExpTrials.clock.reset)  # t=0 on next screen flip
         event.clearEvents(eventType='keyboard')
     if startExpTrials.status == STARTED:
         theseKeys = event.getKeys(keyList=['space'])
@@ -596,8 +585,6 @@ while continueRoutine:
         if "escape" in theseKeys:
             endExpNow = True
         if len(theseKeys) > 0:  # at least one key was pressed
-            startExpTrials.keys = theseKeys[-1]  # just the last key pressed
-            startExpTrials.rt = startExpTrials.clock.getTime()
             # a response ends the routine
             continueRoutine = False
     
@@ -622,13 +609,6 @@ while continueRoutine:
 for thisComponent in expInsComponents:
     if hasattr(thisComponent, "setAutoDraw"):
         thisComponent.setAutoDraw(False)
-# check responses
-if startExpTrials.keys in ['', [], None]:  # No response was made
-    startExpTrials.keys=None
-thisExp.addData('startExpTrials.keys',startExpTrials.keys)
-if startExpTrials.keys != None:  # we had a response
-    thisExp.addData('startExpTrials.rt', startExpTrials.rt)
-thisExp.nextEntry()
 # the Routine "expIns" was not non-slip safe, so reset the non-slip timer
 routineTimer.reset()
 
@@ -856,7 +836,6 @@ while continueRoutine:
         sylPracStart.frameNStart = frameN  # exact frame index
         sylPracStart.status = STARTED
         # keyboard checking is just starting
-        win.callOnFlip(sylPracStart.clock.reset)  # t=0 on next screen flip
         event.clearEvents(eventType='keyboard')
     if sylPracStart.status == STARTED:
         theseKeys = event.getKeys(keyList=['space'])
@@ -865,8 +844,6 @@ while continueRoutine:
         if "escape" in theseKeys:
             endExpNow = True
         if len(theseKeys) > 0:  # at least one key was pressed
-            sylPracStart.keys = theseKeys[-1]  # just the last key pressed
-            sylPracStart.rt = sylPracStart.clock.getTime()
             # a response ends the routine
             continueRoutine = False
     
@@ -891,13 +868,6 @@ while continueRoutine:
 for thisComponent in syllablePracInsComponents:
     if hasattr(thisComponent, "setAutoDraw"):
         thisComponent.setAutoDraw(False)
-# check responses
-if sylPracStart.keys in ['', [], None]:  # No response was made
-    sylPracStart.keys=None
-thisExp.addData('sylPracStart.keys',sylPracStart.keys)
-if sylPracStart.keys != None:  # we had a response
-    thisExp.addData('sylPracStart.rt', sylPracStart.rt)
-thisExp.nextEntry()
 # the Routine "syllablePracIns" was not non-slip safe, so reset the non-slip timer
 routineTimer.reset()
 
@@ -1055,7 +1025,6 @@ while continueRoutine:
         sylExpStart.frameNStart = frameN  # exact frame index
         sylExpStart.status = STARTED
         # keyboard checking is just starting
-        win.callOnFlip(sylExpStart.clock.reset)  # t=0 on next screen flip
         event.clearEvents(eventType='keyboard')
     if sylExpStart.status == STARTED:
         theseKeys = event.getKeys(keyList=['space'])
@@ -1064,8 +1033,6 @@ while continueRoutine:
         if "escape" in theseKeys:
             endExpNow = True
         if len(theseKeys) > 0:  # at least one key was pressed
-            sylExpStart.keys = theseKeys[-1]  # just the last key pressed
-            sylExpStart.rt = sylExpStart.clock.getTime()
             # a response ends the routine
             continueRoutine = False
     
@@ -1090,13 +1057,6 @@ while continueRoutine:
 for thisComponent in syllableExpInsComponents:
     if hasattr(thisComponent, "setAutoDraw"):
         thisComponent.setAutoDraw(False)
-# check responses
-if sylExpStart.keys in ['', [], None]:  # No response was made
-    sylExpStart.keys=None
-thisExp.addData('sylExpStart.keys',sylExpStart.keys)
-if sylExpStart.keys != None:  # we had a response
-    thisExp.addData('sylExpStart.rt', sylExpStart.rt)
-thisExp.nextEntry()
 # the Routine "syllableExpIns" was not non-slip safe, so reset the non-slip timer
 routineTimer.reset()
 
