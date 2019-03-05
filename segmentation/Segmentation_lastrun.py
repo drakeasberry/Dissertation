@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v3.0.5),
-    on Mon Mar  4 21:47:58 2019
+    on Tue Mar  5 10:02:50 2019
 If you publish work using this script please cite the PsychoPy publications:
     Peirce, JW (2007) PsychoPy - Psychophysics software in Python.
         Journal of Neuroscience Methods, 162(1-2), 8-13.
@@ -86,14 +86,21 @@ experimentTargets = {}
 experimentCarriers = {}
 
 if expInfo['session'] == 'A':
-    #condition="conditionA.xlsx"
-    condition="data/processed_data/exp_files/pracCondA1.csv"
+    condition="data/processed_data/exp_files/pracCondA.csv"
+    targetP="practiceListA"
+    targetExp="stimuliListA"
+    #carrierP = "practiceListA"
+    #carrierExp = "stimuliListA"
 elif expInfo['session'] == 'B':
-    condition="conditionB.xlsx"
+    condition="data/processed_data/exp_files/pracCondB.csv"
+    targetExp="stimuliB"
 elif expInfo['session'] == 'C':
-    condition="conditionC.xlsx"
+    condition="data/processed_data/exp_files/pracCondC.csv"
+    targetExp="stimuliC"
 else:
-    condition="conditionD.xlsx"
+    condition="data/processed_data/exp_files/pracCondD.csv"
+    targetExp="stimuliD"
+
 pracTarget = visual.TextStim(win=win, name='pracTarget',
     text='default text',
     font='Arial',
@@ -125,14 +132,7 @@ startExp = visual.TextStim(win=win, name='startExp',
 
 # Initialize components for Routine "targetExp"
 targetExpClock = core.Clock()
-if expInfo['session'] == 'A':
-    targetExp="stimuliA"
-elif expInfo['session'] == 'B':
-    targetExp="stimuliB"
-elif expInfo['session'] == 'C':
-    targetExp="stimuliC"
-else:
-    targetExp="stimuliD"
+
 expTarget = visual.TextStim(win=win, name='expTarget',
     text='default text',
     font='Arial',
@@ -206,7 +206,7 @@ SyllableExpInsText = visual.TextStim(win=win, name='SyllableExpInsText',
 # Initialize components for Routine "trialSyllable"
 trialSyllableClock = core.Clock()
 if expInfo['session'] == 'A':
-    syllable="syllableA.xlsx"
+    syllable="data/processed_data/exp_files/sylexpCondA.csv"
 elif expInfo['session'] == 'B':
     syllable="syllableB.xlsx"
 elif expInfo['session'] == 'C':
@@ -434,7 +434,9 @@ for thisPracTarLoop in pracTarLoop:
         continueRoutine = True
         routineTimer.add(0.500000)
         # update component parameters for each repeat
-        carrier= "practiceListA%i" %pracTarLoop.thisN
+        carrier="practiceListA%i" %pracTarLoop.thisN
+        
+        
         #for paramName in thisPracTrialLoop.keys():
             #if paramName == carrier:
                 #print(paramName + ' round %i' %pracTrialLoop.thisN)
@@ -466,6 +468,7 @@ for thisPracTarLoop in pracTarLoop:
                         #print("still here " + paramName)
                     #else: 
                         #print("deleted " + paramName)
+                        
         pracCarrier.setText(eval(carrier))
         prac_key_resp = event.BuilderKeyResponse()
         # keep track of which components have finished
@@ -534,7 +537,9 @@ for thisPracTarLoop in pracTarLoop:
         for thisComponent in trialComponents:
             if hasattr(thisComponent, "setAutoDraw"):
                 thisComponent.setAutoDraw(False)
-        
+        #if pracTrialLoop.thisN != 0:
+        #    pracLoopCount +=1
+        #targetP="pracLists%" %
         thisExp.nextEntry()
         
     # completed 1 repeats of 'pracTrialLoop'
@@ -614,7 +619,7 @@ for thisComponent in expInsComponents:
 routineTimer.reset()
 
 # set up handler to look after randomisation of conditions etc
-expTarLoop = data.TrialHandler(nReps=24, method='sequential', 
+expTarLoop = data.TrialHandler(nReps=0, method='sequential', 
     extraInfo=expInfo, originPath=-1,
     trialList=data.importConditions(condition, selection=[0]),
     seed=None, name='expTarLoop')
@@ -639,9 +644,9 @@ for thisExpTarLoop in expTarLoop:
     continueRoutine = True
     routineTimer.add(0.500000)
     # update component parameters for each repeat
-    targetExp2= targetExp + "%i" %expTarLoop.thisN
+    targetExp= targetExp + "%i" %expTarLoop.thisN
     
-    expTarget.setText("Encuentre    " + eval(targetExp2))
+    expTarget.setText("Encuentre    " + eval(targetExp))
     # keep track of which components have finished
     targetExpComponents = [expTarget]
     for thisComponent in targetExpComponents:
@@ -690,7 +695,7 @@ for thisExpTarLoop in expTarLoop:
     
     
     # set up handler to look after randomisation of conditions etc
-    expTrialLoop = data.TrialHandler(nReps=1, method='random', 
+    expTrialLoop = data.TrialHandler(nReps=0, method='random', 
         extraInfo=expInfo, originPath=-1,
         trialList=data.importConditions(condition, selection=[1,2,3,4,5,6,7,8,9,10,11,12]),
         seed=None, name='expTrialLoop')
@@ -796,11 +801,11 @@ for thisExpTarLoop in expTarLoop:
             expTrialLoop.addData('exp_key_resp.rt', exp_key_resp.rt)
         thisExp.nextEntry()
         
-    # completed 1 repeats of 'expTrialLoop'
+    # completed 0 repeats of 'expTrialLoop'
     
     thisExp.nextEntry()
     
-# completed 24 repeats of 'expTarLoop'
+# completed 0 repeats of 'expTarLoop'
 
 
 # ------Prepare to start Routine "syllablePracIns"-------
@@ -875,7 +880,7 @@ routineTimer.reset()
 # set up handler to look after randomisation of conditions etc
 sylPracLoop = data.TrialHandler(nReps=1, method='random', 
     extraInfo=expInfo, originPath=-1,
-    trialList=data.importConditions('syllablePractice.xlsx'),
+    trialList=data.importConditions('data/processed_data/exp_files/sylprac.csv'),
     seed=None, name='sylPracLoop')
 thisExp.addLoop(sylPracLoop)  # add the loop to the experiment
 thisSylPracLoop = sylPracLoop.trialList[0]  # so we can initialise stimuli with some values

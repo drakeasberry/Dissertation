@@ -36,14 +36,14 @@
         <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
-        <Param name="Begin Routine" updates="constant" val="carrier= &quot;practiceListA%i&quot; %pracTarLoop.thisN&amp;#10;#for paramName in thisPracTrialLoop.keys():&amp;#10;    #if paramName == carrier:&amp;#10;        #print(paramName + ' round %i' %pracTrialLoop.thisN)&amp;#10;    #else:&amp;#10;        #print(paramName + ' round %i' %pracTrialLoop.thisN)&amp;#10;        #exec(paramName + '=thisPracTrialLoop.' + paramName)&amp;#10;&amp;#10;&amp;#10;&amp;#10;#if paramName != carrier:&amp;#10;    &amp;#10;#thisPracTrialLoop = pracTrialLoop.trialList[0]  # so we can initialise stimuli with some values&amp;#10;# abbreviate parameter names if possible (e.g. rgb = thisPracTrialLoop.rgb)&amp;#10;#if thisPracTrialLoop != None:&amp;#10;#    for paramName in thisPracTrialLoop:&amp;#10;        #print(paramName)&amp;#10;#        if paramName == carrier:&amp;#10;#            exec('{} = thisPracTrialLoop[paramName]'.format(paramName))&amp;#10;            #print(&quot;still here &quot; + paramName)&amp;#10;        #else: &amp;#10;            #print(&quot;deleted &quot; + paramName)&amp;#10;#for thisPracTrialLoop in pracTrialLoop:&amp;#10;#    currentLoop = pracTrialLoop&amp;#10;    # abbreviate parameter names if possible (e.g. rgb = thisPracTrialLoop.rgb)&amp;#10;#    if thisPracTrialLoop != None:&amp;#10;#        for paramName in thisPracTrialLoop:&amp;#10;#            if paramName == carrier:&amp;#10;#                exec('{} = thisPracTrialLoop[paramName]'.format(paramName))&amp;#10;                #print(&quot;still here &quot; + paramName)&amp;#10;            #else: &amp;#10;                #print(&quot;deleted &quot; + paramName)" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="carrier=&quot;practiceListA%i&quot; %pracTarLoop.thisN&amp;#10;&amp;#10;&amp;#10;#for paramName in thisPracTrialLoop.keys():&amp;#10;    #if paramName == carrier:&amp;#10;        #print(paramName + ' round %i' %pracTrialLoop.thisN)&amp;#10;    #else:&amp;#10;        #print(paramName + ' round %i' %pracTrialLoop.thisN)&amp;#10;        #exec(paramName + '=thisPracTrialLoop.' + paramName)&amp;#10;&amp;#10;&amp;#10;&amp;#10;#if paramName != carrier:&amp;#10;    &amp;#10;#thisPracTrialLoop = pracTrialLoop.trialList[0]  # so we can initialise stimuli with some values&amp;#10;# abbreviate parameter names if possible (e.g. rgb = thisPracTrialLoop.rgb)&amp;#10;#if thisPracTrialLoop != None:&amp;#10;#    for paramName in thisPracTrialLoop:&amp;#10;        #print(paramName)&amp;#10;#        if paramName == carrier:&amp;#10;#            exec('{} = thisPracTrialLoop[paramName]'.format(paramName))&amp;#10;            #print(&quot;still here &quot; + paramName)&amp;#10;        #else: &amp;#10;            #print(&quot;deleted &quot; + paramName)&amp;#10;#for thisPracTrialLoop in pracTrialLoop:&amp;#10;#    currentLoop = pracTrialLoop&amp;#10;    # abbreviate parameter names if possible (e.g. rgb = thisPracTrialLoop.rgb)&amp;#10;#    if thisPracTrialLoop != None:&amp;#10;#        for paramName in thisPracTrialLoop:&amp;#10;#            if paramName == carrier:&amp;#10;#                exec('{} = thisPracTrialLoop[paramName]'.format(paramName))&amp;#10;                #print(&quot;still here &quot; + paramName)&amp;#10;            #else: &amp;#10;                #print(&quot;deleted &quot; + paramName)&amp;#10;                " valType="extendedCode"/>
         <Param name="Code Type" updates="None" val="Py" valType="str"/>
         <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
         <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
         <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
-        <Param name="End Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="#if pracTrialLoop.thisN != 0:&amp;#10;#    pracLoopCount +=1&amp;#10;#targetP=&quot;pracLists%&quot; %" valType="extendedCode"/>
         <Param name="name" updates="None" val="code_2" valType="code"/>
       </CodeComponent>
       <TextComponent name="pracCarrier">
@@ -125,10 +125,10 @@
     </Routine>
     <Routine name="target">
       <CodeComponent name="code">
-        <Param name="Begin Experiment" updates="constant" val="pracLoopCount=0&amp;#10;practiceTargets = []&amp;#10;practiceCarriers ={}&amp;#10;experimentTargets = {}&amp;#10;experimentCarriers = {}&amp;#10;&amp;#10;if expInfo['session'] == 'A':&amp;#10;    condition=&quot;data/processed_data/exp_files/pracCondA.csv&quot;&amp;#10;    targetP=&quot;practiceListA&quot;&amp;#10;    targetExp=&quot;stimuliA&quot;&amp;#10;elif expInfo['session'] == 'B':&amp;#10;    condition=&quot;data/processed_data/exp_files/pracCondB.csv&quot;&amp;#10;    targetExp=&quot;stimuliB&quot;&amp;#10;elif expInfo['session'] == 'C':&amp;#10;    condition=&quot;data/processed_data/exp_files/pracCondC.csv&quot;&amp;#10;    targetExp=&quot;stimuliC&quot;&amp;#10;else:&amp;#10;    condition=&quot;data/processed_data/exp_files/pracCondD.csv&quot;&amp;#10;    targetExp=&quot;stimuliD&quot;&amp;#10;" valType="extendedCode"/>
+        <Param name="Begin Experiment" updates="constant" val="pracLoopCount=0&amp;#10;practiceTargets = []&amp;#10;practiceCarriers ={}&amp;#10;experimentTargets = {}&amp;#10;experimentCarriers = {}&amp;#10;&amp;#10;if expInfo['session'] == 'A':&amp;#10;    condition=&quot;data/processed_data/exp_files/pracCondA.csv&quot;&amp;#10;    targetP=&quot;practiceListA&quot;&amp;#10;    targetExp=&quot;stimuliListA&quot;&amp;#10;    #carrierP = &quot;practiceListA&quot;&amp;#10;    #carrierExp = &quot;stimuliListA&quot;&amp;#10;elif expInfo['session'] == 'B':&amp;#10;    condition=&quot;data/processed_data/exp_files/pracCondB.csv&quot;&amp;#10;    targetExp=&quot;stimuliB&quot;&amp;#10;elif expInfo['session'] == 'C':&amp;#10;    condition=&quot;data/processed_data/exp_files/pracCondC.csv&quot;&amp;#10;    targetExp=&quot;stimuliC&quot;&amp;#10;else:&amp;#10;    condition=&quot;data/processed_data/exp_files/pracCondD.csv&quot;&amp;#10;    targetExp=&quot;stimuliD&quot;&amp;#10;" valType="extendedCode"/>
         <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
-        <Param name="Begin Routine" updates="constant" val="targetP=targetP+&quot;%i&quot; %pracTarLoop.thisN&amp;#10;#if targetP == str(pracTarLoop.thisTrial):&amp;#10;#print(str(pracTarLoop.thisTrial) + ' %i' %pracTarLoop.thisN)&amp;#10;&amp;#10;&amp;#10;&amp;#10;&amp;#10;#if targetP == 'stimuliPracitce1':&amp;#10;#    trialTarget = pracTarget.setText(&quot;Find  &quot; + eval(targetP))&amp;#10;#else: &amp;#10;#    trialTarget = pracTarget.setText(&quot;&quot;)" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="targetP=&quot;practiceListA%i&quot; %pracTarLoop.thisN&amp;#10;#if targetP == str(pracTarLoop.thisTrial):&amp;#10;#print(str(pracTarLoop.thisTrial) + ' %i' %pracTarLoop.thisN)&amp;#10;&amp;#10;&amp;#10;&amp;#10;&amp;#10;#if targetP == 'stimuliPracitce1':&amp;#10;#    trialTarget = pracTarget.setText(&quot;Find  &quot; + eval(targetP))&amp;#10;#else: &amp;#10;#    trialTarget = pracTarget.setText(&quot;&quot;)" valType="extendedCode"/>
         <Param name="Code Type" updates="None" val="Py" valType="str"/>
         <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
         <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
@@ -337,7 +337,7 @@
     </Routine>
     <Routine name="trialSyllable">
       <CodeComponent name="code_5">
-        <Param name="Begin Experiment" updates="constant" val="if expInfo['session'] == 'A':&amp;#10;    syllable=&quot;syllableA.xlsx&quot;&amp;#10;elif expInfo['session'] == 'B':&amp;#10;    syllable=&quot;syllableB.xlsx&quot;&amp;#10;elif expInfo['session'] == 'C':&amp;#10;    syllable=&quot;syllableC.xlsx&quot;&amp;#10;else:&amp;#10;    syllable=&quot;syllableD.xlsx&quot;" valType="extendedCode"/>
+        <Param name="Begin Experiment" updates="constant" val="if expInfo['session'] == 'A':&amp;#10;    syllable=&quot;data/processed_data/exp_files/sylexpCondA.csv&quot;&amp;#10;elif expInfo['session'] == 'B':&amp;#10;    syllable=&quot;syllableB.xlsx&quot;&amp;#10;elif expInfo['session'] == 'C':&amp;#10;    syllable=&quot;syllableC.xlsx&quot;&amp;#10;else:&amp;#10;    syllable=&quot;syllableD.xlsx&quot;" valType="extendedCode"/>
         <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin Routine" updates="constant" val="" valType="extendedCode"/>
@@ -626,7 +626,7 @@
       <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
       <Param name="isTrials" updates="None" val="True" valType="bool"/>
       <Param name="loopType" updates="None" val="sequential" valType="str"/>
-      <Param name="nReps" updates="None" val="24" valType="code"/>
+      <Param name="nReps" updates="None" val="0" valType="code"/>
       <Param name="name" updates="None" val="expTarLoop" valType="code"/>
       <Param name="random seed" updates="None" val="" valType="code"/>
     </LoopInitiator>
@@ -638,7 +638,7 @@
       <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
       <Param name="isTrials" updates="None" val="True" valType="bool"/>
       <Param name="loopType" updates="None" val="random" valType="str"/>
-      <Param name="nReps" updates="None" val="1" valType="code"/>
+      <Param name="nReps" updates="None" val="0" valType="code"/>
       <Param name="name" updates="None" val="expTrialLoop" valType="code"/>
       <Param name="random seed" updates="None" val="" valType="code"/>
     </LoopInitiator>
@@ -648,8 +648,8 @@
     <Routine name="syllablePracIns"/>
     <LoopInitiator loopType="TrialHandler" name="sylPracLoop">
       <Param name="Selected rows" updates="None" val="" valType="str"/>
-      <Param name="conditions" updates="None" val="[OrderedDict([('syllabification', 'bacteria'), ('corrSyl', 'bac'), ('corrAns', 1), ('keyCVC', 'bac'), ('keyCV', 'ba')]), OrderedDict([('syllabification', 'centeno'), ('corrSyl', 'cen'), ('corrAns', 1), ('keyCVC', 'cen'), ('keyCV', 'ce')]), OrderedDict([('syllabification', 'semblanza'), ('corrSyl', 'sem'), ('corrAns', 1), ('keyCVC', 'sem'), ('keyCV', 'se')]), OrderedDict([('syllabification', 'noviazgo'), ('corrSyl', 'no'), ('corrAns', 2), ('keyCVC', 'nov'), ('keyCV', 'no')]), OrderedDict([('syllabification', 'rabillo'), ('corrSyl', 'ra'), ('corrAns', 2), ('keyCVC', 'rab'), ('keyCV', 'ra')]), OrderedDict([('syllabification', 'venado'), ('corrSyl', 've'), ('corrAns', 2), ('keyCVC', 'ven'), ('keyCV', 've')])]" valType="str"/>
-      <Param name="conditionsFile" updates="None" val="syllablePractice.xlsx" valType="str"/>
+      <Param name="conditions" updates="None" val="[OrderedDict([('syllabification', 'pupila'), ('corrSyl', 'pu'), ('corrAns', 2.0), ('keyCVC', 'pup'), ('keyCV', 'pu')]), OrderedDict([('syllabification', 'pericia'), ('corrSyl', 'pe'), ('corrAns', 2.0), ('keyCVC', 'per'), ('keyCV', 'pe')]), OrderedDict([('syllabification', 'culata'), ('corrSyl', 'cu'), ('corrAns', 2.0), ('keyCVC', 'cul'), ('keyCV', 'cu')]), OrderedDict([('syllabification', 'ciruela'), ('corrSyl', 'ci'), ('corrAns', 2.0), ('keyCVC', 'cir'), ('keyCV', 'ci')]), OrderedDict([('syllabification', 'latencia'), ('corrSyl', 'la'), ('corrAns', 2.0), ('keyCVC', 'lat'), ('keyCV', 'la')]), OrderedDict([('syllabification', 'cantera'), ('corrSyl', 'can'), ('corrAns', 1.0), ('keyCVC', 'can'), ('keyCV', 'ca')]), OrderedDict([('syllabification', 'sendero'), ('corrSyl', 'sen'), ('corrAns', 1.0), ('keyCVC', 'sen'), ('keyCV', 'se')]), OrderedDict([('syllabification', 'gustazo'), ('corrSyl', 'gus'), ('corrAns', 1.0), ('keyCVC', 'gus'), ('keyCV', 'gu')]), OrderedDict([('syllabification', 'caldera'), ('corrSyl', 'cal'), ('corrAns', 1.0), ('keyCVC', 'cal'), ('keyCV', 'ca')]), OrderedDict([('syllabification', 'sordina'), ('corrSyl', 'sor'), ('corrAns', 1.0), ('keyCVC', 'sor'), ('keyCV', 'so')])]" valType="str"/>
+      <Param name="conditionsFile" updates="None" val="data/processed_data/exp_files/sylprac.csv" valType="str"/>
       <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
       <Param name="isTrials" updates="None" val="True" valType="bool"/>
       <Param name="loopType" updates="None" val="random" valType="str"/>
