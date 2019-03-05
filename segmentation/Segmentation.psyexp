@@ -4,7 +4,7 @@
     <Param name="Completed URL" updates="None" val="" valType="str"/>
     <Param name="Data filename" updates="None" val="u'data/%s_%s_%s' % (expInfo['participant'], expInfo['session'], expName)" valType="code"/>
     <Param name="Enable Escape" updates="None" val="True" valType="bool"/>
-    <Param name="Experiment info" updates="None" val="{'participant': 'part001', 'session': 'A'}" valType="code"/>
+    <Param name="Experiment info" updates="None" val="{'participant': 'part001', 'session': 'A', 'Name': ''}" valType="code"/>
     <Param name="Force stereo" updates="None" val="True" valType="bool"/>
     <Param name="Full-screen window" updates="None" val="True" valType="bool"/>
     <Param name="HTML path" updates="None" val="html" valType="str"/>
@@ -21,7 +21,7 @@
     <Param name="Show info dlg" updates="None" val="True" valType="bool"/>
     <Param name="Show mouse" updates="None" val="False" valType="bool"/>
     <Param name="Units" updates="None" val="use prefs" valType="str"/>
-    <Param name="Use version" updates="None" val="" valType="str"/>
+    <Param name="Use version" updates="None" val="3.0.5" valType="str"/>
     <Param name="Window size (pixels)" updates="None" val="[1280, 800]" valType="code"/>
     <Param name="blendMode" updates="None" val="avg" valType="str"/>
     <Param name="color" updates="None" val="$[0,0,0]" valType="str"/>
