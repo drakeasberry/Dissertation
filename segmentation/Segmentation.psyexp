@@ -36,7 +36,7 @@
         <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
-        <Param name="Begin Routine" updates="constant" val="carrier= &quot;stimuliPractice%i&quot; %pracTarLoop.thisN&amp;#10;#for paramName in thisPracTrialLoop.keys():&amp;#10;    #if paramName == carrier:&amp;#10;        #print(paramName + ' round %i' %pracTrialLoop.thisN)&amp;#10;    #else:&amp;#10;        #print(paramName + ' round %i' %pracTrialLoop.thisN)&amp;#10;        #exec(paramName + '=thisPracTrialLoop.' + paramName)&amp;#10;&amp;#10;&amp;#10;&amp;#10;#if paramName != carrier:&amp;#10;    &amp;#10;#thisPracTrialLoop = pracTrialLoop.trialList[0]  # so we can initialise stimuli with some values&amp;#10;# abbreviate parameter names if possible (e.g. rgb = thisPracTrialLoop.rgb)&amp;#10;#if thisPracTrialLoop != None:&amp;#10;#    for paramName in thisPracTrialLoop:&amp;#10;        #print(paramName)&amp;#10;#        if paramName == carrier:&amp;#10;#            exec('{} = thisPracTrialLoop[paramName]'.format(paramName))&amp;#10;            #print(&quot;still here &quot; + paramName)&amp;#10;        #else: &amp;#10;            #print(&quot;deleted &quot; + paramName)&amp;#10;#for thisPracTrialLoop in pracTrialLoop:&amp;#10;#    currentLoop = pracTrialLoop&amp;#10;    # abbreviate parameter names if possible (e.g. rgb = thisPracTrialLoop.rgb)&amp;#10;#    if thisPracTrialLoop != None:&amp;#10;#        for paramName in thisPracTrialLoop:&amp;#10;#            if paramName == carrier:&amp;#10;#                exec('{} = thisPracTrialLoop[paramName]'.format(paramName))&amp;#10;                #print(&quot;still here &quot; + paramName)&amp;#10;            #else: &amp;#10;                #print(&quot;deleted &quot; + paramName)" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="carrier= &quot;practiceListA%i&quot; %pracTarLoop.thisN&amp;#10;#for paramName in thisPracTrialLoop.keys():&amp;#10;    #if paramName == carrier:&amp;#10;        #print(paramName + ' round %i' %pracTrialLoop.thisN)&amp;#10;    #else:&amp;#10;        #print(paramName + ' round %i' %pracTrialLoop.thisN)&amp;#10;        #exec(paramName + '=thisPracTrialLoop.' + paramName)&amp;#10;&amp;#10;&amp;#10;&amp;#10;#if paramName != carrier:&amp;#10;    &amp;#10;#thisPracTrialLoop = pracTrialLoop.trialList[0]  # so we can initialise stimuli with some values&amp;#10;# abbreviate parameter names if possible (e.g. rgb = thisPracTrialLoop.rgb)&amp;#10;#if thisPracTrialLoop != None:&amp;#10;#    for paramName in thisPracTrialLoop:&amp;#10;        #print(paramName)&amp;#10;#        if paramName == carrier:&amp;#10;#            exec('{} = thisPracTrialLoop[paramName]'.format(paramName))&amp;#10;            #print(&quot;still here &quot; + paramName)&amp;#10;        #else: &amp;#10;            #print(&quot;deleted &quot; + paramName)&amp;#10;#for thisPracTrialLoop in pracTrialLoop:&amp;#10;#    currentLoop = pracTrialLoop&amp;#10;    # abbreviate parameter names if possible (e.g. rgb = thisPracTrialLoop.rgb)&amp;#10;#    if thisPracTrialLoop != None:&amp;#10;#        for paramName in thisPracTrialLoop:&amp;#10;#            if paramName == carrier:&amp;#10;#                exec('{} = thisPracTrialLoop[paramName]'.format(paramName))&amp;#10;                #print(&quot;still here &quot; + paramName)&amp;#10;            #else: &amp;#10;                #print(&quot;deleted &quot; + paramName)" valType="extendedCode"/>
         <Param name="Code Type" updates="None" val="Py" valType="str"/>
         <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
         <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
@@ -125,10 +125,10 @@
     </Routine>
     <Routine name="target">
       <CodeComponent name="code">
-        <Param name="Begin Experiment" updates="constant" val="pracLoopCount=0&amp;#10;practiceTargets = []&amp;#10;practiceCarriers ={}&amp;#10;experimentTargets = {}&amp;#10;experimentCarriers = {}&amp;#10;&amp;#10;if expInfo['session'] == 'A':&amp;#10;    condition=&quot;conditionA.xlsx&quot;&amp;#10;elif expInfo['session'] == 'B':&amp;#10;    condition=&quot;conditionB.xlsx&quot;&amp;#10;elif expInfo['session'] == 'C':&amp;#10;    condition=&quot;conditionC.xlsx&quot;&amp;#10;else:&amp;#10;    condition=&quot;conditionD.xlsx&quot;" valType="extendedCode"/>
+        <Param name="Begin Experiment" updates="constant" val="pracLoopCount=0&amp;#10;practiceTargets = []&amp;#10;practiceCarriers ={}&amp;#10;experimentTargets = {}&amp;#10;experimentCarriers = {}&amp;#10;&amp;#10;if expInfo['session'] == 'A':&amp;#10;    condition=&quot;data/processed_data/exp_files/pracCondA.csv&quot;&amp;#10;    targetP=&quot;practiceListA&quot;&amp;#10;    targetExp=&quot;stimuliA&quot;&amp;#10;elif expInfo['session'] == 'B':&amp;#10;    condition=&quot;data/processed_data/exp_files/pracCondB.csv&quot;&amp;#10;    targetExp=&quot;stimuliB&quot;&amp;#10;elif expInfo['session'] == 'C':&amp;#10;    condition=&quot;data/processed_data/exp_files/pracCondC.csv&quot;&amp;#10;    targetExp=&quot;stimuliC&quot;&amp;#10;else:&amp;#10;    condition=&quot;data/processed_data/exp_files/pracCondD.csv&quot;&amp;#10;    targetExp=&quot;stimuliD&quot;&amp;#10;" valType="extendedCode"/>
         <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
-        <Param name="Begin Routine" updates="constant" val="targetP=&quot;stimuliPractice%i&quot; %pracTarLoop.thisN&amp;#10;#if targetP == str(pracTarLoop.thisTrial):&amp;#10;#print(str(pracTarLoop.thisTrial) + ' %i' %pracTarLoop.thisN)&amp;#10;&amp;#10;&amp;#10;&amp;#10;&amp;#10;#if targetP == 'stimuliPracitce1':&amp;#10;#    trialTarget = pracTarget.setText(&quot;Find  &quot; + eval(targetP))&amp;#10;#else: &amp;#10;#    trialTarget = pracTarget.setText(&quot;&quot;)" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="targetP=targetP+&quot;%i&quot; %pracTarLoop.thisN&amp;#10;#if targetP == str(pracTarLoop.thisTrial):&amp;#10;#print(str(pracTarLoop.thisTrial) + ' %i' %pracTarLoop.thisN)&amp;#10;&amp;#10;&amp;#10;&amp;#10;&amp;#10;#if targetP == 'stimuliPracitce1':&amp;#10;#    trialTarget = pracTarget.setText(&quot;Find  &quot; + eval(targetP))&amp;#10;#else: &amp;#10;#    trialTarget = pracTarget.setText(&quot;&quot;)" valType="extendedCode"/>
         <Param name="Code Type" updates="None" val="Py" valType="str"/>
         <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
         <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
@@ -224,10 +224,10 @@
     </Routine>
     <Routine name="targetExp">
       <CodeComponent name="code_4">
-        <Param name="Begin Experiment" updates="constant" val="if expInfo['session'] == 'A':&amp;#10;    targetExp=&quot;stimuliA&quot;&amp;#10;elif expInfo['session'] == 'B':&amp;#10;    targetExp=&quot;stimuliB&quot;&amp;#10;elif expInfo['session'] == 'C':&amp;#10;    targetExp=&quot;stimuliC&quot;&amp;#10;else:&amp;#10;    targetExp=&quot;stimuliD&quot;" valType="extendedCode"/>
+        <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
-        <Param name="Begin Routine" updates="constant" val="targetExp2= targetExp + &quot;%i&quot; %expTarLoop.thisN&amp;#10;" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="targetExp= targetExp + &quot;%i&quot; %expTarLoop.thisN&amp;#10;" valType="extendedCode"/>
         <Param name="Code Type" updates="None" val="Py" valType="str"/>
         <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
         <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
@@ -254,7 +254,7 @@
         <Param name="startVal" updates="None" val="0.0" valType="code"/>
         <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
         <Param name="stopVal" updates="constant" val=".5" valType="code"/>
-        <Param name="text" updates="set every repeat" val="&quot;Encuentre    &quot; + $eval(targetExp2)" valType="str"/>
+        <Param name="text" updates="set every repeat" val="&quot;Encuentre    &quot; + $eval(targetExp)" valType="str"/>
         <Param name="units" updates="None" val="from exp settings" valType="str"/>
         <Param name="wrapWidth" updates="constant" val="" valType="code"/>
       </TextComponent>
@@ -593,21 +593,21 @@
   <Flow>
     <Routine name="pracIns"/>
     <LoopInitiator loopType="TrialHandler" name="pracTarLoop">
-      <Param name="Selected rows" updates="None" val="$[0]" valType="str"/>
-      <Param name="conditions" updates="None" val="[OrderedDict([('stimuliPractice0', 'del'), ('stimuliPractice1', 'de')]), OrderedDict([('stimuliPractice0', 'deltoides'), ('stimuliPractice1', 'delirio')]), OrderedDict([('stimuliPractice0', 'cornisa'), ('stimuliPractice1', 'zarzuela')]), OrderedDict([('stimuliPractice0', 'fondillo'), ('stimuliPractice1', 'captura')]), OrderedDict([('stimuliPractice0', 'zarcillo'), ('stimuliPractice1', 'jasmina')]), OrderedDict([('stimuliPractice0', 'sarcasmo'), ('stimuliPractice1', 'pancarta')]), OrderedDict([('stimuliPractice0', 'pandilla'), ('stimuliPractice1', 'suspenso')]), OrderedDict([('stimuliPractice0', 'ponencia'), ('stimuliPractice1', 'sandalia')]), OrderedDict([('stimuliPractice0', 'ranura'), ('stimuliPractice1', 'piropo')]), OrderedDict([('stimuliPractice0', 'pimienta'), ('stimuliPractice1', 'cirilo')]), OrderedDict([('stimuliPractice0', 'jarana'), ('stimuliPractice1', 'jaqueca')]), OrderedDict([('stimuliPractice0', 'pimiento'), ('stimuliPractice1', 'piragua')]), OrderedDict([('stimuliPractice0', 'secano'), ('stimuliPractice1', 'pocilga')])]" valType="str"/>
-      <Param name="conditionsFile" updates="None" val="SegmentationPractice.xlsx" valType="str"/>
+      <Param name="Selected rows" updates="None" val="$[1]" valType="str"/>
+      <Param name="conditions" updates="None" val="None" valType="str"/>
+      <Param name="conditionsFile" updates="None" val="$condition" valType="str"/>
       <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
       <Param name="isTrials" updates="None" val="True" valType="bool"/>
       <Param name="loopType" updates="None" val="sequential" valType="str"/>
-      <Param name="nReps" updates="None" val="2" valType="code"/>
+      <Param name="nReps" updates="None" val="8" valType="code"/>
       <Param name="name" updates="None" val="pracTarLoop" valType="code"/>
       <Param name="random seed" updates="None" val="" valType="code"/>
     </LoopInitiator>
     <Routine name="target"/>
     <LoopInitiator loopType="TrialHandler" name="pracTrialLoop">
-      <Param name="Selected rows" updates="None" val="$[1,2,3,4,5,6,7,8,9,10,11,12]" valType="str"/>
-      <Param name="conditions" updates="None" val="[OrderedDict([('stimuliPractice0', 'del'), ('stimuliPractice1', 'de')]), OrderedDict([('stimuliPractice0', 'deltoides'), ('stimuliPractice1', 'delirio')]), OrderedDict([('stimuliPractice0', 'cornisa'), ('stimuliPractice1', 'zarzuela')]), OrderedDict([('stimuliPractice0', 'fondillo'), ('stimuliPractice1', 'captura')]), OrderedDict([('stimuliPractice0', 'zarcillo'), ('stimuliPractice1', 'jasmina')]), OrderedDict([('stimuliPractice0', 'sarcasmo'), ('stimuliPractice1', 'pancarta')]), OrderedDict([('stimuliPractice0', 'pandilla'), ('stimuliPractice1', 'suspenso')]), OrderedDict([('stimuliPractice0', 'ponencia'), ('stimuliPractice1', 'sandalia')]), OrderedDict([('stimuliPractice0', 'ranura'), ('stimuliPractice1', 'piropo')]), OrderedDict([('stimuliPractice0', 'pimienta'), ('stimuliPractice1', 'cirilo')]), OrderedDict([('stimuliPractice0', 'jarana'), ('stimuliPractice1', 'jaqueca')]), OrderedDict([('stimuliPractice0', 'pimiento'), ('stimuliPractice1', 'piragua')]), OrderedDict([('stimuliPractice0', 'secano'), ('stimuliPractice1', 'pocilga')])]" valType="str"/>
-      <Param name="conditionsFile" updates="None" val="SegmentationPractice.xlsx" valType="str"/>
+      <Param name="Selected rows" updates="None" val="$[2,3,4,5,6,7,8,9,10,11]" valType="str"/>
+      <Param name="conditions" updates="None" val="None" valType="str"/>
+      <Param name="conditionsFile" updates="None" val="$condition" valType="str"/>
       <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
       <Param name="isTrials" updates="None" val="True" valType="bool"/>
       <Param name="loopType" updates="None" val="random" valType="str"/>
