@@ -1,0 +1,58 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\babel@toc {english}{}
+\contentsline {chapter}{List of Figures}{8}{chapter*.3}
+\contentsline {chapter}{List of Tables}{9}{chapter*.4}
+\contentsline {chapter}{Abstract}{10}{chapter*.4}
+\contentsline {chapter}{\numberline {1}Introduction}{11}{chapter.5}
+\contentsline {section}{\numberline {1.1}Welcome and Thank You}{11}{section.6}
+\contentsline {section}{\numberline {1.2}Learning \LaTeX {}}{12}{section.7}
+\contentsline {subsection}{\numberline {1.2.1}A (not so short) Introduction to \LaTeX {}}{12}{subsection.8}
+\contentsline {subsection}{\numberline {1.2.2}A Short Math Guide for \LaTeX {}}{13}{subsection.9}
+\contentsline {subsection}{\numberline {1.2.3}Common \LaTeX {} Math Symbols}{13}{subsection.10}
+\contentsline {subsection}{\numberline {1.2.4}\LaTeX {} on a Mac}{13}{subsection.11}
+\contentsline {section}{\numberline {1.3}Getting Started with this Template}{14}{section.12}
+\contentsline {subsection}{\numberline {1.3.1}About this Template}{14}{subsection.13}
+\contentsline {section}{\numberline {1.4}What this Template Includes}{15}{section.14}
+\contentsline {subsection}{\numberline {1.4.1}Folders}{15}{subsection.15}
+\contentsline {subsection}{\numberline {1.4.2}Files}{16}{subsection.16}
+\contentsline {section}{\numberline {1.5}Filling in Your Information in the \texttt {\bfseries main.tex} File}{18}{section.17}
+\contentsline {section}{\numberline {1.6}The \texttt {main.tex} File Explained}{19}{section.18}
+\contentsline {section}{\numberline {1.7}Thesis Features and Conventions}{21}{section.19}
+\contentsline {subsection}{\numberline {1.7.1}Printing Format}{21}{subsection.20}
+\contentsline {subsection}{\numberline {1.7.2}Using US Letter Paper}{22}{subsection.21}
+\contentsline {subsection}{\numberline {1.7.3}References}{22}{subsection.22}
+\contentsline {subsubsection}{A Note on bibtex}{23}{section*.24}
+\contentsline {subsection}{\numberline {1.7.4}Tables}{24}{subsection.25}
+\contentsline {subsection}{\numberline {1.7.5}Figures}{25}{subsection.27}
+\contentsline {subsection}{\numberline {1.7.6}Typesetting mathematics}{27}{subsection.29}
+\contentsline {section}{\numberline {1.8}Sectioning and Subsectioning}{28}{section.31}
+\contentsline {section}{\numberline {1.9}In Closing}{28}{section.32}
+\contentsline {chapter}{\numberline {2}Syllabification}{30}{chapter.33}
+\contentsline {section}{\numberline {2.1}Main Section 1}{30}{section.34}
+\contentsline {subsection}{\numberline {2.1.1}Subsection 1}{30}{subsection.35}
+\contentsline {subsection}{\numberline {2.1.2}Subsection 2}{30}{subsection.36}
+\contentsline {section}{\numberline {2.2}Main Section 2}{31}{section.37}
+\contentsline {chapter}{\numberline {3}Visual Word Segementation}{32}{chapter.38}
+\contentsline {section}{\numberline {3.1}Main Section 1}{32}{section.39}
+\contentsline {subsection}{\numberline {3.1.1}Subsection 1}{32}{subsection.40}
+\contentsline {subsection}{\numberline {3.1.2}Subsection 2}{32}{subsection.41}
+\contentsline {section}{\numberline {3.2}Main Section 2}{33}{section.42}
+\contentsline {chapter}{\numberline {4}Visual Word Recognition}{34}{chapter.43}
+\contentsline {section}{\numberline {4.1}Main Section 1}{34}{section.44}
+\contentsline {subsection}{\numberline {4.1.1}Subsection 1}{34}{subsection.45}
+\contentsline {subsection}{\numberline {4.1.2}Subsection 2}{34}{subsection.46}
+\contentsline {section}{\numberline {4.2}Main Section 2}{35}{section.47}
+\contentsline {chapter}{\numberline {5}Conclusion}{36}{chapter.48}
+\contentsline {section}{\numberline {5.1}Main Section 1}{36}{section.49}
+\contentsline {subsection}{\numberline {5.1.1}Subsection 1}{36}{subsection.50}
+\contentsline {subsection}{\numberline {5.1.2}Subsection 2}{36}{subsection.51}
+\contentsline {section}{\numberline {5.2}Main Section 2}{37}{section.52}
+\contentsline {section}{\numberline {5.3}Main Section 3}{37}{section.53}
+\contentsline {subsection}{\numberline {5.3.1}Subsection 1}{38}{subsection.54}
+\contentsline {subsection}{\numberline {5.3.2}Subsection 2}{38}{subsection.55}
+\contentsline {section}{\numberline {5.4}Main Section 4}{38}{section.56}
+\contentsline {chapter}{\numberline {A}Frequently Asked Questions}{40}{appendix.57}
+\contentsline {section}{\numberline {A.1}How do I change the colors of links?}{40}{section.58}
+\contentsline {section}{\numberline {A.2}Getting Started with this Template}{40}{section.59}
+\contentsline {subsection}{\numberline {A.2.1}About this Template}{41}{subsection.60}
+\contentsline {chapter}{Bibliography}{42}{appendix*.61}

@@ -1,0 +1,5 @@
+"0","library(reticulate)"
+"0","use_python()"
+"2","Error in unique(c(.globals$use_python_versions, python)) : 
+  argument ""python"" is missing, with no default
+"

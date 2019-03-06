@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1548794525948.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3105399422",
+    "id" : "2C201F49",
+    "lastKnownWriteTime" : 1551851013,
+    "last_content_update" : 1551851013505,
+    "path" : "~/github/Dissertation/Dissertation_Experiments/segmentation/Syllable_Segmentation.Rmd",
+    "project_path" : "Syllable_Segmentation.Rmd",
+    "properties" : {
+        "chunk_output_type" : "inline",
+        "cursorPosition" : "22,11",
+        "scrollLine" : "18"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}
