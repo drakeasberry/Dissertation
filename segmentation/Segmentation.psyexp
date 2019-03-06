@@ -2,7 +2,7 @@
 <PsychoPy2experiment encoding="utf-8" version="3.0.5">
   <Settings>
     <Param name="Completed URL" updates="None" val="" valType="str"/>
-    <Param name="Data filename" updates="None" val="u'data/%s_%s_%s' % (expInfo['participant'], expInfo['session'], expName)" valType="code"/>
+    <Param name="Data filename" updates="None" val="u'data/original_data/part_files/%s_%s_%s' % (expInfo['participant'], expInfo['session'], expName)" valType="code"/>
     <Param name="Enable Escape" updates="None" val="True" valType="bool"/>
     <Param name="Experiment info" updates="None" val="{'participant': 'part001', 'session': 'A', 'Name': ''}" valType="code"/>
     <Param name="Force stereo" updates="None" val="True" valType="bool"/>
@@ -36,14 +36,14 @@
         <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
-        <Param name="Begin Routine" updates="constant" val="carrier=&quot;practiceListA%i&quot; %pracTarLoop.thisN&amp;#10;&amp;#10;&amp;#10;#for paramName in thisPracTrialLoop.keys():&amp;#10;    #if paramName == carrier:&amp;#10;        #print(paramName + ' round %i' %pracTrialLoop.thisN)&amp;#10;    #else:&amp;#10;        #print(paramName + ' round %i' %pracTrialLoop.thisN)&amp;#10;        #exec(paramName + '=thisPracTrialLoop.' + paramName)&amp;#10;&amp;#10;&amp;#10;&amp;#10;#if paramName != carrier:&amp;#10;    &amp;#10;#thisPracTrialLoop = pracTrialLoop.trialList[0]  # so we can initialise stimuli with some values&amp;#10;# abbreviate parameter names if possible (e.g. rgb = thisPracTrialLoop.rgb)&amp;#10;#if thisPracTrialLoop != None:&amp;#10;#    for paramName in thisPracTrialLoop:&amp;#10;        #print(paramName)&amp;#10;#        if paramName == carrier:&amp;#10;#            exec('{} = thisPracTrialLoop[paramName]'.format(paramName))&amp;#10;            #print(&quot;still here &quot; + paramName)&amp;#10;        #else: &amp;#10;            #print(&quot;deleted &quot; + paramName)&amp;#10;#for thisPracTrialLoop in pracTrialLoop:&amp;#10;#    currentLoop = pracTrialLoop&amp;#10;    # abbreviate parameter names if possible (e.g. rgb = thisPracTrialLoop.rgb)&amp;#10;#    if thisPracTrialLoop != None:&amp;#10;#        for paramName in thisPracTrialLoop:&amp;#10;#            if paramName == carrier:&amp;#10;#                exec('{} = thisPracTrialLoop[paramName]'.format(paramName))&amp;#10;                #print(&quot;still here &quot; + paramName)&amp;#10;            #else: &amp;#10;                #print(&quot;deleted &quot; + paramName)&amp;#10;                " valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="carrierPrac = practice + &quot;%i&quot; %pracTarLoop.thisN" valType="extendedCode"/>
         <Param name="Code Type" updates="None" val="Py" valType="str"/>
         <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
         <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
         <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
-        <Param name="End Routine" updates="constant" val="#if pracTrialLoop.thisN != 0:&amp;#10;#    pracLoopCount +=1&amp;#10;#targetP=&quot;pracLists%&quot; %" valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="" valType="extendedCode"/>
         <Param name="name" updates="None" val="code_2" valType="code"/>
       </CodeComponent>
       <TextComponent name="pracCarrier">
@@ -63,7 +63,7 @@
         <Param name="startVal" updates="None" val="0.0" valType="code"/>
         <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
         <Param name="stopVal" updates="constant" val=".5" valType="code"/>
-        <Param name="text" updates="set every repeat" val="$eval(carrier)" valType="str"/>
+        <Param name="text" updates="set every repeat" val="$eval(carrierPrac)" valType="str"/>
         <Param name="units" updates="None" val="from exp settings" valType="str"/>
         <Param name="wrapWidth" updates="constant" val="" valType="code"/>
       </TextComponent>
@@ -125,17 +125,17 @@
     </Routine>
     <Routine name="target">
       <CodeComponent name="code">
-        <Param name="Begin Experiment" updates="constant" val="pracLoopCount=0&amp;#10;practiceTargets = []&amp;#10;practiceCarriers ={}&amp;#10;experimentTargets = {}&amp;#10;experimentCarriers = {}&amp;#10;&amp;#10;if expInfo['session'] == 'A':&amp;#10;    condition=&quot;data/processed_data/exp_files/pracCondA.csv&quot;&amp;#10;    targetP=&quot;practiceListA&quot;&amp;#10;    targetExp=&quot;stimuliListA&quot;&amp;#10;    #carrierP = &quot;practiceListA&quot;&amp;#10;    #carrierExp = &quot;stimuliListA&quot;&amp;#10;elif expInfo['session'] == 'B':&amp;#10;    condition=&quot;data/processed_data/exp_files/pracCondB.csv&quot;&amp;#10;    targetExp=&quot;stimuliB&quot;&amp;#10;elif expInfo['session'] == 'C':&amp;#10;    condition=&quot;data/processed_data/exp_files/pracCondC.csv&quot;&amp;#10;    targetExp=&quot;stimuliC&quot;&amp;#10;else:&amp;#10;    condition=&quot;data/processed_data/exp_files/pracCondD.csv&quot;&amp;#10;    targetExp=&quot;stimuliD&quot;&amp;#10;" valType="extendedCode"/>
+        <Param name="Begin Experiment" updates="constant" val="if expInfo['session'] == 'A':&amp;#10;    conditionPrac=&quot;data/processed_data/exp_files/pracCondA.csv&quot;&amp;#10;    conditionExp=&quot;data/processed_data/exp_files/expCondA.csv&quot;&amp;#10;    conditionSylPrac=&quot;data/processed_data/exp_files/sylprac.csv&quot;&amp;#10;    conditionSylExp=&quot;data/processed_data/exp_files/sylexpCondA.csv&quot;&amp;#10;    practice = &quot;practiceListA&quot;&amp;#10;    experiment = &quot;stimuliListA&quot;&amp;#10;elif expInfo['session'] == 'B':&amp;#10;    conditionPrac=&quot;data/processed_data/exp_files/pracCondB.csv&quot;&amp;#10;    conditionExp=&quot;data/processed_data/exp_files/expCondB.csv&quot;&amp;#10;    conditionSylPrac=&quot;data/processed_data/exp_files/sylprac.csv&quot;&amp;#10;    conditionSylExp=&quot;data/processed_data/exp_files/sylexpCondB.csv&quot;&amp;#10;    practice = &quot;practiceListB&quot;&amp;#10;    experiment = &quot;stimuliListB&quot;&amp;#10;elif expInfo['session'] == 'C':&amp;#10;    conditionPrac=&quot;data/processed_data/exp_files/pracCondC.csv&quot;&amp;#10;    conditionExp=&quot;data/processed_data/exp_files/expCondC.csv&quot;&amp;#10;    conditionSylPrac=&quot;data/processed_data/exp_files/sylprac.csv&quot;&amp;#10;    conditionSylExp=&quot;data/processed_data/exp_files/sylexpCondC.csv&quot;&amp;#10;    practice = &quot;practiceListC&quot;&amp;#10;    experiment = &quot;stimuliListC&quot;&amp;#10;else:&amp;#10;    conditionPrac=&quot;data/processed_data/exp_files/pracCondD.csv&quot;&amp;#10;    conditionExp=&quot;data/processed_data/exp_files/expCondD.csv&quot;&amp;#10;    conditionSylPrac=&quot;data/processed_data/exp_files/sylprac.csv&quot;&amp;#10;    conditionSylExp=&quot;data/processed_data/exp_files/sylexpCondD.csv&quot;&amp;#10;    practice = &quot;practiceListD&quot;&amp;#10;    experiment = &quot;stimuliListD&quot;&amp;#10;" valType="extendedCode"/>
         <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
-        <Param name="Begin Routine" updates="constant" val="targetP=&quot;practiceListA%i&quot; %pracTarLoop.thisN&amp;#10;#if targetP == str(pracTarLoop.thisTrial):&amp;#10;#print(str(pracTarLoop.thisTrial) + ' %i' %pracTarLoop.thisN)&amp;#10;&amp;#10;&amp;#10;&amp;#10;&amp;#10;#if targetP == 'stimuliPracitce1':&amp;#10;#    trialTarget = pracTarget.setText(&quot;Find  &quot; + eval(targetP))&amp;#10;#else: &amp;#10;#    trialTarget = pracTarget.setText(&quot;&quot;)" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="targetPrac = practice + &quot;%i&quot; %pracTarLoop.thisN" valType="extendedCode"/>
         <Param name="Code Type" updates="None" val="Py" valType="str"/>
         <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
         <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
         <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
-        <Param name="End Routine" updates="constant" val="if pracTarLoop.thisN != 0:&amp;#10;    pracLoopCount +=1&amp;#10;#practiceTargets = practiceTargets.append(pracTarLoop.thisTrial)&amp;#10;#print('Dictionary maybe?')&amp;#10;#print(practiceTargets) " valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="" valType="extendedCode"/>
         <Param name="name" updates="None" val="code" valType="code"/>
       </CodeComponent>
       <TextComponent name="pracTarget">
@@ -155,7 +155,7 @@
         <Param name="startVal" updates="None" val="0.0" valType="code"/>
         <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
         <Param name="stopVal" updates="constant" val=".5" valType="code"/>
-        <Param name="text" updates="set every repeat" val="&quot;Encuentre    &quot; + $eval(targetP)&amp;#10;" valType="str"/>
+        <Param name="text" updates="set every repeat" val="&quot;Encuentre    &quot; + $eval(targetPrac)&amp;#10;" valType="str"/>
         <Param name="units" updates="None" val="from exp settings" valType="str"/>
         <Param name="wrapWidth" updates="constant" val="" valType="code"/>
       </TextComponent>
@@ -227,7 +227,7 @@
         <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
-        <Param name="Begin Routine" updates="constant" val="targetExp= targetExp + &quot;%i&quot; %expTarLoop.thisN&amp;#10;" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="targetExp= experiment + &quot;%i&quot; %expTarLoop.thisN&amp;#10;" valType="extendedCode"/>
         <Param name="Code Type" updates="None" val="Py" valType="str"/>
         <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
         <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
@@ -261,10 +261,10 @@
     </Routine>
     <Routine name="trialExp">
       <CodeComponent name="code_3">
-        <Param name="Begin Experiment" updates="constant" val="if expInfo['session'] == 'A':&amp;#10;    carrierExp=&quot;stimuliA&quot;&amp;#10;elif expInfo['session'] == 'B':&amp;#10;    carrierExp=&quot;stimuliB&quot;&amp;#10;elif expInfo['session'] == 'C':&amp;#10;    carrierExp=&quot;stimuliC&quot;&amp;#10;else:&amp;#10;    carrierExp=&quot;stimuliD&quot;" valType="extendedCode"/>
+        <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
-        <Param name="Begin Routine" updates="constant" val="carrier2= carrierExp + &quot;%i&quot; %expTarLoop.thisN" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="carrierExp= experiment + &quot;%i&quot; %expTarLoop.thisN" valType="extendedCode"/>
         <Param name="Code Type" updates="None" val="Py" valType="str"/>
         <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
         <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
@@ -291,17 +291,17 @@
         <Param name="startVal" updates="None" val="0.0" valType="code"/>
         <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
         <Param name="stopVal" updates="constant" val=".5" valType="code"/>
-        <Param name="text" updates="set every repeat" val="$eval(carrier2)" valType="str"/>
+        <Param name="text" updates="set every repeat" val="$eval(carrierExp)" valType="str"/>
         <Param name="units" updates="None" val="from exp settings" valType="str"/>
         <Param name="wrapWidth" updates="constant" val="" valType="code"/>
       </TextComponent>
-      <KeyboardComponent name="exp_key_resp">
+      <KeyboardComponent name="seg_key_resp">
         <Param name="allowedKeys" updates="constant" val="'y'" valType="code"/>
         <Param name="correctAns" updates="constant" val="" valType="str"/>
         <Param name="discard previous" updates="constant" val="True" valType="bool"/>
         <Param name="durationEstim" updates="None" val="" valType="code"/>
         <Param name="forceEndRoutine" updates="constant" val="True" valType="bool"/>
-        <Param name="name" updates="None" val="exp_key_resp" valType="code"/>
+        <Param name="name" updates="None" val="seg_key_resp" valType="code"/>
         <Param name="startEstim" updates="None" val="" valType="code"/>
         <Param name="startType" updates="None" val="time (s)" valType="str"/>
         <Param name="startVal" updates="None" val="0.0" valType="code"/>
@@ -336,20 +336,6 @@
       </TextComponent>
     </Routine>
     <Routine name="trialSyllable">
-      <CodeComponent name="code_5">
-        <Param name="Begin Experiment" updates="constant" val="if expInfo['session'] == 'A':&amp;#10;    syllable=&quot;data/processed_data/exp_files/sylexpCondA.csv&quot;&amp;#10;elif expInfo['session'] == 'B':&amp;#10;    syllable=&quot;syllableB.xlsx&quot;&amp;#10;elif expInfo['session'] == 'C':&amp;#10;    syllable=&quot;syllableC.xlsx&quot;&amp;#10;else:&amp;#10;    syllable=&quot;syllableD.xlsx&quot;" valType="extendedCode"/>
-        <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
-        <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
-        <Param name="Begin Routine" updates="constant" val="" valType="extendedCode"/>
-        <Param name="Code Type" updates="None" val="Py" valType="str"/>
-        <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
-        <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
-        <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
-        <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
-        <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
-        <Param name="End Routine" updates="constant" val="" valType="extendedCode"/>
-        <Param name="name" updates="None" val="code_5" valType="code"/>
-      </CodeComponent>
       <TextComponent name="AnswerCVC">
         <Param name="color" updates="constant" val="white" valType="str"/>
         <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
@@ -413,13 +399,13 @@
         <Param name="units" updates="None" val="from exp settings" valType="str"/>
         <Param name="wrapWidth" updates="constant" val="" valType="code"/>
       </TextComponent>
-      <KeyboardComponent name="sylExp_key_resp">
+      <KeyboardComponent name="syl_key_resp">
         <Param name="allowedKeys" updates="constant" val="'1','2'" valType="code"/>
         <Param name="correctAns" updates="constant" val="$corrAns" valType="str"/>
         <Param name="discard previous" updates="constant" val="True" valType="bool"/>
         <Param name="durationEstim" updates="None" val="" valType="code"/>
         <Param name="forceEndRoutine" updates="constant" val="True" valType="bool"/>
-        <Param name="name" updates="None" val="sylExp_key_resp" valType="code"/>
+        <Param name="name" updates="None" val="syl_key_resp" valType="code"/>
         <Param name="startEstim" updates="None" val="" valType="code"/>
         <Param name="startType" updates="None" val="time (s)" valType="str"/>
         <Param name="startVal" updates="None" val="2" valType="code"/>
@@ -595,7 +581,7 @@
     <LoopInitiator loopType="TrialHandler" name="pracTarLoop">
       <Param name="Selected rows" updates="None" val="$[1]" valType="str"/>
       <Param name="conditions" updates="None" val="None" valType="str"/>
-      <Param name="conditionsFile" updates="None" val="$condition" valType="str"/>
+      <Param name="conditionsFile" updates="None" val="$conditionPrac" valType="str"/>
       <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
       <Param name="isTrials" updates="None" val="True" valType="bool"/>
       <Param name="loopType" updates="None" val="sequential" valType="str"/>
@@ -607,7 +593,7 @@
     <LoopInitiator loopType="TrialHandler" name="pracTrialLoop">
       <Param name="Selected rows" updates="None" val="$[2,3,4,5,6,7,8,9,10,11]" valType="str"/>
       <Param name="conditions" updates="None" val="None" valType="str"/>
-      <Param name="conditionsFile" updates="None" val="$condition" valType="str"/>
+      <Param name="conditionsFile" updates="None" val="$conditionPrac" valType="str"/>
       <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
       <Param name="isTrials" updates="None" val="True" valType="bool"/>
       <Param name="loopType" updates="None" val="random" valType="str"/>
@@ -620,25 +606,25 @@
     <LoopTerminator name="pracTarLoop"/>
     <Routine name="expIns"/>
     <LoopInitiator loopType="TrialHandler" name="expTarLoop">
-      <Param name="Selected rows" updates="None" val="$[0]" valType="str"/>
+      <Param name="Selected rows" updates="None" val="$[1]" valType="str"/>
       <Param name="conditions" updates="None" val="None" valType="str"/>
-      <Param name="conditionsFile" updates="None" val="$condition" valType="str"/>
+      <Param name="conditionsFile" updates="None" val="$conditionExp" valType="str"/>
       <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
       <Param name="isTrials" updates="None" val="True" valType="bool"/>
       <Param name="loopType" updates="None" val="sequential" valType="str"/>
-      <Param name="nReps" updates="None" val="0" valType="code"/>
+      <Param name="nReps" updates="None" val="48" valType="code"/>
       <Param name="name" updates="None" val="expTarLoop" valType="code"/>
       <Param name="random seed" updates="None" val="" valType="code"/>
     </LoopInitiator>
     <Routine name="targetExp"/>
     <LoopInitiator loopType="TrialHandler" name="expTrialLoop">
-      <Param name="Selected rows" updates="None" val="$[1,2,3,4,5,6,7,8,9,10,11,12]" valType="str"/>
+      <Param name="Selected rows" updates="None" val="$[2,3,4,5,6,7,8,9,10,11]" valType="str"/>
       <Param name="conditions" updates="None" val="None" valType="str"/>
-      <Param name="conditionsFile" updates="None" val="$condition" valType="str"/>
+      <Param name="conditionsFile" updates="None" val="$conditionExp" valType="str"/>
       <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
       <Param name="isTrials" updates="None" val="True" valType="bool"/>
       <Param name="loopType" updates="None" val="random" valType="str"/>
-      <Param name="nReps" updates="None" val="0" valType="code"/>
+      <Param name="nReps" updates="None" val="1" valType="code"/>
       <Param name="name" updates="None" val="expTrialLoop" valType="code"/>
       <Param name="random seed" updates="None" val="" valType="code"/>
     </LoopInitiator>
@@ -648,8 +634,8 @@
     <Routine name="syllablePracIns"/>
     <LoopInitiator loopType="TrialHandler" name="sylPracLoop">
       <Param name="Selected rows" updates="None" val="" valType="str"/>
-      <Param name="conditions" updates="None" val="[OrderedDict([('syllabification', 'pupila'), ('corrSyl', 'pu'), ('corrAns', 2.0), ('keyCVC', 'pup'), ('keyCV', 'pu')]), OrderedDict([('syllabification', 'pericia'), ('corrSyl', 'pe'), ('corrAns', 2.0), ('keyCVC', 'per'), ('keyCV', 'pe')]), OrderedDict([('syllabification', 'culata'), ('corrSyl', 'cu'), ('corrAns', 2.0), ('keyCVC', 'cul'), ('keyCV', 'cu')]), OrderedDict([('syllabification', 'ciruela'), ('corrSyl', 'ci'), ('corrAns', 2.0), ('keyCVC', 'cir'), ('keyCV', 'ci')]), OrderedDict([('syllabification', 'latencia'), ('corrSyl', 'la'), ('corrAns', 2.0), ('keyCVC', 'lat'), ('keyCV', 'la')]), OrderedDict([('syllabification', 'cantera'), ('corrSyl', 'can'), ('corrAns', 1.0), ('keyCVC', 'can'), ('keyCV', 'ca')]), OrderedDict([('syllabification', 'sendero'), ('corrSyl', 'sen'), ('corrAns', 1.0), ('keyCVC', 'sen'), ('keyCV', 'se')]), OrderedDict([('syllabification', 'gustazo'), ('corrSyl', 'gus'), ('corrAns', 1.0), ('keyCVC', 'gus'), ('keyCV', 'gu')]), OrderedDict([('syllabification', 'caldera'), ('corrSyl', 'cal'), ('corrAns', 1.0), ('keyCVC', 'cal'), ('keyCV', 'ca')]), OrderedDict([('syllabification', 'sordina'), ('corrSyl', 'sor'), ('corrAns', 1.0), ('keyCVC', 'sor'), ('keyCV', 'so')])]" valType="str"/>
-      <Param name="conditionsFile" updates="None" val="data/processed_data/exp_files/sylprac.csv" valType="str"/>
+      <Param name="conditions" updates="None" val="None" valType="str"/>
+      <Param name="conditionsFile" updates="None" val="$conditionSylPrac" valType="str"/>
       <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
       <Param name="isTrials" updates="None" val="True" valType="bool"/>
       <Param name="loopType" updates="None" val="random" valType="str"/>
@@ -663,7 +649,7 @@
     <LoopInitiator loopType="TrialHandler" name="syllableLoop">
       <Param name="Selected rows" updates="None" val="" valType="str"/>
       <Param name="conditions" updates="None" val="None" valType="str"/>
-      <Param name="conditionsFile" updates="None" val="$syllable" valType="str"/>
+      <Param name="conditionsFile" updates="None" val="$conditionSylExp" valType="str"/>
       <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
       <Param name="isTrials" updates="None" val="True" valType="bool"/>
       <Param name="loopType" updates="None" val="random" valType="str"/>

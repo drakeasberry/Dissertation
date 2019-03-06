@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v3.0.5),
-    on Tue Mar  5 23:35:42 2019
+    on Tue Mar  5 23:01:50 2019
 If you publish work using this script please cite the PsychoPy publications:
     Peirce, JW (2007) PsychoPy - Psychophysics software in Python.
         Journal of Neuroscience Methods, 162(1-2), 8-13.
@@ -42,12 +42,12 @@ expInfo['expName'] = expName
 expInfo['psychopyVersion'] = psychopyVersion
 
 # Data file name stem = absolute path + name; later add .psyexp, .csv, .log, etc
-filename = _thisDir + os.sep + u'data/original_data/part_files/%s_%s_%s' % (expInfo['participant'], expInfo['session'], expName)
+filename = _thisDir + os.sep + u'data/%s_%s_%s' % (expInfo['participant'], expInfo['session'], expName)
 
 # An ExperimentHandler isn't essential but helps with data saving
 thisExp = data.ExperimentHandler(name=expName, version='',
     extraInfo=expInfo, runtimeInfo=None,
-    originPath='/Users/drakeasberry/github/Dissertation/Dissertation_Experiments/segmentation/Segmentation_lastrun.py',
+    originPath='/Users/drakeasberry/github/Dissertation/Dissertation_Experiments/segmentation/Segmentation.py',
     savePickle=True, saveWideText=True,
     dataFileName=filename)
 # save a log file for detail verbose info
@@ -83,17 +83,14 @@ initialIns = visual.TextStim(win=win, name='initialIns',
 
 # Initialize components for Routine "target"
 targetClock = core.Clock()
-#pracLoopCount=0
-#practiceTargets = []
-#practiceCarriers ={}
-#experimentTargets = {}
-#experimentCarriers = {}
+pracLoopCount=0
+practiceTargets = []
+practiceCarriers ={}
+experimentTargets = {}
+experimentCarriers = {}
 
 if expInfo['session'] == 'A':
-    conditionPrac="data/processed_data/exp_files/pracCondA.csv"
-    conditionExp="data/processed_data/exp_files/expCondA.csv"
-    conditionSylPrac="data/processed_data/exp_files/sylprac.csv"
-    conditionSylExp="data/processed_data/exp_files/sylexpCondA.csv"
+    condition="data/processed_data/exp_files/pracCondA.csv"
     practice = "practiceListA"
     experiment = "stimuliListA"
     #targetExp="stimuliListA"
@@ -206,27 +203,35 @@ SyllableExpInsText = visual.TextStim(win=win, name='SyllableExpInsText',
 
 # Initialize components for Routine "trialSyllable"
 trialSyllableClock = core.Clock()
+if expInfo['session'] == 'A':
+    syllable="data/processed_data/exp_files/sylexpCondA.csv"
+elif expInfo['session'] == 'B':
+    syllable="syllableB.xlsx"
+elif expInfo['session'] == 'C':
+    syllable="syllableC.xlsx"
+else:
+    syllable="syllableD.xlsx"
 AnswerCVC = visual.TextStim(win=win, name='AnswerCVC',
     text='default text',
     font='Arial',
     pos=(-.5, 0), height=0.1, wrapWidth=None, ori=0, 
     color='white', colorSpace='rgb', opacity=1, 
     languageStyle='LTR',
-    depth=0.0);
+    depth=-1.0);
 AnswerCV = visual.TextStim(win=win, name='AnswerCV',
     text='default text',
     font='Arial',
     pos=(.5,0), height=0.1, wrapWidth=None, ori=0, 
     color='white', colorSpace='rgb', opacity=1, 
     languageStyle='LTR',
-    depth=-1.0);
+    depth=-2.0);
 Syllable_Target = visual.TextStim(win=win, name='Syllable_Target',
     text='default text',
     font='Arial',
     pos=(0, 0), height=0.1, wrapWidth=None, ori=0, 
     color='white', colorSpace='rgb', opacity=1, 
     languageStyle='LTR',
-    depth=-2.0);
+    depth=-3.0);
 
 # Initialize components for Routine "thankYou"
 thankYouClock = core.Clock()
@@ -314,7 +319,7 @@ routineTimer.reset()
 # set up handler to look after randomisation of conditions etc
 pracTarLoop = data.TrialHandler(nReps=8, method='sequential', 
     extraInfo=expInfo, originPath=-1,
-    trialList=data.importConditions(conditionPrac, selection=[1]),
+    trialList=data.importConditions(condition, selection=[1]),
     seed=None, name='pracTarLoop')
 thisExp.addLoop(pracTarLoop)  # add the loop to the experiment
 thisPracTarLoop = pracTarLoop.trialList[0]  # so we can initialise stimuli with some values
@@ -409,7 +414,7 @@ for thisPracTarLoop in pracTarLoop:
     # set up handler to look after randomisation of conditions etc
     pracTrialLoop = data.TrialHandler(nReps=1, method='random', 
         extraInfo=expInfo, originPath=-1,
-        trialList=data.importConditions(conditionPrac, selection=[2,3,4,5,6,7,8,9,10,11]),
+        trialList=data.importConditions(condition, selection=[2,3,4,5,6,7,8,9,10,11]),
         seed=None, name='pracTrialLoop')
     thisExp.addLoop(pracTrialLoop)  # add the loop to the experiment
     thisPracTrialLoop = pracTrialLoop.trialList[0]  # so we can initialise stimuli with some values
@@ -607,9 +612,9 @@ for thisComponent in expInsComponents:
 routineTimer.reset()
 
 # set up handler to look after randomisation of conditions etc
-expTarLoop = data.TrialHandler(nReps=48, method='sequential', 
+expTarLoop = data.TrialHandler(nReps=0, method='sequential', 
     extraInfo=expInfo, originPath=-1,
-    trialList=data.importConditions(conditionExp, selection=[1]),
+    trialList=data.importConditions(condition, selection=[0]),
     seed=None, name='expTarLoop')
 thisExp.addLoop(expTarLoop)  # add the loop to the experiment
 thisExpTarLoop = expTarLoop.trialList[0]  # so we can initialise stimuli with some values
@@ -683,9 +688,9 @@ for thisExpTarLoop in expTarLoop:
     
     
     # set up handler to look after randomisation of conditions etc
-    expTrialLoop = data.TrialHandler(nReps=1, method='random', 
+    expTrialLoop = data.TrialHandler(nReps=0, method='random', 
         extraInfo=expInfo, originPath=-1,
-        trialList=data.importConditions(conditionExp, selection=[2,3,4,5,6,7,8,9,10,11]),
+        trialList=data.importConditions(condition, selection=[1,2,3,4,5,6,7,8,9,10,11,12]),
         seed=None, name='expTrialLoop')
     thisExp.addLoop(expTrialLoop)  # add the loop to the experiment
     thisExpTrialLoop = expTrialLoop.trialList[0]  # so we can initialise stimuli with some values
@@ -709,10 +714,10 @@ for thisExpTarLoop in expTarLoop:
         routineTimer.add(0.500000)
         # update component parameters for each repeat
         carrierExp= experiment + "%i" %expTarLoop.thisN
-        expCarrier.setText(eval(carrierExp))
-        seg_key_resp = event.BuilderKeyResponse()
+        expCarrier.setText(eval(carrier2))
+        exp_key_resp = event.BuilderKeyResponse()
         # keep track of which components have finished
-        trialExpComponents = [expCarrier, seg_key_resp]
+        trialExpComponents = [expCarrier, exp_key_resp]
         for thisComponent in trialExpComponents:
             if hasattr(thisComponent, 'status'):
                 thisComponent.status = NOT_STARTED
@@ -735,27 +740,27 @@ for thisExpTarLoop in expTarLoop:
             if expCarrier.status == STARTED and t >= frameRemains:
                 expCarrier.setAutoDraw(False)
             
-            # *seg_key_resp* updates
-            if t >= 0.0 and seg_key_resp.status == NOT_STARTED:
+            # *exp_key_resp* updates
+            if t >= 0.0 and exp_key_resp.status == NOT_STARTED:
                 # keep track of start time/frame for later
-                seg_key_resp.tStart = t
-                seg_key_resp.frameNStart = frameN  # exact frame index
-                seg_key_resp.status = STARTED
+                exp_key_resp.tStart = t
+                exp_key_resp.frameNStart = frameN  # exact frame index
+                exp_key_resp.status = STARTED
                 # keyboard checking is just starting
-                win.callOnFlip(seg_key_resp.clock.reset)  # t=0 on next screen flip
+                win.callOnFlip(exp_key_resp.clock.reset)  # t=0 on next screen flip
                 event.clearEvents(eventType='keyboard')
             frameRemains = 0.0 + .5- win.monitorFramePeriod * 0.75  # most of one frame period left
-            if seg_key_resp.status == STARTED and t >= frameRemains:
-                seg_key_resp.status = FINISHED
-            if seg_key_resp.status == STARTED:
+            if exp_key_resp.status == STARTED and t >= frameRemains:
+                exp_key_resp.status = FINISHED
+            if exp_key_resp.status == STARTED:
                 theseKeys = event.getKeys(keyList=['y'])
                 
                 # check for quit:
                 if "escape" in theseKeys:
                     endExpNow = True
                 if len(theseKeys) > 0:  # at least one key was pressed
-                    seg_key_resp.keys = theseKeys[-1]  # just the last key pressed
-                    seg_key_resp.rt = seg_key_resp.clock.getTime()
+                    exp_key_resp.keys = theseKeys[-1]  # just the last key pressed
+                    exp_key_resp.rt = exp_key_resp.clock.getTime()
                     # a response ends the routine
                     continueRoutine = False
             
@@ -782,18 +787,18 @@ for thisExpTarLoop in expTarLoop:
                 thisComponent.setAutoDraw(False)
         
         # check responses
-        if seg_key_resp.keys in ['', [], None]:  # No response was made
-            seg_key_resp.keys=None
-        expTrialLoop.addData('seg_key_resp.keys',seg_key_resp.keys)
-        if seg_key_resp.keys != None:  # we had a response
-            expTrialLoop.addData('seg_key_resp.rt', seg_key_resp.rt)
+        if exp_key_resp.keys in ['', [], None]:  # No response was made
+            exp_key_resp.keys=None
+        expTrialLoop.addData('exp_key_resp.keys',exp_key_resp.keys)
+        if exp_key_resp.keys != None:  # we had a response
+            expTrialLoop.addData('exp_key_resp.rt', exp_key_resp.rt)
         thisExp.nextEntry()
         
-    # completed 1 repeats of 'expTrialLoop'
+    # completed 0 repeats of 'expTrialLoop'
     
     thisExp.nextEntry()
     
-# completed 48 repeats of 'expTarLoop'
+# completed 0 repeats of 'expTarLoop'
 
 
 # ------Prepare to start Routine "syllablePracIns"-------
@@ -866,9 +871,9 @@ for thisComponent in syllablePracInsComponents:
 routineTimer.reset()
 
 # set up handler to look after randomisation of conditions etc
-sylPracLoop = data.TrialHandler(nReps=1, method='random', 
+sylPracLoop = data.TrialHandler(nReps=0, method='random', 
     extraInfo=expInfo, originPath=-1,
-    trialList=data.importConditions(conditionSylPrac),
+    trialList=data.importConditions('data/processed_data/exp_files/sylprac.csv'),
     seed=None, name='sylPracLoop')
 thisExp.addLoop(sylPracLoop)  # add the loop to the experiment
 thisSylPracLoop = sylPracLoop.trialList[0]  # so we can initialise stimuli with some values
@@ -982,7 +987,7 @@ for thisSylPracLoop in sylPracLoop:
             thisComponent.setAutoDraw(False)
     thisExp.nextEntry()
     
-# completed 1 repeats of 'sylPracLoop'
+# completed 0 repeats of 'sylPracLoop'
 
 
 # ------Prepare to start Routine "syllableExpIns"-------
@@ -1055,9 +1060,9 @@ for thisComponent in syllableExpInsComponents:
 routineTimer.reset()
 
 # set up handler to look after randomisation of conditions etc
-syllableLoop = data.TrialHandler(nReps=1, method='random', 
+syllableLoop = data.TrialHandler(nReps=0, method='random', 
     extraInfo=expInfo, originPath=-1,
-    trialList=data.importConditions(conditionSylExp),
+    trialList=data.importConditions(syllable),
     seed=None, name='syllableLoop')
 thisExp.addLoop(syllableLoop)  # add the loop to the experiment
 thisSyllableLoop = syllableLoop.trialList[0]  # so we can initialise stimuli with some values
@@ -1080,12 +1085,13 @@ for thisSyllableLoop in syllableLoop:
     continueRoutine = True
     routineTimer.add(4.000000)
     # update component parameters for each repeat
+    
     AnswerCVC.setText(keyCVC)
     AnswerCV.setText(keyCV)
     Syllable_Target.setText(syllabification)
-    syl_key_resp = event.BuilderKeyResponse()
+    sylExp_key_resp = event.BuilderKeyResponse()
     # keep track of which components have finished
-    trialSyllableComponents = [AnswerCVC, AnswerCV, Syllable_Target, syl_key_resp]
+    trialSyllableComponents = [AnswerCVC, AnswerCV, Syllable_Target, sylExp_key_resp]
     for thisComponent in trialSyllableComponents:
         if hasattr(thisComponent, 'status'):
             thisComponent.status = NOT_STARTED
@@ -1096,6 +1102,7 @@ for thisSyllableLoop in syllableLoop:
         t = trialSyllableClock.getTime()
         frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
         # update/draw components on each frame
+        
         
         # *AnswerCVC* updates
         if t >= 2 and AnswerCVC.status == NOT_STARTED:
@@ -1127,32 +1134,32 @@ for thisSyllableLoop in syllableLoop:
         if Syllable_Target.status == STARTED and t >= frameRemains:
             Syllable_Target.setAutoDraw(False)
         
-        # *syl_key_resp* updates
-        if t >= 2 and syl_key_resp.status == NOT_STARTED:
+        # *sylExp_key_resp* updates
+        if t >= 2 and sylExp_key_resp.status == NOT_STARTED:
             # keep track of start time/frame for later
-            syl_key_resp.tStart = t
-            syl_key_resp.frameNStart = frameN  # exact frame index
-            syl_key_resp.status = STARTED
+            sylExp_key_resp.tStart = t
+            sylExp_key_resp.frameNStart = frameN  # exact frame index
+            sylExp_key_resp.status = STARTED
             # keyboard checking is just starting
-            win.callOnFlip(syl_key_resp.clock.reset)  # t=0 on next screen flip
+            win.callOnFlip(sylExp_key_resp.clock.reset)  # t=0 on next screen flip
             event.clearEvents(eventType='keyboard')
         frameRemains = 2 + 2- win.monitorFramePeriod * 0.75  # most of one frame period left
-        if syl_key_resp.status == STARTED and t >= frameRemains:
-            syl_key_resp.status = FINISHED
-        if syl_key_resp.status == STARTED:
+        if sylExp_key_resp.status == STARTED and t >= frameRemains:
+            sylExp_key_resp.status = FINISHED
+        if sylExp_key_resp.status == STARTED:
             theseKeys = event.getKeys(keyList=['1', '2'])
             
             # check for quit:
             if "escape" in theseKeys:
                 endExpNow = True
             if len(theseKeys) > 0:  # at least one key was pressed
-                syl_key_resp.keys = theseKeys[-1]  # just the last key pressed
-                syl_key_resp.rt = syl_key_resp.clock.getTime()
+                sylExp_key_resp.keys = theseKeys[-1]  # just the last key pressed
+                sylExp_key_resp.rt = sylExp_key_resp.clock.getTime()
                 # was this 'correct'?
-                if (syl_key_resp.keys == str(corrAns)) or (syl_key_resp.keys == corrAns):
-                    syl_key_resp.corr = 1
+                if (sylExp_key_resp.keys == str(corrAns)) or (sylExp_key_resp.keys == corrAns):
+                    sylExp_key_resp.corr = 1
                 else:
-                    syl_key_resp.corr = 0
+                    sylExp_key_resp.corr = 0
                 # a response ends the routine
                 continueRoutine = False
         
@@ -1177,22 +1184,23 @@ for thisSyllableLoop in syllableLoop:
     for thisComponent in trialSyllableComponents:
         if hasattr(thisComponent, "setAutoDraw"):
             thisComponent.setAutoDraw(False)
+    
     # check responses
-    if syl_key_resp.keys in ['', [], None]:  # No response was made
-        syl_key_resp.keys=None
+    if sylExp_key_resp.keys in ['', [], None]:  # No response was made
+        sylExp_key_resp.keys=None
         # was no response the correct answer?!
         if str(corrAns).lower() == 'none':
-           syl_key_resp.corr = 1;  # correct non-response
+           sylExp_key_resp.corr = 1;  # correct non-response
         else:
-           syl_key_resp.corr = 0;  # failed to respond (incorrectly)
+           sylExp_key_resp.corr = 0;  # failed to respond (incorrectly)
     # store data for syllableLoop (TrialHandler)
-    syllableLoop.addData('syl_key_resp.keys',syl_key_resp.keys)
-    syllableLoop.addData('syl_key_resp.corr', syl_key_resp.corr)
-    if syl_key_resp.keys != None:  # we had a response
-        syllableLoop.addData('syl_key_resp.rt', syl_key_resp.rt)
+    syllableLoop.addData('sylExp_key_resp.keys',sylExp_key_resp.keys)
+    syllableLoop.addData('sylExp_key_resp.corr', sylExp_key_resp.corr)
+    if sylExp_key_resp.keys != None:  # we had a response
+        syllableLoop.addData('sylExp_key_resp.rt', sylExp_key_resp.rt)
     thisExp.nextEntry()
     
-# completed 1 repeats of 'syllableLoop'
+# completed 0 repeats of 'syllableLoop'
 
 
 # ------Prepare to start Routine "thankYou"-------
@@ -1246,6 +1254,7 @@ while continueRoutine and routineTimer.getTime() > 0:
 for thisComponent in thankYouComponents:
     if hasattr(thisComponent, "setAutoDraw"):
         thisComponent.setAutoDraw(False)
+
 
 
 
