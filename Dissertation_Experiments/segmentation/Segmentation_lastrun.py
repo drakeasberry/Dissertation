@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v3.0.5),
-    on Tue Mar  5 23:35:42 2019
+    on Thu Mar  7 19:24:21 2019
 If you publish work using this script please cite the PsychoPy publications:
     Peirce, JW (2007) PsychoPy - Psychophysics software in Python.
         Journal of Neuroscience Methods, 162(1-2), 8-13.
@@ -83,12 +83,6 @@ initialIns = visual.TextStim(win=win, name='initialIns',
 
 # Initialize components for Routine "target"
 targetClock = core.Clock()
-#pracLoopCount=0
-#practiceTargets = []
-#practiceCarriers ={}
-#experimentTargets = {}
-#experimentCarriers = {}
-
 if expInfo['session'] == 'A':
     conditionPrac="data/processed_data/exp_files/pracCondA.csv"
     conditionExp="data/processed_data/exp_files/expCondA.csv"
@@ -96,18 +90,27 @@ if expInfo['session'] == 'A':
     conditionSylExp="data/processed_data/exp_files/sylexpCondA.csv"
     practice = "practiceListA"
     experiment = "stimuliListA"
-    #targetExp="stimuliListA"
-    #carrierP = "practiceListA"
-    carrier = "stimuliListA"
 elif expInfo['session'] == 'B':
-    condition="data/processed_data/exp_files/pracCondB.csv"
-    targetExp="stimuliB"
+    conditionPrac="data/processed_data/exp_files/pracCondB.csv"
+    conditionExp="data/processed_data/exp_files/expCondB.csv"
+    conditionSylPrac="data/processed_data/exp_files/sylprac.csv"
+    conditionSylExp="data/processed_data/exp_files/sylexpCondB.csv"
+    practice = "practiceListB"
+    experiment = "stimuliListB"
 elif expInfo['session'] == 'C':
-    condition="data/processed_data/exp_files/pracCondC.csv"
-    targetExp="stimuliC"
+    conditionPrac="data/processed_data/exp_files/pracCondC.csv"
+    conditionExp="data/processed_data/exp_files/expCondC.csv"
+    conditionSylPrac="data/processed_data/exp_files/sylprac.csv"
+    conditionSylExp="data/processed_data/exp_files/sylexpCondC.csv"
+    practice = "practiceListC"
+    experiment = "stimuliListC"
 else:
-    condition="data/processed_data/exp_files/pracCondD.csv"
-    targetExp="stimuliD"
+    conditionPrac="data/processed_data/exp_files/pracCondD.csv"
+    conditionExp="data/processed_data/exp_files/expCondD.csv"
+    conditionSylPrac="data/processed_data/exp_files/sylprac.csv"
+    conditionSylExp="data/processed_data/exp_files/sylexpCondD.csv"
+    practice = "practiceListD"
+    experiment = "stimuliListD"
 
 pracTarget = visual.TextStim(win=win, name='pracTarget',
     text='default text',
@@ -335,22 +338,9 @@ for thisPracTarLoop in pracTarLoop:
     targetClock.reset()  # clock
     frameN = -1
     continueRoutine = True
-    routineTimer.add(0.500000)
+    routineTimer.add(2.000000)
     # update component parameters for each repeat
     targetPrac = practice + "%i" %pracTarLoop.thisN
-    
-    
-    
-    #if targetP == str(pracTarLoop.thisTrial):
-    #print(str(pracTarLoop.thisTrial) + ' %i' %pracTarLoop.thisN)
-    
-    
-    
-    
-    #if targetP == 'stimuliPracitce1':
-    #    trialTarget = pracTarget.setText("Find  " + eval(targetP))
-    #else: 
-    #    trialTarget = pracTarget.setText("")
     pracTarget.setText("Encuentre    " + eval(targetPrac)
 )
     # keep track of which components have finished
@@ -373,7 +363,7 @@ for thisPracTarLoop in pracTarLoop:
             pracTarget.tStart = t
             pracTarget.frameNStart = frameN  # exact frame index
             pracTarget.setAutoDraw(True)
-        frameRemains = 0.0 + .5- win.monitorFramePeriod * 0.75  # most of one frame period left
+        frameRemains = 0.0 + 2.0- win.monitorFramePeriod * 0.75  # most of one frame period left
         if pracTarget.status == STARTED and t >= frameRemains:
             pracTarget.setAutoDraw(False)
         
@@ -398,13 +388,7 @@ for thisPracTarLoop in pracTarLoop:
     for thisComponent in targetComponents:
         if hasattr(thisComponent, "setAutoDraw"):
             thisComponent.setAutoDraw(False)
-    #if pracTarLoop.thisN != 0:
-    #    pracLoopCount +=1
     
-    
-    #practiceTargets = practiceTargets.append(pracTarLoop.thisTrial)
-    #print('Dictionary maybe?')
-    #print(practiceTargets) 
     
     # set up handler to look after randomisation of conditions etc
     pracTrialLoop = data.TrialHandler(nReps=1, method='random', 
@@ -430,33 +414,9 @@ for thisPracTarLoop in pracTarLoop:
         trialClock.reset()  # clock
         frameN = -1
         continueRoutine = True
-        routineTimer.add(0.500000)
+        routineTimer.add(2.000000)
         # update component parameters for each repeat
         carrierPrac = practice + "%i" %pracTarLoop.thisN
-        
-        
-        #for paramName in thisPracTrialLoop.keys():
-            #if paramName == carrier:
-                #print(paramName + ' round %i' %pracTrialLoop.thisN)
-            #else:
-                #print(paramName + ' round %i' %pracTrialLoop.thisN)
-                #exec(paramName + '=thisPracTrialLoop.' + paramName)
-        
-        
-        
-        #if paramName != carrier:
-            
-        #thisPracTrialLoop = pracTrialLoop.trialList[0]  # so we can initialise stimuli with some values
-        # abbreviate parameter names if possible (e.g. rgb = thisPracTrialLoop.rgb)
-        #if thisPracTrialLoop != None:
-        #    for paramName in thisPracTrialLoop:
-                #print(paramName)
-        #        if paramName == carrier:
-        #            exec('{} = thisPracTrialLoop[paramName]'.format(paramName))
-                    #print("still here " + paramName)
-                #else: 
-                    #print("deleted " + paramName)
-        
         pracCarrier.setText(eval(carrierPrac))
         prac_key_resp = event.BuilderKeyResponse()
         # keep track of which components have finished
@@ -479,7 +439,7 @@ for thisPracTarLoop in pracTarLoop:
                 pracCarrier.tStart = t
                 pracCarrier.frameNStart = frameN  # exact frame index
                 pracCarrier.setAutoDraw(True)
-            frameRemains = 0.0 + .5- win.monitorFramePeriod * 0.75  # most of one frame period left
+            frameRemains = 0.0 + 2- win.monitorFramePeriod * 0.75  # most of one frame period left
             if pracCarrier.status == STARTED and t >= frameRemains:
                 pracCarrier.setAutoDraw(False)
             
@@ -491,7 +451,7 @@ for thisPracTarLoop in pracTarLoop:
                 prac_key_resp.status = STARTED
                 # keyboard checking is just starting
                 event.clearEvents(eventType='keyboard')
-            frameRemains = 0.0 + .5- win.monitorFramePeriod * 0.75  # most of one frame period left
+            frameRemains = 0.0 + 2- win.monitorFramePeriod * 0.75  # most of one frame period left
             if prac_key_resp.status == STARTED and t >= frameRemains:
                 prac_key_resp.status = FINISHED
             if prac_key_resp.status == STARTED:
@@ -525,9 +485,7 @@ for thisPracTarLoop in pracTarLoop:
         for thisComponent in trialComponents:
             if hasattr(thisComponent, "setAutoDraw"):
                 thisComponent.setAutoDraw(False)
-        #if pracTrialLoop.thisN != 0:
-        #    pracLoopCount +=1
-        #targetP="pracLists%" %
+        
         thisExp.nextEntry()
         
     # completed 1 repeats of 'pracTrialLoop'
@@ -630,7 +588,7 @@ for thisExpTarLoop in expTarLoop:
     targetExpClock.reset()  # clock
     frameN = -1
     continueRoutine = True
-    routineTimer.add(0.500000)
+    routineTimer.add(2.000000)
     # update component parameters for each repeat
     targetExp= experiment + "%i" %expTarLoop.thisN
     
@@ -655,7 +613,7 @@ for thisExpTarLoop in expTarLoop:
             expTarget.tStart = t
             expTarget.frameNStart = frameN  # exact frame index
             expTarget.setAutoDraw(True)
-        frameRemains = 0.0 + .5- win.monitorFramePeriod * 0.75  # most of one frame period left
+        frameRemains = 0.0 + 2- win.monitorFramePeriod * 0.75  # most of one frame period left
         if expTarget.status == STARTED and t >= frameRemains:
             expTarget.setAutoDraw(False)
         
@@ -706,7 +664,7 @@ for thisExpTarLoop in expTarLoop:
         trialExpClock.reset()  # clock
         frameN = -1
         continueRoutine = True
-        routineTimer.add(0.500000)
+        routineTimer.add(2.000000)
         # update component parameters for each repeat
         carrierExp= experiment + "%i" %expTarLoop.thisN
         expCarrier.setText(eval(carrierExp))
@@ -731,7 +689,7 @@ for thisExpTarLoop in expTarLoop:
                 expCarrier.tStart = t
                 expCarrier.frameNStart = frameN  # exact frame index
                 expCarrier.setAutoDraw(True)
-            frameRemains = 0.0 + .5- win.monitorFramePeriod * 0.75  # most of one frame period left
+            frameRemains = 0.0 + 2- win.monitorFramePeriod * 0.75  # most of one frame period left
             if expCarrier.status == STARTED and t >= frameRemains:
                 expCarrier.setAutoDraw(False)
             
@@ -744,7 +702,7 @@ for thisExpTarLoop in expTarLoop:
                 # keyboard checking is just starting
                 win.callOnFlip(seg_key_resp.clock.reset)  # t=0 on next screen flip
                 event.clearEvents(eventType='keyboard')
-            frameRemains = 0.0 + .5- win.monitorFramePeriod * 0.75  # most of one frame period left
+            frameRemains = 0.0 + 2- win.monitorFramePeriod * 0.75  # most of one frame period left
             if seg_key_resp.status == STARTED and t >= frameRemains:
                 seg_key_resp.status = FINISHED
             if seg_key_resp.status == STARTED:
