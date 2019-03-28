@@ -32,7 +32,7 @@
   </Settings>
   <Routines>
     <Routine name="trial">
-      <CodeComponent name="code_2">
+      <CodeComponent name="pracSegCounter">
         <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
@@ -44,9 +44,9 @@
         <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
         <Param name="End Routine" updates="constant" val="" valType="extendedCode"/>
-        <Param name="name" updates="None" val="code_2" valType="code"/>
+        <Param name="name" updates="None" val="pracSegCounter" valType="code"/>
       </CodeComponent>
-      <TextComponent name="pracCarrier">
+      <TextComponent name="pracSegCarrier">
         <Param name="color" updates="constant" val="white" valType="str"/>
         <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
         <Param name="durationEstim" updates="None" val="" valType="code"/>
@@ -54,7 +54,7 @@
         <Param name="font" updates="constant" val="Arial" valType="str"/>
         <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
         <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
-        <Param name="name" updates="None" val="pracCarrier" valType="code"/>
+        <Param name="name" updates="None" val="pracSegCarrier" valType="code"/>
         <Param name="opacity" updates="constant" val="1" valType="code"/>
         <Param name="ori" updates="constant" val="0" valType="code"/>
         <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
@@ -67,13 +67,13 @@
         <Param name="units" updates="None" val="from exp settings" valType="str"/>
         <Param name="wrapWidth" updates="constant" val="" valType="code"/>
       </TextComponent>
-      <KeyboardComponent name="prac_key_resp">
+      <KeyboardComponent name="pracSeg_key_resp">
         <Param name="allowedKeys" updates="constant" val="'y'" valType="code"/>
         <Param name="correctAns" updates="constant" val="" valType="str"/>
         <Param name="discard previous" updates="constant" val="True" valType="bool"/>
         <Param name="durationEstim" updates="None" val="" valType="code"/>
         <Param name="forceEndRoutine" updates="constant" val="True" valType="bool"/>
-        <Param name="name" updates="None" val="prac_key_resp" valType="code"/>
+        <Param name="name" updates="None" val="pracSeg_key_resp" valType="code"/>
         <Param name="startEstim" updates="None" val="" valType="code"/>
         <Param name="startType" updates="None" val="time (s)" valType="str"/>
         <Param name="startVal" updates="None" val="0.0" valType="code"/>
@@ -85,7 +85,7 @@
       </KeyboardComponent>
     </Routine>
     <Routine name="pracIns">
-      <TextComponent name="initialIns">
+      <TextComponent name="pracSegInstr">
         <Param name="color" updates="constant" val="white" valType="str"/>
         <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
         <Param name="durationEstim" updates="None" val="" valType="code"/>
@@ -93,7 +93,7 @@
         <Param name="font" updates="constant" val="Arial" valType="str"/>
         <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
         <Param name="letterHeight" updates="constant" val="0.075" valType="code"/>
-        <Param name="name" updates="None" val="initialIns" valType="code"/>
+        <Param name="name" updates="None" val="pracSegInstr" valType="code"/>
         <Param name="opacity" updates="constant" val="1" valType="code"/>
         <Param name="ori" updates="constant" val="0" valType="code"/>
         <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
@@ -106,13 +106,13 @@
         <Param name="units" updates="None" val="from exp settings" valType="str"/>
         <Param name="wrapWidth" updates="constant" val="" valType="code"/>
       </TextComponent>
-      <KeyboardComponent name="startPrac">
+      <KeyboardComponent name="pracSeg_Start">
         <Param name="allowedKeys" updates="constant" val="'space'" valType="code"/>
         <Param name="correctAns" updates="constant" val="" valType="str"/>
         <Param name="discard previous" updates="constant" val="True" valType="bool"/>
         <Param name="durationEstim" updates="None" val="" valType="code"/>
         <Param name="forceEndRoutine" updates="constant" val="True" valType="bool"/>
-        <Param name="name" updates="None" val="startPrac" valType="code"/>
+        <Param name="name" updates="None" val="pracSeg_Start" valType="code"/>
         <Param name="startEstim" updates="None" val="" valType="code"/>
         <Param name="startType" updates="None" val="time (s)" valType="str"/>
         <Param name="startVal" updates="None" val="0.0" valType="code"/>
@@ -124,8 +124,8 @@
       </KeyboardComponent>
     </Routine>
     <Routine name="target">
-      <CodeComponent name="code">
-        <Param name="Begin Experiment" updates="constant" val="if expInfo['session'] == 'A':&amp;#10;    conditionPrac=&quot;data/processed_data/exp_files/pracCondA.csv&quot;&amp;#10;    conditionExp=&quot;data/processed_data/exp_files/expCondA.csv&quot;&amp;#10;    conditionSylPrac=&quot;data/processed_data/exp_files/sylprac.csv&quot;&amp;#10;    conditionSylExp=&quot;data/processed_data/exp_files/sylexpCondA.csv&quot;&amp;#10;    practice = &quot;practiceListA&quot;&amp;#10;    experiment = &quot;stimuliListA&quot;&amp;#10;elif expInfo['session'] == 'B':&amp;#10;    conditionPrac=&quot;data/processed_data/exp_files/pracCondB.csv&quot;&amp;#10;    conditionExp=&quot;data/processed_data/exp_files/expCondB.csv&quot;&amp;#10;    conditionSylPrac=&quot;data/processed_data/exp_files/sylprac.csv&quot;&amp;#10;    conditionSylExp=&quot;data/processed_data/exp_files/sylexpCondB.csv&quot;&amp;#10;    practice = &quot;practiceListB&quot;&amp;#10;    experiment = &quot;stimuliListB&quot;&amp;#10;elif expInfo['session'] == 'C':&amp;#10;    conditionPrac=&quot;data/processed_data/exp_files/pracCondC.csv&quot;&amp;#10;    conditionExp=&quot;data/processed_data/exp_files/expCondC.csv&quot;&amp;#10;    conditionSylPrac=&quot;data/processed_data/exp_files/sylprac.csv&quot;&amp;#10;    conditionSylExp=&quot;data/processed_data/exp_files/sylexpCondC.csv&quot;&amp;#10;    practice = &quot;practiceListC&quot;&amp;#10;    experiment = &quot;stimuliListC&quot;&amp;#10;else:&amp;#10;    conditionPrac=&quot;data/processed_data/exp_files/pracCondD.csv&quot;&amp;#10;    conditionExp=&quot;data/processed_data/exp_files/expCondD.csv&quot;&amp;#10;    conditionSylPrac=&quot;data/processed_data/exp_files/sylprac.csv&quot;&amp;#10;    conditionSylExp=&quot;data/processed_data/exp_files/sylexpCondD.csv&quot;&amp;#10;    practice = &quot;practiceListD&quot;&amp;#10;    experiment = &quot;stimuliListD&quot;&amp;#10;" valType="extendedCode"/>
+      <CodeComponent name="pracTarCounter">
+        <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin Routine" updates="constant" val="targetPrac = practice + &quot;%i&quot; %pracTarLoop.thisN" valType="extendedCode"/>
@@ -136,9 +136,9 @@
         <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
         <Param name="End Routine" updates="constant" val="" valType="extendedCode"/>
-        <Param name="name" updates="None" val="code" valType="code"/>
+        <Param name="name" updates="None" val="pracTarCounter" valType="code"/>
       </CodeComponent>
-      <TextComponent name="pracTarget">
+      <TextComponent name="pracSegTarget">
         <Param name="color" updates="constant" val="white" valType="str"/>
         <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
         <Param name="durationEstim" updates="None" val="" valType="code"/>
@@ -146,7 +146,7 @@
         <Param name="font" updates="constant" val="Arial" valType="str"/>
         <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
         <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
-        <Param name="name" updates="None" val="pracTarget" valType="code"/>
+        <Param name="name" updates="None" val="pracSegTarget" valType="code"/>
         <Param name="opacity" updates="constant" val="1" valType="code"/>
         <Param name="ori" updates="constant" val="0" valType="code"/>
         <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
@@ -223,7 +223,7 @@
       </TextComponent>
     </Routine>
     <Routine name="targetExp">
-      <CodeComponent name="code_4">
+      <CodeComponent name="expTarCounter">
         <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
@@ -235,7 +235,7 @@
         <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
         <Param name="End Routine" updates="constant" val="" valType="extendedCode"/>
-        <Param name="name" updates="None" val="code_4" valType="code"/>
+        <Param name="name" updates="None" val="expTarCounter" valType="code"/>
       </CodeComponent>
       <TextComponent name="expTarget">
         <Param name="color" updates="constant" val="white" valType="str"/>
@@ -260,7 +260,7 @@
       </TextComponent>
     </Routine>
     <Routine name="trialExp">
-      <CodeComponent name="code_3">
+      <CodeComponent name="expSegCounter">
         <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
@@ -272,7 +272,7 @@
         <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
         <Param name="End Routine" updates="constant" val="" valType="extendedCode"/>
-        <Param name="name" updates="None" val="code_3" valType="code"/>
+        <Param name="name" updates="None" val="expSegCounter" valType="code"/>
       </CodeComponent>
       <TextComponent name="expCarrier">
         <Param name="color" updates="constant" val="white" valType="str"/>
@@ -312,7 +312,501 @@
         <Param name="syncScreenRefresh" updates="constant" val="True" valType="bool"/>
       </KeyboardComponent>
     </Routine>
-    <Routine name="thankYou">
+    <Routine name="trialSyllable">
+      <TextComponent name="expSylAnsCVC">
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
+        <Param name="name" updates="None" val="expSylAnsCVC" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(-.5, 0)" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="2" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="2" valType="code"/>
+        <Param name="text" updates="set every repeat" val="$keyCVC" valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+      <TextComponent name="expSylAnsCV">
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
+        <Param name="name" updates="None" val="expSylAnsCV" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(.5,0)" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="2" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="2" valType="code"/>
+        <Param name="text" updates="set every repeat" val="$keyCV" valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+      <TextComponent name="expSylTarget">
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
+        <Param name="name" updates="None" val="expSylTarget" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.5" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="1.5" valType="code"/>
+        <Param name="text" updates="set every repeat" val="$syllabification" valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+      <KeyboardComponent name="expSyl_key_resp">
+        <Param name="allowedKeys" updates="constant" val="'1','2'" valType="code"/>
+        <Param name="correctAns" updates="constant" val="$corrAns" valType="str"/>
+        <Param name="discard previous" updates="constant" val="True" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="forceEndRoutine" updates="constant" val="True" valType="bool"/>
+        <Param name="name" updates="None" val="expSyl_key_resp" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="2" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="2" valType="code"/>
+        <Param name="store" updates="constant" val="last key" valType="str"/>
+        <Param name="storeCorrect" updates="constant" val="True" valType="bool"/>
+        <Param name="syncScreenRefresh" updates="constant" val="True" valType="bool"/>
+      </KeyboardComponent>
+    </Routine>
+    <Routine name="syllableExpIns">
+      <TextComponent name="expSyllableInstr">
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.075" valType="code"/>
+        <Param name="name" updates="None" val="expSyllableInstr" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="text" updates="constant" val="Ahora, verá varias palabras y selecionará la primera sílaba.&amp;#10;&amp;#10;Recuerde:&amp;#10;Presione '1' si su respuesta está a la izqueirda.&amp;#10;&amp;#10;Presione '2' si su respuesta está a la derecha.&amp;#10;&amp;#10;Presione 'la barra' para empezar el experimento." valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+      <KeyboardComponent name="expSyllableStart">
+        <Param name="allowedKeys" updates="constant" val="'space'" valType="code"/>
+        <Param name="correctAns" updates="constant" val="" valType="str"/>
+        <Param name="discard previous" updates="constant" val="True" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="forceEndRoutine" updates="constant" val="True" valType="bool"/>
+        <Param name="name" updates="None" val="expSyllableStart" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="store" updates="constant" val="nothing" valType="str"/>
+        <Param name="storeCorrect" updates="constant" val="False" valType="bool"/>
+        <Param name="syncScreenRefresh" updates="constant" val="True" valType="bool"/>
+      </KeyboardComponent>
+    </Routine>
+    <Routine name="syllablePracIns">
+      <TextComponent name="pracSyllableInstr">
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.075" valType="code"/>
+        <Param name="name" updates="None" val="pracSyllableInstr" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="text" updates="constant" val="Ahora, verá varias palabras y selecionará la primera sílaba.&amp;#10;&amp;#10;Presione '1' si su respuesta está a la izqueirda.&amp;#10;&amp;#10;Presione '2' si su respuesta está a la derecha.&amp;#10;&amp;#10;Presione 'la barra' para empezar las pruebas de práctica." valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+      <KeyboardComponent name="pracSyllableStart">
+        <Param name="allowedKeys" updates="constant" val="'space'" valType="code"/>
+        <Param name="correctAns" updates="constant" val="" valType="str"/>
+        <Param name="discard previous" updates="constant" val="True" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="forceEndRoutine" updates="constant" val="True" valType="bool"/>
+        <Param name="name" updates="None" val="pracSyllableStart" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="store" updates="constant" val="nothing" valType="str"/>
+        <Param name="storeCorrect" updates="constant" val="False" valType="bool"/>
+        <Param name="syncScreenRefresh" updates="constant" val="True" valType="bool"/>
+      </KeyboardComponent>
+    </Routine>
+    <Routine name="syllablePracTrial">
+      <TextComponent name="pracSylTarget">
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
+        <Param name="name" updates="None" val="pracSylTarget" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.5" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="1.5" valType="code"/>
+        <Param name="text" updates="set every repeat" val="$syllabification" valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+      <TextComponent name="pracSylAnsCVC">
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
+        <Param name="name" updates="None" val="pracSylAnsCVC" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(-.5, 0)" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="2" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="2" valType="code"/>
+        <Param name="text" updates="set every repeat" val="$keyCVC" valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+      <TextComponent name="pracSylAnsCV">
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
+        <Param name="name" updates="None" val="pracSylAnsCV" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(.5, 0)" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="2" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="2" valType="code"/>
+        <Param name="text" updates="set every repeat" val="$keyCV" valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+      <KeyboardComponent name="pracSyl_key_resp">
+        <Param name="allowedKeys" updates="constant" val="'1','2'" valType="code"/>
+        <Param name="correctAns" updates="constant" val="$corrAns" valType="str"/>
+        <Param name="discard previous" updates="constant" val="True" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="forceEndRoutine" updates="constant" val="True" valType="bool"/>
+        <Param name="name" updates="None" val="pracSyl_key_resp" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="2" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="2" valType="code"/>
+        <Param name="store" updates="constant" val="nothing" valType="str"/>
+        <Param name="storeCorrect" updates="constant" val="False" valType="bool"/>
+        <Param name="syncScreenRefresh" updates="constant" val="True" valType="bool"/>
+      </KeyboardComponent>
+    </Routine>
+    <Routine name="lexTaleEngInstructions">
+      <KeyboardComponent name="start_LexEng">
+        <Param name="allowedKeys" updates="constant" val="'space'" valType="code"/>
+        <Param name="correctAns" updates="constant" val="" valType="str"/>
+        <Param name="discard previous" updates="constant" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="forceEndRoutine" updates="constant" val="True" valType="bool"/>
+        <Param name="name" updates="None" val="start_LexEng" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="store" updates="constant" val="nothing" valType="str"/>
+        <Param name="storeCorrect" updates="constant" val="False" valType="bool"/>
+        <Param name="syncScreenRefresh" updates="constant" val="True" valType="bool"/>
+      </KeyboardComponent>
+      <TextComponent name="lexEng_Instr">
+        <Param name="color" updates="constant" val="black" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.05" valType="code"/>
+        <Param name="name" updates="None" val="lexEng_Instr" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="[0, 0]" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="text" updates="constant" val="This test consists of 90 trials, in each of which you will see a string letters. &amp;#10;Your task is to decide whether this is an existing Spanish word or not. &amp;#10;If you think it is an existing Spanish word, press 's' for 'yes' and if you think it is not an existing Spanish word, press 'n' for 'no'.&amp;#10;If you are sure that the word exists, even if you don't know its exact meaning, you may still respond 'yes'. &amp;#10;But if you are not sure if it is an existing word, you should respond 'no'. &amp;#10;You have as much time as you like for each decision. &amp;#10;Press space bar to start. " valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+    </Routine>
+    <Routine name="lexEspInstrucciones">
+      <KeyboardComponent name="start_LexEsp">
+        <Param name="allowedKeys" updates="constant" val="'space'" valType="code"/>
+        <Param name="correctAns" updates="constant" val="" valType="str"/>
+        <Param name="discard previous" updates="constant" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="forceEndRoutine" updates="constant" val="True" valType="bool"/>
+        <Param name="name" updates="None" val="start_LexEsp" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="store" updates="constant" val="nothing" valType="str"/>
+        <Param name="storeCorrect" updates="constant" val="False" valType="bool"/>
+        <Param name="syncScreenRefresh" updates="constant" val="True" valType="bool"/>
+      </KeyboardComponent>
+      <TextComponent name="lexEsp_Instr">
+        <Param name="color" updates="constant" val="black" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.05" valType="code"/>
+        <Param name="name" updates="None" val="lexEsp_Instr" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="[0, 0]" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="text" updates="constant" val="This test consists of 90 trials, in each of which you will see a string letters. &amp;#10;Your task is to decide whether this is an existing Spanish word or not. &amp;#10;If you think it is an existing Spanish word, press 's' for 'yes' and if you think it is not an existing Spanish word, press 'n' for 'no'.&amp;#10;If you are sure that the word exists, even if you don't know its exact meaning, you may still respond 'yes'. &amp;#10;But if you are not sure if it is an existing word, you should respond 'no'. &amp;#10;You have as much time as you like for each decision. &amp;#10;Press space bar to start. " valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+      <CodeComponent name="startup_Code">
+        <Param name="Begin Experiment" updates="constant" val="if expInfo['session'] == 'A':&amp;#10;    conditionPrac=&quot;data/processed_data/exp_files/pracCondA.csv&quot;&amp;#10;    conditionExp=&quot;data/processed_data/exp_files/expCondA.csv&quot;&amp;#10;    conditionSylPrac=&quot;data/processed_data/exp_files/sylprac.csv&quot;&amp;#10;    conditionSylExp=&quot;data/processed_data/exp_files/sylexpCondA.csv&quot;&amp;#10;    practice = &quot;practiceListA&quot;&amp;#10;    experiment = &quot;stimuliListA&quot;&amp;#10;elif expInfo['session'] == 'B':&amp;#10;    conditionPrac=&quot;data/processed_data/exp_files/pracCondB.csv&quot;&amp;#10;    conditionExp=&quot;data/processed_data/exp_files/expCondB.csv&quot;&amp;#10;    conditionSylPrac=&quot;data/processed_data/exp_files/sylprac.csv&quot;&amp;#10;    conditionSylExp=&quot;data/processed_data/exp_files/sylexpCondB.csv&quot;&amp;#10;    practice = &quot;practiceListB&quot;&amp;#10;    experiment = &quot;stimuliListB&quot;&amp;#10;elif expInfo['session'] == 'C':&amp;#10;    conditionPrac=&quot;data/processed_data/exp_files/pracCondC.csv&quot;&amp;#10;    conditionExp=&quot;data/processed_data/exp_files/expCondC.csv&quot;&amp;#10;    conditionSylPrac=&quot;data/processed_data/exp_files/sylprac.csv&quot;&amp;#10;    conditionSylExp=&quot;data/processed_data/exp_files/sylexpCondC.csv&quot;&amp;#10;    practice = &quot;practiceListC&quot;&amp;#10;    experiment = &quot;stimuliListC&quot;&amp;#10;else:&amp;#10;    conditionPrac=&quot;data/processed_data/exp_files/pracCondD.csv&quot;&amp;#10;    conditionExp=&quot;data/processed_data/exp_files/expCondD.csv&quot;&amp;#10;    conditionSylPrac=&quot;data/processed_data/exp_files/sylprac.csv&quot;&amp;#10;    conditionSylExp=&quot;data/processed_data/exp_files/sylexpCondD.csv&quot;&amp;#10;    practice = &quot;practiceListD&quot;&amp;#10;    experiment = &quot;stimuliListD&quot;" valType="extendedCode"/>
+        <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Code Type" updates="None" val="Py" valType="str"/>
+        <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="name" updates="None" val="startup_Code" valType="code"/>
+      </CodeComponent>
+    </Routine>
+    <Routine name="lexTaleEsp">
+      <TextComponent name="esp_Word">
+        <Param name="color" updates="constant" val="black" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.2" valType="code"/>
+        <Param name="name" updates="None" val="esp_Word" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="[0, 0.5]" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.2" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="text" updates="set every repeat" val="$Word" valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+      <TextComponent name="esp_Si">
+        <Param name="color" updates="constant" val="green" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.2" valType="code"/>
+        <Param name="name" updates="None" val="esp_Si" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="[-0.5, -0.5]" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.2" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="text" updates="constant" val="sí" valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+      <TextComponent name="esp_No">
+        <Param name="color" updates="constant" val="red" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.2" valType="code"/>
+        <Param name="name" updates="None" val="esp_No" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="[0.5, -0.5]" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.2" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="text" updates="constant" val="no" valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+      <KeyboardComponent name="lexEsp_key_resp">
+        <Param name="allowedKeys" updates="constant" val="'0','1'" valType="code"/>
+        <Param name="correctAns" updates="constant" val="$corrAnsEspV" valType="str"/>
+        <Param name="discard previous" updates="constant" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="forceEndRoutine" updates="constant" val="True" valType="bool"/>
+        <Param name="name" updates="None" val="lexEsp_key_resp" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.2" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="store" updates="constant" val="first key" valType="str"/>
+        <Param name="storeCorrect" updates="constant" val="True" valType="bool"/>
+        <Param name="syncScreenRefresh" updates="constant" val="False" valType="bool"/>
+      </KeyboardComponent>
+    </Routine>
+    <Routine name="lexTaleEng">
+      <TextComponent name="eng_Word">
+        <Param name="color" updates="constant" val="black" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.2" valType="code"/>
+        <Param name="name" updates="None" val="eng_Word" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="[0, 0.5]" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.2" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="text" updates="set every repeat" val="$Word" valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+      <TextComponent name="eng_Yes">
+        <Param name="color" updates="constant" val="green" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.2" valType="code"/>
+        <Param name="name" updates="None" val="eng_Yes" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="[-0.5, -0.5]" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.2" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="text" updates="constant" val="sí" valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+      <TextComponent name="eng_No">
+        <Param name="color" updates="constant" val="red" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.2" valType="code"/>
+        <Param name="name" updates="None" val="eng_No" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="[0.5, -0.5]" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.2" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="text" updates="constant" val="no" valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+      <KeyboardComponent name="lexEng_key_resp">
+        <Param name="allowedKeys" updates="constant" val="'0','1'" valType="code"/>
+        <Param name="correctAns" updates="constant" val="$corrAnsEngV" valType="str"/>
+        <Param name="discard previous" updates="constant" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="forceEndRoutine" updates="constant" val="True" valType="bool"/>
+        <Param name="name" updates="None" val="lexEng_key_resp" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.2" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="store" updates="constant" val="first key" valType="str"/>
+        <Param name="storeCorrect" updates="constant" val="True" valType="bool"/>
+        <Param name="syncScreenRefresh" updates="constant" val="False" valType="bool"/>
+      </KeyboardComponent>
+    </Routine>
+    <Routine name="gracias">
       <TextComponent name="Gracias">
         <Param name="color" updates="constant" val="white" valType="str"/>
         <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
@@ -335,248 +829,22 @@
         <Param name="wrapWidth" updates="constant" val="" valType="code"/>
       </TextComponent>
     </Routine>
-    <Routine name="trialSyllable">
-      <TextComponent name="AnswerCVC">
-        <Param name="color" updates="constant" val="white" valType="str"/>
-        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
-        <Param name="durationEstim" updates="None" val="" valType="code"/>
-        <Param name="flip" updates="constant" val="" valType="str"/>
-        <Param name="font" updates="constant" val="Arial" valType="str"/>
-        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
-        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
-        <Param name="name" updates="None" val="AnswerCVC" valType="code"/>
-        <Param name="opacity" updates="constant" val="1" valType="code"/>
-        <Param name="ori" updates="constant" val="0" valType="code"/>
-        <Param name="pos" updates="constant" val="(-.5, 0)" valType="code"/>
-        <Param name="startEstim" updates="None" val="" valType="code"/>
-        <Param name="startType" updates="None" val="time (s)" valType="str"/>
-        <Param name="startVal" updates="None" val="2" valType="code"/>
-        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
-        <Param name="stopVal" updates="constant" val="2" valType="code"/>
-        <Param name="text" updates="set every repeat" val="$keyCVC" valType="str"/>
-        <Param name="units" updates="None" val="from exp settings" valType="str"/>
-        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
-      </TextComponent>
-      <TextComponent name="AnswerCV">
-        <Param name="color" updates="constant" val="white" valType="str"/>
-        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
-        <Param name="durationEstim" updates="None" val="" valType="code"/>
-        <Param name="flip" updates="constant" val="" valType="str"/>
-        <Param name="font" updates="constant" val="Arial" valType="str"/>
-        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
-        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
-        <Param name="name" updates="None" val="AnswerCV" valType="code"/>
-        <Param name="opacity" updates="constant" val="1" valType="code"/>
-        <Param name="ori" updates="constant" val="0" valType="code"/>
-        <Param name="pos" updates="constant" val="(.5,0)" valType="code"/>
-        <Param name="startEstim" updates="None" val="" valType="code"/>
-        <Param name="startType" updates="None" val="time (s)" valType="str"/>
-        <Param name="startVal" updates="None" val="2" valType="code"/>
-        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
-        <Param name="stopVal" updates="constant" val="2" valType="code"/>
-        <Param name="text" updates="set every repeat" val="$keyCV" valType="str"/>
-        <Param name="units" updates="None" val="from exp settings" valType="str"/>
-        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
-      </TextComponent>
-      <TextComponent name="Syllable_Target">
-        <Param name="color" updates="constant" val="white" valType="str"/>
-        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
-        <Param name="durationEstim" updates="None" val="" valType="code"/>
-        <Param name="flip" updates="constant" val="" valType="str"/>
-        <Param name="font" updates="constant" val="Arial" valType="str"/>
-        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
-        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
-        <Param name="name" updates="None" val="Syllable_Target" valType="code"/>
-        <Param name="opacity" updates="constant" val="1" valType="code"/>
-        <Param name="ori" updates="constant" val="0" valType="code"/>
-        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
-        <Param name="startEstim" updates="None" val="" valType="code"/>
-        <Param name="startType" updates="None" val="time (s)" valType="str"/>
-        <Param name="startVal" updates="None" val="0.5" valType="code"/>
-        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
-        <Param name="stopVal" updates="constant" val="1.5" valType="code"/>
-        <Param name="text" updates="set every repeat" val="$syllabification" valType="str"/>
-        <Param name="units" updates="None" val="from exp settings" valType="str"/>
-        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
-      </TextComponent>
-      <KeyboardComponent name="syl_key_resp">
-        <Param name="allowedKeys" updates="constant" val="'1','2'" valType="code"/>
-        <Param name="correctAns" updates="constant" val="$corrAns" valType="str"/>
-        <Param name="discard previous" updates="constant" val="True" valType="bool"/>
-        <Param name="durationEstim" updates="None" val="" valType="code"/>
-        <Param name="forceEndRoutine" updates="constant" val="True" valType="bool"/>
-        <Param name="name" updates="None" val="syl_key_resp" valType="code"/>
-        <Param name="startEstim" updates="None" val="" valType="code"/>
-        <Param name="startType" updates="None" val="time (s)" valType="str"/>
-        <Param name="startVal" updates="None" val="2" valType="code"/>
-        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
-        <Param name="stopVal" updates="constant" val="2" valType="code"/>
-        <Param name="store" updates="constant" val="last key" valType="str"/>
-        <Param name="storeCorrect" updates="constant" val="True" valType="bool"/>
-        <Param name="syncScreenRefresh" updates="constant" val="True" valType="bool"/>
-      </KeyboardComponent>
-    </Routine>
-    <Routine name="syllableExpIns">
-      <TextComponent name="SyllableExpInsText">
-        <Param name="color" updates="constant" val="white" valType="str"/>
-        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
-        <Param name="durationEstim" updates="None" val="" valType="code"/>
-        <Param name="flip" updates="constant" val="" valType="str"/>
-        <Param name="font" updates="constant" val="Arial" valType="str"/>
-        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
-        <Param name="letterHeight" updates="constant" val="0.075" valType="code"/>
-        <Param name="name" updates="None" val="SyllableExpInsText" valType="code"/>
-        <Param name="opacity" updates="constant" val="1" valType="code"/>
-        <Param name="ori" updates="constant" val="0" valType="code"/>
-        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
-        <Param name="startEstim" updates="None" val="" valType="code"/>
-        <Param name="startType" updates="None" val="time (s)" valType="str"/>
-        <Param name="startVal" updates="None" val="0.0" valType="code"/>
-        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
-        <Param name="stopVal" updates="constant" val="" valType="code"/>
-        <Param name="text" updates="constant" val="Ahora, verá varias palabras y selecionará la primera sílaba.&amp;#10;&amp;#10;Recuerde:&amp;#10;Presione '1' si su respuesta está a la izqueirda.&amp;#10;&amp;#10;Presione '2' si su respuesta está a la derecha.&amp;#10;&amp;#10;Presione 'la barra' para empezar el experimento." valType="str"/>
-        <Param name="units" updates="None" val="from exp settings" valType="str"/>
-        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
-      </TextComponent>
-      <KeyboardComponent name="sylExpStart">
-        <Param name="allowedKeys" updates="constant" val="'space'" valType="code"/>
-        <Param name="correctAns" updates="constant" val="" valType="str"/>
-        <Param name="discard previous" updates="constant" val="True" valType="bool"/>
-        <Param name="durationEstim" updates="None" val="" valType="code"/>
-        <Param name="forceEndRoutine" updates="constant" val="True" valType="bool"/>
-        <Param name="name" updates="None" val="sylExpStart" valType="code"/>
-        <Param name="startEstim" updates="None" val="" valType="code"/>
-        <Param name="startType" updates="None" val="time (s)" valType="str"/>
-        <Param name="startVal" updates="None" val="0.0" valType="code"/>
-        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
-        <Param name="stopVal" updates="constant" val="" valType="code"/>
-        <Param name="store" updates="constant" val="nothing" valType="str"/>
-        <Param name="storeCorrect" updates="constant" val="False" valType="bool"/>
-        <Param name="syncScreenRefresh" updates="constant" val="True" valType="bool"/>
-      </KeyboardComponent>
-    </Routine>
-    <Routine name="syllablePracIns">
-      <TextComponent name="instructionSyl">
-        <Param name="color" updates="constant" val="white" valType="str"/>
-        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
-        <Param name="durationEstim" updates="None" val="" valType="code"/>
-        <Param name="flip" updates="constant" val="" valType="str"/>
-        <Param name="font" updates="constant" val="Arial" valType="str"/>
-        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
-        <Param name="letterHeight" updates="constant" val="0.075" valType="code"/>
-        <Param name="name" updates="None" val="instructionSyl" valType="code"/>
-        <Param name="opacity" updates="constant" val="1" valType="code"/>
-        <Param name="ori" updates="constant" val="0" valType="code"/>
-        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
-        <Param name="startEstim" updates="None" val="" valType="code"/>
-        <Param name="startType" updates="None" val="time (s)" valType="str"/>
-        <Param name="startVal" updates="None" val="0.0" valType="code"/>
-        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
-        <Param name="stopVal" updates="constant" val="" valType="code"/>
-        <Param name="text" updates="constant" val="Ahora, verá varias palabras y selecionará la primera sílaba.&amp;#10;&amp;#10;Presione '1' si su respuesta está a la izqueirda.&amp;#10;&amp;#10;Presione '2' si su respuesta está a la derecha.&amp;#10;&amp;#10;Presione 'la barra' para empezar las pruebas de práctica." valType="str"/>
-        <Param name="units" updates="None" val="from exp settings" valType="str"/>
-        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
-      </TextComponent>
-      <KeyboardComponent name="sylPracStart">
-        <Param name="allowedKeys" updates="constant" val="'space'" valType="code"/>
-        <Param name="correctAns" updates="constant" val="" valType="str"/>
-        <Param name="discard previous" updates="constant" val="True" valType="bool"/>
-        <Param name="durationEstim" updates="None" val="" valType="code"/>
-        <Param name="forceEndRoutine" updates="constant" val="True" valType="bool"/>
-        <Param name="name" updates="None" val="sylPracStart" valType="code"/>
-        <Param name="startEstim" updates="None" val="" valType="code"/>
-        <Param name="startType" updates="None" val="time (s)" valType="str"/>
-        <Param name="startVal" updates="None" val="0.0" valType="code"/>
-        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
-        <Param name="stopVal" updates="constant" val="" valType="code"/>
-        <Param name="store" updates="constant" val="nothing" valType="str"/>
-        <Param name="storeCorrect" updates="constant" val="False" valType="bool"/>
-        <Param name="syncScreenRefresh" updates="constant" val="True" valType="bool"/>
-      </KeyboardComponent>
-    </Routine>
-    <Routine name="syllablePracTrial">
-      <TextComponent name="PracSylTarget">
-        <Param name="color" updates="constant" val="white" valType="str"/>
-        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
-        <Param name="durationEstim" updates="None" val="" valType="code"/>
-        <Param name="flip" updates="constant" val="" valType="str"/>
-        <Param name="font" updates="constant" val="Arial" valType="str"/>
-        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
-        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
-        <Param name="name" updates="None" val="PracSylTarget" valType="code"/>
-        <Param name="opacity" updates="constant" val="1" valType="code"/>
-        <Param name="ori" updates="constant" val="0" valType="code"/>
-        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
-        <Param name="startEstim" updates="None" val="" valType="code"/>
-        <Param name="startType" updates="None" val="time (s)" valType="str"/>
-        <Param name="startVal" updates="None" val="0.5" valType="code"/>
-        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
-        <Param name="stopVal" updates="constant" val="1.5" valType="code"/>
-        <Param name="text" updates="set every repeat" val="$syllabification" valType="str"/>
-        <Param name="units" updates="None" val="from exp settings" valType="str"/>
-        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
-      </TextComponent>
-      <TextComponent name="PracSylAnsCVC">
-        <Param name="color" updates="constant" val="white" valType="str"/>
-        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
-        <Param name="durationEstim" updates="None" val="" valType="code"/>
-        <Param name="flip" updates="constant" val="" valType="str"/>
-        <Param name="font" updates="constant" val="Arial" valType="str"/>
-        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
-        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
-        <Param name="name" updates="None" val="PracSylAnsCVC" valType="code"/>
-        <Param name="opacity" updates="constant" val="1" valType="code"/>
-        <Param name="ori" updates="constant" val="0" valType="code"/>
-        <Param name="pos" updates="constant" val="(-.5, 0)" valType="code"/>
-        <Param name="startEstim" updates="None" val="" valType="code"/>
-        <Param name="startType" updates="None" val="time (s)" valType="str"/>
-        <Param name="startVal" updates="None" val="2" valType="code"/>
-        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
-        <Param name="stopVal" updates="constant" val="2" valType="code"/>
-        <Param name="text" updates="set every repeat" val="$keyCVC" valType="str"/>
-        <Param name="units" updates="None" val="from exp settings" valType="str"/>
-        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
-      </TextComponent>
-      <TextComponent name="PracSylAnsCV">
-        <Param name="color" updates="constant" val="white" valType="str"/>
-        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
-        <Param name="durationEstim" updates="None" val="" valType="code"/>
-        <Param name="flip" updates="constant" val="" valType="str"/>
-        <Param name="font" updates="constant" val="Arial" valType="str"/>
-        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
-        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
-        <Param name="name" updates="None" val="PracSylAnsCV" valType="code"/>
-        <Param name="opacity" updates="constant" val="1" valType="code"/>
-        <Param name="ori" updates="constant" val="0" valType="code"/>
-        <Param name="pos" updates="constant" val="(.5, 0)" valType="code"/>
-        <Param name="startEstim" updates="None" val="" valType="code"/>
-        <Param name="startType" updates="None" val="time (s)" valType="str"/>
-        <Param name="startVal" updates="None" val="2" valType="code"/>
-        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
-        <Param name="stopVal" updates="constant" val="2" valType="code"/>
-        <Param name="text" updates="set every repeat" val="$keyCV" valType="str"/>
-        <Param name="units" updates="None" val="from exp settings" valType="str"/>
-        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
-      </TextComponent>
-      <KeyboardComponent name="sylPrac_key_resp">
-        <Param name="allowedKeys" updates="constant" val="'1','2'" valType="code"/>
-        <Param name="correctAns" updates="constant" val="$corrAns" valType="str"/>
-        <Param name="discard previous" updates="constant" val="True" valType="bool"/>
-        <Param name="durationEstim" updates="None" val="" valType="code"/>
-        <Param name="forceEndRoutine" updates="constant" val="True" valType="bool"/>
-        <Param name="name" updates="None" val="sylPrac_key_resp" valType="code"/>
-        <Param name="startEstim" updates="None" val="" valType="code"/>
-        <Param name="startType" updates="None" val="time (s)" valType="str"/>
-        <Param name="startVal" updates="None" val="2" valType="code"/>
-        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
-        <Param name="stopVal" updates="constant" val="2" valType="code"/>
-        <Param name="store" updates="constant" val="nothing" valType="str"/>
-        <Param name="storeCorrect" updates="constant" val="False" valType="bool"/>
-        <Param name="syncScreenRefresh" updates="constant" val="True" valType="bool"/>
-      </KeyboardComponent>
-    </Routine>
   </Routines>
   <Flow>
+    <Routine name="lexEspInstrucciones"/>
+    <LoopInitiator loopType="TrialHandler" name="lexEspLoop">
+      <Param name="Selected rows" updates="None" val="" valType="str"/>
+      <Param name="conditions" updates="None" val="[OrderedDict([('Order', 0), ('Word', 'pladeno'), ('Translation', 'NW'), ('corrAnsEspV', 0)]), OrderedDict([('Order', 0), ('Word', 'delantera'), ('Translation', 'first position'), ('corrAnsEspV', 1)]), OrderedDict([('Order', 0), ('Word', 'garbardina'), ('Translation', 'raincoat'), ('corrAnsEspV', 1)]), OrderedDict([('Order', 1), ('Word', 'terzo'), ('Translation', 'NW'), ('corrAnsEspV', 0)]), OrderedDict([('Order', 2), ('Word', 'pellizcar'), ('Translation', 'pinch'), ('corrAnsEspV', 1)]), OrderedDict([('Order', 3), ('Word', 'pulmones'), ('Translation', 'lungs'), ('corrAnsEspV', 1)]), OrderedDict([('Order', 4), ('Word', 'batillón'), ('Translation', 'NW'), ('corrAnsEspV', 0)]), OrderedDict([('Order', 5), ('Word', 'zapato'), ('Translation', 'shoe'), ('corrAnsEspV', 1)]), OrderedDict([('Order', 6), ('Word', 'tergiversar'), ('Translation', 'distort'), ('corrAnsEspV', 1)]), OrderedDict([('Order', 7), ('Word', 'pésimo'), ('Translation', 'abysmal'), ('corrAnsEspV', 1)]), OrderedDict([('Order', 8), ('Word', 'cadeña'), ('Translation', 'NW'), ('corrAnsEspV', 0)]), OrderedDict([('Order', 9), ('Word', 'hacha'), ('Translation', 'axe'), ('corrAnsEspV', 1)]), OrderedDict([('Order', 10), ('Word', 'antar'), ('Translation', 'NW'), ('corrAnsEspV', 0)]), OrderedDict([('Order', 11), ('Word', 'cenefa'), ('Translation', 'edging'), ('corrAnsEspV', 1)]), OrderedDict([('Order', 12), ('Word', 'asesinato'), ('Translation', 'murder'), ('corrAnsEspV', 1)]), OrderedDict([('Order', 13), ('Word', 'helar'), ('Translation', 'freeze'), ('corrAnsEspV', 1)]), OrderedDict([('Order', 14), ('Word', 'yunque'), ('Translation', 'anvil'), ('corrAnsEspV', 1)]), OrderedDict([('Order', 15), ('Word', 'regar'), ('Translation', 'water'), ('corrAnsEspV', 1)]), OrderedDict([('Order', 16), ('Word', 'abracer'), ('Translation', 'NW'), ('corrAnsEspV', 0)]), OrderedDict([('Order', 17), ('Word', 'floroso'), ('Translation', 'NW'), ('corrAnsEspV', 0)]), OrderedDict([('Order', 18), ('Word', 'arsa'), ('Translation', 'NW'), ('corrAnsEspV', 0)]), OrderedDict([('Order', 19), ('Word', 'brecedad'), ('Translation', 'NW'), ('corrAnsEspV', 0)]), OrderedDict([('Order', 20), ('Word', 'ávido'), ('Translation', 'avid'), ('corrAnsEspV', 1)]), OrderedDict([('Order', 21), ('Word', 'capillo'), ('Translation', 'NW'), ('corrAnsEspV', 0)]), OrderedDict([('Order', 22), ('Word', 'lacayo'), ('Translation', 'lackey'), ('corrAnsEspV', 1)]), OrderedDict([('Order', 23), ('Word', 'lampera'), ('Translation', 'NW'), ('corrAnsEspV', 0)]), OrderedDict([('Order', 24), ('Word', 'látigo'), ('Translation', 'whip'), ('corrAnsEspV', 1)]), OrderedDict([('Order', 25), ('Word', 'bisagra'), ('Translation', 'hinge'), ('corrAnsEspV', 1)]), OrderedDict([('Order', 26), ('Word', 'secuestro'), ('Translation', 'kidnapping'), ('corrAnsEspV', 1)]), OrderedDict([('Order', 27), ('Word', 'acutación'), ('Translation', 'NW'), ('corrAnsEspV', 0)]), OrderedDict([('Order', 28), ('Word', 'merodear'), ('Translation', 'prowl'), ('corrAnsEspV', 1)]), OrderedDict([('Order', 29), ('Word', 'decar'), ('Translation', 'NW'), ('corrAnsEspV', 0)]), OrderedDict([('Order', 30), ('Word', 'alardio'), ('Translation', 'NW'), ('corrAnsEspV', 0)]), OrderedDict([('Order', 31), ('Word', 'pandilla'), ('Translation', 'gang'), ('corrAnsEspV', 1)]), OrderedDict([('Order', 32), ('Word', 'fatacidad'), ('Translation', 'NW'), ('corrAnsEspV', 0)]), OrderedDict([('Order', 33), ('Word', 'pauca'), ('Translation', 'NW'), ('corrAnsEspV', 0)]), OrderedDict([('Order', 34), ('Word', 'aviso'), ('Translation', 'notice'), ('corrAnsEspV', 1)]), OrderedDict([('Order', 35), ('Word', 'rompido'), ('Translation', 'NW'), ('corrAnsEspV', 0)]), OrderedDict([('Order', 36), ('Word', 'loro'), ('Translation', 'parrot'), ('corrAnsEspV', 1)]), OrderedDict([('Order', 37), ('Word', 'granuja'), ('Translation', 'rascal'), ('corrAnsEspV', 1)]), OrderedDict([('Order', 38), ('Word', 'estornudar'), ('Translation', 'sneeze'), ('corrAnsEspV', 1)]), OrderedDict([('Order', 39), ('Word', 'torpe'), ('Translation', 'clumsy'), ('corrAnsEspV', 1)]), OrderedDict([('Order', 40), ('Word', 'alfombra'), ('Translation', 'carpet'), ('corrAnsEspV', 1)]), OrderedDict([('Order', 41), ('Word', 'rebuscar'), ('Translation', 'rummage'), ('corrAnsEspV', 1)]), OrderedDict([('Order', 42), ('Word', 'cadallo'), ('Translation', 'NW'), ('corrAnsEspV', 0)]), OrderedDict([('Order', 43), ('Word', 'canela'), ('Translation', 'cinnamon'), ('corrAnsEspV', 1)]), OrderedDict([('Order', 44), ('Word', 'cuchara'), ('Translation', 'spoon'), ('corrAnsEspV', 1)]), OrderedDict([('Order', 45), ('Word', 'jilguero'), ('Translation', 'goldfinch'), ('corrAnsEspV', 1)]), OrderedDict([('Order', 46), ('Word', 'martillo'), ('Translation', 'hammer'), ('corrAnsEspV', 1)]), OrderedDict([('Order', 47), ('Word', 'cartinar'), ('Translation', 'NW'), ('corrAnsEspV', 0)]), OrderedDict([('Order', 48), ('Word', 'ladrón'), ('Translation', 'thief'), ('corrAnsEspV', 1)]), OrderedDict([('Order', 49), ('Word', 'ganar'), ('Translation', 'win'), ('corrAnsEspV', 1)]), OrderedDict([('Order', 50), ('Word', 'flamida'), ('Translation', 'NW'), ('corrAnsEspV', 0)]), OrderedDict([('Order', 51), ('Word', 'candado'), ('Translation', 'padlock'), ('corrAnsEspV', 1)]), OrderedDict([('Order', 52), ('Word', 'camisa'), ('Translation', 'shirt'), ('corrAnsEspV', 1)]), OrderedDict([('Order', 53), ('Word', 'vegada'), ('Translation', 'NW'), ('corrAnsEspV', 0)]), OrderedDict([('Order', 54), ('Word', 'fomentar'), ('Translation', 'promote'), ('corrAnsEspV', 1)]), OrderedDict([('Order', 55), ('Word', 'nevar'), ('Translation', 'snow'), ('corrAnsEspV', 1)]), OrderedDict([('Order', 56), ('Word', 'musgo'), ('Translation', 'moss'), ('corrAnsEspV', 1)]), OrderedDict([('Order', 57), ('Word', 'tacaño'), ('Translation', 'stingy'), ('corrAnsEspV', 1)]), OrderedDict([('Order', 58), ('Word', 'plaudir'), ('Translation', 'NW'), ('corrAnsEspV', 0)]), OrderedDict([('Order', 59), ('Word', 'besar'), ('Translation', 'kiss'), ('corrAnsEspV', 1)]), OrderedDict([('Order', 60), ('Word', 'matar'), ('Translation', 'kill'), ('corrAnsEspV', 1)]), OrderedDict([('Order', 61), ('Word', 'seda'), ('Translation', 'silk'), ('corrAnsEspV', 1)]), OrderedDict([('Order', 62), ('Word', 'flaco'), ('Translation', 'skinny'), ('corrAnsEspV', 1)]), OrderedDict([('Order', 63), ('Word', 'esposante'), ('Translation', 'NW'), ('corrAnsEspV', 0)]), OrderedDict([('Order', 64), ('Word', 'orgulloso'), ('Translation', 'proud'), ('corrAnsEspV', 1)]), OrderedDict([('Order', 65), ('Word', 'bizcocho'), ('Translation', 'cake'), ('corrAnsEspV', 1)]), OrderedDict([('Order', 66), ('Word', 'hacido'), ('Translation', 'NW'), ('corrAnsEspV', 0)]), OrderedDict([('Order', 67), ('Word', 'cabello'), ('Translation', 'hair'), ('corrAnsEspV', 1)]), OrderedDict([('Order', 68), ('Word', 'alegre'), ('Translation', 'cheerful'), ('corrAnsEspV', 1)]), OrderedDict([('Order', 69), ('Word', 'engatusar'), ('Translation', 'cajole'), ('corrAnsEspV', 1)]), OrderedDict([('Order', 70), ('Word', 'temblo'), ('Translation', 'NW'), ('corrAnsEspV', 0)]), OrderedDict([('Order', 71), ('Word', 'polvoriento'), ('Translation', 'dusty'), ('corrAnsEspV', 1)]), OrderedDict([('Order', 72), ('Word', 'pemición'), ('Translation', 'NW'), ('corrAnsEspV', 0)]), OrderedDict([('Order', 73), ('Word', 'hervidor'), ('Translation', 'kettle'), ('corrAnsEspV', 1)]), OrderedDict([('Order', 74), ('Word', 'cintro'), ('Translation', 'NW'), ('corrAnsEspV', 0)]), OrderedDict([('Order', 75), ('Word', 'yacer'), ('Translation', 'lie'), ('corrAnsEspV', 1)]), OrderedDict([('Order', 76), ('Word', 'atar'), ('Translation', 'tie'), ('corrAnsEspV', 1)]), OrderedDict([('Order', 77), ('Word', 'tiburón'), ('Translation', 'shark'), ('corrAnsEspV', 1)]), OrderedDict([('Order', 78), ('Word', 'frondoso'), ('Translation', 'leafy'), ('corrAnsEspV', 1)]), OrderedDict([('Order', 79), ('Word', 'tropaje'), ('Translation', 'NW'), ('corrAnsEspV', 0)]), OrderedDict([('Order', 80), ('Word', 'hormiga'), ('Translation', 'ant'), ('corrAnsEspV', 1)]), OrderedDict([('Order', 81), ('Word', 'pozo'), ('Translation', 'well'), ('corrAnsEspV', 1)]), OrderedDict([('Order', 82), ('Word', 'empirador'), ('Translation', 'NW'), ('corrAnsEspV', 0)]), OrderedDict([('Order', 83), ('Word', 'guante'), ('Translation', 'glove'), ('corrAnsEspV', 1)]), OrderedDict([('Order', 84), ('Word', 'escuto'), ('Translation', 'NW'), ('corrAnsEspV', 0)]), OrderedDict([('Order', 85), ('Word', 'laud'), ('Translation', 'lute'), ('corrAnsEspV', 1)]), OrderedDict([('Order', 86), ('Word', 'barato'), ('Translation', 'cheap'), ('corrAnsEspV', 1)]), OrderedDict([('Order', 87), ('Word', 'grodo'), ('Translation', 'NW'), ('corrAnsEspV', 0)]), OrderedDict([('Order', 88), ('Word', 'acantilado'), ('Translation', 'cliff'), ('corrAnsEspV', 1)]), OrderedDict([('Order', 89), ('Word', 'prisa'), ('Translation', 'hurry'), ('corrAnsEspV', 1)]), OrderedDict([('Order', 90), ('Word', 'clavel'), ('Translation', 'carnation'), ('corrAnsEspV', 1)])]" valType="str"/>
+      <Param name="conditionsFile" updates="None" val="data/original_data/exp_files/lexTaleListEsp.csv" valType="str"/>
+      <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
+      <Param name="isTrials" updates="None" val="True" valType="bool"/>
+      <Param name="loopType" updates="None" val="sequential" valType="str"/>
+      <Param name="nReps" updates="None" val="1" valType="code"/>
+      <Param name="name" updates="None" val="lexEspLoop" valType="code"/>
+      <Param name="random seed" updates="None" val="" valType="code"/>
+    </LoopInitiator>
+    <Routine name="lexTaleEsp"/>
+    <LoopTerminator name="lexEspLoop"/>
     <Routine name="pracIns"/>
     <LoopInitiator loopType="TrialHandler" name="pracTarLoop">
       <Param name="Selected rows" updates="None" val="$[1]" valType="str"/>
@@ -659,6 +927,20 @@
     </LoopInitiator>
     <Routine name="trialSyllable"/>
     <LoopTerminator name="syllableLoop"/>
-    <Routine name="thankYou"/>
+    <Routine name="lexTaleEngInstructions"/>
+    <LoopInitiator loopType="TrialHandler" name="lexEngLoop">
+      <Param name="Selected rows" updates="None" val="" valType="str"/>
+      <Param name="conditions" updates="None" val="[OrderedDict([('Order', 0), ('Word', 'platery'), ('corrAnsEngV', 0)]), OrderedDict([('Order', 0), ('Word', 'denial'), ('corrAnsEngV', 1)]), OrderedDict([('Order', 0), ('Word', 'generic'), ('corrAnsEngV', 1)]), OrderedDict([('Order', 1), ('Word', 'mensible'), ('corrAnsEngV', 0)]), OrderedDict([('Order', 2), ('Word', 'scornful'), ('corrAnsEngV', 1)]), OrderedDict([('Order', 3), ('Word', 'stoutly'), ('corrAnsEngV', 1)]), OrderedDict([('Order', 4), ('Word', 'ablaze'), ('corrAnsEngV', 1)]), OrderedDict([('Order', 5), ('Word', 'kermshaw'), ('corrAnsEngV', 0)]), OrderedDict([('Order', 6), ('Word', 'moonlit'), ('corrAnsEngV', 1)]), OrderedDict([('Order', 7), ('Word', 'lofty'), ('corrAnsEngV', 1)]), OrderedDict([('Order', 8), ('Word', 'hurricane'), ('corrAnsEngV', 1)]), OrderedDict([('Order', 9), ('Word', 'flaw'), ('corrAnsEngV', 1)]), OrderedDict([('Order', 10), ('Word', 'alberation'), ('corrAnsEngV', 0)]), OrderedDict([('Order', 11), ('Word', 'unkempt'), ('corrAnsEngV', 1)]), OrderedDict([('Order', 12), ('Word', 'breeding'), ('corrAnsEngV', 1)]), OrderedDict([('Order', 13), ('Word', 'festivity'), ('corrAnsEngV', 1)]), OrderedDict([('Order', 14), ('Word', 'screech'), ('corrAnsEngV', 1)]), OrderedDict([('Order', 15), ('Word', 'savory'), ('corrAnsEngV', 1)]), OrderedDict([('Order', 16), ('Word', 'plaudate'), ('corrAnsEngV', 0)]), OrderedDict([('Order', 17), ('Word', 'shin'), ('corrAnsEngV', 1)]), OrderedDict([('Order', 18), ('Word', 'fluid'), ('corrAnsEngV', 1)]), OrderedDict([('Order', 19), ('Word', 'spaunch'), ('corrAnsEngV', 0)]), OrderedDict([('Order', 20), ('Word', 'allied'), ('corrAnsEngV', 1)]), OrderedDict([('Order', 21), ('Word', 'slain'), ('corrAnsEngV', 1)]), OrderedDict([('Order', 22), ('Word', 'recipient'), ('corrAnsEngV', 1)]), OrderedDict([('Order', 23), ('Word', 'exprate'), ('corrAnsEngV', 0)]), OrderedDict([('Order', 24), ('Word', 'eloquence'), ('corrAnsEngV', 1)]), OrderedDict([('Order', 25), ('Word', 'cleanliness'), ('corrAnsEngV', 1)]), OrderedDict([('Order', 26), ('Word', 'dispatch'), ('corrAnsEngV', 1)]), OrderedDict([('Order', 27), ('Word', 'rebondicate'), ('corrAnsEngV', 0)]), OrderedDict([('Order', 28), ('Word', 'ingenious'), ('corrAnsEngV', 1)]), OrderedDict([('Order', 29), ('Word', 'bewitch'), ('corrAnsEngV', 1)]), OrderedDict([('Order', 30), ('Word', 'skave'), ('corrAnsEngV', 0)]), OrderedDict([('Order', 31), ('Word', 'plaintively'), ('corrAnsEngV', 1)]), OrderedDict([('Order', 32), ('Word', 'kilp'), ('corrAnsEngV', 0)]), OrderedDict([('Order', 33), ('Word', 'interfate'), ('corrAnsEngV', 0)]), OrderedDict([('Order', 34), ('Word', 'hasty'), ('corrAnsEngV', 1)]), OrderedDict([('Order', 35), ('Word', 'lengthy'), ('corrAnsEngV', 1)]), OrderedDict([('Order', 36), ('Word', 'fray'), ('corrAnsEngV', 1)]), OrderedDict([('Order', 37), ('Word', 'crumper'), ('corrAnsEngV', 0)]), OrderedDict([('Order', 38), ('Word', 'upkeep'), ('corrAnsEngV', 1)]), OrderedDict([('Order', 39), ('Word', 'majestic'), ('corrAnsEngV', 1)]), OrderedDict([('Order', 40), ('Word', 'magrity'), ('corrAnsEngV', 0)]), OrderedDict([('Order', 41), ('Word', 'nourishment'), ('corrAnsEngV', 1)]), OrderedDict([('Order', 42), ('Word', 'abergy'), ('corrAnsEngV', 0)]), OrderedDict([('Order', 43), ('Word', 'proom'), ('corrAnsEngV', 0)]), OrderedDict([('Order', 44), ('Word', 'turmoil'), ('corrAnsEngV', 1)]), OrderedDict([('Order', 45), ('Word', 'carbohydrate'), ('corrAnsEngV', 1)]), OrderedDict([('Order', 46), ('Word', 'scholar'), ('corrAnsEngV', 1)]), OrderedDict([('Order', 47), ('Word', 'turtle'), ('corrAnsEngV', 1)]), OrderedDict([('Order', 48), ('Word', 'fellick'), ('corrAnsEngV', 0)]), OrderedDict([('Order', 49), ('Word', 'destription'), ('corrAnsEngV', 0)]), OrderedDict([('Order', 50), ('Word', 'cylinder'), ('corrAnsEngV', 1)]), OrderedDict([('Order', 51), ('Word', 'censorship'), ('corrAnsEngV', 1)]), OrderedDict([('Order', 52), ('Word', 'celestial'), ('corrAnsEngV', 1)]), OrderedDict([('Order', 53), ('Word', 'rascal'), ('corrAnsEngV', 1)]), OrderedDict([('Order', 54), ('Word', 'purrage'), ('corrAnsEngV', 0)]), OrderedDict([('Order', 55), ('Word', 'pulsh'), ('corrAnsEngV', 0)]), OrderedDict([('Order', 56), ('Word', 'muddy'), ('corrAnsEngV', 1)]), OrderedDict([('Order', 57), ('Word', 'quirty'), ('corrAnsEngV', 0)]), OrderedDict([('Order', 58), ('Word', 'pudour'), ('corrAnsEngV', 0)]), OrderedDict([('Order', 59), ('Word', 'listless'), ('corrAnsEngV', 1)]), OrderedDict([('Order', 60), ('Word', 'wrought'), ('corrAnsEngV', 1)])]" valType="str"/>
+      <Param name="conditionsFile" updates="None" val="data/original_data/exp_files/lexTaleListEng.csv" valType="str"/>
+      <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
+      <Param name="isTrials" updates="None" val="True" valType="bool"/>
+      <Param name="loopType" updates="None" val="sequential" valType="str"/>
+      <Param name="nReps" updates="None" val="1" valType="code"/>
+      <Param name="name" updates="None" val="lexEngLoop" valType="code"/>
+      <Param name="random seed" updates="None" val="" valType="code"/>
+    </LoopInitiator>
+    <Routine name="lexTaleEng"/>
+    <LoopTerminator name="lexEngLoop"/>
+    <Routine name="gracias"/>
   </Flow>
 </PsychoPy2experiment>
