@@ -1,0 +1,75 @@
+13.9605 	EXP 	Created window1 = Window(allowGUI=False, allowStencil=False, args=UNKNOWN, autoLog=True, bitsMode=UNKNOWN, blendMode='avg', color=array([1., 1., 1.]), colorSpace='rgb', fullscr=<method-wrapper '__getattribute__' of attributeSetter object at 0x1276e7ef0>, gamma=None, kwargs=UNKNOWN, lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x129cfcb38>, multiSample=False, name='window1', numSamples=2, pos=[0.0, 0.0], screen=0, size=array([1280,  800]), stereo=False, units='norm', useFBO=True, useRetina=False, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+13.9605 	EXP 	window1: recordFrameIntervals = False
+14.1250 	EXP 	window1: recordFrameIntervals = True
+14.3078 	EXP 	window1: recordFrameIntervals = False
+14.5194 	EXP 	Created lexEsp_Instr = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='black', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.05, italic=False, languageStyle='LTR', name='lexEsp_Instr', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([0., 0., 0.]), text=str(...), units='norm', win=Window(...), wrapWidth=1)
+14.5324 	EXP 	Created text_Word = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='black', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.2, italic=False, languageStyle='LTR', name='text_Word', opacity=1.0, ori=0, pos=array([0. , 0.5]), rgb=array([0., 0., 0.]), text='default text', units='norm', win=Window(...), wrapWidth=1)
+14.5390 	EXP 	Created text_Si = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='green', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.2, italic=False, languageStyle='LTR', name='text_Si', opacity=1.0, ori=0, pos=array([-0.5, -0.5]), rgb=array([  0., 128.,   0.]), text='sí', units='norm', win=Window(...), wrapWidth=1)
+14.5431 	EXP 	Created text_No = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='red', colorSpace='named', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.2, italic=False, languageStyle='LTR', name='text_No', opacity=1.0, ori=0, pos=array([ 0.5, -0.5]), rgb=array([255.,   0.,   0.]), text='no', units='norm', win=Window(...), wrapWidth=1)
+14.5500 	EXP 	Created text_Closing = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='black', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.07, italic=False, languageStyle='LTR', name='text_Closing', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([0., 0., 0.]), text='gracias', units='norm', win=Window(...), wrapWidth=1)
+14.5737 	EXP 	lexEsp_Instr: autoDraw = True
+23.0748 	DATA 	Keypress: space
+23.0864 	EXP 	Imported LexEng.csv as conditions, 63 conditions, 3 params
+23.0870 	EXP 	Created sequence: sequential, trialTypes=63, nReps=1, seed=None
+23.0883 	EXP 	New trial (rep=0, index=0): OrderedDict([('Order', 0), ('Word', 'platery'), ('corrAnsEngV', 0)])
+23.1042 	EXP 	lexEsp_Instr: autoDraw = False
+23.1042 	EXP 	text_Word: text = 'platery'
+23.3202 	EXP 	text_Word: autoDraw = True
+23.3202 	EXP 	text_Si: autoDraw = True
+23.3202 	EXP 	text_No: autoDraw = True
+24.9845 	DATA 	Keypress: 1
+24.9879 	EXP 	New trial (rep=0, index=1): OrderedDict([('Order', 0), ('Word', 'denial'), ('corrAnsEngV', 1)])
+24.9997 	EXP 	text_Word: autoDraw = False
+24.9997 	EXP 	text_Si: autoDraw = False
+24.9997 	EXP 	text_No: autoDraw = False
+24.9997 	EXP 	text_Word: text = 'denial'
+25.2147 	EXP 	text_Word: autoDraw = True
+25.2147 	EXP 	text_Si: autoDraw = True
+25.2147 	EXP 	text_No: autoDraw = True
+26.3818 	DATA 	Keypress: 1
+26.3832 	EXP 	New trial (rep=0, index=2): OrderedDict([('Order', 0), ('Word', 'generic'), ('corrAnsEngV', 1)])
+26.3960 	EXP 	text_Word: autoDraw = False
+26.3960 	EXP 	text_Si: autoDraw = False
+26.3960 	EXP 	text_No: autoDraw = False
+26.3960 	EXP 	text_Word: text = 'generic'
+26.6123 	EXP 	text_Word: autoDraw = True
+26.6123 	EXP 	text_Si: autoDraw = True
+26.6123 	EXP 	text_No: autoDraw = True
+27.6805 	DATA 	Keypress: 0
+27.6944 	EXP 	New trial (rep=0, index=3): OrderedDict([('Order', 1), ('Word', 'mensible'), ('corrAnsEngV', 0)])
+27.7093 	EXP 	text_Word: autoDraw = False
+27.7093 	EXP 	text_Si: autoDraw = False
+27.7093 	EXP 	text_No: autoDraw = False
+27.7093 	EXP 	text_Word: text = 'mensible'
+27.9260 	EXP 	text_Word: autoDraw = True
+27.9260 	EXP 	text_Si: autoDraw = True
+27.9260 	EXP 	text_No: autoDraw = True
+29.0248 	DATA 	Keypress: 0
+29.0262 	EXP 	New trial (rep=0, index=4): OrderedDict([('Order', 2), ('Word', 'scornful'), ('corrAnsEngV', 1)])
+29.0402 	EXP 	text_Word: autoDraw = False
+29.0402 	EXP 	text_Si: autoDraw = False
+29.0402 	EXP 	text_No: autoDraw = False
+29.0402 	EXP 	text_Word: text = 'scornful'
+29.2553 	EXP 	text_Word: autoDraw = True
+29.2553 	EXP 	text_Si: autoDraw = True
+29.2553 	EXP 	text_No: autoDraw = True
+30.1056 	DATA 	Keypress: 1
+30.1070 	EXP 	New trial (rep=0, index=5): OrderedDict([('Order', 3), ('Word', 'stoutly'), ('corrAnsEngV', 1)])
+30.1202 	EXP 	text_Word: autoDraw = False
+30.1202 	EXP 	text_Si: autoDraw = False
+30.1202 	EXP 	text_No: autoDraw = False
+30.1202 	EXP 	text_Word: text = 'stoutly'
+30.3367 	EXP 	text_Word: autoDraw = True
+30.3367 	EXP 	text_Si: autoDraw = True
+30.3367 	EXP 	text_No: autoDraw = True
+31.5690 	DATA 	Keypress: 1
+31.5705 	EXP 	New trial (rep=0, index=6): OrderedDict([('Order', 4), ('Word', 'ablaze'), ('corrAnsEngV', 1)])
+31.5837 	EXP 	text_Word: autoDraw = False
+31.5837 	EXP 	text_Si: autoDraw = False
+31.5837 	EXP 	text_No: autoDraw = False
+31.5837 	EXP 	text_Word: text = 'ablaze'
+31.7999 	EXP 	text_Word: autoDraw = True
+31.7999 	EXP 	text_Si: autoDraw = True
+31.7999 	EXP 	text_No: autoDraw = True
+33.0834 	DATA 	Keypress: escape
+33.3551 	EXP 	window1: mouseVisible = True

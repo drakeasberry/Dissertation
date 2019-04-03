@@ -1,0 +1,1101 @@
+73.7917 	WARNING 	User requested fullscreen with size [1680 1050], but screen is actually [1280, 800]. Using actual size
+74.4355 	EXP 	Created window1 = Window(allowGUI=True, allowStencil=False, args=UNKNOWN, autoLog=True, bitsMode=UNKNOWN, blendMode='avg', color=array([0., 0., 0.]), colorSpace='rgb', fullscr=<method-wrapper '__getattribute__' of attributeSetter object at 0x10e378eb8>, gamma=None, kwargs=UNKNOWN, lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x129bba6d8>, multiSample=False, name='window1', numSamples=2, pos=[0.0, 0.0], screen=0, size=array([1280,  800]), stereo=False, units='norm', useFBO=True, useRetina=False, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+74.4356 	EXP 	window1: recordFrameIntervals = False
+74.6009 	EXP 	window1: recordFrameIntervals = True
+74.7837 	EXP 	window1: recordFrameIntervals = False
+74.9724 	EXP 	Created text_instructions = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.07, italic=False, languageStyle='LTR', name='text_instructions', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text=str(...), units='norm', win=Window(...), wrapWidth=1)
+75.0119 	EXP 	Created text_lang_his_ins = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_lang_his_ins', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text=str(...), units='norm', win=Window(...), wrapWidth=1)
+75.0171 	EXP 	Created text_section_lang_hist = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='black', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_section_lang_hist', opacity=1.0, ori=0, pos=array([0.  , 0.75]), rgb=array([0., 0., 0.]), text='default text', units='norm', win=Window(...), wrapWidth=1)
+75.0225 	EXP 	Created text_lang_hist_question = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_lang_hist_question', opacity=1.0, ori=0, pos=array([0. , 0.4]), rgb=array([255., 255., 255.]), text='default text', units='norm', win=Window(...), wrapWidth=1)
+75.0269 	EXP 	Created text_lang_hist_lang = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='blue', colorSpace='named', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_lang_hist_lang', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([  0.,   0., 255.]), text='default text', units='norm', win=Window(...), wrapWidth=1)
+75.0314 	EXP 	Created text_lang_hist_qnum = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-3.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_lang_hist_qnum', opacity=1.0, ori=0, pos=array([-0.9,  0.9]), rgb=array([255., 255., 255.]), text='default text', units='norm', win=Window(...), wrapWidth=1)
+75.0818 	EXP 	Created rating_lang_hist = RatingScale(__class__=type(...), acceptKeys=['return'], acceptPreText=UNKNOWN, acceptSize=UNKNOWN, acceptText='accept?', autoLog=True, choices=False, depth=0, disappear=False, flipVert=False, high=20, kwargs=UNKNOWN, labels=list(...), leftKeys=['left'], lineColor='White', low=0, marker=ShapeStim(...), markerColor='DarkBlue', markerExpansion=UNKNOWN, markerStart=None, maxTime=0.0, minTime=0.4, mouseOnly=False, name='rating_lang_hist', noMouse=False, pos=[0.0, -0.3], precision=1, respKeys=[], rightKeys=['right'], scale='', self=UNKNOWN, showAccept=True, showValue=True, singleClick=False, size=0.8999999999999999, skipKeys=['tab'], stretch=1.0, textColor='LightGray', textFont='Helvetica Bold', textSize=0.18, tickHeight=1.0, tickMarks=20.0, win=Window(...))
+75.1229 	EXP 	Created text_lang_use_ins = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_lang_use_ins', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text=str(...), units='norm', win=Window(...), wrapWidth=1)
+75.1284 	EXP 	Created text_section_lang_use = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='black', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_section_lang_use', opacity=1.0, ori=0, pos=array([0.  , 0.75]), rgb=array([0., 0., 0.]), text='default text', units='norm', win=Window(...), wrapWidth=1)
+75.1337 	EXP 	Created text_lang_use_question = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_lang_use_question', opacity=1.0, ori=0, pos=array([0. , 0.4]), rgb=array([255., 255., 255.]), text='default text', units='norm', win=Window(...), wrapWidth=1)
+75.1381 	EXP 	Created text_lang_use_lang = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='blue', colorSpace='named', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_lang_use_lang', opacity=1.0, ori=0, pos=array([0. , 0.1]), rgb=array([  0.,   0., 255.]), text='default text', units='norm', win=Window(...), wrapWidth=1)
+75.1425 	EXP 	Created text_lang_use_qnum = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-3.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_lang_use_qnum', opacity=1.0, ori=0, pos=array([-0.9,  0.9]), rgb=array([255., 255., 255.]), text='default text', units='norm', win=Window(...), wrapWidth=1)
+75.1816 	EXP 	Created rating_lang_use = RatingScale(__class__=type(...), acceptKeys=['return'], acceptPreText=UNKNOWN, acceptSize=UNKNOWN, acceptText='accept?', autoLog=True, choices=list(...), depth=0, disappear=False, flipVert=False, high=9, kwargs=UNKNOWN, labels=list(...), leftKeys=['left'], lineColor='White', low=0, marker=ShapeStim(...), markerColor='DarkBlue', markerExpansion=UNKNOWN, markerStart=None, maxTime=0.0, minTime=0.4, mouseOnly=False, name='rating_lang_use', noMouse=False, pos=[0.0, -0.1], precision=1, respKeys=list(...), rightKeys=['right'], scale='<default>', self=UNKNOWN, showAccept=True, showValue=True, singleClick=False, size=0.8999999999999999, skipKeys=['tab'], stretch=1.0, textColor='LightGray', textFont='Helvetica Bold', textSize=0.18, tickHeight=-1, tickMarks=9.0, win=Window(...))
+75.2029 	EXP 	Created text_lang_prof_ins = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_lang_prof_ins', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text=str(...), units='norm', win=Window(...), wrapWidth=1)
+75.2074 	EXP 	Created text_section_lang_prof = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='black', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_section_lang_prof', opacity=1.0, ori=0, pos=array([0.  , 0.75]), rgb=array([0., 0., 0.]), text='default text', units='norm', win=Window(...), wrapWidth=1)
+75.2118 	EXP 	Created text_lang_prof_question = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_lang_prof_question', opacity=1.0, ori=0, pos=array([0. , 0.4]), rgb=array([255., 255., 255.]), text='default text', units='norm', win=Window(...), wrapWidth=1)
+75.2162 	EXP 	Created text_lang_prof_lang = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='blue', colorSpace='named', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_lang_prof_lang', opacity=1.0, ori=0, pos=array([0. , 0.1]), rgb=array([  0.,   0., 255.]), text='default text', units='norm', win=Window(...), wrapWidth=1)
+75.2206 	EXP 	Created text_lang_prof_qnum = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-3.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_lang_prof_qnum', opacity=1.0, ori=0, pos=array([-0.9,  0.9]), rgb=array([255., 255., 255.]), text='default text', units='norm', win=Window(...), wrapWidth=1)
+75.2261 	EXP 	Created text_lang_prof_qmark = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-4.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_lang_prof_qmark', opacity=1.0, ori=0, pos=array([0.17, 0.1 ]), rgb=array([255., 255., 255.]), text='default text', units='norm', win=Window(...), wrapWidth=1)
+75.2543 	EXP 	Created rating_lang_prof = RatingScale(__class__=type(...), acceptKeys=['return'], acceptPreText=UNKNOWN, acceptSize=UNKNOWN, acceptText='accept?', autoLog=True, choices=['0', '1', '2', '3', '4', '5', '6'], depth=0, disappear=False, flipVert=False, high=6, kwargs=UNKNOWN, labels=list(...), leftKeys=['left'], lineColor='White', low=0, marker=ShapeStim(...), markerColor='DarkBlue', markerExpansion=UNKNOWN, markerStart=None, maxTime=0.0, minTime=0.4, mouseOnly=False, name='rating_lang_prof', noMouse=False, pos=[0.0, -0.1], precision=1, respKeys=['0', '1', '2', '3', '4', '5', '6'], rightKeys=['right'], scale='<default>', self=UNKNOWN, showAccept=True, showValue=True, singleClick=False, size=0.8999999999999999, skipKeys=['tab'], stretch=1.0, textColor='LightGray', textFont='Helvetica Bold', textSize=0.18, tickHeight=-1, tickMarks=6.0, win=Window(...))
+75.2773 	EXP 	Created text_lang_att_ins = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_lang_att_ins', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text=str(...), units='norm', win=Window(...), wrapWidth=1)
+75.2828 	EXP 	Created text_lang_att_section = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='black', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_lang_att_section', opacity=1.0, ori=0, pos=array([0.  , 0.75]), rgb=array([0., 0., 0.]), text='default text', units='norm', win=Window(...), wrapWidth=1)
+75.2874 	EXP 	Created text_lang_att_ques = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_lang_att_ques', opacity=1.0, ori=0, pos=array([0. , 0.4]), rgb=array([255., 255., 255.]), text='default text', units='norm', win=Window(...), wrapWidth=1)
+75.2923 	EXP 	Created text_lang_att_qnum = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_lang_att_qnum', opacity=1.0, ori=0, pos=array([-0.9,  0.9]), rgb=array([255., 255., 255.]), text='default text', units='norm', win=Window(...), wrapWidth=1)
+75.3237 	EXP 	Created rating_lang_att = RatingScale(__class__=type(...), acceptKeys=['return'], acceptPreText=UNKNOWN, acceptSize=UNKNOWN, acceptText='accept?', autoLog=True, choices=['0', '1', '2', '3', '4', '5', '6'], depth=0, disappear=False, flipVert=False, high=6, kwargs=UNKNOWN, labels=list(...), leftKeys=['left'], lineColor='White', low=0, marker=ShapeStim(...), markerColor='DarkBlue', markerExpansion=UNKNOWN, markerStart=None, maxTime=0.0, minTime=0.4, mouseOnly=False, name='rating_lang_att', noMouse=False, pos=[0.0, 0.0], precision=1, respKeys=['0', '1', '2', '3', '4', '5', '6'], rightKeys=['right'], scale='<default>', self=UNKNOWN, showAccept=True, showValue=True, singleClick=False, size=0.8999999999999999, skipKeys=['tab'], stretch=1.0, textColor='LightGray', textFont='Helvetica Bold', textSize=0.18, tickHeight=-1, tickMarks=6.0, win=Window(...))
+75.3380 	EXP 	rating_lang_hist: flipVert = False
+75.3380 	EXP 	rating_lang_hist: autoLog = True
+75.3380 	EXP 	rating_lang_use: flipVert = False
+75.3380 	EXP 	rating_lang_use: autoLog = True
+75.3380 	EXP 	rating_lang_prof: flipVert = False
+75.3380 	EXP 	rating_lang_prof: autoLog = True
+75.3380 	EXP 	rating_lang_att: flipVert = False
+75.3380 	EXP 	rating_lang_att: autoLog = True
+75.3380 	EXP 	text_instructions: autoDraw = True
+124.7874 	DATA 	Keypress: space
+124.8159 	EXP 	text_instructions: autoDraw = False
+124.8159 	EXP 	text_lang_his_ins: autoDraw = True
+136.0915 	DATA 	Keypress: space
+136.1034 	EXP 	Imported condition_file/en_trials.csv as conditions, 12 conditions, 4 params
+136.1039 	EXP 	Created sequence: sequential, trialTypes=12, nReps=1, seed=None
+136.1044 	EXP 	New trial (rep=0, index=0): OrderedDict([('section', 'Language history'), ('questionNum', '1a'), ('questionText', 'At what age did you start learning the following languages?'), ('language', 'English')])
+136.1347 	EXP 	RatingScale rating_lang_hist: reset()
+136.1553 	EXP 	text_lang_his_ins: autoDraw = False
+136.1553 	EXP 	text_section_lang_hist: text = 'Language history'
+136.1553 	EXP 	text_lang_hist_question: text = 'At what age did you start learning the following languages?'
+136.1553 	EXP 	text_lang_hist_lang: text = 'English'
+136.1553 	EXP 	text_lang_hist_qnum: text = '1a'
+136.1553 	EXP 	text_section_lang_hist: autoDraw = True
+136.1553 	EXP 	text_lang_hist_question: autoDraw = True
+136.1553 	EXP 	text_lang_hist_lang: autoDraw = True
+136.1553 	EXP 	text_lang_hist_qnum: autoDraw = True
+136.1553 	EXP 	rating_lang_hist: autoDraw = True
+193.1889 	DATA 	Mouse: Left button down, pos=(495,281)
+193.2383 	DATA 	Mouse:  Left button up, pos=(495,281)
+199.5575 	DATA 	Mouse: Left button down, pos=(613,283)
+199.7111 	DATA 	Mouse:  Left button up, pos=(613,283)
+243.1879 	DATA 	Mouse: Left button down, pos=(703,148)
+243.1911 	DATA 	RatingScale rating_lang_hist: (mouse response) rating=9
+243.1911 	DATA 	RatingScale rating_lang_hist: rating RT=107.055
+243.1912 	DATA 	RatingScale rating_lang_hist: history=[(None, 0.0), (5, 57.055), (9, 63.425), (9, 107.055)]
+243.2039 	EXP 	New trial (rep=0, index=1): OrderedDict([('section', 'Language history'), ('questionNum', '1b'), ('questionText', 'At what age did you start learning the following languages?'), ('language', 'Spanish')])
+243.2157 	EXP 	RatingScale rating_lang_hist: reset()
+243.2366 	EXP 	text_section_lang_hist: autoDraw = False
+243.2366 	EXP 	text_lang_hist_question: autoDraw = False
+243.2366 	EXP 	text_lang_hist_lang: autoDraw = False
+243.2366 	EXP 	text_lang_hist_qnum: autoDraw = False
+243.2366 	EXP 	rating_lang_hist: autoDraw = False
+243.2366 	EXP 	text_section_lang_hist: text = 'Language history'
+243.2366 	EXP 	text_lang_hist_question: text = 'At what age did you start learning the following languages?'
+243.2366 	EXP 	text_lang_hist_lang: text = 'Spanish'
+243.2366 	EXP 	text_lang_hist_qnum: text = '1b'
+243.2366 	EXP 	text_section_lang_hist: autoDraw = True
+243.2366 	EXP 	text_lang_hist_question: autoDraw = True
+243.2366 	EXP 	text_lang_hist_lang: autoDraw = True
+243.2366 	EXP 	text_lang_hist_qnum: autoDraw = True
+243.2366 	EXP 	rating_lang_hist: autoDraw = True
+243.3537 	DATA 	Mouse:  Left button up, pos=(703,148)
+248.2261 	DATA 	Mouse: Left button down, pos=(351,277)
+248.3750 	DATA 	Mouse:  Left button up, pos=(351,277)
+249.9050 	DATA 	Mouse: Left button down, pos=(608,136)
+249.9083 	DATA 	RatingScale rating_lang_hist: (mouse response) rating=0
+249.9083 	DATA 	RatingScale rating_lang_hist: rating RT=6.692
+249.9083 	DATA 	RatingScale rating_lang_hist: history=[(None, 0.0), (0, 5.012), (0, 6.692)]
+249.9223 	EXP 	New trial (rep=0, index=2): OrderedDict([('section', 'Language history'), ('questionNum', '2a'), ('questionText', 'At what age did you start to feel comfortable using the following languages?'), ('language', 'English')])
+249.9451 	EXP 	RatingScale rating_lang_hist: reset()
+249.9703 	EXP 	text_section_lang_hist: autoDraw = False
+249.9703 	EXP 	text_lang_hist_question: autoDraw = False
+249.9703 	EXP 	text_lang_hist_lang: autoDraw = False
+249.9703 	EXP 	text_lang_hist_qnum: autoDraw = False
+249.9703 	EXP 	rating_lang_hist: autoDraw = False
+249.9703 	EXP 	text_section_lang_hist: text = 'Language history'
+249.9703 	EXP 	text_lang_hist_question: text = 'At what age did you start to feel comfortable using the following languages?'
+249.9703 	EXP 	text_lang_hist_lang: text = 'English'
+249.9703 	EXP 	text_lang_hist_qnum: text = '2a'
+249.9703 	EXP 	text_section_lang_hist: autoDraw = True
+249.9703 	EXP 	text_lang_hist_question: autoDraw = True
+249.9703 	EXP 	text_lang_hist_lang: autoDraw = True
+249.9703 	EXP 	text_lang_hist_qnum: autoDraw = True
+249.9703 	EXP 	rating_lang_hist: autoDraw = True
+250.0544 	DATA 	Mouse:  Left button up, pos=(608,136)
+284.4737 	DATA 	Mouse: Left button down, pos=(352,278)
+284.6761 	DATA 	Mouse:  Left button up, pos=(352,278)
+285.9201 	DATA 	Mouse: Left button down, pos=(613,128)
+285.9241 	DATA 	RatingScale rating_lang_hist: (mouse response) rating=0
+285.9241 	DATA 	RatingScale rating_lang_hist: rating RT=35.978
+285.9241 	DATA 	RatingScale rating_lang_hist: history=[(None, 0.0), (0, 34.53), (0, 35.978)]
+285.9381 	EXP 	New trial (rep=0, index=3): OrderedDict([('section', 'Language history'), ('questionNum', '2b'), ('questionText', 'At what age did you start to feel comfortable using the following languages?'), ('language', 'Spanish')])
+285.9522 	EXP 	RatingScale rating_lang_hist: reset()
+285.9695 	EXP 	text_section_lang_hist: autoDraw = False
+285.9695 	EXP 	text_lang_hist_question: autoDraw = False
+285.9695 	EXP 	text_lang_hist_lang: autoDraw = False
+285.9695 	EXP 	text_lang_hist_qnum: autoDraw = False
+285.9695 	EXP 	rating_lang_hist: autoDraw = False
+285.9695 	EXP 	text_section_lang_hist: text = 'Language history'
+285.9695 	EXP 	text_lang_hist_question: text = 'At what age did you start to feel comfortable using the following languages?'
+285.9695 	EXP 	text_lang_hist_lang: text = 'Spanish'
+285.9695 	EXP 	text_lang_hist_qnum: text = '2b'
+285.9695 	EXP 	text_section_lang_hist: autoDraw = True
+285.9695 	EXP 	text_lang_hist_question: autoDraw = True
+285.9695 	EXP 	text_lang_hist_lang: autoDraw = True
+285.9695 	EXP 	text_lang_hist_qnum: autoDraw = True
+285.9695 	EXP 	rating_lang_hist: autoDraw = True
+286.1024 	DATA 	Mouse:  Left button up, pos=(613,128)
+316.4653 	DATA 	Mouse: Left button down, pos=(929,278)
+316.6480 	DATA 	Mouse:  Left button up, pos=(929,278)
+320.1262 	DATA 	Mouse: Left button down, pos=(643,142)
+320.1268 	DATA 	RatingScale rating_lang_hist: (mouse response) rating=20
+320.1268 	DATA 	RatingScale rating_lang_hist: rating RT=34.173
+320.1268 	DATA 	RatingScale rating_lang_hist: history=[(None, 0.0), (20, 30.514), (20, 34.173)]
+320.1399 	EXP 	New trial (rep=0, index=4): OrderedDict([('section', 'Language history'), ('questionNum', '3a'), ('questionText', 'How many years of classes (grammar, history, math, etc.) have you had in the following languages (primary school through university)?'), ('language', 'English')])
+320.1752 	EXP 	RatingScale rating_lang_hist: reset()
+320.1885 	EXP 	text_section_lang_hist: autoDraw = False
+320.1885 	EXP 	text_lang_hist_question: autoDraw = False
+320.1885 	EXP 	text_lang_hist_lang: autoDraw = False
+320.1885 	EXP 	text_lang_hist_qnum: autoDraw = False
+320.1885 	EXP 	rating_lang_hist: autoDraw = False
+320.1885 	EXP 	text_section_lang_hist: text = 'Language history'
+320.1885 	EXP 	text_lang_hist_question: text = 'How many years of classes (grammar, history, math, etc.) have you had in the following languages (primary school through university)?'
+320.1885 	EXP 	text_lang_hist_lang: text = 'English'
+320.1885 	EXP 	text_lang_hist_qnum: text = '3a'
+320.1885 	EXP 	text_section_lang_hist: autoDraw = True
+320.1885 	EXP 	text_lang_hist_question: autoDraw = True
+320.1885 	EXP 	text_lang_hist_lang: autoDraw = True
+320.1885 	EXP 	text_lang_hist_qnum: autoDraw = True
+320.1885 	EXP 	rating_lang_hist: autoDraw = True
+320.3053 	DATA 	Mouse:  Left button up, pos=(643,142)
+347.2259 	DATA 	Mouse: Left button down, pos=(355,276)
+347.3916 	DATA 	Mouse:  Left button up, pos=(355,276)
+348.6726 	DATA 	Mouse: Left button down, pos=(679,144)
+348.6762 	DATA 	RatingScale rating_lang_hist: (mouse response) rating=0
+348.6762 	DATA 	RatingScale rating_lang_hist: rating RT=28.500
+348.6762 	DATA 	RatingScale rating_lang_hist: history=[(None, 0.0), (0, 27.052), (0, 28.5)]
+348.6892 	EXP 	New trial (rep=0, index=5): OrderedDict([('section', 'Language history'), ('questionNum', '3b'), ('questionText', 'How many years of classes (grammar, history, math, etc.) have you had in the following languages (primary school through university)?'), ('language', 'Spanish')])
+348.7006 	EXP 	RatingScale rating_lang_hist: reset()
+348.7214 	EXP 	text_section_lang_hist: autoDraw = False
+348.7214 	EXP 	text_lang_hist_question: autoDraw = False
+348.7214 	EXP 	text_lang_hist_lang: autoDraw = False
+348.7214 	EXP 	text_lang_hist_qnum: autoDraw = False
+348.7214 	EXP 	rating_lang_hist: autoDraw = False
+348.7214 	EXP 	text_section_lang_hist: text = 'Language history'
+348.7214 	EXP 	text_lang_hist_question: text = 'How many years of classes (grammar, history, math, etc.) have you had in the following languages (primary school through university)?'
+348.7214 	EXP 	text_lang_hist_lang: text = 'Spanish'
+348.7214 	EXP 	text_lang_hist_qnum: text = '3b'
+348.7214 	EXP 	text_section_lang_hist: autoDraw = True
+348.7214 	EXP 	text_lang_hist_question: autoDraw = True
+348.7214 	EXP 	text_lang_hist_lang: autoDraw = True
+348.7214 	EXP 	text_lang_hist_qnum: autoDraw = True
+348.7214 	EXP 	rating_lang_hist: autoDraw = True
+348.8550 	DATA 	Mouse:  Left button up, pos=(679,144)
+391.8708 	DATA 	Mouse: Left button down, pos=(608,272)
+392.0561 	DATA 	Mouse:  Left button up, pos=(608,272)
+392.8878 	DATA 	Mouse: Left button down, pos=(624,126)
+392.8883 	DATA 	RatingScale rating_lang_hist: (mouse response) rating=9
+392.8884 	DATA 	RatingScale rating_lang_hist: rating RT=44.187
+392.8884 	DATA 	RatingScale rating_lang_hist: history=[(None, 0.0), (9, 43.172), (9, 44.187)]
+392.9016 	EXP 	New trial (rep=0, index=6): OrderedDict([('section', 'Language history'), ('questionNum', '4a'), ('questionText', 'How many years have you spent in a country/region where the following languages are spoken?'), ('language', 'English')])
+392.9285 	EXP 	RatingScale rating_lang_hist: reset()
+392.9501 	EXP 	text_section_lang_hist: autoDraw = False
+392.9501 	EXP 	text_lang_hist_question: autoDraw = False
+392.9501 	EXP 	text_lang_hist_lang: autoDraw = False
+392.9501 	EXP 	text_lang_hist_qnum: autoDraw = False
+392.9501 	EXP 	rating_lang_hist: autoDraw = False
+392.9501 	EXP 	text_section_lang_hist: text = 'Language history'
+392.9501 	EXP 	text_lang_hist_question: text = 'How many years have you spent in a country/region where the following languages are spoken?'
+392.9501 	EXP 	text_lang_hist_lang: text = 'English'
+392.9501 	EXP 	text_lang_hist_qnum: text = '4a'
+392.9501 	EXP 	text_section_lang_hist: autoDraw = True
+392.9501 	EXP 	text_lang_hist_question: autoDraw = True
+392.9501 	EXP 	text_lang_hist_lang: autoDraw = True
+392.9501 	EXP 	text_lang_hist_qnum: autoDraw = True
+392.9501 	EXP 	rating_lang_hist: autoDraw = True
+393.0842 	DATA 	Mouse:  Left button up, pos=(624,126)
+405.1053 	DATA 	Mouse: Left button down, pos=(354,275)
+405.2715 	DATA 	Mouse:  Left button up, pos=(354,275)
+406.2038 	DATA 	Mouse: Left button down, pos=(586,144)
+406.2076 	DATA 	RatingScale rating_lang_hist: (mouse response) rating=0
+406.2076 	DATA 	RatingScale rating_lang_hist: rating RT=13.278
+406.2077 	DATA 	RatingScale rating_lang_hist: history=[(None, 0.0), (0, 12.179), (0, 13.278)]
+406.2203 	EXP 	New trial (rep=0, index=7): OrderedDict([('section', 'Language history'), ('questionNum', '4b'), ('questionText', 'How many years have you spent in a country/region where the following languages are spoken?'), ('language', 'Spanish')])
+406.2321 	EXP 	RatingScale rating_lang_hist: reset()
+406.2526 	EXP 	text_section_lang_hist: autoDraw = False
+406.2526 	EXP 	text_lang_hist_question: autoDraw = False
+406.2526 	EXP 	text_lang_hist_lang: autoDraw = False
+406.2526 	EXP 	text_lang_hist_qnum: autoDraw = False
+406.2526 	EXP 	rating_lang_hist: autoDraw = False
+406.2526 	EXP 	text_section_lang_hist: text = 'Language history'
+406.2526 	EXP 	text_lang_hist_question: text = 'How many years have you spent in a country/region where the following languages are spoken?'
+406.2526 	EXP 	text_lang_hist_lang: text = 'Spanish'
+406.2526 	EXP 	text_lang_hist_qnum: text = '4b'
+406.2526 	EXP 	text_section_lang_hist: autoDraw = True
+406.2526 	EXP 	text_lang_hist_question: autoDraw = True
+406.2526 	EXP 	text_lang_hist_lang: autoDraw = True
+406.2526 	EXP 	text_lang_hist_qnum: autoDraw = True
+406.2526 	EXP 	rating_lang_hist: autoDraw = True
+406.3716 	DATA 	Mouse:  Left button up, pos=(586,144)
+418.7413 	DATA 	Mouse: Left button down, pos=(928,277)
+418.9095 	DATA 	Mouse:  Left button up, pos=(928,277)
+420.0202 	DATA 	Mouse: Left button down, pos=(686,137)
+420.0236 	DATA 	RatingScale rating_lang_hist: (mouse response) rating=20
+420.0236 	DATA 	RatingScale rating_lang_hist: rating RT=13.790
+420.0236 	DATA 	RatingScale rating_lang_hist: history=[(None, 0.0), (20, 12.511), (20, 13.79)]
+420.0376 	EXP 	New trial (rep=0, index=8): OrderedDict([('section', 'Language history'), ('questionNum', '5a'), ('questionText', 'How many years have you spent in a family where the following languages are spoken?'), ('language', 'English')])
+420.0622 	EXP 	RatingScale rating_lang_hist: reset()
+420.0857 	EXP 	text_section_lang_hist: autoDraw = False
+420.0857 	EXP 	text_lang_hist_question: autoDraw = False
+420.0857 	EXP 	text_lang_hist_lang: autoDraw = False
+420.0857 	EXP 	text_lang_hist_qnum: autoDraw = False
+420.0857 	EXP 	rating_lang_hist: autoDraw = False
+420.0857 	EXP 	text_section_lang_hist: text = 'Language history'
+420.0857 	EXP 	text_lang_hist_question: text = 'How many years have you spent in a family where the following languages are spoken?'
+420.0857 	EXP 	text_lang_hist_lang: text = 'English'
+420.0857 	EXP 	text_lang_hist_qnum: text = '5a'
+420.0857 	EXP 	text_section_lang_hist: autoDraw = True
+420.0857 	EXP 	text_lang_hist_question: autoDraw = True
+420.0857 	EXP 	text_lang_hist_lang: autoDraw = True
+420.0857 	EXP 	text_lang_hist_qnum: autoDraw = True
+420.0857 	EXP 	rating_lang_hist: autoDraw = True
+420.1907 	DATA 	Mouse:  Left button up, pos=(686,137)
+425.9568 	DATA 	Mouse: Left button down, pos=(351,282)
+426.1096 	DATA 	Mouse:  Left button up, pos=(351,282)
+429.3823 	DATA 	Mouse: Left button down, pos=(692,140)
+429.3856 	DATA 	RatingScale rating_lang_hist: (mouse response) rating=0
+429.3856 	DATA 	RatingScale rating_lang_hist: rating RT=9.322
+429.3856 	DATA 	RatingScale rating_lang_hist: history=[(None, 0.0), (0, 5.896), (0, 9.322)]
+429.3983 	EXP 	New trial (rep=0, index=9): OrderedDict([('section', 'Language history'), ('questionNum', '5b'), ('questionText', 'How many years have you spent in a family where the following languages are spoken?'), ('language', 'Spanish')])
+429.4092 	EXP 	RatingScale rating_lang_hist: reset()
+429.4303 	EXP 	text_section_lang_hist: autoDraw = False
+429.4303 	EXP 	text_lang_hist_question: autoDraw = False
+429.4303 	EXP 	text_lang_hist_lang: autoDraw = False
+429.4303 	EXP 	text_lang_hist_qnum: autoDraw = False
+429.4303 	EXP 	rating_lang_hist: autoDraw = False
+429.4303 	EXP 	text_section_lang_hist: text = 'Language history'
+429.4303 	EXP 	text_lang_hist_question: text = 'How many years have you spent in a family where the following languages are spoken?'
+429.4303 	EXP 	text_lang_hist_lang: text = 'Spanish'
+429.4303 	EXP 	text_lang_hist_qnum: text = '5b'
+429.4303 	EXP 	text_section_lang_hist: autoDraw = True
+429.4303 	EXP 	text_lang_hist_question: autoDraw = True
+429.4303 	EXP 	text_lang_hist_lang: autoDraw = True
+429.4303 	EXP 	text_lang_hist_qnum: autoDraw = True
+429.4303 	EXP 	rating_lang_hist: autoDraw = True
+429.5485 	DATA 	Mouse:  Left button up, pos=(692,140)
+432.7573 	DATA 	Mouse: Left button down, pos=(930,280)
+432.9238 	DATA 	Mouse:  Left button up, pos=(930,280)
+477.8705 	DATA 	Mouse: Left button down, pos=(353,276)
+478.0698 	DATA 	Mouse:  Left button up, pos=(353,276)
+496.3075 	DATA 	Mouse: Left button down, pos=(655,139)
+496.3108 	DATA 	RatingScale rating_lang_hist: (mouse response) rating=0
+496.3108 	DATA 	RatingScale rating_lang_hist: rating RT=66.900
+496.3108 	DATA 	RatingScale rating_lang_hist: history=[(None, 0.0), (20, 3.349), (0, 48.46), (0, 66.9)]
+496.3247 	EXP 	New trial (rep=0, index=10): OrderedDict([('section', 'Language history'), ('questionNum', '6a'), ('questionText', 'How many years have you spent in a work environment where the following languages are spoken?'), ('language', 'English')])
+496.3488 	EXP 	RatingScale rating_lang_hist: reset()
+496.3731 	EXP 	text_section_lang_hist: autoDraw = False
+496.3731 	EXP 	text_lang_hist_question: autoDraw = False
+496.3731 	EXP 	text_lang_hist_lang: autoDraw = False
+496.3731 	EXP 	text_lang_hist_qnum: autoDraw = False
+496.3731 	EXP 	rating_lang_hist: autoDraw = False
+496.3731 	EXP 	text_section_lang_hist: text = 'Language history'
+496.3731 	EXP 	text_lang_hist_question: text = 'How many years have you spent in a work environment where the following languages are spoken?'
+496.3731 	EXP 	text_lang_hist_lang: text = 'English'
+496.3731 	EXP 	text_lang_hist_qnum: text = '6a'
+496.3731 	EXP 	text_section_lang_hist: autoDraw = True
+496.3731 	EXP 	text_lang_hist_question: autoDraw = True
+496.3731 	EXP 	text_lang_hist_lang: autoDraw = True
+496.3731 	EXP 	text_lang_hist_qnum: autoDraw = True
+496.3731 	EXP 	rating_lang_hist: autoDraw = True
+496.4767 	DATA 	Mouse:  Left button up, pos=(655,139)
+503.6592 	DATA 	Mouse: Left button down, pos=(613,274)
+503.7734 	DATA 	Mouse:  Left button up, pos=(613,274)
+504.3405 	DATA 	Keypress: return
+504.3437 	DATA 	RatingScale rating_lang_hist: (key response) rating=9
+504.3440 	DATA 	RatingScale rating_lang_hist: rating RT=7.994
+504.3440 	DATA 	RatingScale rating_lang_hist: history=[(None, 0.0), (9, 7.31), (9, 7.994)]
+504.3554 	EXP 	New trial (rep=0, index=11): OrderedDict([('section', 'Language history'), ('questionNum', '6b'), ('questionText', 'How many years have you spent in a work environment where the following languages are spoken?'), ('language', 'Spanish')])
+504.3679 	EXP 	RatingScale rating_lang_hist: reset()
+504.3878 	EXP 	text_section_lang_hist: autoDraw = False
+504.3878 	EXP 	text_lang_hist_question: autoDraw = False
+504.3878 	EXP 	text_lang_hist_lang: autoDraw = False
+504.3878 	EXP 	text_lang_hist_qnum: autoDraw = False
+504.3878 	EXP 	rating_lang_hist: autoDraw = False
+504.3878 	EXP 	text_section_lang_hist: text = 'Language history'
+504.3878 	EXP 	text_lang_hist_question: text = 'How many years have you spent in a work environment where the following languages are spoken?'
+504.3878 	EXP 	text_lang_hist_lang: text = 'Spanish'
+504.3878 	EXP 	text_lang_hist_qnum: text = '6b'
+504.3878 	EXP 	text_section_lang_hist: autoDraw = True
+504.3878 	EXP 	text_lang_hist_question: autoDraw = True
+504.3878 	EXP 	text_lang_hist_lang: autoDraw = True
+504.3878 	EXP 	text_lang_hist_qnum: autoDraw = True
+504.3878 	EXP 	rating_lang_hist: autoDraw = True
+568.7203 	DATA 	Mouse: wheel shift=(0,0), pos=(613,273)
+569.2371 	DATA 	Mouse: wheel shift=(0,0), pos=(613,273)
+569.3015 	DATA 	Mouse: Left button down, pos=(613,273)
+569.4181 	DATA 	Mouse:  Left button up, pos=(613,273)
+572.2533 	DATA 	Keypress: backslash
+573.4614 	DATA 	Keypress: return
+573.4649 	DATA 	RatingScale rating_lang_hist: (key response) rating=9
+573.4652 	DATA 	RatingScale rating_lang_hist: rating RT=69.096
+573.4652 	DATA 	RatingScale rating_lang_hist: history=[(None, 0.0), (9, 64.935), (9, 69.096)]
+573.4915 	EXP 	text_section_lang_hist: autoDraw = False
+573.4915 	EXP 	text_lang_hist_question: autoDraw = False
+573.4915 	EXP 	text_lang_hist_lang: autoDraw = False
+573.4915 	EXP 	text_lang_hist_qnum: autoDraw = False
+573.4915 	EXP 	rating_lang_hist: autoDraw = False
+573.4915 	EXP 	text_lang_use_ins: autoDraw = True
+589.8231 	DATA 	Keypress: space
+589.8310 	EXP 	Imported condition_file/en_trials.csv as conditions, 15 conditions, 4 params
+589.8314 	EXP 	Created sequence: sequential, trialTypes=15, nReps=1, seed=None
+589.8318 	EXP 	New trial (rep=0, index=0): OrderedDict([('section', 'Language use'), ('questionNum', '7a'), ('questionText', 'In an average week, what percentage of the time do you use the following languages with friends?'), ('language', 'English')])
+589.8574 	EXP 	RatingScale rating_lang_use: reset()
+589.8860 	EXP 	text_lang_use_ins: autoDraw = False
+589.8860 	EXP 	text_section_lang_use: text = 'Language use'
+589.8860 	EXP 	text_lang_use_question: text = 'In an average week, what percentage of the time do you use the following languages with friends?'
+589.8860 	EXP 	text_lang_use_lang: text = 'English'
+589.8860 	EXP 	text_lang_use_qnum: text = '7a'
+589.8860 	EXP 	text_section_lang_use: autoDraw = True
+589.8860 	EXP 	text_lang_use_question: autoDraw = True
+589.8860 	EXP 	text_lang_use_lang: autoDraw = True
+589.8860 	EXP 	text_lang_use_qnum: autoDraw = True
+589.8860 	EXP 	rating_lang_use: autoDraw = True
+597.8885 	DATA 	Mouse: wheel shift=(0,0), pos=(613,270)
+598.0673 	DATA 	Mouse: wheel shift=(0,0), pos=(613,270)
+598.0720 	DATA 	Mouse: wheel shift=(0,0), pos=(613,270)
+598.0834 	DATA 	Mouse: wheel shift=(0,0), pos=(613,270)
+598.0875 	DATA 	Mouse: wheel shift=(0,-1), pos=(613,270)
+598.1010 	DATA 	Mouse: wheel shift=(0,0), pos=(613,270)
+598.1052 	DATA 	Mouse: wheel shift=(0,0), pos=(613,270)
+598.1169 	DATA 	Mouse: wheel shift=(0,0), pos=(613,270)
+598.1211 	DATA 	Mouse: wheel shift=(0,0), pos=(613,270)
+598.1340 	DATA 	Mouse: wheel shift=(0,0), pos=(613,270)
+598.1381 	DATA 	Mouse: wheel shift=(0,0), pos=(613,270)
+598.1502 	DATA 	Mouse: wheel shift=(-1,0), pos=(613,270)
+598.1544 	DATA 	Mouse: wheel shift=(0,0), pos=(613,270)
+598.1675 	DATA 	Mouse: wheel shift=(0,0), pos=(613,270)
+598.1679 	DATA 	Mouse: wheel shift=(0,0), pos=(613,270)
+598.1836 	DATA 	Mouse: wheel shift=(0,0), pos=(613,270)
+598.1840 	DATA 	Mouse: wheel shift=(0,0), pos=(613,270)
+598.2004 	DATA 	Mouse: wheel shift=(-1,0), pos=(613,270)
+598.2165 	DATA 	Mouse: wheel shift=(0,0), pos=(613,270)
+598.2335 	DATA 	Mouse: wheel shift=(0,0), pos=(613,270)
+598.2399 	DATA 	Mouse: wheel shift=(0,0), pos=(613,270)
+598.2505 	DATA 	Mouse: wheel shift=(0,0), pos=(613,270)
+598.2561 	DATA 	Mouse: wheel shift=(-1,0), pos=(613,270)
+598.2672 	DATA 	Mouse: wheel shift=(0,0), pos=(613,270)
+598.2717 	DATA 	Mouse: wheel shift=(0,0), pos=(613,270)
+598.2835 	DATA 	Mouse: wheel shift=(0,0), pos=(613,270)
+598.2876 	DATA 	Mouse: wheel shift=(0,0), pos=(613,270)
+598.2996 	DATA 	Mouse: wheel shift=(0,0), pos=(613,270)
+598.3038 	DATA 	Mouse: wheel shift=(0,0), pos=(613,270)
+598.3171 	DATA 	Mouse: wheel shift=(0,0), pos=(613,270)
+598.3212 	DATA 	Mouse: wheel shift=(-1,0), pos=(613,270)
+598.3329 	DATA 	Mouse: wheel shift=(0,0), pos=(613,270)
+598.3371 	DATA 	Mouse: wheel shift=(0,0), pos=(613,270)
+598.3504 	DATA 	Mouse: wheel shift=(0,0), pos=(613,270)
+598.3546 	DATA 	Mouse: wheel shift=(0,0), pos=(613,270)
+598.3671 	DATA 	Mouse: wheel shift=(0,0), pos=(613,270)
+598.3675 	DATA 	Mouse: wheel shift=(0,0), pos=(613,270)
+598.3835 	DATA 	Mouse: wheel shift=(0,0), pos=(613,270)
+598.3839 	DATA 	Mouse: wheel shift=(-1,0), pos=(613,270)
+598.4000 	DATA 	Mouse: wheel shift=(0,1), pos=(613,270)
+598.4162 	DATA 	Mouse: wheel shift=(0,0), pos=(613,270)
+598.4334 	DATA 	Mouse: wheel shift=(0,0), pos=(613,270)
+598.4499 	DATA 	Mouse: wheel shift=(0,0), pos=(613,270)
+598.4665 	DATA 	Mouse: wheel shift=(0,0), pos=(613,270)
+598.6662 	DATA 	Mouse: wheel shift=(0,0), pos=(613,270)
+598.8991 	DATA 	Mouse: wheel shift=(0,0), pos=(613,270)
+598.9035 	DATA 	Mouse: wheel shift=(0,0), pos=(613,270)
+598.9156 	DATA 	Mouse: wheel shift=(0,0), pos=(613,270)
+598.9315 	DATA 	Mouse: wheel shift=(0,0), pos=(613,270)
+598.9356 	DATA 	Mouse: wheel shift=(0,0), pos=(613,270)
+598.9488 	DATA 	Mouse: wheel shift=(0,0), pos=(613,270)
+598.9532 	DATA 	Mouse: wheel shift=(0,0), pos=(613,270)
+598.9648 	DATA 	Mouse: wheel shift=(0,0), pos=(613,270)
+598.9690 	DATA 	Mouse: wheel shift=(0,0), pos=(613,270)
+598.9822 	DATA 	Mouse: wheel shift=(0,0), pos=(613,270)
+598.9864 	DATA 	Mouse: wheel shift=(0,0), pos=(613,270)
+598.9981 	DATA 	Mouse: wheel shift=(0,0), pos=(613,270)
+599.0022 	DATA 	Mouse: wheel shift=(0,0), pos=(613,270)
+599.0152 	DATA 	Mouse: wheel shift=(0,0), pos=(613,270)
+599.0319 	DATA 	Mouse: wheel shift=(0,0), pos=(613,270)
+599.0820 	DATA 	Mouse: wheel shift=(0,0), pos=(613,270)
+599.0984 	DATA 	Mouse: wheel shift=(0,0), pos=(613,270)
+599.1040 	DATA 	Mouse: wheel shift=(0,0), pos=(613,270)
+599.1152 	DATA 	Mouse: wheel shift=(0,0), pos=(613,270)
+599.1204 	DATA 	Mouse: wheel shift=(0,0), pos=(613,270)
+599.1316 	DATA 	Mouse: wheel shift=(0,0), pos=(613,270)
+599.1358 	DATA 	Mouse: wheel shift=(0,1), pos=(613,270)
+599.1476 	DATA 	Mouse: wheel shift=(0,0), pos=(613,270)
+599.1518 	DATA 	Mouse: wheel shift=(0,0), pos=(613,270)
+599.1651 	DATA 	Mouse: wheel shift=(0,0), pos=(613,270)
+599.1693 	DATA 	Mouse: wheel shift=(0,0), pos=(613,270)
+599.1809 	DATA 	Mouse: wheel shift=(0,0), pos=(613,270)
+599.1854 	DATA 	Mouse: wheel shift=(0,0), pos=(613,270)
+599.1981 	DATA 	Mouse: wheel shift=(0,0), pos=(613,270)
+608.3140 	DATA 	Mouse: Left button down, pos=(609,361)
+608.4266 	DATA 	Mouse:  Left button up, pos=(609,361)
+609.6743 	DATA 	Keypress: return
+609.6787 	DATA 	RatingScale rating_lang_use: (key response) rating=50
+609.6789 	DATA 	RatingScale rating_lang_use: rating RT=19.821
+609.6790 	DATA 	RatingScale rating_lang_use: history=[(None, 0.0), ('50', 18.456), ('50', 19.82)]
+609.6910 	EXP 	New trial (rep=0, index=1): OrderedDict([('section', 'Language use'), ('questionNum', '7b'), ('questionText', 'In an average week, what percentage of the time do you use the following languages with friends?'), ('language', 'Spanish')])
+609.7037 	EXP 	RatingScale rating_lang_use: reset()
+609.7227 	EXP 	text_section_lang_use: autoDraw = False
+609.7227 	EXP 	text_lang_use_question: autoDraw = False
+609.7227 	EXP 	text_lang_use_lang: autoDraw = False
+609.7227 	EXP 	text_lang_use_qnum: autoDraw = False
+609.7227 	EXP 	rating_lang_use: autoDraw = False
+609.7227 	EXP 	text_section_lang_use: text = 'Language use'
+609.7227 	EXP 	text_lang_use_question: text = 'In an average week, what percentage of the time do you use the following languages with friends?'
+609.7227 	EXP 	text_lang_use_lang: text = 'Spanish'
+609.7227 	EXP 	text_lang_use_qnum: text = '7b'
+609.7227 	EXP 	text_section_lang_use: autoDraw = True
+609.7227 	EXP 	text_lang_use_question: autoDraw = True
+609.7227 	EXP 	text_lang_use_lang: autoDraw = True
+609.7227 	EXP 	text_lang_use_qnum: autoDraw = True
+609.7227 	EXP 	rating_lang_use: autoDraw = True
+615.8919 	DATA 	Mouse: Left button down, pos=(610,364)
+615.9761 	DATA 	Mouse:  Left button up, pos=(610,364)
+617.2451 	DATA 	Keypress: return
+617.2454 	DATA 	RatingScale rating_lang_use: (key response) rating=50
+617.2456 	DATA 	RatingScale rating_lang_use: rating RT=7.541
+617.2456 	DATA 	RatingScale rating_lang_use: history=[(None, 0.0), ('50', 6.191), ('50', 7.541)]
+617.2560 	EXP 	New trial (rep=0, index=2): OrderedDict([('section', 'Language use'), ('questionNum', '7c'), ('questionText', 'In an average week, what percentage of the time do you use the following languages with friends?'), ('language', 'Other languages')])
+617.2692 	EXP 	RatingScale rating_lang_use: reset()
+617.2882 	EXP 	text_section_lang_use: autoDraw = False
+617.2882 	EXP 	text_lang_use_question: autoDraw = False
+617.2882 	EXP 	text_lang_use_lang: autoDraw = False
+617.2882 	EXP 	text_lang_use_qnum: autoDraw = False
+617.2882 	EXP 	rating_lang_use: autoDraw = False
+617.2882 	EXP 	text_section_lang_use: text = 'Language use'
+617.2882 	EXP 	text_lang_use_question: text = 'In an average week, what percentage of the time do you use the following languages with friends?'
+617.2882 	EXP 	text_lang_use_lang: text = 'Other languages'
+617.2882 	EXP 	text_lang_use_qnum: text = '7c'
+617.2882 	EXP 	text_section_lang_use: autoDraw = True
+617.2882 	EXP 	text_lang_use_question: autoDraw = True
+617.2882 	EXP 	text_lang_use_lang: autoDraw = True
+617.2882 	EXP 	text_lang_use_qnum: autoDraw = True
+617.2882 	EXP 	rating_lang_use: autoDraw = True
+633.6006 	DATA 	Mouse: Left button down, pos=(608,358)
+633.7172 	DATA 	Mouse:  Left button up, pos=(608,358)
+634.0840 	DATA 	Keypress: return
+634.0884 	DATA 	RatingScale rating_lang_use: (key response) rating=50
+634.0886 	DATA 	RatingScale rating_lang_use: rating RT=16.819
+634.0887 	DATA 	RatingScale rating_lang_use: history=[(None, 0.0), ('50', 16.335), ('50', 16.818)]
+634.0999 	EXP 	New trial (rep=0, index=3): OrderedDict([('section', 'Language use'), ('questionNum', '8a'), ('questionText', 'In an average week, what percentage of the time do you use the following languages with family?'), ('language', 'English')])
+634.1252 	EXP 	RatingScale rating_lang_use: reset()
+634.1482 	EXP 	text_section_lang_use: autoDraw = False
+634.1482 	EXP 	text_lang_use_question: autoDraw = False
+634.1482 	EXP 	text_lang_use_lang: autoDraw = False
+634.1482 	EXP 	text_lang_use_qnum: autoDraw = False
+634.1482 	EXP 	rating_lang_use: autoDraw = False
+634.1482 	EXP 	text_section_lang_use: text = 'Language use'
+634.1482 	EXP 	text_lang_use_question: text = 'In an average week, what percentage of the time do you use the following languages with family?'
+634.1482 	EXP 	text_lang_use_lang: text = 'English'
+634.1482 	EXP 	text_lang_use_qnum: text = '8a'
+634.1482 	EXP 	text_section_lang_use: autoDraw = True
+634.1482 	EXP 	text_lang_use_question: autoDraw = True
+634.1482 	EXP 	text_lang_use_lang: autoDraw = True
+634.1482 	EXP 	text_lang_use_qnum: autoDraw = True
+634.1482 	EXP 	rating_lang_use: autoDraw = True
+651.9616 	DATA 	Mouse: Left button down, pos=(606,359)
+652.0966 	DATA 	Mouse:  Left button up, pos=(606,359)
+653.1946 	DATA 	Keypress: return
+653.2080 	DATA 	RatingScale rating_lang_use: (key response) rating=50
+653.2082 	DATA 	RatingScale rating_lang_use: rating RT=19.082
+653.2082 	DATA 	RatingScale rating_lang_use: history=[(None, 0.0), ('50', 17.836), ('50', 19.082)]
+653.2210 	EXP 	New trial (rep=0, index=4): OrderedDict([('section', 'Language use'), ('questionNum', '8b'), ('questionText', 'In an average week, what percentage of the time do you use the following languages with family?'), ('language', 'Spanish')])
+653.2324 	EXP 	RatingScale rating_lang_use: reset()
+653.2535 	EXP 	text_section_lang_use: autoDraw = False
+653.2535 	EXP 	text_lang_use_question: autoDraw = False
+653.2535 	EXP 	text_lang_use_lang: autoDraw = False
+653.2535 	EXP 	text_lang_use_qnum: autoDraw = False
+653.2535 	EXP 	rating_lang_use: autoDraw = False
+653.2535 	EXP 	text_section_lang_use: text = 'Language use'
+653.2535 	EXP 	text_lang_use_question: text = 'In an average week, what percentage of the time do you use the following languages with family?'
+653.2535 	EXP 	text_lang_use_lang: text = 'Spanish'
+653.2535 	EXP 	text_lang_use_qnum: text = '8b'
+653.2535 	EXP 	text_section_lang_use: autoDraw = True
+653.2535 	EXP 	text_lang_use_question: autoDraw = True
+653.2535 	EXP 	text_lang_use_lang: autoDraw = True
+653.2535 	EXP 	text_lang_use_qnum: autoDraw = True
+653.2535 	EXP 	rating_lang_use: autoDraw = True
+656.1679 	DATA 	Mouse: wheel shift=(0,0), pos=(536,361)
+656.8624 	DATA 	Mouse: wheel shift=(0,0), pos=(536,361)
+656.8962 	DATA 	Mouse: Left button down, pos=(536,361)
+657.0113 	DATA 	Mouse:  Left button up, pos=(536,361)
+659.6454 	DATA 	Keypress: return
+659.6456 	DATA 	RatingScale rating_lang_use: (key response) rating=40
+659.6458 	DATA 	RatingScale rating_lang_use: rating RT=6.413
+659.6459 	DATA 	RatingScale rating_lang_use: history=[(None, 0.0), ('40', 3.667), ('40', 6.412)]
+659.6564 	EXP 	New trial (rep=0, index=5): OrderedDict([('section', 'Language use'), ('questionNum', '8c'), ('questionText', 'In an average week, what percentage of the time do you use the following languages with family?'), ('language', 'Other languages')])
+659.6685 	EXP 	RatingScale rating_lang_use: reset()
+659.6882 	EXP 	text_section_lang_use: autoDraw = False
+659.6882 	EXP 	text_lang_use_question: autoDraw = False
+659.6882 	EXP 	text_lang_use_lang: autoDraw = False
+659.6882 	EXP 	text_lang_use_qnum: autoDraw = False
+659.6882 	EXP 	rating_lang_use: autoDraw = False
+659.6882 	EXP 	text_section_lang_use: text = 'Language use'
+659.6882 	EXP 	text_lang_use_question: text = 'In an average week, what percentage of the time do you use the following languages with family?'
+659.6882 	EXP 	text_lang_use_lang: text = 'Other languages'
+659.6882 	EXP 	text_lang_use_qnum: text = '8c'
+659.6882 	EXP 	text_section_lang_use: autoDraw = True
+659.6882 	EXP 	text_lang_use_question: autoDraw = True
+659.6882 	EXP 	text_lang_use_lang: autoDraw = True
+659.6882 	EXP 	text_lang_use_qnum: autoDraw = True
+659.6882 	EXP 	rating_lang_use: autoDraw = True
+672.9247 	DATA 	Mouse: Left button down, pos=(737,356)
+673.0280 	DATA 	Mouse:  Left button up, pos=(737,356)
+685.1974 	DATA 	Keypress: return
+685.2018 	DATA 	RatingScale rating_lang_use: (key response) rating=70
+685.2020 	DATA 	RatingScale rating_lang_use: rating RT=25.533
+685.2020 	DATA 	RatingScale rating_lang_use: history=[(None, 0.0), ('70', 13.259), ('70', 25.532)]
+685.2127 	EXP 	New trial (rep=0, index=6): OrderedDict([('section', 'Language use'), ('questionNum', '9a'), ('questionText', 'In an average week, what percentage of the time do you use the following languages at school/work?'), ('language', 'English')])
+685.2398 	EXP 	RatingScale rating_lang_use: reset()
+685.2609 	EXP 	text_section_lang_use: autoDraw = False
+685.2609 	EXP 	text_lang_use_question: autoDraw = False
+685.2609 	EXP 	text_lang_use_lang: autoDraw = False
+685.2609 	EXP 	text_lang_use_qnum: autoDraw = False
+685.2609 	EXP 	rating_lang_use: autoDraw = False
+685.2609 	EXP 	text_section_lang_use: text = 'Language use'
+685.2609 	EXP 	text_lang_use_question: text = 'In an average week, what percentage of the time do you use the following languages at school/work?'
+685.2609 	EXP 	text_lang_use_lang: text = 'English'
+685.2609 	EXP 	text_lang_use_qnum: text = '9a'
+685.2609 	EXP 	text_section_lang_use: autoDraw = True
+685.2609 	EXP 	text_lang_use_question: autoDraw = True
+685.2609 	EXP 	text_lang_use_lang: autoDraw = True
+685.2609 	EXP 	text_lang_use_qnum: autoDraw = True
+685.2609 	EXP 	rating_lang_use: autoDraw = True
+715.7071 	DATA 	Mouse: Left button down, pos=(675,353)
+715.8448 	DATA 	Mouse:  Left button up, pos=(675,353)
+720.9676 	DATA 	Keypress: return
+720.9821 	DATA 	RatingScale rating_lang_use: (key response) rating=60
+720.9823 	DATA 	RatingScale rating_lang_use: rating RT=35.742
+720.9823 	DATA 	RatingScale rating_lang_use: history=[(None, 0.0), ('60', 30.47), ('60', 35.741)]
+720.9958 	EXP 	New trial (rep=0, index=7): OrderedDict([('section', 'Language use'), ('questionNum', '9b'), ('questionText', 'In an average week, what percentage of the time do you use the following languages at school/work?'), ('language', 'Spanish')])
+721.0083 	EXP 	RatingScale rating_lang_use: reset()
+721.0265 	EXP 	text_section_lang_use: autoDraw = False
+721.0265 	EXP 	text_lang_use_question: autoDraw = False
+721.0265 	EXP 	text_lang_use_lang: autoDraw = False
+721.0265 	EXP 	text_lang_use_qnum: autoDraw = False
+721.0265 	EXP 	rating_lang_use: autoDraw = False
+721.0265 	EXP 	text_section_lang_use: text = 'Language use'
+721.0265 	EXP 	text_lang_use_question: text = 'In an average week, what percentage of the time do you use the following languages at school/work?'
+721.0265 	EXP 	text_lang_use_lang: text = 'Spanish'
+721.0265 	EXP 	text_lang_use_qnum: text = '9b'
+721.0265 	EXP 	text_section_lang_use: autoDraw = True
+721.0265 	EXP 	text_lang_use_question: autoDraw = True
+721.0265 	EXP 	text_lang_use_lang: autoDraw = True
+721.0265 	EXP 	text_lang_use_qnum: autoDraw = True
+721.0265 	EXP 	rating_lang_use: autoDraw = True
+725.1017 	DATA 	Mouse: Left button down, pos=(731,355)
+725.2507 	DATA 	Mouse:  Left button up, pos=(731,355)
+726.1078 	DATA 	Keypress: return
+726.1080 	DATA 	RatingScale rating_lang_use: (key response) rating=70
+726.1083 	DATA 	RatingScale rating_lang_use: rating RT=5.098
+726.1083 	DATA 	RatingScale rating_lang_use: history=[(None, 0.0), ('70', 4.096), ('70', 5.098)]
+726.1334 	EXP 	New trial (rep=0, index=8): OrderedDict([('section', 'Language use'), ('questionNum', '9c'), ('questionText', 'In an average week, what percentage of the time do you use the following languages at school/work?'), ('language', 'Other languages')])
+726.1473 	EXP 	RatingScale rating_lang_use: reset()
+726.1649 	EXP 	text_section_lang_use: autoDraw = False
+726.1649 	EXP 	text_lang_use_question: autoDraw = False
+726.1649 	EXP 	text_lang_use_lang: autoDraw = False
+726.1649 	EXP 	text_lang_use_qnum: autoDraw = False
+726.1649 	EXP 	rating_lang_use: autoDraw = False
+726.1649 	EXP 	text_section_lang_use: text = 'Language use'
+726.1649 	EXP 	text_lang_use_question: text = 'In an average week, what percentage of the time do you use the following languages at school/work?'
+726.1649 	EXP 	text_lang_use_lang: text = 'Other languages'
+726.1649 	EXP 	text_lang_use_qnum: text = '9c'
+726.1649 	EXP 	text_section_lang_use: autoDraw = True
+726.1649 	EXP 	text_lang_use_question: autoDraw = True
+726.1649 	EXP 	text_lang_use_lang: autoDraw = True
+726.1649 	EXP 	text_lang_use_qnum: autoDraw = True
+726.1649 	EXP 	rating_lang_use: autoDraw = True
+729.7284 	DATA 	Mouse: Left button down, pos=(668,354)
+729.8463 	DATA 	Mouse:  Left button up, pos=(668,354)
+734.2027 	DATA 	Keypress: return
+734.2030 	DATA 	RatingScale rating_lang_use: (key response) rating=60
+734.2032 	DATA 	RatingScale rating_lang_use: rating RT=8.055
+734.2032 	DATA 	RatingScale rating_lang_use: history=[(None, 0.0), ('60', 3.581), ('60', 8.055)]
+734.2141 	EXP 	New trial (rep=0, index=9): OrderedDict([('section', 'Language use'), ('questionNum', '10a'), ('questionText', 'When you talk to yourself, how often do you talk to yourself in the following languages?'), ('language', 'English')])
+734.2398 	EXP 	RatingScale rating_lang_use: reset()
+734.2626 	EXP 	text_section_lang_use: autoDraw = False
+734.2626 	EXP 	text_lang_use_question: autoDraw = False
+734.2626 	EXP 	text_lang_use_lang: autoDraw = False
+734.2626 	EXP 	text_lang_use_qnum: autoDraw = False
+734.2626 	EXP 	rating_lang_use: autoDraw = False
+734.2626 	EXP 	text_section_lang_use: text = 'Language use'
+734.2626 	EXP 	text_lang_use_question: text = 'When you talk to yourself, how often do you talk to yourself in the following languages?'
+734.2626 	EXP 	text_lang_use_lang: text = 'English'
+734.2626 	EXP 	text_lang_use_qnum: text = '10a'
+734.2626 	EXP 	text_section_lang_use: autoDraw = True
+734.2626 	EXP 	text_lang_use_question: autoDraw = True
+734.2626 	EXP 	text_lang_use_lang: autoDraw = True
+734.2626 	EXP 	text_lang_use_qnum: autoDraw = True
+734.2626 	EXP 	rating_lang_use: autoDraw = True
+764.4813 	DATA 	Mouse: Left button down, pos=(800,359)
+764.6419 	DATA 	Mouse:  Left button up, pos=(800,359)
+774.5361 	DATA 	Keypress: return
+774.5405 	DATA 	RatingScale rating_lang_use: (key response) rating=80
+774.5407 	DATA 	RatingScale rating_lang_use: rating RT=40.300
+774.5407 	DATA 	RatingScale rating_lang_use: history=[(None, 0.0), ('80', 30.254), ('80', 40.299)]
+774.5518 	EXP 	New trial (rep=0, index=10): OrderedDict([('section', 'Language use'), ('questionNum', '10b'), ('questionText', 'When you talk to yourself, how often do you talk to yourself in the following languages?'), ('language', 'Spanish')])
+774.5629 	EXP 	RatingScale rating_lang_use: reset()
+774.5843 	EXP 	text_section_lang_use: autoDraw = False
+774.5843 	EXP 	text_lang_use_question: autoDraw = False
+774.5843 	EXP 	text_lang_use_lang: autoDraw = False
+774.5843 	EXP 	text_lang_use_qnum: autoDraw = False
+774.5843 	EXP 	rating_lang_use: autoDraw = False
+774.5843 	EXP 	text_section_lang_use: text = 'Language use'
+774.5843 	EXP 	text_lang_use_question: text = 'When you talk to yourself, how often do you talk to yourself in the following languages?'
+774.5843 	EXP 	text_lang_use_lang: text = 'Spanish'
+774.5843 	EXP 	text_lang_use_qnum: text = '10b'
+774.5843 	EXP 	text_section_lang_use: autoDraw = True
+774.5843 	EXP 	text_lang_use_question: autoDraw = True
+774.5843 	EXP 	text_lang_use_lang: autoDraw = True
+774.5843 	EXP 	text_lang_use_qnum: autoDraw = True
+774.5843 	EXP 	rating_lang_use: autoDraw = True
+796.4005 	DATA 	Mouse: Left button down, pos=(612,354)
+796.4832 	DATA 	Mouse:  Left button up, pos=(612,354)
+797.8530 	DATA 	Keypress: return
+797.8532 	DATA 	RatingScale rating_lang_use: (key response) rating=50
+797.8534 	DATA 	RatingScale rating_lang_use: rating RT=23.290
+797.8534 	DATA 	RatingScale rating_lang_use: history=[(None, 0.0), ('50', 21.841), ('50', 23.289)]
+797.8641 	EXP 	New trial (rep=0, index=11): OrderedDict([('section', 'Language use'), ('questionNum', '10c'), ('questionText', 'When you talk to yourself, how often do you talk to yourself in the following languages?'), ('language', 'Other languages')])
+797.8767 	EXP 	RatingScale rating_lang_use: reset()
+797.8954 	EXP 	text_section_lang_use: autoDraw = False
+797.8954 	EXP 	text_lang_use_question: autoDraw = False
+797.8954 	EXP 	text_lang_use_lang: autoDraw = False
+797.8954 	EXP 	text_lang_use_qnum: autoDraw = False
+797.8954 	EXP 	rating_lang_use: autoDraw = False
+797.8954 	EXP 	text_section_lang_use: text = 'Language use'
+797.8954 	EXP 	text_lang_use_question: text = 'When you talk to yourself, how often do you talk to yourself in the following languages?'
+797.8954 	EXP 	text_lang_use_lang: text = 'Other languages'
+797.8954 	EXP 	text_lang_use_qnum: text = '10c'
+797.8954 	EXP 	text_section_lang_use: autoDraw = True
+797.8954 	EXP 	text_lang_use_question: autoDraw = True
+797.8954 	EXP 	text_lang_use_lang: autoDraw = True
+797.8954 	EXP 	text_lang_use_qnum: autoDraw = True
+797.8954 	EXP 	rating_lang_use: autoDraw = True
+803.3675 	DATA 	Mouse: Left button down, pos=(664,355)
+803.5162 	DATA 	Mouse:  Left button up, pos=(664,355)
+804.1377 	DATA 	Keypress: return
+804.1379 	DATA 	RatingScale rating_lang_use: (key response) rating=60
+804.1381 	DATA 	RatingScale rating_lang_use: rating RT=6.261
+804.1381 	DATA 	RatingScale rating_lang_use: history=[(None, 0.0), ('60', 5.494), ('60', 6.26)]
+804.1491 	EXP 	New trial (rep=0, index=12): OrderedDict([('section', 'Language use'), ('questionNum', '11a'), ('questionText', 'When you count, how often do you count in the following languages?'), ('language', 'English')])
+804.1709 	EXP 	RatingScale rating_lang_use: reset()
+804.1977 	EXP 	text_section_lang_use: autoDraw = False
+804.1977 	EXP 	text_lang_use_question: autoDraw = False
+804.1977 	EXP 	text_lang_use_lang: autoDraw = False
+804.1977 	EXP 	text_lang_use_qnum: autoDraw = False
+804.1977 	EXP 	rating_lang_use: autoDraw = False
+804.1977 	EXP 	text_section_lang_use: text = 'Language use'
+804.1977 	EXP 	text_lang_use_question: text = 'When you count, how often do you count in the following languages?'
+804.1977 	EXP 	text_lang_use_lang: text = 'English'
+804.1977 	EXP 	text_lang_use_qnum: text = '11a'
+804.1977 	EXP 	text_section_lang_use: autoDraw = True
+804.1977 	EXP 	text_lang_use_question: autoDraw = True
+804.1977 	EXP 	text_lang_use_lang: autoDraw = True
+804.1977 	EXP 	text_lang_use_qnum: autoDraw = True
+804.1977 	EXP 	rating_lang_use: autoDraw = True
+809.0210 	DATA 	Mouse: Left button down, pos=(718,359)
+809.1527 	DATA 	Mouse:  Left button up, pos=(718,359)
+809.9528 	DATA 	Keypress: return
+809.9573 	DATA 	RatingScale rating_lang_use: (key response) rating=70
+809.9575 	DATA 	RatingScale rating_lang_use: rating RT=5.786
+809.9575 	DATA 	RatingScale rating_lang_use: history=[(None, 0.0), ('70', 4.853), ('70', 5.785)]
+809.9688 	EXP 	New trial (rep=0, index=13): OrderedDict([('section', 'Language use'), ('questionNum', '11b'), ('questionText', 'When you count, how often do you count in the following languages?'), ('language', 'Spanish')])
+809.9800 	EXP 	RatingScale rating_lang_use: reset()
+810.0008 	EXP 	text_section_lang_use: autoDraw = False
+810.0008 	EXP 	text_lang_use_question: autoDraw = False
+810.0008 	EXP 	text_lang_use_lang: autoDraw = False
+810.0008 	EXP 	text_lang_use_qnum: autoDraw = False
+810.0008 	EXP 	rating_lang_use: autoDraw = False
+810.0008 	EXP 	text_section_lang_use: text = 'Language use'
+810.0008 	EXP 	text_lang_use_question: text = 'When you count, how often do you count in the following languages?'
+810.0008 	EXP 	text_lang_use_lang: text = 'Spanish'
+810.0008 	EXP 	text_lang_use_qnum: text = '11b'
+810.0008 	EXP 	text_section_lang_use: autoDraw = True
+810.0008 	EXP 	text_lang_use_question: autoDraw = True
+810.0008 	EXP 	text_lang_use_lang: autoDraw = True
+810.0008 	EXP 	text_lang_use_qnum: autoDraw = True
+810.0008 	EXP 	rating_lang_use: autoDraw = True
+810.9162 	DATA 	Mouse: Left button down, pos=(718,359)
+811.0823 	DATA 	Mouse:  Left button up, pos=(718,359)
+811.6654 	DATA 	Keypress: return
+811.6699 	DATA 	RatingScale rating_lang_use: (key response) rating=70
+811.6701 	DATA 	RatingScale rating_lang_use: rating RT=1.689
+811.6701 	DATA 	RatingScale rating_lang_use: history=[(None, 0.0), ('70', 0.939), ('70', 1.689)]
+811.6813 	EXP 	New trial (rep=0, index=14): OrderedDict([('section', 'Language use'), ('questionNum', '11c'), ('questionText', 'When you count, how often do you count in the following languages?'), ('language', 'Other languages')])
+811.6948 	EXP 	RatingScale rating_lang_use: reset()
+811.7134 	EXP 	text_section_lang_use: autoDraw = False
+811.7134 	EXP 	text_lang_use_question: autoDraw = False
+811.7134 	EXP 	text_lang_use_lang: autoDraw = False
+811.7134 	EXP 	text_lang_use_qnum: autoDraw = False
+811.7134 	EXP 	rating_lang_use: autoDraw = False
+811.7134 	EXP 	text_section_lang_use: text = 'Language use'
+811.7134 	EXP 	text_lang_use_question: text = 'When you count, how often do you count in the following languages?'
+811.7134 	EXP 	text_lang_use_lang: text = 'Other languages'
+811.7134 	EXP 	text_lang_use_qnum: text = '11c'
+811.7134 	EXP 	text_section_lang_use: autoDraw = True
+811.7134 	EXP 	text_lang_use_question: autoDraw = True
+811.7134 	EXP 	text_lang_use_lang: autoDraw = True
+811.7134 	EXP 	text_lang_use_qnum: autoDraw = True
+811.7134 	EXP 	rating_lang_use: autoDraw = True
+812.8119 	DATA 	Mouse: Left button down, pos=(715,354)
+812.8998 	DATA 	Mouse:  Left button up, pos=(715,354)
+813.9149 	DATA 	Keypress: return
+813.9152 	DATA 	RatingScale rating_lang_use: (key response) rating=70
+813.9156 	DATA 	RatingScale rating_lang_use: rating RT=2.220
+813.9156 	DATA 	RatingScale rating_lang_use: history=[(None, 0.0), ('70', 1.12), ('70', 2.219)]
+813.9414 	EXP 	text_section_lang_use: autoDraw = False
+813.9414 	EXP 	text_lang_use_question: autoDraw = False
+813.9414 	EXP 	text_lang_use_lang: autoDraw = False
+813.9414 	EXP 	text_lang_use_qnum: autoDraw = False
+813.9414 	EXP 	rating_lang_use: autoDraw = False
+813.9414 	EXP 	text_lang_prof_ins: autoDraw = True
+833.2492 	DATA 	Keypress: space
+833.2568 	EXP 	Imported condition_file/en_trials.csv as conditions, 8 conditions, 4 params
+833.2571 	EXP 	Created sequence: sequential, trialTypes=8, nReps=1, seed=None
+833.2576 	EXP 	New trial (rep=0, index=0): OrderedDict([('section', 'Language proficiency'), ('questionNum', '12a'), ('questionText', 'How well do you speak'), ('language', 'English')])
+833.2791 	EXP 	RatingScale rating_lang_prof: reset()
+833.3123 	EXP 	text_lang_prof_ins: autoDraw = False
+833.3123 	EXP 	text_section_lang_prof: text = 'Language proficiency'
+833.3123 	EXP 	text_lang_prof_question: text = 'How well do you speak'
+833.3123 	EXP 	text_lang_prof_lang: text = 'English'
+833.3123 	EXP 	text_lang_prof_qnum: text = '12a'
+833.3123 	EXP 	text_lang_prof_qmark: text = '?'
+833.3123 	EXP 	text_section_lang_prof: autoDraw = True
+833.3123 	EXP 	text_lang_prof_question: autoDraw = True
+833.3123 	EXP 	text_lang_prof_lang: autoDraw = True
+833.3123 	EXP 	text_lang_prof_qnum: autoDraw = True
+833.3123 	EXP 	text_lang_prof_qmark: autoDraw = True
+833.3123 	EXP 	rating_lang_prof: autoDraw = True
+840.4966 	DATA 	Mouse: Left button down, pos=(923,354)
+840.6626 	DATA 	Mouse:  Left button up, pos=(923,354)
+841.5282 	DATA 	Keypress: return
+841.5321 	DATA 	RatingScale rating_lang_prof: (key response) rating=6
+841.5323 	DATA 	RatingScale rating_lang_prof: rating RT=8.252
+841.5323 	DATA 	RatingScale rating_lang_prof: history=[(None, 0.0), ('6', 7.22), ('6', 8.252)]
+841.5445 	EXP 	New trial (rep=0, index=1): OrderedDict([('section', 'Language proficiency'), ('questionNum', '12b'), ('questionText', 'How well do you speak'), ('language', 'Spanish')])
+841.5559 	EXP 	RatingScale rating_lang_prof: reset()
+841.5763 	EXP 	text_section_lang_prof: autoDraw = False
+841.5763 	EXP 	text_lang_prof_question: autoDraw = False
+841.5763 	EXP 	text_lang_prof_lang: autoDraw = False
+841.5763 	EXP 	text_lang_prof_qnum: autoDraw = False
+841.5763 	EXP 	text_lang_prof_qmark: autoDraw = False
+841.5763 	EXP 	rating_lang_prof: autoDraw = False
+841.5763 	EXP 	text_section_lang_prof: text = 'Language proficiency'
+841.5763 	EXP 	text_lang_prof_question: text = 'How well do you speak'
+841.5763 	EXP 	text_lang_prof_lang: text = 'Spanish'
+841.5763 	EXP 	text_lang_prof_qnum: text = '12b'
+841.5763 	EXP 	text_lang_prof_qmark: text = '?'
+841.5763 	EXP 	text_section_lang_prof: autoDraw = True
+841.5763 	EXP 	text_lang_prof_question: autoDraw = True
+841.5763 	EXP 	text_lang_prof_lang: autoDraw = True
+841.5763 	EXP 	text_lang_prof_qnum: autoDraw = True
+841.5763 	EXP 	text_lang_prof_qmark: autoDraw = True
+841.5763 	EXP 	rating_lang_prof: autoDraw = True
+844.5203 	DATA 	Mouse: Left button down, pos=(542,356)
+844.6924 	DATA 	Mouse:  Left button up, pos=(542,356)
+846.6495 	DATA 	Keypress: return
+846.6532 	DATA 	RatingScale rating_lang_prof: (key response) rating=2
+846.6534 	DATA 	RatingScale rating_lang_prof: rating RT=5.096
+846.6534 	DATA 	RatingScale rating_lang_prof: history=[(None, 0.0), ('2', 2.966), ('2', 5.096)]
+846.6655 	EXP 	New trial (rep=0, index=2): OrderedDict([('section', 'Language proficiency'), ('questionNum', '13a'), ('questionText', 'How well do you understand'), ('language', 'English')])
+846.6820 	EXP 	RatingScale rating_lang_prof: reset()
+846.6974 	EXP 	text_section_lang_prof: autoDraw = False
+846.6974 	EXP 	text_lang_prof_question: autoDraw = False
+846.6974 	EXP 	text_lang_prof_lang: autoDraw = False
+846.6974 	EXP 	text_lang_prof_qnum: autoDraw = False
+846.6974 	EXP 	text_lang_prof_qmark: autoDraw = False
+846.6974 	EXP 	rating_lang_prof: autoDraw = False
+846.6974 	EXP 	text_section_lang_prof: text = 'Language proficiency'
+846.6974 	EXP 	text_lang_prof_question: text = 'How well do you understand'
+846.6974 	EXP 	text_lang_prof_lang: text = 'English'
+846.6974 	EXP 	text_lang_prof_qnum: text = '13a'
+846.6974 	EXP 	text_lang_prof_qmark: text = '?'
+846.6974 	EXP 	text_section_lang_prof: autoDraw = True
+846.6974 	EXP 	text_lang_prof_question: autoDraw = True
+846.6974 	EXP 	text_lang_prof_lang: autoDraw = True
+846.6974 	EXP 	text_lang_prof_qnum: autoDraw = True
+846.6974 	EXP 	text_lang_prof_qmark: autoDraw = True
+846.6974 	EXP 	rating_lang_prof: autoDraw = True
+850.6271 	DATA 	Mouse: Left button down, pos=(924,359)
+850.8049 	DATA 	Mouse:  Left button up, pos=(924,359)
+851.4091 	DATA 	Keypress: return
+851.4094 	DATA 	RatingScale rating_lang_prof: (key response) rating=6
+851.4096 	DATA 	RatingScale rating_lang_prof: rating RT=4.727
+851.4096 	DATA 	RatingScale rating_lang_prof: history=[(None, 0.0), ('6', 3.959), ('6', 4.727)]
+851.4208 	EXP 	New trial (rep=0, index=3): OrderedDict([('section', 'Language proficiency'), ('questionNum', '13b'), ('questionText', 'How well do you understand'), ('language', 'Spanish')])
+851.4360 	EXP 	RatingScale rating_lang_prof: reset()
+851.4530 	EXP 	text_section_lang_prof: autoDraw = False
+851.4530 	EXP 	text_lang_prof_question: autoDraw = False
+851.4530 	EXP 	text_lang_prof_lang: autoDraw = False
+851.4530 	EXP 	text_lang_prof_qnum: autoDraw = False
+851.4530 	EXP 	text_lang_prof_qmark: autoDraw = False
+851.4530 	EXP 	rating_lang_prof: autoDraw = False
+851.4530 	EXP 	text_section_lang_prof: text = 'Language proficiency'
+851.4530 	EXP 	text_lang_prof_question: text = 'How well do you understand'
+851.4530 	EXP 	text_lang_prof_lang: text = 'Spanish'
+851.4530 	EXP 	text_lang_prof_qnum: text = '13b'
+851.4530 	EXP 	text_lang_prof_qmark: text = '?'
+851.4530 	EXP 	text_section_lang_prof: autoDraw = True
+851.4530 	EXP 	text_lang_prof_question: autoDraw = True
+851.4530 	EXP 	text_lang_prof_lang: autoDraw = True
+851.4530 	EXP 	text_lang_prof_qnum: autoDraw = True
+851.4530 	EXP 	text_lang_prof_qmark: autoDraw = True
+851.4530 	EXP 	rating_lang_prof: autoDraw = True
+854.2183 	DATA 	Mouse: Left button down, pos=(447,352)
+854.3803 	DATA 	Mouse:  Left button up, pos=(447,352)
+855.2620 	DATA 	Keypress: return
+855.2658 	DATA 	RatingScale rating_lang_prof: (key response) rating=1
+855.2661 	DATA 	RatingScale rating_lang_prof: rating RT=3.829
+855.2661 	DATA 	RatingScale rating_lang_prof: history=[(None, 0.0), ('1', 2.796), ('1', 3.829)]
+855.2786 	EXP 	New trial (rep=0, index=4): OrderedDict([('section', 'Language proficiency'), ('questionNum', '14a'), ('questionText', 'How well do you read'), ('language', 'English')])
+855.2940 	EXP 	RatingScale rating_lang_prof: reset()
+855.3105 	EXP 	text_section_lang_prof: autoDraw = False
+855.3105 	EXP 	text_lang_prof_question: autoDraw = False
+855.3105 	EXP 	text_lang_prof_lang: autoDraw = False
+855.3105 	EXP 	text_lang_prof_qnum: autoDraw = False
+855.3105 	EXP 	text_lang_prof_qmark: autoDraw = False
+855.3105 	EXP 	rating_lang_prof: autoDraw = False
+855.3105 	EXP 	text_section_lang_prof: text = 'Language proficiency'
+855.3105 	EXP 	text_lang_prof_question: text = 'How well do you read'
+855.3105 	EXP 	text_lang_prof_lang: text = 'English'
+855.3105 	EXP 	text_lang_prof_qnum: text = '14a'
+855.3105 	EXP 	text_lang_prof_qmark: text = '?'
+855.3105 	EXP 	text_section_lang_prof: autoDraw = True
+855.3105 	EXP 	text_lang_prof_question: autoDraw = True
+855.3105 	EXP 	text_lang_prof_lang: autoDraw = True
+855.3105 	EXP 	text_lang_prof_qnum: autoDraw = True
+855.3105 	EXP 	text_lang_prof_qmark: autoDraw = True
+855.3105 	EXP 	rating_lang_prof: autoDraw = True
+862.4446 	DATA 	Mouse: Left button down, pos=(927,355)
+862.6273 	DATA 	Mouse:  Left button up, pos=(927,355)
+863.3433 	DATA 	Keypress: return
+863.3470 	DATA 	RatingScale rating_lang_prof: (key response) rating=6
+863.3472 	DATA 	RatingScale rating_lang_prof: rating RT=8.052
+863.3472 	DATA 	RatingScale rating_lang_prof: history=[(None, 0.0), ('6', 7.153), ('6', 8.052)]
+863.3601 	EXP 	New trial (rep=0, index=5): OrderedDict([('section', 'Language proficiency'), ('questionNum', '14b'), ('questionText', 'How well do you read'), ('language', 'Spanish')])
+863.3730 	EXP 	RatingScale rating_lang_prof: reset()
+863.3914 	EXP 	text_section_lang_prof: autoDraw = False
+863.3914 	EXP 	text_lang_prof_question: autoDraw = False
+863.3914 	EXP 	text_lang_prof_lang: autoDraw = False
+863.3914 	EXP 	text_lang_prof_qnum: autoDraw = False
+863.3914 	EXP 	text_lang_prof_qmark: autoDraw = False
+863.3914 	EXP 	rating_lang_prof: autoDraw = False
+863.3914 	EXP 	text_section_lang_prof: text = 'Language proficiency'
+863.3914 	EXP 	text_lang_prof_question: text = 'How well do you read'
+863.3914 	EXP 	text_lang_prof_lang: text = 'Spanish'
+863.3914 	EXP 	text_lang_prof_qnum: text = '14b'
+863.3914 	EXP 	text_lang_prof_qmark: text = '?'
+863.3914 	EXP 	text_section_lang_prof: autoDraw = True
+863.3914 	EXP 	text_lang_prof_question: autoDraw = True
+863.3914 	EXP 	text_lang_prof_lang: autoDraw = True
+863.3914 	EXP 	text_lang_prof_qnum: autoDraw = True
+863.3914 	EXP 	text_lang_prof_qmark: autoDraw = True
+863.3914 	EXP 	rating_lang_prof: autoDraw = True
+866.0235 	DATA 	Mouse: Left button down, pos=(543,354)
+866.1911 	DATA 	Mouse:  Left button up, pos=(543,354)
+866.8848 	DATA 	Keypress: return
+866.8886 	DATA 	RatingScale rating_lang_prof: (key response) rating=2
+866.8888 	DATA 	RatingScale rating_lang_prof: rating RT=3.515
+866.8888 	DATA 	RatingScale rating_lang_prof: history=[(None, 0.0), ('2', 2.65), ('2', 3.515)]
+866.9012 	EXP 	New trial (rep=0, index=6): OrderedDict([('section', 'Language proficiency'), ('questionNum', '15a'), ('questionText', 'How well do you write'), ('language', 'English')])
+866.9175 	EXP 	RatingScale rating_lang_prof: reset()
+866.9331 	EXP 	text_section_lang_prof: autoDraw = False
+866.9331 	EXP 	text_lang_prof_question: autoDraw = False
+866.9331 	EXP 	text_lang_prof_lang: autoDraw = False
+866.9331 	EXP 	text_lang_prof_qnum: autoDraw = False
+866.9331 	EXP 	text_lang_prof_qmark: autoDraw = False
+866.9331 	EXP 	rating_lang_prof: autoDraw = False
+866.9331 	EXP 	text_section_lang_prof: text = 'Language proficiency'
+866.9331 	EXP 	text_lang_prof_question: text = 'How well do you write'
+866.9331 	EXP 	text_lang_prof_lang: text = 'English'
+866.9331 	EXP 	text_lang_prof_qnum: text = '15a'
+866.9331 	EXP 	text_lang_prof_qmark: text = '?'
+866.9331 	EXP 	text_section_lang_prof: autoDraw = True
+866.9331 	EXP 	text_lang_prof_question: autoDraw = True
+866.9331 	EXP 	text_lang_prof_lang: autoDraw = True
+866.9331 	EXP 	text_lang_prof_qnum: autoDraw = True
+866.9331 	EXP 	text_lang_prof_qmark: autoDraw = True
+866.9331 	EXP 	rating_lang_prof: autoDraw = True
+880.3743 	DATA 	Mouse: Left button down, pos=(924,358)
+880.5353 	DATA 	Mouse:  Left button up, pos=(924,358)
+881.5506 	DATA 	Keypress: return
+881.5545 	DATA 	RatingScale rating_lang_prof: (key response) rating=6
+881.5547 	DATA 	RatingScale rating_lang_prof: rating RT=14.636
+881.5547 	DATA 	RatingScale rating_lang_prof: history=[(None, 0.0), ('6', 13.47), ('6', 14.636)]
+881.5667 	EXP 	New trial (rep=0, index=7): OrderedDict([('section', 'Language proficiency'), ('questionNum', '15b'), ('questionText', 'How well do you write'), ('language', 'Spanish')])
+881.5776 	EXP 	RatingScale rating_lang_prof: reset()
+881.5986 	EXP 	text_section_lang_prof: autoDraw = False
+881.5986 	EXP 	text_lang_prof_question: autoDraw = False
+881.5986 	EXP 	text_lang_prof_lang: autoDraw = False
+881.5986 	EXP 	text_lang_prof_qnum: autoDraw = False
+881.5986 	EXP 	text_lang_prof_qmark: autoDraw = False
+881.5986 	EXP 	rating_lang_prof: autoDraw = False
+881.5986 	EXP 	text_section_lang_prof: text = 'Language proficiency'
+881.5986 	EXP 	text_lang_prof_question: text = 'How well do you write'
+881.5986 	EXP 	text_lang_prof_lang: text = 'Spanish'
+881.5986 	EXP 	text_lang_prof_qnum: text = '15b'
+881.5986 	EXP 	text_lang_prof_qmark: text = '?'
+881.5986 	EXP 	text_section_lang_prof: autoDraw = True
+881.5986 	EXP 	text_lang_prof_question: autoDraw = True
+881.5986 	EXP 	text_lang_prof_lang: autoDraw = True
+881.5986 	EXP 	text_lang_prof_qnum: autoDraw = True
+881.5986 	EXP 	text_lang_prof_qmark: autoDraw = True
+881.5986 	EXP 	rating_lang_prof: autoDraw = True
+883.8971 	DATA 	Mouse: Left button down, pos=(536,354)
+884.0773 	DATA 	Mouse:  Left button up, pos=(536,354)
+885.1254 	DATA 	Keypress: return
+885.1291 	DATA 	RatingScale rating_lang_prof: (key response) rating=2
+885.1294 	DATA 	RatingScale rating_lang_prof: rating RT=3.551
+885.1294 	DATA 	RatingScale rating_lang_prof: history=[(None, 0.0), ('2', 2.319), ('2', 3.551)]
+885.1570 	EXP 	text_section_lang_prof: autoDraw = False
+885.1570 	EXP 	text_lang_prof_question: autoDraw = False
+885.1570 	EXP 	text_lang_prof_lang: autoDraw = False
+885.1570 	EXP 	text_lang_prof_qnum: autoDraw = False
+885.1570 	EXP 	text_lang_prof_qmark: autoDraw = False
+885.1570 	EXP 	rating_lang_prof: autoDraw = False
+885.1570 	EXP 	text_lang_att_ins: autoDraw = True
+908.6210 	DATA 	Keypress: space
+908.6283 	EXP 	Imported condition_file/en_trials.csv as conditions, 8 conditions, 4 params
+908.6286 	EXP 	Created sequence: sequential, trialTypes=8, nReps=1, seed=None
+908.6290 	EXP 	New trial (rep=0, index=0): OrderedDict([('section', 'Language attitudes'), ('questionNum', '16a'), ('questionText', 'I feel like myself when I speak English.'), ('language', 'English')])
+908.6447 	EXP 	RatingScale rating_lang_att: reset()
+908.6681 	EXP 	text_lang_att_ins: autoDraw = False
+908.6681 	EXP 	text_lang_att_section: text = 'Language attitudes'
+908.6681 	EXP 	text_lang_att_ques: text = 'I feel like myself when I speak English.'
+908.6681 	EXP 	text_lang_att_qnum: text = '16a'
+908.6681 	EXP 	text_lang_att_section: autoDraw = True
+908.6681 	EXP 	text_lang_att_ques: autoDraw = True
+908.6681 	EXP 	text_lang_att_qnum: autoDraw = True
+908.6681 	EXP 	rating_lang_att: autoDraw = True
+921.7543 	DATA 	Mouse: Left button down, pos=(926,398)
+921.9080 	DATA 	Mouse:  Left button up, pos=(926,398)
+944.2408 	DATA 	Keypress: return
+944.2410 	DATA 	RatingScale rating_lang_att: (key response) rating=6
+944.2413 	DATA 	RatingScale rating_lang_att: rating RT=35.595
+944.2414 	DATA 	RatingScale rating_lang_att: history=[(None, 0.0), ('6', 13.111), ('6', 35.595)]
+944.2525 	EXP 	New trial (rep=0, index=1): OrderedDict([('section', 'Language attitudes'), ('questionNum', '16b'), ('questionText', 'I feel like myself when I speak Spanish.'), ('language', 'Spanish')])
+944.2696 	EXP 	RatingScale rating_lang_att: reset()
+944.2836 	EXP 	text_lang_att_section: autoDraw = False
+944.2836 	EXP 	text_lang_att_ques: autoDraw = False
+944.2836 	EXP 	text_lang_att_qnum: autoDraw = False
+944.2836 	EXP 	rating_lang_att: autoDraw = False
+944.2836 	EXP 	text_lang_att_section: text = 'Language attitudes'
+944.2836 	EXP 	text_lang_att_ques: text = 'I feel like myself when I speak Spanish.'
+944.2836 	EXP 	text_lang_att_qnum: text = '16b'
+944.2836 	EXP 	text_lang_att_section: autoDraw = True
+944.2836 	EXP 	text_lang_att_ques: autoDraw = True
+944.2836 	EXP 	text_lang_att_qnum: autoDraw = True
+944.2836 	EXP 	rating_lang_att: autoDraw = True
+948.0428 	DATA 	Mouse: Left button down, pos=(447,396)
+948.1920 	DATA 	Mouse:  Left button up, pos=(447,396)
+948.9419 	DATA 	Keypress: return
+948.9456 	DATA 	RatingScale rating_lang_att: (key response) rating=1
+948.9459 	DATA 	RatingScale rating_lang_att: rating RT=4.675
+948.9459 	DATA 	RatingScale rating_lang_att: history=[(None, 0.0), ('1', 3.776), ('1', 4.675)]
+948.9577 	EXP 	New trial (rep=0, index=2): OrderedDict([('section', 'Language attitudes'), ('questionNum', '17a'), ('questionText', 'I identify with an English-speaking culture.'), ('language', 'English')])
+948.9740 	EXP 	RatingScale rating_lang_att: reset()
+948.9894 	EXP 	text_lang_att_section: autoDraw = False
+948.9894 	EXP 	text_lang_att_ques: autoDraw = False
+948.9894 	EXP 	text_lang_att_qnum: autoDraw = False
+948.9894 	EXP 	rating_lang_att: autoDraw = False
+948.9894 	EXP 	text_lang_att_section: text = 'Language attitudes'
+948.9894 	EXP 	text_lang_att_ques: text = 'I identify with an English-speaking culture.'
+948.9894 	EXP 	text_lang_att_qnum: text = '17a'
+948.9894 	EXP 	text_lang_att_section: autoDraw = True
+948.9894 	EXP 	text_lang_att_ques: autoDraw = True
+948.9894 	EXP 	text_lang_att_qnum: autoDraw = True
+948.9894 	EXP 	rating_lang_att: autoDraw = True
+953.2007 	DATA 	Mouse: Left button down, pos=(931,393)
+953.3799 	DATA 	Mouse:  Left button up, pos=(931,393)
+954.1680 	DATA 	Keypress: return
+954.1823 	DATA 	RatingScale rating_lang_att: (key response) rating=6
+954.1827 	DATA 	RatingScale rating_lang_att: rating RT=5.208
+954.1827 	DATA 	RatingScale rating_lang_att: history=[(None, 0.0), ('6', 4.226), ('6', 5.208)]
+954.1954 	EXP 	New trial (rep=0, index=3): OrderedDict([('section', 'Language attitudes'), ('questionNum', '17b'), ('questionText', 'I identify with an Spanish-speaking culture.'), ('language', 'Spanish')])
+954.2107 	EXP 	RatingScale rating_lang_att: reset()
+954.2273 	EXP 	text_lang_att_section: autoDraw = False
+954.2273 	EXP 	text_lang_att_ques: autoDraw = False
+954.2273 	EXP 	text_lang_att_qnum: autoDraw = False
+954.2273 	EXP 	rating_lang_att: autoDraw = False
+954.2273 	EXP 	text_lang_att_section: text = 'Language attitudes'
+954.2273 	EXP 	text_lang_att_ques: text = 'I identify with an Spanish-speaking culture.'
+954.2273 	EXP 	text_lang_att_qnum: text = '17b'
+954.2273 	EXP 	text_lang_att_section: autoDraw = True
+954.2273 	EXP 	text_lang_att_ques: autoDraw = True
+954.2273 	EXP 	text_lang_att_qnum: autoDraw = True
+954.2273 	EXP 	rating_lang_att: autoDraw = True
+956.6718 	DATA 	Mouse: Left button down, pos=(927,393)
+956.7389 	DATA 	Mouse:  Left button up, pos=(927,393)
+959.7818 	DATA 	Mouse: wheel shift=(0,0), pos=(455,399)
+959.7985 	DATA 	Mouse: wheel shift=(0,0), pos=(455,399)
+960.8345 	DATA 	Mouse: Left button down, pos=(447,394)
+961.0120 	DATA 	Mouse:  Left button up, pos=(447,394)
+961.6678 	DATA 	Keypress: return
+961.6680 	DATA 	RatingScale rating_lang_att: (key response) rating=1
+961.6683 	DATA 	RatingScale rating_lang_att: rating RT=7.457
+961.6683 	DATA 	RatingScale rating_lang_att: history=[(None, 0.0), ('6', 2.464), ('1', 6.637), ('1', 7.457)]
+961.6773 	EXP 	New trial (rep=0, index=4): OrderedDict([('section', 'Language attitudes'), ('questionNum', '18a'), ('questionText', 'It is important to me to use (or eventually use) English like a native speaker.'), ('language', 'English')])
+961.6971 	EXP 	RatingScale rating_lang_att: reset()
+961.7101 	EXP 	text_lang_att_section: autoDraw = False
+961.7101 	EXP 	text_lang_att_ques: autoDraw = False
+961.7101 	EXP 	text_lang_att_qnum: autoDraw = False
+961.7101 	EXP 	rating_lang_att: autoDraw = False
+961.7101 	EXP 	text_lang_att_section: text = 'Language attitudes'
+961.7101 	EXP 	text_lang_att_ques: text = 'It is important to me to use (or eventually use) English like a native speaker.'
+961.7101 	EXP 	text_lang_att_qnum: text = '18a'
+961.7101 	EXP 	text_lang_att_section: autoDraw = True
+961.7101 	EXP 	text_lang_att_ques: autoDraw = True
+961.7101 	EXP 	text_lang_att_qnum: autoDraw = True
+961.7101 	EXP 	rating_lang_att: autoDraw = True
+976.8748 	DATA 	Mouse: Left button down, pos=(825,389)
+977.0584 	DATA 	Mouse:  Left button up, pos=(825,389)
+977.7074 	DATA 	Keypress: return
+977.7112 	DATA 	RatingScale rating_lang_att: (key response) rating=5
+977.7115 	DATA 	RatingScale rating_lang_att: rating RT=16.014
+977.7115 	DATA 	RatingScale rating_lang_att: history=[(None, 0.0), ('5', 15.181), ('5', 16.013)]
+977.7234 	EXP 	New trial (rep=0, index=5): OrderedDict([('section', 'Language attitudes'), ('questionNum', '18b'), ('questionText', 'It is important to me to use (or eventually use) Spanish like a native speaker.'), ('language', 'Spanish')])
+977.7460 	EXP 	RatingScale rating_lang_att: reset()
+977.7720 	EXP 	text_lang_att_section: autoDraw = False
+977.7720 	EXP 	text_lang_att_ques: autoDraw = False
+977.7720 	EXP 	text_lang_att_qnum: autoDraw = False
+977.7720 	EXP 	rating_lang_att: autoDraw = False
+977.7720 	EXP 	text_lang_att_section: text = 'Language attitudes'
+977.7720 	EXP 	text_lang_att_ques: text = 'It is important to me to use (or eventually use) Spanish like a native speaker.'
+977.7720 	EXP 	text_lang_att_qnum: text = '18b'
+977.7720 	EXP 	text_lang_att_section: autoDraw = True
+977.7720 	EXP 	text_lang_att_ques: autoDraw = True
+977.7720 	EXP 	text_lang_att_qnum: autoDraw = True
+977.7720 	EXP 	rating_lang_att: autoDraw = True
+979.7187 	DATA 	Mouse: Left button down, pos=(545,400)
+979.9341 	DATA 	Mouse:  Left button up, pos=(545,400)
+980.5509 	DATA 	Keypress: return
+980.5548 	DATA 	RatingScale rating_lang_att: (key response) rating=2
+980.5550 	DATA 	RatingScale rating_lang_att: rating RT=2.808
+980.5550 	DATA 	RatingScale rating_lang_att: history=[(None, 0.0), ('2', 1.975), ('2', 2.808)]
+980.5666 	EXP 	New trial (rep=0, index=6): OrderedDict([('section', 'Language attitudes'), ('questionNum', '19a'), ('questionText', 'I want others to think I am a native speaker of English.'), ('language', 'English')])
+980.5838 	EXP 	RatingScale rating_lang_att: reset()
+980.5986 	EXP 	text_lang_att_section: autoDraw = False
+980.5986 	EXP 	text_lang_att_ques: autoDraw = False
+980.5986 	EXP 	text_lang_att_qnum: autoDraw = False
+980.5986 	EXP 	rating_lang_att: autoDraw = False
+980.5986 	EXP 	text_lang_att_section: text = 'Language attitudes'
+980.5986 	EXP 	text_lang_att_ques: text = 'I want others to think I am a native speaker of English.'
+980.5986 	EXP 	text_lang_att_qnum: text = '19a'
+980.5986 	EXP 	text_lang_att_section: autoDraw = True
+980.5986 	EXP 	text_lang_att_ques: autoDraw = True
+980.5986 	EXP 	text_lang_att_qnum: autoDraw = True
+980.5986 	EXP 	rating_lang_att: autoDraw = True
+983.7964 	DATA 	Mouse: Left button down, pos=(928,396)
+983.9915 	DATA 	Mouse:  Left button up, pos=(928,396)
+984.7465 	DATA 	Keypress: return
+984.7468 	DATA 	RatingScale rating_lang_att: (key response) rating=6
+984.7471 	DATA 	RatingScale rating_lang_att: rating RT=4.163
+984.7471 	DATA 	RatingScale rating_lang_att: history=[(None, 0.0), ('6', 3.227), ('6', 4.162)]
+984.7558 	EXP 	New trial (rep=0, index=7): OrderedDict([('section', 'Language attitudes'), ('questionNum', '19b'), ('questionText', ' I want others to think I am a native speaker of Spanish.'), ('language', 'Spanish')])
+984.7752 	EXP 	RatingScale rating_lang_att: reset()
+984.7887 	EXP 	text_lang_att_section: autoDraw = False
+984.7887 	EXP 	text_lang_att_ques: autoDraw = False
+984.7887 	EXP 	text_lang_att_qnum: autoDraw = False
+984.7887 	EXP 	rating_lang_att: autoDraw = False
+984.7887 	EXP 	text_lang_att_section: text = 'Language attitudes'
+984.7887 	EXP 	text_lang_att_ques: text = ' I want others to think I am a native speaker of Spanish.'
+984.7887 	EXP 	text_lang_att_qnum: text = '19b'
+984.7887 	EXP 	text_lang_att_section: autoDraw = True
+984.7887 	EXP 	text_lang_att_ques: autoDraw = True
+984.7887 	EXP 	text_lang_att_qnum: autoDraw = True
+984.7887 	EXP 	rating_lang_att: autoDraw = True
+986.9049 	DATA 	Mouse: Left button down, pos=(546,400)
+987.0847 	DATA 	Mouse:  Left button up, pos=(546,400)
+987.7375 	DATA 	Keypress: return
+987.7378 	DATA 	RatingScale rating_lang_att: (key response) rating=2
+987.7380 	DATA 	RatingScale rating_lang_att: rating RT=2.962
+987.7380 	DATA 	RatingScale rating_lang_att: history=[(None, 0.0), ('2', 2.144), ('2', 2.962)]
+988.0460 	EXP 	window1: mouseVisible = True

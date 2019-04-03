@@ -1,0 +1,63 @@
+9.2887 	EXP 	Created window1 = Window(allowGUI=False, allowStencil=False, args=UNKNOWN, autoLog=True, bitsMode=UNKNOWN, blendMode='avg', color=array([1., 1., 1.]), colorSpace='rgb', fullscr=<method-wrapper '__getattribute__' of attributeSetter object at 0x1287654a8>, gamma=None, kwargs=UNKNOWN, lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x129cd2d30>, multiSample=False, name='window1', numSamples=2, pos=[0.0, 0.0], screen=0, size=array([1280,  800]), stereo=False, units='norm', useFBO=True, useRetina=False, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+9.2888 	EXP 	window1: recordFrameIntervals = False
+9.4542 	EXP 	window1: recordFrameIntervals = True
+9.6368 	EXP 	window1: recordFrameIntervals = False
+9.8365 	EXP 	Created lexEsp_Instr = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='black', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.05, italic=False, languageStyle='LTR', name='lexEsp_Instr', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([0., 0., 0.]), text=str(...), units='norm', win=Window(...), wrapWidth=1)
+9.8512 	EXP 	Created text_Word = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='black', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.2, italic=False, languageStyle='LTR', name='text_Word', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([0., 0., 0.]), text='default text', units='norm', win=Window(...), wrapWidth=1)
+9.8583 	EXP 	Created text_Si = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='green', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.2, italic=False, languageStyle='LTR', name='text_Si', opacity=1.0, ori=0, pos=array([-0.5,  0. ]), rgb=array([  0., 128.,   0.]), text='sí', units='norm', win=Window(...), wrapWidth=1)
+9.8634 	EXP 	Created text_No = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='red', colorSpace='named', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.2, italic=False, languageStyle='LTR', name='text_No', opacity=1.0, ori=0, pos=array([-0.5,  0. ]), rgb=array([255.,   0.,   0.]), text='no', units='norm', win=Window(...), wrapWidth=1)
+9.8740 	EXP 	Created text_Mask = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-4.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_Mask', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text='default text', units='norm', win=Window(...), wrapWidth=1)
+9.8812 	EXP 	Created text_Prime = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-5.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_Prime', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text='default text', units='norm', win=Window(...), wrapWidth=1)
+9.8905 	EXP 	Created text_Closing = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='black', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.07, italic=False, languageStyle='LTR', name='text_Closing', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([0., 0., 0.]), text='gracias', units='norm', win=Window(...), wrapWidth=1)
+9.9029 	EXP 	lexEsp_Instr: autoDraw = True
+10.7551 	DATA 	Keypress: space
+10.7691 	EXP 	Imported LexicalAccess.csv as conditions, 71 conditions, 5 params
+10.7697 	EXP 	Created sequence: random, trialTypes=71, nReps=1, seed=None
+10.7702 	EXP 	New trial (rep=0, index=0): OrderedDict([('Mask', '#######'), ('Prime', 'tro####'), ('Word', 'tropaje'), ('Translation', 'NW'), ('corrAnsLexical', 0)])
+10.7907 	EXP 	lexEsp_Instr: autoDraw = False
+10.7907 	EXP 	text_Word: text = 'tropaje'
+10.7907 	EXP 	text_Mask: text = '#######'
+10.7907 	EXP 	text_Prime: text = 'tro####'
+10.7907 	EXP 	text_Mask: autoDraw = True
+11.2832 	EXP 	text_Mask: autoDraw = False
+11.2989 	EXP 	text_Prime: autoDraw = True
+11.4321 	EXP 	text_Word: autoDraw = True
+11.7983 	EXP 	text_Si: autoDraw = True
+11.7983 	EXP 	text_No: autoDraw = True
+11.7983 	EXP 	text_Prime: autoDraw = False
+17.9367 	DATA 	Keypress: 1
+17.9386 	EXP 	New trial (rep=0, index=1): OrderedDict([('Mask', '#########'), ('Prime', 'org######'), ('Word', 'orgulloso'), ('Translation', 'proud'), ('corrAnsLexical', 1)])
+17.9621 	EXP 	text_Word: autoDraw = False
+17.9621 	EXP 	text_Si: autoDraw = False
+17.9621 	EXP 	text_No: autoDraw = False
+17.9621 	EXP 	text_Mask: autoDraw = False
+17.9621 	EXP 	text_Prime: autoDraw = False
+17.9621 	EXP 	text_Word: text = 'orgulloso'
+17.9621 	EXP 	text_Mask: text = '#########'
+17.9621 	EXP 	text_Prime: text = 'org######'
+17.9621 	EXP 	text_Mask: autoDraw = True
+18.4494 	EXP 	text_Mask: autoDraw = False
+18.4662 	EXP 	text_Prime: autoDraw = True
+18.5992 	EXP 	text_Word: autoDraw = True
+18.9650 	EXP 	text_Si: autoDraw = True
+18.9650 	EXP 	text_No: autoDraw = True
+18.9650 	EXP 	text_Prime: autoDraw = False
+28.2943 	DATA 	Keypress: 1
+28.2959 	EXP 	New trial (rep=0, index=2): OrderedDict([('Mask', '#####'), ('Prime', 'fl###'), ('Word', 'flaco'), ('Translation', 'skinny'), ('corrAnsLexical', 1)])
+28.3186 	EXP 	text_Word: autoDraw = False
+28.3186 	EXP 	text_Si: autoDraw = False
+28.3186 	EXP 	text_No: autoDraw = False
+28.3186 	EXP 	text_Mask: autoDraw = False
+28.3186 	EXP 	text_Prime: autoDraw = False
+28.3186 	EXP 	text_Word: text = 'flaco'
+28.3186 	EXP 	text_Mask: text = '#####'
+28.3186 	EXP 	text_Prime: text = 'fl###'
+28.3186 	EXP 	text_Mask: autoDraw = True
+28.8083 	EXP 	text_Mask: autoDraw = False
+28.8251 	EXP 	text_Prime: autoDraw = True
+28.9580 	EXP 	text_Word: autoDraw = True
+29.3246 	EXP 	text_Si: autoDraw = True
+29.3246 	EXP 	text_No: autoDraw = True
+29.3246 	EXP 	text_Prime: autoDraw = False
+35.4469 	DATA 	Keypress: escape
+35.7224 	EXP 	window1: mouseVisible = True

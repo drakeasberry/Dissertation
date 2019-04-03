@@ -1,0 +1,252 @@
+<?xml version="1.0" ?>
+<PsychoPy2experiment encoding="utf-8" version="3.0.5">
+  <Settings>
+    <Param name="Completed URL" updates="None" val="" valType="str"/>
+    <Param name="Data filename" updates="None" val="u'data' + os.sep + '%s_%s' %(expInfo['participant'], expInfo['date'])" valType="code"/>
+    <Param name="Enable Escape" updates="None" val="True" valType="bool"/>
+    <Param name="Experiment info" updates="None" val="{'participant': ''}" valType="code"/>
+    <Param name="Force stereo" updates="None" val="True" valType="bool"/>
+    <Param name="Full-screen window" updates="None" val="True" valType="bool"/>
+    <Param name="HTML path" updates="None" val="html" valType="str"/>
+    <Param name="Incomplete URL" updates="None" val="" valType="str"/>
+    <Param name="JS libs" updates="None" val="packaged" valType="str"/>
+    <Param name="Monitor" updates="None" val="testMonitor" valType="str"/>
+    <Param name="Save csv file" updates="None" val="False" valType="bool"/>
+    <Param name="Save excel file" updates="None" val="False" valType="bool"/>
+    <Param name="Save log file" updates="None" val="True" valType="bool"/>
+    <Param name="Save psydat file" updates="None" val="True" valType="bool"/>
+    <Param name="Save wide csv file" updates="None" val="True" valType="bool"/>
+    <Param name="Screen" updates="None" val="1" valType="num"/>
+    <Param name="Show info dlg" updates="None" val="True" valType="bool"/>
+    <Param name="Show mouse" updates="None" val="False" valType="bool"/>
+    <Param name="Units" updates="None" val="use prefs" valType="str"/>
+    <Param name="Use version" updates="None" val="3.0.5" valType="str"/>
+    <Param name="Window size (pixels)" updates="None" val="[1280, 800]" valType="code"/>
+    <Param name="blendMode" updates="None" val="avg" valType="str"/>
+    <Param name="color" updates="None" val="$[0,0,0]" valType="str"/>
+    <Param name="colorSpace" updates="None" val="rgb" valType="str"/>
+    <Param name="expName" updates="None" val="decision_lexica_visual" valType="str"/>
+    <Param name="exportHTML" updates="None" val="on Sync" valType="str"/>
+    <Param name="logging level" updates="None" val="exp" valType="code"/>
+  </Settings>
+  <Routines>
+    <Routine name="instrucciones">
+      <KeyboardComponent name="start_LexEsp">
+        <Param name="allowedKeys" updates="constant" val="'space'" valType="code"/>
+        <Param name="correctAns" updates="constant" val="" valType="str"/>
+        <Param name="discard previous" updates="constant" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="forceEndRoutine" updates="constant" val="True" valType="bool"/>
+        <Param name="name" updates="None" val="start_LexEsp" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="store" updates="constant" val="nothing" valType="str"/>
+        <Param name="storeCorrect" updates="constant" val="False" valType="bool"/>
+        <Param name="syncScreenRefresh" updates="constant" val="True" valType="bool"/>
+      </KeyboardComponent>
+      <TextComponent name="lexEsp_Instr">
+        <Param name="color" updates="constant" val="black" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.05" valType="code"/>
+        <Param name="name" updates="None" val="lexEsp_Instr" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="[0, 0]" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="text" updates="constant" val="This test consists of 90 trials, in each of which you will see a string letters. &amp;#10;Your task is to decide whether this is an existing Spanish word or not. &amp;#10;If you think it is an existing Spanish word, press 's' for 'yes' and if you think it is not an existing Spanish word, press 'n' for 'no'.&amp;#10;If you are sure that the word exists, even if you don't know its exact meaning, you may still respond 'yes'. &amp;#10;But if you are not sure if it is an existing word, you should respond 'no'. &amp;#10;You have as much time as you like for each decision. &amp;#10;Press space bar to start. " valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+    </Routine>
+    <Routine name="cierre">
+      <TextComponent name="text_Closing">
+        <Param name="color" updates="constant" val="black" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.07" valType="code"/>
+        <Param name="name" updates="None" val="text_Closing" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="[0, 0]" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="5.0" valType="code"/>
+        <Param name="text" updates="constant" val="gracias" valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+      <KeyboardComponent name="key_resp_3">
+        <Param name="allowedKeys" updates="constant" val="'y','n','left','right','space'" valType="code"/>
+        <Param name="correctAns" updates="constant" val="" valType="str"/>
+        <Param name="discard previous" updates="constant" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="forceEndRoutine" updates="constant" val="True" valType="bool"/>
+        <Param name="name" updates="None" val="key_resp_3" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="5.0" valType="code"/>
+        <Param name="store" updates="constant" val="nothing" valType="str"/>
+        <Param name="storeCorrect" updates="constant" val="False" valType="bool"/>
+        <Param name="syncScreenRefresh" updates="constant" val="True" valType="bool"/>
+      </KeyboardComponent>
+    </Routine>
+    <Routine name="pruebas">
+      <TextComponent name="text_Word">
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.2" valType="code"/>
+        <Param name="name" updates="None" val="text_Word" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="[0, 0]" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="frame N" valType="str"/>
+        <Param name="startVal" updates="None" val="61" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (frames)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="text" updates="set every repeat" val="$Word" valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+      <TextComponent name="text_Si">
+        <Param name="color" updates="constant" val="green" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.2" valType="code"/>
+        <Param name="name" updates="None" val="text_Si" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="[-0.5, -.5]" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="frame N" valType="str"/>
+        <Param name="startVal" updates="None" val="61" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (frames)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="text" updates="constant" val="sí" valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+      <TextComponent name="text_No">
+        <Param name="color" updates="constant" val="red" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.2" valType="code"/>
+        <Param name="name" updates="None" val="text_No" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="[0.5, -.5]" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="frame N" valType="str"/>
+        <Param name="startVal" updates="None" val="61" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (frames)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="text" updates="constant" val="no" valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+      <KeyboardComponent name="lexEsp_key_resp">
+        <Param name="allowedKeys" updates="constant" val="'0','1'" valType="code"/>
+        <Param name="correctAns" updates="constant" val="$corrAnsLexical" valType="str"/>
+        <Param name="discard previous" updates="constant" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="forceEndRoutine" updates="constant" val="True" valType="bool"/>
+        <Param name="name" updates="None" val="lexEsp_key_resp" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="frame N" valType="str"/>
+        <Param name="startVal" updates="None" val="61" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (frames)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="store" updates="constant" val="first key" valType="str"/>
+        <Param name="storeCorrect" updates="constant" val="True" valType="bool"/>
+        <Param name="syncScreenRefresh" updates="constant" val="False" valType="bool"/>
+      </KeyboardComponent>
+      <TextComponent name="text_Mask">
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.2" valType="code"/>
+        <Param name="name" updates="None" val="text_Mask" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="frame N" valType="str"/>
+        <Param name="startVal" updates="None" val="0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (frames)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="30" valType="code"/>
+        <Param name="text" updates="set every repeat" val="$Mask" valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+      <TextComponent name="text_Prime">
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.2" valType="code"/>
+        <Param name="name" updates="None" val="text_Prime" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="frame N" valType="str"/>
+        <Param name="startVal" updates="None" val="31" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (frames)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="30" valType="code"/>
+        <Param name="text" updates="set every repeat" val="$Prime" valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+    </Routine>
+  </Routines>
+  <Flow>
+    <Routine name="instrucciones"/>
+    <LoopInitiator loopType="TrialHandler" name="ciclo">
+      <Param name="Selected rows" updates="None" val="" valType="str"/>
+      <Param name="conditions" updates="None" val="[OrderedDict([('Mask', '######'), ('Prime', 'ba####'), ('Word', 'barato'), ('Translation', 'cheap'), ('corrAnsLexical', 1)]), OrderedDict([('Mask', '########'), ('Prime', 'ba######'), ('Word', 'batillón'), ('Translation', 'NW'), ('corrAnsLexical', 0)]), OrderedDict([('Mask', '#####'), ('Prime', 'be###'), ('Word', 'besar'), ('Translation', 'kiss'), ('corrAnsLexical', 1)]), OrderedDict([('Mask', '#######'), ('Prime', 'bi#####'), ('Word', 'bisagra'), ('Translation', 'hinge'), ('corrAnsLexical', 1)]), OrderedDict([('Mask', '########'), ('Prime', 'bi######'), ('Word', 'bizcocho'), ('Translation', 'cake'), ('corrAnsLexical', 1)]), OrderedDict([('Mask', '#######'), ('Prime', 'ca#####'), ('Word', 'cabello'), ('Translation', 'hair'), ('corrAnsLexical', 1)]), OrderedDict([('Mask', '#######'), ('Prime', 'ca#####'), ('Word', 'cadallo'), ('Translation', 'NW'), ('corrAnsLexical', 0)]), OrderedDict([('Mask', '######'), ('Prime', 'ca####'), ('Word', 'cadeña'), ('Translation', 'NW'), ('corrAnsLexical', 0)]), OrderedDict([('Mask', '######'), ('Prime', 'ca####'), ('Word', 'camisa'), ('Translation', 'shirt'), ('corrAnsLexical', 1)]), OrderedDict([('Mask', '#######'), ('Prime', 'ca#####'), ('Word', 'candado'), ('Translation', 'padlock'), ('corrAnsLexical', 1)]), OrderedDict([('Mask', '######'), ('Prime', 'ca####'), ('Word', 'canela'), ('Translation', 'cinnamon'), ('corrAnsLexical', 1)]), OrderedDict([('Mask', '#######'), ('Prime', 'ca#####'), ('Word', 'capillo'), ('Translation', 'NW'), ('corrAnsLexical', 0)]), OrderedDict([('Mask', '########'), ('Prime', 'ca######'), ('Word', 'cartinar'), ('Translation', 'NW'), ('corrAnsLexical', 0)]), OrderedDict([('Mask', '######'), ('Prime', 'ce####'), ('Word', 'cenefa'), ('Translation', 'edging'), ('corrAnsLexical', 1)]), OrderedDict([('Mask', '######'), ('Prime', 'ci####'), ('Word', 'cintro'), ('Translation', 'NW'), ('corrAnsLexical', 0)]), OrderedDict([('Mask', '#######'), ('Prime', 'cu#####'), ('Word', 'cuchara'), ('Translation', 'spoon'), ('corrAnsLexical', 1)]), OrderedDict([('Mask', '#####'), ('Prime', 'de###'), ('Word', 'decar'), ('Translation', 'NW'), ('corrAnsLexical', 0)]), OrderedDict([('Mask', '#########'), ('Prime', 'de#######'), ('Word', 'delantera'), ('Translation', 'first position'), ('corrAnsLexical', 1)]), OrderedDict([('Mask', '#########'), ('Prime', 'fa#######'), ('Word', 'fatacidad'), ('Translation', 'NW'), ('corrAnsLexical', 0)]), OrderedDict([('Mask', '########'), ('Prime', 'fo######'), ('Word', 'fomentar'), ('Translation', 'promote'), ('corrAnsLexical', 1)]), OrderedDict([('Mask', '########'), ('Prime', 'fr######'), ('Word', 'frondoso'), ('Translation', 'leafy'), ('corrAnsLexical', 1)]), OrderedDict([('Mask', '#####'), ('Prime', 'ga###'), ('Word', 'ganar'), ('Translation', 'win'), ('corrAnsLexical', 1)]), OrderedDict([('Mask', '##########'), ('Prime', 'ga########'), ('Word', 'garbardina'), ('Translation', 'raincoat'), ('corrAnsLexical', 1)]), OrderedDict([('Mask', '######'), ('Prime', 'gu####'), ('Word', 'guante'), ('Translation', 'glove'), ('corrAnsLexical', 1)]), OrderedDict([('Mask', '########'), ('Prime', 'ji######'), ('Word', 'jilguero'), ('Translation', 'goldfinch'), ('corrAnsLexical', 1)]), OrderedDict([('Mask', '######'), ('Prime', 'la####'), ('Word', 'lacayo'), ('Translation', 'lackey'), ('corrAnsLexical', 1)]), OrderedDict([('Mask', '######'), ('Prime', 'la####'), ('Word', 'ladrón'), ('Translation', 'thief'), ('corrAnsLexical', 1)]), OrderedDict([('Mask', '#######'), ('Prime', 'lam####'), ('Word', 'lampera'), ('Translation', 'NW'), ('corrAnsLexical', 0)]), OrderedDict([('Mask', '######'), ('Prime', 'lát###'), ('Word', 'látigo'), ('Translation', 'whip'), ('corrAnsLexical', 1)]), OrderedDict([('Mask', '####'), ('Prime', 'lau#'), ('Word', 'laud'), ('Translation', 'lute'), ('corrAnsLexical', 1)]), OrderedDict([('Mask', '####'), ('Prime', 'lor#'), ('Word', 'loro'), ('Translation', 'parrot'), ('corrAnsLexical', 1)]), OrderedDict([('Mask', '########'), ('Prime', 'mar#####'), ('Word', 'martillo'), ('Translation', 'hammer'), ('corrAnsLexical', 1)]), OrderedDict([('Mask', '#####'), ('Prime', 'mat##'), ('Word', 'matar'), ('Translation', 'kill'), ('corrAnsLexical', 1)]), OrderedDict([('Mask', '########'), ('Prime', 'mer#####'), ('Word', 'merodear'), ('Translation', 'prowl'), ('corrAnsLexical', 1)]), OrderedDict([('Mask', '#####'), ('Prime', 'mus##'), ('Word', 'musgo'), ('Translation', 'moss'), ('corrAnsLexical', 1)]), OrderedDict([('Mask', '#####'), ('Prime', 'nev##'), ('Word', 'nevar'), ('Translation', 'snow'), ('corrAnsLexical', 1)]), OrderedDict([('Mask', '########'), ('Prime', 'pan#####'), ('Word', 'pandilla'), ('Translation', 'gang'), ('corrAnsLexical', 1)]), OrderedDict([('Mask', '#####'), ('Prime', 'pau##'), ('Word', 'pauca'), ('Translation', 'NW'), ('corrAnsLexical', 0)]), OrderedDict([('Mask', '#########'), ('Prime', 'pel######'), ('Word', 'pellizcar'), ('Translation', 'pinch'), ('corrAnsLexical', 1)]), OrderedDict([('Mask', '########'), ('Prime', 'pem#####'), ('Word', 'pemición'), ('Translation', 'NW'), ('corrAnsLexical', 0)]), OrderedDict([('Mask', '######'), ('Prime', 'pés###'), ('Word', 'pésimo'), ('Translation', 'abysmal'), ('corrAnsLexical', 1)]), OrderedDict([('Mask', '###########'), ('Prime', 'pol########'), ('Word', 'polvoriento'), ('Translation', 'dusty'), ('corrAnsLexical', 1)]), OrderedDict([('Mask', '####'), ('Prime', 'poz#'), ('Word', 'pozo'), ('Translation', 'well'), ('corrAnsLexical', 1)]), OrderedDict([('Mask', '#####'), ('Prime', 'pri##'), ('Word', 'prisa'), ('Translation', 'hurry'), ('corrAnsLexical', 1)]), OrderedDict([('Mask', '########'), ('Prime', 'pul#####'), ('Word', 'pulmones'), ('Translation', 'lungs'), ('corrAnsLexical', 1)]), OrderedDict([('Mask', '########'), ('Prime', 'reb#####'), ('Word', 'rebuscar'), ('Translation', 'rummage'), ('corrAnsLexical', 1)]), OrderedDict([('Mask', '#####'), ('Prime', 'reg##'), ('Word', 'regar'), ('Translation', 'water'), ('corrAnsLexical', 1)]), OrderedDict([('Mask', '#######'), ('Prime', 'rom####'), ('Word', 'rompido'), ('Translation', 'NW'), ('corrAnsLexical', 0)]), OrderedDict([('Mask', '#########'), ('Prime', 'sec######'), ('Word', 'secuestro'), ('Translation', 'kidnapping'), ('corrAnsLexical', 1)]), OrderedDict([('Mask', '####'), ('Prime', 'sed#'), ('Word', 'seda'), ('Translation', 'silk'), ('corrAnsLexical', 1)]), OrderedDict([('Mask', '######'), ('Prime', 'tac###'), ('Word', 'tacaño'), ('Translation', 'stingy'), ('corrAnsLexical', 1)]), OrderedDict([('Mask', '######'), ('Prime', 'tem###'), ('Word', 'temblo'), ('Translation', 'NW'), ('corrAnsLexical', 0)]), OrderedDict([('Mask', '###########'), ('Prime', 'ter########'), ('Word', 'tergiversar'), ('Translation', 'distort'), ('corrAnsLexical', 1)]), OrderedDict([('Mask', '#####'), ('Prime', 'ter##'), ('Word', 'terzo'), ('Translation', 'NW'), ('corrAnsLexical', 0)]), OrderedDict([('Mask', '#######'), ('Prime', 'tib####'), ('Word', 'tiburón'), ('Translation', 'shark'), ('corrAnsLexical', 1)]), OrderedDict([('Mask', '#####'), ('Prime', 'tor##'), ('Word', 'torpe'), ('Translation', 'clumsy'), ('corrAnsLexical', 1)]), OrderedDict([('Mask', '######'), ('Prime', 'veg###'), ('Word', 'vegada'), ('Translation', 'NW'), ('corrAnsLexical', 0)]), OrderedDict([('Mask', '#####'), ('Prime', 'yac##'), ('Word', 'yacer'), ('Translation', 'lie'), ('corrAnsLexical', 1)]), OrderedDict([('Mask', '######'), ('Prime', 'yun###'), ('Word', 'yunque'), ('Translation', 'anvil'), ('corrAnsLexical', 1)]), OrderedDict([('Mask', '######'), ('Prime', 'zap###'), ('Word', 'zapato'), ('Translation', 'shoe'), ('corrAnsLexical', 1)])]" valType="str"/>
+      <Param name="conditionsFile" updates="None" val="LexicalAccess.csv" valType="str"/>
+      <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
+      <Param name="isTrials" updates="None" val="True" valType="bool"/>
+      <Param name="loopType" updates="None" val="random" valType="str"/>
+      <Param name="nReps" updates="None" val="1" valType="code"/>
+      <Param name="name" updates="None" val="ciclo" valType="code"/>
+      <Param name="random seed" updates="None" val="" valType="code"/>
+    </LoopInitiator>
+    <Routine name="pruebas"/>
+    <LoopTerminator name="ciclo"/>
+    <Routine name="cierre"/>
+  </Flow>
+</PsychoPy2experiment>

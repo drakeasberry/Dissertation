@@ -1,0 +1,131 @@
+102.0447 	EXP 	Created window1 = Window(allowGUI=False, allowStencil=False, args=UNKNOWN, autoLog=True, bitsMode=UNKNOWN, blendMode='avg', color=array([0., 0., 0.]), colorSpace='rgb', fullscr=<method-wrapper '__getattribute__' of attributeSetter object at 0x10d7e1f28>, gamma=None, kwargs=UNKNOWN, lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x129a59ef0>, multiSample=False, name='window1', numSamples=2, pos=[0.0, 0.0], screen=0, size=array([1280,  800]), stereo=False, units='norm', useFBO=True, useRetina=False, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+102.0447 	EXP 	window1: recordFrameIntervals = False
+102.2115 	EXP 	window1: recordFrameIntervals = True
+102.3942 	EXP 	window1: recordFrameIntervals = False
+102.5737 	EXP 	Created lexEsp_Instr = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='black', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.05, italic=False, languageStyle='LTR', name='lexEsp_Instr', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([0., 0., 0.]), text=str(...), units='norm', win=Window(...), wrapWidth=1)
+102.5827 	EXP 	Created text_Word = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='black', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.2, italic=False, languageStyle='LTR', name='text_Word', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([0., 0., 0.]), text='default text', units='norm', win=Window(...), wrapWidth=1)
+102.5870 	EXP 	Created text_Si = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='green', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.2, italic=False, languageStyle='LTR', name='text_Si', opacity=1.0, ori=0, pos=array([0.5, 0. ]), rgb=array([  0., 128.,   0.]), text='sí', units='norm', win=Window(...), wrapWidth=1)
+102.5905 	EXP 	Created text_No = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='red', colorSpace='named', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.2, italic=False, languageStyle='LTR', name='text_No', opacity=1.0, ori=0, pos=array([-0.5,  0. ]), rgb=array([255.,   0.,   0.]), text='no', units='norm', win=Window(...), wrapWidth=1)
+102.5956 	EXP 	Created text_Mask = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-4.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.2, italic=False, languageStyle='LTR', name='text_Mask', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text='default text', units='norm', win=Window(...), wrapWidth=1)
+102.6002 	EXP 	Created text_Prime = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-5.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.2, italic=False, languageStyle='LTR', name='text_Prime', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text='default text', units='norm', win=Window(...), wrapWidth=1)
+102.6085 	EXP 	Created text_Closing = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='black', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.07, italic=False, languageStyle='LTR', name='text_Closing', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([0., 0., 0.]), text='gracias', units='norm', win=Window(...), wrapWidth=1)
+102.6271 	EXP 	lexEsp_Instr: autoDraw = True
+108.0189 	DATA 	Keypress: space
+108.0338 	EXP 	Imported LexicalAccess.csv as conditions, 71 conditions, 5 params
+108.0344 	EXP 	Created sequence: random, trialTypes=71, nReps=1, seed=None
+108.0348 	EXP 	New trial (rep=0, index=0): OrderedDict([('Mask', '#######'), ('Prime', 'fl#####'), ('Word', 'floroso'), ('Translation', 'NW'), ('corrAnsLexical', 0)])
+108.0544 	EXP 	lexEsp_Instr: autoDraw = False
+108.0544 	EXP 	text_Word: text = 'floroso'
+108.0544 	EXP 	text_Mask: text = '#######'
+108.0544 	EXP 	text_Prime: text = 'fl#####'
+108.0544 	EXP 	text_Mask: autoDraw = True
+108.5463 	EXP 	text_Mask: autoDraw = False
+108.5750 	EXP 	text_Prime: autoDraw = True
+109.0623 	EXP 	text_Word: autoDraw = True
+109.0623 	EXP 	text_Si: autoDraw = True
+109.0623 	EXP 	text_No: autoDraw = True
+109.0623 	EXP 	text_Prime: autoDraw = False
+117.5450 	DATA 	Keypress: 1
+117.5470 	EXP 	New trial (rep=0, index=1): OrderedDict([('Mask', '#########'), ('Prime', 'fa#######'), ('Word', 'fatacidad'), ('Translation', 'NW'), ('corrAnsLexical', 0)])
+117.5720 	EXP 	text_Word: autoDraw = False
+117.5720 	EXP 	text_Si: autoDraw = False
+117.5720 	EXP 	text_No: autoDraw = False
+117.5720 	EXP 	text_Mask: autoDraw = False
+117.5720 	EXP 	text_Prime: autoDraw = False
+117.5720 	EXP 	text_Word: text = 'fatacidad'
+117.5720 	EXP 	text_Mask: text = '#########'
+117.5720 	EXP 	text_Prime: text = 'fa#######'
+117.5720 	EXP 	text_Mask: autoDraw = True
+118.0728 	EXP 	text_Mask: autoDraw = False
+118.0898 	EXP 	text_Prime: autoDraw = True
+118.5893 	EXP 	text_Word: autoDraw = True
+118.5893 	EXP 	text_Si: autoDraw = True
+118.5893 	EXP 	text_No: autoDraw = True
+118.5893 	EXP 	text_Prime: autoDraw = False
+123.2971 	DATA 	Keypress: 1
+123.2988 	EXP 	New trial (rep=0, index=2): OrderedDict([('Mask', '#######'), ('Prime', 'lam####'), ('Word', 'lampera'), ('Translation', 'NW'), ('corrAnsLexical', 0)])
+123.3158 	EXP 	text_Word: autoDraw = False
+123.3158 	EXP 	text_Si: autoDraw = False
+123.3158 	EXP 	text_No: autoDraw = False
+123.3158 	EXP 	text_Mask: autoDraw = False
+123.3158 	EXP 	text_Prime: autoDraw = False
+123.3158 	EXP 	text_Word: text = 'lampera'
+123.3158 	EXP 	text_Mask: text = '#######'
+123.3158 	EXP 	text_Prime: text = 'lam####'
+123.3158 	EXP 	text_Mask: autoDraw = True
+123.8095 	EXP 	text_Mask: autoDraw = False
+123.8271 	EXP 	text_Prime: autoDraw = True
+124.3259 	EXP 	text_Word: autoDraw = True
+124.3259 	EXP 	text_Si: autoDraw = True
+124.3259 	EXP 	text_No: autoDraw = True
+124.3259 	EXP 	text_Prime: autoDraw = False
+126.8558 	DATA 	Keypress: 0
+126.8575 	EXP 	New trial (rep=0, index=3): OrderedDict([('Mask', '########'), ('Prime', 'fo######'), ('Word', 'fomentar'), ('Translation', 'promote'), ('corrAnsLexical', 1)])
+126.8756 	EXP 	text_Word: autoDraw = False
+126.8756 	EXP 	text_Si: autoDraw = False
+126.8756 	EXP 	text_No: autoDraw = False
+126.8756 	EXP 	text_Mask: autoDraw = False
+126.8756 	EXP 	text_Prime: autoDraw = False
+126.8756 	EXP 	text_Word: text = 'fomentar'
+126.8756 	EXP 	text_Mask: text = '########'
+126.8756 	EXP 	text_Prime: text = 'fo######'
+126.8756 	EXP 	text_Mask: autoDraw = True
+127.3687 	EXP 	text_Mask: autoDraw = False
+127.3846 	EXP 	text_Prime: autoDraw = True
+127.8843 	EXP 	text_Word: autoDraw = True
+127.8843 	EXP 	text_Si: autoDraw = True
+127.8843 	EXP 	text_No: autoDraw = True
+127.8843 	EXP 	text_Prime: autoDraw = False
+133.4734 	DATA 	Keypress: 1
+133.4751 	EXP 	New trial (rep=0, index=4): OrderedDict([('Mask', '#######'), ('Prime', 'rom####'), ('Word', 'rompido'), ('Translation', 'NW'), ('corrAnsLexical', 0)])
+133.4998 	EXP 	text_Word: autoDraw = False
+133.4998 	EXP 	text_Si: autoDraw = False
+133.4998 	EXP 	text_No: autoDraw = False
+133.4998 	EXP 	text_Mask: autoDraw = False
+133.4998 	EXP 	text_Prime: autoDraw = False
+133.4998 	EXP 	text_Word: text = 'rompido'
+133.4998 	EXP 	text_Mask: text = '#######'
+133.4998 	EXP 	text_Prime: text = 'rom####'
+133.4998 	EXP 	text_Mask: autoDraw = True
+133.9861 	EXP 	text_Mask: autoDraw = False
+134.0033 	EXP 	text_Prime: autoDraw = True
+134.5012 	EXP 	text_Word: autoDraw = True
+134.5012 	EXP 	text_Si: autoDraw = True
+134.5012 	EXP 	text_No: autoDraw = True
+134.5012 	EXP 	text_Prime: autoDraw = False
+135.6182 	DATA 	Keypress: 0
+135.6199 	EXP 	New trial (rep=0, index=5): OrderedDict([('Mask', '#########'), ('Prime', 'pel######'), ('Word', 'pellizcar'), ('Translation', 'pinch'), ('corrAnsLexical', 1)])
+135.6458 	EXP 	text_Word: autoDraw = False
+135.6458 	EXP 	text_Si: autoDraw = False
+135.6458 	EXP 	text_No: autoDraw = False
+135.6458 	EXP 	text_Mask: autoDraw = False
+135.6458 	EXP 	text_Prime: autoDraw = False
+135.6458 	EXP 	text_Word: text = 'pellizcar'
+135.6458 	EXP 	text_Mask: text = '#########'
+135.6458 	EXP 	text_Prime: text = 'pel######'
+135.6458 	EXP 	text_Mask: autoDraw = True
+136.1482 	EXP 	text_Mask: autoDraw = False
+136.1647 	EXP 	text_Prime: autoDraw = True
+136.6628 	EXP 	text_Word: autoDraw = True
+136.6628 	EXP 	text_Si: autoDraw = True
+136.6628 	EXP 	text_No: autoDraw = True
+136.6628 	EXP 	text_Prime: autoDraw = False
+138.7606 	DATA 	Keypress: 1
+138.7623 	EXP 	New trial (rep=0, index=6): OrderedDict([('Mask', '######'), ('Prime', 'ca####'), ('Word', 'camisa'), ('Translation', 'shirt'), ('corrAnsLexical', 1)])
+138.7918 	EXP 	text_Word: autoDraw = False
+138.7918 	EXP 	text_Si: autoDraw = False
+138.7918 	EXP 	text_No: autoDraw = False
+138.7918 	EXP 	text_Mask: autoDraw = False
+138.7918 	EXP 	text_Prime: autoDraw = False
+138.7918 	EXP 	text_Word: text = 'camisa'
+138.7918 	EXP 	text_Mask: text = '######'
+138.7918 	EXP 	text_Prime: text = 'ca####'
+138.7918 	EXP 	text_Mask: autoDraw = True
+139.2905 	EXP 	text_Mask: autoDraw = False
+139.3072 	EXP 	text_Prime: autoDraw = True
+139.8045 	EXP 	text_Word: autoDraw = True
+139.8045 	EXP 	text_Si: autoDraw = True
+139.8045 	EXP 	text_No: autoDraw = True
+139.8045 	EXP 	text_Prime: autoDraw = False
+151.8302 	DATA 	Keypress: escape
+152.1057 	EXP 	window1: mouseVisible = True
