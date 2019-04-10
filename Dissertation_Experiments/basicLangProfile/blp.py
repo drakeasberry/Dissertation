@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v3.0.5),
-    on Mon Apr  1 19:44:23 2019
+    on Mon Apr  8 17:13:31 2019
 If you publish work using this script please cite the PsychoPy publications:
     Peirce, JW (2007) PsychoPy - Psychophysics software in Python.
         Journal of Neuroscience Methods, 162(1-2), 8-13.
@@ -29,7 +29,7 @@ os.chdir(_thisDir)
 # Store info about the experiment session
 psychopyVersion = '3.0.5'
 expName = 'blp'  # from the Builder filename that created this script
-expInfo = {'Preferred Language': '', 'Participant': '', 'Country': '', 'Age': '', 'Highest level of ed': '', 'Gender': '', 'Place of residence': 'city,state'}
+expInfo = {'08_Idioma preferida (Preferred language):': ['', 'español', 'inglés'], '09_Participante (Participant):': 'part000', '05_País de nacimiento (Birth country):': ['', 'México', 'Estados Unidos'], '03_Edad (Age):': '', '07_Nivel más alto de formación académica (Highest level of formal education):': ['', 'Menos de la escuela secundaria', 'Escuela Secundaria', 'Un poco de universidad', 'Universidad (diplomatura, licenciatura)', 'Un poco de escuela graduada', 'Máster', 'Doctorado'], '04_Sexo (Gender):': ['', 'Hombre', 'Mujer'], '02_Apellido (Last name):': '', '01_Nombre (First name):': '', '06_Lugar de residencia (Place of residence):': ['', 'Tucson', 'Hermosillo']}
 dlg = gui.DlgFromDict(dictionary=expInfo, title=expName)
 if dlg.OK == False:
     core.quit()  # user pressed cancel
@@ -38,12 +38,12 @@ expInfo['expName'] = expName
 expInfo['psychopyVersion'] = psychopyVersion
 
 # Data file name stem = absolute path + name; later add .psyexp, .csv, .log, etc
-filename = _thisDir + os.sep + u'data/%s_%s_%s' % (expInfo['participant'], expName, expInfo['date'])
+filename = _thisDir + os.sep + u'data/%s_%s_%s' % (expInfo['09_Participante (Participant):'], expName, expInfo['date'])
 
 # An ExperimentHandler isn't essential but helps with data saving
 thisExp = data.ExperimentHandler(name=expName, version='',
     extraInfo=expInfo, runtimeInfo=None,
-    originPath='/Users/drakeasberry/github/psychopy_templates/blp/blp.py',
+    originPath='/Users/drakeasberry/github/Dissertation/Dissertation_Experiments/basicLangProfile/blp.py',
     savePickle=True, saveWideText=True,
     dataFileName=filename)
 # save a log file for detail verbose info
@@ -76,7 +76,13 @@ text_instructions = visual.TextStim(win=win, name='text_instructions',
     color='white', colorSpace='rgb', opacity=1, 
     languageStyle='LTR',
     depth=0.0);
+preferLang = expInfo['08_Idioma preferida (Preferred language):']
+print(preferLang)
 
+'''If preferLang = 'espanol':
+    section = sectionEsp
+else:
+    section = sectionEng'''
 
 # Initialize components for Routine "lang_hist_ins"
 lang_hist_insClock = core.Clock()
@@ -118,7 +124,7 @@ text_lang_hist_qnum = visual.TextStim(win=win, name='text_lang_hist_qnum',
     color='white', colorSpace='rgb', opacity=1, 
     languageStyle='LTR',
     depth=-3.0);
-rating_lang_hist = visual.RatingScale(win=win, name='rating_lang_hist', marker='triangle', size=1.5, pos=[0.0, -0.3], low=0, high=20, labels=['Since birth (0)', ' 20+'], scale='')
+rating_lang_hist = visual.RatingScale(win=win, name='rating_lang_hist', marker='triangle', size=1.5, pos=[0.0, -0.3], choices=['Since Birth', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20+'], tickHeight=-1, markerStart='10')
 
 # Initialize components for Routine "lang_use_ins"
 lang_use_insClock = core.Clock()
@@ -392,23 +398,23 @@ for thisComponent in lang_hist_insComponents:
 routineTimer.reset()
 
 # set up handler to look after randomisation of conditions etc
-trials_hist = data.TrialHandler(nReps=1, method='sequential', 
+trials = data.TrialHandler(nReps=1, method='sequential', 
     extraInfo=expInfo, originPath=-1,
-    trialList=data.importConditions('condition_file/en_trials.csv', selection='0:12'),
-    seed=None, name='trials_hist')
-thisExp.addLoop(trials_hist)  # add the loop to the experiment
-thisTrials_hist = trials_hist.trialList[0]  # so we can initialise stimuli with some values
-# abbreviate parameter names if possible (e.g. rgb = thisTrials_hist.rgb)
-if thisTrials_hist != None:
-    for paramName in thisTrials_hist:
-        exec('{} = thisTrials_hist[paramName]'.format(paramName))
+    trialList=data.importConditions('condition_file/sp_en_trials.csv', selection='0:12'),
+    seed=None, name='trials')
+thisExp.addLoop(trials)  # add the loop to the experiment
+thisTrial = trials.trialList[0]  # so we can initialise stimuli with some values
+# abbreviate parameter names if possible (e.g. rgb = thisTrial.rgb)
+if thisTrial != None:
+    for paramName in thisTrial:
+        exec('{} = thisTrial[paramName]'.format(paramName))
 
-for thisTrials_hist in trials_hist:
-    currentLoop = trials_hist
-    # abbreviate parameter names if possible (e.g. rgb = thisTrials_hist.rgb)
-    if thisTrials_hist != None:
-        for paramName in thisTrials_hist:
-            exec('{} = thisTrials_hist[paramName]'.format(paramName))
+for thisTrial in trials:
+    currentLoop = trials
+    # abbreviate parameter names if possible (e.g. rgb = thisTrial.rgb)
+    if thisTrial != None:
+        for paramName in thisTrial:
+            exec('{} = thisTrial[paramName]'.format(paramName))
     
     # ------Prepare to start Routine "language_history"-------
     t = 0
@@ -418,8 +424,8 @@ for thisTrials_hist in trials_hist:
     # update component parameters for each repeat
     text_section_lang_hist.setText(section
 )
-    text_lang_hist_question.setText(questionText)
-    text_lang_hist_lang.setText(language)
+    text_lang_hist_question.setText(questionTextEng)
+    text_lang_hist_lang.setText(languageEng)
     text_lang_hist_qnum.setText(questionNum)
     rating_lang_hist.reset()
     # keep track of which components have finished
@@ -491,14 +497,14 @@ for thisTrials_hist in trials_hist:
     for thisComponent in language_historyComponents:
         if hasattr(thisComponent, "setAutoDraw"):
             thisComponent.setAutoDraw(False)
-    # store data for trials_hist (TrialHandler)
-    trials_hist.addData('rating_lang_hist.response', rating_lang_hist.getRating())
-    trials_hist.addData('rating_lang_hist.rt', rating_lang_hist.getRT())
+    # store data for trials (TrialHandler)
+    trials.addData('rating_lang_hist.response', rating_lang_hist.getRating())
+    trials.addData('rating_lang_hist.rt', rating_lang_hist.getRT())
     # the Routine "language_history" was not non-slip safe, so reset the non-slip timer
     routineTimer.reset()
     thisExp.nextEntry()
     
-# completed 1 repeats of 'trials_hist'
+# completed 1 repeats of 'trials'
 
 
 # ------Prepare to start Routine "lang_use_ins"-------
@@ -573,7 +579,7 @@ routineTimer.reset()
 # set up handler to look after randomisation of conditions etc
 trials_use = data.TrialHandler(nReps=1, method='sequential', 
     extraInfo=expInfo, originPath=-1,
-    trialList=data.importConditions('condition_file/en_trials.csv', selection='12:27'),
+    trialList=data.importConditions('condition_file/sp_en_trials.csv', selection='12:27'),
     seed=None, name='trials_use')
 thisExp.addLoop(trials_use)  # add the loop to the experiment
 thisTrials_use = trials_use.trialList[0]  # so we can initialise stimuli with some values
@@ -595,9 +601,9 @@ for thisTrials_use in trials_use:
     frameN = -1
     continueRoutine = True
     # update component parameters for each repeat
-    text_section_lang_use.setText(section)
-    text_lang_use_question.setText(questionText)
-    text_lang_use_lang.setText(language)
+    text_section_lang_use.setText(sectionEng)
+    text_lang_use_question.setText(questionTextEng)
+    text_lang_use_lang.setText(languageEng)
     text_lang_use_qnum.setText(questionNum)
     rating_lang_use.reset()
     # keep track of which components have finished
@@ -751,7 +757,7 @@ routineTimer.reset()
 # set up handler to look after randomisation of conditions etc
 trials_prof = data.TrialHandler(nReps=1, method='sequential', 
     extraInfo=expInfo, originPath=-1,
-    trialList=data.importConditions('condition_file/en_trials.csv', selection='27:35'),
+    trialList=data.importConditions('condition_file/sp_en_trials.csv', selection='27:35'),
     seed=None, name='trials_prof')
 thisExp.addLoop(trials_prof)  # add the loop to the experiment
 thisTrials_prof = trials_prof.trialList[0]  # so we can initialise stimuli with some values
@@ -773,9 +779,9 @@ for thisTrials_prof in trials_prof:
     frameN = -1
     continueRoutine = True
     # update component parameters for each repeat
-    text_section_lang_prof.setText(section)
-    text_lang_prof_question.setText(questionText)
-    text_lang_prof_lang.setText(language)
+    text_section_lang_prof.setText(sectionEng)
+    text_lang_prof_question.setText(questionTextEng)
+    text_lang_prof_lang.setText(languageEng)
     text_lang_prof_qnum.setText(questionNum)
     text_lang_prof_qmark.setText('?')
     rating_lang_prof.reset()
@@ -937,7 +943,7 @@ routineTimer.reset()
 # set up handler to look after randomisation of conditions etc
 trials_att = data.TrialHandler(nReps=1, method='sequential', 
     extraInfo=expInfo, originPath=-1,
-    trialList=data.importConditions('condition_file/en_trials.csv', selection='35:43'),
+    trialList=data.importConditions('condition_file/sp_en_trials.csv', selection='35:43'),
     seed=None, name='trials_att')
 thisExp.addLoop(trials_att)  # add the loop to the experiment
 thisTrials_att = trials_att.trialList[0]  # so we can initialise stimuli with some values
@@ -959,8 +965,8 @@ for thisTrials_att in trials_att:
     frameN = -1
     continueRoutine = True
     # update component parameters for each repeat
-    text_lang_att_section.setText(section)
-    text_lang_att_ques.setText(questionText)
+    text_lang_att_section.setText(sectionEng)
+    text_lang_att_ques.setText(questionTextEng)
     text_lang_att_qnum.setText(questionNum)
     rating_lang_att.reset()
     # keep track of which components have finished

@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v3.0.5),
-    on Tue Apr  9 22:23:06 2019
+    on Mon Apr  8 16:12:50 2019
 If you publish work using this script please cite the PsychoPy publications:
     Peirce, JW (2007) PsychoPy - Psychophysics software in Python.
         Journal of Neuroscience Methods, 162(1-2), 8-13.
@@ -29,7 +29,7 @@ os.chdir(_thisDir)
 # Store info about the experiment session
 psychopyVersion = '3.0.5'
 expName = 'blp'  # from the Builder filename that created this script
-expInfo = {'idioma': ['', 'español', 'inglés'], '08_Idioma preferida (Preferred language):': ['', 'español', 'inglés'], '09_Participante (Participant):': 'part000', '05_País de nacimiento (Birth country):': ['', 'México', 'Estados Unidos'], '03_Edad (Age):': '', '07_Nivel más alto de formación académica (Highest level of formal education):': ['', 'Menos de la escuela secundaria', 'Escuela Secundaria', 'Un poco de universidad', 'Universidad (diplomatura, licenciatura)', 'Un poco de escuela graduada', 'Máster', 'Doctorado'], '04_Sexo (Gender):': ['', 'Hombre', 'Mujer'], '02_Apellido (Last name):': '', '01_Nombre (First name):': '', '06_Lugar de residencia (Place of residence):': ['', 'Tucson', 'Hermosillo']}
+expInfo = {'Preferred Language': ['español', 'inglés'], 'Participant': '', 'Country': '', 'Age': '', 'Highest level of ed': '', 'Gender': '', 'Place of residence': 'city,state'}
 dlg = gui.DlgFromDict(dictionary=expInfo, title=expName)
 if dlg.OK == False:
     core.quit()  # user pressed cancel
@@ -38,12 +38,12 @@ expInfo['expName'] = expName
 expInfo['psychopyVersion'] = psychopyVersion
 
 # Data file name stem = absolute path + name; later add .psyexp, .csv, .log, etc
-filename = _thisDir + os.sep + u'data/%s_%s_%s' % (expInfo['09_Participante (Participant):'], expName, expInfo['date'])
+filename = _thisDir + os.sep + u'data/%s_%s_%s' % (expInfo['Participant'], expName, expInfo['date'])
 
 # An ExperimentHandler isn't essential but helps with data saving
 thisExp = data.ExperimentHandler(name=expName, version='',
     extraInfo=expInfo, runtimeInfo=None,
-    originPath='/Users/drakeasberry/github/Dissertation/Dissertation_Experiments/basicLangProfile/blp_lastrun.py',
+    originPath='/Users/drakeasberry/github/Dissertation/Dissertation_Experiments/basicLangProfile/blp_coder_lastrun.py',
     savePickle=True, saveWideText=True,
     dataFileName=filename)
 # save a log file for detail verbose info
@@ -69,49 +69,32 @@ else:
 
 # Initialize components for Routine "instructions"
 instructionsClock = core.Clock()
-tmp = expInfo['08_Idioma preferida (Preferred language):']
-lang = tmp[0]
-
-if 'e' == lang:
-    preferLang = 'spanish'
-    section = 'sectionEsp'
-    questionText = 'questionTextEsp'
-    language = 'languageEsp'
-    instructions = 'Nos gustaría pedir su ayuda para contestar a las siguientes preguntas sobre su historial lingüístico, uso, actitudes y competencia. Esta encuesta ha sido creada con el apoyo del "Center for Open Educational Resources and Language Learning" de la Universidad de Texas en Austin para poder tener un mayor conocimiento sobre los perfiles de hablantes bilingües independientemente de sus diversos orígenes y en diferentes contextos. La encuesta contiene 19 preguntas y le llevará menos de 10 minutos para completar. Esto no es una prueba, por tanto no hay respuestas correctas ni incorrectas. Por favor conteste cada pregunta y responda con sinceridad, ya que solamente así se podrá garantizar el éxito de esta investigación. Muchas gracias por su ayuda.\n\nPresione el botón "blanco" para continuar.'
-    langHist = 'Historial lingüístico\n\nEn esta sección, nos gustaría que contestara algunas preguntas sobre su historial lingüístico marcando la casilla apropiada.\n\nPresione el botón "blanco" para continuar.'
-    langUse = 'Uso de lenguas\n\nEn esta sección, nos gustaría que contestara algunas preguntas sobre su uso de lenguas marcando la casilla apropiada. El uso total de todas las preguntas en cada pregunta debe llegar al 100%.\n\nPresione el botón "blanco" para continuar.'
-    langProf = 'Competencia\n\nEn esta sección, nos gustaría que considerara su competencia de lengua marcando la casilla de 0 a 6.\n\nPresione el botón "blanco" para continuar.'
-    langAtt = 'Actitudes\n\nEn esta sección, nos gustaría que contestara a las siguientes afirmaciones sobre actitudes lingüísticas marcando las casillas de 0 a 6.\n\nPresione el botón "blanco" para continuar.'
-    labHist1 = 'Desde el Nacimiento,20+'
-    #labUse
-    #labProf
-    #labAtt
-elif 'i' == lang:
-    preferLang = 'english'
-    section = 'sectionEng'
-    questionText = 'questionTextEng'
-    language = 'languageEng'
-    instructions = 'We would like to ask you to help us by answering the following questions concerning your language history, use, attitudes, and proficiency. This survey was created with support from the Center for Open Educational Resources and Language Learning at the University of Texas at Austin to better understand the profiles of bilingual speakers in diverse settings with diverse backgrounds. The survey consists of 19 questions and will take less than 10 minutes to complete. This is not a test, so there are no right or wrong answers. Please answer every question and give your answers sincerely. Thank you very much for your help.\n\nPress the "white" button to continue'
-    langHist = 'Language history\n\nIn this section, we would like you to answer some factual questions about your language history by placing a check in the appropriate box.\n\nPress the "white" button to begin.'
-    langUse = 'Language use\n\nIn this section, we would like you to answer some questions about your language use by placing a check in the appropriate box. Total use for all languages in a given question should equal 100%.\n\nPress the "white" button to begin.'
-    langProf = 'Language proficiency\n\nIn this section, we would like you to rate your language proficiency by giving marks from 0 to 6.\n\nPress the "white" button to begin.'
-    langAtt = 'Language attitudes\n\nIn this section, we would like you to respond to statements about language attitudes by giving marks from 0-6.\n\nPress the spacebar to begin.'
-    labHist1 = 'Since birth,20+'
-else:
-    instructions = 'Por favor, hable con el investigador.\n\nPlease talk to the experimenter.'
-
 text_instructions = visual.TextStim(win=win, name='text_instructions',
-    text=instructions,
+    text='We would like to ask you to help us by answering the following questions concerning your language history, use, attitudes, and proficiency. This survey was created with support from the Center for Open Educational Resources and Language Learning at the University of Texas at Austin to better understand the profiles of bilingual speakers in diverse settings with diverse backgrounds. The survey consists of 19 questions and will take less than 10 minutes to complete. This is not a test, so there are no right or wrong answers. Please answer every question and give your answers sincerely. Thank you very much for your help.',
     font='Arial',
     pos=(0, 0), height=0.07, wrapWidth=None, ori=0, 
     color='white', colorSpace='rgb', opacity=1, 
     languageStyle='LTR',
-    depth=-1.0);
+    depth=0.0);
+'''from psychopy import gui
+
+myDlg = gui.Dlg(title="JWP's experiment")
+myDlg.addText('Subject info')
+myDlg.addField('Name:')
+myDlg.addField('Age:', 21)
+myDlg.addText('Experiment Info')
+myDlg.addField('Grating Ori:',45)
+myDlg.addField('Group:', choices=["Test", "Control"])
+ok_data = myDlg.show()  # show dialog and wait for OK or Cancel
+if myDlg.OK:  # or if ok_data is not None
+    print(ok_data)
+else:
+    print('user cancelled')'''
 
 # Initialize components for Routine "lang_hist_ins"
 lang_hist_insClock = core.Clock()
 text_lang_his_ins = visual.TextStim(win=win, name='text_lang_his_ins',
-    text=langHist,
+    text='Language history\n\nIn this section, we would like you to answer some factual questions about your language history by placing a check in the appropriate box.\n\nPress the spacebar to begin.',
     font='Arial',
     pos=(0, 0), height=0.1, wrapWidth=None, ori=0, 
     color='white', colorSpace='rgb', opacity=1, 
@@ -138,7 +121,7 @@ text_lang_hist_lang = visual.TextStim(win=win, name='text_lang_hist_lang',
     text='default text',
     font='Arial',
     pos=(0, 0), height=0.1, wrapWidth=None, ori=0, 
-    color='white', colorSpace='rgb', opacity=1, 
+    color='blue', colorSpace='rgb', opacity=1, 
     languageStyle='LTR',
     depth=-2.0);
 text_lang_hist_qnum = visual.TextStim(win=win, name='text_lang_hist_qnum',
@@ -148,76 +131,12 @@ text_lang_hist_qnum = visual.TextStim(win=win, name='text_lang_hist_qnum',
     color='white', colorSpace='rgb', opacity=1, 
     languageStyle='LTR',
     depth=-3.0);
-rating_lang_hist = visual.RatingScale(win=win, name='rating_lang_hist', marker='triangle', size=1.5, pos=[0.0, -0.3], low=0, high=20, labels=['$labHist1'], scale='', markerStart='10')
-
-# Initialize components for Routine "language_history_2"
-language_history_2Clock = core.Clock()
-text_section_lang_hist_2 = visual.TextStim(win=win, name='text_section_lang_hist_2',
-    text='default text',
-    font='Arial',
-    pos=(0, 0.75), height=0.1, wrapWidth=None, ori=0, 
-    color='black', colorSpace='rgb', opacity=1, 
-    languageStyle='LTR',
-    depth=0.0);
-text_lang_hist_question_2 = visual.TextStim(win=win, name='text_lang_hist_question_2',
-    text='default text',
-    font='Arial',
-    pos=(0, 0.4), height=0.1, wrapWidth=None, ori=0, 
-    color='white', colorSpace='rgb', opacity=1, 
-    languageStyle='LTR',
-    depth=-1.0);
-text_lang_hist_lang_2 = visual.TextStim(win=win, name='text_lang_hist_lang_2',
-    text='default text',
-    font='Arial',
-    pos=(0, 0), height=0.1, wrapWidth=None, ori=0, 
-    color='white', colorSpace='rgb', opacity=1, 
-    languageStyle='LTR',
-    depth=-2.0);
-text_lang_hist_qnum_2 = visual.TextStim(win=win, name='text_lang_hist_qnum_2',
-    text='default text',
-    font='Arial',
-    pos=(-0.9, 0.9), height=0.1, wrapWidth=None, ori=0, 
-    color='white', colorSpace='rgb', opacity=1, 
-    languageStyle='LTR',
-    depth=-3.0);
-rating_lang_hist_2 = visual.RatingScale(win=win, name='rating_lang_hist_2', marker='triangle', size=1.5, pos=[0.0, -0.3], low=0, high=20, labels=['0', ' 10', ' 20'], scale='', markerStart='10')
-
-# Initialize components for Routine "language_history_3"
-language_history_3Clock = core.Clock()
-text_section_lang_hist_3 = visual.TextStim(win=win, name='text_section_lang_hist_3',
-    text='default text',
-    font='Arial',
-    pos=(0, 0.75), height=0.1, wrapWidth=None, ori=0, 
-    color='black', colorSpace='rgb', opacity=1, 
-    languageStyle='LTR',
-    depth=0.0);
-text_lang_hist_question_3 = visual.TextStim(win=win, name='text_lang_hist_question_3',
-    text='default text',
-    font='Arial',
-    pos=(0, 0.4), height=0.1, wrapWidth=None, ori=0, 
-    color='white', colorSpace='rgb', opacity=1, 
-    languageStyle='LTR',
-    depth=-1.0);
-text_lang_hist_lang_3 = visual.TextStim(win=win, name='text_lang_hist_lang_3',
-    text='default text',
-    font='Arial',
-    pos=(0, 0), height=0.1, wrapWidth=None, ori=0, 
-    color='white', colorSpace='rgb', opacity=1, 
-    languageStyle='LTR',
-    depth=-2.0);
-text_lang_hist_qnum_3 = visual.TextStim(win=win, name='text_lang_hist_qnum_3',
-    text='default text',
-    font='Arial',
-    pos=(-0.9, 0.9), height=0.1, wrapWidth=None, ori=0, 
-    color='white', colorSpace='rgb', opacity=1, 
-    languageStyle='LTR',
-    depth=-3.0);
-rating_lang_hist_3 = visual.RatingScale(win=win, name='rating_lang_hist_3', marker='triangle', size=1.5, pos=[0.0, -0.3], low=0, high=20, labels=['0', ' 10', ' 20+'], scale='', markerStart='10')
+rating_lang_hist = visual.RatingScale(win=win, name='rating_lang_hist', marker='triangle', size=1.5, pos=[0.0, -0.3], choices=['Since Birth', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20+'], tickHeight=-1, markerStart='10')
 
 # Initialize components for Routine "lang_use_ins"
 lang_use_insClock = core.Clock()
 text_lang_use_ins = visual.TextStim(win=win, name='text_lang_use_ins',
-    text=langUse,
+    text='Language use\n\nIn this section, we would like you to answer some questions about your language use by placing a check in the appropriate box. Total use for all languages in a given question should equal 100%.\n\nPress the spacebar to begin.',
     font='Arial',
     pos=(0, 0), height=0.1, wrapWidth=None, ori=0, 
     color='white', colorSpace='rgb', opacity=1, 
@@ -244,7 +163,7 @@ text_lang_use_lang = visual.TextStim(win=win, name='text_lang_use_lang',
     text='default text',
     font='Arial',
     pos=(0, 0.1), height=0.1, wrapWidth=None, ori=0, 
-    color='white', colorSpace='rgb', opacity=1, 
+    color='blue', colorSpace='rgb', opacity=1, 
     languageStyle='LTR',
     depth=-2.0);
 text_lang_use_qnum = visual.TextStim(win=win, name='text_lang_use_qnum',
@@ -254,12 +173,12 @@ text_lang_use_qnum = visual.TextStim(win=win, name='text_lang_use_qnum',
     color='white', colorSpace='rgb', opacity=1, 
     languageStyle='LTR',
     depth=-3.0);
-rating_lang_use = visual.RatingScale(win=win, name='rating_lang_use', marker='triangle', size=1.5, pos=[0.0, -0.1], choices=['0', '10', '20', '40', '50', '60', '70', '80', '90', '100'], tickHeight=-1, markerStart='50')
+rating_lang_use = visual.RatingScale(win=win, name='rating_lang_use', marker='triangle', size=1.5, pos=[0.0, -0.1], choices=['0', '10', '20', '40', '50', '60', '70', '80', '90', '100'], tickHeight=-1)
 
 # Initialize components for Routine "lang_prof_ins"
 lang_prof_insClock = core.Clock()
 text_lang_prof_ins = visual.TextStim(win=win, name='text_lang_prof_ins',
-    text=langProf,
+    text='Language proficiency\n\nIn this section, we would like you to rate your language proficiency by giving marks from 0 to 6.\n\nPress the spacebar to begin',
     font='Arial',
     pos=(0, 0), height=0.1, wrapWidth=None, ori=0, 
     color='white', colorSpace='rgb', opacity=1, 
@@ -286,7 +205,7 @@ text_lang_prof_lang = visual.TextStim(win=win, name='text_lang_prof_lang',
     text='default text',
     font='Arial',
     pos=(0.0, 0.1), height=0.1, wrapWidth=None, ori=0, 
-    color='white', colorSpace='rgb', opacity=1, 
+    color='blue', colorSpace='rgb', opacity=1, 
     languageStyle='LTR',
     depth=-2.0);
 text_lang_prof_qnum = visual.TextStim(win=win, name='text_lang_prof_qnum',
@@ -296,12 +215,19 @@ text_lang_prof_qnum = visual.TextStim(win=win, name='text_lang_prof_qnum',
     color='white', colorSpace='rgb', opacity=1, 
     languageStyle='LTR',
     depth=-3.0);
-rating_lang_prof = visual.RatingScale(win=win, name='rating_lang_prof', marker='triangle', size=1.5, pos=[0.0, -0.1], choices=['0', '1', '2', '3', '4', '5', '6'], tickHeight=-1, markerStart='3')
+text_lang_prof_qmark = visual.TextStim(win=win, name='text_lang_prof_qmark',
+    text='default text',
+    font='Arial',
+    pos=(0.17, 0.1), height=0.1, wrapWidth=None, ori=0, 
+    color='white', colorSpace='rgb', opacity=1, 
+    languageStyle='LTR',
+    depth=-4.0);
+rating_lang_prof = visual.RatingScale(win=win, name='rating_lang_prof', marker='triangle', size=1.5, pos=[0.0, -0.1], choices=['0', '1', '2', '3', '4', '5', '6'], tickHeight=-1)
 
 # Initialize components for Routine "lang_att_ins"
 lang_att_insClock = core.Clock()
 text_lang_att_ins = visual.TextStim(win=win, name='text_lang_att_ins',
-    text=langAtt,
+    text='Language attitudes\n\nIn this section, we would like you to respond to statements about language attitudes by giving marks from 0-6.\n\nPress the spacebar to begin.',
     font='Arial',
     pos=(0, 0), height=0.1, wrapWidth=None, ori=0, 
     color='white', colorSpace='rgb', opacity=1, 
@@ -331,7 +257,7 @@ text_lang_att_qnum = visual.TextStim(win=win, name='text_lang_att_qnum',
     color='white', colorSpace='rgb', opacity=1, 
     languageStyle='LTR',
     depth=-2.0);
-rating_lang_att = visual.RatingScale(win=win, name='rating_lang_att', marker='triangle', size=1.5, pos=[0.0, 0.0], choices=['0', '1', '2', '3', '4', '5', '6'], tickHeight=-1, markerStart='3')
+rating_lang_att = visual.RatingScale(win=win, name='rating_lang_att', marker='triangle', size=1.5, pos=[0.0, 0.0], choices=['0', '1', '2', '3', '4', '5', '6'], tickHeight=-1)
 
 # Create some handy timers
 globalClock = core.Clock()  # to track the time since experiment started
@@ -343,8 +269,8 @@ instructionsClock.reset()  # clock
 frameN = -1
 continueRoutine = True
 # update component parameters for each repeat
-
 key_resp_instructions = event.BuilderKeyResponse()
+
 # keep track of which components have finished
 instructionsComponents = [text_instructions, key_resp_instructions]
 for thisComponent in instructionsComponents:
@@ -357,7 +283,6 @@ while continueRoutine:
     t = instructionsClock.getTime()
     frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
     # update/draw components on each frame
-    
     
     # *text_instructions* updates
     if t >= 0.0 and text_instructions.status == NOT_STARTED:
@@ -383,6 +308,7 @@ while continueRoutine:
         if len(theseKeys) > 0:  # at least one key was pressed
             # a response ends the routine
             continueRoutine = False
+    
     
     # check for quit (typically the Esc key)
     if endExpNow or event.getKeys(keyList=["escape"]):
@@ -479,23 +405,23 @@ for thisComponent in lang_hist_insComponents:
 routineTimer.reset()
 
 # set up handler to look after randomisation of conditions etc
-trials_hist_1 = data.TrialHandler(nReps=1, method='sequential', 
+trials = data.TrialHandler(nReps=1, method='sequential', 
     extraInfo=expInfo, originPath=-1,
-    trialList=data.importConditions('condition_file/sp_en_trials.csv', selection='0'),
-    seed=None, name='trials_hist_1')
-thisExp.addLoop(trials_hist_1)  # add the loop to the experiment
-thisTrials_hist_1 = trials_hist_1.trialList[0]  # so we can initialise stimuli with some values
-# abbreviate parameter names if possible (e.g. rgb = thisTrials_hist_1.rgb)
-if thisTrials_hist_1 != None:
-    for paramName in thisTrials_hist_1:
-        exec('{} = thisTrials_hist_1[paramName]'.format(paramName))
+    trialList=data.importConditions('condition_file/sp_en_trials.csv', selection='0:12'),
+    seed=None, name='trials')
+thisExp.addLoop(trials)  # add the loop to the experiment
+thisTrial = trials.trialList[0]  # so we can initialise stimuli with some values
+# abbreviate parameter names if possible (e.g. rgb = thisTrial.rgb)
+if thisTrial != None:
+    for paramName in thisTrial:
+        exec('{} = thisTrial[paramName]'.format(paramName))
 
-for thisTrials_hist_1 in trials_hist_1:
-    currentLoop = trials_hist_1
-    # abbreviate parameter names if possible (e.g. rgb = thisTrials_hist_1.rgb)
-    if thisTrials_hist_1 != None:
-        for paramName in thisTrials_hist_1:
-            exec('{} = thisTrials_hist_1[paramName]'.format(paramName))
+for thisTrial in trials:
+    currentLoop = trials
+    # abbreviate parameter names if possible (e.g. rgb = thisTrial.rgb)
+    if thisTrial != None:
+        for paramName in thisTrial:
+            exec('{} = thisTrial[paramName]'.format(paramName))
     
     # ------Prepare to start Routine "language_history"-------
     t = 0
@@ -503,11 +429,10 @@ for thisTrials_hist_1 in trials_hist_1:
     frameN = -1
     continueRoutine = True
     # update component parameters for each repeat
-    text_section_lang_hist.setText(eval(section)
+    text_section_lang_hist.setText(sectionEng
 )
-    text_lang_hist_question.setText(eval(questionText))
-    text_lang_hist_lang.setColor(color, colorSpace='rgb')
-    text_lang_hist_lang.setText(eval(language))
+    text_lang_hist_question.setText(questionTextEng)
+    text_lang_hist_lang.setText(languageEng)
     text_lang_hist_qnum.setText(questionNum)
     rating_lang_hist.reset()
     # keep track of which components have finished
@@ -579,236 +504,14 @@ for thisTrials_hist_1 in trials_hist_1:
     for thisComponent in language_historyComponents:
         if hasattr(thisComponent, "setAutoDraw"):
             thisComponent.setAutoDraw(False)
-    # store data for trials_hist_1 (TrialHandler)
-    trials_hist_1.addData('rating_lang_hist.response', rating_lang_hist.getRating())
-    trials_hist_1.addData('rating_lang_hist.rt', rating_lang_hist.getRT())
+    # store data for trials (TrialHandler)
+    trials.addData('rating_lang_hist.response', rating_lang_hist.getRating())
+    trials.addData('rating_lang_hist.rt', rating_lang_hist.getRT())
     # the Routine "language_history" was not non-slip safe, so reset the non-slip timer
     routineTimer.reset()
     thisExp.nextEntry()
     
-# completed 1 repeats of 'trials_hist_1'
-
-
-# set up handler to look after randomisation of conditions etc
-trials_hist_2 = data.TrialHandler(nReps=1, method='sequential', 
-    extraInfo=expInfo, originPath=-1,
-    trialList=data.importConditions('condition_file/sp_en_trials.csv', selection='1'),
-    seed=None, name='trials_hist_2')
-thisExp.addLoop(trials_hist_2)  # add the loop to the experiment
-thisTrials_hist_2 = trials_hist_2.trialList[0]  # so we can initialise stimuli with some values
-# abbreviate parameter names if possible (e.g. rgb = thisTrials_hist_2.rgb)
-if thisTrials_hist_2 != None:
-    for paramName in thisTrials_hist_2:
-        exec('{} = thisTrials_hist_2[paramName]'.format(paramName))
-
-for thisTrials_hist_2 in trials_hist_2:
-    currentLoop = trials_hist_2
-    # abbreviate parameter names if possible (e.g. rgb = thisTrials_hist_2.rgb)
-    if thisTrials_hist_2 != None:
-        for paramName in thisTrials_hist_2:
-            exec('{} = thisTrials_hist_2[paramName]'.format(paramName))
-    
-    # ------Prepare to start Routine "language_history_2"-------
-    t = 0
-    language_history_2Clock.reset()  # clock
-    frameN = -1
-    continueRoutine = True
-    # update component parameters for each repeat
-    text_section_lang_hist_2.setText(eval(section)
-)
-    text_lang_hist_question_2.setText(eval(questionText))
-    text_lang_hist_lang_2.setColor(color, colorSpace='rgb')
-    text_lang_hist_lang_2.setText(eval(language))
-    text_lang_hist_qnum_2.setText(questionNum)
-    rating_lang_hist_2.reset()
-    # keep track of which components have finished
-    language_history_2Components = [text_section_lang_hist_2, text_lang_hist_question_2, text_lang_hist_lang_2, text_lang_hist_qnum_2, rating_lang_hist_2]
-    for thisComponent in language_history_2Components:
-        if hasattr(thisComponent, 'status'):
-            thisComponent.status = NOT_STARTED
-    
-    # -------Start Routine "language_history_2"-------
-    while continueRoutine:
-        # get current time
-        t = language_history_2Clock.getTime()
-        frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
-        # update/draw components on each frame
-        
-        # *text_section_lang_hist_2* updates
-        if t >= 0.0 and text_section_lang_hist_2.status == NOT_STARTED:
-            # keep track of start time/frame for later
-            text_section_lang_hist_2.tStart = t
-            text_section_lang_hist_2.frameNStart = frameN  # exact frame index
-            text_section_lang_hist_2.setAutoDraw(True)
-        
-        # *text_lang_hist_question_2* updates
-        if t >= 0.0 and text_lang_hist_question_2.status == NOT_STARTED:
-            # keep track of start time/frame for later
-            text_lang_hist_question_2.tStart = t
-            text_lang_hist_question_2.frameNStart = frameN  # exact frame index
-            text_lang_hist_question_2.setAutoDraw(True)
-        
-        # *text_lang_hist_lang_2* updates
-        if t >= 0.0 and text_lang_hist_lang_2.status == NOT_STARTED:
-            # keep track of start time/frame for later
-            text_lang_hist_lang_2.tStart = t
-            text_lang_hist_lang_2.frameNStart = frameN  # exact frame index
-            text_lang_hist_lang_2.setAutoDraw(True)
-        
-        # *text_lang_hist_qnum_2* updates
-        if t >= 0.0 and text_lang_hist_qnum_2.status == NOT_STARTED:
-            # keep track of start time/frame for later
-            text_lang_hist_qnum_2.tStart = t
-            text_lang_hist_qnum_2.frameNStart = frameN  # exact frame index
-            text_lang_hist_qnum_2.setAutoDraw(True)
-        # *rating_lang_hist_2* updates
-        if t >= 0.0 and rating_lang_hist_2.status == NOT_STARTED:
-            # keep track of start time/frame for later
-            rating_lang_hist_2.tStart = t
-            rating_lang_hist_2.frameNStart = frameN  # exact frame index
-            rating_lang_hist_2.setAutoDraw(True)
-        continueRoutine &= rating_lang_hist_2.noResponse  # a response ends the trial
-        
-        # check for quit (typically the Esc key)
-        if endExpNow or event.getKeys(keyList=["escape"]):
-            core.quit()
-        
-        # check if all components have finished
-        if not continueRoutine:  # a component has requested a forced-end of Routine
-            break
-        continueRoutine = False  # will revert to True if at least one component still running
-        for thisComponent in language_history_2Components:
-            if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
-                continueRoutine = True
-                break  # at least one component has not yet finished
-        
-        # refresh the screen
-        if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
-            win.flip()
-    
-    # -------Ending Routine "language_history_2"-------
-    for thisComponent in language_history_2Components:
-        if hasattr(thisComponent, "setAutoDraw"):
-            thisComponent.setAutoDraw(False)
-    # store data for trials_hist_2 (TrialHandler)
-    trials_hist_2.addData('rating_lang_hist_2.response', rating_lang_hist_2.getRating())
-    trials_hist_2.addData('rating_lang_hist_2.rt', rating_lang_hist_2.getRT())
-    # the Routine "language_history_2" was not non-slip safe, so reset the non-slip timer
-    routineTimer.reset()
-    thisExp.nextEntry()
-    
-# completed 1 repeats of 'trials_hist_2'
-
-
-# set up handler to look after randomisation of conditions etc
-trials_hist_3 = data.TrialHandler(nReps=1, method='sequential', 
-    extraInfo=expInfo, originPath=-1,
-    trialList=data.importConditions('condition_file/sp_en_trials.csv', selection='2:12'),
-    seed=None, name='trials_hist_3')
-thisExp.addLoop(trials_hist_3)  # add the loop to the experiment
-thisTrials_hist_3 = trials_hist_3.trialList[0]  # so we can initialise stimuli with some values
-# abbreviate parameter names if possible (e.g. rgb = thisTrials_hist_3.rgb)
-if thisTrials_hist_3 != None:
-    for paramName in thisTrials_hist_3:
-        exec('{} = thisTrials_hist_3[paramName]'.format(paramName))
-
-for thisTrials_hist_3 in trials_hist_3:
-    currentLoop = trials_hist_3
-    # abbreviate parameter names if possible (e.g. rgb = thisTrials_hist_3.rgb)
-    if thisTrials_hist_3 != None:
-        for paramName in thisTrials_hist_3:
-            exec('{} = thisTrials_hist_3[paramName]'.format(paramName))
-    
-    # ------Prepare to start Routine "language_history_3"-------
-    t = 0
-    language_history_3Clock.reset()  # clock
-    frameN = -1
-    continueRoutine = True
-    # update component parameters for each repeat
-    text_section_lang_hist_3.setText(eval(section)
-)
-    text_lang_hist_question_3.setText(eval(questionText))
-    text_lang_hist_lang_3.setColor(color, colorSpace='rgb')
-    text_lang_hist_lang_3.setText(eval(language))
-    text_lang_hist_qnum_3.setText(questionNum)
-    rating_lang_hist_3.reset()
-    # keep track of which components have finished
-    language_history_3Components = [text_section_lang_hist_3, text_lang_hist_question_3, text_lang_hist_lang_3, text_lang_hist_qnum_3, rating_lang_hist_3]
-    for thisComponent in language_history_3Components:
-        if hasattr(thisComponent, 'status'):
-            thisComponent.status = NOT_STARTED
-    
-    # -------Start Routine "language_history_3"-------
-    while continueRoutine:
-        # get current time
-        t = language_history_3Clock.getTime()
-        frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
-        # update/draw components on each frame
-        
-        # *text_section_lang_hist_3* updates
-        if t >= 0.0 and text_section_lang_hist_3.status == NOT_STARTED:
-            # keep track of start time/frame for later
-            text_section_lang_hist_3.tStart = t
-            text_section_lang_hist_3.frameNStart = frameN  # exact frame index
-            text_section_lang_hist_3.setAutoDraw(True)
-        
-        # *text_lang_hist_question_3* updates
-        if t >= 0.0 and text_lang_hist_question_3.status == NOT_STARTED:
-            # keep track of start time/frame for later
-            text_lang_hist_question_3.tStart = t
-            text_lang_hist_question_3.frameNStart = frameN  # exact frame index
-            text_lang_hist_question_3.setAutoDraw(True)
-        
-        # *text_lang_hist_lang_3* updates
-        if t >= 0.0 and text_lang_hist_lang_3.status == NOT_STARTED:
-            # keep track of start time/frame for later
-            text_lang_hist_lang_3.tStart = t
-            text_lang_hist_lang_3.frameNStart = frameN  # exact frame index
-            text_lang_hist_lang_3.setAutoDraw(True)
-        
-        # *text_lang_hist_qnum_3* updates
-        if t >= 0.0 and text_lang_hist_qnum_3.status == NOT_STARTED:
-            # keep track of start time/frame for later
-            text_lang_hist_qnum_3.tStart = t
-            text_lang_hist_qnum_3.frameNStart = frameN  # exact frame index
-            text_lang_hist_qnum_3.setAutoDraw(True)
-        # *rating_lang_hist_3* updates
-        if t >= 0.0 and rating_lang_hist_3.status == NOT_STARTED:
-            # keep track of start time/frame for later
-            rating_lang_hist_3.tStart = t
-            rating_lang_hist_3.frameNStart = frameN  # exact frame index
-            rating_lang_hist_3.setAutoDraw(True)
-        continueRoutine &= rating_lang_hist_3.noResponse  # a response ends the trial
-        
-        # check for quit (typically the Esc key)
-        if endExpNow or event.getKeys(keyList=["escape"]):
-            core.quit()
-        
-        # check if all components have finished
-        if not continueRoutine:  # a component has requested a forced-end of Routine
-            break
-        continueRoutine = False  # will revert to True if at least one component still running
-        for thisComponent in language_history_3Components:
-            if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
-                continueRoutine = True
-                break  # at least one component has not yet finished
-        
-        # refresh the screen
-        if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
-            win.flip()
-    
-    # -------Ending Routine "language_history_3"-------
-    for thisComponent in language_history_3Components:
-        if hasattr(thisComponent, "setAutoDraw"):
-            thisComponent.setAutoDraw(False)
-    # store data for trials_hist_3 (TrialHandler)
-    trials_hist_3.addData('rating_lang_hist_3.response', rating_lang_hist_3.getRating())
-    trials_hist_3.addData('rating_lang_hist_3.rt', rating_lang_hist_3.getRT())
-    # the Routine "language_history_3" was not non-slip safe, so reset the non-slip timer
-    routineTimer.reset()
-    thisExp.nextEntry()
-    
-# completed 1 repeats of 'trials_hist_3'
+# completed 1 repeats of 'trials'
 
 
 # ------Prepare to start Routine "lang_use_ins"-------
@@ -905,10 +608,9 @@ for thisTrials_use in trials_use:
     frameN = -1
     continueRoutine = True
     # update component parameters for each repeat
-    text_section_lang_use.setText(eval(section))
-    text_lang_use_question.setText(eval(questionText))
-    text_lang_use_lang.setColor(color, colorSpace='rgb')
-    text_lang_use_lang.setText(eval(language))
+    text_section_lang_use.setText(section)
+    text_lang_use_question.setText(questionText)
+    text_lang_use_lang.setText(language)
     text_lang_use_qnum.setText(questionNum)
     rating_lang_use.reset()
     # keep track of which components have finished
@@ -1084,14 +786,14 @@ for thisTrials_prof in trials_prof:
     frameN = -1
     continueRoutine = True
     # update component parameters for each repeat
-    text_section_lang_prof.setText(eval(section))
-    text_lang_prof_question.setText(eval(questionText))
-    text_lang_prof_lang.setColor(color, colorSpace='rgb')
-    text_lang_prof_lang.setText(eval(language))
+    text_section_lang_prof.setText(section)
+    text_lang_prof_question.setText(questionText)
+    text_lang_prof_lang.setText(language)
     text_lang_prof_qnum.setText(questionNum)
+    text_lang_prof_qmark.setText('?')
     rating_lang_prof.reset()
     # keep track of which components have finished
-    language_proficiencyComponents = [text_section_lang_prof, text_lang_prof_question, text_lang_prof_lang, text_lang_prof_qnum, rating_lang_prof]
+    language_proficiencyComponents = [text_section_lang_prof, text_lang_prof_question, text_lang_prof_lang, text_lang_prof_qnum, text_lang_prof_qmark, rating_lang_prof]
     for thisComponent in language_proficiencyComponents:
         if hasattr(thisComponent, 'status'):
             thisComponent.status = NOT_STARTED
@@ -1130,6 +832,13 @@ for thisTrials_prof in trials_prof:
             text_lang_prof_qnum.tStart = t
             text_lang_prof_qnum.frameNStart = frameN  # exact frame index
             text_lang_prof_qnum.setAutoDraw(True)
+        
+        # *text_lang_prof_qmark* updates
+        if t >= 0.0 and text_lang_prof_qmark.status == NOT_STARTED:
+            # keep track of start time/frame for later
+            text_lang_prof_qmark.tStart = t
+            text_lang_prof_qmark.frameNStart = frameN  # exact frame index
+            text_lang_prof_qmark.setAutoDraw(True)
         # *rating_lang_prof* updates
         if t >= 0.0 and rating_lang_prof.status == NOT_STARTED:
             # keep track of start time/frame for later
@@ -1263,8 +972,8 @@ for thisTrials_att in trials_att:
     frameN = -1
     continueRoutine = True
     # update component parameters for each repeat
-    text_lang_att_section.setText(eval(section))
-    text_lang_att_ques.setText(eval(questionText))
+    text_lang_att_section.setText(section)
+    text_lang_att_ques.setText(questionText)
     text_lang_att_qnum.setText(questionNum)
     rating_lang_att.reset()
     # keep track of which components have finished
