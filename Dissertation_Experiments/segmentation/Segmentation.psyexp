@@ -1,8 +1,8 @@
 <?xml version="1.0" ?>
-<PsychoPy2experiment encoding="utf-8" version="3.0.5">
+<PsychoPy2experiment encoding="utf-8" version="3.0.7">
   <Settings>
     <Param name="Completed URL" updates="None" val="" valType="str"/>
-    <Param name="Data filename" updates="None" val="u'data/original_data/part_files/%s_%s_%s' % (expInfo['10_Idioma preferido (Preferred language):'], expInfo['02_Sesión (Session):'], expName)" valType="code"/>
+    <Param name="Data filename" updates="None" val="u'data/original_data/part_files/%s_%s_%s_%s' % (expInfo['01_Participante (Participant):'],expInfo['10_Idioma preferido (Preferred language):'], expInfo['02_Sesión (Session):'], expName)" valType="code"/>
     <Param name="Enable Escape" updates="None" val="True" valType="bool"/>
     <Param name="Experiment info" updates="None" val="{'01_Participante (Participant):': 'part000', '02_Sesión (Session):': &quot;['A', 'B', 'C', 'D']&quot;, '03_Nombre (First name):': '', '04_Apellido (Last name):': '', '05_Edad (Age):': '', '06_Sexo (Gender):': &quot;['', 'Hombre', 'Mujer']&quot;, '07_País de nacimiento (Birth country):': &quot;['', 'México', 'Estados Unidos']&quot;, '08_Lugar de residencia (Place of residence):': &quot;['', 'Tucson', 'Hermosillo']&quot;, '09_Nivel más alto de formación académica (Highest level of formal education):': &quot;['', 'Menos de la escuela secundaria', 'Escuela Secundaria', 'Un poco de universidad', 'Universidad (diplomatura, licenciatura)', 'Un poco de escuela graduada', 'Máster', 'Doctorado']&quot;, '10_Idioma preferido (Preferred language):': &quot;['', 'español', 'inglés']&quot;}" valType="code"/>
     <Param name="Force stereo" updates="None" val="True" valType="bool"/>
@@ -21,7 +21,7 @@
     <Param name="Show info dlg" updates="None" val="True" valType="bool"/>
     <Param name="Show mouse" updates="None" val="False" valType="bool"/>
     <Param name="Units" updates="None" val="use prefs" valType="str"/>
-    <Param name="Use version" updates="None" val="3.0.5" valType="str"/>
+    <Param name="Use version" updates="None" val="3.0.7" valType="str"/>
     <Param name="Window size (pixels)" updates="None" val="[1280, 800]" valType="code"/>
     <Param name="blendMode" updates="None" val="avg" valType="str"/>
     <Param name="color" updates="None" val="$[0,0,0]" valType="str"/>
@@ -31,59 +31,6 @@
     <Param name="logging level" updates="None" val="exp" valType="code"/>
   </Settings>
   <Routines>
-    <Routine name="trial">
-      <CodeComponent name="pracSegCounter">
-        <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
-        <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
-        <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
-        <Param name="Begin Routine" updates="constant" val="carrierPrac = practice + &quot;%i&quot; %pracTarLoop.thisN" valType="extendedCode"/>
-        <Param name="Code Type" updates="None" val="Py" valType="str"/>
-        <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
-        <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
-        <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
-        <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
-        <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
-        <Param name="End Routine" updates="constant" val="" valType="extendedCode"/>
-        <Param name="name" updates="None" val="pracSegCounter" valType="code"/>
-      </CodeComponent>
-      <TextComponent name="pracSegCarrier">
-        <Param name="color" updates="constant" val="white" valType="str"/>
-        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
-        <Param name="durationEstim" updates="None" val="" valType="code"/>
-        <Param name="flip" updates="constant" val="" valType="str"/>
-        <Param name="font" updates="constant" val="Arial" valType="str"/>
-        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
-        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
-        <Param name="name" updates="None" val="pracSegCarrier" valType="code"/>
-        <Param name="opacity" updates="constant" val="1" valType="code"/>
-        <Param name="ori" updates="constant" val="0" valType="code"/>
-        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
-        <Param name="startEstim" updates="None" val="" valType="code"/>
-        <Param name="startType" updates="None" val="time (s)" valType="str"/>
-        <Param name="startVal" updates="None" val="0.0" valType="code"/>
-        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
-        <Param name="stopVal" updates="constant" val="2" valType="code"/>
-        <Param name="text" updates="set every repeat" val="$eval(carrierPrac)" valType="str"/>
-        <Param name="units" updates="None" val="from exp settings" valType="str"/>
-        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
-      </TextComponent>
-      <KeyboardComponent name="pracSeg_key_resp">
-        <Param name="allowedKeys" updates="constant" val="'1'" valType="code"/>
-        <Param name="correctAns" updates="constant" val="" valType="str"/>
-        <Param name="discard previous" updates="constant" val="True" valType="bool"/>
-        <Param name="durationEstim" updates="None" val="" valType="code"/>
-        <Param name="forceEndRoutine" updates="constant" val="True" valType="bool"/>
-        <Param name="name" updates="None" val="pracSeg_key_resp" valType="code"/>
-        <Param name="startEstim" updates="None" val="" valType="code"/>
-        <Param name="startType" updates="None" val="time (s)" valType="str"/>
-        <Param name="startVal" updates="None" val="0.0" valType="code"/>
-        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
-        <Param name="stopVal" updates="constant" val="2" valType="code"/>
-        <Param name="store" updates="constant" val="nothing" valType="str"/>
-        <Param name="storeCorrect" updates="constant" val="False" valType="bool"/>
-        <Param name="syncScreenRefresh" updates="constant" val="True" valType="bool"/>
-      </KeyboardComponent>
-    </Routine>
     <Routine name="pracIns">
       <TextComponent name="pracSegInstr">
         <Param name="color" updates="constant" val="white" valType="str"/>
@@ -123,43 +70,6 @@
         <Param name="syncScreenRefresh" updates="constant" val="True" valType="bool"/>
       </KeyboardComponent>
     </Routine>
-    <Routine name="target">
-      <CodeComponent name="pracTarCounter">
-        <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
-        <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
-        <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
-        <Param name="Begin Routine" updates="constant" val="targetPrac = practice + &quot;%i&quot; %pracTarLoop.thisN" valType="extendedCode"/>
-        <Param name="Code Type" updates="None" val="Py" valType="str"/>
-        <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
-        <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
-        <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
-        <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
-        <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
-        <Param name="End Routine" updates="constant" val="" valType="extendedCode"/>
-        <Param name="name" updates="None" val="pracTarCounter" valType="code"/>
-      </CodeComponent>
-      <TextComponent name="pracSegTarget">
-        <Param name="color" updates="constant" val="white" valType="str"/>
-        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
-        <Param name="durationEstim" updates="None" val="" valType="code"/>
-        <Param name="flip" updates="constant" val="" valType="str"/>
-        <Param name="font" updates="constant" val="Arial" valType="str"/>
-        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
-        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
-        <Param name="name" updates="None" val="pracSegTarget" valType="code"/>
-        <Param name="opacity" updates="constant" val="1" valType="code"/>
-        <Param name="ori" updates="constant" val="0" valType="code"/>
-        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
-        <Param name="startEstim" updates="None" val="" valType="code"/>
-        <Param name="startType" updates="None" val="time (s)" valType="str"/>
-        <Param name="startVal" updates="None" val="0.0" valType="code"/>
-        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
-        <Param name="stopVal" updates="constant" val="2.0" valType="code"/>
-        <Param name="text" updates="set every repeat" val="&quot;Encuentre    &quot; + $eval(targetPrac)&amp;#10;" valType="str"/>
-        <Param name="units" updates="None" val="from exp settings" valType="str"/>
-        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
-      </TextComponent>
-    </Routine>
     <Routine name="expIns">
       <TextComponent name="startExp">
         <Param name="color" updates="constant" val="white" valType="str"/>
@@ -198,29 +108,6 @@
         <Param name="storeCorrect" updates="constant" val="False" valType="bool"/>
         <Param name="syncScreenRefresh" updates="constant" val="True" valType="bool"/>
       </KeyboardComponent>
-    </Routine>
-    <Routine name="ISI">
-      <TextComponent name="interstimulibr">
-        <Param name="color" updates="constant" val="white" valType="str"/>
-        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
-        <Param name="durationEstim" updates="None" val="" valType="code"/>
-        <Param name="flip" updates="constant" val="" valType="str"/>
-        <Param name="font" updates="constant" val="Arial" valType="str"/>
-        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
-        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
-        <Param name="name" updates="None" val="interstimulibr" valType="code"/>
-        <Param name="opacity" updates="constant" val="1" valType="code"/>
-        <Param name="ori" updates="constant" val="0" valType="code"/>
-        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
-        <Param name="startEstim" updates="None" val="" valType="code"/>
-        <Param name="startType" updates="None" val="time (s)" valType="str"/>
-        <Param name="startVal" updates="None" val="0.0" valType="code"/>
-        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
-        <Param name="stopVal" updates="constant" val=".5" valType="code"/>
-        <Param name="text" updates="constant" val="" valType="str"/>
-        <Param name="units" updates="None" val="from exp settings" valType="str"/>
-        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
-      </TextComponent>
     </Routine>
     <Routine name="targetExp">
       <CodeComponent name="expTarCounter">
@@ -1021,234 +908,6 @@
         <Param name="visualAnalogScale" updates="constant" val="False" valType="bool"/>
       </RatingScaleComponent>
     </Routine>
-    <Routine name="language_history_2">
-      <TextComponent name="text_section_lang_hist_2">
-        <Param name="color" updates="constant" val="black" valType="str"/>
-        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
-        <Param name="durationEstim" updates="None" val="" valType="code"/>
-        <Param name="flip" updates="constant" val="" valType="str"/>
-        <Param name="font" updates="constant" val="Arial" valType="str"/>
-        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
-        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
-        <Param name="name" updates="None" val="text_section_lang_hist_2" valType="code"/>
-        <Param name="opacity" updates="constant" val="1" valType="code"/>
-        <Param name="ori" updates="constant" val="0" valType="code"/>
-        <Param name="pos" updates="constant" val="(0, 0.75)" valType="code"/>
-        <Param name="startEstim" updates="None" val="" valType="code"/>
-        <Param name="startType" updates="None" val="time (s)" valType="str"/>
-        <Param name="startVal" updates="None" val="0.0" valType="code"/>
-        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
-        <Param name="stopVal" updates="constant" val="" valType="code"/>
-        <Param name="text" updates="set every repeat" val="eval($section)&amp;#10;" valType="str"/>
-        <Param name="units" updates="None" val="from exp settings" valType="str"/>
-        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
-      </TextComponent>
-      <TextComponent name="text_lang_hist_question_2">
-        <Param name="color" updates="constant" val="white" valType="str"/>
-        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
-        <Param name="durationEstim" updates="None" val="" valType="code"/>
-        <Param name="flip" updates="constant" val="" valType="str"/>
-        <Param name="font" updates="constant" val="Arial" valType="str"/>
-        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
-        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
-        <Param name="name" updates="None" val="text_lang_hist_question_2" valType="code"/>
-        <Param name="opacity" updates="constant" val="1" valType="code"/>
-        <Param name="ori" updates="constant" val="0" valType="code"/>
-        <Param name="pos" updates="constant" val="(0, 0.4)" valType="code"/>
-        <Param name="startEstim" updates="None" val="" valType="code"/>
-        <Param name="startType" updates="None" val="time (s)" valType="str"/>
-        <Param name="startVal" updates="None" val="0.0" valType="code"/>
-        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
-        <Param name="stopVal" updates="constant" val="" valType="code"/>
-        <Param name="text" updates="set every repeat" val="eval($questionText)" valType="str"/>
-        <Param name="units" updates="None" val="from exp settings" valType="str"/>
-        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
-      </TextComponent>
-      <TextComponent name="text_lang_hist_lang_2">
-        <Param name="color" updates="set every repeat" val="$color" valType="str"/>
-        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
-        <Param name="durationEstim" updates="None" val="" valType="code"/>
-        <Param name="flip" updates="constant" val="" valType="str"/>
-        <Param name="font" updates="constant" val="Arial" valType="str"/>
-        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
-        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
-        <Param name="name" updates="None" val="text_lang_hist_lang_2" valType="code"/>
-        <Param name="opacity" updates="constant" val="1" valType="code"/>
-        <Param name="ori" updates="constant" val="0" valType="code"/>
-        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
-        <Param name="startEstim" updates="None" val="" valType="code"/>
-        <Param name="startType" updates="None" val="time (s)" valType="str"/>
-        <Param name="startVal" updates="None" val="0.0" valType="code"/>
-        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
-        <Param name="stopVal" updates="constant" val="" valType="code"/>
-        <Param name="text" updates="set every repeat" val="eval($language)" valType="str"/>
-        <Param name="units" updates="None" val="from exp settings" valType="str"/>
-        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
-      </TextComponent>
-      <TextComponent name="text_lang_hist_qnum_2">
-        <Param name="color" updates="constant" val="white" valType="str"/>
-        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
-        <Param name="durationEstim" updates="None" val="" valType="code"/>
-        <Param name="flip" updates="constant" val="" valType="str"/>
-        <Param name="font" updates="constant" val="Arial" valType="str"/>
-        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
-        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
-        <Param name="name" updates="None" val="text_lang_hist_qnum_2" valType="code"/>
-        <Param name="opacity" updates="constant" val="1" valType="code"/>
-        <Param name="ori" updates="constant" val="0" valType="code"/>
-        <Param name="pos" updates="constant" val="(-0.9, 0.9)" valType="code"/>
-        <Param name="startEstim" updates="None" val="" valType="code"/>
-        <Param name="startType" updates="None" val="time (s)" valType="str"/>
-        <Param name="startVal" updates="None" val="0.0" valType="code"/>
-        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
-        <Param name="stopVal" updates="constant" val="" valType="code"/>
-        <Param name="text" updates="set every repeat" val="$questionNum" valType="str"/>
-        <Param name="units" updates="None" val="from exp settings" valType="str"/>
-        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
-      </TextComponent>
-      <RatingScaleComponent name="rating_lang_hist_2">
-        <Param name="categoryChoices" updates="constant" val="" valType="str"/>
-        <Param name="customize_everything" updates="constant" val="" valType="str"/>
-        <Param name="disappear" updates="constant" val="False" valType="bool"/>
-        <Param name="durationEstim" updates="None" val="" valType="code"/>
-        <Param name="forceEndRoutine" updates="constant" val="True" valType="bool"/>
-        <Param name="high" updates="constant" val="20" valType="code"/>
-        <Param name="labels" updates="constant" val="0, 10, 20" valType="str"/>
-        <Param name="low" updates="constant" val="0" valType="code"/>
-        <Param name="marker" updates="constant" val="triangle" valType="str"/>
-        <Param name="markerStart" updates="constant" val="10" valType="str"/>
-        <Param name="name" updates="None" val="rating_lang_hist_2" valType="code"/>
-        <Param name="pos" updates="constant" val="0, -0.3" valType="str"/>
-        <Param name="scaleDescription" updates="constant" val="" valType="str"/>
-        <Param name="showAccept" updates="constant" val="True" valType="bool"/>
-        <Param name="singleClick" updates="constant" val="False" valType="bool"/>
-        <Param name="size" updates="constant" val="1.5" valType="code"/>
-        <Param name="startEstim" updates="None" val="" valType="code"/>
-        <Param name="startType" updates="None" val="time (s)" valType="str"/>
-        <Param name="startVal" updates="None" val="0.0" valType="code"/>
-        <Param name="stopType" updates="None" val="condition" valType="str"/>
-        <Param name="stopVal" updates="constant" val="" valType="code"/>
-        <Param name="storeHistory" updates="constant" val="False" valType="bool"/>
-        <Param name="storeRating" updates="constant" val="True" valType="bool"/>
-        <Param name="storeRatingTime" updates="constant" val="True" valType="bool"/>
-        <Param name="tickHeight" updates="constant" val="" valType="str"/>
-        <Param name="visualAnalogScale" updates="constant" val="False" valType="bool"/>
-      </RatingScaleComponent>
-    </Routine>
-    <Routine name="language_history_3">
-      <TextComponent name="text_section_lang_hist_3">
-        <Param name="color" updates="constant" val="black" valType="str"/>
-        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
-        <Param name="durationEstim" updates="None" val="" valType="code"/>
-        <Param name="flip" updates="constant" val="" valType="str"/>
-        <Param name="font" updates="constant" val="Arial" valType="str"/>
-        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
-        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
-        <Param name="name" updates="None" val="text_section_lang_hist_3" valType="code"/>
-        <Param name="opacity" updates="constant" val="1" valType="code"/>
-        <Param name="ori" updates="constant" val="0" valType="code"/>
-        <Param name="pos" updates="constant" val="(0, 0.75)" valType="code"/>
-        <Param name="startEstim" updates="None" val="" valType="code"/>
-        <Param name="startType" updates="None" val="time (s)" valType="str"/>
-        <Param name="startVal" updates="None" val="0.0" valType="code"/>
-        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
-        <Param name="stopVal" updates="constant" val="" valType="code"/>
-        <Param name="text" updates="set every repeat" val="eval($section)&amp;#10;" valType="str"/>
-        <Param name="units" updates="None" val="from exp settings" valType="str"/>
-        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
-      </TextComponent>
-      <TextComponent name="text_lang_hist_question_3">
-        <Param name="color" updates="constant" val="white" valType="str"/>
-        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
-        <Param name="durationEstim" updates="None" val="" valType="code"/>
-        <Param name="flip" updates="constant" val="" valType="str"/>
-        <Param name="font" updates="constant" val="Arial" valType="str"/>
-        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
-        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
-        <Param name="name" updates="None" val="text_lang_hist_question_3" valType="code"/>
-        <Param name="opacity" updates="constant" val="1" valType="code"/>
-        <Param name="ori" updates="constant" val="0" valType="code"/>
-        <Param name="pos" updates="constant" val="(0, 0.4)" valType="code"/>
-        <Param name="startEstim" updates="None" val="" valType="code"/>
-        <Param name="startType" updates="None" val="time (s)" valType="str"/>
-        <Param name="startVal" updates="None" val="0.0" valType="code"/>
-        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
-        <Param name="stopVal" updates="constant" val="" valType="code"/>
-        <Param name="text" updates="set every repeat" val="eval($questionText)" valType="str"/>
-        <Param name="units" updates="None" val="from exp settings" valType="str"/>
-        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
-      </TextComponent>
-      <TextComponent name="text_lang_hist_lang_3">
-        <Param name="color" updates="set every repeat" val="$color" valType="str"/>
-        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
-        <Param name="durationEstim" updates="None" val="" valType="code"/>
-        <Param name="flip" updates="constant" val="" valType="str"/>
-        <Param name="font" updates="constant" val="Arial" valType="str"/>
-        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
-        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
-        <Param name="name" updates="None" val="text_lang_hist_lang_3" valType="code"/>
-        <Param name="opacity" updates="constant" val="1" valType="code"/>
-        <Param name="ori" updates="constant" val="0" valType="code"/>
-        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
-        <Param name="startEstim" updates="None" val="" valType="code"/>
-        <Param name="startType" updates="None" val="time (s)" valType="str"/>
-        <Param name="startVal" updates="None" val="0.0" valType="code"/>
-        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
-        <Param name="stopVal" updates="constant" val="" valType="code"/>
-        <Param name="text" updates="set every repeat" val="eval($language)" valType="str"/>
-        <Param name="units" updates="None" val="from exp settings" valType="str"/>
-        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
-      </TextComponent>
-      <TextComponent name="text_lang_hist_qnum_3">
-        <Param name="color" updates="constant" val="white" valType="str"/>
-        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
-        <Param name="durationEstim" updates="None" val="" valType="code"/>
-        <Param name="flip" updates="constant" val="" valType="str"/>
-        <Param name="font" updates="constant" val="Arial" valType="str"/>
-        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
-        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
-        <Param name="name" updates="None" val="text_lang_hist_qnum_3" valType="code"/>
-        <Param name="opacity" updates="constant" val="1" valType="code"/>
-        <Param name="ori" updates="constant" val="0" valType="code"/>
-        <Param name="pos" updates="constant" val="(-0.9, 0.9)" valType="code"/>
-        <Param name="startEstim" updates="None" val="" valType="code"/>
-        <Param name="startType" updates="None" val="time (s)" valType="str"/>
-        <Param name="startVal" updates="None" val="0.0" valType="code"/>
-        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
-        <Param name="stopVal" updates="constant" val="" valType="code"/>
-        <Param name="text" updates="set every repeat" val="$questionNum" valType="str"/>
-        <Param name="units" updates="None" val="from exp settings" valType="str"/>
-        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
-      </TextComponent>
-      <RatingScaleComponent name="rating_lang_hist_3">
-        <Param name="categoryChoices" updates="constant" val="" valType="str"/>
-        <Param name="customize_everything" updates="constant" val="" valType="str"/>
-        <Param name="disappear" updates="constant" val="False" valType="bool"/>
-        <Param name="durationEstim" updates="None" val="" valType="code"/>
-        <Param name="forceEndRoutine" updates="constant" val="True" valType="bool"/>
-        <Param name="high" updates="constant" val="20" valType="code"/>
-        <Param name="labels" updates="constant" val="0, 10, 20+" valType="str"/>
-        <Param name="low" updates="constant" val="0" valType="code"/>
-        <Param name="marker" updates="constant" val="triangle" valType="str"/>
-        <Param name="markerStart" updates="constant" val="10" valType="str"/>
-        <Param name="name" updates="None" val="rating_lang_hist_3" valType="code"/>
-        <Param name="pos" updates="constant" val="0, -0.3" valType="str"/>
-        <Param name="scaleDescription" updates="constant" val="" valType="str"/>
-        <Param name="showAccept" updates="constant" val="True" valType="bool"/>
-        <Param name="singleClick" updates="constant" val="False" valType="bool"/>
-        <Param name="size" updates="constant" val="1.5" valType="code"/>
-        <Param name="startEstim" updates="None" val="" valType="code"/>
-        <Param name="startType" updates="None" val="time (s)" valType="str"/>
-        <Param name="startVal" updates="None" val="0.0" valType="code"/>
-        <Param name="stopType" updates="None" val="condition" valType="str"/>
-        <Param name="stopVal" updates="constant" val="" valType="code"/>
-        <Param name="storeHistory" updates="constant" val="False" valType="bool"/>
-        <Param name="storeRating" updates="constant" val="True" valType="bool"/>
-        <Param name="storeRatingTime" updates="constant" val="True" valType="bool"/>
-        <Param name="tickHeight" updates="constant" val="" valType="str"/>
-        <Param name="visualAnalogScale" updates="constant" val="False" valType="bool"/>
-      </RatingScaleComponent>
-    </Routine>
     <Routine name="lang_use_ins">
       <TextComponent name="text_lang_use_ins">
         <Param name="color" updates="constant" val="white" valType="str"/>
@@ -1289,20 +948,6 @@
       </KeyboardComponent>
     </Routine>
     <Routine name="language_use">
-      <CodeComponent name="code_percent">
-        <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
-        <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
-        <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
-        <Param name="Begin Routine" updates="constant" val="#print(dir(trials_use))&amp;#10;#print(trials_use.thisN)&amp;#10;#previousScore = rating_use_eng.getHistory&amp;#10;#print(previousScore)" valType="extendedCode"/>
-        <Param name="Code Type" updates="None" val="Py" valType="str"/>
-        <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
-        <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
-        <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
-        <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
-        <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
-        <Param name="End Routine" updates="constant" val="" valType="extendedCode"/>
-        <Param name="name" updates="None" val="code_percent" valType="code"/>
-      </CodeComponent>
       <TextComponent name="text_section_lang_use">
         <Param name="color" updates="constant" val="black" valType="str"/>
         <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
@@ -1387,7 +1032,7 @@
         <Param name="units" updates="None" val="from exp settings" valType="str"/>
         <Param name="wrapWidth" updates="constant" val="" valType="code"/>
       </TextComponent>
-      <RatingScaleComponent name="rating_use_eng">
+      <RatingScaleComponent name="rating_blp_use">
         <Param name="categoryChoices" updates="constant" val="" valType="str"/>
         <Param name="customize_everything" updates="constant" val="scale = None,&amp;#10;choices = None, #('0%','10%','20%','30%','40%','50%','60%','70%','80%','90%','100%'),&amp;#10;low = 0,&amp;#10;high = 10,&amp;#10;precision = '&lt;defualt&gt;',&amp;#10;labels = ('0%','10%','20%','30%','40%','50%','60%','70%','80%','90%','100%'),&amp;#10;tickMarks = (0,1,2,3,4,5,6,7,8,9,10),&amp;#10;tickHeight = 1.0,&amp;#10;marker = 'triangle',&amp;#10;markerStart = 5,&amp;#10;markerColor = 'blue',&amp;#10;markerExpansion = 0.5,&amp;#10;singleClick = False,&amp;#10;disappear = False,&amp;#10;textSize = 1.0,&amp;#10;textColor = 'LightGrey',&amp;#10;textFont = 'Helvetica Bold',&amp;#10;showValue = False,&amp;#10;showAccept = True,&amp;#10;acceptKeys = 'return',&amp;#10;acceptPreText = 'Click on the line',&amp;#10;acceptText = 'Press Enter',&amp;#10;acceptSize = 1.0,&amp;#10;leftKeys = 'left',&amp;#10;rightKeys = 'right',&amp;#10;respKeys = (),&amp;#10;lineColor = 'White',&amp;#10;skipKeys = None,&amp;#10;mouseOnly = False,&amp;#10;noMouse = False,&amp;#10;size = 1.0,&amp;#10;stretch = 2.5,&amp;#10;pos = (0,-0.1),&amp;#10;minTime = 0.5,&amp;#10;maxTime = 0.0,&amp;#10;flipVert = False,&amp;#10;depth = 0,&amp;#10;autoLog = True," valType="str"/>
         <Param name="disappear" updates="constant" val="False" valType="bool"/>
@@ -1398,7 +1043,7 @@
         <Param name="low" updates="constant" val="" valType="code"/>
         <Param name="marker" updates="constant" val="" valType="str"/>
         <Param name="markerStart" updates="constant" val="" valType="str"/>
-        <Param name="name" updates="None" val="rating_use_eng" valType="code"/>
+        <Param name="name" updates="None" val="rating_blp_use" valType="code"/>
         <Param name="pos" updates="constant" val="" valType="str"/>
         <Param name="scaleDescription" updates="constant" val="" valType="str"/>
         <Param name="showAccept" updates="constant" val="False" valType="bool"/>
@@ -1701,19 +1346,98 @@
         <Param name="visualAnalogScale" updates="constant" val="False" valType="bool"/>
       </RatingScaleComponent>
     </Routine>
+    <Routine name="targetPrac">
+      <CodeComponent name="pracTarCounter">
+        <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="targetPrac = practice + &quot;%i&quot; %pracTarLoop.thisN" valType="extendedCode"/>
+        <Param name="Code Type" updates="None" val="Py" valType="str"/>
+        <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="name" updates="None" val="pracTarCounter" valType="code"/>
+      </CodeComponent>
+      <TextComponent name="pracSegTarget">
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
+        <Param name="name" updates="None" val="pracSegTarget" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="2.0" valType="code"/>
+        <Param name="text" updates="set every repeat" val="&quot;Encuentre    &quot; + $eval(targetPrac)&amp;#10;" valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+    </Routine>
+    <Routine name="trialPrac">
+      <CodeComponent name="pracSegCounter">
+        <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="carrierPrac = practice + &quot;%i&quot; %pracTarLoop.thisN" valType="extendedCode"/>
+        <Param name="Code Type" updates="None" val="Py" valType="str"/>
+        <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="name" updates="None" val="pracSegCounter" valType="code"/>
+      </CodeComponent>
+      <TextComponent name="pracSegCarrier">
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
+        <Param name="name" updates="None" val="pracSegCarrier" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="2" valType="code"/>
+        <Param name="text" updates="set every repeat" val="$eval(carrierPrac)" valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+      <KeyboardComponent name="pracSeg_key_resp">
+        <Param name="allowedKeys" updates="constant" val="'1'" valType="code"/>
+        <Param name="correctAns" updates="constant" val="" valType="str"/>
+        <Param name="discard previous" updates="constant" val="True" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="forceEndRoutine" updates="constant" val="True" valType="bool"/>
+        <Param name="name" updates="None" val="pracSeg_key_resp" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="2" valType="code"/>
+        <Param name="store" updates="constant" val="nothing" valType="str"/>
+        <Param name="storeCorrect" updates="constant" val="False" valType="bool"/>
+        <Param name="syncScreenRefresh" updates="constant" val="True" valType="bool"/>
+      </KeyboardComponent>
+    </Routine>
   </Routines>
   <Flow>
-    <LoopInitiator loopType="TrialHandler" name="trials_debug_lexESP">
-      <Param name="Selected rows" updates="None" val="" valType="str"/>
-      <Param name="conditions" updates="None" val="None" valType="str"/>
-      <Param name="conditionsFile" updates="None" val="" valType="str"/>
-      <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
-      <Param name="isTrials" updates="None" val="True" valType="bool"/>
-      <Param name="loopType" updates="None" val="random" valType="str"/>
-      <Param name="nReps" updates="None" val="0" valType="code"/>
-      <Param name="name" updates="None" val="trials_debug_lexESP" valType="code"/>
-      <Param name="random seed" updates="None" val="" valType="code"/>
-    </LoopInitiator>
     <Routine name="lexEspInstrucciones"/>
     <LoopInitiator loopType="TrialHandler" name="lexEspLoop">
       <Param name="Selected rows" updates="None" val="" valType="str"/>
@@ -1728,18 +1452,6 @@
     </LoopInitiator>
     <Routine name="lexTaleEsp"/>
     <LoopTerminator name="lexEspLoop"/>
-    <LoopTerminator name="trials_debug_lexESP"/>
-    <LoopInitiator loopType="TrialHandler" name="trials_debug_segmentation">
-      <Param name="Selected rows" updates="None" val="" valType="str"/>
-      <Param name="conditions" updates="None" val="None" valType="str"/>
-      <Param name="conditionsFile" updates="None" val="" valType="str"/>
-      <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
-      <Param name="isTrials" updates="None" val="True" valType="bool"/>
-      <Param name="loopType" updates="None" val="random" valType="str"/>
-      <Param name="nReps" updates="None" val="0" valType="code"/>
-      <Param name="name" updates="None" val="trials_debug_segmentation" valType="code"/>
-      <Param name="random seed" updates="None" val="" valType="code"/>
-    </LoopInitiator>
     <Routine name="pracIns"/>
     <LoopInitiator loopType="TrialHandler" name="pracTarLoop">
       <Param name="Selected rows" updates="None" val="$[1]" valType="str"/>
@@ -1752,7 +1464,7 @@
       <Param name="name" updates="None" val="pracTarLoop" valType="code"/>
       <Param name="random seed" updates="None" val="" valType="code"/>
     </LoopInitiator>
-    <Routine name="target"/>
+    <Routine name="targetPrac"/>
     <LoopInitiator loopType="TrialHandler" name="pracTrialLoop">
       <Param name="Selected rows" updates="None" val="$[2,3,4,5,6,7,8,9,10,11]" valType="str"/>
       <Param name="conditions" updates="None" val="None" valType="str"/>
@@ -1764,7 +1476,7 @@
       <Param name="name" updates="None" val="pracTrialLoop" valType="code"/>
       <Param name="random seed" updates="None" val="" valType="code"/>
     </LoopInitiator>
-    <Routine name="trial"/>
+    <Routine name="trialPrac"/>
     <LoopTerminator name="pracTrialLoop"/>
     <LoopTerminator name="pracTarLoop"/>
     <Routine name="expIns"/>
@@ -1794,18 +1506,6 @@
     <Routine name="trialExp"/>
     <LoopTerminator name="expTrialLoop"/>
     <LoopTerminator name="expTarLoop"/>
-    <LoopTerminator name="trials_debug_segmentation"/>
-    <LoopInitiator loopType="TrialHandler" name="trials_debug_syllabification">
-      <Param name="Selected rows" updates="None" val="" valType="str"/>
-      <Param name="conditions" updates="None" val="None" valType="str"/>
-      <Param name="conditionsFile" updates="None" val="" valType="str"/>
-      <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
-      <Param name="isTrials" updates="None" val="True" valType="bool"/>
-      <Param name="loopType" updates="None" val="random" valType="str"/>
-      <Param name="nReps" updates="None" val="0" valType="code"/>
-      <Param name="name" updates="None" val="trials_debug_syllabification" valType="code"/>
-      <Param name="random seed" updates="None" val="" valType="code"/>
-    </LoopInitiator>
     <Routine name="syllablePracIns"/>
     <LoopInitiator loopType="TrialHandler" name="sylPracLoop">
       <Param name="Selected rows" updates="None" val="" valType="str"/>
@@ -1834,18 +1534,6 @@
     </LoopInitiator>
     <Routine name="trialSyllable"/>
     <LoopTerminator name="syllableLoop"/>
-    <LoopTerminator name="trials_debug_syllabification"/>
-    <LoopInitiator loopType="TrialHandler" name="trials_debug_lexeng">
-      <Param name="Selected rows" updates="None" val="" valType="str"/>
-      <Param name="conditions" updates="None" val="None" valType="str"/>
-      <Param name="conditionsFile" updates="None" val="" valType="str"/>
-      <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
-      <Param name="isTrials" updates="None" val="True" valType="bool"/>
-      <Param name="loopType" updates="None" val="random" valType="str"/>
-      <Param name="nReps" updates="None" val="0" valType="code"/>
-      <Param name="name" updates="None" val="trials_debug_lexeng" valType="code"/>
-      <Param name="random seed" updates="None" val="" valType="code"/>
-    </LoopInitiator>
     <Routine name="lexTaleEngInstructions"/>
     <LoopInitiator loopType="TrialHandler" name="lexEngLoop">
       <Param name="Selected rows" updates="None" val="" valType="str"/>
@@ -1860,7 +1548,6 @@
     </LoopInitiator>
     <Routine name="lexTaleEng"/>
     <LoopTerminator name="lexEngLoop"/>
-    <LoopTerminator name="trials_debug_lexeng"/>
     <Routine name="instructions_blp"/>
     <Routine name="lang_hist_ins"/>
     <LoopInitiator loopType="TrialHandler" name="trials_blp_hist">
@@ -1897,7 +1584,7 @@
       <Param name="conditionsFile" updates="None" val="data/processed_data/exp_files/sp_en_blp_trials.csv" valType="str"/>
       <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
       <Param name="isTrials" updates="None" val="True" valType="bool"/>
-      <Param name="loopType" updates="None" val="random" valType="str"/>
+      <Param name="loopType" updates="None" val="sequential" valType="str"/>
       <Param name="nReps" updates="None" val="1" valType="code"/>
       <Param name="name" updates="None" val="trials_blp_prof" valType="code"/>
       <Param name="random seed" updates="None" val="" valType="code"/>
