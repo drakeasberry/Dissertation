@@ -1,5 +1,20 @@
+# Ignore user files created by Rstudio
+
 *.Rproj.user/*
 *.Rproj.user
 *.Rhistory
 .RData
 .Ruserdata
+
+#Ignore all temporary build files created by LaTeX Compile:
+Dissertation-blx.bib
+*.aux
+*.bbl
+*.blg
+*.lof
+*.log
+*.lot
+*.out
+*.xml
+*.gz
+*.toc
