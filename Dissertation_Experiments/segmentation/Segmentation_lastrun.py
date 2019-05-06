@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 """
-This experiment was created using PsychoPy3 Experiment Builder (v3.0.5),
-    on Tue Apr 16 18:04:07 2019
+This experiment was created using PsychoPy3 Experiment Builder (v3.0.7),
+    on Thu Apr 18 17:49:24 2019
 If you publish work using this script please cite the PsychoPy publications:
     Peirce, JW (2007) PsychoPy - Psychophysics software in Python.
         Journal of Neuroscience Methods, 162(1-2), 8-13.
@@ -13,7 +13,7 @@ If you publish work using this script please cite the PsychoPy publications:
 from __future__ import absolute_import, division
 
 import psychopy
-psychopy.useVersion('3.0.5')
+psychopy.useVersion('3.0.7')
 
 from psychopy import locale_setup, sound, gui, visual, core, data, event, logging, clock
 from psychopy.constants import (NOT_STARTED, STARTED, PLAYING, PAUSED,
@@ -31,7 +31,7 @@ _thisDir = os.path.dirname(os.path.abspath(__file__))
 os.chdir(_thisDir)
 
 # Store info about the experiment session
-psychopyVersion = '3.0.5'
+psychopyVersion = '3.0.7'
 expName = 'Segmentation'  # from the Builder filename that created this script
 expInfo = {'01_Participante (Participant):': 'part000', '02_Sesión (Session):': ['A', 'B', 'C', 'D'], '03_Nombre (First name):': '', '04_Apellido (Last name):': '', '05_Edad (Age):': '', '06_Sexo (Gender):': ['', 'Hombre', 'Mujer'], '07_País de nacimiento (Birth country):': ['', 'México', 'Estados Unidos'], '08_Lugar de residencia (Place of residence):': ['', 'Tucson', 'Hermosillo'], '09_Nivel más alto de formación académica (Highest level of formal education):': ['', 'Menos de la escuela secundaria', 'Escuela Secundaria', 'Un poco de universidad', 'Universidad (diplomatura, licenciatura)', 'Un poco de escuela graduada', 'Máster', 'Doctorado'], '10_Idioma preferido (Preferred language):': ['', 'español', 'inglés']}
 dlg = gui.DlgFromDict(dictionary=expInfo, title=expName)
@@ -42,7 +42,7 @@ expInfo['expName'] = expName
 expInfo['psychopyVersion'] = psychopyVersion
 
 # Data file name stem = absolute path + name; later add .psyexp, .csv, .log, etc
-filename = _thisDir + os.sep + u'data/original_data/part_files/%s_%s_%s' % (expInfo['10_Idioma preferido (Preferred language):'], expInfo['02_Sesión (Session):'], expName)
+filename = _thisDir + os.sep + u'data/original_data/part_files/%s_%s_%s_%s' % (expInfo['01_Participante (Participant):'],expInfo['10_Idioma preferido (Preferred language):'], expInfo['02_Sesión (Session):'], expName)
 
 # An ExperimentHandler isn't essential but helps with data saving
 thisExp = data.ExperimentHandler(name=expName, version='',
@@ -147,12 +147,22 @@ wrong answers. Please answer every question and give your answers sincerely. Tha
     langProf = 'Language proficiency\n\nIn this section, we would like you to rate your language proficiency by giving marks from 0 to 6.\n\nPress the white button to begin.'
     langAtt = 'Language attitudes\n\nIn this section, we would like you to respond to statements about language attitudes by giving marks from 0-6.\n\nPress the white button to begin.'
     labHist1 = 'Since birth,20+'
-    lexEsp = '''This test consists of 90 trials, in each of which you will see a string of letters.
+    lexEsp = '''En este test, encontrará 90 secuencias de letras que parecen "españolas". Solo algunas de ellas son palabras de verdad.
+                \nPor favor, señale las palabras que usted conoce (aquellas que está convencido que son palabras españolas, incluso aunque no seas capaz de dar el significado preciso).
+                \nSi piensa que la es una palabra española, presione el botón verde para indicar "si" y si no, presione el botón rojo para indicar "no".
+                \nTiene todo el tiempo que quiera para hacer cada decisión.
+                \nPresione el botón blanco para empezar.'''
+    lexEng = '''En este test, encontrará 60 secuencias de letras que parecen "inglesas". Solo algunas de ellas son palabras de verdad.
+                \nPor favor, señale las palabras que usted conoce (aquellas que está convencido que son palabras inglesas, incluso aunque no seas capaz de dar el significado preciso).
+                \nSi piensa que la es una palabra inglésa, presione el botón verde para indicar "si" y si no, presione el botón rojo para indicar "no".
+                \nTiene todo el tiempo que quiera para hacer cada decisión.
+                \nPresione el botón blanco para empezar.'''    
+    '''lexEsp = 'This test consists of 90 trials, in each of which you will see a string of letters.
                 \nYour task is to decide whether this is an existing Spanish word or not.
                 \nIf you think it is an existing Spanish word, press the green button for "sí" and if you think it is not an existing Spanish word, press the red button for "no". If you are sure that the word exists, even if you do not know its exact meaning, you may still respond "sí". But if you are not sure if it is an existing word, you should respond "no".
                 \nYou have as much time as you like for each decision.
-                \nPress the white button to start.'''
-    lexEng = '''This test consists of 60 trials, in each of which you will see a string of letters.
+                \nPress the white button to start.'
+    lexEng = 'This test consists of 60 trials, in each of which you will see a string of letters.
                 \nYour task is to decide whether this is an existing English word or not.
                 \nIf you think it is an existing English word, press the green button for "sí" and if you think it is not an existing English word, press the red button for "no". If you are sure that the word exists, even if you do not know its exact meaning, you may still respond "sí". But if you are not sure if it is an existing word, you should respond "no".
                 \nYou have as much time as you like for each decision.
@@ -2366,7 +2376,7 @@ for thisComponent in lang_prof_insComponents:
 routineTimer.reset()
 
 # set up handler to look after randomisation of conditions etc
-trials_blp_prof = data.TrialHandler(nReps=1, method='random', 
+trials_blp_prof = data.TrialHandler(nReps=1, method='sequential', 
     extraInfo=expInfo, originPath=-1,
     trialList=data.importConditions('data/processed_data/exp_files/sp_en_blp_trials.csv', selection='27:35'),
     seed=None, name='trials_blp_prof')
