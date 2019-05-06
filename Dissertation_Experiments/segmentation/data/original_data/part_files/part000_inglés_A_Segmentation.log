@@ -1,0 +1,278 @@
+16.0552 	EXP 	Created window1 = Window(allowGUI=True, allowStencil=False, args=UNKNOWN, autoLog=True, bitsMode=UNKNOWN, blendMode='avg', color=array([0., 0., 0.]), colorSpace='rgb', fullscr=<method-wrapper '__getattribute__' of attributeSetter object at 0x129694da0>, gamma=None, kwargs=UNKNOWN, lms=UNKNOWN, monitor=<psychopy.monitors.calibTools.Monitor object at 0x129720048>, multiSample=False, name='window1', numSamples=2, pos=[0.0, 0.0], screen=0, size=array([1280,  800]), stereo=False, units='norm', useFBO=True, useRetina=False, viewOri=0.0, viewPos=None, viewScale=None, waitBlanking=True, winType='pyglet')
+16.0552 	EXP 	window1: recordFrameIntervals = False
+16.2213 	EXP 	window1: recordFrameIntervals = True
+16.4038 	EXP 	window1: recordFrameIntervals = False
+16.6166 	EXP 	Created lexEsp_Instr = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.09, italic=False, languageStyle='LTR', name='lexEsp_Instr', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text=str(...), units='norm', win=Window(...), wrapWidth=1.5)
+16.6271 	EXP 	Created esp_Word = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.2, italic=False, languageStyle='LTR', name='esp_Word', opacity=1.0, ori=0, pos=array([0. , 0.5]), rgb=array([255., 255., 255.]), text='default text', units='norm', win=Window(...), wrapWidth=1)
+16.6318 	EXP 	Created esp_Si = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='green', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.2, italic=False, languageStyle='LTR', name='esp_Si', opacity=1.0, ori=0, pos=array([-0.5, -0.5]), rgb=array([  0., 128.,   0.]), text='sí', units='norm', win=Window(...), wrapWidth=1)
+16.6363 	EXP 	Created esp_No = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='red', colorSpace='named', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.2, italic=False, languageStyle='LTR', name='esp_No', opacity=1.0, ori=0, pos=array([ 0.5, -0.5]), rgb=array([255.,   0.,   0.]), text='no', units='norm', win=Window(...), wrapWidth=1)
+16.6794 	EXP 	Created pracSegInstr = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.09, italic=False, languageStyle='LTR', name='pracSegInstr', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text=str(...), units='norm', win=Window(...), wrapWidth=1.5)
+16.6890 	EXP 	Created pracSegTarget = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='pracSegTarget', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text='default text', units='norm', win=Window(...), wrapWidth=1)
+16.6941 	EXP 	Created pracSegCarrier = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='pracSegCarrier', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text='default text', units='norm', win=Window(...), wrapWidth=1)
+16.7240 	EXP 	Created startExp = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.09, italic=False, languageStyle='LTR', name='startExp', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text=str(...), units='norm', win=Window(...), wrapWidth=1.5)
+16.7290 	EXP 	Created expTarget = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='expTarget', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text='default text', units='norm', win=Window(...), wrapWidth=1)
+16.7339 	EXP 	Created expCarrier = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='expCarrier', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text='default text', units='norm', win=Window(...), wrapWidth=1)
+16.7693 	EXP 	Created pracSyllableInstr = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.09, italic=False, languageStyle='LTR', name='pracSyllableInstr', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text=str(...), units='norm', win=Window(...), wrapWidth=1.5)
+16.7745 	EXP 	Created pracSylTarget = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='pracSylTarget', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text='default text', units='norm', win=Window(...), wrapWidth=1)
+16.7795 	EXP 	Created pracSylAnsCVC = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='pracSylAnsCVC', opacity=1.0, ori=0, pos=array([-0.5,  0. ]), rgb=array([255., 255., 255.]), text='default text', units='norm', win=Window(...), wrapWidth=1)
+16.7845 	EXP 	Created pracSylAnsCV = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='pracSylAnsCV', opacity=1.0, ori=0, pos=array([0.5, 0. ]), rgb=array([255., 255., 255.]), text='default text', units='norm', win=Window(...), wrapWidth=1)
+16.8230 	EXP 	Created expSyllableInstr = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.09, italic=False, languageStyle='LTR', name='expSyllableInstr', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text=str(...), units='norm', win=Window(...), wrapWidth=1.5)
+16.8281 	EXP 	Created expSylAnsCVC = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='expSylAnsCVC', opacity=1.0, ori=0, pos=array([-0.5,  0. ]), rgb=array([255., 255., 255.]), text='default text', units='norm', win=Window(...), wrapWidth=1)
+16.8330 	EXP 	Created expSylAnsCV = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='expSylAnsCV', opacity=1.0, ori=0, pos=array([0.5, 0. ]), rgb=array([255., 255., 255.]), text='default text', units='norm', win=Window(...), wrapWidth=1)
+16.8379 	EXP 	Created expSylTarget = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='expSylTarget', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text='default text', units='norm', win=Window(...), wrapWidth=1)
+16.9218 	EXP 	Created lexEng_Instr = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.09, italic=False, languageStyle='LTR', name='lexEng_Instr', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text=str(...), units='norm', win=Window(...), wrapWidth=1.5)
+16.9267 	EXP 	Created eng_Word = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.2, italic=False, languageStyle='LTR', name='eng_Word', opacity=1.0, ori=0, pos=array([0. , 0.5]), rgb=array([255., 255., 255.]), text='default text', units='norm', win=Window(...), wrapWidth=1)
+16.9296 	EXP 	Created eng_Yes = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='green', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.2, italic=False, languageStyle='LTR', name='eng_Yes', opacity=1.0, ori=0, pos=array([-0.5, -0.5]), rgb=array([  0., 128.,   0.]), text='sí', units='norm', win=Window(...), wrapWidth=1)
+16.9325 	EXP 	Created eng_No = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='red', colorSpace='named', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.2, italic=False, languageStyle='LTR', name='eng_No', opacity=1.0, ori=0, pos=array([ 0.5, -0.5]), rgb=array([255.,   0.,   0.]), text='no', units='norm', win=Window(...), wrapWidth=1)
+17.0183 	EXP 	Created text_instructions = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.09, italic=False, languageStyle='LTR', name='text_instructions', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text=str(...), units='norm', win=Window(...), wrapWidth=1.5)
+17.0447 	EXP 	Created text_lang_his_ins = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.09, italic=False, languageStyle='LTR', name='text_lang_his_ins', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text=str(...), units='norm', win=Window(...), wrapWidth=1.5)
+17.0497 	EXP 	Created text_section_lang_hist = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='black', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_section_lang_hist', opacity=1.0, ori=0, pos=array([0.  , 0.75]), rgb=array([0., 0., 0.]), text='default text', units='norm', win=Window(...), wrapWidth=1)
+17.0546 	EXP 	Created text_lang_hist_question = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_lang_hist_question', opacity=1.0, ori=0, pos=array([0. , 0.4]), rgb=array([255., 255., 255.]), text='default text', units='norm', win=Window(...), wrapWidth=1)
+17.0595 	EXP 	Created text_lang_hist_lang = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_lang_hist_lang', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text='default text', units='norm', win=Window(...), wrapWidth=1)
+17.0645 	EXP 	Created text_lang_hist_qnum = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-3.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_lang_hist_qnum', opacity=1.0, ori=0, pos=array([-0.9,  0.9]), rgb=array([255., 255., 255.]), text='default text', units='norm', win=Window(...), wrapWidth=1)
+17.1348 	EXP 	Created rating_lang_hist = RatingScale(__class__=type(...), acceptKeys=['return'], acceptPreText=UNKNOWN, acceptSize=UNKNOWN, acceptText='accept?', autoLog=True, choices=False, depth=0, disappear=False, flipVert=False, high=20, kwargs=UNKNOWN, labels=list(...), leftKeys=['left'], lineColor='White', low=0, marker=ShapeStim(...), markerColor='DarkBlue', markerExpansion=UNKNOWN, markerStart=10.0, maxTime=0.0, minTime=0.4, mouseOnly=False, name='rating_lang_hist', noMouse=False, pos=[0.0, -0.3], precision=1, respKeys=[], rightKeys=['right'], scale='', self=UNKNOWN, showAccept=True, showValue=True, singleClick=False, size=0.8999999999999999, skipKeys=['tab'], stretch=1.0, textColor='LightGray', textFont='Helvetica Bold', textSize=0.18, tickHeight=1.0, tickMarks=20.0, win=Window(...))
+17.1760 	EXP 	Created text_lang_use_ins = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.09, italic=False, languageStyle='LTR', name='text_lang_use_ins', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text=str(...), units='norm', win=Window(...), wrapWidth=1.5)
+17.1810 	EXP 	Created text_section_lang_use = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='black', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_section_lang_use', opacity=1.0, ori=0, pos=array([0. , 0.9]), rgb=array([0., 0., 0.]), text='default text', units='norm', win=Window(...), wrapWidth=1)
+17.1862 	EXP 	Created text_lang_use_question = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_lang_use_question', opacity=1.0, ori=0, pos=array([0. , 0.6]), rgb=array([255., 255., 255.]), text='default text', units='norm', win=Window(...), wrapWidth=2)
+17.1912 	EXP 	Created text_lang_use_lang = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_lang_use_lang', opacity=1.0, ori=0, pos=array([0. , 0.2]), rgb=array([255., 255., 255.]), text='default text', units='norm', win=Window(...), wrapWidth=1)
+17.1966 	EXP 	Created text_lang_use_qnum = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-3.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_lang_use_qnum', opacity=1.0, ori=0, pos=array([-0.9,  0.9]), rgb=array([255., 255., 255.]), text='default text', units='norm', win=Window(...), wrapWidth=1)
+17.2622 	EXP 	Created rating_blp_use = RatingScale(__class__=type(...), acceptKeys=['return'], acceptPreText=UNKNOWN, acceptSize=UNKNOWN, acceptText='Press Enter', autoLog=True, choices=False, depth=0, disappear=False, flipVert=False, high=10, kwargs=UNKNOWN, labels=list(...), leftKeys=['left'], lineColor='White', low=0, marker=ShapeStim(...), markerColor='blue', markerExpansion=UNKNOWN, markerStart=5.0, maxTime=0.0, minTime=0.5, mouseOnly=False, name='rating_blp_use', noMouse=False, pos=[0.0, -0.1], precision=1, respKeys=[], rightKeys=['right'], scale=None, self=UNKNOWN, showAccept=True, showValue=False, singleClick=False, size=0.6, skipKeys=[], stretch=2.5, textColor='LightGrey', textFont='Helvetica Bold', textSize=0.12, tickHeight=1.0, tickMarks=10.0, win=Window(...))
+17.2856 	EXP 	Created text_lang_prof_ins = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.09, italic=False, languageStyle='LTR', name='text_lang_prof_ins', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text=str(...), units='norm', win=Window(...), wrapWidth=1.5)
+17.2908 	EXP 	Created text_section_lang_prof = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='black', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_section_lang_prof', opacity=1.0, ori=0, pos=array([0.  , 0.75]), rgb=array([0., 0., 0.]), text='default text', units='norm', win=Window(...), wrapWidth=1)
+17.2959 	EXP 	Created text_lang_prof_question = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_lang_prof_question', opacity=1.0, ori=0, pos=array([0. , 0.4]), rgb=array([255., 255., 255.]), text='default text', units='norm', win=Window(...), wrapWidth=1)
+17.3009 	EXP 	Created text_lang_prof_lang = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_lang_prof_lang', opacity=1.0, ori=0, pos=array([0. , 0.1]), rgb=array([255., 255., 255.]), text='default text', units='norm', win=Window(...), wrapWidth=1)
+17.3060 	EXP 	Created text_lang_prof_qnum = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-3.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_lang_prof_qnum', opacity=1.0, ori=0, pos=array([-0.9,  0.9]), rgb=array([255., 255., 255.]), text='default text', units='norm', win=Window(...), wrapWidth=1)
+17.3398 	EXP 	Created rating_lang_prof = RatingScale(__class__=type(...), acceptKeys=['return'], acceptPreText=UNKNOWN, acceptSize=UNKNOWN, acceptText='accept?', autoLog=True, choices=['0', '1', '2', '3', '4', '5', '6'], depth=0, disappear=False, flipVert=False, high=6, kwargs=UNKNOWN, labels=list(...), leftKeys=['left'], lineColor='White', low=0, marker=ShapeStim(...), markerColor='DarkBlue', markerExpansion=UNKNOWN, markerStart=3.0, maxTime=0.0, minTime=0.4, mouseOnly=False, name='rating_lang_prof', noMouse=False, pos=[0.0, -0.1], precision=1, respKeys=['0', '1', '2', '3', '4', '5', '6'], rightKeys=['right'], scale='<default>', self=UNKNOWN, showAccept=True, showValue=True, singleClick=False, size=0.8999999999999999, skipKeys=['tab'], stretch=1.0, textColor='LightGray', textFont='Helvetica Bold', textSize=0.18, tickHeight=-1, tickMarks=6.0, win=Window(...))
+17.3654 	EXP 	Created text_lang_att_ins = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.09, italic=False, languageStyle='LTR', name='text_lang_att_ins', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text=str(...), units='norm', win=Window(...), wrapWidth=1.5)
+17.3705 	EXP 	Created text_lang_att_section = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='black', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_lang_att_section', opacity=1.0, ori=0, pos=array([0.  , 0.75]), rgb=array([0., 0., 0.]), text='default text', units='norm', win=Window(...), wrapWidth=1)
+17.3754 	EXP 	Created text_lang_att_ques = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-1.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_lang_att_ques', opacity=1.0, ori=0, pos=array([0. , 0.4]), rgb=array([255., 255., 255.]), text='default text', units='norm', win=Window(...), wrapWidth=1)
+17.3803 	EXP 	Created text_lang_att_qnum = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=-2.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='text_lang_att_qnum', opacity=1.0, ori=0, pos=array([-0.9,  0.9]), rgb=array([255., 255., 255.]), text='default text', units='norm', win=Window(...), wrapWidth=1)
+17.4103 	EXP 	Created rating_lang_att = RatingScale(__class__=type(...), acceptKeys=['return'], acceptPreText=UNKNOWN, acceptSize=UNKNOWN, acceptText='accept?', autoLog=True, choices=['0', '1', '2', '3', '4', '5', '6'], depth=0, disappear=False, flipVert=False, high=6, kwargs=UNKNOWN, labels=list(...), leftKeys=['left'], lineColor='White', low=0, marker=ShapeStim(...), markerColor='DarkBlue', markerExpansion=UNKNOWN, markerStart=3.0, maxTime=0.0, minTime=0.4, mouseOnly=False, name='rating_lang_att', noMouse=False, pos=[0.0, 0.0], precision=1, respKeys=['0', '1', '2', '3', '4', '5', '6'], rightKeys=['right'], scale='<default>', self=UNKNOWN, showAccept=True, showValue=True, singleClick=False, size=0.8999999999999999, skipKeys=['tab'], stretch=1.0, textColor='LightGray', textFont='Helvetica Bold', textSize=0.18, tickHeight=-1, tickMarks=6.0, win=Window(...))
+17.4220 	EXP 	Created Gracias = TextStim(__class__=<class 'psychopy.visual.text.TextStim'>, alignHoriz='center', alignVert='center', antialias=True, autoLog=True, bold=False, color='white', colorSpace='named', contrast=1.0, depth=0.0, flipHoriz=False, flipVert=False, font='Arial', fontFiles=[], height=0.1, italic=False, languageStyle='LTR', name='Gracias', opacity=1.0, ori=0, pos=array([0., 0.]), rgb=array([255., 255., 255.]), text='¡Muchas Gracias!', units='norm', win=Window(...), wrapWidth=1)
+17.4341 	EXP 	rating_lang_hist: flipVert = False
+17.4341 	EXP 	rating_lang_hist: autoLog = True
+17.4341 	EXP 	rating_blp_use: flipVert = False
+17.4341 	EXP 	rating_blp_use: autoLog = True
+17.4341 	EXP 	rating_lang_prof: flipVert = False
+17.4341 	EXP 	rating_lang_prof: autoLog = True
+17.4341 	EXP 	rating_lang_att: flipVert = False
+17.4341 	EXP 	rating_lang_att: autoLog = True
+17.4341 	EXP 	lexEsp_Instr: autoDraw = True
+31.9282 	DATA 	Keypress: 0
+31.9718 	EXP 	Imported data/original_data/exp_files/lexTaleListEsp.csv as conditions, 93 conditions, 4 params
+31.9724 	EXP 	Created sequence: sequential, trialTypes=93, nReps=1, seed=None
+31.9727 	EXP 	New trial (rep=0, index=0): OrderedDict([('Order', 0), ('Word', 'pladeno'), ('Translation', 'NW'), ('corrAnsEspV', 0)])
+31.9843 	EXP 	lexEsp_Instr: autoDraw = False
+31.9843 	EXP 	esp_Word: text = 'pladeno'
+32.2001 	EXP 	esp_Word: autoDraw = True
+32.2001 	EXP 	esp_Si: autoDraw = True
+32.2001 	EXP 	esp_No: autoDraw = True
+34.3823 	DATA 	Keypress: 1
+34.3843 	EXP 	New trial (rep=0, index=1): OrderedDict([('Order', 0), ('Word', 'delantera'), ('Translation', 'first position'), ('corrAnsEspV', 1)])
+34.4119 	EXP 	esp_Word: autoDraw = False
+34.4119 	EXP 	esp_Si: autoDraw = False
+34.4119 	EXP 	esp_No: autoDraw = False
+34.4119 	EXP 	esp_Word: text = 'delantera'
+34.6113 	EXP 	esp_Word: autoDraw = True
+34.6113 	EXP 	esp_Si: autoDraw = True
+34.6113 	EXP 	esp_No: autoDraw = True
+34.8802 	DATA 	Keypress: 4
+34.8820 	EXP 	New trial (rep=0, index=2): OrderedDict([('Order', 0), ('Word', 'garbardina'), ('Translation', 'raincoat'), ('corrAnsEspV', 1)])
+34.9108 	EXP 	esp_Word: autoDraw = False
+34.9108 	EXP 	esp_Si: autoDraw = False
+34.9108 	EXP 	esp_No: autoDraw = False
+34.9108 	EXP 	esp_Word: text = 'garbardina'
+35.1103 	EXP 	esp_Word: autoDraw = True
+35.1103 	EXP 	esp_Si: autoDraw = True
+35.1103 	EXP 	esp_No: autoDraw = True
+35.3955 	DATA 	Keypress: 4
+35.3978 	EXP 	New trial (rep=0, index=3): OrderedDict([('Order', 1), ('Word', 'terzo'), ('Translation', 'NW'), ('corrAnsEspV', 0)])
+35.4088 	EXP 	esp_Word: autoDraw = False
+35.4088 	EXP 	esp_Si: autoDraw = False
+35.4088 	EXP 	esp_No: autoDraw = False
+35.4088 	EXP 	esp_Word: text = 'terzo'
+35.6258 	EXP 	esp_Word: autoDraw = True
+35.6258 	EXP 	esp_Si: autoDraw = True
+35.6258 	EXP 	esp_No: autoDraw = True
+35.7283 	DATA 	Keypress: 1
+35.7301 	EXP 	New trial (rep=0, index=4): OrderedDict([('Order', 2), ('Word', 'pellizcar'), ('Translation', 'pinch'), ('corrAnsEspV', 1)])
+35.7420 	EXP 	esp_Word: autoDraw = False
+35.7420 	EXP 	esp_Si: autoDraw = False
+35.7420 	EXP 	esp_No: autoDraw = False
+35.7420 	EXP 	esp_Word: text = 'pellizcar'
+35.9582 	EXP 	esp_Word: autoDraw = True
+35.9582 	EXP 	esp_Si: autoDraw = True
+35.9582 	EXP 	esp_No: autoDraw = True
+36.9756 	DATA 	Keypress: 4
+36.9777 	EXP 	New trial (rep=0, index=5): OrderedDict([('Order', 3), ('Word', 'pulmones'), ('Translation', 'lungs'), ('corrAnsEspV', 1)])
+36.9881 	EXP 	esp_Word: autoDraw = False
+36.9881 	EXP 	esp_Si: autoDraw = False
+36.9881 	EXP 	esp_No: autoDraw = False
+36.9881 	EXP 	esp_Word: text = 'pulmones'
+37.1744 	DATA 	Keypress: 4
+37.1909 	EXP 	New trial (rep=0, index=6): OrderedDict([('Order', 4), ('Word', 'batillón'), ('Translation', 'NW'), ('corrAnsEspV', 0)])
+37.2047 	EXP 	esp_Word: autoDraw = True
+37.2047 	EXP 	esp_Si: autoDraw = True
+37.2047 	EXP 	esp_No: autoDraw = True
+37.2047 	EXP 	esp_Word: autoDraw = False
+37.2047 	EXP 	esp_Si: autoDraw = False
+37.2047 	EXP 	esp_No: autoDraw = False
+37.2047 	EXP 	esp_Word: text = 'batillón'
+37.4216 	EXP 	esp_Word: autoDraw = True
+37.4216 	EXP 	esp_Si: autoDraw = True
+37.4216 	EXP 	esp_No: autoDraw = True
+37.9902 	DATA 	Keypress: 1
+37.9920 	EXP 	New trial (rep=0, index=7): OrderedDict([('Order', 5), ('Word', 'zapato'), ('Translation', 'shoe'), ('corrAnsEspV', 1)])
+38.0028 	EXP 	esp_Word: autoDraw = False
+38.0028 	EXP 	esp_Si: autoDraw = False
+38.0028 	EXP 	esp_No: autoDraw = False
+38.0028 	EXP 	esp_Word: text = 'zapato'
+38.2200 	EXP 	esp_Word: autoDraw = True
+38.2200 	EXP 	esp_Si: autoDraw = True
+38.2200 	EXP 	esp_No: autoDraw = True
+38.2396 	DATA 	Keypress: 1
+38.2413 	EXP 	New trial (rep=0, index=8): OrderedDict([('Order', 6), ('Word', 'tergiversar'), ('Translation', 'distort'), ('corrAnsEspV', 1)])
+38.2522 	EXP 	esp_Word: autoDraw = False
+38.2522 	EXP 	esp_Si: autoDraw = False
+38.2522 	EXP 	esp_No: autoDraw = False
+38.2522 	EXP 	esp_Word: text = 'tergiversar'
+38.4692 	EXP 	esp_Word: autoDraw = True
+38.4692 	EXP 	esp_Si: autoDraw = True
+38.4692 	EXP 	esp_No: autoDraw = True
+38.5388 	DATA 	Keypress: 1
+38.5405 	EXP 	New trial (rep=0, index=9): OrderedDict([('Order', 7), ('Word', 'pésimo'), ('Translation', 'abysmal'), ('corrAnsEspV', 1)])
+38.5516 	EXP 	esp_Word: autoDraw = False
+38.5516 	EXP 	esp_Si: autoDraw = False
+38.5516 	EXP 	esp_No: autoDraw = False
+38.5516 	EXP 	esp_Word: text = 'pésimo'
+38.7674 	EXP 	esp_Word: autoDraw = True
+38.7674 	EXP 	esp_Si: autoDraw = True
+38.7674 	EXP 	esp_No: autoDraw = True
+38.8382 	DATA 	Keypress: 1
+38.8398 	EXP 	New trial (rep=0, index=10): OrderedDict([('Order', 8), ('Word', 'cadeña'), ('Translation', 'NW'), ('corrAnsEspV', 0)])
+38.8505 	EXP 	esp_Word: autoDraw = False
+38.8505 	EXP 	esp_Si: autoDraw = False
+38.8505 	EXP 	esp_No: autoDraw = False
+38.8505 	EXP 	esp_Word: text = 'cadeña'
+39.0676 	EXP 	esp_Word: autoDraw = True
+39.0676 	EXP 	esp_Si: autoDraw = True
+39.0676 	EXP 	esp_No: autoDraw = True
+56.0962 	DATA 	Keypress: 4
+56.0985 	EXP 	New trial (rep=0, index=11): OrderedDict([('Order', 9), ('Word', 'hacha'), ('Translation', 'axe'), ('corrAnsEspV', 1)])
+56.1103 	EXP 	esp_Word: autoDraw = False
+56.1103 	EXP 	esp_Si: autoDraw = False
+56.1103 	EXP 	esp_No: autoDraw = False
+56.1103 	EXP 	esp_Word: text = 'hacha'
+56.3269 	EXP 	esp_Word: autoDraw = True
+56.3269 	EXP 	esp_Si: autoDraw = True
+56.3269 	EXP 	esp_No: autoDraw = True
+56.9305 	DATA 	Keypress: 4
+56.9430 	EXP 	New trial (rep=0, index=12): OrderedDict([('Order', 10), ('Word', 'antar'), ('Translation', 'NW'), ('corrAnsEspV', 0)])
+56.9590 	EXP 	esp_Word: autoDraw = False
+56.9590 	EXP 	esp_Si: autoDraw = False
+56.9590 	EXP 	esp_No: autoDraw = False
+56.9590 	EXP 	esp_Word: text = 'antar'
+57.1750 	EXP 	esp_Word: autoDraw = True
+57.1750 	EXP 	esp_Si: autoDraw = True
+57.1750 	EXP 	esp_No: autoDraw = True
+57.4595 	DATA 	Keypress: 4
+57.4612 	EXP 	New trial (rep=0, index=13): OrderedDict([('Order', 11), ('Word', 'cenefa'), ('Translation', 'edging'), ('corrAnsEspV', 1)])
+57.4740 	EXP 	esp_Word: autoDraw = False
+57.4740 	EXP 	esp_Si: autoDraw = False
+57.4740 	EXP 	esp_No: autoDraw = False
+57.4740 	EXP 	esp_Word: text = 'cenefa'
+57.6903 	EXP 	esp_Word: autoDraw = True
+57.6903 	EXP 	esp_Si: autoDraw = True
+57.6903 	EXP 	esp_No: autoDraw = True
+57.8757 	DATA 	Keypress: 4
+57.8774 	EXP 	New trial (rep=0, index=14): OrderedDict([('Order', 12), ('Word', 'asesinato'), ('Translation', 'murder'), ('corrAnsEspV', 1)])
+57.8892 	EXP 	esp_Word: autoDraw = False
+57.8892 	EXP 	esp_Si: autoDraw = False
+57.8892 	EXP 	esp_No: autoDraw = False
+57.8892 	EXP 	esp_Word: text = 'asesinato'
+58.1061 	EXP 	esp_Word: autoDraw = True
+58.1061 	EXP 	esp_Si: autoDraw = True
+58.1061 	EXP 	esp_No: autoDraw = True
+58.3090 	DATA 	Keypress: 4
+58.3107 	EXP 	New trial (rep=0, index=15): OrderedDict([('Order', 13), ('Word', 'helar'), ('Translation', 'freeze'), ('corrAnsEspV', 1)])
+58.3214 	EXP 	esp_Word: autoDraw = False
+58.3214 	EXP 	esp_Si: autoDraw = False
+58.3214 	EXP 	esp_No: autoDraw = False
+58.3214 	EXP 	esp_Word: text = 'helar'
+58.5383 	EXP 	esp_Word: autoDraw = True
+58.5383 	EXP 	esp_Si: autoDraw = True
+58.5383 	EXP 	esp_No: autoDraw = True
+58.7579 	DATA 	Keypress: 4
+58.7596 	EXP 	New trial (rep=0, index=16): OrderedDict([('Order', 14), ('Word', 'yunque'), ('Translation', 'anvil'), ('corrAnsEspV', 1)])
+58.7878 	EXP 	esp_Word: autoDraw = False
+58.7878 	EXP 	esp_Si: autoDraw = False
+58.7878 	EXP 	esp_No: autoDraw = False
+58.7878 	EXP 	esp_Word: text = 'yunque'
+58.9873 	EXP 	esp_Word: autoDraw = True
+58.9873 	EXP 	esp_Si: autoDraw = True
+58.9873 	EXP 	esp_No: autoDraw = True
+59.2060 	DATA 	Keypress: 4
+59.2076 	EXP 	New trial (rep=0, index=17): OrderedDict([('Order', 15), ('Word', 'regar'), ('Translation', 'water'), ('corrAnsEspV', 1)])
+59.2199 	EXP 	esp_Word: autoDraw = False
+59.2199 	EXP 	esp_Si: autoDraw = False
+59.2199 	EXP 	esp_No: autoDraw = False
+59.2199 	EXP 	esp_Word: text = 'regar'
+59.4362 	EXP 	esp_Word: autoDraw = True
+59.4362 	EXP 	esp_Si: autoDraw = True
+59.4362 	EXP 	esp_No: autoDraw = True
+59.5557 	DATA 	Keypress: 4
+59.5575 	EXP 	New trial (rep=0, index=18): OrderedDict([('Order', 16), ('Word', 'abracer'), ('Translation', 'NW'), ('corrAnsEspV', 0)])
+59.5684 	EXP 	esp_Word: autoDraw = False
+59.5684 	EXP 	esp_Si: autoDraw = False
+59.5684 	EXP 	esp_No: autoDraw = False
+59.5684 	EXP 	esp_Word: text = 'abracer'
+59.7855 	EXP 	esp_Word: autoDraw = True
+59.7855 	EXP 	esp_Si: autoDraw = True
+59.7855 	EXP 	esp_No: autoDraw = True
+60.1534 	DATA 	Keypress: 1
+60.1701 	EXP 	New trial (rep=0, index=19): OrderedDict([('Order', 17), ('Word', 'floroso'), ('Translation', 'NW'), ('corrAnsEspV', 0)])
+60.1844 	EXP 	esp_Word: autoDraw = False
+60.1844 	EXP 	esp_Si: autoDraw = False
+60.1844 	EXP 	esp_No: autoDraw = False
+60.1844 	EXP 	esp_Word: text = 'floroso'
+60.4008 	EXP 	esp_Word: autoDraw = True
+60.4008 	EXP 	esp_Si: autoDraw = True
+60.4008 	EXP 	esp_No: autoDraw = True
+60.6203 	DATA 	Keypress: 4
+60.6222 	EXP 	New trial (rep=0, index=20): OrderedDict([('Order', 18), ('Word', 'arsa'), ('Translation', 'NW'), ('corrAnsEspV', 0)])
+60.6326 	EXP 	esp_Word: autoDraw = False
+60.6326 	EXP 	esp_Si: autoDraw = False
+60.6326 	EXP 	esp_No: autoDraw = False
+60.6326 	EXP 	esp_Word: text = 'arsa'
+60.8487 	EXP 	esp_Word: autoDraw = True
+60.8487 	EXP 	esp_Si: autoDraw = True
+60.8487 	EXP 	esp_No: autoDraw = True
+61.2022 	DATA 	Keypress: 4
+61.2039 	EXP 	New trial (rep=0, index=21): OrderedDict([('Order', 19), ('Word', 'brecedad'), ('Translation', 'NW'), ('corrAnsEspV', 0)])
+61.2149 	EXP 	esp_Word: autoDraw = False
+61.2149 	EXP 	esp_Si: autoDraw = False
+61.2149 	EXP 	esp_No: autoDraw = False
+61.2149 	EXP 	esp_Word: text = 'brecedad'
+61.4317 	EXP 	esp_Word: autoDraw = True
+61.4317 	EXP 	esp_Si: autoDraw = True
+61.4317 	EXP 	esp_No: autoDraw = True
+61.6663 	DATA 	Keypress: 4
+61.6680 	EXP 	New trial (rep=0, index=22): OrderedDict([('Order', 20), ('Word', 'ávido'), ('Translation', 'avid'), ('corrAnsEspV', 1)])
+61.6810 	EXP 	esp_Word: autoDraw = False
+61.6810 	EXP 	esp_Si: autoDraw = False
+61.6810 	EXP 	esp_No: autoDraw = False
+61.6810 	EXP 	esp_Word: text = 'ávido'
+61.8972 	EXP 	esp_Word: autoDraw = True
+61.8972 	EXP 	esp_Si: autoDraw = True
+61.8972 	EXP 	esp_No: autoDraw = True
+62.1657 	DATA 	Keypress: 4
+62.1674 	EXP 	New trial (rep=0, index=23): OrderedDict([('Order', 21), ('Word', 'capillo'), ('Translation', 'NW'), ('corrAnsEspV', 0)])
+62.1793 	EXP 	esp_Word: autoDraw = False
+62.1793 	EXP 	esp_Si: autoDraw = False
+62.1793 	EXP 	esp_No: autoDraw = False
+62.1793 	EXP 	esp_Word: text = 'capillo'
+62.3961 	EXP 	esp_Word: autoDraw = True
+62.3961 	EXP 	esp_Si: autoDraw = True
+62.3961 	EXP 	esp_No: autoDraw = True
+77.3467 	DATA 	Keypress: escape
+77.6209 	EXP 	window1: mouseVisible = True
