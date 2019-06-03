@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v3.0.7),
-    on Thu Apr 18 17:49:24 2019
+    on Mon Jun  3 13:13:02 2019
 If you publish work using this script please cite the PsychoPy publications:
     Peirce, JW (2007) PsychoPy - Psychophysics software in Python.
         Journal of Neuroscience Methods, 162(1-2), 8-13.
@@ -126,10 +126,7 @@ if 'e' == lang:
                 \nSi piensa que la es una palabra inglésa, presione el botón verde para indicar "si" y si no, presione el botón rojo para indicar "no".
                 \nTiene todo el tiempo que quiera para hacer cada decisión.
                 \nPresione el botón blanco para empezar.'''    
-    #labHist1 = 'Desde el Nacimiento,20+'
-    #labUse
-    #labProf
-    #labAtt
+
 elif 'i' == lang:
     preferLang = 'english'
     section = 'sectionEng'
@@ -152,17 +149,7 @@ wrong answers. Please answer every question and give your answers sincerely. Tha
                 \nSi piensa que la es una palabra española, presione el botón verde para indicar "si" y si no, presione el botón rojo para indicar "no".
                 \nTiene todo el tiempo que quiera para hacer cada decisión.
                 \nPresione el botón blanco para empezar.'''
-    lexEng = '''En este test, encontrará 60 secuencias de letras que parecen "inglesas". Solo algunas de ellas son palabras de verdad.
-                \nPor favor, señale las palabras que usted conoce (aquellas que está convencido que son palabras inglesas, incluso aunque no seas capaz de dar el significado preciso).
-                \nSi piensa que la es una palabra inglésa, presione el botón verde para indicar "si" y si no, presione el botón rojo para indicar "no".
-                \nTiene todo el tiempo que quiera para hacer cada decisión.
-                \nPresione el botón blanco para empezar.'''    
-    '''lexEsp = 'This test consists of 90 trials, in each of which you will see a string of letters.
-                \nYour task is to decide whether this is an existing Spanish word or not.
-                \nIf you think it is an existing Spanish word, press the green button for "sí" and if you think it is not an existing Spanish word, press the red button for "no". If you are sure that the word exists, even if you do not know its exact meaning, you may still respond "sí". But if you are not sure if it is an existing word, you should respond "no".
-                \nYou have as much time as you like for each decision.
-                \nPress the white button to start.'
-    lexEng = 'This test consists of 60 trials, in each of which you will see a string of letters.
+    lexEng = '''This test consists of 60 trials, in each of which you will see a string of letters.
                 \nYour task is to decide whether this is an existing English word or not.
                 \nIf you think it is an existing English word, press the green button for "sí" and if you think it is not an existing English word, press the red button for "no". If you are sure that the word exists, even if you do not know its exact meaning, you may still respond "sí". But if you are not sure if it is an existing word, you should respond "no".
                 \nYou have as much time as you like for each decision.
@@ -414,7 +401,7 @@ text_lang_hist_qnum = visual.TextStim(win=win, name='text_lang_hist_qnum',
     color='white', colorSpace='rgb', opacity=1, 
     languageStyle='LTR',
     depth=-3.0);
-rating_lang_hist = visual.RatingScale(win=win, name='rating_lang_hist', marker='triangle', size=1.5, pos=[0.0, -0.3], low=0, high=20, labels=['$labHist1'], scale='', markerStart='10')
+rating_lang_hist = visual.RatingScale(win=win, name='rating_lang_hist', marker='triangle', size=1.5, pos=[0.0, -0.3], low=0, high=20, labels=['As long as I can remember', ' Not yet comfortable'], scale='', markerStart='10')
 
 # Initialize components for Routine "lang_use_ins"
 lang_use_insClock = core.Clock()
