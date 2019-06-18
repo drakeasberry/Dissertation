@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v3.0.7),
-    on Thu Jun  6 11:54:46 2019
+    on Tue Jun 18 09:14:50 2019
 If you publish work using this script please cite the PsychoPy publications:
     Peirce, JW (2007) PsychoPy - Psychophysics software in Python.
         Journal of Neuroscience Methods, 162(1-2), 8-13.
@@ -76,28 +76,28 @@ lexEspInstruccionesClock = core.Clock()
 if expInfo['02_Sesión (Session):'] == 'A':
     conditionPrac="data/processed_data/exp_files/pracCondA.csv"
     conditionExp="data/processed_data/exp_files/expCondA.csv"
-    conditionSylPrac="data/processed_data/exp_files/sylprac.csv"
+    conditionSylPrac="data/processed_data/exp_files/sylpracCondA.csv"
     conditionSylExp="data/processed_data/exp_files/sylexpCondA.csv"
     practice = "practiceListA"
     experiment = "stimuliListA"
 elif expInfo['02_Sesión (Session):'] == 'B':
     conditionPrac="data/processed_data/exp_files/pracCondB.csv"
     conditionExp="data/processed_data/exp_files/expCondB.csv"
-    conditionSylPrac="data/processed_data/exp_files/sylprac.csv"
+    conditionSylPrac="data/processed_data/exp_files/sylpracCondB.csv"
     conditionSylExp="data/processed_data/exp_files/sylexpCondB.csv"
     practice = "practiceListB"
     experiment = "stimuliListB"
 elif expInfo['02_Sesión (Session):'] == 'C':
     conditionPrac="data/processed_data/exp_files/pracCondC.csv"
     conditionExp="data/processed_data/exp_files/expCondC.csv"
-    conditionSylPrac="data/processed_data/exp_files/sylprac.csv"
+    conditionSylPrac="data/processed_data/exp_files/sylpracCondC.csv"
     conditionSylExp="data/processed_data/exp_files/sylexpCondC.csv"
     practice = "practiceListC"
     experiment = "stimuliListC"
 else:
     conditionPrac="data/processed_data/exp_files/pracCondD.csv"
     conditionExp="data/processed_data/exp_files/expCondD.csv"
-    conditionSylPrac="data/processed_data/exp_files/sylprac.csv"
+    conditionSylPrac="data/processed_data/exp_files/sylpracCondD.csv"
     conditionSylExp="data/processed_data/exp_files/sylexpCondD.csv"
     practice = "practiceListD"
     experiment = "stimuliListD"
@@ -219,6 +219,16 @@ pracSegTarget = visual.TextStim(win=win, name='pracSegTarget',
     languageStyle='LTR',
     depth=-1.0);
 
+# Initialize components for Routine "isi_halfsec"
+isi_halfsecClock = core.Clock()
+text = visual.TextStim(win=win, name='text',
+    text=None,
+    font='Arial',
+    pos=(0, 0), height=0.1, wrapWidth=None, ori=0, 
+    color='white', colorSpace='rgb', opacity=1, 
+    languageStyle='LTR',
+    depth=0.0);
+
 # Initialize components for Routine "trialPrac"
 trialPracClock = core.Clock()
 pracSegCarrier = visual.TextStim(win=win, name='pracSegCarrier',
@@ -239,6 +249,16 @@ startExp = visual.TextStim(win=win, name='startExp',
     languageStyle='LTR',
     depth=0.0);
 
+# Initialize components for Routine "descanso"
+descansoClock = core.Clock()
+descansar = visual.TextStim(win=win, name='descansar',
+    text='Tome un descanso de dos minutos.\n\nPara continuar sin descanso o uno más corto, presione el botón blanco!',
+    font='Arial',
+    pos=(0, 0), height=0.1, wrapWidth=None, ori=0, 
+    color='white', colorSpace='rgb', opacity=1, 
+    languageStyle='LTR',
+    depth=-1.0);
+
 # Initialize components for Routine "targetExp"
 targetExpClock = core.Clock()
 expTarget = visual.TextStim(win=win, name='expTarget',
@@ -248,6 +268,16 @@ expTarget = visual.TextStim(win=win, name='expTarget',
     color='white', colorSpace='rgb', opacity=1, 
     languageStyle='LTR',
     depth=-1.0);
+
+# Initialize components for Routine "isi_halfsec"
+isi_halfsecClock = core.Clock()
+text = visual.TextStim(win=win, name='text',
+    text=None,
+    font='Arial',
+    pos=(0, 0), height=0.1, wrapWidth=None, ori=0, 
+    color='white', colorSpace='rgb', opacity=1, 
+    languageStyle='LTR',
+    depth=0.0);
 
 # Initialize components for Routine "trialExp"
 trialExpClock = core.Clock()
@@ -686,196 +716,91 @@ for thisComponent in lexEspInstruccionesComponents:
 routineTimer.reset()
 
 # set up handler to look after randomisation of conditions etc
-trials_Debug = data.TrialHandler(nReps=0, method='random', 
+lexEspLoop = data.TrialHandler(nReps=1, method='sequential', 
     extraInfo=expInfo, originPath=-1,
-    trialList=[None],
-    seed=None, name='trials_Debug')
-thisExp.addLoop(trials_Debug)  # add the loop to the experiment
-thisTrials_Debug = trials_Debug.trialList[0]  # so we can initialise stimuli with some values
-# abbreviate parameter names if possible (e.g. rgb = thisTrials_Debug.rgb)
-if thisTrials_Debug != None:
-    for paramName in thisTrials_Debug:
-        exec('{} = thisTrials_Debug[paramName]'.format(paramName))
+    trialList=data.importConditions('data/processed_data/exp_files/lexTaleListEsp.csv'),
+    seed=None, name='lexEspLoop')
+thisExp.addLoop(lexEspLoop)  # add the loop to the experiment
+thisLexEspLoop = lexEspLoop.trialList[0]  # so we can initialise stimuli with some values
+# abbreviate parameter names if possible (e.g. rgb = thisLexEspLoop.rgb)
+if thisLexEspLoop != None:
+    for paramName in thisLexEspLoop:
+        exec('{} = thisLexEspLoop[paramName]'.format(paramName))
 
-for thisTrials_Debug in trials_Debug:
-    currentLoop = trials_Debug
-    # abbreviate parameter names if possible (e.g. rgb = thisTrials_Debug.rgb)
-    if thisTrials_Debug != None:
-        for paramName in thisTrials_Debug:
-            exec('{} = thisTrials_Debug[paramName]'.format(paramName))
-    
-    # set up handler to look after randomisation of conditions etc
-    lexEspLoop = data.TrialHandler(nReps=1, method='sequential', 
-        extraInfo=expInfo, originPath=-1,
-        trialList=data.importConditions('data/original_data/exp_files/lexTaleListEsp.csv'),
-        seed=None, name='lexEspLoop')
-    thisExp.addLoop(lexEspLoop)  # add the loop to the experiment
-    thisLexEspLoop = lexEspLoop.trialList[0]  # so we can initialise stimuli with some values
+for thisLexEspLoop in lexEspLoop:
+    currentLoop = lexEspLoop
     # abbreviate parameter names if possible (e.g. rgb = thisLexEspLoop.rgb)
     if thisLexEspLoop != None:
         for paramName in thisLexEspLoop:
             exec('{} = thisLexEspLoop[paramName]'.format(paramName))
     
-    for thisLexEspLoop in lexEspLoop:
-        currentLoop = lexEspLoop
-        # abbreviate parameter names if possible (e.g. rgb = thisLexEspLoop.rgb)
-        if thisLexEspLoop != None:
-            for paramName in thisLexEspLoop:
-                exec('{} = thisLexEspLoop[paramName]'.format(paramName))
-        
-        # ------Prepare to start Routine "lexTaleEsp"-------
-        t = 0
-        lexTaleEspClock.reset()  # clock
-        frameN = -1
-        continueRoutine = True
-        # update component parameters for each repeat
-        esp_Word.setText(Word)
-        lexEsp_key_resp = event.BuilderKeyResponse()
-        # keep track of which components have finished
-        lexTaleEspComponents = [esp_Word, esp_Si, esp_No, lexEsp_key_resp]
-        for thisComponent in lexTaleEspComponents:
-            if hasattr(thisComponent, 'status'):
-                thisComponent.status = NOT_STARTED
-        
-        # -------Start Routine "lexTaleEsp"-------
-        while continueRoutine:
-            # get current time
-            t = lexTaleEspClock.getTime()
-            frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
-            # update/draw components on each frame
-            
-            # *esp_Word* updates
-            if t >= 0.2 and esp_Word.status == NOT_STARTED:
-                # keep track of start time/frame for later
-                esp_Word.tStart = t
-                esp_Word.frameNStart = frameN  # exact frame index
-                esp_Word.setAutoDraw(True)
-            
-            # *esp_Si* updates
-            if t >= 0.2 and esp_Si.status == NOT_STARTED:
-                # keep track of start time/frame for later
-                esp_Si.tStart = t
-                esp_Si.frameNStart = frameN  # exact frame index
-                esp_Si.setAutoDraw(True)
-            
-            # *esp_No* updates
-            if t >= 0.2 and esp_No.status == NOT_STARTED:
-                # keep track of start time/frame for later
-                esp_No.tStart = t
-                esp_No.frameNStart = frameN  # exact frame index
-                esp_No.setAutoDraw(True)
-            
-            # *lexEsp_key_resp* updates
-            if t >= 0.2 and lexEsp_key_resp.status == NOT_STARTED:
-                # keep track of start time/frame for later
-                lexEsp_key_resp.tStart = t
-                lexEsp_key_resp.frameNStart = frameN  # exact frame index
-                lexEsp_key_resp.status = STARTED
-                # keyboard checking is just starting
-                lexEsp_key_resp.clock.reset()  # now t=0
-            if lexEsp_key_resp.status == STARTED:
-                theseKeys = event.getKeys(keyList=['1', '4'])
-                
-                # check for quit:
-                if "escape" in theseKeys:
-                    endExpNow = True
-                if len(theseKeys) > 0:  # at least one key was pressed
-                    if lexEsp_key_resp.keys == []:  # then this was the first keypress
-                        lexEsp_key_resp.keys = theseKeys[0]  # just the first key pressed
-                        lexEsp_key_resp.rt = lexEsp_key_resp.clock.getTime()
-                        # was this 'correct'?
-                        if (lexEsp_key_resp.keys == str(corrAnsEspV)) or (lexEsp_key_resp.keys == corrAnsEspV):
-                            lexEsp_key_resp.corr = 1
-                        else:
-                            lexEsp_key_resp.corr = 0
-                        # a response ends the routine
-                        continueRoutine = False
-            
-            # check for quit (typically the Esc key)
-            if endExpNow or event.getKeys(keyList=["escape"]):
-                core.quit()
-            
-            # check if all components have finished
-            if not continueRoutine:  # a component has requested a forced-end of Routine
-                break
-            continueRoutine = False  # will revert to True if at least one component still running
-            for thisComponent in lexTaleEspComponents:
-                if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
-                    continueRoutine = True
-                    break  # at least one component has not yet finished
-            
-            # refresh the screen
-            if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
-                win.flip()
-        
-        # -------Ending Routine "lexTaleEsp"-------
-        for thisComponent in lexTaleEspComponents:
-            if hasattr(thisComponent, "setAutoDraw"):
-                thisComponent.setAutoDraw(False)
-        # check responses
-        if lexEsp_key_resp.keys in ['', [], None]:  # No response was made
-            lexEsp_key_resp.keys=None
-            # was no response the correct answer?!
-            if str(corrAnsEspV).lower() == 'none':
-               lexEsp_key_resp.corr = 1;  # correct non-response
-            else:
-               lexEsp_key_resp.corr = 0;  # failed to respond (incorrectly)
-        # store data for lexEspLoop (TrialHandler)
-        lexEspLoop.addData('lexEsp_key_resp.keys',lexEsp_key_resp.keys)
-        lexEspLoop.addData('lexEsp_key_resp.corr', lexEsp_key_resp.corr)
-        if lexEsp_key_resp.keys != None:  # we had a response
-            lexEspLoop.addData('lexEsp_key_resp.rt', lexEsp_key_resp.rt)
-        # the Routine "lexTaleEsp" was not non-slip safe, so reset the non-slip timer
-        routineTimer.reset()
-        thisExp.nextEntry()
-        
-    # completed 1 repeats of 'lexEspLoop'
-    
-    
-    # ------Prepare to start Routine "pracIns"-------
+    # ------Prepare to start Routine "lexTaleEsp"-------
     t = 0
-    pracInsClock.reset()  # clock
+    lexTaleEspClock.reset()  # clock
     frameN = -1
     continueRoutine = True
     # update component parameters for each repeat
-    pracSeg_Start = event.BuilderKeyResponse()
+    esp_Word.setText(Word)
+    lexEsp_key_resp = event.BuilderKeyResponse()
     # keep track of which components have finished
-    pracInsComponents = [pracSegInstr, pracSeg_Start]
-    for thisComponent in pracInsComponents:
+    lexTaleEspComponents = [esp_Word, esp_Si, esp_No, lexEsp_key_resp]
+    for thisComponent in lexTaleEspComponents:
         if hasattr(thisComponent, 'status'):
             thisComponent.status = NOT_STARTED
     
-    # -------Start Routine "pracIns"-------
+    # -------Start Routine "lexTaleEsp"-------
     while continueRoutine:
         # get current time
-        t = pracInsClock.getTime()
+        t = lexTaleEspClock.getTime()
         frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
         # update/draw components on each frame
         
-        # *pracSegInstr* updates
-        if t >= 0.0 and pracSegInstr.status == NOT_STARTED:
+        # *esp_Word* updates
+        if t >= 0.2 and esp_Word.status == NOT_STARTED:
             # keep track of start time/frame for later
-            pracSegInstr.tStart = t
-            pracSegInstr.frameNStart = frameN  # exact frame index
-            pracSegInstr.setAutoDraw(True)
+            esp_Word.tStart = t
+            esp_Word.frameNStart = frameN  # exact frame index
+            esp_Word.setAutoDraw(True)
         
-        # *pracSeg_Start* updates
-        if t >= 0.0 and pracSeg_Start.status == NOT_STARTED:
+        # *esp_Si* updates
+        if t >= 0.2 and esp_Si.status == NOT_STARTED:
             # keep track of start time/frame for later
-            pracSeg_Start.tStart = t
-            pracSeg_Start.frameNStart = frameN  # exact frame index
-            pracSeg_Start.status = STARTED
+            esp_Si.tStart = t
+            esp_Si.frameNStart = frameN  # exact frame index
+            esp_Si.setAutoDraw(True)
+        
+        # *esp_No* updates
+        if t >= 0.2 and esp_No.status == NOT_STARTED:
+            # keep track of start time/frame for later
+            esp_No.tStart = t
+            esp_No.frameNStart = frameN  # exact frame index
+            esp_No.setAutoDraw(True)
+        
+        # *lexEsp_key_resp* updates
+        if t >= 0.2 and lexEsp_key_resp.status == NOT_STARTED:
+            # keep track of start time/frame for later
+            lexEsp_key_resp.tStart = t
+            lexEsp_key_resp.frameNStart = frameN  # exact frame index
+            lexEsp_key_resp.status = STARTED
             # keyboard checking is just starting
-            event.clearEvents(eventType='keyboard')
-        if pracSeg_Start.status == STARTED:
-            theseKeys = event.getKeys(keyList=['0'])
+            lexEsp_key_resp.clock.reset()  # now t=0
+        if lexEsp_key_resp.status == STARTED:
+            theseKeys = event.getKeys(keyList=['1', '4'])
             
             # check for quit:
             if "escape" in theseKeys:
                 endExpNow = True
             if len(theseKeys) > 0:  # at least one key was pressed
-                # a response ends the routine
-                continueRoutine = False
+                if lexEsp_key_resp.keys == []:  # then this was the first keypress
+                    lexEsp_key_resp.keys = theseKeys[0]  # just the first key pressed
+                    lexEsp_key_resp.rt = lexEsp_key_resp.clock.getTime()
+                    # was this 'correct'?
+                    if (lexEsp_key_resp.keys == str(corrAnsEspV)) or (lexEsp_key_resp.keys == corrAnsEspV):
+                        lexEsp_key_resp.corr = 1
+                    else:
+                        lexEsp_key_resp.corr = 0
+                    # a response ends the routine
+                    continueRoutine = False
         
         # check for quit (typically the Esc key)
         if endExpNow or event.getKeys(keyList=["escape"]):
@@ -885,7 +810,7 @@ for thisTrials_Debug in trials_Debug:
         if not continueRoutine:  # a component has requested a forced-end of Routine
             break
         continueRoutine = False  # will revert to True if at least one component still running
-        for thisComponent in pracInsComponents:
+        for thisComponent in lexTaleEspComponents:
             if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
                 continueRoutine = True
                 break  # at least one component has not yet finished
@@ -894,600 +819,290 @@ for thisTrials_Debug in trials_Debug:
         if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
             win.flip()
     
-    # -------Ending Routine "pracIns"-------
-    for thisComponent in pracInsComponents:
+    # -------Ending Routine "lexTaleEsp"-------
+    for thisComponent in lexTaleEspComponents:
         if hasattr(thisComponent, "setAutoDraw"):
             thisComponent.setAutoDraw(False)
-    # the Routine "pracIns" was not non-slip safe, so reset the non-slip timer
+    # check responses
+    if lexEsp_key_resp.keys in ['', [], None]:  # No response was made
+        lexEsp_key_resp.keys=None
+        # was no response the correct answer?!
+        if str(corrAnsEspV).lower() == 'none':
+           lexEsp_key_resp.corr = 1;  # correct non-response
+        else:
+           lexEsp_key_resp.corr = 0;  # failed to respond (incorrectly)
+    # store data for lexEspLoop (TrialHandler)
+    lexEspLoop.addData('lexEsp_key_resp.keys',lexEsp_key_resp.keys)
+    lexEspLoop.addData('lexEsp_key_resp.corr', lexEsp_key_resp.corr)
+    if lexEsp_key_resp.keys != None:  # we had a response
+        lexEspLoop.addData('lexEsp_key_resp.rt', lexEsp_key_resp.rt)
+    # the Routine "lexTaleEsp" was not non-slip safe, so reset the non-slip timer
     routineTimer.reset()
+    thisExp.nextEntry()
     
-    # set up handler to look after randomisation of conditions etc
-    pracTarLoop = data.TrialHandler(nReps=8, method='sequential', 
-        extraInfo=expInfo, originPath=-1,
-        trialList=data.importConditions(conditionPrac, selection=[1]),
-        seed=None, name='pracTarLoop')
-    thisExp.addLoop(pracTarLoop)  # add the loop to the experiment
-    thisPracTarLoop = pracTarLoop.trialList[0]  # so we can initialise stimuli with some values
+# completed 1 repeats of 'lexEspLoop'
+
+
+# ------Prepare to start Routine "pracIns"-------
+t = 0
+pracInsClock.reset()  # clock
+frameN = -1
+continueRoutine = True
+# update component parameters for each repeat
+pracSeg_Start = event.BuilderKeyResponse()
+# keep track of which components have finished
+pracInsComponents = [pracSegInstr, pracSeg_Start]
+for thisComponent in pracInsComponents:
+    if hasattr(thisComponent, 'status'):
+        thisComponent.status = NOT_STARTED
+
+# -------Start Routine "pracIns"-------
+while continueRoutine:
+    # get current time
+    t = pracInsClock.getTime()
+    frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
+    # update/draw components on each frame
+    
+    # *pracSegInstr* updates
+    if t >= 0.0 and pracSegInstr.status == NOT_STARTED:
+        # keep track of start time/frame for later
+        pracSegInstr.tStart = t
+        pracSegInstr.frameNStart = frameN  # exact frame index
+        pracSegInstr.setAutoDraw(True)
+    
+    # *pracSeg_Start* updates
+    if t >= 0.0 and pracSeg_Start.status == NOT_STARTED:
+        # keep track of start time/frame for later
+        pracSeg_Start.tStart = t
+        pracSeg_Start.frameNStart = frameN  # exact frame index
+        pracSeg_Start.status = STARTED
+        # keyboard checking is just starting
+        event.clearEvents(eventType='keyboard')
+    if pracSeg_Start.status == STARTED:
+        theseKeys = event.getKeys(keyList=['0'])
+        
+        # check for quit:
+        if "escape" in theseKeys:
+            endExpNow = True
+        if len(theseKeys) > 0:  # at least one key was pressed
+            # a response ends the routine
+            continueRoutine = False
+    
+    # check for quit (typically the Esc key)
+    if endExpNow or event.getKeys(keyList=["escape"]):
+        core.quit()
+    
+    # check if all components have finished
+    if not continueRoutine:  # a component has requested a forced-end of Routine
+        break
+    continueRoutine = False  # will revert to True if at least one component still running
+    for thisComponent in pracInsComponents:
+        if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
+            continueRoutine = True
+            break  # at least one component has not yet finished
+    
+    # refresh the screen
+    if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
+        win.flip()
+
+# -------Ending Routine "pracIns"-------
+for thisComponent in pracInsComponents:
+    if hasattr(thisComponent, "setAutoDraw"):
+        thisComponent.setAutoDraw(False)
+# the Routine "pracIns" was not non-slip safe, so reset the non-slip timer
+routineTimer.reset()
+
+# set up handler to look after randomisation of conditions etc
+pracTarLoop = data.TrialHandler(nReps=8, method='sequential', 
+    extraInfo=expInfo, originPath=-1,
+    trialList=data.importConditions(conditionPrac, selection=[1]),
+    seed=None, name='pracTarLoop')
+thisExp.addLoop(pracTarLoop)  # add the loop to the experiment
+thisPracTarLoop = pracTarLoop.trialList[0]  # so we can initialise stimuli with some values
+# abbreviate parameter names if possible (e.g. rgb = thisPracTarLoop.rgb)
+if thisPracTarLoop != None:
+    for paramName in thisPracTarLoop:
+        exec('{} = thisPracTarLoop[paramName]'.format(paramName))
+
+for thisPracTarLoop in pracTarLoop:
+    currentLoop = pracTarLoop
     # abbreviate parameter names if possible (e.g. rgb = thisPracTarLoop.rgb)
     if thisPracTarLoop != None:
         for paramName in thisPracTarLoop:
             exec('{} = thisPracTarLoop[paramName]'.format(paramName))
     
-    for thisPracTarLoop in pracTarLoop:
-        currentLoop = pracTarLoop
-        # abbreviate parameter names if possible (e.g. rgb = thisPracTarLoop.rgb)
-        if thisPracTarLoop != None:
-            for paramName in thisPracTarLoop:
-                exec('{} = thisPracTarLoop[paramName]'.format(paramName))
-        
-        # ------Prepare to start Routine "targetPrac"-------
-        t = 0
-        targetPracClock.reset()  # clock
-        frameN = -1
-        continueRoutine = True
-        routineTimer.add(2.000000)
-        # update component parameters for each repeat
-        targetPrac = practice + "%i" %pracTarLoop.thisN
-        pracSegTarget.setText("Encuentre    " + eval(targetPrac)
+    # ------Prepare to start Routine "targetPrac"-------
+    t = 0
+    targetPracClock.reset()  # clock
+    frameN = -1
+    continueRoutine = True
+    routineTimer.add(4.000000)
+    # update component parameters for each repeat
+    targetPrac = practice + "%i" %pracTarLoop.thisN
+    pracSegTarget.setText("Encuentre    " + eval(targetPrac).upper()
 )
-        # keep track of which components have finished
-        targetPracComponents = [pracSegTarget]
+    # keep track of which components have finished
+    targetPracComponents = [pracSegTarget]
+    for thisComponent in targetPracComponents:
+        if hasattr(thisComponent, 'status'):
+            thisComponent.status = NOT_STARTED
+    
+    # -------Start Routine "targetPrac"-------
+    while continueRoutine and routineTimer.getTime() > 0:
+        # get current time
+        t = targetPracClock.getTime()
+        frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
+        # update/draw components on each frame
+        
+        # *pracSegTarget* updates
+        if t >= 0.0 and pracSegTarget.status == NOT_STARTED:
+            # keep track of start time/frame for later
+            pracSegTarget.tStart = t
+            pracSegTarget.frameNStart = frameN  # exact frame index
+            pracSegTarget.setAutoDraw(True)
+        frameRemains = 0.0 + 4.0- win.monitorFramePeriod * 0.75  # most of one frame period left
+        if pracSegTarget.status == STARTED and t >= frameRemains:
+            pracSegTarget.setAutoDraw(False)
+        
+        # check for quit (typically the Esc key)
+        if endExpNow or event.getKeys(keyList=["escape"]):
+            core.quit()
+        
+        # check if all components have finished
+        if not continueRoutine:  # a component has requested a forced-end of Routine
+            break
+        continueRoutine = False  # will revert to True if at least one component still running
         for thisComponent in targetPracComponents:
-            if hasattr(thisComponent, 'status'):
-                thisComponent.status = NOT_STARTED
+            if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
+                continueRoutine = True
+                break  # at least one component has not yet finished
         
-        # -------Start Routine "targetPrac"-------
-        while continueRoutine and routineTimer.getTime() > 0:
-            # get current time
-            t = targetPracClock.getTime()
-            frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
-            # update/draw components on each frame
-            
-            # *pracSegTarget* updates
-            if t >= 0.0 and pracSegTarget.status == NOT_STARTED:
-                # keep track of start time/frame for later
-                pracSegTarget.tStart = t
-                pracSegTarget.frameNStart = frameN  # exact frame index
-                pracSegTarget.setAutoDraw(True)
-            frameRemains = 0.0 + 2.0- win.monitorFramePeriod * 0.75  # most of one frame period left
-            if pracSegTarget.status == STARTED and t >= frameRemains:
-                pracSegTarget.setAutoDraw(False)
-            
-            # check for quit (typically the Esc key)
-            if endExpNow or event.getKeys(keyList=["escape"]):
-                core.quit()
-            
-            # check if all components have finished
-            if not continueRoutine:  # a component has requested a forced-end of Routine
-                break
-            continueRoutine = False  # will revert to True if at least one component still running
-            for thisComponent in targetPracComponents:
-                if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
-                    continueRoutine = True
-                    break  # at least one component has not yet finished
-            
-            # refresh the screen
-            if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
-                win.flip()
+        # refresh the screen
+        if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
+            win.flip()
+    
+    # -------Ending Routine "targetPrac"-------
+    for thisComponent in targetPracComponents:
+        if hasattr(thisComponent, "setAutoDraw"):
+            thisComponent.setAutoDraw(False)
+    
+    # ------Prepare to start Routine "isi_halfsec"-------
+    t = 0
+    isi_halfsecClock.reset()  # clock
+    frameN = -1
+    continueRoutine = True
+    routineTimer.add(0.500000)
+    # update component parameters for each repeat
+    # keep track of which components have finished
+    isi_halfsecComponents = [text]
+    for thisComponent in isi_halfsecComponents:
+        if hasattr(thisComponent, 'status'):
+            thisComponent.status = NOT_STARTED
+    
+    # -------Start Routine "isi_halfsec"-------
+    while continueRoutine and routineTimer.getTime() > 0:
+        # get current time
+        t = isi_halfsecClock.getTime()
+        frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
+        # update/draw components on each frame
         
-        # -------Ending Routine "targetPrac"-------
-        for thisComponent in targetPracComponents:
-            if hasattr(thisComponent, "setAutoDraw"):
-                thisComponent.setAutoDraw(False)
+        # *text* updates
+        if t >= 0.0 and text.status == NOT_STARTED:
+            # keep track of start time/frame for later
+            text.tStart = t
+            text.frameNStart = frameN  # exact frame index
+            text.setAutoDraw(True)
+        frameRemains = 0.0 + 0.5- win.monitorFramePeriod * 0.75  # most of one frame period left
+        if text.status == STARTED and t >= frameRemains:
+            text.setAutoDraw(False)
         
-        # set up handler to look after randomisation of conditions etc
-        pracTrialLoop = data.TrialHandler(nReps=1, method='random', 
-            extraInfo=expInfo, originPath=-1,
-            trialList=data.importConditions(conditionPrac, selection=[2,3,4,5,6,7,8,9,10,11]),
-            seed=None, name='pracTrialLoop')
-        thisExp.addLoop(pracTrialLoop)  # add the loop to the experiment
-        thisPracTrialLoop = pracTrialLoop.trialList[0]  # so we can initialise stimuli with some values
+        # check for quit (typically the Esc key)
+        if endExpNow or event.getKeys(keyList=["escape"]):
+            core.quit()
+        
+        # check if all components have finished
+        if not continueRoutine:  # a component has requested a forced-end of Routine
+            break
+        continueRoutine = False  # will revert to True if at least one component still running
+        for thisComponent in isi_halfsecComponents:
+            if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
+                continueRoutine = True
+                break  # at least one component has not yet finished
+        
+        # refresh the screen
+        if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
+            win.flip()
+    
+    # -------Ending Routine "isi_halfsec"-------
+    for thisComponent in isi_halfsecComponents:
+        if hasattr(thisComponent, "setAutoDraw"):
+            thisComponent.setAutoDraw(False)
+    
+    # set up handler to look after randomisation of conditions etc
+    pracTrialLoop = data.TrialHandler(nReps=1, method='random', 
+        extraInfo=expInfo, originPath=-1,
+        trialList=data.importConditions(conditionPrac, selection=[2,3,4,5,6,7,8,9,10,11]),
+        seed=None, name='pracTrialLoop')
+    thisExp.addLoop(pracTrialLoop)  # add the loop to the experiment
+    thisPracTrialLoop = pracTrialLoop.trialList[0]  # so we can initialise stimuli with some values
+    # abbreviate parameter names if possible (e.g. rgb = thisPracTrialLoop.rgb)
+    if thisPracTrialLoop != None:
+        for paramName in thisPracTrialLoop:
+            exec('{} = thisPracTrialLoop[paramName]'.format(paramName))
+    
+    for thisPracTrialLoop in pracTrialLoop:
+        currentLoop = pracTrialLoop
         # abbreviate parameter names if possible (e.g. rgb = thisPracTrialLoop.rgb)
         if thisPracTrialLoop != None:
             for paramName in thisPracTrialLoop:
                 exec('{} = thisPracTrialLoop[paramName]'.format(paramName))
         
-        for thisPracTrialLoop in pracTrialLoop:
-            currentLoop = pracTrialLoop
-            # abbreviate parameter names if possible (e.g. rgb = thisPracTrialLoop.rgb)
-            if thisPracTrialLoop != None:
-                for paramName in thisPracTrialLoop:
-                    exec('{} = thisPracTrialLoop[paramName]'.format(paramName))
-            
-            # ------Prepare to start Routine "trialPrac"-------
-            t = 0
-            trialPracClock.reset()  # clock
-            frameN = -1
-            continueRoutine = True
-            routineTimer.add(2.000000)
-            # update component parameters for each repeat
-            carrierPrac = practice + "%i" %pracTarLoop.thisN
-            pracSegCarrier.setText(eval(carrierPrac))
-            pracSeg_key_resp = event.BuilderKeyResponse()
-            # keep track of which components have finished
-            trialPracComponents = [pracSegCarrier, pracSeg_key_resp]
-            for thisComponent in trialPracComponents:
-                if hasattr(thisComponent, 'status'):
-                    thisComponent.status = NOT_STARTED
-            
-            # -------Start Routine "trialPrac"-------
-            while continueRoutine and routineTimer.getTime() > 0:
-                # get current time
-                t = trialPracClock.getTime()
-                frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
-                # update/draw components on each frame
-                
-                # *pracSegCarrier* updates
-                if t >= 0.0 and pracSegCarrier.status == NOT_STARTED:
-                    # keep track of start time/frame for later
-                    pracSegCarrier.tStart = t
-                    pracSegCarrier.frameNStart = frameN  # exact frame index
-                    pracSegCarrier.setAutoDraw(True)
-                frameRemains = 0.0 + 2- win.monitorFramePeriod * 0.75  # most of one frame period left
-                if pracSegCarrier.status == STARTED and t >= frameRemains:
-                    pracSegCarrier.setAutoDraw(False)
-                
-                # *pracSeg_key_resp* updates
-                if t >= 0.0 and pracSeg_key_resp.status == NOT_STARTED:
-                    # keep track of start time/frame for later
-                    pracSeg_key_resp.tStart = t
-                    pracSeg_key_resp.frameNStart = frameN  # exact frame index
-                    pracSeg_key_resp.status = STARTED
-                    # keyboard checking is just starting
-                    event.clearEvents(eventType='keyboard')
-                frameRemains = 0.0 + 2- win.monitorFramePeriod * 0.75  # most of one frame period left
-                if pracSeg_key_resp.status == STARTED and t >= frameRemains:
-                    pracSeg_key_resp.status = FINISHED
-                if pracSeg_key_resp.status == STARTED:
-                    theseKeys = event.getKeys(keyList=['1'])
-                    
-                    # check for quit:
-                    if "escape" in theseKeys:
-                        endExpNow = True
-                    if len(theseKeys) > 0:  # at least one key was pressed
-                        # a response ends the routine
-                        continueRoutine = False
-                
-                # check for quit (typically the Esc key)
-                if endExpNow or event.getKeys(keyList=["escape"]):
-                    core.quit()
-                
-                # check if all components have finished
-                if not continueRoutine:  # a component has requested a forced-end of Routine
-                    break
-                continueRoutine = False  # will revert to True if at least one component still running
-                for thisComponent in trialPracComponents:
-                    if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
-                        continueRoutine = True
-                        break  # at least one component has not yet finished
-                
-                # refresh the screen
-                if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
-                    win.flip()
-            
-            # -------Ending Routine "trialPrac"-------
-            for thisComponent in trialPracComponents:
-                if hasattr(thisComponent, "setAutoDraw"):
-                    thisComponent.setAutoDraw(False)
-            thisExp.nextEntry()
-            
-        # completed 1 repeats of 'pracTrialLoop'
-        
-        thisExp.nextEntry()
-        
-    # completed 8 repeats of 'pracTarLoop'
-    
-    
-    # ------Prepare to start Routine "expIns"-------
-    t = 0
-    expInsClock.reset()  # clock
-    frameN = -1
-    continueRoutine = True
-    # update component parameters for each repeat
-    startExpTrials = event.BuilderKeyResponse()
-    # keep track of which components have finished
-    expInsComponents = [startExp, startExpTrials]
-    for thisComponent in expInsComponents:
-        if hasattr(thisComponent, 'status'):
-            thisComponent.status = NOT_STARTED
-    
-    # -------Start Routine "expIns"-------
-    while continueRoutine:
-        # get current time
-        t = expInsClock.getTime()
-        frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
-        # update/draw components on each frame
-        
-        # *startExp* updates
-        if t >= 0.0 and startExp.status == NOT_STARTED:
-            # keep track of start time/frame for later
-            startExp.tStart = t
-            startExp.frameNStart = frameN  # exact frame index
-            startExp.setAutoDraw(True)
-        
-        # *startExpTrials* updates
-        if t >= 0.0 and startExpTrials.status == NOT_STARTED:
-            # keep track of start time/frame for later
-            startExpTrials.tStart = t
-            startExpTrials.frameNStart = frameN  # exact frame index
-            startExpTrials.status = STARTED
-            # keyboard checking is just starting
-            event.clearEvents(eventType='keyboard')
-        if startExpTrials.status == STARTED:
-            theseKeys = event.getKeys(keyList=['0'])
-            
-            # check for quit:
-            if "escape" in theseKeys:
-                endExpNow = True
-            if len(theseKeys) > 0:  # at least one key was pressed
-                # a response ends the routine
-                continueRoutine = False
-        
-        # check for quit (typically the Esc key)
-        if endExpNow or event.getKeys(keyList=["escape"]):
-            core.quit()
-        
-        # check if all components have finished
-        if not continueRoutine:  # a component has requested a forced-end of Routine
-            break
-        continueRoutine = False  # will revert to True if at least one component still running
-        for thisComponent in expInsComponents:
-            if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
-                continueRoutine = True
-                break  # at least one component has not yet finished
-        
-        # refresh the screen
-        if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
-            win.flip()
-    
-    # -------Ending Routine "expIns"-------
-    for thisComponent in expInsComponents:
-        if hasattr(thisComponent, "setAutoDraw"):
-            thisComponent.setAutoDraw(False)
-    # the Routine "expIns" was not non-slip safe, so reset the non-slip timer
-    routineTimer.reset()
-    
-    # set up handler to look after randomisation of conditions etc
-    expTarLoop = data.TrialHandler(nReps=48, method='sequential', 
-        extraInfo=expInfo, originPath=-1,
-        trialList=data.importConditions(conditionExp, selection=[1]),
-        seed=None, name='expTarLoop')
-    thisExp.addLoop(expTarLoop)  # add the loop to the experiment
-    thisExpTarLoop = expTarLoop.trialList[0]  # so we can initialise stimuli with some values
-    # abbreviate parameter names if possible (e.g. rgb = thisExpTarLoop.rgb)
-    if thisExpTarLoop != None:
-        for paramName in thisExpTarLoop:
-            exec('{} = thisExpTarLoop[paramName]'.format(paramName))
-    
-    for thisExpTarLoop in expTarLoop:
-        currentLoop = expTarLoop
-        # abbreviate parameter names if possible (e.g. rgb = thisExpTarLoop.rgb)
-        if thisExpTarLoop != None:
-            for paramName in thisExpTarLoop:
-                exec('{} = thisExpTarLoop[paramName]'.format(paramName))
-        
-        # ------Prepare to start Routine "targetExp"-------
+        # ------Prepare to start Routine "trialPrac"-------
         t = 0
-        targetExpClock.reset()  # clock
+        trialPracClock.reset()  # clock
         frameN = -1
         continueRoutine = True
         routineTimer.add(2.000000)
         # update component parameters for each repeat
-        targetExp= experiment + "%i" %expTarLoop.thisN
-        
-        expTarget.setText("Encuentre    " + eval(targetExp))
+        carrierPrac = practice + "%i" %pracTarLoop.thisN
+        pracSegCarrier.setText(eval(carrierPrac))
+        pracSeg_key_resp = event.BuilderKeyResponse()
         # keep track of which components have finished
-        targetExpComponents = [expTarget]
-        for thisComponent in targetExpComponents:
+        trialPracComponents = [pracSegCarrier, pracSeg_key_resp]
+        for thisComponent in trialPracComponents:
             if hasattr(thisComponent, 'status'):
                 thisComponent.status = NOT_STARTED
         
-        # -------Start Routine "targetExp"-------
+        # -------Start Routine "trialPrac"-------
         while continueRoutine and routineTimer.getTime() > 0:
             # get current time
-            t = targetExpClock.getTime()
+            t = trialPracClock.getTime()
             frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
             # update/draw components on each frame
             
-            # *expTarget* updates
-            if t >= 0.0 and expTarget.status == NOT_STARTED:
+            # *pracSegCarrier* updates
+            if t >= 0.0 and pracSegCarrier.status == NOT_STARTED:
                 # keep track of start time/frame for later
-                expTarget.tStart = t
-                expTarget.frameNStart = frameN  # exact frame index
-                expTarget.setAutoDraw(True)
+                pracSegCarrier.tStart = t
+                pracSegCarrier.frameNStart = frameN  # exact frame index
+                pracSegCarrier.setAutoDraw(True)
             frameRemains = 0.0 + 2- win.monitorFramePeriod * 0.75  # most of one frame period left
-            if expTarget.status == STARTED and t >= frameRemains:
-                expTarget.setAutoDraw(False)
+            if pracSegCarrier.status == STARTED and t >= frameRemains:
+                pracSegCarrier.setAutoDraw(False)
             
-            # check for quit (typically the Esc key)
-            if endExpNow or event.getKeys(keyList=["escape"]):
-                core.quit()
-            
-            # check if all components have finished
-            if not continueRoutine:  # a component has requested a forced-end of Routine
-                break
-            continueRoutine = False  # will revert to True if at least one component still running
-            for thisComponent in targetExpComponents:
-                if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
-                    continueRoutine = True
-                    break  # at least one component has not yet finished
-            
-            # refresh the screen
-            if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
-                win.flip()
-        
-        # -------Ending Routine "targetExp"-------
-        for thisComponent in targetExpComponents:
-            if hasattr(thisComponent, "setAutoDraw"):
-                thisComponent.setAutoDraw(False)
-        
-        # set up handler to look after randomisation of conditions etc
-        expTrialLoop = data.TrialHandler(nReps=1, method='random', 
-            extraInfo=expInfo, originPath=-1,
-            trialList=data.importConditions(conditionExp, selection=[2,3,4,5,6,7,8,9,10,11]),
-            seed=None, name='expTrialLoop')
-        thisExp.addLoop(expTrialLoop)  # add the loop to the experiment
-        thisExpTrialLoop = expTrialLoop.trialList[0]  # so we can initialise stimuli with some values
-        # abbreviate parameter names if possible (e.g. rgb = thisExpTrialLoop.rgb)
-        if thisExpTrialLoop != None:
-            for paramName in thisExpTrialLoop:
-                exec('{} = thisExpTrialLoop[paramName]'.format(paramName))
-        
-        for thisExpTrialLoop in expTrialLoop:
-            currentLoop = expTrialLoop
-            # abbreviate parameter names if possible (e.g. rgb = thisExpTrialLoop.rgb)
-            if thisExpTrialLoop != None:
-                for paramName in thisExpTrialLoop:
-                    exec('{} = thisExpTrialLoop[paramName]'.format(paramName))
-            
-            # ------Prepare to start Routine "trialExp"-------
-            t = 0
-            trialExpClock.reset()  # clock
-            frameN = -1
-            continueRoutine = True
-            routineTimer.add(2.000000)
-            # update component parameters for each repeat
-            carrierExp= experiment + "%i" %expTarLoop.thisN
-            expCarrier.setText(eval(carrierExp))
-            seg_key_resp = event.BuilderKeyResponse()
-            # keep track of which components have finished
-            trialExpComponents = [expCarrier, seg_key_resp]
-            for thisComponent in trialExpComponents:
-                if hasattr(thisComponent, 'status'):
-                    thisComponent.status = NOT_STARTED
-            
-            # -------Start Routine "trialExp"-------
-            while continueRoutine and routineTimer.getTime() > 0:
-                # get current time
-                t = trialExpClock.getTime()
-                frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
-                # update/draw components on each frame
-                
-                # *expCarrier* updates
-                if t >= 0.0 and expCarrier.status == NOT_STARTED:
-                    # keep track of start time/frame for later
-                    expCarrier.tStart = t
-                    expCarrier.frameNStart = frameN  # exact frame index
-                    expCarrier.setAutoDraw(True)
-                frameRemains = 0.0 + 2- win.monitorFramePeriod * 0.75  # most of one frame period left
-                if expCarrier.status == STARTED and t >= frameRemains:
-                    expCarrier.setAutoDraw(False)
-                
-                # *seg_key_resp* updates
-                if t >= 0.0 and seg_key_resp.status == NOT_STARTED:
-                    # keep track of start time/frame for later
-                    seg_key_resp.tStart = t
-                    seg_key_resp.frameNStart = frameN  # exact frame index
-                    seg_key_resp.status = STARTED
-                    # keyboard checking is just starting
-                    win.callOnFlip(seg_key_resp.clock.reset)  # t=0 on next screen flip
-                    event.clearEvents(eventType='keyboard')
-                frameRemains = 0.0 + 2- win.monitorFramePeriod * 0.75  # most of one frame period left
-                if seg_key_resp.status == STARTED and t >= frameRemains:
-                    seg_key_resp.status = FINISHED
-                if seg_key_resp.status == STARTED:
-                    theseKeys = event.getKeys(keyList=['1'])
-                    
-                    # check for quit:
-                    if "escape" in theseKeys:
-                        endExpNow = True
-                    if len(theseKeys) > 0:  # at least one key was pressed
-                        seg_key_resp.keys = theseKeys[-1]  # just the last key pressed
-                        seg_key_resp.rt = seg_key_resp.clock.getTime()
-                        # a response ends the routine
-                        continueRoutine = False
-                
-                # check for quit (typically the Esc key)
-                if endExpNow or event.getKeys(keyList=["escape"]):
-                    core.quit()
-                
-                # check if all components have finished
-                if not continueRoutine:  # a component has requested a forced-end of Routine
-                    break
-                continueRoutine = False  # will revert to True if at least one component still running
-                for thisComponent in trialExpComponents:
-                    if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
-                        continueRoutine = True
-                        break  # at least one component has not yet finished
-                
-                # refresh the screen
-                if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
-                    win.flip()
-            
-            # -------Ending Routine "trialExp"-------
-            for thisComponent in trialExpComponents:
-                if hasattr(thisComponent, "setAutoDraw"):
-                    thisComponent.setAutoDraw(False)
-            # check responses
-            if seg_key_resp.keys in ['', [], None]:  # No response was made
-                seg_key_resp.keys=None
-            expTrialLoop.addData('seg_key_resp.keys',seg_key_resp.keys)
-            if seg_key_resp.keys != None:  # we had a response
-                expTrialLoop.addData('seg_key_resp.rt', seg_key_resp.rt)
-            thisExp.nextEntry()
-            
-        # completed 1 repeats of 'expTrialLoop'
-        
-        thisExp.nextEntry()
-        
-    # completed 48 repeats of 'expTarLoop'
-    
-    
-    # ------Prepare to start Routine "syllablePracIns"-------
-    t = 0
-    syllablePracInsClock.reset()  # clock
-    frameN = -1
-    continueRoutine = True
-    # update component parameters for each repeat
-    pracSyllableStart = event.BuilderKeyResponse()
-    # keep track of which components have finished
-    syllablePracInsComponents = [pracSyllableInstr, pracSyllableStart]
-    for thisComponent in syllablePracInsComponents:
-        if hasattr(thisComponent, 'status'):
-            thisComponent.status = NOT_STARTED
-    
-    # -------Start Routine "syllablePracIns"-------
-    while continueRoutine:
-        # get current time
-        t = syllablePracInsClock.getTime()
-        frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
-        # update/draw components on each frame
-        
-        # *pracSyllableInstr* updates
-        if t >= 0.0 and pracSyllableInstr.status == NOT_STARTED:
-            # keep track of start time/frame for later
-            pracSyllableInstr.tStart = t
-            pracSyllableInstr.frameNStart = frameN  # exact frame index
-            pracSyllableInstr.setAutoDraw(True)
-        
-        # *pracSyllableStart* updates
-        if t >= 0.0 and pracSyllableStart.status == NOT_STARTED:
-            # keep track of start time/frame for later
-            pracSyllableStart.tStart = t
-            pracSyllableStart.frameNStart = frameN  # exact frame index
-            pracSyllableStart.status = STARTED
-            # keyboard checking is just starting
-            event.clearEvents(eventType='keyboard')
-        if pracSyllableStart.status == STARTED:
-            theseKeys = event.getKeys(keyList=['0'])
-            
-            # check for quit:
-            if "escape" in theseKeys:
-                endExpNow = True
-            if len(theseKeys) > 0:  # at least one key was pressed
-                # a response ends the routine
-                continueRoutine = False
-        
-        # check for quit (typically the Esc key)
-        if endExpNow or event.getKeys(keyList=["escape"]):
-            core.quit()
-        
-        # check if all components have finished
-        if not continueRoutine:  # a component has requested a forced-end of Routine
-            break
-        continueRoutine = False  # will revert to True if at least one component still running
-        for thisComponent in syllablePracInsComponents:
-            if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
-                continueRoutine = True
-                break  # at least one component has not yet finished
-        
-        # refresh the screen
-        if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
-            win.flip()
-    
-    # -------Ending Routine "syllablePracIns"-------
-    for thisComponent in syllablePracInsComponents:
-        if hasattr(thisComponent, "setAutoDraw"):
-            thisComponent.setAutoDraw(False)
-    # the Routine "syllablePracIns" was not non-slip safe, so reset the non-slip timer
-    routineTimer.reset()
-    
-    # set up handler to look after randomisation of conditions etc
-    sylPracLoop = data.TrialHandler(nReps=1, method='random', 
-        extraInfo=expInfo, originPath=-1,
-        trialList=data.importConditions(conditionSylPrac),
-        seed=None, name='sylPracLoop')
-    thisExp.addLoop(sylPracLoop)  # add the loop to the experiment
-    thisSylPracLoop = sylPracLoop.trialList[0]  # so we can initialise stimuli with some values
-    # abbreviate parameter names if possible (e.g. rgb = thisSylPracLoop.rgb)
-    if thisSylPracLoop != None:
-        for paramName in thisSylPracLoop:
-            exec('{} = thisSylPracLoop[paramName]'.format(paramName))
-    
-    for thisSylPracLoop in sylPracLoop:
-        currentLoop = sylPracLoop
-        # abbreviate parameter names if possible (e.g. rgb = thisSylPracLoop.rgb)
-        if thisSylPracLoop != None:
-            for paramName in thisSylPracLoop:
-                exec('{} = thisSylPracLoop[paramName]'.format(paramName))
-        
-        # ------Prepare to start Routine "syllablePracTrial"-------
-        t = 0
-        syllablePracTrialClock.reset()  # clock
-        frameN = -1
-        continueRoutine = True
-        routineTimer.add(4.000000)
-        # update component parameters for each repeat
-        pracSylTarget.setText(syllabification)
-        pracSylAnsCVC.setText(keyCVC)
-        pracSylAnsCV.setText(keyCV)
-        pracSyl_key_resp = event.BuilderKeyResponse()
-        # keep track of which components have finished
-        syllablePracTrialComponents = [pracSylTarget, pracSylAnsCVC, pracSylAnsCV, pracSyl_key_resp]
-        for thisComponent in syllablePracTrialComponents:
-            if hasattr(thisComponent, 'status'):
-                thisComponent.status = NOT_STARTED
-        
-        # -------Start Routine "syllablePracTrial"-------
-        while continueRoutine and routineTimer.getTime() > 0:
-            # get current time
-            t = syllablePracTrialClock.getTime()
-            frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
-            # update/draw components on each frame
-            
-            # *pracSylTarget* updates
-            if t >= 0.5 and pracSylTarget.status == NOT_STARTED:
+            # *pracSeg_key_resp* updates
+            if t >= 0.0 and pracSeg_key_resp.status == NOT_STARTED:
                 # keep track of start time/frame for later
-                pracSylTarget.tStart = t
-                pracSylTarget.frameNStart = frameN  # exact frame index
-                pracSylTarget.setAutoDraw(True)
-            frameRemains = 0.5 + 1.5- win.monitorFramePeriod * 0.75  # most of one frame period left
-            if pracSylTarget.status == STARTED and t >= frameRemains:
-                pracSylTarget.setAutoDraw(False)
-            
-            # *pracSylAnsCVC* updates
-            if t >= 2 and pracSylAnsCVC.status == NOT_STARTED:
-                # keep track of start time/frame for later
-                pracSylAnsCVC.tStart = t
-                pracSylAnsCVC.frameNStart = frameN  # exact frame index
-                pracSylAnsCVC.setAutoDraw(True)
-            frameRemains = 2 + 2- win.monitorFramePeriod * 0.75  # most of one frame period left
-            if pracSylAnsCVC.status == STARTED and t >= frameRemains:
-                pracSylAnsCVC.setAutoDraw(False)
-            
-            # *pracSylAnsCV* updates
-            if t >= 2 and pracSylAnsCV.status == NOT_STARTED:
-                # keep track of start time/frame for later
-                pracSylAnsCV.tStart = t
-                pracSylAnsCV.frameNStart = frameN  # exact frame index
-                pracSylAnsCV.setAutoDraw(True)
-            frameRemains = 2 + 2- win.monitorFramePeriod * 0.75  # most of one frame period left
-            if pracSylAnsCV.status == STARTED and t >= frameRemains:
-                pracSylAnsCV.setAutoDraw(False)
-            
-            # *pracSyl_key_resp* updates
-            if t >= 2 and pracSyl_key_resp.status == NOT_STARTED:
-                # keep track of start time/frame for later
-                pracSyl_key_resp.tStart = t
-                pracSyl_key_resp.frameNStart = frameN  # exact frame index
-                pracSyl_key_resp.status = STARTED
+                pracSeg_key_resp.tStart = t
+                pracSeg_key_resp.frameNStart = frameN  # exact frame index
+                pracSeg_key_resp.status = STARTED
                 # keyboard checking is just starting
                 event.clearEvents(eventType='keyboard')
-            frameRemains = 2 + 2- win.monitorFramePeriod * 0.75  # most of one frame period left
-            if pracSyl_key_resp.status == STARTED and t >= frameRemains:
-                pracSyl_key_resp.status = FINISHED
-            if pracSyl_key_resp.status == STARTED:
-                theseKeys = event.getKeys(keyList=['2', '3'])
+            frameRemains = 0.0 + 2- win.monitorFramePeriod * 0.75  # most of one frame period left
+            if pracSeg_key_resp.status == STARTED and t >= frameRemains:
+                pracSeg_key_resp.status = FINISHED
+            if pracSeg_key_resp.status == STARTED:
+                theseKeys = event.getKeys(keyList=['1'])
                 
                 # check for quit:
                 if "escape" in theseKeys:
@@ -1504,7 +1119,7 @@ for thisTrials_Debug in trials_Debug:
             if not continueRoutine:  # a component has requested a forced-end of Routine
                 break
             continueRoutine = False  # will revert to True if at least one component still running
-            for thisComponent in syllablePracTrialComponents:
+            for thisComponent in trialPracComponents:
                 if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
                     continueRoutine = True
                     break  # at least one component has not yet finished
@@ -1513,51 +1128,148 @@ for thisTrials_Debug in trials_Debug:
             if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
                 win.flip()
         
-        # -------Ending Routine "syllablePracTrial"-------
-        for thisComponent in syllablePracTrialComponents:
+        # -------Ending Routine "trialPrac"-------
+        for thisComponent in trialPracComponents:
             if hasattr(thisComponent, "setAutoDraw"):
                 thisComponent.setAutoDraw(False)
         thisExp.nextEntry()
         
-    # completed 1 repeats of 'sylPracLoop'
+    # completed 1 repeats of 'pracTrialLoop'
     
+    thisExp.nextEntry()
     
-    # ------Prepare to start Routine "syllableExpIns"-------
+# completed 8 repeats of 'pracTarLoop'
+
+
+# ------Prepare to start Routine "expIns"-------
+t = 0
+expInsClock.reset()  # clock
+frameN = -1
+continueRoutine = True
+# update component parameters for each repeat
+startExpTrials = event.BuilderKeyResponse()
+# keep track of which components have finished
+expInsComponents = [startExp, startExpTrials]
+for thisComponent in expInsComponents:
+    if hasattr(thisComponent, 'status'):
+        thisComponent.status = NOT_STARTED
+
+# -------Start Routine "expIns"-------
+while continueRoutine:
+    # get current time
+    t = expInsClock.getTime()
+    frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
+    # update/draw components on each frame
+    
+    # *startExp* updates
+    if t >= 0.0 and startExp.status == NOT_STARTED:
+        # keep track of start time/frame for later
+        startExp.tStart = t
+        startExp.frameNStart = frameN  # exact frame index
+        startExp.setAutoDraw(True)
+    
+    # *startExpTrials* updates
+    if t >= 0.0 and startExpTrials.status == NOT_STARTED:
+        # keep track of start time/frame for later
+        startExpTrials.tStart = t
+        startExpTrials.frameNStart = frameN  # exact frame index
+        startExpTrials.status = STARTED
+        # keyboard checking is just starting
+        event.clearEvents(eventType='keyboard')
+    if startExpTrials.status == STARTED:
+        theseKeys = event.getKeys(keyList=['0'])
+        
+        # check for quit:
+        if "escape" in theseKeys:
+            endExpNow = True
+        if len(theseKeys) > 0:  # at least one key was pressed
+            # a response ends the routine
+            continueRoutine = False
+    
+    # check for quit (typically the Esc key)
+    if endExpNow or event.getKeys(keyList=["escape"]):
+        core.quit()
+    
+    # check if all components have finished
+    if not continueRoutine:  # a component has requested a forced-end of Routine
+        break
+    continueRoutine = False  # will revert to True if at least one component still running
+    for thisComponent in expInsComponents:
+        if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
+            continueRoutine = True
+            break  # at least one component has not yet finished
+    
+    # refresh the screen
+    if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
+        win.flip()
+
+# -------Ending Routine "expIns"-------
+for thisComponent in expInsComponents:
+    if hasattr(thisComponent, "setAutoDraw"):
+        thisComponent.setAutoDraw(False)
+# the Routine "expIns" was not non-slip safe, so reset the non-slip timer
+routineTimer.reset()
+
+# set up handler to look after randomisation of conditions etc
+expTarLoop = data.TrialHandler(nReps=48, method='sequential', 
+    extraInfo=expInfo, originPath=-1,
+    trialList=data.importConditions(conditionExp, selection=[1]),
+    seed=None, name='expTarLoop')
+thisExp.addLoop(expTarLoop)  # add the loop to the experiment
+thisExpTarLoop = expTarLoop.trialList[0]  # so we can initialise stimuli with some values
+# abbreviate parameter names if possible (e.g. rgb = thisExpTarLoop.rgb)
+if thisExpTarLoop != None:
+    for paramName in thisExpTarLoop:
+        exec('{} = thisExpTarLoop[paramName]'.format(paramName))
+
+for thisExpTarLoop in expTarLoop:
+    currentLoop = expTarLoop
+    # abbreviate parameter names if possible (e.g. rgb = thisExpTarLoop.rgb)
+    if thisExpTarLoop != None:
+        for paramName in thisExpTarLoop:
+            exec('{} = thisExpTarLoop[paramName]'.format(paramName))
+    
+    # ------Prepare to start Routine "descanso"-------
     t = 0
-    syllableExpInsClock.reset()  # clock
+    descansoClock.reset()  # clock
     frameN = -1
     continueRoutine = True
     # update component parameters for each repeat
-    expSyllableStart = event.BuilderKeyResponse()
+    if expTarLoop.thisN != 23:
+        continueRoutine = False
+    key_resp_continue = event.BuilderKeyResponse()
     # keep track of which components have finished
-    syllableExpInsComponents = [expSyllableInstr, expSyllableStart]
-    for thisComponent in syllableExpInsComponents:
+    descansoComponents = [descansar, key_resp_continue]
+    for thisComponent in descansoComponents:
         if hasattr(thisComponent, 'status'):
             thisComponent.status = NOT_STARTED
     
-    # -------Start Routine "syllableExpIns"-------
+    # -------Start Routine "descanso"-------
     while continueRoutine:
         # get current time
-        t = syllableExpInsClock.getTime()
+        t = descansoClock.getTime()
         frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
         # update/draw components on each frame
         
-        # *expSyllableInstr* updates
-        if t >= 0.0 and expSyllableInstr.status == NOT_STARTED:
+        # *descansar* updates
+        if t >= 0.0 and descansar.status == NOT_STARTED:
             # keep track of start time/frame for later
-            expSyllableInstr.tStart = t
-            expSyllableInstr.frameNStart = frameN  # exact frame index
-            expSyllableInstr.setAutoDraw(True)
+            descansar.tStart = t
+            descansar.frameNStart = frameN  # exact frame index
+            descansar.setAutoDraw(True)
+        frameRemains = 0.0 + 120.0- win.monitorFramePeriod * 0.75  # most of one frame period left
+        if descansar.status == STARTED and t >= frameRemains:
+            descansar.setAutoDraw(False)
         
-        # *expSyllableStart* updates
-        if t >= 0.0 and expSyllableStart.status == NOT_STARTED:
+        # *key_resp_continue* updates
+        if t >= 0.0 and key_resp_continue.status == NOT_STARTED:
             # keep track of start time/frame for later
-            expSyllableStart.tStart = t
-            expSyllableStart.frameNStart = frameN  # exact frame index
-            expSyllableStart.status = STARTED
+            key_resp_continue.tStart = t
+            key_resp_continue.frameNStart = frameN  # exact frame index
+            key_resp_continue.status = STARTED
             # keyboard checking is just starting
             event.clearEvents(eventType='keyboard')
-        if expSyllableStart.status == STARTED:
+        if key_resp_continue.status == STARTED:
             theseKeys = event.getKeys(keyList=['0'])
             
             # check for quit:
@@ -1575,7 +1287,7 @@ for thisTrials_Debug in trials_Debug:
         if not continueRoutine:  # a component has requested a forced-end of Routine
             break
         continueRoutine = False  # will revert to True if at least one component still running
-        for thisComponent in syllableExpInsComponents:
+        for thisComponent in descansoComponents:
             if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
                 continueRoutine = True
                 break  # at least one component has not yet finished
@@ -1584,198 +1296,593 @@ for thisTrials_Debug in trials_Debug:
         if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
             win.flip()
     
-    # -------Ending Routine "syllableExpIns"-------
-    for thisComponent in syllableExpInsComponents:
+    # -------Ending Routine "descanso"-------
+    for thisComponent in descansoComponents:
         if hasattr(thisComponent, "setAutoDraw"):
             thisComponent.setAutoDraw(False)
-    # the Routine "syllableExpIns" was not non-slip safe, so reset the non-slip timer
+    # the Routine "descanso" was not non-slip safe, so reset the non-slip timer
     routineTimer.reset()
     
+    # ------Prepare to start Routine "targetExp"-------
+    t = 0
+    targetExpClock.reset()  # clock
+    frameN = -1
+    continueRoutine = True
+    routineTimer.add(4.000000)
+    # update component parameters for each repeat
+    targetExp= experiment + "%i" %expTarLoop.thisN
+    
+    
+    expTarget.setText("Encuentre    " + eval(targetExp).upper())
+    # keep track of which components have finished
+    targetExpComponents = [expTarget]
+    for thisComponent in targetExpComponents:
+        if hasattr(thisComponent, 'status'):
+            thisComponent.status = NOT_STARTED
+    
+    # -------Start Routine "targetExp"-------
+    while continueRoutine and routineTimer.getTime() > 0:
+        # get current time
+        t = targetExpClock.getTime()
+        frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
+        # update/draw components on each frame
+        
+        # *expTarget* updates
+        if t >= 0.0 and expTarget.status == NOT_STARTED:
+            # keep track of start time/frame for later
+            expTarget.tStart = t
+            expTarget.frameNStart = frameN  # exact frame index
+            expTarget.setAutoDraw(True)
+        frameRemains = 0.0 + 4.0- win.monitorFramePeriod * 0.75  # most of one frame period left
+        if expTarget.status == STARTED and t >= frameRemains:
+            expTarget.setAutoDraw(False)
+        
+        # check for quit (typically the Esc key)
+        if endExpNow or event.getKeys(keyList=["escape"]):
+            core.quit()
+        
+        # check if all components have finished
+        if not continueRoutine:  # a component has requested a forced-end of Routine
+            break
+        continueRoutine = False  # will revert to True if at least one component still running
+        for thisComponent in targetExpComponents:
+            if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
+                continueRoutine = True
+                break  # at least one component has not yet finished
+        
+        # refresh the screen
+        if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
+            win.flip()
+    
+    # -------Ending Routine "targetExp"-------
+    for thisComponent in targetExpComponents:
+        if hasattr(thisComponent, "setAutoDraw"):
+            thisComponent.setAutoDraw(False)
+    
+    # ------Prepare to start Routine "isi_halfsec"-------
+    t = 0
+    isi_halfsecClock.reset()  # clock
+    frameN = -1
+    continueRoutine = True
+    routineTimer.add(0.500000)
+    # update component parameters for each repeat
+    # keep track of which components have finished
+    isi_halfsecComponents = [text]
+    for thisComponent in isi_halfsecComponents:
+        if hasattr(thisComponent, 'status'):
+            thisComponent.status = NOT_STARTED
+    
+    # -------Start Routine "isi_halfsec"-------
+    while continueRoutine and routineTimer.getTime() > 0:
+        # get current time
+        t = isi_halfsecClock.getTime()
+        frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
+        # update/draw components on each frame
+        
+        # *text* updates
+        if t >= 0.0 and text.status == NOT_STARTED:
+            # keep track of start time/frame for later
+            text.tStart = t
+            text.frameNStart = frameN  # exact frame index
+            text.setAutoDraw(True)
+        frameRemains = 0.0 + 0.5- win.monitorFramePeriod * 0.75  # most of one frame period left
+        if text.status == STARTED and t >= frameRemains:
+            text.setAutoDraw(False)
+        
+        # check for quit (typically the Esc key)
+        if endExpNow or event.getKeys(keyList=["escape"]):
+            core.quit()
+        
+        # check if all components have finished
+        if not continueRoutine:  # a component has requested a forced-end of Routine
+            break
+        continueRoutine = False  # will revert to True if at least one component still running
+        for thisComponent in isi_halfsecComponents:
+            if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
+                continueRoutine = True
+                break  # at least one component has not yet finished
+        
+        # refresh the screen
+        if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
+            win.flip()
+    
+    # -------Ending Routine "isi_halfsec"-------
+    for thisComponent in isi_halfsecComponents:
+        if hasattr(thisComponent, "setAutoDraw"):
+            thisComponent.setAutoDraw(False)
+    
     # set up handler to look after randomisation of conditions etc
-    syllableLoop = data.TrialHandler(nReps=1, method='random', 
+    expTrialLoop = data.TrialHandler(nReps=1, method='random', 
         extraInfo=expInfo, originPath=-1,
-        trialList=data.importConditions(conditionSylExp),
-        seed=None, name='syllableLoop')
-    thisExp.addLoop(syllableLoop)  # add the loop to the experiment
-    thisSyllableLoop = syllableLoop.trialList[0]  # so we can initialise stimuli with some values
+        trialList=data.importConditions(conditionExp, selection=[2,3,4,5,6,7,8,9,10,11]),
+        seed=None, name='expTrialLoop')
+    thisExp.addLoop(expTrialLoop)  # add the loop to the experiment
+    thisExpTrialLoop = expTrialLoop.trialList[0]  # so we can initialise stimuli with some values
+    # abbreviate parameter names if possible (e.g. rgb = thisExpTrialLoop.rgb)
+    if thisExpTrialLoop != None:
+        for paramName in thisExpTrialLoop:
+            exec('{} = thisExpTrialLoop[paramName]'.format(paramName))
+    
+    for thisExpTrialLoop in expTrialLoop:
+        currentLoop = expTrialLoop
+        # abbreviate parameter names if possible (e.g. rgb = thisExpTrialLoop.rgb)
+        if thisExpTrialLoop != None:
+            for paramName in thisExpTrialLoop:
+                exec('{} = thisExpTrialLoop[paramName]'.format(paramName))
+        
+        # ------Prepare to start Routine "trialExp"-------
+        t = 0
+        trialExpClock.reset()  # clock
+        frameN = -1
+        continueRoutine = True
+        routineTimer.add(2.000000)
+        # update component parameters for each repeat
+        carrierExp= experiment + "%i" %expTarLoop.thisN
+        expCarrier.setText(eval(carrierExp))
+        seg_key_resp = event.BuilderKeyResponse()
+        # keep track of which components have finished
+        trialExpComponents = [expCarrier, seg_key_resp]
+        for thisComponent in trialExpComponents:
+            if hasattr(thisComponent, 'status'):
+                thisComponent.status = NOT_STARTED
+        
+        # -------Start Routine "trialExp"-------
+        while continueRoutine and routineTimer.getTime() > 0:
+            # get current time
+            t = trialExpClock.getTime()
+            frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
+            # update/draw components on each frame
+            
+            # *expCarrier* updates
+            if t >= 0.0 and expCarrier.status == NOT_STARTED:
+                # keep track of start time/frame for later
+                expCarrier.tStart = t
+                expCarrier.frameNStart = frameN  # exact frame index
+                expCarrier.setAutoDraw(True)
+            frameRemains = 0.0 + 2- win.monitorFramePeriod * 0.75  # most of one frame period left
+            if expCarrier.status == STARTED and t >= frameRemains:
+                expCarrier.setAutoDraw(False)
+            
+            # *seg_key_resp* updates
+            if t >= 0.0 and seg_key_resp.status == NOT_STARTED:
+                # keep track of start time/frame for later
+                seg_key_resp.tStart = t
+                seg_key_resp.frameNStart = frameN  # exact frame index
+                seg_key_resp.status = STARTED
+                # keyboard checking is just starting
+                win.callOnFlip(seg_key_resp.clock.reset)  # t=0 on next screen flip
+                event.clearEvents(eventType='keyboard')
+            frameRemains = 0.0 + 2- win.monitorFramePeriod * 0.75  # most of one frame period left
+            if seg_key_resp.status == STARTED and t >= frameRemains:
+                seg_key_resp.status = FINISHED
+            if seg_key_resp.status == STARTED:
+                theseKeys = event.getKeys(keyList=['1'])
+                
+                # check for quit:
+                if "escape" in theseKeys:
+                    endExpNow = True
+                if len(theseKeys) > 0:  # at least one key was pressed
+                    seg_key_resp.keys = theseKeys[-1]  # just the last key pressed
+                    seg_key_resp.rt = seg_key_resp.clock.getTime()
+                    # a response ends the routine
+                    continueRoutine = False
+            
+            # check for quit (typically the Esc key)
+            if endExpNow or event.getKeys(keyList=["escape"]):
+                core.quit()
+            
+            # check if all components have finished
+            if not continueRoutine:  # a component has requested a forced-end of Routine
+                break
+            continueRoutine = False  # will revert to True if at least one component still running
+            for thisComponent in trialExpComponents:
+                if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
+                    continueRoutine = True
+                    break  # at least one component has not yet finished
+            
+            # refresh the screen
+            if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
+                win.flip()
+        
+        # -------Ending Routine "trialExp"-------
+        for thisComponent in trialExpComponents:
+            if hasattr(thisComponent, "setAutoDraw"):
+                thisComponent.setAutoDraw(False)
+        # check responses
+        if seg_key_resp.keys in ['', [], None]:  # No response was made
+            seg_key_resp.keys=None
+        expTrialLoop.addData('seg_key_resp.keys',seg_key_resp.keys)
+        if seg_key_resp.keys != None:  # we had a response
+            expTrialLoop.addData('seg_key_resp.rt', seg_key_resp.rt)
+        thisExp.nextEntry()
+        
+    # completed 1 repeats of 'expTrialLoop'
+    
+    thisExp.nextEntry()
+    
+# completed 48 repeats of 'expTarLoop'
+
+
+# ------Prepare to start Routine "syllablePracIns"-------
+t = 0
+syllablePracInsClock.reset()  # clock
+frameN = -1
+continueRoutine = True
+# update component parameters for each repeat
+pracSyllableStart = event.BuilderKeyResponse()
+# keep track of which components have finished
+syllablePracInsComponents = [pracSyllableInstr, pracSyllableStart]
+for thisComponent in syllablePracInsComponents:
+    if hasattr(thisComponent, 'status'):
+        thisComponent.status = NOT_STARTED
+
+# -------Start Routine "syllablePracIns"-------
+while continueRoutine:
+    # get current time
+    t = syllablePracInsClock.getTime()
+    frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
+    # update/draw components on each frame
+    
+    # *pracSyllableInstr* updates
+    if t >= 0.0 and pracSyllableInstr.status == NOT_STARTED:
+        # keep track of start time/frame for later
+        pracSyllableInstr.tStart = t
+        pracSyllableInstr.frameNStart = frameN  # exact frame index
+        pracSyllableInstr.setAutoDraw(True)
+    
+    # *pracSyllableStart* updates
+    if t >= 0.0 and pracSyllableStart.status == NOT_STARTED:
+        # keep track of start time/frame for later
+        pracSyllableStart.tStart = t
+        pracSyllableStart.frameNStart = frameN  # exact frame index
+        pracSyllableStart.status = STARTED
+        # keyboard checking is just starting
+        event.clearEvents(eventType='keyboard')
+    if pracSyllableStart.status == STARTED:
+        theseKeys = event.getKeys(keyList=['0'])
+        
+        # check for quit:
+        if "escape" in theseKeys:
+            endExpNow = True
+        if len(theseKeys) > 0:  # at least one key was pressed
+            # a response ends the routine
+            continueRoutine = False
+    
+    # check for quit (typically the Esc key)
+    if endExpNow or event.getKeys(keyList=["escape"]):
+        core.quit()
+    
+    # check if all components have finished
+    if not continueRoutine:  # a component has requested a forced-end of Routine
+        break
+    continueRoutine = False  # will revert to True if at least one component still running
+    for thisComponent in syllablePracInsComponents:
+        if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
+            continueRoutine = True
+            break  # at least one component has not yet finished
+    
+    # refresh the screen
+    if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
+        win.flip()
+
+# -------Ending Routine "syllablePracIns"-------
+for thisComponent in syllablePracInsComponents:
+    if hasattr(thisComponent, "setAutoDraw"):
+        thisComponent.setAutoDraw(False)
+# the Routine "syllablePracIns" was not non-slip safe, so reset the non-slip timer
+routineTimer.reset()
+
+# set up handler to look after randomisation of conditions etc
+sylPracLoop = data.TrialHandler(nReps=1, method='random', 
+    extraInfo=expInfo, originPath=-1,
+    trialList=data.importConditions(conditionSylPrac),
+    seed=None, name='sylPracLoop')
+thisExp.addLoop(sylPracLoop)  # add the loop to the experiment
+thisSylPracLoop = sylPracLoop.trialList[0]  # so we can initialise stimuli with some values
+# abbreviate parameter names if possible (e.g. rgb = thisSylPracLoop.rgb)
+if thisSylPracLoop != None:
+    for paramName in thisSylPracLoop:
+        exec('{} = thisSylPracLoop[paramName]'.format(paramName))
+
+for thisSylPracLoop in sylPracLoop:
+    currentLoop = sylPracLoop
+    # abbreviate parameter names if possible (e.g. rgb = thisSylPracLoop.rgb)
+    if thisSylPracLoop != None:
+        for paramName in thisSylPracLoop:
+            exec('{} = thisSylPracLoop[paramName]'.format(paramName))
+    
+    # ------Prepare to start Routine "syllablePracTrial"-------
+    t = 0
+    syllablePracTrialClock.reset()  # clock
+    frameN = -1
+    continueRoutine = True
+    routineTimer.add(4.000000)
+    # update component parameters for each repeat
+    pracSylTarget.setText(syllabification)
+    pracSylAnsCVC.setText(leftKey)
+    pracSylAnsCV.setText(rightKey)
+    pracSyl_key_resp = event.BuilderKeyResponse()
+    # keep track of which components have finished
+    syllablePracTrialComponents = [pracSylTarget, pracSylAnsCVC, pracSylAnsCV, pracSyl_key_resp]
+    for thisComponent in syllablePracTrialComponents:
+        if hasattr(thisComponent, 'status'):
+            thisComponent.status = NOT_STARTED
+    
+    # -------Start Routine "syllablePracTrial"-------
+    while continueRoutine and routineTimer.getTime() > 0:
+        # get current time
+        t = syllablePracTrialClock.getTime()
+        frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
+        # update/draw components on each frame
+        
+        # *pracSylTarget* updates
+        if t >= 0.5 and pracSylTarget.status == NOT_STARTED:
+            # keep track of start time/frame for later
+            pracSylTarget.tStart = t
+            pracSylTarget.frameNStart = frameN  # exact frame index
+            pracSylTarget.setAutoDraw(True)
+        frameRemains = 0.5 + 1.5- win.monitorFramePeriod * 0.75  # most of one frame period left
+        if pracSylTarget.status == STARTED and t >= frameRemains:
+            pracSylTarget.setAutoDraw(False)
+        
+        # *pracSylAnsCVC* updates
+        if t >= 2 and pracSylAnsCVC.status == NOT_STARTED:
+            # keep track of start time/frame for later
+            pracSylAnsCVC.tStart = t
+            pracSylAnsCVC.frameNStart = frameN  # exact frame index
+            pracSylAnsCVC.setAutoDraw(True)
+        frameRemains = 2 + 2- win.monitorFramePeriod * 0.75  # most of one frame period left
+        if pracSylAnsCVC.status == STARTED and t >= frameRemains:
+            pracSylAnsCVC.setAutoDraw(False)
+        
+        # *pracSylAnsCV* updates
+        if t >= 2 and pracSylAnsCV.status == NOT_STARTED:
+            # keep track of start time/frame for later
+            pracSylAnsCV.tStart = t
+            pracSylAnsCV.frameNStart = frameN  # exact frame index
+            pracSylAnsCV.setAutoDraw(True)
+        frameRemains = 2 + 2- win.monitorFramePeriod * 0.75  # most of one frame period left
+        if pracSylAnsCV.status == STARTED and t >= frameRemains:
+            pracSylAnsCV.setAutoDraw(False)
+        
+        # *pracSyl_key_resp* updates
+        if t >= 2 and pracSyl_key_resp.status == NOT_STARTED:
+            # keep track of start time/frame for later
+            pracSyl_key_resp.tStart = t
+            pracSyl_key_resp.frameNStart = frameN  # exact frame index
+            pracSyl_key_resp.status = STARTED
+            # keyboard checking is just starting
+            event.clearEvents(eventType='keyboard')
+        frameRemains = 2 + 2- win.monitorFramePeriod * 0.75  # most of one frame period left
+        if pracSyl_key_resp.status == STARTED and t >= frameRemains:
+            pracSyl_key_resp.status = FINISHED
+        if pracSyl_key_resp.status == STARTED:
+            theseKeys = event.getKeys(keyList=['2', '3'])
+            
+            # check for quit:
+            if "escape" in theseKeys:
+                endExpNow = True
+            if len(theseKeys) > 0:  # at least one key was pressed
+                # a response ends the routine
+                continueRoutine = False
+        
+        # check for quit (typically the Esc key)
+        if endExpNow or event.getKeys(keyList=["escape"]):
+            core.quit()
+        
+        # check if all components have finished
+        if not continueRoutine:  # a component has requested a forced-end of Routine
+            break
+        continueRoutine = False  # will revert to True if at least one component still running
+        for thisComponent in syllablePracTrialComponents:
+            if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
+                continueRoutine = True
+                break  # at least one component has not yet finished
+        
+        # refresh the screen
+        if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
+            win.flip()
+    
+    # -------Ending Routine "syllablePracTrial"-------
+    for thisComponent in syllablePracTrialComponents:
+        if hasattr(thisComponent, "setAutoDraw"):
+            thisComponent.setAutoDraw(False)
+    thisExp.nextEntry()
+    
+# completed 1 repeats of 'sylPracLoop'
+
+
+# ------Prepare to start Routine "syllableExpIns"-------
+t = 0
+syllableExpInsClock.reset()  # clock
+frameN = -1
+continueRoutine = True
+# update component parameters for each repeat
+expSyllableStart = event.BuilderKeyResponse()
+# keep track of which components have finished
+syllableExpInsComponents = [expSyllableInstr, expSyllableStart]
+for thisComponent in syllableExpInsComponents:
+    if hasattr(thisComponent, 'status'):
+        thisComponent.status = NOT_STARTED
+
+# -------Start Routine "syllableExpIns"-------
+while continueRoutine:
+    # get current time
+    t = syllableExpInsClock.getTime()
+    frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
+    # update/draw components on each frame
+    
+    # *expSyllableInstr* updates
+    if t >= 0.0 and expSyllableInstr.status == NOT_STARTED:
+        # keep track of start time/frame for later
+        expSyllableInstr.tStart = t
+        expSyllableInstr.frameNStart = frameN  # exact frame index
+        expSyllableInstr.setAutoDraw(True)
+    
+    # *expSyllableStart* updates
+    if t >= 0.0 and expSyllableStart.status == NOT_STARTED:
+        # keep track of start time/frame for later
+        expSyllableStart.tStart = t
+        expSyllableStart.frameNStart = frameN  # exact frame index
+        expSyllableStart.status = STARTED
+        # keyboard checking is just starting
+        event.clearEvents(eventType='keyboard')
+    if expSyllableStart.status == STARTED:
+        theseKeys = event.getKeys(keyList=['0'])
+        
+        # check for quit:
+        if "escape" in theseKeys:
+            endExpNow = True
+        if len(theseKeys) > 0:  # at least one key was pressed
+            # a response ends the routine
+            continueRoutine = False
+    
+    # check for quit (typically the Esc key)
+    if endExpNow or event.getKeys(keyList=["escape"]):
+        core.quit()
+    
+    # check if all components have finished
+    if not continueRoutine:  # a component has requested a forced-end of Routine
+        break
+    continueRoutine = False  # will revert to True if at least one component still running
+    for thisComponent in syllableExpInsComponents:
+        if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
+            continueRoutine = True
+            break  # at least one component has not yet finished
+    
+    # refresh the screen
+    if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
+        win.flip()
+
+# -------Ending Routine "syllableExpIns"-------
+for thisComponent in syllableExpInsComponents:
+    if hasattr(thisComponent, "setAutoDraw"):
+        thisComponent.setAutoDraw(False)
+# the Routine "syllableExpIns" was not non-slip safe, so reset the non-slip timer
+routineTimer.reset()
+
+# set up handler to look after randomisation of conditions etc
+syllableLoop = data.TrialHandler(nReps=1, method='random', 
+    extraInfo=expInfo, originPath=-1,
+    trialList=data.importConditions(conditionSylExp),
+    seed=None, name='syllableLoop')
+thisExp.addLoop(syllableLoop)  # add the loop to the experiment
+thisSyllableLoop = syllableLoop.trialList[0]  # so we can initialise stimuli with some values
+# abbreviate parameter names if possible (e.g. rgb = thisSyllableLoop.rgb)
+if thisSyllableLoop != None:
+    for paramName in thisSyllableLoop:
+        exec('{} = thisSyllableLoop[paramName]'.format(paramName))
+
+for thisSyllableLoop in syllableLoop:
+    currentLoop = syllableLoop
     # abbreviate parameter names if possible (e.g. rgb = thisSyllableLoop.rgb)
     if thisSyllableLoop != None:
         for paramName in thisSyllableLoop:
             exec('{} = thisSyllableLoop[paramName]'.format(paramName))
     
-    for thisSyllableLoop in syllableLoop:
-        currentLoop = syllableLoop
-        # abbreviate parameter names if possible (e.g. rgb = thisSyllableLoop.rgb)
-        if thisSyllableLoop != None:
-            for paramName in thisSyllableLoop:
-                exec('{} = thisSyllableLoop[paramName]'.format(paramName))
-        
-        # ------Prepare to start Routine "trialSyllable"-------
-        t = 0
-        trialSyllableClock.reset()  # clock
-        frameN = -1
-        continueRoutine = True
-        routineTimer.add(4.000000)
-        # update component parameters for each repeat
-        expSylAnsCVC.setText(keyCVC)
-        expSylAnsCV.setText(keyCV)
-        expSylTarget.setText(syllabification)
-        expSyl_key_resp = event.BuilderKeyResponse()
-        # keep track of which components have finished
-        trialSyllableComponents = [expSylAnsCVC, expSylAnsCV, expSylTarget, expSyl_key_resp]
-        for thisComponent in trialSyllableComponents:
-            if hasattr(thisComponent, 'status'):
-                thisComponent.status = NOT_STARTED
-        
-        # -------Start Routine "trialSyllable"-------
-        while continueRoutine and routineTimer.getTime() > 0:
-            # get current time
-            t = trialSyllableClock.getTime()
-            frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
-            # update/draw components on each frame
-            
-            # *expSylAnsCVC* updates
-            if t >= 2 and expSylAnsCVC.status == NOT_STARTED:
-                # keep track of start time/frame for later
-                expSylAnsCVC.tStart = t
-                expSylAnsCVC.frameNStart = frameN  # exact frame index
-                expSylAnsCVC.setAutoDraw(True)
-            frameRemains = 2 + 2- win.monitorFramePeriod * 0.75  # most of one frame period left
-            if expSylAnsCVC.status == STARTED and t >= frameRemains:
-                expSylAnsCVC.setAutoDraw(False)
-            
-            # *expSylAnsCV* updates
-            if t >= 2 and expSylAnsCV.status == NOT_STARTED:
-                # keep track of start time/frame for later
-                expSylAnsCV.tStart = t
-                expSylAnsCV.frameNStart = frameN  # exact frame index
-                expSylAnsCV.setAutoDraw(True)
-            frameRemains = 2 + 2- win.monitorFramePeriod * 0.75  # most of one frame period left
-            if expSylAnsCV.status == STARTED and t >= frameRemains:
-                expSylAnsCV.setAutoDraw(False)
-            
-            # *expSylTarget* updates
-            if t >= 0.5 and expSylTarget.status == NOT_STARTED:
-                # keep track of start time/frame for later
-                expSylTarget.tStart = t
-                expSylTarget.frameNStart = frameN  # exact frame index
-                expSylTarget.setAutoDraw(True)
-            frameRemains = 0.5 + 1.5- win.monitorFramePeriod * 0.75  # most of one frame period left
-            if expSylTarget.status == STARTED and t >= frameRemains:
-                expSylTarget.setAutoDraw(False)
-            
-            # *expSyl_key_resp* updates
-            if t >= 2 and expSyl_key_resp.status == NOT_STARTED:
-                # keep track of start time/frame for later
-                expSyl_key_resp.tStart = t
-                expSyl_key_resp.frameNStart = frameN  # exact frame index
-                expSyl_key_resp.status = STARTED
-                # keyboard checking is just starting
-                win.callOnFlip(expSyl_key_resp.clock.reset)  # t=0 on next screen flip
-                event.clearEvents(eventType='keyboard')
-            frameRemains = 2 + 2- win.monitorFramePeriod * 0.75  # most of one frame period left
-            if expSyl_key_resp.status == STARTED and t >= frameRemains:
-                expSyl_key_resp.status = FINISHED
-            if expSyl_key_resp.status == STARTED:
-                theseKeys = event.getKeys(keyList=['2', '3'])
-                
-                # check for quit:
-                if "escape" in theseKeys:
-                    endExpNow = True
-                if len(theseKeys) > 0:  # at least one key was pressed
-                    if expSyl_key_resp.keys == []:  # then this was the first keypress
-                        expSyl_key_resp.keys = theseKeys[0]  # just the first key pressed
-                        expSyl_key_resp.rt = expSyl_key_resp.clock.getTime()
-                        # was this 'correct'?
-                        if (expSyl_key_resp.keys == str(corrAns)) or (expSyl_key_resp.keys == corrAns):
-                            expSyl_key_resp.corr = 1
-                        else:
-                            expSyl_key_resp.corr = 0
-                        # a response ends the routine
-                        continueRoutine = False
-            
-            # check for quit (typically the Esc key)
-            if endExpNow or event.getKeys(keyList=["escape"]):
-                core.quit()
-            
-            # check if all components have finished
-            if not continueRoutine:  # a component has requested a forced-end of Routine
-                break
-            continueRoutine = False  # will revert to True if at least one component still running
-            for thisComponent in trialSyllableComponents:
-                if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
-                    continueRoutine = True
-                    break  # at least one component has not yet finished
-            
-            # refresh the screen
-            if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
-                win.flip()
-        
-        # -------Ending Routine "trialSyllable"-------
-        for thisComponent in trialSyllableComponents:
-            if hasattr(thisComponent, "setAutoDraw"):
-                thisComponent.setAutoDraw(False)
-        # check responses
-        if expSyl_key_resp.keys in ['', [], None]:  # No response was made
-            expSyl_key_resp.keys=None
-            # was no response the correct answer?!
-            if str(corrAns).lower() == 'none':
-               expSyl_key_resp.corr = 1;  # correct non-response
-            else:
-               expSyl_key_resp.corr = 0;  # failed to respond (incorrectly)
-        # store data for syllableLoop (TrialHandler)
-        syllableLoop.addData('expSyl_key_resp.keys',expSyl_key_resp.keys)
-        syllableLoop.addData('expSyl_key_resp.corr', expSyl_key_resp.corr)
-        if expSyl_key_resp.keys != None:  # we had a response
-            syllableLoop.addData('expSyl_key_resp.rt', expSyl_key_resp.rt)
-        thisExp.nextEntry()
-        
-    # completed 1 repeats of 'syllableLoop'
-    
-    
-    # ------Prepare to start Routine "lexTaleEngInstructions"-------
+    # ------Prepare to start Routine "trialSyllable"-------
     t = 0
-    lexTaleEngInstructionsClock.reset()  # clock
+    trialSyllableClock.reset()  # clock
     frameN = -1
     continueRoutine = True
+    routineTimer.add(4.000000)
     # update component parameters for each repeat
-    start_LexEng = event.BuilderKeyResponse()
+    expSylAnsCVC.setText(leftKey)
+    expSylAnsCV.setText(rightKey)
+    expSylTarget.setText(syllabification)
+    expSyl_key_resp = event.BuilderKeyResponse()
     # keep track of which components have finished
-    lexTaleEngInstructionsComponents = [lexEng_Instr, start_LexEng]
-    for thisComponent in lexTaleEngInstructionsComponents:
+    trialSyllableComponents = [expSylAnsCVC, expSylAnsCV, expSylTarget, expSyl_key_resp]
+    for thisComponent in trialSyllableComponents:
         if hasattr(thisComponent, 'status'):
             thisComponent.status = NOT_STARTED
     
-    # -------Start Routine "lexTaleEngInstructions"-------
-    while continueRoutine:
+    # -------Start Routine "trialSyllable"-------
+    while continueRoutine and routineTimer.getTime() > 0:
         # get current time
-        t = lexTaleEngInstructionsClock.getTime()
+        t = trialSyllableClock.getTime()
         frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
         # update/draw components on each frame
         
-        # *lexEng_Instr* updates
-        if t >= 0.0 and lexEng_Instr.status == NOT_STARTED:
+        # *expSylAnsCVC* updates
+        if t >= 2 and expSylAnsCVC.status == NOT_STARTED:
             # keep track of start time/frame for later
-            lexEng_Instr.tStart = t
-            lexEng_Instr.frameNStart = frameN  # exact frame index
-            lexEng_Instr.setAutoDraw(True)
+            expSylAnsCVC.tStart = t
+            expSylAnsCVC.frameNStart = frameN  # exact frame index
+            expSylAnsCVC.setAutoDraw(True)
+        frameRemains = 2 + 2- win.monitorFramePeriod * 0.75  # most of one frame period left
+        if expSylAnsCVC.status == STARTED and t >= frameRemains:
+            expSylAnsCVC.setAutoDraw(False)
         
-        # *start_LexEng* updates
-        if t >= 0.0 and start_LexEng.status == NOT_STARTED:
+        # *expSylAnsCV* updates
+        if t >= 2 and expSylAnsCV.status == NOT_STARTED:
             # keep track of start time/frame for later
-            start_LexEng.tStart = t
-            start_LexEng.frameNStart = frameN  # exact frame index
-            start_LexEng.status = STARTED
+            expSylAnsCV.tStart = t
+            expSylAnsCV.frameNStart = frameN  # exact frame index
+            expSylAnsCV.setAutoDraw(True)
+        frameRemains = 2 + 2- win.monitorFramePeriod * 0.75  # most of one frame period left
+        if expSylAnsCV.status == STARTED and t >= frameRemains:
+            expSylAnsCV.setAutoDraw(False)
+        
+        # *expSylTarget* updates
+        if t >= 0.5 and expSylTarget.status == NOT_STARTED:
+            # keep track of start time/frame for later
+            expSylTarget.tStart = t
+            expSylTarget.frameNStart = frameN  # exact frame index
+            expSylTarget.setAutoDraw(True)
+        frameRemains = 0.5 + 1.5- win.monitorFramePeriod * 0.75  # most of one frame period left
+        if expSylTarget.status == STARTED and t >= frameRemains:
+            expSylTarget.setAutoDraw(False)
+        
+        # *expSyl_key_resp* updates
+        if t >= 2 and expSyl_key_resp.status == NOT_STARTED:
+            # keep track of start time/frame for later
+            expSyl_key_resp.tStart = t
+            expSyl_key_resp.frameNStart = frameN  # exact frame index
+            expSyl_key_resp.status = STARTED
             # keyboard checking is just starting
-        if start_LexEng.status == STARTED:
-            theseKeys = event.getKeys(keyList=['0'])
+            win.callOnFlip(expSyl_key_resp.clock.reset)  # t=0 on next screen flip
+            event.clearEvents(eventType='keyboard')
+        frameRemains = 2 + 2- win.monitorFramePeriod * 0.75  # most of one frame period left
+        if expSyl_key_resp.status == STARTED and t >= frameRemains:
+            expSyl_key_resp.status = FINISHED
+        if expSyl_key_resp.status == STARTED:
+            theseKeys = event.getKeys(keyList=['2', '3'])
             
             # check for quit:
             if "escape" in theseKeys:
                 endExpNow = True
             if len(theseKeys) > 0:  # at least one key was pressed
-                # a response ends the routine
-                continueRoutine = False
+                if expSyl_key_resp.keys == []:  # then this was the first keypress
+                    expSyl_key_resp.keys = theseKeys[0]  # just the first key pressed
+                    expSyl_key_resp.rt = expSyl_key_resp.clock.getTime()
+                    # was this 'correct'?
+                    if (expSyl_key_resp.keys == str(corrAns)) or (expSyl_key_resp.keys == corrAns):
+                        expSyl_key_resp.corr = 1
+                    else:
+                        expSyl_key_resp.corr = 0
+                    # a response ends the routine
+                    continueRoutine = False
         
         # check for quit (typically the Esc key)
         if endExpNow or event.getKeys(keyList=["escape"]):
@@ -1785,7 +1892,7 @@ for thisTrials_Debug in trials_Debug:
         if not continueRoutine:  # a component has requested a forced-end of Routine
             break
         continueRoutine = False  # will revert to True if at least one component still running
-        for thisComponent in lexTaleEngInstructionsComponents:
+        for thisComponent in trialSyllableComponents:
             if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
                 continueRoutine = True
                 break  # at least one component has not yet finished
@@ -1794,143 +1901,222 @@ for thisTrials_Debug in trials_Debug:
         if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
             win.flip()
     
-    # -------Ending Routine "lexTaleEngInstructions"-------
-    for thisComponent in lexTaleEngInstructionsComponents:
+    # -------Ending Routine "trialSyllable"-------
+    for thisComponent in trialSyllableComponents:
         if hasattr(thisComponent, "setAutoDraw"):
             thisComponent.setAutoDraw(False)
-    # the Routine "lexTaleEngInstructions" was not non-slip safe, so reset the non-slip timer
-    routineTimer.reset()
+    # check responses
+    if expSyl_key_resp.keys in ['', [], None]:  # No response was made
+        expSyl_key_resp.keys=None
+        # was no response the correct answer?!
+        if str(corrAns).lower() == 'none':
+           expSyl_key_resp.corr = 1;  # correct non-response
+        else:
+           expSyl_key_resp.corr = 0;  # failed to respond (incorrectly)
+    # store data for syllableLoop (TrialHandler)
+    syllableLoop.addData('expSyl_key_resp.keys',expSyl_key_resp.keys)
+    syllableLoop.addData('expSyl_key_resp.corr', expSyl_key_resp.corr)
+    if expSyl_key_resp.keys != None:  # we had a response
+        syllableLoop.addData('expSyl_key_resp.rt', expSyl_key_resp.rt)
+    thisExp.nextEntry()
     
-    # set up handler to look after randomisation of conditions etc
-    lexEngLoop = data.TrialHandler(nReps=1, method='sequential', 
-        extraInfo=expInfo, originPath=-1,
-        trialList=data.importConditions('data/original_data/exp_files/lexTaleListEng.csv'),
-        seed=None, name='lexEngLoop')
-    thisExp.addLoop(lexEngLoop)  # add the loop to the experiment
-    thisLexEngLoop = lexEngLoop.trialList[0]  # so we can initialise stimuli with some values
+# completed 1 repeats of 'syllableLoop'
+
+
+# ------Prepare to start Routine "lexTaleEngInstructions"-------
+t = 0
+lexTaleEngInstructionsClock.reset()  # clock
+frameN = -1
+continueRoutine = True
+# update component parameters for each repeat
+start_LexEng = event.BuilderKeyResponse()
+# keep track of which components have finished
+lexTaleEngInstructionsComponents = [lexEng_Instr, start_LexEng]
+for thisComponent in lexTaleEngInstructionsComponents:
+    if hasattr(thisComponent, 'status'):
+        thisComponent.status = NOT_STARTED
+
+# -------Start Routine "lexTaleEngInstructions"-------
+while continueRoutine:
+    # get current time
+    t = lexTaleEngInstructionsClock.getTime()
+    frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
+    # update/draw components on each frame
+    
+    # *lexEng_Instr* updates
+    if t >= 0.0 and lexEng_Instr.status == NOT_STARTED:
+        # keep track of start time/frame for later
+        lexEng_Instr.tStart = t
+        lexEng_Instr.frameNStart = frameN  # exact frame index
+        lexEng_Instr.setAutoDraw(True)
+    
+    # *start_LexEng* updates
+    if t >= 0.0 and start_LexEng.status == NOT_STARTED:
+        # keep track of start time/frame for later
+        start_LexEng.tStart = t
+        start_LexEng.frameNStart = frameN  # exact frame index
+        start_LexEng.status = STARTED
+        # keyboard checking is just starting
+    if start_LexEng.status == STARTED:
+        theseKeys = event.getKeys(keyList=['0'])
+        
+        # check for quit:
+        if "escape" in theseKeys:
+            endExpNow = True
+        if len(theseKeys) > 0:  # at least one key was pressed
+            # a response ends the routine
+            continueRoutine = False
+    
+    # check for quit (typically the Esc key)
+    if endExpNow or event.getKeys(keyList=["escape"]):
+        core.quit()
+    
+    # check if all components have finished
+    if not continueRoutine:  # a component has requested a forced-end of Routine
+        break
+    continueRoutine = False  # will revert to True if at least one component still running
+    for thisComponent in lexTaleEngInstructionsComponents:
+        if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
+            continueRoutine = True
+            break  # at least one component has not yet finished
+    
+    # refresh the screen
+    if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
+        win.flip()
+
+# -------Ending Routine "lexTaleEngInstructions"-------
+for thisComponent in lexTaleEngInstructionsComponents:
+    if hasattr(thisComponent, "setAutoDraw"):
+        thisComponent.setAutoDraw(False)
+# the Routine "lexTaleEngInstructions" was not non-slip safe, so reset the non-slip timer
+routineTimer.reset()
+
+# set up handler to look after randomisation of conditions etc
+lexEngLoop = data.TrialHandler(nReps=1, method='sequential', 
+    extraInfo=expInfo, originPath=-1,
+    trialList=data.importConditions('data/processed_data/exp_files/lexTaleListEng.csv'),
+    seed=None, name='lexEngLoop')
+thisExp.addLoop(lexEngLoop)  # add the loop to the experiment
+thisLexEngLoop = lexEngLoop.trialList[0]  # so we can initialise stimuli with some values
+# abbreviate parameter names if possible (e.g. rgb = thisLexEngLoop.rgb)
+if thisLexEngLoop != None:
+    for paramName in thisLexEngLoop:
+        exec('{} = thisLexEngLoop[paramName]'.format(paramName))
+
+for thisLexEngLoop in lexEngLoop:
+    currentLoop = lexEngLoop
     # abbreviate parameter names if possible (e.g. rgb = thisLexEngLoop.rgb)
     if thisLexEngLoop != None:
         for paramName in thisLexEngLoop:
             exec('{} = thisLexEngLoop[paramName]'.format(paramName))
     
-    for thisLexEngLoop in lexEngLoop:
-        currentLoop = lexEngLoop
-        # abbreviate parameter names if possible (e.g. rgb = thisLexEngLoop.rgb)
-        if thisLexEngLoop != None:
-            for paramName in thisLexEngLoop:
-                exec('{} = thisLexEngLoop[paramName]'.format(paramName))
-        
-        # ------Prepare to start Routine "lexTaleEng"-------
-        t = 0
-        lexTaleEngClock.reset()  # clock
-        frameN = -1
-        continueRoutine = True
-        # update component parameters for each repeat
-        eng_Word.setText(Word)
-        lexEng_key_resp = event.BuilderKeyResponse()
-        # keep track of which components have finished
-        lexTaleEngComponents = [eng_Word, eng_Yes, eng_No, lexEng_key_resp]
-        for thisComponent in lexTaleEngComponents:
-            if hasattr(thisComponent, 'status'):
-                thisComponent.status = NOT_STARTED
-        
-        # -------Start Routine "lexTaleEng"-------
-        while continueRoutine:
-            # get current time
-            t = lexTaleEngClock.getTime()
-            frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
-            # update/draw components on each frame
-            
-            # *eng_Word* updates
-            if t >= 0.2 and eng_Word.status == NOT_STARTED:
-                # keep track of start time/frame for later
-                eng_Word.tStart = t
-                eng_Word.frameNStart = frameN  # exact frame index
-                eng_Word.setAutoDraw(True)
-            
-            # *eng_Yes* updates
-            if t >= 0.2 and eng_Yes.status == NOT_STARTED:
-                # keep track of start time/frame for later
-                eng_Yes.tStart = t
-                eng_Yes.frameNStart = frameN  # exact frame index
-                eng_Yes.setAutoDraw(True)
-            
-            # *eng_No* updates
-            if t >= 0.2 and eng_No.status == NOT_STARTED:
-                # keep track of start time/frame for later
-                eng_No.tStart = t
-                eng_No.frameNStart = frameN  # exact frame index
-                eng_No.setAutoDraw(True)
-            
-            # *lexEng_key_resp* updates
-            if t >= 0.2 and lexEng_key_resp.status == NOT_STARTED:
-                # keep track of start time/frame for later
-                lexEng_key_resp.tStart = t
-                lexEng_key_resp.frameNStart = frameN  # exact frame index
-                lexEng_key_resp.status = STARTED
-                # keyboard checking is just starting
-                lexEng_key_resp.clock.reset()  # now t=0
-            if lexEng_key_resp.status == STARTED:
-                theseKeys = event.getKeys(keyList=['1', '4'])
-                
-                # check for quit:
-                if "escape" in theseKeys:
-                    endExpNow = True
-                if len(theseKeys) > 0:  # at least one key was pressed
-                    if lexEng_key_resp.keys == []:  # then this was the first keypress
-                        lexEng_key_resp.keys = theseKeys[0]  # just the first key pressed
-                        lexEng_key_resp.rt = lexEng_key_resp.clock.getTime()
-                        # was this 'correct'?
-                        if (lexEng_key_resp.keys == str(corrAnsEngV)) or (lexEng_key_resp.keys == corrAnsEngV):
-                            lexEng_key_resp.corr = 1
-                        else:
-                            lexEng_key_resp.corr = 0
-                        # a response ends the routine
-                        continueRoutine = False
-            
-            # check for quit (typically the Esc key)
-            if endExpNow or event.getKeys(keyList=["escape"]):
-                core.quit()
-            
-            # check if all components have finished
-            if not continueRoutine:  # a component has requested a forced-end of Routine
-                break
-            continueRoutine = False  # will revert to True if at least one component still running
-            for thisComponent in lexTaleEngComponents:
-                if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
-                    continueRoutine = True
-                    break  # at least one component has not yet finished
-            
-            # refresh the screen
-            if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
-                win.flip()
-        
-        # -------Ending Routine "lexTaleEng"-------
-        for thisComponent in lexTaleEngComponents:
-            if hasattr(thisComponent, "setAutoDraw"):
-                thisComponent.setAutoDraw(False)
-        # check responses
-        if lexEng_key_resp.keys in ['', [], None]:  # No response was made
-            lexEng_key_resp.keys=None
-            # was no response the correct answer?!
-            if str(corrAnsEngV).lower() == 'none':
-               lexEng_key_resp.corr = 1;  # correct non-response
-            else:
-               lexEng_key_resp.corr = 0;  # failed to respond (incorrectly)
-        # store data for lexEngLoop (TrialHandler)
-        lexEngLoop.addData('lexEng_key_resp.keys',lexEng_key_resp.keys)
-        lexEngLoop.addData('lexEng_key_resp.corr', lexEng_key_resp.corr)
-        if lexEng_key_resp.keys != None:  # we had a response
-            lexEngLoop.addData('lexEng_key_resp.rt', lexEng_key_resp.rt)
-        # the Routine "lexTaleEng" was not non-slip safe, so reset the non-slip timer
-        routineTimer.reset()
-        thisExp.nextEntry()
-        
-    # completed 1 repeats of 'lexEngLoop'
+    # ------Prepare to start Routine "lexTaleEng"-------
+    t = 0
+    lexTaleEngClock.reset()  # clock
+    frameN = -1
+    continueRoutine = True
+    # update component parameters for each repeat
+    eng_Word.setText(Word)
+    lexEng_key_resp = event.BuilderKeyResponse()
+    # keep track of which components have finished
+    lexTaleEngComponents = [eng_Word, eng_Yes, eng_No, lexEng_key_resp]
+    for thisComponent in lexTaleEngComponents:
+        if hasattr(thisComponent, 'status'):
+            thisComponent.status = NOT_STARTED
     
+    # -------Start Routine "lexTaleEng"-------
+    while continueRoutine:
+        # get current time
+        t = lexTaleEngClock.getTime()
+        frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
+        # update/draw components on each frame
+        
+        # *eng_Word* updates
+        if t >= 0.2 and eng_Word.status == NOT_STARTED:
+            # keep track of start time/frame for later
+            eng_Word.tStart = t
+            eng_Word.frameNStart = frameN  # exact frame index
+            eng_Word.setAutoDraw(True)
+        
+        # *eng_Yes* updates
+        if t >= 0.2 and eng_Yes.status == NOT_STARTED:
+            # keep track of start time/frame for later
+            eng_Yes.tStart = t
+            eng_Yes.frameNStart = frameN  # exact frame index
+            eng_Yes.setAutoDraw(True)
+        
+        # *eng_No* updates
+        if t >= 0.2 and eng_No.status == NOT_STARTED:
+            # keep track of start time/frame for later
+            eng_No.tStart = t
+            eng_No.frameNStart = frameN  # exact frame index
+            eng_No.setAutoDraw(True)
+        
+        # *lexEng_key_resp* updates
+        if t >= 0.2 and lexEng_key_resp.status == NOT_STARTED:
+            # keep track of start time/frame for later
+            lexEng_key_resp.tStart = t
+            lexEng_key_resp.frameNStart = frameN  # exact frame index
+            lexEng_key_resp.status = STARTED
+            # keyboard checking is just starting
+            lexEng_key_resp.clock.reset()  # now t=0
+        if lexEng_key_resp.status == STARTED:
+            theseKeys = event.getKeys(keyList=['1', '4'])
+            
+            # check for quit:
+            if "escape" in theseKeys:
+                endExpNow = True
+            if len(theseKeys) > 0:  # at least one key was pressed
+                if lexEng_key_resp.keys == []:  # then this was the first keypress
+                    lexEng_key_resp.keys = theseKeys[0]  # just the first key pressed
+                    lexEng_key_resp.rt = lexEng_key_resp.clock.getTime()
+                    # was this 'correct'?
+                    if (lexEng_key_resp.keys == str(corrAnsEngV)) or (lexEng_key_resp.keys == corrAnsEngV):
+                        lexEng_key_resp.corr = 1
+                    else:
+                        lexEng_key_resp.corr = 0
+                    # a response ends the routine
+                    continueRoutine = False
+        
+        # check for quit (typically the Esc key)
+        if endExpNow or event.getKeys(keyList=["escape"]):
+            core.quit()
+        
+        # check if all components have finished
+        if not continueRoutine:  # a component has requested a forced-end of Routine
+            break
+        continueRoutine = False  # will revert to True if at least one component still running
+        for thisComponent in lexTaleEngComponents:
+            if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
+                continueRoutine = True
+                break  # at least one component has not yet finished
+        
+        # refresh the screen
+        if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
+            win.flip()
+    
+    # -------Ending Routine "lexTaleEng"-------
+    for thisComponent in lexTaleEngComponents:
+        if hasattr(thisComponent, "setAutoDraw"):
+            thisComponent.setAutoDraw(False)
+    # check responses
+    if lexEng_key_resp.keys in ['', [], None]:  # No response was made
+        lexEng_key_resp.keys=None
+        # was no response the correct answer?!
+        if str(corrAnsEngV).lower() == 'none':
+           lexEng_key_resp.corr = 1;  # correct non-response
+        else:
+           lexEng_key_resp.corr = 0;  # failed to respond (incorrectly)
+    # store data for lexEngLoop (TrialHandler)
+    lexEngLoop.addData('lexEng_key_resp.keys',lexEng_key_resp.keys)
+    lexEngLoop.addData('lexEng_key_resp.corr', lexEng_key_resp.corr)
+    if lexEng_key_resp.keys != None:  # we had a response
+        lexEngLoop.addData('lexEng_key_resp.rt', lexEng_key_resp.rt)
+    # the Routine "lexTaleEng" was not non-slip safe, so reset the non-slip timer
+    routineTimer.reset()
     thisExp.nextEntry()
     
-# completed 0 repeats of 'trials_Debug'
+# completed 1 repeats of 'lexEngLoop'
 
 
 # ------Prepare to start Routine "instructions_blp"-------
