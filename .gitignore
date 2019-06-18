@@ -20,5 +20,9 @@ Dissertation-blx.bib
 *.toc
 
 #Ignore jupyter notebook temporary files
-*.ipynb_*
+*ipynb_checkpoints*
 *.pyc
+
+#Ignore all participant data files
+part_files/
+temp_data/
