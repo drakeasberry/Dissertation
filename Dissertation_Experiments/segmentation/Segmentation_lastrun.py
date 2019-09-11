@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v3.0.7),
-    on Tue Jun 18 09:14:50 2019
+    on Tue Sep 10 19:53:15 2019
 If you publish work using this script please cite the PsychoPy publications:
     Peirce, JW (2007) PsychoPy - Psychophysics software in Python.
         Journal of Neuroscience Methods, 162(1-2), 8-13.
@@ -111,20 +111,20 @@ if 'e' == lang:
     section = 'sectionEsp'
     questionText = 'questionTextEsp'
     language = 'languageEsp'
-    instructions = 'Nos gustaría pedir su ayuda para contestar a las siguientes preguntas sobre su historial lingüístico, uso, actitudes y competencia. Esta encuesta ha sido creada con el apoyo del "Center for Open Educational Resources and Language Learning" de la Universidad de Texas en Austin para poder tener un mayor conocimiento sobre los perfiles de hablantes bilingües independientemente de sus diversos orígenes y en diferentes contextos. La encuesta contiene 19 preguntas y le llevará menos de 10 minutos para completar. Esto no es una prueba, por tanto no hay respuestas correctas ni incorrectas. Por favor conteste cada pregunta y responda con sinceridad, ya que solamente así se podrá garantizar el éxito de esta investigación. Muchas gracias por su ayuda.\n\nPresione el botón blanco para continuar.'
-    langHist = 'Historial lingüístico\n\nEn esta sección, nos gustaría que contestara algunas preguntas sobre su historial lingüístico marcando la escala según la leyenda.\n\nPresione el botón "blanco" para continuar.'
-    langUse = 'Uso de lenguas\n\nEn esta sección, nos gustaría que contestara algunas preguntas sobre su uso de lenguas marcando la escala según la leyenda. El uso total de todas las preguntas en cada pregunta debe llegar al 100%.\n\nPresione el botón blanco para continuar.'
-    langProf = 'Competencia\n\nEn esta sección, nos gustaría que considerara su competencia de lengua marcando en la escala de 0 a 6.\n\nPresione el botón blanco para continuar.'
-    langAtt = 'Actitudes\n\nEn esta sección, nos gustaría que contestara a las siguientes afirmaciones sobre actitudes lingüísticas marcando en la escala de 0 a 6.\n\nPresione el botón blanco para continuar.'
-    lexEsp = '''En este test, encontrará 90 secuencias de letras que parecen "españolas". Solo algunas de ellas son palabras de verdad.
-                \nPor favor, señale las palabras que usted conoce (aquellas que está convencido que son palabras españolas, incluso aunque no seas capaz de dar el significado preciso).
-                \nSi piensa que la es una palabra española, presione el botón verde para indicar "si" y si no, presione el botón rojo para indicar "no".
-                \nTiene todo el tiempo que quiera para hacer cada decisión.
+    instructions = 'Nos gustaría pedir su ayuda para contestar a las siguientes preguntas sobre su historial lingüístico, uso, actitudes y competencia. Esta encuesta ha sido creada con el apoyo del "Center for Open Educational Resources and Language Learning" de la Universidad de Texas en Austin para poder tener un mayor conocimiento sobre los perfiles de hablantes bilingües independientemente de sus diversos orígenes y en diferentes contextos. La encuesta contiene 19 preguntas y le llevará menos de 10 minutos para completar. Esto no es una prueba, por tanto no hay respuestas correctas ni incorrectas. Por favor conteste cada pregunta y responda con sinceridad, ya que solamente así se podrá garantizar el éxito de esta investigación. Muchas gracias por su ayuda.\n\nPresione el espaciador para continuar.'
+    langHist = 'Historial lingüístico\n\nEn esta sección, nos gustaría que contestara algunas preguntas sobre su historial lingüístico marcando la escala según la leyenda.\n\nPresione el espaciador para continuar.'
+    langUse = 'Uso de lenguas\n\nEn esta sección, nos gustaría que contestara algunas preguntas sobre el uso de lenguas que conoce marcando la escala según la leyenda. El total de las respuestas a cada pregunta debe llegar al 100%.\n\nPresione el espaciador para continuar.'
+    langProf = 'Competencia\n\nEn esta sección, nos gustaría que considerara su competencia lingüística marcando la escala de 0 a 6.\n\nPresione el espaciador para continuar.'
+    langAtt = 'Actitudes\n\nEn esta sección, nos gustaría que contestara a las siguientes afirmaciones sobre actitudes lingüísticas marcando la escala de 0 a 6.\n\nPresione el espaciador para continuar.'
+    lexEsp = '''En este test, encontrará 90 secuencias de letras que parecen pertenecer al español. Solo algunas de ellas son palabras reales.
+                \nPor favor, señale las palabras que usted conoce (las que esté convencido de que son palabras en español, incluso aunque no sea capaz de dar el significado preciso).
+                \nPara cada palabra, si piensa que pertenece al español, presione el botón verde para indicar "sí" y si no, presione el botón rojo para indicar "no".
+                \nDispone de todo el tiempo que necesite para tomar cada decisión.
                 \nPresione el botón blanco para empezar.'''
-    lexEng = '''En este test, encontrará 60 secuencias de letras que parecen "inglesas". Solo algunas de ellas son palabras de verdad.
-                \nPor favor, señale las palabras que usted conoce (aquellas que está convencido que son palabras inglesas, incluso aunque no seas capaz de dar el significado preciso).
-                \nSi piensa que la es una palabra inglésa, presione el botón verde para indicar "si" y si no, presione el botón rojo para indicar "no".
-                \nTiene todo el tiempo que quiera para hacer cada decisión.
+    lexEng = '''En este test, encontrará 60 secuencias de letras que parecen pertenecer al inglés. Solo algunas de ellas son palabras reales.
+                \nPor favor, señale las palabras que usted conoce (las que esté convencido de que son palabras en inglés, incluso aunque no sea capaz de dar el significado preciso).
+                \nSi piensa que se trata de una palabra que pertenece al inglés, presione el botón verde para indicar "yes" y si no, presione el botón rojo para indicar "no".
+                \nDispone de todo el tiempo que necesite para tomar cada decisión.
                 \nPresione el botón blanco para empezar.'''
     labHist1 = '0 = Desde al nacimiento     20+ = 20 o más años'
     labHist2 = '0 = Tan pronto como recuerdo     20+ = aún no'
@@ -143,19 +143,19 @@ and Language Learning at the University of Texas at Austin
 to better understand the profiles of bilingual speakers in diverse settings with diverse backgrounds. The survey 
 consists of 19 questions and will take less than 10 minutes to complete. This is not a test, so there are no right or 
 wrong answers. Please answer every question and give your answers sincerely. Thank you very much for your help.
-\nPress the white button to continue'''
-    langHist = 'Language history\n\nIn this section, we would like you to answer some factual questions about your language history by marking the scale in the appropriate location.\n\nPress the white button to begin.'
-    langUse = 'Language use\n\nIn this section, we would like you to answer some questions about your language use by marking the scale in the appropriate location. Total use for all languages in a given question should equal 100%.\n\nPress the white button to begin.'
-    langProf = 'Language proficiency\n\nIn this section, we would like you to rate your language proficiency by marking the scale in the appropriate location from 0 to 6.\n\nPress the white button to begin.'
-    langAtt = 'Language attitudes\n\nIn this section, we would like you to respond to statements about language attitudes by marking the scale in the appropriate location from 0-6.\n\nPress the white button to begin.'
-    lexEsp = '''En este test, encontrará 90 secuencias de letras que parecen "españolas". Solo algunas de ellas son palabras de verdad.
-                \nPor favor, señale las palabras que usted conoce (aquellas que está convencido que son palabras españolas, incluso aunque no seas capaz de dar el significado preciso).
-                \nSi piensa que la es una palabra española, presione el botón verde para indicar "si" y si no, presione el botón rojo para indicar "no".
-                \nTiene todo el tiempo que quiera para hacer cada decisión.
+\nPress the spacebar to continue'''
+    langHist = 'Language history\n\nIn this section, we would like you to answer some factual questions about your language history by marking the scale in the appropriate location.\n\nPress the spacebar to begin.'
+    langUse = 'Language use\n\nIn this section, we would like you to answer some questions about your language use by marking the scale in the appropriate location. Total use for all languages in a given question should equal 100%.\n\nPress the spacebar to begin.'
+    langProf = 'Language proficiency\n\nIn this section, we would like you to rate your language proficiency by marking the scale in the appropriate location from 0 to 6.\n\nPress the spacebar to begin.'
+    langAtt = 'Language attitudes\n\nIn this section, we would like you to respond to statements about language attitudes by marking the scale in the appropriate location from 0-6.\n\nPress the spacebar to begin.'
+    lexEsp = '''En este test, encontrará 90 secuencias de letras que parecen pertenecer al español. Solo algunas de ellas son palabras reales.
+                \nPor favor, señale las palabras que usted conoce (las que esté convencido de que son palabras en español, incluso aunque no sea capaz de dar el significado preciso).
+                \nPara cada palabra, si piensa que pertenece al español, presione el botón verde para indicar "sí" y si no, presione el botón rojo para indicar "no".
+                \nDispone de todo el tiempo que necesite para tomar cada decisión.
                 \nPresione el botón blanco para empezar.'''
     lexEng = '''This test consists of 60 trials, in each of which you will see a string of letters.
                 \nYour task is to decide whether this is an existing English word or not.
-                \nIf you think it is an existing English word, press the green button for "sí" and if you think it is not an existing English word, press the red button for "no". If you are sure that the word exists, even if you do not know its exact meaning, you may still respond "sí". But if you are not sure if it is an existing word, you should respond "no".
+                \nIf you think it is an existing English word, press the green button for "yes" and if you think it is not an existing English word, press the red button for "no". If you are sure that the word exists, even if you do not know its exact meaning, you may still respond "yes". But if you are not sure if it is an existing word, you should respond "no".
                 \nYou have as much time as you like for each decision.
                 \nPress the white button to start.'''
     labHist1 = '0 = Since birth     20+ = 20 or more years'
@@ -202,7 +202,7 @@ esp_No = visual.TextStim(win=win, name='esp_No',
 # Initialize components for Routine "pracIns"
 pracInsClock = core.Clock()
 pracSegInstr = visual.TextStim(win=win, name='pracSegInstr',
-    text='Usted va a completar un experimento.\n\nVa a ver un fragmento.\n\nDespués, verá otras palabras.\n\nSi ve el fragmento, presione el botón verde.\n\nSi no ve el fragmento, no haga nada.\n\nPresione el botón blanco para empezar las pruebas de práctica.',
+    text='Usted va a completar un experimento. Antes de eso, va a realizar una práctica.\n\nVa a ver una secuencia de letras.\n\nPosteriormente, una serie de palabras aparecerá de manera individual.\n\nDeberá presionar el botón verde lo más rápido posible si ve la secuencia de letras previamente mostrada en alguna de esas palabras.\n\nNo haga nada si dichas palabras no contienen tal secuencia de letras.\n\nPresione el botón blanco para empezar la práctica.',
     font='Arial',
     pos=(0, 0), height=0.09, wrapWidth=1.5, ori=0, 
     color='white', colorSpace='rgb', opacity=1, 
@@ -211,17 +211,24 @@ pracSegInstr = visual.TextStim(win=win, name='pracSegInstr',
 
 # Initialize components for Routine "targetPrac"
 targetPracClock = core.Clock()
-pracSegTarget = visual.TextStim(win=win, name='pracSegTarget',
-    text='default text',
+pracEncuentre = visual.TextStim(win=win, name='pracEncuentre',
+    text='Encuentre\n',
     font='Arial',
-    pos=(0, 0), height=0.1, wrapWidth=None, ori=0, 
+    pos=(-0, 0.5), height=0.1, wrapWidth=None, ori=0, 
     color='white', colorSpace='rgb', opacity=1, 
     languageStyle='LTR',
     depth=-1.0);
+pracSegTarget = visual.TextStim(win=win, name='pracSegTarget',
+    text='default text',
+    font='Arial',
+    pos=(0,0), height=0.2, wrapWidth=None, ori=0, 
+    color='white', colorSpace='rgb', opacity=1, 
+    languageStyle='LTR',
+    depth=-2.0);
 
 # Initialize components for Routine "isi_halfsec"
 isi_halfsecClock = core.Clock()
-text = visual.TextStim(win=win, name='text',
+blankText_1 = visual.TextStim(win=win, name='blankText_1',
     text=None,
     font='Arial',
     pos=(0, 0), height=0.1, wrapWidth=None, ori=0, 
@@ -234,25 +241,52 @@ trialPracClock = core.Clock()
 pracSegCarrier = visual.TextStim(win=win, name='pracSegCarrier',
     text='default text',
     font='Arial',
-    pos=(0, 0), height=0.1, wrapWidth=None, ori=0, 
+    pos=(0, 0), height=0.2, wrapWidth=None, ori=0, 
     color='white', colorSpace='rgb', opacity=1, 
     languageStyle='LTR',
     depth=-1.0);
+pracReminder_1 = visual.TextStim(win=win, name='pracReminder_1',
+    text='default text',
+    font='Arial',
+    pos=(0.7, 0.7), height=0.1, wrapWidth=None, ori=0, 
+    color='white', colorSpace='rgb', opacity=1, 
+    languageStyle='LTR',
+    depth=-3.0);
+
+# Initialize components for Routine "isi_150msec_prac"
+isi_150msec_pracClock = core.Clock()
+pracReminder_2 = visual.TextStim(win=win, name='pracReminder_2',
+    text='default text',
+    font='Arial',
+    pos=(0.7, 0.7), height=0.1, wrapWidth=None, ori=0, 
+    color='white', colorSpace='rgb', opacity=1, 
+    languageStyle='LTR',
+    depth=0.0);
 
 # Initialize components for Routine "expIns"
 expInsClock = core.Clock()
 startExp = visual.TextStim(win=win, name='startExp',
-    text='Usted acaba de completar las pruebas.\n\nRecuerde:\nSi ve el fragmento, presione el botón verde.\n\nSi no ve el fragmento, no haga nada.\n\n\nPresione el botón blanco para empezar el experimento.',
+    text='Usted acaba de completar la práctica. Ahora va a empezar el experimento.\n\nRecuerde:\n\nVa a ver una secuencia de letras.\n\nPosteriormente, una serie de palabras aparecerá de manera individual.\n\nDeberá presionar el botón verde lo más rápido posible si ve la secuencia de letras previamente mostrada en alguna de esas palabras.\n\nNo haga nada si dichas palabras no contienen tal secuencia de letras.\n\nPresione el botón blanco para empezar el experimento.',
     font='Arial',
     pos=(0, 0), height=0.09, wrapWidth=1.5, ori=0, 
     color='white', colorSpace='rgb', opacity=1, 
     languageStyle='LTR',
     depth=0.0);
 
+# Initialize components for Routine "faster"
+fasterClock = core.Clock()
+rapido = visual.TextStim(win=win, name='rapido',
+    text='default text',
+    font='Arial',
+    pos=(0, 0), height=0.2, wrapWidth=None, ori=0, 
+    color='white', colorSpace='rgb', opacity=1, 
+    languageStyle='LTR',
+    depth=-1.0);
+
 # Initialize components for Routine "descanso"
 descansoClock = core.Clock()
 descansar = visual.TextStim(win=win, name='descansar',
-    text='Tome un descanso de dos minutos.\n\nPara continuar sin descanso o uno más corto, presione el botón blanco!',
+    text='Tome un descanso de dos minutos.\n\nSi desea continuar sin tomar un descanso o tomar uno más corto, \npresione el botón blanco.',
     font='Arial',
     pos=(0, 0), height=0.1, wrapWidth=None, ori=0, 
     color='white', colorSpace='rgb', opacity=1, 
@@ -264,14 +298,21 @@ targetExpClock = core.Clock()
 expTarget = visual.TextStim(win=win, name='expTarget',
     text='default text',
     font='Arial',
-    pos=(0, 0), height=0.1, wrapWidth=None, ori=0, 
+    pos=(0, 0), height=0.2, wrapWidth=None, ori=0, 
     color='white', colorSpace='rgb', opacity=1, 
     languageStyle='LTR',
     depth=-1.0);
+expEncuentre = visual.TextStim(win=win, name='expEncuentre',
+    text='Encuentre',
+    font='Arial',
+    pos=(0, 0.5), height=0.1, wrapWidth=None, ori=0, 
+    color='white', colorSpace='rgb', opacity=1, 
+    languageStyle='LTR',
+    depth=-2.0);
 
 # Initialize components for Routine "isi_halfsec"
 isi_halfsecClock = core.Clock()
-text = visual.TextStim(win=win, name='text',
+blankText_1 = visual.TextStim(win=win, name='blankText_1',
     text=None,
     font='Arial',
     pos=(0, 0), height=0.1, wrapWidth=None, ori=0, 
@@ -284,15 +325,32 @@ trialExpClock = core.Clock()
 expCarrier = visual.TextStim(win=win, name='expCarrier',
     text='default text',
     font='Arial',
-    pos=(0, 0), height=0.1, wrapWidth=None, ori=0, 
+    pos=(0, 0), height=0.2, wrapWidth=None, ori=0, 
     color='white', colorSpace='rgb', opacity=1, 
     languageStyle='LTR',
     depth=-1.0);
+expReminder_1 = visual.TextStim(win=win, name='expReminder_1',
+    text='default text',
+    font='Arial',
+    pos=(0.7, 0.7), height=0.1, wrapWidth=None, ori=0, 
+    color='white', colorSpace='rgb', opacity=1, 
+    languageStyle='LTR',
+    depth=-3.0);
+
+# Initialize components for Routine "isi_150msec_exp"
+isi_150msec_expClock = core.Clock()
+expReminder_2 = visual.TextStim(win=win, name='expReminder_2',
+    text='default text',
+    font='Arial',
+    pos=(0.7, 0.7), height=0.1, wrapWidth=None, ori=0, 
+    color='white', colorSpace='rgb', opacity=1, 
+    languageStyle='LTR',
+    depth=0.0);
 
 # Initialize components for Routine "syllablePracIns"
 syllablePracInsClock = core.Clock()
 pracSyllableInstr = visual.TextStim(win=win, name='pracSyllableInstr',
-    text='Ahora, verá varias palabras y selecionará la primera sílaba.\n\nPresione el botón azul si su respuesta está a la izqueirda.\n\nPresione el botón amarillo si su respuesta está a la derecha.\n\nPresione el botón blanco para empezar las pruebas de práctica.',
+    text='Muchas gracias. Usted acaba de completar el primer experimento.\n \nAhora comenzará el segundo experimento. Antes de eso, va a realizar una práctica. \n\nVarias palabras aparecerán en la pantalla de manera individual y deberá fijarse en la primera sílaba.\n\nPara cada palabra, habrá dos opciones que podrán corresponder a esa primera sílaba. Su trabajo es seleccionar la opción correcta.\n\nPresione el botón azul si su respuesta está a la izquierda.\n\nPresione el botón amarillo si su respuesta está a la derecha.\n\nPresione el botón blanco para empezar la práctica.',
     font='Arial',
     pos=(0, 0), height=0.09, wrapWidth=1.5, ori=0, 
     color='white', colorSpace='rgb', opacity=1, 
@@ -304,21 +362,21 @@ syllablePracTrialClock = core.Clock()
 pracSylTarget = visual.TextStim(win=win, name='pracSylTarget',
     text='default text',
     font='Arial',
-    pos=(0, 0), height=0.1, wrapWidth=None, ori=0, 
+    pos=(0, 0), height=0.2, wrapWidth=None, ori=0, 
     color='white', colorSpace='rgb', opacity=1, 
     languageStyle='LTR',
     depth=0.0);
 pracSylAnsCVC = visual.TextStim(win=win, name='pracSylAnsCVC',
     text='default text',
     font='Arial',
-    pos=(-.5, 0), height=0.1, wrapWidth=None, ori=0, 
+    pos=(-.5, 0), height=0.2, wrapWidth=None, ori=0, 
     color='white', colorSpace='rgb', opacity=1, 
     languageStyle='LTR',
     depth=-1.0);
 pracSylAnsCV = visual.TextStim(win=win, name='pracSylAnsCV',
     text='default text',
     font='Arial',
-    pos=(.5, 0), height=0.1, wrapWidth=None, ori=0, 
+    pos=(.5, 0), height=0.2, wrapWidth=None, ori=0, 
     color='white', colorSpace='rgb', opacity=1, 
     languageStyle='LTR',
     depth=-2.0);
@@ -326,7 +384,7 @@ pracSylAnsCV = visual.TextStim(win=win, name='pracSylAnsCV',
 # Initialize components for Routine "syllableExpIns"
 syllableExpInsClock = core.Clock()
 expSyllableInstr = visual.TextStim(win=win, name='expSyllableInstr',
-    text='Usted acaba de completar las pruebas.\n\nRecuerde:\nVerá varias palabras y selecionará la primera sílaba.\n\nPresione el botón azul si su respuesta está a la izqueirda.\n\nPresione el botón amarillo si su respuesta está a la derecha.\n\nPresione el botón blanco para empezar el experimento.',
+    text='Usted acaba de completar la práctica. Ahora va a empezar el experimento.\n \nRecuerde:\n\nVarias palabras aparecerán en la pantalla de manera individual y deberá fijarse en la primera sílaba.\n\nPara cada palabra, habrá dos opciones que podrán corresponder a esa primera sílaba. Su trabajo es seleccionar la opción correcta.\n\nPresione el botón azul si su respuesta está a la izquierda.\n\nPresione el botón amarillo si su respuesta está a la derecha.\n\nPresione el botón blanco para empezar el experimento.',
     font='Arial',
     pos=(0, 0), height=0.09, wrapWidth=1.5, ori=0, 
     color='white', colorSpace='rgb', opacity=1, 
@@ -338,21 +396,21 @@ trialSyllableClock = core.Clock()
 expSylAnsCVC = visual.TextStim(win=win, name='expSylAnsCVC',
     text='default text',
     font='Arial',
-    pos=(-.5, 0), height=0.1, wrapWidth=None, ori=0, 
+    pos=(-.5, 0), height=0.2, wrapWidth=None, ori=0, 
     color='white', colorSpace='rgb', opacity=1, 
     languageStyle='LTR',
     depth=0.0);
 expSylAnsCV = visual.TextStim(win=win, name='expSylAnsCV',
     text='default text',
     font='Arial',
-    pos=(.5,0), height=0.1, wrapWidth=None, ori=0, 
+    pos=(.5,0), height=0.2, wrapWidth=None, ori=0, 
     color='white', colorSpace='rgb', opacity=1, 
     languageStyle='LTR',
     depth=-1.0);
 expSylTarget = visual.TextStim(win=win, name='expSylTarget',
     text='default text',
     font='Arial',
-    pos=(0, 0), height=0.1, wrapWidth=None, ori=0, 
+    pos=(0, 0), height=0.2, wrapWidth=None, ori=0, 
     color='white', colorSpace='rgb', opacity=1, 
     languageStyle='LTR',
     depth=-2.0);
@@ -377,7 +435,7 @@ eng_Word = visual.TextStim(win=win, name='eng_Word',
     languageStyle='LTR',
     depth=0.0);
 eng_Yes = visual.TextStim(win=win, name='eng_Yes',
-    text='sí',
+    text='yes',
     font='Arial',
     pos=[-0.5, -0.5], height=0.2, wrapWidth=None, ori=0, 
     color='green', colorSpace='rgb', opacity=1, 
@@ -636,7 +694,7 @@ rating_lang_att = visual.RatingScale(win=win, name='rating_lang_att', marker='tr
 # Initialize components for Routine "gracias"
 graciasClock = core.Clock()
 Gracias = visual.TextStim(win=win, name='Gracias',
-    text='¡Muchas Gracias!',
+    text='¡Muchas gracias!',
     font='Arial',
     pos=(0, 0), height=0.1, wrapWidth=None, ori=0, 
     color='white', colorSpace='rgb', opacity=1, 
@@ -716,7 +774,7 @@ for thisComponent in lexEspInstruccionesComponents:
 routineTimer.reset()
 
 # set up handler to look after randomisation of conditions etc
-lexEspLoop = data.TrialHandler(nReps=1, method='sequential', 
+lexEspLoop = data.TrialHandler(nReps=0, method='sequential', 
     extraInfo=expInfo, originPath=-1,
     trialList=data.importConditions('data/processed_data/exp_files/lexTaleListEsp.csv'),
     seed=None, name='lexEspLoop')
@@ -783,7 +841,8 @@ for thisLexEspLoop in lexEspLoop:
             lexEsp_key_resp.frameNStart = frameN  # exact frame index
             lexEsp_key_resp.status = STARTED
             # keyboard checking is just starting
-            lexEsp_key_resp.clock.reset()  # now t=0
+            win.callOnFlip(lexEsp_key_resp.clock.reset)  # t=0 on next screen flip
+            event.clearEvents(eventType='keyboard')
         if lexEsp_key_resp.status == STARTED:
             theseKeys = event.getKeys(keyList=['1', '4'])
             
@@ -840,7 +899,7 @@ for thisLexEspLoop in lexEspLoop:
     routineTimer.reset()
     thisExp.nextEntry()
     
-# completed 1 repeats of 'lexEspLoop'
+# completed 0 repeats of 'lexEspLoop'
 
 
 # ------Prepare to start Routine "pracIns"-------
@@ -913,7 +972,7 @@ for thisComponent in pracInsComponents:
 routineTimer.reset()
 
 # set up handler to look after randomisation of conditions etc
-pracTarLoop = data.TrialHandler(nReps=8, method='sequential', 
+pracTarLoop = data.TrialHandler(nReps=0, method='sequential', 
     extraInfo=expInfo, originPath=-1,
     trialList=data.importConditions(conditionPrac, selection=[1]),
     seed=None, name='pracTarLoop')
@@ -939,10 +998,10 @@ for thisPracTarLoop in pracTarLoop:
     routineTimer.add(4.000000)
     # update component parameters for each repeat
     targetPrac = practice + "%i" %pracTarLoop.thisN
-    pracSegTarget.setText("Encuentre    " + eval(targetPrac).upper()
-)
+    
+    pracSegTarget.setText(eval(targetPrac).upper())
     # keep track of which components have finished
-    targetPracComponents = [pracSegTarget]
+    targetPracComponents = [pracEncuentre, pracSegTarget]
     for thisComponent in targetPracComponents:
         if hasattr(thisComponent, 'status'):
             thisComponent.status = NOT_STARTED
@@ -953,6 +1012,16 @@ for thisPracTarLoop in pracTarLoop:
         t = targetPracClock.getTime()
         frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
         # update/draw components on each frame
+        
+        # *pracEncuentre* updates
+        if t >= 0.0 and pracEncuentre.status == NOT_STARTED:
+            # keep track of start time/frame for later
+            pracEncuentre.tStart = t
+            pracEncuentre.frameNStart = frameN  # exact frame index
+            pracEncuentre.setAutoDraw(True)
+        frameRemains = 0.0 + 4.0- win.monitorFramePeriod * 0.75  # most of one frame period left
+        if pracEncuentre.status == STARTED and t >= frameRemains:
+            pracEncuentre.setAutoDraw(False)
         
         # *pracSegTarget* updates
         if t >= 0.0 and pracSegTarget.status == NOT_STARTED:
@@ -985,6 +1054,7 @@ for thisPracTarLoop in pracTarLoop:
     for thisComponent in targetPracComponents:
         if hasattr(thisComponent, "setAutoDraw"):
             thisComponent.setAutoDraw(False)
+    targetPracRem = eval(targetPrac).upper()
     
     # ------Prepare to start Routine "isi_halfsec"-------
     t = 0
@@ -993,8 +1063,9 @@ for thisPracTarLoop in pracTarLoop:
     continueRoutine = True
     routineTimer.add(0.500000)
     # update component parameters for each repeat
+    blankText_1.setText('')
     # keep track of which components have finished
-    isi_halfsecComponents = [text]
+    isi_halfsecComponents = [blankText_1]
     for thisComponent in isi_halfsecComponents:
         if hasattr(thisComponent, 'status'):
             thisComponent.status = NOT_STARTED
@@ -1006,15 +1077,15 @@ for thisPracTarLoop in pracTarLoop:
         frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
         # update/draw components on each frame
         
-        # *text* updates
-        if t >= 0.0 and text.status == NOT_STARTED:
+        # *blankText_1* updates
+        if t >= 0.0 and blankText_1.status == NOT_STARTED:
             # keep track of start time/frame for later
-            text.tStart = t
-            text.frameNStart = frameN  # exact frame index
-            text.setAutoDraw(True)
+            blankText_1.tStart = t
+            blankText_1.frameNStart = frameN  # exact frame index
+            blankText_1.setAutoDraw(True)
         frameRemains = 0.0 + 0.5- win.monitorFramePeriod * 0.75  # most of one frame period left
-        if text.status == STARTED and t >= frameRemains:
-            text.setAutoDraw(False)
+        if blankText_1.status == STARTED and t >= frameRemains:
+            blankText_1.setAutoDraw(False)
         
         # check for quit (typically the Esc key)
         if endExpNow or event.getKeys(keyList=["escape"]):
@@ -1067,8 +1138,9 @@ for thisPracTarLoop in pracTarLoop:
         carrierPrac = practice + "%i" %pracTarLoop.thisN
         pracSegCarrier.setText(eval(carrierPrac))
         pracSeg_key_resp = event.BuilderKeyResponse()
+        pracReminder_1.setText(targetPracRem)
         # keep track of which components have finished
-        trialPracComponents = [pracSegCarrier, pracSeg_key_resp]
+        trialPracComponents = [pracSegCarrier, pracSeg_key_resp, pracReminder_1]
         for thisComponent in trialPracComponents:
             if hasattr(thisComponent, 'status'):
                 thisComponent.status = NOT_STARTED
@@ -1107,9 +1179,16 @@ for thisPracTarLoop in pracTarLoop:
                 # check for quit:
                 if "escape" in theseKeys:
                     endExpNow = True
-                if len(theseKeys) > 0:  # at least one key was pressed
-                    # a response ends the routine
-                    continueRoutine = False
+            
+            # *pracReminder_1* updates
+            if t >= 0.0 and pracReminder_1.status == NOT_STARTED:
+                # keep track of start time/frame for later
+                pracReminder_1.tStart = t
+                pracReminder_1.frameNStart = frameN  # exact frame index
+                pracReminder_1.setAutoDraw(True)
+            frameRemains = 0.0 + 2- win.monitorFramePeriod * 0.75  # most of one frame period left
+            if pracReminder_1.status == STARTED and t >= frameRemains:
+                pracReminder_1.setAutoDraw(False)
             
             # check for quit (typically the Esc key)
             if endExpNow or event.getKeys(keyList=["escape"]):
@@ -1132,13 +1211,66 @@ for thisPracTarLoop in pracTarLoop:
         for thisComponent in trialPracComponents:
             if hasattr(thisComponent, "setAutoDraw"):
                 thisComponent.setAutoDraw(False)
+        
+        # ------Prepare to start Routine "isi_150msec_prac"-------
+        t = 0
+        isi_150msec_pracClock.reset()  # clock
+        frameN = -1
+        continueRoutine = True
+        routineTimer.add(0.150000)
+        # update component parameters for each repeat
+        pracReminder_2.setText(targetPracRem)
+        # keep track of which components have finished
+        isi_150msec_pracComponents = [pracReminder_2]
+        for thisComponent in isi_150msec_pracComponents:
+            if hasattr(thisComponent, 'status'):
+                thisComponent.status = NOT_STARTED
+        
+        # -------Start Routine "isi_150msec_prac"-------
+        while continueRoutine and routineTimer.getTime() > 0:
+            # get current time
+            t = isi_150msec_pracClock.getTime()
+            frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
+            # update/draw components on each frame
+            
+            # *pracReminder_2* updates
+            if t >= 0.0 and pracReminder_2.status == NOT_STARTED:
+                # keep track of start time/frame for later
+                pracReminder_2.tStart = t
+                pracReminder_2.frameNStart = frameN  # exact frame index
+                pracReminder_2.setAutoDraw(True)
+            frameRemains = 0.0 + 0.15- win.monitorFramePeriod * 0.75  # most of one frame period left
+            if pracReminder_2.status == STARTED and t >= frameRemains:
+                pracReminder_2.setAutoDraw(False)
+            
+            # check for quit (typically the Esc key)
+            if endExpNow or event.getKeys(keyList=["escape"]):
+                core.quit()
+            
+            # check if all components have finished
+            if not continueRoutine:  # a component has requested a forced-end of Routine
+                break
+            continueRoutine = False  # will revert to True if at least one component still running
+            for thisComponent in isi_150msec_pracComponents:
+                if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
+                    continueRoutine = True
+                    break  # at least one component has not yet finished
+            
+            # refresh the screen
+            if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
+                win.flip()
+        
+        # -------Ending Routine "isi_150msec_prac"-------
+        for thisComponent in isi_150msec_pracComponents:
+            if hasattr(thisComponent, "setAutoDraw"):
+                thisComponent.setAutoDraw(False)
         thisExp.nextEntry()
         
     # completed 1 repeats of 'pracTrialLoop'
     
     thisExp.nextEntry()
     
-# completed 8 repeats of 'pracTarLoop'
+# completed 0 repeats of 'pracTarLoop'
 
 
 # ------Prepare to start Routine "expIns"-------
@@ -1211,7 +1343,7 @@ for thisComponent in expInsComponents:
 routineTimer.reset()
 
 # set up handler to look after randomisation of conditions etc
-expTarLoop = data.TrialHandler(nReps=48, method='sequential', 
+expTarLoop = data.TrialHandler(nReps=14, method='sequential', 
     extraInfo=expInfo, originPath=-1,
     trialList=data.importConditions(conditionExp, selection=[1]),
     seed=None, name='expTarLoop')
@@ -1229,11 +1361,85 @@ for thisExpTarLoop in expTarLoop:
         for paramName in thisExpTarLoop:
             exec('{} = thisExpTarLoop[paramName]'.format(paramName))
     
+    # ------Prepare to start Routine "faster"-------
+    t = 0
+    fasterClock.reset()  # clock
+    frameN = -1
+    continueRoutine = True
+    routineTimer.add(3.000000)
+    # update component parameters for each repeat
+    fasterText = ''
+    if expTarLoop.thisN == 1:
+        fasterText = 'Gracias, más rápido.'
+    elif expTarLoop.thisN == 13:
+        fasterText = '¡Rápido!'
+    elif expTarLoop.thisN == 18:
+        fasterText = '¡Bien hecho!'
+    elif expTarLoop.thisN == 27:
+        fasterText = 'Mucahs gracias, pero responda más rápido.'
+    elif expTarLoop.thisN == 32:
+        fasterText = '!Genial¡'    
+    elif expTarLoop.thisN == 36:
+        fasterText = 'Más rápido por favor.'
+    elif expTarLoop.thisN == 41:
+        fasterText = '¡Excelente!'
+    elif expTarLoop.thisN == 44:
+        fasterText = '¡Responda lo más rápido posible!'
+    else:
+        continueRoutine = False
+    rapido.setText(fasterText)
+    # keep track of which components have finished
+    fasterComponents = [rapido]
+    for thisComponent in fasterComponents:
+        if hasattr(thisComponent, 'status'):
+            thisComponent.status = NOT_STARTED
+    
+    # -------Start Routine "faster"-------
+    while continueRoutine and routineTimer.getTime() > 0:
+        # get current time
+        t = fasterClock.getTime()
+        frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
+        # update/draw components on each frame
+        
+        # *rapido* updates
+        if t >= 0.0 and rapido.status == NOT_STARTED:
+            # keep track of start time/frame for later
+            rapido.tStart = t
+            rapido.frameNStart = frameN  # exact frame index
+            rapido.setAutoDraw(True)
+        frameRemains = 0.0 + 3.0- win.monitorFramePeriod * 0.75  # most of one frame period left
+        if rapido.status == STARTED and t >= frameRemains:
+            rapido.setAutoDraw(False)
+        
+        # check for quit (typically the Esc key)
+        if endExpNow or event.getKeys(keyList=["escape"]):
+            core.quit()
+        
+        # check if all components have finished
+        if not continueRoutine:  # a component has requested a forced-end of Routine
+            break
+        continueRoutine = False  # will revert to True if at least one component still running
+        for thisComponent in fasterComponents:
+            if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
+                continueRoutine = True
+                break  # at least one component has not yet finished
+        
+        # refresh the screen
+        if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
+            win.flip()
+    
+    # -------Ending Routine "faster"-------
+    for thisComponent in fasterComponents:
+        if hasattr(thisComponent, "setAutoDraw"):
+            thisComponent.setAutoDraw(False)
+    #fasterText = fasterText
+    
     # ------Prepare to start Routine "descanso"-------
     t = 0
     descansoClock.reset()  # clock
     frameN = -1
     continueRoutine = True
+    routineTimer.add(120.000000)
     # update component parameters for each repeat
     if expTarLoop.thisN != 23:
         continueRoutine = False
@@ -1245,7 +1451,7 @@ for thisExpTarLoop in expTarLoop:
             thisComponent.status = NOT_STARTED
     
     # -------Start Routine "descanso"-------
-    while continueRoutine:
+    while continueRoutine and routineTimer.getTime() > 0:
         # get current time
         t = descansoClock.getTime()
         frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
@@ -1269,6 +1475,9 @@ for thisExpTarLoop in expTarLoop:
             key_resp_continue.status = STARTED
             # keyboard checking is just starting
             event.clearEvents(eventType='keyboard')
+        frameRemains = 0.0 + 120- win.monitorFramePeriod * 0.75  # most of one frame period left
+        if key_resp_continue.status == STARTED and t >= frameRemains:
+            key_resp_continue.status = FINISHED
         if key_resp_continue.status == STARTED:
             theseKeys = event.getKeys(keyList=['0'])
             
@@ -1300,8 +1509,6 @@ for thisExpTarLoop in expTarLoop:
     for thisComponent in descansoComponents:
         if hasattr(thisComponent, "setAutoDraw"):
             thisComponent.setAutoDraw(False)
-    # the Routine "descanso" was not non-slip safe, so reset the non-slip timer
-    routineTimer.reset()
     
     # ------Prepare to start Routine "targetExp"-------
     t = 0
@@ -1313,9 +1520,9 @@ for thisExpTarLoop in expTarLoop:
     targetExp= experiment + "%i" %expTarLoop.thisN
     
     
-    expTarget.setText("Encuentre    " + eval(targetExp).upper())
+    expTarget.setText(eval(targetExp).upper())
     # keep track of which components have finished
-    targetExpComponents = [expTarget]
+    targetExpComponents = [expTarget, expEncuentre]
     for thisComponent in targetExpComponents:
         if hasattr(thisComponent, 'status'):
             thisComponent.status = NOT_STARTED
@@ -1336,6 +1543,16 @@ for thisExpTarLoop in expTarLoop:
         frameRemains = 0.0 + 4.0- win.monitorFramePeriod * 0.75  # most of one frame period left
         if expTarget.status == STARTED and t >= frameRemains:
             expTarget.setAutoDraw(False)
+        
+        # *expEncuentre* updates
+        if t >= 0.0 and expEncuentre.status == NOT_STARTED:
+            # keep track of start time/frame for later
+            expEncuentre.tStart = t
+            expEncuentre.frameNStart = frameN  # exact frame index
+            expEncuentre.setAutoDraw(True)
+        frameRemains = 0.0 + 4.0- win.monitorFramePeriod * 0.75  # most of one frame period left
+        if expEncuentre.status == STARTED and t >= frameRemains:
+            expEncuentre.setAutoDraw(False)
         
         # check for quit (typically the Esc key)
         if endExpNow or event.getKeys(keyList=["escape"]):
@@ -1358,6 +1575,7 @@ for thisExpTarLoop in expTarLoop:
     for thisComponent in targetExpComponents:
         if hasattr(thisComponent, "setAutoDraw"):
             thisComponent.setAutoDraw(False)
+    targetExpRem = eval(targetExp).upper()
     
     # ------Prepare to start Routine "isi_halfsec"-------
     t = 0
@@ -1366,8 +1584,9 @@ for thisExpTarLoop in expTarLoop:
     continueRoutine = True
     routineTimer.add(0.500000)
     # update component parameters for each repeat
+    blankText_1.setText('')
     # keep track of which components have finished
-    isi_halfsecComponents = [text]
+    isi_halfsecComponents = [blankText_1]
     for thisComponent in isi_halfsecComponents:
         if hasattr(thisComponent, 'status'):
             thisComponent.status = NOT_STARTED
@@ -1379,15 +1598,15 @@ for thisExpTarLoop in expTarLoop:
         frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
         # update/draw components on each frame
         
-        # *text* updates
-        if t >= 0.0 and text.status == NOT_STARTED:
+        # *blankText_1* updates
+        if t >= 0.0 and blankText_1.status == NOT_STARTED:
             # keep track of start time/frame for later
-            text.tStart = t
-            text.frameNStart = frameN  # exact frame index
-            text.setAutoDraw(True)
+            blankText_1.tStart = t
+            blankText_1.frameNStart = frameN  # exact frame index
+            blankText_1.setAutoDraw(True)
         frameRemains = 0.0 + 0.5- win.monitorFramePeriod * 0.75  # most of one frame period left
-        if text.status == STARTED and t >= frameRemains:
-            text.setAutoDraw(False)
+        if blankText_1.status == STARTED and t >= frameRemains:
+            blankText_1.setAutoDraw(False)
         
         # check for quit (typically the Esc key)
         if endExpNow or event.getKeys(keyList=["escape"]):
@@ -1440,8 +1659,9 @@ for thisExpTarLoop in expTarLoop:
         carrierExp= experiment + "%i" %expTarLoop.thisN
         expCarrier.setText(eval(carrierExp))
         seg_key_resp = event.BuilderKeyResponse()
+        expReminder_1.setText(targetExpRem)
         # keep track of which components have finished
-        trialExpComponents = [expCarrier, seg_key_resp]
+        trialExpComponents = [expCarrier, seg_key_resp, expReminder_1]
         for thisComponent in trialExpComponents:
             if hasattr(thisComponent, 'status'):
                 thisComponent.status = NOT_STARTED
@@ -1482,10 +1702,19 @@ for thisExpTarLoop in expTarLoop:
                 if "escape" in theseKeys:
                     endExpNow = True
                 if len(theseKeys) > 0:  # at least one key was pressed
-                    seg_key_resp.keys = theseKeys[-1]  # just the last key pressed
-                    seg_key_resp.rt = seg_key_resp.clock.getTime()
-                    # a response ends the routine
-                    continueRoutine = False
+                    if seg_key_resp.keys == []:  # then this was the first keypress
+                        seg_key_resp.keys = theseKeys[0]  # just the first key pressed
+                        seg_key_resp.rt = seg_key_resp.clock.getTime()
+            
+            # *expReminder_1* updates
+            if t >= 0.0 and expReminder_1.status == NOT_STARTED:
+                # keep track of start time/frame for later
+                expReminder_1.tStart = t
+                expReminder_1.frameNStart = frameN  # exact frame index
+                expReminder_1.setAutoDraw(True)
+            frameRemains = 0.0 + 2.0- win.monitorFramePeriod * 0.75  # most of one frame period left
+            if expReminder_1.status == STARTED and t >= frameRemains:
+                expReminder_1.setAutoDraw(False)
             
             # check for quit (typically the Esc key)
             if endExpNow or event.getKeys(keyList=["escape"]):
@@ -1514,13 +1743,66 @@ for thisExpTarLoop in expTarLoop:
         expTrialLoop.addData('seg_key_resp.keys',seg_key_resp.keys)
         if seg_key_resp.keys != None:  # we had a response
             expTrialLoop.addData('seg_key_resp.rt', seg_key_resp.rt)
+        
+        # ------Prepare to start Routine "isi_150msec_exp"-------
+        t = 0
+        isi_150msec_expClock.reset()  # clock
+        frameN = -1
+        continueRoutine = True
+        routineTimer.add(0.150000)
+        # update component parameters for each repeat
+        expReminder_2.setText(targetExpRem)
+        # keep track of which components have finished
+        isi_150msec_expComponents = [expReminder_2]
+        for thisComponent in isi_150msec_expComponents:
+            if hasattr(thisComponent, 'status'):
+                thisComponent.status = NOT_STARTED
+        
+        # -------Start Routine "isi_150msec_exp"-------
+        while continueRoutine and routineTimer.getTime() > 0:
+            # get current time
+            t = isi_150msec_expClock.getTime()
+            frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
+            # update/draw components on each frame
+            
+            # *expReminder_2* updates
+            if t >= 0.0 and expReminder_2.status == NOT_STARTED:
+                # keep track of start time/frame for later
+                expReminder_2.tStart = t
+                expReminder_2.frameNStart = frameN  # exact frame index
+                expReminder_2.setAutoDraw(True)
+            frameRemains = 0.15 - win.monitorFramePeriod * 0.75  # most of one frame period left
+            if expReminder_2.status == STARTED and t >= frameRemains:
+                expReminder_2.setAutoDraw(False)
+            
+            # check for quit (typically the Esc key)
+            if endExpNow or event.getKeys(keyList=["escape"]):
+                core.quit()
+            
+            # check if all components have finished
+            if not continueRoutine:  # a component has requested a forced-end of Routine
+                break
+            continueRoutine = False  # will revert to True if at least one component still running
+            for thisComponent in isi_150msec_expComponents:
+                if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
+                    continueRoutine = True
+                    break  # at least one component has not yet finished
+            
+            # refresh the screen
+            if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
+                win.flip()
+        
+        # -------Ending Routine "isi_150msec_exp"-------
+        for thisComponent in isi_150msec_expComponents:
+            if hasattr(thisComponent, "setAutoDraw"):
+                thisComponent.setAutoDraw(False)
         thisExp.nextEntry()
         
     # completed 1 repeats of 'expTrialLoop'
     
     thisExp.nextEntry()
     
-# completed 48 repeats of 'expTarLoop'
+# completed 14 repeats of 'expTarLoop'
 
 
 # ------Prepare to start Routine "syllablePracIns"-------
@@ -1593,7 +1875,7 @@ for thisComponent in syllablePracInsComponents:
 routineTimer.reset()
 
 # set up handler to look after randomisation of conditions etc
-sylPracLoop = data.TrialHandler(nReps=1, method='random', 
+sylPracLoop = data.TrialHandler(nReps=0, method='random', 
     extraInfo=expInfo, originPath=-1,
     trialList=data.importConditions(conditionSylPrac),
     seed=None, name='sylPracLoop')
@@ -1709,7 +1991,7 @@ for thisSylPracLoop in sylPracLoop:
             thisComponent.setAutoDraw(False)
     thisExp.nextEntry()
     
-# completed 1 repeats of 'sylPracLoop'
+# completed 0 repeats of 'sylPracLoop'
 
 
 # ------Prepare to start Routine "syllableExpIns"-------
@@ -1782,7 +2064,7 @@ for thisComponent in syllableExpInsComponents:
 routineTimer.reset()
 
 # set up handler to look after randomisation of conditions etc
-syllableLoop = data.TrialHandler(nReps=1, method='random', 
+syllableLoop = data.TrialHandler(nReps=0, method='random', 
     extraInfo=expInfo, originPath=-1,
     trialList=data.importConditions(conditionSylExp),
     seed=None, name='syllableLoop')
@@ -1920,7 +2202,7 @@ for thisSyllableLoop in syllableLoop:
         syllableLoop.addData('expSyl_key_resp.rt', expSyl_key_resp.rt)
     thisExp.nextEntry()
     
-# completed 1 repeats of 'syllableLoop'
+# completed 0 repeats of 'syllableLoop'
 
 
 # ------Prepare to start Routine "lexTaleEngInstructions"-------
@@ -1992,7 +2274,7 @@ for thisComponent in lexTaleEngInstructionsComponents:
 routineTimer.reset()
 
 # set up handler to look after randomisation of conditions etc
-lexEngLoop = data.TrialHandler(nReps=1, method='sequential', 
+lexEngLoop = data.TrialHandler(nReps=0, method='sequential', 
     extraInfo=expInfo, originPath=-1,
     trialList=data.importConditions('data/processed_data/exp_files/lexTaleListEng.csv'),
     seed=None, name='lexEngLoop')
@@ -2059,7 +2341,8 @@ for thisLexEngLoop in lexEngLoop:
             lexEng_key_resp.frameNStart = frameN  # exact frame index
             lexEng_key_resp.status = STARTED
             # keyboard checking is just starting
-            lexEng_key_resp.clock.reset()  # now t=0
+            win.callOnFlip(lexEng_key_resp.clock.reset)  # t=0 on next screen flip
+            event.clearEvents(eventType='keyboard')
         if lexEng_key_resp.status == STARTED:
             theseKeys = event.getKeys(keyList=['1', '4'])
             
@@ -2116,7 +2399,7 @@ for thisLexEngLoop in lexEngLoop:
     routineTimer.reset()
     thisExp.nextEntry()
     
-# completed 1 repeats of 'lexEngLoop'
+# completed 0 repeats of 'lexEngLoop'
 
 
 # ------Prepare to start Routine "instructions_blp"-------
@@ -2155,7 +2438,7 @@ while continueRoutine:
         # keyboard checking is just starting
         event.clearEvents(eventType='keyboard')
     if key_resp_instructions.status == STARTED:
-        theseKeys = event.getKeys(keyList=['0'])
+        theseKeys = event.getKeys(keyList=['space'])
         
         # check for quit:
         if "escape" in theseKeys:
@@ -2224,7 +2507,7 @@ while continueRoutine:
         # keyboard checking is just starting
         event.clearEvents(eventType='keyboard')
     if key_resp_lang_hist.status == STARTED:
-        theseKeys = event.getKeys(keyList=['0'])
+        theseKeys = event.getKeys(keyList=['space'])
         
         # check for quit:
         if "escape" in theseKeys:
@@ -2626,7 +2909,7 @@ while continueRoutine:
         # keyboard checking is just starting
         event.clearEvents(eventType='keyboard')
     if key_resp_lang_use.status == STARTED:
-        theseKeys = event.getKeys(keyList=['0'])
+        theseKeys = event.getKeys(keyList=['space'])
         
         # check for quit:
         if "escape" in theseKeys:
@@ -2805,7 +3088,7 @@ while continueRoutine:
         # keyboard checking is just starting
         event.clearEvents(eventType='keyboard')
     if key_resp_lang_prof_ins.status == STARTED:
-        theseKeys = event.getKeys(keyList=['0'])
+        theseKeys = event.getKeys(keyList=['space'])
         
         # check for quit:
         if "escape" in theseKeys:
@@ -2984,7 +3267,7 @@ while continueRoutine:
         # keyboard checking is just starting
         event.clearEvents(eventType='keyboard')
     if key_resp_lang_att_ins.status == STARTED:
-        theseKeys = event.getKeys(keyList=['0'])
+        theseKeys = event.getKeys(keyList=['space'])
         
         # check for quit:
         if "escape" in theseKeys:
