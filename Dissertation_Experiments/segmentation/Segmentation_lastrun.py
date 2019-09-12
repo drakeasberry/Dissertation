@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v3.0.7),
-    on Tue Sep 10 19:53:15 2019
+    on Wed Sep 11 19:26:07 2019
 If you publish work using this script please cite the PsychoPy publications:
     Peirce, JW (2007) PsychoPy - Psychophysics software in Python.
         Journal of Neuroscience Methods, 162(1-2), 8-13.
@@ -278,7 +278,7 @@ fasterClock = core.Clock()
 rapido = visual.TextStim(win=win, name='rapido',
     text='default text',
     font='Arial',
-    pos=(0, 0), height=0.2, wrapWidth=None, ori=0, 
+    pos=(0, 0), height=0.2, wrapWidth=1.5, ori=0, 
     color='white', colorSpace='rgb', opacity=1, 
     languageStyle='LTR',
     depth=-1.0);
@@ -1343,7 +1343,7 @@ for thisComponent in expInsComponents:
 routineTimer.reset()
 
 # set up handler to look after randomisation of conditions etc
-expTarLoop = data.TrialHandler(nReps=14, method='sequential', 
+expTarLoop = data.TrialHandler(nReps=0, method='sequential', 
     extraInfo=expInfo, originPath=-1,
     trialList=data.importConditions(conditionExp, selection=[1]),
     seed=None, name='expTarLoop')
@@ -1376,9 +1376,9 @@ for thisExpTarLoop in expTarLoop:
     elif expTarLoop.thisN == 18:
         fasterText = '¡Bien hecho!'
     elif expTarLoop.thisN == 27:
-        fasterText = 'Mucahs gracias, pero responda más rápido.'
+        fasterText = 'Muchas gracias, pero responda más rápido.'
     elif expTarLoop.thisN == 32:
-        fasterText = '!Genial¡'    
+        fasterText = '¡Genial!'    
     elif expTarLoop.thisN == 36:
         fasterText = 'Más rápido por favor.'
     elif expTarLoop.thisN == 41:
@@ -1432,7 +1432,6 @@ for thisExpTarLoop in expTarLoop:
     for thisComponent in fasterComponents:
         if hasattr(thisComponent, "setAutoDraw"):
             thisComponent.setAutoDraw(False)
-    #fasterText = fasterText
     
     # ------Prepare to start Routine "descanso"-------
     t = 0
@@ -1802,7 +1801,7 @@ for thisExpTarLoop in expTarLoop:
     
     thisExp.nextEntry()
     
-# completed 14 repeats of 'expTarLoop'
+# completed 0 repeats of 'expTarLoop'
 
 
 # ------Prepare to start Routine "syllablePracIns"-------
@@ -2541,7 +2540,7 @@ for thisComponent in lang_hist_insComponents:
 routineTimer.reset()
 
 # set up handler to look after randomisation of conditions etc
-trials_blp_hist = data.TrialHandler(nReps=1, method='sequential', 
+trials_blp_hist = data.TrialHandler(nReps=0, method='sequential', 
     extraInfo=expInfo, originPath=-1,
     trialList=data.importConditions('data/processed_data/exp_files/sp_en_blp_trials.csv', selection='0:2'),
     seed=None, name='trials_blp_hist')
@@ -2648,11 +2647,11 @@ for thisTrials_blp_hist in trials_blp_hist:
     routineTimer.reset()
     thisExp.nextEntry()
     
-# completed 1 repeats of 'trials_blp_hist'
+# completed 0 repeats of 'trials_blp_hist'
 
 
 # set up handler to look after randomisation of conditions etc
-trials_blp_hist_2 = data.TrialHandler(nReps=1, method='sequential', 
+trials_blp_hist_2 = data.TrialHandler(nReps=0, method='sequential', 
     extraInfo=expInfo, originPath=-1,
     trialList=data.importConditions('data/processed_data/exp_files/sp_en_blp_trials.csv', selection='2:4'),
     seed=None, name='trials_blp_hist_2')
@@ -2759,11 +2758,11 @@ for thisTrials_blp_hist_2 in trials_blp_hist_2:
     routineTimer.reset()
     thisExp.nextEntry()
     
-# completed 1 repeats of 'trials_blp_hist_2'
+# completed 0 repeats of 'trials_blp_hist_2'
 
 
 # set up handler to look after randomisation of conditions etc
-trials_blp_hist_3 = data.TrialHandler(nReps=1, method='sequential', 
+trials_blp_hist_3 = data.TrialHandler(nReps=0, method='sequential', 
     extraInfo=expInfo, originPath=-1,
     trialList=data.importConditions('data/processed_data/exp_files/sp_en_blp_trials.csv', selection='4:12'),
     seed=None, name='trials_blp_hist_3')
@@ -2870,7 +2869,7 @@ for thisTrials_blp_hist_3 in trials_blp_hist_3:
     routineTimer.reset()
     thisExp.nextEntry()
     
-# completed 1 repeats of 'trials_blp_hist_3'
+# completed 0 repeats of 'trials_blp_hist_3'
 
 
 # ------Prepare to start Routine "lang_use_ins"-------
@@ -2943,7 +2942,7 @@ for thisComponent in lang_use_insComponents:
 routineTimer.reset()
 
 # set up handler to look after randomisation of conditions etc
-trials_blp_use = data.TrialHandler(nReps=1, method='sequential', 
+trials_blp_use = data.TrialHandler(nReps=0, method='sequential', 
     extraInfo=expInfo, originPath=-1,
     trialList=data.importConditions('data/processed_data/exp_files/sp_en_blp_trials.csv', selection='12:27'),
     seed=None, name='trials_blp_use')
@@ -3049,7 +3048,7 @@ for thisTrials_blp_use in trials_blp_use:
     routineTimer.reset()
     thisExp.nextEntry()
     
-# completed 1 repeats of 'trials_blp_use'
+# completed 0 repeats of 'trials_blp_use'
 
 
 # ------Prepare to start Routine "lang_prof_ins"-------
@@ -3122,7 +3121,7 @@ for thisComponent in lang_prof_insComponents:
 routineTimer.reset()
 
 # set up handler to look after randomisation of conditions etc
-trials_blp_prof = data.TrialHandler(nReps=1, method='sequential', 
+trials_blp_prof = data.TrialHandler(nReps=0, method='sequential', 
     extraInfo=expInfo, originPath=-1,
     trialList=data.importConditions('data/processed_data/exp_files/sp_en_blp_trials.csv', selection='27:35'),
     seed=None, name='trials_blp_prof')
@@ -3228,7 +3227,7 @@ for thisTrials_blp_prof in trials_blp_prof:
     routineTimer.reset()
     thisExp.nextEntry()
     
-# completed 1 repeats of 'trials_blp_prof'
+# completed 0 repeats of 'trials_blp_prof'
 
 
 # ------Prepare to start Routine "lang_att_ins"-------
@@ -3301,7 +3300,7 @@ for thisComponent in lang_att_insComponents:
 routineTimer.reset()
 
 # set up handler to look after randomisation of conditions etc
-trials_blp_att = data.TrialHandler(nReps=1, method='sequential', 
+trials_blp_att = data.TrialHandler(nReps=0, method='sequential', 
     extraInfo=expInfo, originPath=-1,
     trialList=data.importConditions('data/processed_data/exp_files/sp_en_blp_trials.csv', selection='35:43'),
     seed=None, name='trials_blp_att')
@@ -3407,7 +3406,7 @@ for thisTrials_blp_att in trials_blp_att:
     routineTimer.reset()
     thisExp.nextEntry()
     
-# completed 1 repeats of 'trials_blp_att'
+# completed 0 repeats of 'trials_blp_att'
 
 
 # ------Prepare to start Routine "gracias"-------
