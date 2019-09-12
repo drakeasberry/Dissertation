@@ -1896,14 +1896,14 @@
         <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
-        <Param name="Begin Routine" updates="constant" val="fasterText = ''&amp;#10;if expTarLoop.thisN == 1:&amp;#10;    fasterText = 'Gracias, más rápido.'&amp;#10;elif expTarLoop.thisN == 13:&amp;#10;    fasterText = '¡Rápido!'&amp;#10;elif expTarLoop.thisN == 18:&amp;#10;    fasterText = '¡Bien hecho!'&amp;#10;elif expTarLoop.thisN == 27:&amp;#10;    fasterText = 'Mucahs gracias, pero responda más rápido.'&amp;#10;elif expTarLoop.thisN == 32:&amp;#10;    fasterText = '!Genial¡'    &amp;#10;elif expTarLoop.thisN == 36:&amp;#10;    fasterText = 'Más rápido por favor.'&amp;#10;elif expTarLoop.thisN == 41:&amp;#10;    fasterText = '¡Excelente!'&amp;#10;elif expTarLoop.thisN == 44:&amp;#10;    fasterText = '¡Responda lo más rápido posible!'&amp;#10;else:&amp;#10;    continueRoutine = False" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="fasterText = ''&amp;#10;if expTarLoop.thisN == 1:&amp;#10;    fasterText = 'Gracias, más rápido.'&amp;#10;elif expTarLoop.thisN == 13:&amp;#10;    fasterText = '¡Rápido!'&amp;#10;elif expTarLoop.thisN == 18:&amp;#10;    fasterText = '¡Bien hecho!'&amp;#10;elif expTarLoop.thisN == 27:&amp;#10;    fasterText = 'Muchas gracias, pero responda más rápido.'&amp;#10;elif expTarLoop.thisN == 32:&amp;#10;    fasterText = '¡Genial!'    &amp;#10;elif expTarLoop.thisN == 36:&amp;#10;    fasterText = 'Más rápido por favor.'&amp;#10;elif expTarLoop.thisN == 41:&amp;#10;    fasterText = '¡Excelente!'&amp;#10;elif expTarLoop.thisN == 44:&amp;#10;    fasterText = '¡Responda lo más rápido posible!'&amp;#10;else:&amp;#10;    continueRoutine = False" valType="extendedCode"/>
         <Param name="Code Type" updates="None" val="Py" valType="str"/>
         <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
         <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
         <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
-        <Param name="End Routine" updates="constant" val="#fasterText = fasterText" valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="" valType="extendedCode"/>
         <Param name="name" updates="None" val="code_2" valType="code"/>
       </CodeComponent>
       <TextComponent name="rapido">
@@ -1938,7 +1938,7 @@
       <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
       <Param name="isTrials" updates="None" val="True" valType="bool"/>
       <Param name="loopType" updates="None" val="sequential" valType="str"/>
-      <Param name="nReps" updates="None" val="0" valType="code"/>
+      <Param name="nReps" updates="None" val="1" valType="code"/>
       <Param name="name" updates="None" val="lexEspLoop" valType="code"/>
       <Param name="random seed" updates="None" val="" valType="code"/>
     </LoopInitiator>
@@ -1952,7 +1952,7 @@
       <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
       <Param name="isTrials" updates="None" val="True" valType="bool"/>
       <Param name="loopType" updates="None" val="sequential" valType="str"/>
-      <Param name="nReps" updates="None" val="0" valType="code"/>
+      <Param name="nReps" updates="None" val="8" valType="code"/>
       <Param name="name" updates="None" val="pracTarLoop" valType="code"/>
       <Param name="random seed" updates="None" val="" valType="code"/>
     </LoopInitiator>
@@ -1981,7 +1981,7 @@
       <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
       <Param name="isTrials" updates="None" val="True" valType="bool"/>
       <Param name="loopType" updates="None" val="sequential" valType="str"/>
-      <Param name="nReps" updates="None" val="14" valType="code"/>
+      <Param name="nReps" updates="None" val="48" valType="code"/>
       <Param name="name" updates="None" val="expTarLoop" valType="code"/>
       <Param name="random seed" updates="None" val="" valType="code"/>
     </LoopInitiator>
@@ -2012,7 +2012,7 @@
       <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
       <Param name="isTrials" updates="None" val="True" valType="bool"/>
       <Param name="loopType" updates="None" val="random" valType="str"/>
-      <Param name="nReps" updates="None" val="0" valType="code"/>
+      <Param name="nReps" updates="None" val="1" valType="code"/>
       <Param name="name" updates="None" val="sylPracLoop" valType="code"/>
       <Param name="random seed" updates="None" val="" valType="code"/>
     </LoopInitiator>
@@ -2026,7 +2026,7 @@
       <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
       <Param name="isTrials" updates="None" val="True" valType="bool"/>
       <Param name="loopType" updates="None" val="random" valType="str"/>
-      <Param name="nReps" updates="None" val="0" valType="code"/>
+      <Param name="nReps" updates="None" val="1" valType="code"/>
       <Param name="name" updates="None" val="syllableLoop" valType="code"/>
       <Param name="random seed" updates="None" val="" valType="code"/>
     </LoopInitiator>
@@ -2040,7 +2040,7 @@
       <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
       <Param name="isTrials" updates="None" val="True" valType="bool"/>
       <Param name="loopType" updates="None" val="sequential" valType="str"/>
-      <Param name="nReps" updates="None" val="0" valType="code"/>
+      <Param name="nReps" updates="None" val="1" valType="code"/>
       <Param name="name" updates="None" val="lexEngLoop" valType="code"/>
       <Param name="random seed" updates="None" val="" valType="code"/>
     </LoopInitiator>
