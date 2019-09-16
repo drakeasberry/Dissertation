@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 This experiment was created using PsychoPy3 Experiment Builder (v3.0.7),
-    on Wed Sep 11 19:26:07 2019
+    on Mon Sep 16 08:30:11 2019
 If you publish work using this script please cite the PsychoPy publications:
     Peirce, JW (2007) PsychoPy - Psychophysics software in Python.
         Journal of Neuroscience Methods, 162(1-2), 8-13.
@@ -208,6 +208,16 @@ pracSegInstr = visual.TextStim(win=win, name='pracSegInstr',
     color='white', colorSpace='rgb', opacity=1, 
     languageStyle='LTR',
     depth=0.0);
+
+# Initialize components for Routine "pracFaster"
+pracFasterClock = core.Clock()
+text = visual.TextStim(win=win, name='text',
+    text='default text',
+    font='Arial',
+    pos=(0, 0), height=0.2, wrapWidth=None, ori=0, 
+    color='white', colorSpace='rgb', opacity=1, 
+    languageStyle='LTR',
+    depth=-1.0);
 
 # Initialize components for Routine "targetPrac"
 targetPracClock = core.Clock()
@@ -774,7 +784,7 @@ for thisComponent in lexEspInstruccionesComponents:
 routineTimer.reset()
 
 # set up handler to look after randomisation of conditions etc
-lexEspLoop = data.TrialHandler(nReps=0, method='sequential', 
+lexEspLoop = data.TrialHandler(nReps=1, method='sequential', 
     extraInfo=expInfo, originPath=-1,
     trialList=data.importConditions('data/processed_data/exp_files/lexTaleListEsp.csv'),
     seed=None, name='lexEspLoop')
@@ -899,7 +909,7 @@ for thisLexEspLoop in lexEspLoop:
     routineTimer.reset()
     thisExp.nextEntry()
     
-# completed 0 repeats of 'lexEspLoop'
+# completed 1 repeats of 'lexEspLoop'
 
 
 # ------Prepare to start Routine "pracIns"-------
@@ -972,7 +982,7 @@ for thisComponent in pracInsComponents:
 routineTimer.reset()
 
 # set up handler to look after randomisation of conditions etc
-pracTarLoop = data.TrialHandler(nReps=0, method='sequential', 
+pracTarLoop = data.TrialHandler(nReps=8, method='sequential', 
     extraInfo=expInfo, originPath=-1,
     trialList=data.importConditions(conditionPrac, selection=[1]),
     seed=None, name='pracTarLoop')
@@ -989,6 +999,64 @@ for thisPracTarLoop in pracTarLoop:
     if thisPracTarLoop != None:
         for paramName in thisPracTarLoop:
             exec('{} = thisPracTarLoop[paramName]'.format(paramName))
+    
+    # ------Prepare to start Routine "pracFaster"-------
+    t = 0
+    pracFasterClock.reset()  # clock
+    frameN = -1
+    continueRoutine = True
+    routineTimer.add(3.000000)
+    # update component parameters for each repeat
+    pracFasterText = ''
+    if pracTarLoop.thisN == 4:
+        pracFasterText = 'Muchas gracias, pero responda más rápido.'
+    else:
+        continueRoutine = False
+    text.setText(pracFasterText)
+    # keep track of which components have finished
+    pracFasterComponents = [text]
+    for thisComponent in pracFasterComponents:
+        if hasattr(thisComponent, 'status'):
+            thisComponent.status = NOT_STARTED
+    
+    # -------Start Routine "pracFaster"-------
+    while continueRoutine and routineTimer.getTime() > 0:
+        # get current time
+        t = pracFasterClock.getTime()
+        frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
+        # update/draw components on each frame
+        
+        # *text* updates
+        if t >= 0.0 and text.status == NOT_STARTED:
+            # keep track of start time/frame for later
+            text.tStart = t
+            text.frameNStart = frameN  # exact frame index
+            text.setAutoDraw(True)
+        frameRemains = 3.0 - win.monitorFramePeriod * 0.75  # most of one frame period left
+        if text.status == STARTED and t >= frameRemains:
+            text.setAutoDraw(False)
+        
+        # check for quit (typically the Esc key)
+        if endExpNow or event.getKeys(keyList=["escape"]):
+            core.quit()
+        
+        # check if all components have finished
+        if not continueRoutine:  # a component has requested a forced-end of Routine
+            break
+        continueRoutine = False  # will revert to True if at least one component still running
+        for thisComponent in pracFasterComponents:
+            if hasattr(thisComponent, "status") and thisComponent.status != FINISHED:
+                continueRoutine = True
+                break  # at least one component has not yet finished
+        
+        # refresh the screen
+        if continueRoutine:  # don't flip if this routine is over or we'll get a blank screen
+            win.flip()
+    
+    # -------Ending Routine "pracFaster"-------
+    for thisComponent in pracFasterComponents:
+        if hasattr(thisComponent, "setAutoDraw"):
+            thisComponent.setAutoDraw(False)
     
     # ------Prepare to start Routine "targetPrac"-------
     t = 0
@@ -1270,7 +1338,7 @@ for thisPracTarLoop in pracTarLoop:
     
     thisExp.nextEntry()
     
-# completed 0 repeats of 'pracTarLoop'
+# completed 8 repeats of 'pracTarLoop'
 
 
 # ------Prepare to start Routine "expIns"-------
@@ -1343,7 +1411,7 @@ for thisComponent in expInsComponents:
 routineTimer.reset()
 
 # set up handler to look after randomisation of conditions etc
-expTarLoop = data.TrialHandler(nReps=0, method='sequential', 
+expTarLoop = data.TrialHandler(nReps=48, method='sequential', 
     extraInfo=expInfo, originPath=-1,
     trialList=data.importConditions(conditionExp, selection=[1]),
     seed=None, name='expTarLoop')
@@ -1369,7 +1437,7 @@ for thisExpTarLoop in expTarLoop:
     routineTimer.add(3.000000)
     # update component parameters for each repeat
     fasterText = ''
-    if expTarLoop.thisN == 1:
+    if expTarLoop.thisN == 6:
         fasterText = 'Gracias, más rápido.'
     elif expTarLoop.thisN == 13:
         fasterText = '¡Rápido!'
@@ -1801,7 +1869,7 @@ for thisExpTarLoop in expTarLoop:
     
     thisExp.nextEntry()
     
-# completed 0 repeats of 'expTarLoop'
+# completed 48 repeats of 'expTarLoop'
 
 
 # ------Prepare to start Routine "syllablePracIns"-------
@@ -1874,7 +1942,7 @@ for thisComponent in syllablePracInsComponents:
 routineTimer.reset()
 
 # set up handler to look after randomisation of conditions etc
-sylPracLoop = data.TrialHandler(nReps=0, method='random', 
+sylPracLoop = data.TrialHandler(nReps=1, method='random', 
     extraInfo=expInfo, originPath=-1,
     trialList=data.importConditions(conditionSylPrac),
     seed=None, name='sylPracLoop')
@@ -1897,7 +1965,6 @@ for thisSylPracLoop in sylPracLoop:
     syllablePracTrialClock.reset()  # clock
     frameN = -1
     continueRoutine = True
-    routineTimer.add(4.000000)
     # update component parameters for each repeat
     pracSylTarget.setText(syllabification)
     pracSylAnsCVC.setText(leftKey)
@@ -1910,7 +1977,7 @@ for thisSylPracLoop in sylPracLoop:
             thisComponent.status = NOT_STARTED
     
     # -------Start Routine "syllablePracTrial"-------
-    while continueRoutine and routineTimer.getTime() > 0:
+    while continueRoutine:
         # get current time
         t = syllablePracTrialClock.getTime()
         frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
@@ -1932,9 +1999,6 @@ for thisSylPracLoop in sylPracLoop:
             pracSylAnsCVC.tStart = t
             pracSylAnsCVC.frameNStart = frameN  # exact frame index
             pracSylAnsCVC.setAutoDraw(True)
-        frameRemains = 2 + 2- win.monitorFramePeriod * 0.75  # most of one frame period left
-        if pracSylAnsCVC.status == STARTED and t >= frameRemains:
-            pracSylAnsCVC.setAutoDraw(False)
         
         # *pracSylAnsCV* updates
         if t >= 2 and pracSylAnsCV.status == NOT_STARTED:
@@ -1942,9 +2006,6 @@ for thisSylPracLoop in sylPracLoop:
             pracSylAnsCV.tStart = t
             pracSylAnsCV.frameNStart = frameN  # exact frame index
             pracSylAnsCV.setAutoDraw(True)
-        frameRemains = 2 + 2- win.monitorFramePeriod * 0.75  # most of one frame period left
-        if pracSylAnsCV.status == STARTED and t >= frameRemains:
-            pracSylAnsCV.setAutoDraw(False)
         
         # *pracSyl_key_resp* updates
         if t >= 2 and pracSyl_key_resp.status == NOT_STARTED:
@@ -1954,9 +2015,6 @@ for thisSylPracLoop in sylPracLoop:
             pracSyl_key_resp.status = STARTED
             # keyboard checking is just starting
             event.clearEvents(eventType='keyboard')
-        frameRemains = 2 + 2- win.monitorFramePeriod * 0.75  # most of one frame period left
-        if pracSyl_key_resp.status == STARTED and t >= frameRemains:
-            pracSyl_key_resp.status = FINISHED
         if pracSyl_key_resp.status == STARTED:
             theseKeys = event.getKeys(keyList=['2', '3'])
             
@@ -1988,9 +2046,11 @@ for thisSylPracLoop in sylPracLoop:
     for thisComponent in syllablePracTrialComponents:
         if hasattr(thisComponent, "setAutoDraw"):
             thisComponent.setAutoDraw(False)
+    # the Routine "syllablePracTrial" was not non-slip safe, so reset the non-slip timer
+    routineTimer.reset()
     thisExp.nextEntry()
     
-# completed 0 repeats of 'sylPracLoop'
+# completed 1 repeats of 'sylPracLoop'
 
 
 # ------Prepare to start Routine "syllableExpIns"-------
@@ -2063,7 +2123,7 @@ for thisComponent in syllableExpInsComponents:
 routineTimer.reset()
 
 # set up handler to look after randomisation of conditions etc
-syllableLoop = data.TrialHandler(nReps=0, method='random', 
+syllableLoop = data.TrialHandler(nReps=1, method='random', 
     extraInfo=expInfo, originPath=-1,
     trialList=data.importConditions(conditionSylExp),
     seed=None, name='syllableLoop')
@@ -2086,7 +2146,6 @@ for thisSyllableLoop in syllableLoop:
     trialSyllableClock.reset()  # clock
     frameN = -1
     continueRoutine = True
-    routineTimer.add(4.000000)
     # update component parameters for each repeat
     expSylAnsCVC.setText(leftKey)
     expSylAnsCV.setText(rightKey)
@@ -2099,7 +2158,7 @@ for thisSyllableLoop in syllableLoop:
             thisComponent.status = NOT_STARTED
     
     # -------Start Routine "trialSyllable"-------
-    while continueRoutine and routineTimer.getTime() > 0:
+    while continueRoutine:
         # get current time
         t = trialSyllableClock.getTime()
         frameN = frameN + 1  # number of completed frames (so 0 is the first frame)
@@ -2111,9 +2170,6 @@ for thisSyllableLoop in syllableLoop:
             expSylAnsCVC.tStart = t
             expSylAnsCVC.frameNStart = frameN  # exact frame index
             expSylAnsCVC.setAutoDraw(True)
-        frameRemains = 2 + 2- win.monitorFramePeriod * 0.75  # most of one frame period left
-        if expSylAnsCVC.status == STARTED and t >= frameRemains:
-            expSylAnsCVC.setAutoDraw(False)
         
         # *expSylAnsCV* updates
         if t >= 2 and expSylAnsCV.status == NOT_STARTED:
@@ -2121,9 +2177,6 @@ for thisSyllableLoop in syllableLoop:
             expSylAnsCV.tStart = t
             expSylAnsCV.frameNStart = frameN  # exact frame index
             expSylAnsCV.setAutoDraw(True)
-        frameRemains = 2 + 2- win.monitorFramePeriod * 0.75  # most of one frame period left
-        if expSylAnsCV.status == STARTED and t >= frameRemains:
-            expSylAnsCV.setAutoDraw(False)
         
         # *expSylTarget* updates
         if t >= 0.5 and expSylTarget.status == NOT_STARTED:
@@ -2144,9 +2197,6 @@ for thisSyllableLoop in syllableLoop:
             # keyboard checking is just starting
             win.callOnFlip(expSyl_key_resp.clock.reset)  # t=0 on next screen flip
             event.clearEvents(eventType='keyboard')
-        frameRemains = 2 + 2- win.monitorFramePeriod * 0.75  # most of one frame period left
-        if expSyl_key_resp.status == STARTED and t >= frameRemains:
-            expSyl_key_resp.status = FINISHED
         if expSyl_key_resp.status == STARTED:
             theseKeys = event.getKeys(keyList=['2', '3'])
             
@@ -2199,9 +2249,11 @@ for thisSyllableLoop in syllableLoop:
     syllableLoop.addData('expSyl_key_resp.corr', expSyl_key_resp.corr)
     if expSyl_key_resp.keys != None:  # we had a response
         syllableLoop.addData('expSyl_key_resp.rt', expSyl_key_resp.rt)
+    # the Routine "trialSyllable" was not non-slip safe, so reset the non-slip timer
+    routineTimer.reset()
     thisExp.nextEntry()
     
-# completed 0 repeats of 'syllableLoop'
+# completed 1 repeats of 'syllableLoop'
 
 
 # ------Prepare to start Routine "lexTaleEngInstructions"-------
@@ -2273,7 +2325,7 @@ for thisComponent in lexTaleEngInstructionsComponents:
 routineTimer.reset()
 
 # set up handler to look after randomisation of conditions etc
-lexEngLoop = data.TrialHandler(nReps=0, method='sequential', 
+lexEngLoop = data.TrialHandler(nReps=1, method='sequential', 
     extraInfo=expInfo, originPath=-1,
     trialList=data.importConditions('data/processed_data/exp_files/lexTaleListEng.csv'),
     seed=None, name='lexEngLoop')
@@ -2398,7 +2450,7 @@ for thisLexEngLoop in lexEngLoop:
     routineTimer.reset()
     thisExp.nextEntry()
     
-# completed 0 repeats of 'lexEngLoop'
+# completed 1 repeats of 'lexEngLoop'
 
 
 # ------Prepare to start Routine "instructions_blp"-------
@@ -2540,7 +2592,7 @@ for thisComponent in lang_hist_insComponents:
 routineTimer.reset()
 
 # set up handler to look after randomisation of conditions etc
-trials_blp_hist = data.TrialHandler(nReps=0, method='sequential', 
+trials_blp_hist = data.TrialHandler(nReps=1, method='sequential', 
     extraInfo=expInfo, originPath=-1,
     trialList=data.importConditions('data/processed_data/exp_files/sp_en_blp_trials.csv', selection='0:2'),
     seed=None, name='trials_blp_hist')
@@ -2647,11 +2699,11 @@ for thisTrials_blp_hist in trials_blp_hist:
     routineTimer.reset()
     thisExp.nextEntry()
     
-# completed 0 repeats of 'trials_blp_hist'
+# completed 1 repeats of 'trials_blp_hist'
 
 
 # set up handler to look after randomisation of conditions etc
-trials_blp_hist_2 = data.TrialHandler(nReps=0, method='sequential', 
+trials_blp_hist_2 = data.TrialHandler(nReps=1, method='sequential', 
     extraInfo=expInfo, originPath=-1,
     trialList=data.importConditions('data/processed_data/exp_files/sp_en_blp_trials.csv', selection='2:4'),
     seed=None, name='trials_blp_hist_2')
@@ -2758,11 +2810,11 @@ for thisTrials_blp_hist_2 in trials_blp_hist_2:
     routineTimer.reset()
     thisExp.nextEntry()
     
-# completed 0 repeats of 'trials_blp_hist_2'
+# completed 1 repeats of 'trials_blp_hist_2'
 
 
 # set up handler to look after randomisation of conditions etc
-trials_blp_hist_3 = data.TrialHandler(nReps=0, method='sequential', 
+trials_blp_hist_3 = data.TrialHandler(nReps=1, method='sequential', 
     extraInfo=expInfo, originPath=-1,
     trialList=data.importConditions('data/processed_data/exp_files/sp_en_blp_trials.csv', selection='4:12'),
     seed=None, name='trials_blp_hist_3')
@@ -2869,7 +2921,7 @@ for thisTrials_blp_hist_3 in trials_blp_hist_3:
     routineTimer.reset()
     thisExp.nextEntry()
     
-# completed 0 repeats of 'trials_blp_hist_3'
+# completed 1 repeats of 'trials_blp_hist_3'
 
 
 # ------Prepare to start Routine "lang_use_ins"-------
@@ -2942,7 +2994,7 @@ for thisComponent in lang_use_insComponents:
 routineTimer.reset()
 
 # set up handler to look after randomisation of conditions etc
-trials_blp_use = data.TrialHandler(nReps=0, method='sequential', 
+trials_blp_use = data.TrialHandler(nReps=1, method='sequential', 
     extraInfo=expInfo, originPath=-1,
     trialList=data.importConditions('data/processed_data/exp_files/sp_en_blp_trials.csv', selection='12:27'),
     seed=None, name='trials_blp_use')
@@ -3048,7 +3100,7 @@ for thisTrials_blp_use in trials_blp_use:
     routineTimer.reset()
     thisExp.nextEntry()
     
-# completed 0 repeats of 'trials_blp_use'
+# completed 1 repeats of 'trials_blp_use'
 
 
 # ------Prepare to start Routine "lang_prof_ins"-------
@@ -3121,7 +3173,7 @@ for thisComponent in lang_prof_insComponents:
 routineTimer.reset()
 
 # set up handler to look after randomisation of conditions etc
-trials_blp_prof = data.TrialHandler(nReps=0, method='sequential', 
+trials_blp_prof = data.TrialHandler(nReps=1, method='sequential', 
     extraInfo=expInfo, originPath=-1,
     trialList=data.importConditions('data/processed_data/exp_files/sp_en_blp_trials.csv', selection='27:35'),
     seed=None, name='trials_blp_prof')
@@ -3227,7 +3279,7 @@ for thisTrials_blp_prof in trials_blp_prof:
     routineTimer.reset()
     thisExp.nextEntry()
     
-# completed 0 repeats of 'trials_blp_prof'
+# completed 1 repeats of 'trials_blp_prof'
 
 
 # ------Prepare to start Routine "lang_att_ins"-------
@@ -3300,7 +3352,7 @@ for thisComponent in lang_att_insComponents:
 routineTimer.reset()
 
 # set up handler to look after randomisation of conditions etc
-trials_blp_att = data.TrialHandler(nReps=0, method='sequential', 
+trials_blp_att = data.TrialHandler(nReps=1, method='sequential', 
     extraInfo=expInfo, originPath=-1,
     trialList=data.importConditions('data/processed_data/exp_files/sp_en_blp_trials.csv', selection='35:43'),
     seed=None, name='trials_blp_att')
@@ -3406,7 +3458,7 @@ for thisTrials_blp_att in trials_blp_att:
     routineTimer.reset()
     thisExp.nextEntry()
     
-# completed 0 repeats of 'trials_blp_att'
+# completed 1 repeats of 'trials_blp_att'
 
 
 # ------Prepare to start Routine "gracias"-------

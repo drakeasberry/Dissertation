@@ -258,7 +258,7 @@
         <Param name="startType" updates="None" val="time (s)" valType="str"/>
         <Param name="startVal" updates="None" val="2" valType="code"/>
         <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
-        <Param name="stopVal" updates="constant" val="2" valType="code"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
         <Param name="text" updates="set every repeat" val="$leftKey" valType="str"/>
         <Param name="units" updates="None" val="from exp settings" valType="str"/>
         <Param name="wrapWidth" updates="constant" val="" valType="code"/>
@@ -279,7 +279,7 @@
         <Param name="startType" updates="None" val="time (s)" valType="str"/>
         <Param name="startVal" updates="None" val="2" valType="code"/>
         <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
-        <Param name="stopVal" updates="constant" val="2" valType="code"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
         <Param name="text" updates="set every repeat" val="$rightKey" valType="str"/>
         <Param name="units" updates="None" val="from exp settings" valType="str"/>
         <Param name="wrapWidth" updates="constant" val="" valType="code"/>
@@ -316,7 +316,7 @@
         <Param name="startType" updates="None" val="time (s)" valType="str"/>
         <Param name="startVal" updates="None" val="2" valType="code"/>
         <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
-        <Param name="stopVal" updates="constant" val="2" valType="code"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
         <Param name="store" updates="constant" val="first key" valType="str"/>
         <Param name="storeCorrect" updates="constant" val="True" valType="bool"/>
         <Param name="syncScreenRefresh" updates="constant" val="True" valType="bool"/>
@@ -438,7 +438,7 @@
         <Param name="startType" updates="None" val="time (s)" valType="str"/>
         <Param name="startVal" updates="None" val="2" valType="code"/>
         <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
-        <Param name="stopVal" updates="constant" val="2" valType="code"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
         <Param name="text" updates="set every repeat" val="$leftKey" valType="str"/>
         <Param name="units" updates="None" val="from exp settings" valType="str"/>
         <Param name="wrapWidth" updates="constant" val="" valType="code"/>
@@ -459,7 +459,7 @@
         <Param name="startType" updates="None" val="time (s)" valType="str"/>
         <Param name="startVal" updates="None" val="2" valType="code"/>
         <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
-        <Param name="stopVal" updates="constant" val="2" valType="code"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
         <Param name="text" updates="set every repeat" val="$rightKey" valType="str"/>
         <Param name="units" updates="None" val="from exp settings" valType="str"/>
         <Param name="wrapWidth" updates="constant" val="" valType="code"/>
@@ -475,7 +475,7 @@
         <Param name="startType" updates="None" val="time (s)" valType="str"/>
         <Param name="startVal" updates="None" val="2" valType="code"/>
         <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
-        <Param name="stopVal" updates="constant" val="2" valType="code"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
         <Param name="store" updates="constant" val="nothing" valType="str"/>
         <Param name="storeCorrect" updates="constant" val="False" valType="bool"/>
         <Param name="syncScreenRefresh" updates="constant" val="True" valType="bool"/>
@@ -1896,7 +1896,7 @@
         <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
         <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
-        <Param name="Begin Routine" updates="constant" val="fasterText = ''&amp;#10;if expTarLoop.thisN == 1:&amp;#10;    fasterText = 'Gracias, más rápido.'&amp;#10;elif expTarLoop.thisN == 13:&amp;#10;    fasterText = '¡Rápido!'&amp;#10;elif expTarLoop.thisN == 18:&amp;#10;    fasterText = '¡Bien hecho!'&amp;#10;elif expTarLoop.thisN == 27:&amp;#10;    fasterText = 'Muchas gracias, pero responda más rápido.'&amp;#10;elif expTarLoop.thisN == 32:&amp;#10;    fasterText = '¡Genial!'    &amp;#10;elif expTarLoop.thisN == 36:&amp;#10;    fasterText = 'Más rápido por favor.'&amp;#10;elif expTarLoop.thisN == 41:&amp;#10;    fasterText = '¡Excelente!'&amp;#10;elif expTarLoop.thisN == 44:&amp;#10;    fasterText = '¡Responda lo más rápido posible!'&amp;#10;else:&amp;#10;    continueRoutine = False" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="fasterText = ''&amp;#10;if expTarLoop.thisN == 6:&amp;#10;    fasterText = 'Gracias, más rápido.'&amp;#10;elif expTarLoop.thisN == 13:&amp;#10;    fasterText = '¡Rápido!'&amp;#10;elif expTarLoop.thisN == 18:&amp;#10;    fasterText = '¡Bien hecho!'&amp;#10;elif expTarLoop.thisN == 27:&amp;#10;    fasterText = 'Muchas gracias, pero responda más rápido.'&amp;#10;elif expTarLoop.thisN == 32:&amp;#10;    fasterText = '¡Genial!'    &amp;#10;elif expTarLoop.thisN == 36:&amp;#10;    fasterText = 'Más rápido por favor.'&amp;#10;elif expTarLoop.thisN == 41:&amp;#10;    fasterText = '¡Excelente!'&amp;#10;elif expTarLoop.thisN == 44:&amp;#10;    fasterText = '¡Responda lo más rápido posible!'&amp;#10;else:&amp;#10;    continueRoutine = False" valType="extendedCode"/>
         <Param name="Code Type" updates="None" val="Py" valType="str"/>
         <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
         <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
@@ -1928,6 +1928,43 @@
         <Param name="wrapWidth" updates="constant" val="1.5" valType="code"/>
       </TextComponent>
     </Routine>
+    <Routine name="pracFaster">
+      <CodeComponent name="code_3">
+        <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="pracFasterText = ''&amp;#10;if pracTarLoop.thisN == 4:&amp;#10;    pracFasterText = 'Muchas gracias, pero responda más rápido.'&amp;#10;else:&amp;#10;    continueRoutine = False" valType="extendedCode"/>
+        <Param name="Code Type" updates="None" val="Py" valType="str"/>
+        <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="name" updates="None" val="code_3" valType="code"/>
+      </CodeComponent>
+      <TextComponent name="text">
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.2" valType="code"/>
+        <Param name="name" updates="None" val="text" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="time (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="3.0" valType="code"/>
+        <Param name="text" updates="set every repeat" val="$pracFasterText" valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+    </Routine>
   </Routines>
   <Flow>
     <Routine name="lexEspInstrucciones"/>
@@ -1956,6 +1993,7 @@
       <Param name="name" updates="None" val="pracTarLoop" valType="code"/>
       <Param name="random seed" updates="None" val="" valType="code"/>
     </LoopInitiator>
+    <Routine name="pracFaster"/>
     <Routine name="targetPrac"/>
     <Routine name="isi_halfsec"/>
     <LoopInitiator loopType="TrialHandler" name="pracTrialLoop">
