@@ -1,5 +1,4 @@
 # Ignore user files created by Rstudio
-
 *.Rproj.user/*
 *.Rproj.user
 *.Rhistory
@@ -24,10 +23,14 @@ Dissertation-blx.bib
 *ipynb_checkpoints*
 *.pyc
 
-#Ignore all participant data files
-part_files/
-temp_data/
+#Ignore all temporary and participant data files
+**/temp_data/
+**/part_files/
+**/csv/
 
 #Ignore temporary other text processing files 
 *.doc
 *.docx
+
+#Ignore temporary files created and tracked by PsychoPy
+*_lastrun.py
