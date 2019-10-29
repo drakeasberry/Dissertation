@@ -1,0 +1,321 @@
+,Word,transcription,corrAns,sylStruc,initialSylStress,wordStatus,source,freq_WPM,DerivedWord,Condition,counter,numRevealed,masking,Length,PrimeCalc,Prime,matching
+0,seguro,se.ˈɣu.ɾo,1,CV,no,word,CarreirasPerea2002,670.8894230769231,,A,1.0,3.0,######,6.0,seg###,seg###,mismatch
+1,bonito,bo.ˈni.to,1,CV,no,word,CarreirasPerea2002,92.93269230769229,,A,2.0,3.0,######,6.0,bon###,bon###,mismatch
+2,molino,mo.ˈli.no,1,CV,no,word,CarreirasPerea2002,3.1730769230769234,,A,3.0,3.0,######,6.0,mol###,mol###,mismatch
+3,pureza,pu.ˈɾe.sa,1,CV,no,word,CarreirasPerea2002,3.774038461538461,,A,4.0,3.0,######,6.0,pur###,pur###,mismatch
+4,corona,ko.ˈɾo.na,1,CV,no,word,CarreirasPerea2002,13.173076923076925,,A,5.0,3.0,######,6.0,cor###,cor###,mismatch
+5,barato,ba.ˈɾa.to,1,CV,no,word,CarreirasPerea2002,17.764423076923073,,A,6.0,3.0,######,6.0,bar###,bar###,mismatch
+6,pesado,pe.ˈsa.ðo,1,CV,no,word,CarreirasPerea2002,19.591346153846157,,A,7.0,3.0,######,6.0,pes###,pes###,mismatch
+7,docena,do.ˈse.na,1,CV,no,word,CarreirasPerea2002,15.456730769230768,,A,8.0,3.0,######,6.0,doc###,doc###,mismatch
+8,penoso,pe.ˈno.so,1,CV,no,word,CarreirasPerea2002,2.067307692307692,,A,9.0,3.0,######,6.0,pen###,pen###,mismatch
+9,recelo,re.ˈse.lo,1,CV,no,word,CarreirasPerea2002,0.28846153846153844,,A,10.0,3.0,######,6.0,rec###,rec###,mismatch
+10,basura,ba.ˈsu.ɾa,1,CV,no,word,CarreirasPerea2002,112.93269230769229,,A,11.0,2.0,######,6.0,ba####,ba####,match
+11,celoso,se.ˈlo.so,1,CV,no,word,CarreirasPerea2002,20.45673076923077,,A,12.0,2.0,######,6.0,ce####,ce####,match
+12,gorila,ɡo.ˈɾi.la,1,CV,no,word,CarreirasPerea2002,4.543269230769232,,A,13.0,2.0,######,6.0,go####,go####,match
+13,maleta,ma.ˈlɛ.ta,1,CV,no,word,CarreirasPerea2002,18.846153846153847,,A,14.0,2.0,######,6.0,ma####,ma####,match
+14,parado,pa.ˈɾa.ðo,1,CV,no,word,CarreirasPerea2002,32.427884615384606,,A,15.0,2.0,######,6.0,pa####,pa####,match
+15,resaca,re.ˈsa.ka,1,CV,no,word,CarreirasPerea2002,5.5048076923076925,,A,16.0,2.0,######,6.0,re####,re####,match
+16,salado,sa.ˈla.ðo,1,CV,no,word,CarreirasPerea2002,1.4903846153846154,,A,17.0,2.0,######,6.0,sa####,sa####,match
+17,senado,se.ˈna.ðo,1,CV,no,word,CarreirasPerea2002,9.927884615384617,,A,18.0,2.0,######,6.0,se####,se####,match
+18,tamaño,ta.ˈma.ɲo,1,CV,no,word,CarreirasPerea2002,39.447115384615394,,A,19.0,2.0,######,6.0,ta####,ta####,match
+19,vasija,ba.ˈsi.xa,1,CV,no,word,CarreirasPerea2002,1.5865384615384617,,A,20.0,2.0,######,6.0,va####,va####,match
+20,medida,me.ˈði.ða,1,CV,no,word,CarreirasPerea2002,18.75,,A,21.0,3.0,######,6.0,med###,med###,mismatch
+21,romano,ro.ˈma.no,1,CV,no,word,CarreirasPerea2002,5.769230769230768,,A,22.0,3.0,######,6.0,rom###,rom###,mismatch
+22,casino,ka.ˈsi.no,1,CV,no,word,CarreirasPerea2002,15.264423076923075,,A,23.0,3.0,######,6.0,cas###,cas###,mismatch
+23,herida,ɛ.ˈɾi.ða,1,CV,no,word,CarreirasPerea2002,37.884615384615394,,A,24.0,3.0,######,6.0,her###,her###,mismatch
+24,moneda,mo.ˈne.ða,1,CV,no,word,CarreirasPerea2002,18.028846153846157,,A,25.0,3.0,######,6.0,mon###,mon###,mismatch
+25,delito,de.ˈli.to,1,CV,no,word,CarreirasPerea2002,22.211538461538463,,A,26.0,3.0,######,6.0,del###,del###,mismatch
+26,ganado,ɡa.ˈna.ðo,1,CV,no,word,CarreirasPerea2002,38.14903846153846,,A,27.0,3.0,######,6.0,gan###,gan###,mismatch
+27,saludo,sa.ˈlu.ðo,1,CV,no,word,CarreirasPerea2002,6.995192307692308,,A,28.0,3.0,######,6.0,sal###,sal###,mismatch
+28,paloma,pa.ˈlo.ma,1,CV,no,word,CarreirasPerea2002,6.1298076923076925,,A,29.0,3.0,######,6.0,pal###,pal###,mismatch
+29,gusano,ɡu.ˈsa.no,1,CV,no,word,CarreirasPerea2002,10.096153846153843,,A,30.0,3.0,######,6.0,gus###,gus###,mismatch
+30,caseta,ka.ˈsɛ.ta,1,CV,no,word,CarreirasPerea2002,1.6346153846153846,,A,31.0,2.0,######,6.0,ca####,ca####,match
+31,diseño,di.ˈse.ɲo,1,CV,no,word,CarreirasPerea2002,18.365384615384613,,A,32.0,2.0,######,6.0,di####,di####,match
+32,harina,a.ˈɾi.na,1,CV,no,word,CarreirasPerea2002,4.0625,,A,33.0,2.0,######,6.0,ha####,ha####,match
+33,melena,me.ˈle.na,1,CV,no,word,CarreirasPerea2002,0.5769230769230769,,A,34.0,2.0,######,6.0,me####,me####,match
+34,pasivo,pa.ˈsi.βo,1,CV,no,word,CarreirasPerea2002,1.8028846153846156,,A,35.0,2.0,######,6.0,pa####,pa####,match
+35,rosado,ro.ˈsa.ðo,1,CV,no,word,CarreirasPerea2002,4.375,,A,36.0,2.0,######,6.0,ro####,ro####,match
+36,saliva,sa.ˈli.βa,1,CV,no,word,CarreirasPerea2002,5.961538461538463,,A,37.0,2.0,######,6.0,sa####,sa####,match
+37,soneto,so.ˈnɛ.to,1,CV,no,word,CarreirasPerea2002,0.6971153846153846,,A,38.0,2.0,######,6.0,so####,so####,match
+38,recado,re.ˈka.ðo,1,CV,no,word,CarreirasPerea2002,4.543269230769232,,A,39.0,2.0,######,6.0,re####,re####,match
+39,visado,bi.ˈsa.ðo,1,CV,no,word,CarreirasPerea2002,0.7932692307692307,,A,40.0,2.0,######,6.0,vi####,vi####,match
+40,balcón,bal.ˈkõn,1,CVC,no,word,CarreirasPerea2002,7.115384615384616,,A,41.0,3.0,######,6.0,bal###,bal###,match
+41,virtud,biɾ.ˈtuð,1,CVC,no,word,CarreirasPerea2002,4.447115384615384,,A,42.0,3.0,######,6.0,vir###,vir###,match
+42,vulgar,bul.ˈɣaɾ,1,CVC,no,word,CarreirasPerea2002,6.1298076923076925,,A,43.0,3.0,######,6.0,vul###,vul###,match
+43,rincón,rĩn.ˈkõn,1,CVC,no,word,CarreirasPerea2002,8.389423076923077,,A,44.0,3.0,######,6.0,rin###,rin###,match
+44,normal,noɾ.ˈmal,1,CVC,no,word,CarreirasPerea2002,105.48076923076924,,A,45.0,3.0,######,6.0,nor###,nor###,match
+45,perdón,pɛɾ.ˈðõn,1,CVC,no,word,CarreirasPerea2002,217.11538461538458,,A,46.0,3.0,######,6.0,per###,per###,match
+46,sector,sek̚.ˈtoɾ,1,CVC,no,word,CarreirasPerea2002,13.75,,A,47.0,3.0,######,6.0,sec###,sec###,match
+47,carmín,kaɾ.ˈmĩn,1,CVC,no,word,CarreirasPerea2002,0.21634615384615385,,A,48.0,3.0,######,6.0,car###,car###,match
+48,marfil,maɾ.ˈfil,1,CVC,no,word,CarreirasPerea2002,2.2115384615384617,,A,49.0,3.0,######,6.0,mar###,mar###,match
+49,fervor,fɛɾ.ˈβoɾ,1,CVC,no,word,CarreirasPerea2002,1.4182692307692306,,A,50.0,3.0,######,6.0,fer###,fer###,match
+50,bastón,bas.ˈtõn,1,CVC,no,word,CarreirasPerea2002,7.788461538461537,,A,51.0,2.0,######,6.0,ba####,ba####,mismatch
+51,cartel,kaɾ.ˈtɛl,1,CVC,no,word,CarreirasPerea2002,14.399038461538463,,A,52.0,2.0,######,6.0,ca####,ca####,mismatch
+52,cursor,kuɾ.ˈsoɾ,1,CVC,no,word,CarreirasPerea2002,0.1923076923076923,,A,53.0,2.0,######,6.0,cu####,cu####,mismatch
+53,desliz,dɛs̬.ˈlis,1,CVC,no,word,CarreirasPerea2002,1.25,,A,54.0,2.0,######,6.0,de####,de####,mismatch
+54,maldad,mal.ˈdað,1,CVC,no,word,CarreirasPerea2002,10.865384615384617,,A,55.0,2.0,######,6.0,ma####,ma####,mismatch
+55,postal,pos.ˈtal,1,CVC,no,word,CarreirasPerea2002,9.759615384615383,,A,56.0,2.0,######,6.0,po####,po####,mismatch
+56,reptil,rep̚.ˈtil,1,CVC,no,word,CarreirasPerea2002,1.1778846153846154,,A,57.0,2.0,######,6.0,re####,re####,mismatch
+57,sartén,saɾ.ˈtɛ̃n,1,CVC,no,word,CarreirasPerea2002,3.2692307692307687,,A,58.0,2.0,######,6.0,sa####,sa####,mismatch
+58,tambor,tãm.ˈboɾ,1,CVC,no,word,CarreirasPerea2002,4.663461538461538,,A,59.0,2.0,######,6.0,ta####,ta####,mismatch
+59,pulgar,pul.ˈɣaɾ,1,CVC,no,word,CarreirasPerea2002,7.572115384615384,,A,60.0,2.0,######,6.0,pu####,pu####,mismatch
+60,jardín,xaɾ.ˈðĩn,1,CVC,no,word,CarreirasPerea2002,39.519230769230774,,A,61.0,3.0,######,6.0,jar###,jar###,match
+61,pintor,pĩn.ˈtoɾ,1,CVC,no,word,CarreirasPerea2002,7.7644230769230775,,A,62.0,3.0,######,6.0,pin###,pin###,match
+62,mental,mɛ̃n.ˈtal,1,CVC,no,word,CarreirasPerea2002,26.25,,A,63.0,3.0,######,6.0,men###,men###,match
+63,pastor,pas.ˈtoɾ,1,CVC,no,word,CarreirasPerea2002,13.149038461538463,,A,64.0,3.0,######,6.0,pas###,pas###,match
+64,perfil,pɛɾ.ˈfil,1,CVC,no,word,CarreirasPerea2002,17.451923076923073,,A,65.0,3.0,######,6.0,per###,per###,match
+65,factor,fak̚.ˈtoɾ,1,CVC,no,word,CarreirasPerea2002,6.586538461538463,,A,66.0,3.0,######,6.0,fac###,fac###,match
+66,portal,poɾ.ˈtal,1,CVC,no,word,CarreirasPerea2002,10.889423076923077,,A,67.0,3.0,######,6.0,por###,por###,match
+67,carbón,kaɾ.ˈβõn,1,CVC,no,word,CarreirasPerea2002,7.235576923076922,,A,68.0,3.0,######,6.0,car###,car###,match
+68,cortés,koɾ.ˈtes,1,CVC,no,word,CarreirasPerea2002,3.870192307692308,,A,69.0,3.0,######,6.0,cor###,cor###,match
+69,desván,dɛs̬.ˈβãn,1,CVC,no,word,CarreirasPerea2002,1.4903846153846154,,A,70.0,3.0,######,6.0,des###,des###,match
+70,bombón,bõm.ˈbõn,1,CVC,no,word,CarreirasPerea2002,5.0480769230769225,,A,71.0,2.0,######,6.0,bo####,bo####,mismatch
+71,jazmín,xas̬.ˈmĩn,1,CVC,no,word,CarreirasPerea2002,1.0096153846153846,,A,72.0,2.0,######,6.0,ja####,ja####,mismatch
+72,delfín,dɛl.ˈfĩn,1,CVC,no,word,CarreirasPerea2002,3.2932692307692313,,A,73.0,2.0,######,6.0,de####,de####,mismatch
+73,halcón,al.ˈkõn,1,CVC,no,word,CarreirasPerea2002,6.1538461538461515,,A,74.0,2.0,######,6.0,ha####,ha####,mismatch
+74,pastel,pas.ˈtɛl,1,CVC,no,word,CarreirasPerea2002,54.63942307692307,,A,75.0,2.0,######,6.0,pa####,pa####,mismatch
+75,pulmón,pul.ˈmõn,1,CVC,no,word,CarreirasPerea2002,8.485576923076923,,A,76.0,2.0,######,6.0,pu####,pu####,mismatch
+76,salmón,sal.ˈmõn,1,CVC,no,word,CarreirasPerea2002,7.8125,,A,77.0,2.0,######,6.0,sa####,sa####,mismatch
+77,sultán,sul.ˈtãn,1,CVC,no,word,CarreirasPerea2002,2.067307692307692,,A,78.0,2.0,######,6.0,su####,su####,mismatch
+78,textil,tɛks.ˈtil,1,CVC,no,word,CarreirasPerea2002,0.9615384615384616,,A,79.0,2.0,######,6.0,te####,te####,mismatch
+79,volcán,bol.ˈkãn,1,CVC,no,word,CarreirasPerea2002,3.870192307692308,,A,80.0,2.0,######,6.0,vo####,vo####,mismatch
+80,tevuno,te.ˈβu.no,4,CV,no,nonword,Wuggy,,se-gu-ro,A,81.0,3.0,######,6.0,tev###,tev###,mismatch
+81,lorato,lo.ˈɾa.to,4,CV,no,nonword,Wuggy,,bo-ni-to,A,82.0,3.0,######,6.0,lor###,lor###,mismatch
+82,sociro,so.ˈsi.ro,4,CV,no,nonword,Wuggy,,mo-li-no,A,83.0,3.0,######,6.0,soc###,por###,mismatch
+83,rucema,ru.ˈse.ma,4,CV,no,nonword,Wuggy,,pu-re-za,A,84.0,3.0,######,6.0,ruc###,ruc###,mismatch
+84,coloto,ko.ˈlo.to,4,CV,no,nonword,Wuggy,,co-ro-na,A,85.0,3.0,######,6.0,col###,col###,mismatch
+85,vamito,ba.ˈmi.to,4,CV,no,nonword,Wuggy,,ba-ra-to,A,86.0,3.0,######,6.0,vam###,vam###,mismatch
+86,merido,mɛ.ˈɾi.ðo,4,CV,no,nonword,Wuggy,,pe-sa-do,A,87.0,3.0,######,6.0,mer###,mer###,mismatch
+87,tovera,to.ˈβɛ.ɾa,4,CV,no,nonword,Wuggy,,do-ce-na,A,88.0,3.0,######,6.0,tov###,tov###,mismatch
+88,sevoco,se.ˈβo.ko,4,CV,no,nonword,Wuggy,,pe-no-so,A,89.0,3.0,######,6.0,sev###,sev###,mismatch
+89,deveso,de.ˈβe.so,4,CV,no,nonword,Wuggy,,re-ce-lo,A,90.0,3.0,######,6.0,dev###,dev###,mismatch
+90,taruna,ta.ˈɾu.na,4,CV,no,nonword,Wuggy,,ba-su-ra,A,91.0,2.0,######,6.0,ta####,ta####,match
+91,cemoca,se.ˈmo.ka,4,CV,no,nonword,Wuggy,,ce-lo-so,A,92.0,2.0,######,6.0,ce####,ce####,match
+92,nocala,no.ˈka.la,4,CV,no,nonword,Wuggy,,go-ri-la,A,93.0,2.0,######,6.0,no####,no####,match
+93,sarena,sa.ˈɾe.na,4,CV,no,nonword,Wuggy,,ma-le-ta,A,94.0,2.0,######,6.0,sa####,sa####,match
+94,sadido,sa.ˈði.ðo,4,CV,no,nonword,Wuggy,,pa-ra-do,A,95.0,2.0,######,6.0,sa####,sa####,match
+95,dedasa,de.ˈða.sa,4,CV,no,nonword,Wuggy,,re-sa-ca,A,96.0,2.0,######,6.0,de####,de####,match
+96,rarido,ra.ˈri.ðo,4,CV,no,nonword,Wuggy,,sa-la-do,A,97.0,2.0,######,6.0,ra####,ta####,match
+97,mesido,me.ˈsi.ðo,4,CV,no,nonword,Wuggy,,se-na-do,A,98.0,2.0,######,6.0,me####,me####,match
+98,tacigo,ta.ˈsi.ɣo,4,CV,no,nonword,Wuggy,,ta-ma-ño,A,99.0,2.0,######,6.0,ta####,ta####,match
+99,vamama,ba.ˈma.ma,4,CV,no,nonword,Wuggy,,va-si-ja,A,100.0,2.0,######,6.0,va####,va####,match
+100,pemada,pe.ˈma.ða,4,CV,no,nonword,Wuggy,,me-di-da,A,101.0,3.0,######,6.0,pem###,pem###,mismatch
+101,dorino,do.ˈɾi.no,4,CV,no,nonword,Wuggy,,ro-ma-no,A,102.0,3.0,######,6.0,dor###,dor###,mismatch
+102,cavaro,ka.ˈβa.ɾo,4,CV,no,nonword,Wuggy,,ca-si-no,A,103.0,3.0,######,6.0,cav###,cav###,mismatch
+103,nenada,ne.ˈna.ða,4,CV,no,nonword,Wuggy,,he-ri-da,A,104.0,3.0,######,6.0,nen###,nen###,mismatch
+104,sotedo,so.ˈte.ðo,4,CV,no,nonword,Wuggy,,mo-ne-da,A,105.0,3.0,######,6.0,sot###,sot###,mismatch
+105,secino,se.ˈsi.no,4,CV,no,nonword,Wuggy,,de-li-to,A,106.0,3.0,######,6.0,sec###,sec###,mismatch
+106,fasido,fa.ˈsi.ðo,4,CV,no,nonword,Wuggy,,ga-na-do,A,107.0,3.0,######,6.0,fas###,fas###,mismatch
+107,baruda,ba.ˈɾu.ða,4,CV,no,nonword,Wuggy,,sa-lu-do,A,108.0,3.0,######,6.0,bar###,bar###,mismatch
+108,maroba,ma.ˈɾo.βa,4,CV,no,nonword,Wuggy,,pa-lo-ma,A,109.0,3.0,######,6.0,mar###,mar###,mismatch
+109,lumino,lu.ˈmi.no,4,CV,no,nonword,Wuggy,,gu-sa-no,A,110.0,3.0,######,6.0,lum###,lum###,mismatch
+110,cacica,ka.ˈsi.ka,4,CV,no,nonword,Wuggy,,ca-se-ta,A,111.0,2.0,######,6.0,ca####,ca####,match
+111,sinebo,si.ˈne.βo,4,CV,no,nonword,Wuggy,,di-se-ño,A,112.0,2.0,######,6.0,si####,si####,match
+112,nanana,na.ˈna.na,4,CV,no,nonword,Wuggy,,ha-ri-na,A,113.0,2.0,######,6.0,na####,na####,match
+113,selero,se.ˈlɛ.ɾo,4,CV,no,nonword,Wuggy,,me-le-na,A,114.0,2.0,######,6.0,se####,se####,match
+114,masapo,ma.ˈsa.po,4,CV,no,nonword,Wuggy,,pa-si-vo,A,115.0,2.0,######,6.0,ma####,ma####,match
+115,docido,do.ˈsi.ðo,4,CV,no,nonword,Wuggy,,ro-sa-do,A,116.0,2.0,######,6.0,do####,do####,match
+116,saraja,sa.ˈɾa.xa,4,CV,no,nonword,Wuggy,,sa-li-va,A,117.0,2.0,######,6.0,sa####,sa####,match
+117,toceno,to.ˈsɛ.no,4,CV,no,nonword,Wuggy,,so-ne-to,A,118.0,2.0,######,6.0,to####,to####,match
+118,denido,de.ˈni.ðo,4,CV,no,nonword,Wuggy,,re-ca-do,A,119.0,2.0,######,6.0,de####,de####,match
+119,tibido,ti.ˈβi.ðo,4,CV,no,nonword,Wuggy,,vi-sa-do,A,120.0,2.0,######,6.0,ti####,ti####,match
+120,balsún,bal.ˈsũn,4,CVC,no,nonword,Wuggy,,bal-cón,A,121.0,3.0,######,6.0,bal###,bal###,match
+121,vectud,bek̚.ˈtuð,4,CVC,no,nonword,Wuggy,,vir-tud,A,122.0,3.0,######,6.0,vec###,vec###,match
+122,vusmar,bus̬.ˈmaɾ,4,CVC,no,nonword,Wuggy,,vul-gar,A,123.0,3.0,######,6.0,vus###,vus###,match
+123,runcén,rũn.ˈsɛ̃n,4,CVC,no,nonword,Wuggy,,rin-cón,A,124.0,3.0,######,6.0,run###,run###,match
+124,gornal,ɡoɾ.ˈnal,4,CVC,no,nonword,Wuggy,,nor-mal,A,125.0,3.0,######,6.0,gor###,gor###,match
+125,pertún,pɛɾ.ˈtũn,4,CVC,no,nonword,Wuggy,,per-dón,A,126.0,3.0,######,6.0,per###,per###,match
+126,rextor,rɛks.ˈtoɾ,4,CVC,no,nonword,Wuggy,,sec-tor,A,127.0,3.0,######,6.0,rex###,rex###,match
+127,carsún,kaɾ.ˈsũn,4,CVC,no,nonword,Wuggy,,car-mín,A,128.0,3.0,######,6.0,car###,car###,match
+128,marnel,maɾ.ˈnɛl,4,CVC,no,nonword,Wuggy,,mar-fil,A,129.0,3.0,######,6.0,mar###,mar###,match
+129,fasvor,fas̬.ˈβoɾ,4,CVC,no,nonword,Wuggy,,fer-vor,A,130.0,3.0,######,6.0,fas###,fas###,match
+130,bustún,bus.ˈtũn,4,CVC,no,nonword,Wuggy,,bas-tón,A,131.0,2.0,######,6.0,bu####,bu####,mismatch
+131,mortel,moɾ.ˈtɛl,4,CVC,no,nonword,Wuggy,,car-tel,A,132.0,2.0,######,6.0,mo####,mo####,mismatch
+132,culbor,kul.ˈβoɾ,4,CVC,no,nonword,Wuggy,,cur-sor,A,133.0,2.0,######,6.0,cu####,cu####,mismatch
+133,vespiz,bɛs.ˈpis,4,CVC,no,nonword,Wuggy,,des-liz,A,134.0,2.0,######,6.0,ve####,ve####,mismatch
+134,malcat,mal.ˈkat,4,CVC,no,nonword,Wuggy,,mal-dad,A,135.0,2.0,######,6.0,ma####,ma####,mismatch
+135,pertal,pɛɾ.ˈtal,4,CVC,no,nonword,Wuggy,,pos-tal,A,136.0,2.0,######,6.0,pe####,pe####,mismatch
+136,repsel,rɛp.ˈsɛl,4,CVC,no,nonword,Wuggy,,rep-til,A,137.0,2.0,######,6.0,re####,re####,mismatch
+137,bartín,baɾ.ˈtĩn,4,CVC,no,nonword,Wuggy,,sar-tén,A,138.0,2.0,######,6.0,ba####,ba####,mismatch
+138,simbor,sĩm.ˈboɾ,4,CVC,no,nonword,Wuggy,,tam-bor,A,139.0,2.0,######,6.0,si####,si####,mismatch
+139,purnar,puɾ.ˈnaɾ,4,CVC,no,nonword,Wuggy,,pul-gar,A,140.0,2.0,######,6.0,pu####,pu####,mismatch
+140,gardín,ɡaɾ.ˈðĩn,4,CVC,no,nonword,Wuggy,,jar-dín,A,141.0,3.0,######,6.0,gar###,gar###,match
+141,partor,paɾ.ˈtoɾ,4,CVC,no,nonword,Wuggy,,pin-tor,A,142.0,3.0,######,6.0,par###,par###,match
+142,pontal,põn.ˈtal,4,CVC,no,nonword,Wuggy,,men-tal,A,143.0,3.0,######,6.0,pon###,pon###,match
+143,pertor,pɛɾ.ˈtoɾ,4,CVC,no,nonword,Wuggy,,pas-tor,A,144.0,3.0,######,6.0,per###,per###,match
+144,penril,pɛ̃n.ˈril,4,CVC,no,nonword,Wuggy,,per-fil,A,145.0,3.0,######,6.0,pen###,pen###,match
+145,laftor,laf.ˈtoɾ,4,CVC,no,nonword,Wuggy,,fac-tor,A,146.0,3.0,######,6.0,laf###,laf###,match
+146,pistal,pis.ˈtal,4,CVC,no,nonword,Wuggy,,por-tal,A,147.0,3.0,######,6.0,pis###,pis###,match
+147,calbún,kal.ˈβũn,4,CVC,no,nonword,Wuggy,,car-bón,A,148.0,3.0,######,6.0,cal###,cal###,match
+148,contís,kõn.ˈtis,4,CVC,no,nonword,Wuggy,,cor-tés,A,149.0,3.0,######,6.0,con###,con###,match
+149,deslún,dɛs̬.ˈlũn,4,CVC,no,nonword,Wuggy,,des-ván,A,150.0,3.0,######,6.0,des###,des###,match
+150,bompún,bõm.ˈpũn,4,CVC,no,nonword,Wuggy,,bom-bón,A,151.0,2.0,######,6.0,bo####,bo####,mismatch
+151,jezmún,xɛs̬.ˈmũn,4,CVC,no,nonword,Wuggy,,jaz-mín,A,152.0,2.0,######,6.0,je####,je####,mismatch
+152,dilfún,dil.ˈfũn,4,CVC,no,nonword,Wuggy,,del-fín,A,153.0,2.0,######,6.0,di####,di####,mismatch
+153,halfún,al.ˈfũn,4,CVC,no,nonword,Wuggy,,hal-cón,A,154.0,2.0,######,6.0,ha####,ha####,mismatch
+154,mistel,mis.ˈtɛl,4,CVC,no,nonword,Wuggy,,pas-tel,A,155.0,2.0,######,6.0,mi####,mi####,mismatch
+155,pulpún,pul.ˈpũn,4,CVC,no,nonword,Wuggy,,pul-món,A,156.0,2.0,######,6.0,pu####,pu####,mismatch
+156,salbún,sal.ˈβũn,4,CVC,no,nonword,Wuggy,,sal-món,A,157.0,2.0,######,6.0,sa####,sa####,mismatch
+157,rultún,rul.ˈtũn,4,CVC,no,nonword,Wuggy,,sul-tán,A,158.0,2.0,######,6.0,ru####,ru####,mismatch
+158,taptil,tap̚.ˈtil,4,CVC,no,nonword,Wuggy,,tex-til,A,159.0,2.0,######,6.0,ta####,ta####,mismatch
+159,volgún,bol.ˈɣũn,4,CVC,no,nonword,Wuggy,,vol-cán,A,160.0,2.0,######,6.0,vo####,vo####,mismatch
+160,densos,ˈdɛ̃n.sos,1,CVC,yes,word,Alameda & Cuentos 1995,0.5528846153846154,,A,161.0,3.0,######,6.0,den###,den###,match
+161,mástil,ˈmas.til,1,CVC,yes,word,Alameda & Cuentos 1995,1.7788461538461535,,A,162.0,3.0,######,6.0,más###,más###,match
+162,bandos,ˈbãn.dos,1,CVC,yes,word,Alameda & Cuentos 1995,2.2596153846153846,,A,163.0,3.0,######,6.0,ban###,ban###,match
+163,perlas,ˈpɛɾ.las,1,CVC,yes,word,Alameda & Cuentos 1995,3.7259615384615374,,A,164.0,3.0,######,6.0,per###,per###,match
+164,cascos,ˈkas.kos,1,CVC,yes,word,Alameda & Cuentos 1995,3.629807692307692,,A,165.0,3.0,######,6.0,cas###,cas###,match
+165,bastan,ˈbas.tãn,1,CVC,yes,word,Alameda & Cuentos 1995,0.7932692307692307,,A,166.0,3.0,######,6.0,bas###,bas###,match
+166,culpas,ˈkul.pas,1,CVC,yes,word,Alameda & Cuentos 1995,4.855769230769232,,A,167.0,3.0,######,6.0,cul###,cul###,match
+167,santos,ˈsãn.tos,1,CVC,yes,word,Alameda & Cuentos 1995,13.798076923076925,,A,168.0,3.0,######,6.0,san###,san###,match
+168,persas,ˈpɛɾ.sas,1,CVC,yes,word,Alameda & Cuentos 1995,1.2019230769230769,,A,169.0,3.0,######,6.0,per###,per###,match
+169,portas,ˈpoɾ.tas,1,CVC,yes,word,Alameda & Cuentos 1995,2.836538461538461,,A,170.0,3.0,######,6.0,por###,por###,match
+170,cargas,ˈkaɾ.ɣas,1,CVC,yes,word,Alameda & Cuentos 1995,6.7548076923076925,,A,171.0,2.0,######,6.0,ca####,ca####,mismatch
+171,martes,ˈmaɾ.tes,1,CVC,yes,word,Alameda & Cuentos 1995,33.197115384615394,,A,172.0,2.0,######,6.0,ma####,ma####,mismatch
+172,cursos,ˈkuɾ.sos,1,CVC,yes,word,Alameda & Cuentos 1995,3.8461538461538463,,A,173.0,2.0,######,6.0,cu####,cu####,mismatch
+173,tándem,ˈtãn.dɛ̃m,1,CVC,yes,word,Alameda & Cuentos 1995,0.14423076923076922,,A,174.0,2.0,######,6.0,tá####,tá####,mismatch
+174,malvas,ˈmal.βas,1,CVC,yes,word,Alameda & Cuentos 1995,0.07211538461538461,,A,175.0,2.0,######,6.0,ma####,ma####,mismatch
+175,cardos,ˈkaɾ.ðos,1,CVC,yes,word,Alameda & Cuentos 1995,0.3125,,A,176.0,2.0,######,6.0,ca####,ca####,mismatch
+176,mangos,ˈmãn.ɡos,1,CVC,yes,word,Alameda & Cuentos 1995,4.278846153846153,,A,177.0,2.0,######,6.0,ma####,ma####,mismatch
+177,carnes,ˈkaɾ.nes,1,CVC,yes,word,Alameda & Cuentos 1995,2.5961538461538463,,A,178.0,2.0,######,6.0,ca####,ca####,mismatch
+178,cantos,ˈkãn.tos,1,CVC,yes,word,Alameda & Cuentos 1995,1.1057692307692308,,A,179.0,2.0,######,6.0,ca####,ca####,mismatch
+179,palmos,ˈpal.mos,1,CVC,yes,word,Alameda & Cuentos 1995,0.048076923076923066,,A,180.0,2.0,######,6.0,pa####,pa####,mismatch
+180,salsas,ˈsal.sas,1,CVC,yes,word,Alameda & Cuentos 1995,0.9615384615384616,,A,181.0,3.0,######,6.0,sal###,sal###,match
+181,carpas,ˈkaɾ.pas,1,CVC,yes,word,Alameda & Cuentos 1995,0.9375,,A,182.0,3.0,######,6.0,car###,car###,match
+182,polvos,ˈpol.βos,1,CVC,yes,word,Alameda & Cuentos 1995,1.3942307692307692,,A,183.0,3.0,######,6.0,pol###,pol###,match
+183,sendos,ˈsɛ̃n.dos,1,CVC,yes,word,Alameda & Cuentos 1995,0.07211538461538461,,A,184.0,3.0,######,6.0,sen###,sen###,match
+184,purgas,ˈpuɾ.ɣas,1,CVC,yes,word,Alameda & Cuentos 1995,0.21634615384615385,,A,185.0,3.0,######,6.0,pur###,pur###,match
+185,sectas,ˈsek̚.tas,1,CVC,yes,word,Alameda & Cuentos 1995,0.7451923076923077,,A,186.0,3.0,######,6.0,sec###,sec###,match
+186,caldos,ˈkal.dos,1,CVC,yes,word,Alameda & Cuentos 1995,0.09615384615384616,,A,187.0,3.0,######,6.0,cal###,cal###,match
+187,bardas,ˈbaɾ.ðas,1,CVC,yes,word,Alameda & Cuentos 1995,0.048076923076923066,,A,188.0,3.0,######,6.0,bar###,bar###,match
+188,captan,ˈkap̚.tãn,1,CVC,yes,word,Alameda & Cuentos 1995,0.8653846153846153,,A,189.0,3.0,######,6.0,cap###,cap###,match
+189,cargos,ˈkaɾ.ɣos,1,CVC,yes,word,Alameda & Cuentos 1995,31.778846153846153,,A,190.0,3.0,######,6.0,car###,car###,match
+190,bancas,ˈbãn.kas,1,CVC,yes,word,Alameda & Cuentos 1995,1.1538461538461535,,A,191.0,2.0,######,6.0,ba####,ba####,mismatch
+191,mangas,ˈmãn.ɡas,1,CVC,yes,word,Alameda & Cuentos 1995,3.2692307692307687,,A,192.0,2.0,######,6.0,ma####,ma####,mismatch
+192,bastos,ˈbas.tos,1,CVC,yes,word,Alameda & Cuentos 1995,0.3125,,A,193.0,2.0,######,6.0,ba####,ba####,mismatch
+193,cóndor,ˈkõn.doɾ,1,CVC,yes,word,Alameda & Cuentos 1995,1.6826923076923077,,A,194.0,2.0,######,6.0,có####,có####,mismatch
+194,marcos,ˈmaɾ.kos,1,CVC,yes,word,Alameda & Cuentos 1995,7.908653846153847,,A,195.0,2.0,######,6.0,ma####,ma####,mismatch
+195,césped,ˈsɛs.pɛð,1,CVC,yes,word,Alameda & Cuentos 1995,14.254807692307693,,A,196.0,2.0,######,6.0,cé####,cé####,mismatch
+196,pescan,ˈpɛs.kãn,1,CVC,yes,word,Alameda & Cuentos 1995,0.8173076923076923,,A,197.0,2.0,######,6.0,pe####,pe####,mismatch
+197,castas,ˈkas.tas,1,CVC,yes,word,Alameda & Cuentos 1995,0.28846153846153844,,A,198.0,2.0,######,6.0,ca####,ca####,mismatch
+198,cartas,ˈkaɾ.tas,1,CVC,yes,word,Alameda & Cuentos 1995,59.158653846153854,,A,199.0,2.0,######,6.0,ca####,ca####,mismatch
+199,puntas,ˈpũn.tas,1,CVC,yes,word,Alameda & Cuentos 1995,4.495192307692308,,A,200.0,2.0,######,6.0,pu####,pu####,mismatch
+200,sádica,ˈsa.ði.ka,1,CV,yes,word,Alameda & Cuentos 1995,0.40865384615384615,,A,201.0,3.0,######,6.0,sád###,sád###,mismatch
+201,célula,ˈse.lu.la,1,CV,yes,word,Alameda & Cuentos 1995,8.60576923076923,,A,202.0,3.0,######,6.0,cél###,cél###,mismatch
+202,sábado,ˈsa.βa.ðo,1,CV,yes,word,Alameda & Cuentos 1995,49.25480769230769,,A,203.0,3.0,######,6.0,sáb###,sáb###,mismatch
+203,báculo,ˈba.ku.lo,1,CV,yes,word,Alameda & Cuentos 1995,0.21634615384615385,,A,204.0,3.0,######,6.0,bác###,bác###,mismatch
+204,código,ˈko.ði.ɣo,1,CV,yes,word,Alameda & Cuentos 1995,63.55769230769231,,A,205.0,3.0,######,6.0,cód###,cód###,mismatch
+205,médula,ˈme.ðu.la,1,CV,yes,word,Alameda & Cuentos 1995,6.1538461538461515,,A,206.0,3.0,######,6.0,méd###,méd###,mismatch
+206,rédito,ˈre.ði.to,1,CV,yes,word,Alameda & Cuentos 1995,0.09615384615384616,,A,207.0,3.0,######,6.0,réd###,réd###,mismatch
+207,gótica,ˈɡo.ti.ka,1,CV,yes,word,Alameda & Cuentos 1995,2.836538461538461,,A,208.0,3.0,######,6.0,gót###,gót###,mismatch
+208,cúmulo,ˈku.mu.lo,1,CV,yes,word,Alameda & Cuentos 1995,0.4326923076923077,,A,209.0,3.0,######,6.0,cúm###,cúm###,mismatch
+209,cómoda,ˈko.mo.ða,1,CV,yes,word,Alameda & Cuentos 1995,18.26923076923077,,A,210.0,3.0,######,6.0,cóm###,cóm###,mismatch
+210,sábana,ˈsa.βa.na,1,CV,yes,word,Alameda & Cuentos 1995,3.2692307692307687,,A,211.0,2.0,######,6.0,sá####,sá####,match
+211,rémora,ˈre.mo.ɾa,1,CV,yes,word,Alameda & Cuentos 1995,0.12019230769230768,,A,212.0,2.0,######,6.0,ré####,ré####,match
+212,dígito,ˈdi.xi.to,1,CV,yes,word,Alameda & Cuentos 1995,0.28846153846153844,,A,213.0,2.0,######,6.0,dí####,dí####,match
+213,cápita,ˈka.pi.ta,1,CV,yes,word,Alameda & Cuentos 1995,0.14423076923076922,,A,214.0,2.0,######,6.0,cá####,cá####,match
+214,cómica,ˈko.mi.ka,1,CV,yes,word,Alameda & Cuentos 1995,3.6057692307692313,,A,215.0,2.0,######,6.0,có####,có####,match
+215,pálida,ˈpa.li.ða,1,CV,yes,word,Alameda & Cuentos 1995,3.2451923076923075,,A,216.0,2.0,######,6.0,pá####,pá####,match
+216,célibe,ˈse.li.βe,1,CV,yes,word,Alameda & Cuentos 1995,0.8894230769230769,,A,217.0,2.0,######,6.0,cé####,cé####,match
+217,módulo,ˈmo.ðu.lo,1,CV,yes,word,Alameda & Cuentos 1995,5.5769230769230775,,A,218.0,2.0,######,6.0,mó####,mó####,match
+218,básica,ˈba.si.ka,1,CV,yes,word,Alameda & Cuentos 1995,5.288461538461538,,A,219.0,2.0,######,6.0,bá####,bá####,match
+219,pájaro,ˈpa.xa.ɾo,1,CV,yes,word,Alameda & Cuentos 1995,23.125,,A,220.0,2.0,######,6.0,pá####,pá####,match
+220,cédula,ˈse.ðu.la,1,CV,yes,word,Alameda & Cuentos 1995,0.3846153846153846,,A,221.0,3.0,######,6.0,céd###,céd###,mismatch
+221,dínamo,ˈdi.na.mo,1,CV,yes,word,Alameda & Cuentos 1995,0.28846153846153844,,A,222.0,3.0,######,6.0,dín###,dín###,mismatch
+222,rótulo,ˈro.tu.lo,1,CV,yes,word,Alameda & Cuentos 1995,0.4567307692307692,,A,223.0,3.0,######,6.0,rót###,rót###,mismatch
+223,década,ˈde.ka.ða,1,CV,yes,word,Alameda & Cuentos 1995,7.3798076923076925,,A,224.0,3.0,######,6.0,déc###,déc###,mismatch
+224,hálito,ˈa.li.to,1,CV,yes,word,Alameda & Cuentos 1995,0.16826923076923075,,A,225.0,3.0,######,6.0,hál###,hál###,mismatch
+225,víbora,ˈbi.βo.ɾa,1,CV,yes,word,Alameda & Cuentos 1995,5.144230769230768,,A,226.0,3.0,######,6.0,víb###,víb###,mismatch
+226,método,ˈme.to.ðo,1,CV,yes,word,Alameda & Cuentos 1995,11.177884615384617,,A,227.0,3.0,######,6.0,mét###,báj###,mismatch
+227,cálida,ˈka.li.ða,1,CV,yes,word,Alameda & Cuentos 1995,4.855769230769232,,A,228.0,3.0,######,6.0,cál###,cál###,mismatch
+228,púbico,ˈpu.βi.ko,1,CV,yes,word,Alameda & Cuentos 1995,2.4278846153846154,,A,229.0,3.0,######,6.0,púb###,púb###,mismatch
+229,mérito,ˈmɛ.ɾi.to,1,CV,yes,word,Alameda & Cuentos 1995,5.3605769230769225,,A,230.0,3.0,######,6.0,mér###,mér###,mismatch
+230,páramo,ˈpa.ɾa.mo,1,CV,yes,word,Alameda & Cuentos 1995,0.985576923076923,,A,231.0,2.0,######,6.0,pá####,pá####,match
+231,máximo,ˈmak.si.mo,1,CV,yes,word,Alameda & Cuentos 1995,31.466346153846153,,A,232.0,2.0,######,6.0,má####,má####,match
+232,sódico,ˈso.ði.ko,1,CV,yes,word,Alameda & Cuentos 1995,0.6009615384615384,,A,233.0,2.0,######,6.0,só####,só####,match
+233,hábito,ˈa.βi.to,1,CV,yes,word,Alameda & Cuentos 1995,7.836538461538463,,A,234.0,2.0,######,6.0,há####,há####,match
+234,hélice,ˈe.li.se,1,CV,yes,word,Alameda & Cuentos 1995,1.3221153846153846,,A,235.0,2.0,######,6.0,hé####,hé####,match
+235,pésimo,ˈpe.si.mo,1,CV,yes,word,Alameda & Cuentos 1995,8.677884615384615,,A,236.0,2.0,######,6.0,pé####,pé####,match
+236,décima,ˈde.si.ma,1,CV,yes,word,Alameda & Cuentos 1995,2.379807692307692,,A,237.0,2.0,######,6.0,dé####,dé####,match
+237,página,ˈpa.xi.na,1,CV,yes,word,Alameda & Cuentos 1995,30.649038461538463,,A,238.0,2.0,######,6.0,pá####,pá####,match
+238,cámara,ˈka.ma.ɾa,1,CV,yes,word,Alameda & Cuentos 1995,101.12980769230771,,A,239.0,2.0,######,6.0,cá####,cá####,match
+239,bávaro,ˈba.βa.ɾo,1,CV,yes,word,Alameda & Cuentos 1995,0.16826923076923075,,A,240.0,2.0,######,6.0,bá####,bá####,match
+240,vinsos,ˈbĩn.sos,4,CVC,yes,nonword,Wuggy,,densos,A,241.0,3.0,######,6.0,vin###,der###,match
+241,cústil,ˈkus.til,4,CVC,yes,nonword,Wuggy,,mástil,A,242.0,3.0,######,6.0,cús###,cús###,match
+242,rancos,ˈrãn.kos,4,CVC,yes,nonword,Wuggy,,bandos,A,243.0,3.0,######,6.0,ran###,ran###,match
+243,mernas,ˈmɛɾ.nas,4,CVC,yes,nonword,Wuggy,,perlas,A,244.0,3.0,######,6.0,mer###,mer###,match
+244,calbos,ˈkal.βos,4,CVC,yes,nonword,Wuggy,,cascos,A,245.0,3.0,######,6.0,cal###,cal###,match
+245,rostan,ˈros.tãn,4,CVC,yes,nonword,Wuggy,,bastan,A,246.0,3.0,######,6.0,ros###,ros###,match
+246,culsos,ˈkul.sos,4,CVC,yes,nonword,Wuggy,,culpas,A,247.0,3.0,######,6.0,cul###,cul###,match
+247,sancas,ˈsãn.kas,4,CVC,yes,nonword,Wuggy,,santos,A,248.0,3.0,######,6.0,san###,san###,match
+248,messas,ˈmɛs.sas,4,CVC,yes,nonword,Wuggy,,persas,A,249.0,3.0,######,6.0,mes###,mes###,match
+249,mostas,ˈmos.tas,4,CVC,yes,nonword,Wuggy,,portas,A,250.0,3.0,######,6.0,mos###,pin###,match
+250,cartes,ˈkaɾ.tes,4,CVC,yes,nonword,Wuggy,,cargas,A,251.0,2.0,######,6.0,ca####,ca####,mismatch
+251,mardas,ˈmaɾ.ðas,4,CVC,yes,nonword,Wuggy,,martes,A,252.0,2.0,######,6.0,ma####,ma####,mismatch
+252,culmos,ˈkul.mos,4,CVC,yes,nonword,Wuggy,,cursos,A,253.0,2.0,######,6.0,cu####,cu####,mismatch
+253,túndet,ˈtũn.dɛt,4,CVC,yes,nonword,Wuggy,,tándem,A,254.0,2.0,######,6.0,tú####,tú####,mismatch
+254,malbes,ˈmal.βes,4,CVC,yes,nonword,Wuggy,,malvas,A,255.0,2.0,######,6.0,ma####,ma####,mismatch
+255,carnas,ˈkaɾ.nas,4,CVC,yes,nonword,Wuggy,,cardos,A,256.0,2.0,######,6.0,ca####,ca####,mismatch
+256,marnos,ˈmaɾ.nos,4,CVC,yes,nonword,Wuggy,,mangos,A,257.0,2.0,######,6.0,ma####,ma####,mismatch
+257,canres,ˈkãn.res,4,CVC,yes,nonword,Wuggy,,carnes,A,258.0,2.0,######,6.0,ca####,ca####,mismatch
+258,maltos,ˈmal.tos,4,CVC,yes,nonword,Wuggy,,cantos,A,259.0,2.0,######,6.0,ma####,ma####,mismatch
+259,pasnos,ˈpas̬.nos,4,CVC,yes,nonword,Wuggy,,palmos,A,260.0,2.0,######,6.0,pa####,pa####,mismatch
+260,talmas,ˈtal.mas,4,CVC,yes,nonword,Wuggy,,salsas,A,261.0,3.0,######,6.0,tal###,tal###,match
+261,carsos,ˈkaɾ.sos,4,CVC,yes,nonword,Wuggy,,carpas,A,262.0,3.0,######,6.0,car###,car###,match
+262,melvos,ˈmɛl.βos,4,CVC,yes,nonword,Wuggy,,polvos,A,263.0,3.0,######,6.0,mel###,mel###,match
+263,sentes,ˈsɛ̃n.tes,4,CVC,yes,nonword,Wuggy,,sendos,A,264.0,3.0,######,6.0,sen###,sen###,match
+264,mursas,ˈmuɾ.sas,4,CVC,yes,nonword,Wuggy,,purgas,A,265.0,3.0,######,6.0,mur###,mur###,match
+265,tictas,ˈtik̚.tas,4,CVC,yes,nonword,Wuggy,,sectas,A,266.0,3.0,######,6.0,tic###,tic###,match
+266,camlos,ˈkãm.los,4,CVC,yes,nonword,Wuggy,,caldos,A,267.0,3.0,######,6.0,cam###,cam###,match
+267,rarcas,ˈraɾ.kas,4,CVC,yes,nonword,Wuggy,,bardas,A,268.0,3.0,######,6.0,rar###,rar###,match
+268,coltan,ˈkol.tãn,4,CVC,yes,nonword,Wuggy,,captan,A,269.0,3.0,######,6.0,col###,col###,match
+269,carmas,ˈkaɾ.mas,4,CVC,yes,nonword,Wuggy,,cargos,A,270.0,3.0,######,6.0,car###,car###,match
+270,randas,ˈrãn.das,4,CVC,yes,nonword,Wuggy,,bancas,A,271.0,2.0,######,6.0,ra####,ra####,mismatch
+271,marsas,ˈmaɾ.sas,4,CVC,yes,nonword,Wuggy,,mangas,A,272.0,2.0,######,6.0,ma####,ma####,mismatch
+272,lustos,ˈlus.tos,4,CVC,yes,nonword,Wuggy,,bastos,A,273.0,2.0,######,6.0,lu####,lu####,mismatch
+273,círdor,ˈsiɾ.ðoɾ,4,CVC,yes,nonword,Wuggy,,cóndor,A,274.0,2.0,######,6.0,cí####,cí####,mismatch
+274,merbos,ˈmɛɾ.βos,4,CVC,yes,nonword,Wuggy,,marcos,A,275.0,2.0,######,6.0,me####,me####,mismatch
+275,cílped,ˈsil.pɛð,4,CVC,yes,nonword,Wuggy,,césped,A,276.0,2.0,######,6.0,cí####,cí####,mismatch
+276,puncan,ˈpũn.kãn,4,CVC,yes,nonword,Wuggy,,pescan,A,277.0,2.0,######,6.0,pu####,pu####,mismatch
+277,contas,ˈkõn.tas,4,CVC,yes,nonword,Wuggy,,castas,A,278.0,2.0,######,6.0,co####,co####,mismatch
+278,caltos,ˈkal.tos,4,CVC,yes,nonword,Wuggy,,cartas,A,279.0,2.0,######,6.0,ca####,ma####,mismatch
+279,pestas,ˈpɛs.tas,4,CVC,yes,nonword,Wuggy,,puntas,A,280.0,2.0,######,6.0,pe####,pe####,mismatch
+280,núdiña,ˈnu.ði.ɲa,4,CV,yes,nonword,Wuggy,,sádica,A,281.0,3.0,######,6.0,núd###,núd###,mismatch
+281,cúcuga,ˈku.ku.ɣa,4,CV,yes,nonword,Wuggy,,célula,A,282.0,3.0,######,6.0,cúc###,cúc###,mismatch
+282,núrado,ˈnu.ɾa.ðo,4,CV,yes,nonword,Wuggy,,sábado,A,283.0,3.0,######,6.0,núr###,núr###,mismatch
+283,núcuso,ˈnu.ku.so,4,CV,yes,nonword,Wuggy,,báculo,A,284.0,3.0,######,6.0,núc###,núc###,mismatch
+284,cúciga,ˈku.si.ɣa,4,CV,yes,nonword,Wuggy,,código,A,285.0,3.0,######,6.0,cúc###,cúc###,mismatch
+285,túduga,ˈtu.ðu.ɣa,4,CV,yes,nonword,Wuggy,,médula,A,286.0,3.0,######,6.0,túd###,túd###,mismatch
+286,túdiro,ˈtu.ði.ɾo,4,CV,yes,nonword,Wuggy,,rédito,A,287.0,3.0,######,6.0,túd###,túd###,mismatch
+287,núdica,ˈnu.ði.ka,4,CV,yes,nonword,Wuggy,,gótica,A,288.0,3.0,######,6.0,núd###,núd###,mismatch
+288,cúcuho,ˈku.ku.o,4,CV,yes,nonword,Wuggy,,cúmulo,A,289.0,3.0,######,6.0,cúc###,cúc###,mismatch
+289,cúcuda,ˈku.ku.ða,4,CV,yes,nonword,Wuggy,,cómoda,A,290.0,3.0,######,6.0,cúc###,cúc###,mismatch
+290,núsana,ˈnu.sa.na,4,CV,yes,nonword,Wuggy,,sábana,A,291.0,2.0,######,6.0,nú####,nú####,match
+291,túdora,ˈtu.ðo.ɾa,4,CV,yes,nonword,Wuggy,,rémora,A,292.0,2.0,######,6.0,tú####,tú####,match
+292,núlito,ˈnu.li.to,4,CV,yes,nonword,Wuggy,,dígito,A,293.0,2.0,######,6.0,nú####,nú####,match
+293,cúcisa,ˈku.si.sa,4,CV,yes,nonword,Wuggy,,cápita,A,294.0,2.0,######,6.0,cú####,cú####,match
+294,cúcija,ˈku.si.xa,4,CV,yes,nonword,Wuggy,,cómica,A,295.0,2.0,######,6.0,cú####,cú####,match
+295,túsida,ˈtu.si.ða,4,CV,yes,nonword,Wuggy,,pálida,A,296.0,2.0,######,6.0,tú####,tú####,match
+296,cúcige,ˈku.si.xe,4,CV,yes,nonword,Wuggy,,célibe,A,297.0,2.0,######,6.0,cú####,cú####,match
+297,túdolo,ˈtu.ðo.lo,4,CV,yes,nonword,Wuggy,,módulo,A,298.0,2.0,######,6.0,tú####,tú####,match
+298,núrica,ˈnu.ɾi.ka,4,CV,yes,nonword,Wuggy,,básica,A,299.0,2.0,######,6.0,nú####,nú####,match
+299,túlaro,ˈtu.la.ɾo,4,CV,yes,nonword,Wuggy,,pájaro,A,300.0,2.0,######,6.0,tú####,tú####,match
+300,cúcuña,ˈku.ku.ɲa,4,CV,yes,nonword,Wuggy,,cédula,A,301.0,3.0,######,6.0,cúc###,cúc###,mismatch
+301,núzamo,ˈnu.sa.mo,4,CV,yes,nonword,Wuggy,,dínamo,A,302.0,3.0,######,6.0,núz###,núz###,mismatch
+302,túzulo,ˈtu.su.lo,4,CV,yes,nonword,Wuggy,,rótulo,A,303.0,3.0,######,6.0,túz###,túz###,mismatch
+303,núrada,ˈnu.ɾa.ða,4,CV,yes,nonword,Wuggy,,década,A,304.0,3.0,######,6.0,núr###,núr###,mismatch
+304,núcito,ˈnu.si.to,4,CV,yes,nonword,Wuggy,,hálito,A,305.0,3.0,######,6.0,núc###,núd###,mismatch
+305,núvora,ˈnu.βo.ɾa,4,CV,yes,nonword,Wuggy,,víbora,A,306.0,3.0,######,6.0,núv###,núv###,mismatch
+306,sécoda,ˈse.ko.ða,4,CV,yes,nonword,Wuggy,,método,A,307.0,3.0,######,6.0,séc###,túr###,mismatch
+307,cúvira,ˈku.βi.ɾa,4,CV,yes,nonword,Wuggy,,cálida,A,308.0,3.0,######,6.0,cúv###,cúv###,mismatch
+308,túvico,ˈtu.βi.ko,4,CV,yes,nonword,Wuggy,,púbico,A,309.0,3.0,######,6.0,túv###,túv###,mismatch
+309,túrato,ˈtu.ɾa.to,4,CV,yes,nonword,Wuggy,,mérito,A,310.0,3.0,######,6.0,túr###,túr###,mismatch
+310,túrazo,ˈtu.ɾa.so,4,CV,yes,nonword,Wuggy,,páramo,A,311.0,2.0,######,6.0,tú####,tú####,match
+311,túcimo,ˈtu.si.mo,4,CV,yes,nonword,Wuggy,,máximo,A,312.0,2.0,######,6.0,tú####,tú####,match
+312,núdizo,ˈnu.ði.so,4,CV,yes,nonword,Wuggy,,sódico,A,313.0,2.0,######,6.0,nú####,nú####,match
+313,núrito,ˈnu.ɾi.to,4,CV,yes,nonword,Wuggy,,hábito,A,314.0,2.0,######,6.0,nú####,nú####,match
+314,núcice,ˈnu.si.se,4,CV,yes,nonword,Wuggy,,hélice,A,315.0,2.0,######,6.0,nú####,nú####,match
+315,túsipo,ˈtu.si.po,4,CV,yes,nonword,Wuggy,,pésimo,A,316.0,2.0,######,6.0,tú####,tú####,match
+316,núcija,ˈnu.si.xa,4,CV,yes,nonword,Wuggy,,décima,A,317.0,2.0,######,6.0,nú####,nú####,match
+317,túfina,ˈtu.fi.na,4,CV,yes,nonword,Wuggy,,página,A,318.0,2.0,######,6.0,tú####,tú####,match
+318,cúcasa,ˈku.ka.sa,4,CV,yes,nonword,Wuggy,,cámara,A,319.0,2.0,######,6.0,cú####,cú####,match
+319,núvara,ˈnu.βa.ɾa,4,CV,yes,nonword,Wuggy,,bávaro,A,320.0,2.0,######,6.0,nú####,nú####,match

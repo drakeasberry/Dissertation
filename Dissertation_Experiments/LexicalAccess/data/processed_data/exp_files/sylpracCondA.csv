@@ -1,0 +1,11 @@
+,Word,corrSyl,corrAns,leftKey,rightKey,condition
+0,caldera,CAL,2,CAL,CA,AB
+1,cantera,CAN,2,CAN,CA,AB
+2,ciruela,CI,3,CIR,CI,AB
+3,culata,CU,3,CUL,CU,AB
+4,gustazo,GUS,2,GUS,GU,AB
+5,latencia,LA,3,LAT,LA,AB
+6,pericia,PE,3,PER,PE,AB
+7,pupila,PU,3,PUP,PU,AB
+8,sendero,SEN,2,SEN,SE,AB
+9,sordina,SOR,2,SOR,SO,AB

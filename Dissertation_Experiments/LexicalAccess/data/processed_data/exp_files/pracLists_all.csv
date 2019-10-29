@@ -1,0 +1,17 @@
+Word,corrAns,initialSylStress,sylStruc,wordStatus,source,freq_WPM,numRevealed,masking,Length,PrimeCalc,Prime,matching
+módico,1,yes,CV,word,Alameda & Cuentos 1995,0.07211538461538461,3.0,######,6.0,mód###,mód###,mismatch
+cúbico,1,yes,CV,word,Alameda & Cuentos 1995,0.1923077,2.0,######,6.0,cú####,cú####,match
+cárcel,1,yes,CVC,word,Alameda & Cuentos 1995,79.35096153846153,2.0,######,6.0,cá####,cá####,mismatch
+selvas,1,yes,CVC,word,Alameda & Cuentos 1995,0.8413461538461539,3.0,######,6.0,sel###,sel###,match
+mantel,1,no,CVC,word,Alameda & Cuentos 1995,1.4663461538461537,3.0,######,6.0,man###,man###,match
+carnet,1,no,CVC,word,Alameda & Cuentos 1995,1.7548076923076923,2.0,######,6.0,ca####,ca####,mismatch
+balazo,1,no,CV,word,NIM,3.4134615384615383,2.0,######,6.0,ba####,ba####,match
+dinero,1,no,CV,word,NIM,721.7307692307692,3.0,######,6.0,din###,din###,mismatch
+túcico,4,yes,CV,nonword,Wuggy,NA,3.0,######,6.0,túc###,túc###,mismatch
+cúcipo,4,yes,CV,nonword,Wuggy,NA,2.0,######,6.0,cú####,cú####,match
+círnel,4,yes,CVC,nonword,Wuggy,NA,2.0,######,6.0,cí####,cí####,mismatch
+seldes,4,yes,CVC,nonword,Wuggy,NA,3.0,######,6.0,sel###,sel###,match
+mandol,4,no,CVC,nonword,Wuggy,NA,3.0,######,6.0,man###,man###,match
+carvot,4,no,CVC,nonword,Wuggy,NA,2.0,######,6.0,ca####,ca####,mismatch
+varizo,4,no,CV,nonword,Wuggy,NA,2.0,######,6.0,va####,va####,match
+ticera,4,no,CV,nonword,Wuggy,NA,3.0,######,6.0,tic###,tic###,mismatch
