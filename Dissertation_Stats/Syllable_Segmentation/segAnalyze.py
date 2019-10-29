@@ -1,9 +1,9 @@
 # Prepare all files from experiment and run R analysis
 import os
-import sys
-sys.path.append('../../scripts/')
-import dataPreparation
-
+#import sys
+#sys.path.append('../../scripts/') # commented out after Julian suggestion
+from scripts import dataPreparation
+import requests
 
 #pandas settings
 #pd.set_option('display.max_rows', 500)
@@ -12,11 +12,11 @@ import dataPreparation
 # Set some global variables
 parentDir = os.getcwd()
 print(parentDir)
-startDir = '../../Dissertation_Experiments/segmentation/data/original_data/part_files/'
-tempDir = '../../Dissertation_Experiments/segmentation/data/temp_data'
-outDir = '../../Dissertation_Experiments/segmentation/data/processed_data/part_files'
-statsSegDir = '../../Dissertation_Stats/Syllable_Segmentation/analyze_data/temp_data'
-statsOutDir = '../../Dissertation_Stats/Syllable_Segmentation/analyze_data/rFiles'
+startDir = 'Dissertation_Experiments/segmentation/data/original_data/part_files/'
+tempDir = 'Dissertation_Experiments/segmentation/data/temp_data'
+outDir = 'Dissertation_Experiments/segmentation/data/processed_data/part_files'
+statsSegDir = 'Dissertation_Stats/Syllable_Segmentation/analyze_data/temp_data'
+statsOutDir = 'Dissertation_Stats/Syllable_Segmentation/analyze_data/rFiles'
 
 # Create lists for separate file needed to analyze all experiments
 demCols = ['partNum', 'session', 'age', 'gender', 'birthCountry', 'placeResidence', 'education', 'preferLanguage',
@@ -49,7 +49,7 @@ strListOfLists = ['lexEngCols', 'lexEspCols', 'sylCols', 'blpCols', 'segCols']
 csvList = dataPreparation.collectFiles(parentDir,startDir) # create list of csv files to modify
 # change the headers of csv files
 # may have to change relative file path of json map file if you change folder structure
-dataPreparation.reMapPandasHeaders('../../Dissertation_Stats/replacement_map.json',csvList,startDir,tempDir)
+dataPreparation.reMapPandasHeaders('Dissertation_Stats/replacement_map.json',csvList,startDir,tempDir)
 
 # get previously modified csv file as list
 csvModList = dataPreparation.collectFiles(parentDir,tempDir)
