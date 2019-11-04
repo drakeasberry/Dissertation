@@ -1,9 +1,7 @@
 # Prepare all files from experiment and run R analysis
 import os
-#import sys
-#sys.path.append('../../scripts/') # commented out after Julian suggestion
-from scripts import dataPreparation
-import requests
+from diss_scripts import dataPreparation
+
 
 #pandas settings
 #pd.set_option('display.max_rows', 500)
@@ -43,7 +41,7 @@ segCols = [*seg, *demCols]
 segKeepCols = [*lexDuplicates, *lexEsp, *lexEng, *sylCols, *segCols, *blpCols, *demCols]
 listOfLists = [lexEngCols, lexEspCols, sylCols, blpCols, segCols]
 strListOfLists = ['lexEngCols', 'lexEspCols', 'sylCols', 'blpCols', 'segCols']
-
+print(strListOfLists)
 #tempDir = startDir + '/temp_csv' # is there a way force the creation of this directory if it does not exist?
 
 csvList = dataPreparation.collectFiles(parentDir,startDir) # create list of csv files to modify
@@ -69,6 +67,16 @@ for curList in listOfLists:
        i += 1
 
 '''
+
+csvProcList = dataPreparation.collectFiles(parentDir, outDir)
+# print(csvProcList,len(csvProcList))
+import pandas as pd
+for file in csvProcList[0:1]:
+       readDir = outDir + '/' + file
+       df = pd.read_csv(readDir, index_col=0)
+
+df.info()
+
 # get previously modified csv file as list
 csvSplitList = dataPreparation.collectFiles(parentDir, statsSegDir)
 # Eliminates all unnecessary columns written by PsychoPy
