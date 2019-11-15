@@ -41,7 +41,7 @@ segCols = [*seg, *demCols]
 segKeepCols = [*lexDuplicates, *lexEsp, *lexEng, *sylCols, *segCols, *blpCols, *demCols]
 listOfLists = [lexEngCols, lexEspCols, sylCols, blpCols, segCols]
 strListOfLists = ['lexEngCols', 'lexEspCols', 'sylCols', 'blpCols', 'segCols']
-print(strListOfLists)
+#print(strListOfLists)
 #tempDir = startDir + '/temp_csv' # is there a way force the creation of this directory if it does not exist?
 
 csvList = dataPreparation.collectFiles(parentDir,startDir) # create list of csv files to modify
@@ -51,33 +51,27 @@ dataPreparation.reMapPandasHeaders('Dissertation_Stats/replacement_map.json',csv
 
 # get previously modified csv file as list
 csvModList = dataPreparation.collectFiles(parentDir,tempDir)
+
 # Eliminates all unnecessary columns written by PsychoPy
-#print(csvModList)
 dataPreparation.delPsyPyCols(csvModList,segKeepCols,tempDir, outDir)
 
 # get previously modified csv file as list
 csvTaskList = dataPreparation.collectFiles(parentDir,outDir)
-#print(csvTaskList)
+
 # Splits file into subsets for analysis and pastes them into temporary directory of stats
 i = 0
-
 for curList in listOfLists:
        listName = strListOfLists[i]
-       dataPreparation.createAnalysisFiles(csvTaskList,listName, curList,outDir,statsSegDir)
+       dataPreparation.createAnalysisFiles(csvTaskList,listName,curList,outDir,statsSegDir)
        i += 1
 
-'''
+# creates subdirectories in rFiles for each experiment which should be ready for rStudio import
+i = 0
+for curList in listOfLists:
+       listName = strListOfLists[i]
+       list_dir = statsSegDir + '/' + listName
+       print('When i = ',i, 'looks here: ',list_dir)
+       csvFinalList = dataPreparation.collectFiles(parentDir,list_dir)
+       dataPreparation.createAnalysisFiles(csvFinalList,listName,curList,list_dir,statsOutDir)
+       i += 1
 
-csvProcList = dataPreparation.collectFiles(parentDir, outDir)
-# print(csvProcList,len(csvProcList))
-import pandas as pd
-for file in csvProcList[0:1]:
-       readDir = outDir + '/' + file
-       df = pd.read_csv(readDir, index_col=0)
-
-df.info()
-
-# get previously modified csv file as list
-csvSplitList = dataPreparation.collectFiles(parentDir, statsSegDir)
-# Eliminates all unnecessary columns written by PsychoPy
-dataPreparation.delPsyPyCols(csvSplitList, sylCols, statsSegDir, statsOutDir)'''

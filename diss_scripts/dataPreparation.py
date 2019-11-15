@@ -41,26 +41,38 @@ def delPsyPyCols(csvList, keepColumns, input_Dir, output_Dir):
 
     return
 
+# Creates new directories and places new csv anlysis files in appropriate subdirectories
 def createAnalysisFiles(csvList,listName, processLists, input_Dir, output_Dir):
     import pandas as pd
-    import os
     import os.path
     import pathlib
+
+    key_list = ['corrAnsEngV', 'corrAnsEspV', 'sylRespCorr', 'questionNum', 'fillerCarrier']
 
     for file in csvList:
         readDir = input_Dir + '/' + file
         df = pd.read_csv(readDir, index_col=0)
         name, ext = os.path.splitext(file)
-        new_df = df.loc[:,df.columns.isin(processLists)]
-        file = name + '_' + listName + '.csv'
-        #newDir = Path(listName) # NOT WORKING
-        #newDir.mkdir(exist_ok=True) # NOT WORKING
-        #os.mkdir(listName)
+        if input_Dir == 'Dissertation_Experiments/segmentation/data/processed_data/part_files':
+            new_df = df.loc[:,df.columns.isin(processLists)]
+            file = name + '_' + listName + '.csv'
+        else:
+            if input_Dir == 'Dissertation_Stats/Syllable_Segmentation/analyze_data/temp_data/lexEngCols':
+                key = key_list[0]
+            elif input_Dir == 'Dissertation_Stats/Syllable_Segmentation/analyze_data/temp_data/lexEspCols':
+                key = key_list[1]
+            elif input_Dir == 'Dissertation_Stats/Syllable_Segmentation/analyze_data/temp_data/sylCols':
+                key = key_list[2]
+            elif input_Dir == 'Dissertation_Stats/Syllable_Segmentation/analyze_data/temp_data/blpCols':
+                key = key_list[3]
+            elif input_Dir == 'Dissertation_Stats/Syllable_Segmentation/analyze_data/temp_data/segCols':
+                key = key_list[4]
+            else: print('something went wrong')
+
+            new_df=df.dropna(subset=[key])  # working but need variable to iterate 5 tests
 
         writeDir = os.path.join(output_Dir,listName)
         pathlib.Path(writeDir).mkdir(parents=True, exist_ok=True)
-        #os.mkdir(writeDir)
         output_file = os.path.join(writeDir, file)
         new_df.to_csv(output_file)
     return
-#new_df = df
