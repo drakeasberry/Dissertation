@@ -4,9 +4,7 @@ output:
   html_notebook: default
   pdf_document: default
 ---
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+
 
 ```{r}
 # Load Libraries
@@ -37,7 +35,7 @@ for(item in input_vector){
   i <- i + iterator_size
   j <- j + iterator_size
 }
-	return(out_vector)
+  return(out_vector)
 }
 ```
 
@@ -58,14 +56,14 @@ for(item in input_vector){
   i <- i + iterator_size
   j <- j + iterator_size
 }
-	return(out_vector)
+    return(out_vector)
 }
 ```
 
 Do the necessary transformation from PyschoPy Output files
 ```{r}
 # get all csv files from directory
-segDir = 'analyze_data/rFiles/segCols' #set path to directory
+segDir = 'analyze_data' #set path to directory
 segPaths = list.files(path=segDir, pattern = '*.csv', full.names = TRUE) #list all the files with path
 
 for(csv_file in segPaths){
@@ -73,7 +71,7 @@ for(csv_file in segPaths){
   # Trial run on one participant
   participant <- read_csv(csv_file)
   mod_part <- as_tibble(select(participant, block01:block48))
-
+  
   # include header 'targetSyl'
   target_column <- filter(mod_part, row_number() == 11L)
 
@@ -96,19 +94,18 @@ for(csv_file in segPaths){
   # write trnasformed tibble to csv file
   writePath <- file.path(segDir,'transformed/')
   writeDir <- dir.create(writePath, showWarnings = FALSE)
-  print(writePath)
   write_csv(participant,file.path(writePath,filename))
 }
 
 # clean up items no longer needed from environment
-rm(mod_part, target_column,targets, blocks, target_syllable_column, block_column, word_column, csv_file, filename, segDir, writeDir,segPaths,participant)
+rm(mod_part, target_column,targets, blocks, target_syllable_column, block_column, word_column, csv_file, filename, segDir, writeDir, segPaths, participant)
 ```
 
 Load Data for Segmentation Analysis
 ```{r}
 # This block requires 'plyr' and 'readr'
 # Segmentation Data Directory
-segDir = writePath #set path to directory
+segDir = 'analyze_data/transformed' #set path to directory
 segFiles = list.files(path=segDir, pattern = '*.csv', full.names = TRUE) #list all the files with path
 
 # read in all the files into one data frame
@@ -117,7 +114,7 @@ segData = ldply(segFiles, read_csv)
 # import mulitple csv code modified from code posted at this link below https://datascienceplus.com/how-to-import-multiple-csv-files-simultaneously-in-r-and-create-a-data-frame/
 
 # clean up unnecessary items in environment
-rm(segDir,segFiles,writePath)
+rm(segDir,segFiles)
 ```
 
 

@@ -57,21 +57,31 @@ def delPsyPyCols(csv_files, keep_columns, input_dir, output_dir):
     return
 
 # Creates new directories and places new csv anlysis files in appropriate subdirectories
+#dataPreparation.createAnalysisDirectories(csvList_to_split, curList, listName, processed_dir, stats_temp_dir)
 def createAnalysisDirectories(csv_files, list_name, process_lists, input_dir, output_dir):
     for file in csv_files:
+        #print('process list inside function: ',process_lists)
+        #print('input directory inside function: ',input_dir)
         df = readPandas(input_dir, file)
         name, ext = os.path.splitext(file)
+        #print('filename inside function: ',name)
         new_df = df.loc[:,df.columns.isin(process_lists)]
         file = name + '_' + list_name + '.csv'
         writeDir = os.path.join(output_dir, list_name)
+        #print('write directory inside function: ',writeDir)
         pathlib.Path(writeDir).mkdir(parents=True, exist_ok=True)
         output_file = os.path.join(writeDir, file)
+        #print('out file inside function: ',output_file)
         new_df.to_csv(output_file)
     return
 
-# Creates new directories and places new csv anlysis files in appropriate subdirectories
+# Creates new directories and places new csv analysis files in appropriate subdirectories
+# dataPreparation.createAnalysisFiles(csvList_to_subset, curList, list_dir, parent_dir)
 def createAnalysisFiles(csv_files, list_name, input_dir, output_dir):
     subset_key_list = ['corrAnsEngV', 'corrAnsEspV', 'sylRespCorr', 'questionNum', 'fillerCarrier']
+    demo_dir = 'Dissertation_Stats/Demographics/analyze_data'
+    syllable_dir = 'Dissertation_Stats/Syllable_Intuition/analyze_data'
+    segmentation_dir = 'Dissertation_Stats/Syllable_Segmentation/analyze_data'
 
     for file in csv_files:
         df = readPandas(input_dir, file)
@@ -79,20 +89,26 @@ def createAnalysisFiles(csv_files, list_name, input_dir, output_dir):
 
         if input_dir == 'Dissertation_Stats/Syllable_Segmentation/analyze_data/temp_data/lexEngCols':
             key = subset_key_list[0]
+            writeDir = os.path.join(output_dir, demo_dir, list_name)
         elif input_dir == 'Dissertation_Stats/Syllable_Segmentation/analyze_data/temp_data/lexEspCols':
             key = subset_key_list[1]
+            writeDir = os.path.join(output_dir, demo_dir, list_name)
         elif input_dir == 'Dissertation_Stats/Syllable_Segmentation/analyze_data/temp_data/sylCols':
             key = subset_key_list[2]
+            writeDir = os.path.join(output_dir, syllable_dir)
         elif input_dir == 'Dissertation_Stats/Syllable_Segmentation/analyze_data/temp_data/blpCols':
             key = subset_key_list[3]
+            writeDir = os.path.join(output_dir, demo_dir, list_name)
         elif input_dir == 'Dissertation_Stats/Syllable_Segmentation/analyze_data/temp_data/segCols':
             key = subset_key_list[4]
+            writeDir = os.path.join(output_dir, segmentation_dir)
         else: print('something went wrong')
 
         new_df=df.dropna(subset=[key])
 
-        writeDir = os.path.join(output_dir, list_name)
         pathlib.Path(writeDir).mkdir(parents=True, exist_ok=True)
+        #print('write directory inside function: ',writeDir)
         output_file = os.path.join(writeDir, file)
+        #print('out file inside function: ',output_file)
         new_df.to_csv(output_file)
     return

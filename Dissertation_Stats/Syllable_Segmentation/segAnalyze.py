@@ -1,20 +1,15 @@
-# Prepare all files from experiment and run R analysis
+# Prepare all files from experiment and for R analysis
 import os
-from diss_scripts import dataPreparation
+from Scripts_Dissertation import dataPreparation
 
-
-#pandas settings
-#pd.set_option('display.max_rows', 500)
-#pd.set_option('display.max_columns',200)
-
-# Set some global variables
-parentDir = os.getcwd()
-print(parentDir)
-startDir = 'Dissertation_Experiments/segmentation/data/original_data/part_files/'
-tempDir = 'Dissertation_Experiments/segmentation/data/temp_data'
-outDir = 'Dissertation_Experiments/segmentation/data/processed_data/part_files'
-statsSegDir = 'Dissertation_Stats/Syllable_Segmentation/analyze_data/temp_data'
-statsOutDir = 'Dissertation_Stats/Syllable_Segmentation/analyze_data/rFiles'
+# Set some directory paths needed for project
+parent_dir = os.getcwd()
+original_dir = 'Dissertation_Experiments/segmentation/data/original_data/part_files/'
+temp_dir = 'Dissertation_Experiments/segmentation/data/temp_data'
+processed_dir = 'Dissertation_Experiments/segmentation/data/processed_data/part_files'
+stats_temp_dir = 'Dissertation_Stats/Syllable_Segmentation/analyze_data/temp_data'
+stats_out_dir = 'Dissertation_Stats/Syllable_Segmentation/analyze_data'
+directory_list = [original_dir, temp_dir, processed_dir, stats_temp_dir, stats_out_dir]
 
 # Create lists for separate file needed to analyze all experiments
 demCols = ['partNum', 'session', 'age', 'gender', 'birthCountry', 'placeResidence', 'education', 'preferLanguage',
@@ -39,39 +34,39 @@ sylCols = [*syl, *demCols]
 blpCols = [*blp, *demCols]
 segCols = [*seg, *demCols]
 segKeepCols = [*lexDuplicates, *lexEsp, *lexEng, *sylCols, *segCols, *blpCols, *demCols]
-listOfLists = [lexEngCols, lexEspCols, sylCols, blpCols, segCols]
-strListOfLists = ['lexEngCols', 'lexEspCols', 'sylCols', 'blpCols', 'segCols']
-#print(strListOfLists)
-#tempDir = startDir + '/temp_csv' # is there a way force the creation of this directory if it does not exist?
+listOfLists = {'lexEngCols':lexEngCols, 'lexEspCols':lexEspCols, 'sylCols':sylCols, 'blpCols':blpCols, 'segCols':segCols}
 
-csvList = dataPreparation.collectFiles(parentDir,startDir) # create list of csv files to modify
+# create directory structure for project
+for directory in directory_list:
+    dataPreparation.createDirectory(directory)
+
+# create list of csv files to modify and rename headers
+csvList = dataPreparation.collectFiles(parent_dir, original_dir)
 # change the headers of csv files
-# may have to change relative file path of json map file if you change folder structure
-dataPreparation.reMapPandasHeaders('Dissertation_Stats/replacement_map.json',csvList,startDir,tempDir)
+dataPreparation.reMapPandasHeaders('Scripts_Dissertation/replacement_map.json', csvList, original_dir, temp_dir)
 
-# get previously modified csv file as list
-csvModList = dataPreparation.collectFiles(parentDir,tempDir)
-
+# get list of csv files to modify and select desired columns
+csvList_new_headers = dataPreparation.collectFiles(parent_dir, temp_dir)
 # Eliminates all unnecessary columns written by PsychoPy
-dataPreparation.delPsyPyCols(csvModList,segKeepCols,tempDir, outDir)
+dataPreparation.delPsyPyCols(csvList_new_headers, segKeepCols, temp_dir, processed_dir)
 
-# get previously modified csv file as list
-csvTaskList = dataPreparation.collectFiles(parentDir,outDir)
-
+# get list of csv files to modify, splits files and moves to stats temporary directory
+csvList_to_split = dataPreparation.collectFiles(parent_dir, processed_dir)
 # Splits file into subsets for analysis and pastes them into temporary directory of stats
-i = 0
 for curList in listOfLists:
-       listName = strListOfLists[i]
-       dataPreparation.createAnalysisFiles(csvTaskList,listName,curList,outDir,statsSegDir)
-       i += 1
+    listName = listOfLists.get(curList)
+    #print(csvList_to_split)
+    #print(curList)
+    #print(listName)
+    #print(processed_dir)
+    #print(stats_temp_dir)
+    dataPreparation.createAnalysisDirectories(csvList_to_split, curList, listName, processed_dir, stats_temp_dir)
 
-# creates subdirectories in rFiles for each experiment which should be ready for rStudio import
-i = 0
+# creates subdirectories in rFiles directory for each experiment with subset files ready for rStudio import
 for curList in listOfLists:
-       listName = strListOfLists[i]
-       list_dir = statsSegDir + '/' + listName
-       print('When i = ',i, 'looks here: ',list_dir)
-       csvFinalList = dataPreparation.collectFiles(parentDir,list_dir)
-       dataPreparation.createAnalysisFiles(csvFinalList,listName,curList,list_dir,statsOutDir)
-       i += 1
+    listName = listOfLists.get(curList)
+    list_dir = stats_temp_dir + '/' + curList
+    csvList_to_subset = dataPreparation.collectFiles(parent_dir, list_dir)
+    dataPreparation.createAnalysisFiles(csvList_to_subset, curList, list_dir, parent_dir)
+
 
