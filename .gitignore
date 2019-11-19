@@ -27,6 +27,7 @@ Dissertation-blx.bib
 **/temp_data/
 **/part_files/
 **/csv/
+**/analyze_data/
 
 #Ignore temporary other text processing files 
 *.doc
@@ -34,3 +35,6 @@ Dissertation-blx.bib
 
 #Ignore temporary files created and tracked by PsychoPy
 *_lastrun.py
+.Rproj.user
+
+
