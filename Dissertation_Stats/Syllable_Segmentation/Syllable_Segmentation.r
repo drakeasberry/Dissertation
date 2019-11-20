@@ -5,10 +5,12 @@
 library(plyr)
 library(readr)
 library(tidyverse)
+
 # Create 'not in' function
 '%ni%' <- Negate('%in%')
+
+# Create new vectors to use in transformations
 row_to_column <- function(iterator_size, input_vector){
-# This is working to create the vector I need
 i <- 1 # r indexing start at 1, not 0
 j <- iterator_size # how many rows need to be created
 
@@ -24,8 +26,9 @@ for(item in input_vector){
 }
   return(out_vector)
 }
+
+# creates word transformation from row to column
 words_to_column <- function(input_tibble, iterator_size, input_vector){
-# This is working to create the vector I need
 i <- 1 # r indexing start at 1, not 0
 j <- iterator_size # how many rows need to be created
 
@@ -40,7 +43,7 @@ for(item in input_vector){
   i <- i + iterator_size
   j <- j + iterator_size
 }
-    return(out_vector)
+  return(out_vector)
 }
 # get all csv files from directory
 segDir = 'analyze_data' #set path to directory
@@ -71,23 +74,24 @@ for(csv_file in segPaths){
   participant <- select(participant, fillerCarrier,block,carriers,targetSyl,segResp,segRespRT,partNum,session,age,gender,birthCountry,placeResidence,education,preferLanguage,date,expName)
   participant <- filter(participant, fillerCarrier != 'targetSyl')
 
-  # write trnasformed tibble to csv file
-  writePath <- file.path(segDir,'transformed/')
-  writeDir <- dir.create(writePath, showWarnings = FALSE)
-  write_csv(participant,file.path(writePath,filename))
+  # write transformed tibble to csv file
+  transformed_directory <- file.path(segDir,'transformed/')
+  writeDir <- dir.create(transformed_directory, showWarnings = FALSE)
+  write_csv(participant,file.path(transformed_directory,filename))
 }
 
 # clean up items no longer needed from environment
 #rm(mod_part, target_column,targets, blocks, target_syllable_column, block_column, word_column, csv_file, filename, segDir, writeDir, segPaths, participant)
+
 # This block requires 'plyr' and 'readr'
 # Segmentation Data Directory
-segDir = 'analyze_data/transformed' #set path to directory
+segDir = transformed_directory #set path to directory
 segFiles = list.files(path=segDir, pattern = '*.csv', full.names = TRUE) #list all the files with path
 
 # read in all the files into one data frame
 segData = ldply(segFiles, read_csv)
 
-# import mulitple csv code modified from code posted at this link below https://datascienceplus.com/how-to-import-multiple-csv-files-simultaneously-in-r-and-create-a-data-frame/
+# import multiple csv code modified from code posted at this link below https://datascienceplus.com/how-to-import-multiple-csv-files-simultaneously-in-r-and-create-a-data-frame/
 
 # clean up unnecessary items in environment
 #rm(segDir,segFiles)
