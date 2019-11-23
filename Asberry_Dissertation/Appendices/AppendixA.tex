@@ -1,41 +1,45 @@
-% Appendix A
+% Appendix Template
 
-\chapter{Frequently Asked Questions} % Main appendix title
-\label{AppendixA} % For referencing this appendix elsewhere, use \ref{AppendixA}
+\chapter{Wuggy Nonword Generator} % Main appendix title
 
+\label{AppendixA} % Change X to a consecutive letter; for referencing this appendix elsewhere, use \ref{AppendixX}
 
-\section{How do I change the colors of links?}
+This list of 80 critical items were entered into Wuggy.app as words and the second column gave Wuggy.app the correction Spanish syllabification of each critical word—generated from within the application. I then used the verify feature to ensure all data was correct. This resulted in one error because "malena" was not found in the Wuggy.app dictionary. Therefore, I gave the correct syllabification of "ma-le-na" where hypens represent syllable boundaries. I then re-verified the data before runnning the analysis. Once I receive no errors, I ran the following analysis to generate new nonwords.
 
-The color of links can be changed to your liking using:
+Parameters:
+General Settings:
 
-{\small\verb!\hypersetup{urlcolor=red}!}, or
+Language module: Orthographic Spanish
+Output type: Only pseudowords
+Maximal number of candidates: 10 per word
+Maximal search time per word: 10 seconds
+Output Restrictions:
 
-{\small\verb!\hypersetup{citecolor=green}!}, or
+Checked: Match length of subsyllabic segements
+Checked: Match letter length
+Checked: Match transition frequencies (concentric search)
+Checked: Match subsyllabic segments: "2" out of "3"
+Output Options:
 
-{\small\verb!\hypersetup{allcolor=blue}!}.
+Syllables chosen from dropdown box
+Checked: Lexicality
+Checked: OLD20
+Checked: Neighbors at edit distance 1
+Checked: Number of overlapping segments
+Checked: Deviation statistics
 
-\noindent If you want to completely hide the links, you can use:
+Output file
+Wuggy outputs a file that contains all the raw data that was then imported into Microsoft Excel to preserve all the unicode characters contained in the data. Do not simply open this from Windows Explorer or Finder as it will replace all encoding of the file eliminating special characters.
 
-{\small\verb!\hypersetup{allcolors=.}!}, or even better: 
+WARNING: Wuggy uses syllabification and it removes the accented vowels in Spanish. The only way to remedy this problem is to fix it once it has been imported into Excel.
 
-{\small\verb!\hypersetup{hidelinks}!}.
+Once in Excel, I renamed the worksheet WuggyRawOutput. Then I duplicated this worksheet and renamed the new worksheet WuggyBuilt. I then deleted all the columns except for columns A and B ("Word" and "Match"). I then added two columns called "Nonword\_Concat" and "Rand". In the Nonword\_Concat column, I entered the following formulas:
 
-{\small\verb!\hypersetup{colorlinks=false}!}.
+For CV-CV-CV words: \=CONCATENATE(LEFT(B2,2),MID(B2,4,2),MID(B2,7,2))
+This formula combines the two leftmost characters, skips character 3 (the first syllable boundary marker), adds the 4th and 5th characters to the string store, skips the 6th character (the second syllable boundary marker), and finally adds the 7th and 8th characters from the left to create the six-letter nonword.
+For CVC-CVC words: \=CONCATENATE(LEFT(B403,3),RIGHT(B403,3))
+This formula combines the three leftmost and three rightmost characters to create the six-letter nonword excluding the one and only syllable boundary marker.
 
-\section{Getting Started with this Template}
+These two formulas are necessary in order to create nonwords without the syllable markers. Once these steps have been completed, the file is ready for the python code housed in the cell below.
 
-If you are familiar with \LaTeX{}, then you should explore the directory structure of the template and then proceed to place your own information into the \emph{THESIS INFORMATION} block of the \file{main.tex} file. You can then modify the rest of this file to your unique specifications based on your degree/university. Section \ref{FillingFile} on page \pageref{FillingFile} will help you do this. Make sure you also read section \ref{ThesisConventions} about thesis conventions to get the most out of this template.
-
-If you are new to \LaTeX{} it is recommended that you carry on reading through the rest of the information in this document.
-
-Before you begin using this template you should ensure that its style complies with the thesis style guidelines imposed by your institution. In most cases this template style and layout will be suitable. If it is not, it may only require a small change to bring the template in line with your institution's recommendations. These modifications will need to be done on the \file{MastersDoctoralThesis.cls} file.
-
-\subsection{About this Template}
-
-This \LaTeX{} Thesis Template is originally based and created around a \LaTeX{} style file created by Steve R.\ Gunn from the University of Southampton (UK), department of Electronics and Computer Science. You can find his original thesis style file at his site, here:
-\url{http://www.ecs.soton.ac.uk/~srg/softwaretools/document/templates/}
-
-Steve's \file{ecsthesis.cls} was then taken by Sunil Patel who modified it by creating a skeleton framework and folder structure to place the thesis files in. The resulting template can be found on Sunil's site here:
-\url{http://www.sunilpatel.co.uk/thesis-template}
-
-Sunil's template was made available through \url{http://www.LaTeXTemplates.com} where it was modified many times based on user requests and questions. Version 2.0 and onwards of this template represents a major modification to Sunil's template and is, in fact, hardly recognisable. The work to make version 2.0 possible was carried out by \href{mailto:vel@latextemplates.com}{Vel} and Johannes Böttcher.
+%end wuggy stuff
