@@ -59,25 +59,25 @@ for(csv_file in segPaths){
   target_column <- filter(mod_part, row_number() == 11L)
 
   # create vectors to transform syllable targets and block trial numbers
-  targets <- as.character(target_column)
-  blocks <- as.character(colnames(mod_part))
+  targets <- as.character(target_column) # creates vector of all targets
+  blocks <- as.character(colnames(mod_part)) # creates a vector of all block labels
 
   # Call function to expand vectors to match tibble length
-  target_syllable_column <- do.call('row_to_column',list(11,targets))
-  block_column <- do.call('row_to_column',list(11,blocks))
-  word_column <- do.call('words_to_column',list(participant,11,blocks))
+  target_syllable_column <- do.call('row_to_column',list(11,targets)) # converts target vector column with appropriate length
+  block_column <- do.call('row_to_column',list(11,blocks)) # converts block label vector column with appropriate length
+  word_column <- do.call('words_to_column',list(participant,11,blocks)) # grabs all words and puts them into one column
 
-  # add new vectors to existing tibble
+  # add new vectors to existing tibble with column heading
   participant <- add_column(participant, targetSyl= target_syllable_column, block= block_column, carriers= word_column)
 
-  # subset to keeo only columns necessary
+  # subset to keep only columns necessary
   participant <- select(participant, fillerCarrier,block,carriers,targetSyl,segResp,segRespRT,partNum,session,age,gender,birthCountry,placeResidence,education,preferLanguage,date,expName)
-  participant <- filter(participant, fillerCarrier != 'targetSyl')
+  participant <- filter(participant, fillerCarrier != 'targetSyl') # drops target syllable row
 
   # write transformed tibble to csv file
-  transformed_directory <- file.path(segDir,'transformed/')
-  writeDir <- dir.create(transformed_directory, showWarnings = FALSE)
-  write_csv(participant,file.path(transformed_directory,filename))
+  transformed_directory <- file.path(segDir,'transformed/') # create new directory name for updated files
+  #writeDir <- dir.create(transformed_directory, showWarnings = FALSE) # create new directory for updated files
+  write_csv(participant,file.path(transformed_directory,filename)) # write out corrected file to new directory
 }
 
 # clean up items no longer needed from environment
@@ -85,8 +85,8 @@ for(csv_file in segPaths){
 
 # This block requires 'plyr' and 'readr'
 # Segmentation Data Directory
-segDir = transformed_directory #set path to directory
-segFiles = list.files(path=segDir, pattern = '*.csv', full.names = TRUE) #list all the files with path
+segDir <- transformed_directory #set path to directory
+segFiles <- list.files(path=segDir, pattern = '*.csv', full.names = TRUE) #list all the files with path
 
 # read in all the files into one data frame
 segData = ldply(segFiles, read_csv)
@@ -94,7 +94,7 @@ segData = ldply(segFiles, read_csv)
 # import multiple csv code modified from code posted at this link below https://datascienceplus.com/how-to-import-multiple-csv-files-simultaneously-in-r-and-create-a-data-frame/
 
 # clean up unnecessary items in environment
-#rm(segDir,segFiles)
+# rm(segDir,segFiles)
 # Need library 'tidyverse' loaded
 
 # Create subset of all critical items
