@@ -55,11 +55,11 @@ csvList_to_split = dataPreparation.collectFiles(parent_dir, processed_dir)
 # Splits file into subsets for analysis and pastes them into temporary directory of stats
 for curList in listOfLists:
     listName = listOfLists.get(curList)
-    #print(csvList_to_split)
-    #print(curList)
-    #print(listName)
-    #print(processed_dir)
-    #print(stats_temp_dir)
+    print(csvList_to_split)
+    print(curList)
+    print(listName)
+    print(processed_dir)
+    print(stats_temp_dir)
     dataPreparation.createAnalysisDirectories(csvList_to_split, curList, listName, processed_dir, stats_temp_dir)
 
 # creates subdirectories in rFiles directory for each experiment with subset files ready for rStudio import

@@ -17,7 +17,7 @@ Rscript Syllable_Segmentation.r
 
 # Run clean up to remove unecessary files
 cd ../..
-sh Scripts_Dissertation/clean_up.sh # comment this line out if you would like to view all intermediate temporary files
+#sh Scripts_Dissertation/clean_up.sh # comment this line out if you would like to view all intermediate temporary files
 
 # Let the user know the operation is complete
 echo 'Analysis updated'
