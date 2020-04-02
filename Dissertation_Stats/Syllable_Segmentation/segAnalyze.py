@@ -42,24 +42,27 @@ for directory in directory_list:
 
 # create list of csv files to modify and rename headers
 csvList = dataPreparation.collectFiles(parent_dir, original_dir)
+
 # change the headers of csv files
 dataPreparation.reMapPandasHeaders('Scripts_Dissertation/replacement_map.json', csvList, original_dir, temp_dir)
 
 # get list of csv files to modify and select desired columns
 csvList_new_headers = dataPreparation.collectFiles(parent_dir, temp_dir)
+
 # Eliminates all unnecessary columns written by PsychoPy
 dataPreparation.delPsyPyCols(csvList_new_headers, segKeepCols, temp_dir, processed_dir)
 
 # get list of csv files to modify, splits files and moves to stats temporary directory
 csvList_to_split = dataPreparation.collectFiles(parent_dir, processed_dir)
+
 # Splits file into subsets for analysis and pastes them into temporary directory of stats
 for curList in listOfLists:
     listName = listOfLists.get(curList)
-    print(csvList_to_split)
-    print(curList)
-    print(listName)
-    print(processed_dir)
-    print(stats_temp_dir)
+    #print(csvList_to_split) # prints out list of filenames associated with query
+    #print(curList) # prints list name
+    #print(listName) # prints out column names to keep
+    #print(processed_dir) # prints directory path that data is pulled from
+    #print(stats_temp_dir) # prints directory path that data is written to
     dataPreparation.createAnalysisDirectories(csvList_to_split, curList, listName, processed_dir, stats_temp_dir)
 
 # creates subdirectories in rFiles directory for each experiment with subset files ready for rStudio import

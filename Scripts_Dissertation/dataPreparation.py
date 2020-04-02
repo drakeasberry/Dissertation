@@ -107,8 +107,8 @@ def createAnalysisFiles(csv_files, list_name, input_dir, output_dir):
         new_df=df.dropna(subset=[key])
 
         pathlib.Path(writeDir).mkdir(parents=True, exist_ok=True)
-        print('write directory inside function: ',writeDir)
+        #print('write directory inside function: ',writeDir) # prints write directory
         output_file = os.path.join(writeDir, file)
-        print('out file inside function: ',output_file)
+        #print('out file inside function: ',output_file) # prints filename going to write directory
         new_df.to_csv(output_file)
     return
