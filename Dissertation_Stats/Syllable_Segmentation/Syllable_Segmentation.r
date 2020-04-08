@@ -209,3 +209,5 @@ if(num_total_item==length(df_seg_data_raw$fillerCarrier)){
   print('some counts are off, recheck data')
 }
 
+# Write out csv for Miquel Meeting
+write_csv(df_seg_critical_raw,'~/Desktop/r-checking/segmentation_critical_items.csv')
