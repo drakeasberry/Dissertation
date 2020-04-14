@@ -17,12 +17,12 @@ mkdir -p Dissertation_Experiments/lexicalAccess/data/processed_data/exp_files
 mkdir -p Dissertation_Experiments/lexicalAccess/data/processed_data/part_files
 
 # Statistics Directory
-mkdir -p Dissertation_Stats/Demographics/analyze_data/blpCols
-mkdir -p Dissertation_Stats/Demographics/analyze_data/lexEngCols
-mkdir -p Dissertation_Stats/Demographics/analyze_data/lexEspCols
-mkdir -p Dissertation_Stats/Syllable_Intuition/analyze_data
-mkdir -p Dissertation_Stats/Syllable_Lexical_Access/analyze_data
-mkdir -p Dissertation_Stats/Syllable_Segmentation/analyze_data
+mkdir -p Statistics/Demographics/analyze_data/blp_cols
+mkdir -p Statistics/Demographics/analyze_data/lextale_eng_cols
+mkdir -p Statistics/Demographics/analyze_data/lextale_esp_cols
+mkdir -p Statistics/Intuition/analyze_data
+mkdir -p Statistics/Lexical_Access/analyze_data
+mkdir -p Statistics/Segmentation/analyze_data
 
 # Manuscript Directory
 mkdir -p Asberry_Dissertation

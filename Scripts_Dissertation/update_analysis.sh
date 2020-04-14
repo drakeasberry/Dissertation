@@ -9,18 +9,18 @@ sh Scripts_Dissertation/build_directory.sh
 
 # Run segmentation analysis
 export PYTHONPATH=.
-pipenv run python Dissertation_Stats/Syllable_Segmentation/segAnalyze.py
+pipenv run python Statistics/Segmentation/segAnalyze.py
 
 # Run lexical access analysis
-pipenv run python Dissertation_Stats/Syllable_Lexical_Access/lexicalAnalyze.py
+pipenv run python Statistics/Lexical_Access/lexicalAnalyze.py
 
 # Run R analysis
-#cd Dissertation_Stats/Syllable_Segmentation/
-#Rscript Syllable_Segmentation.r
+cd Statistics/Segmentation/
+#Rscript Segmentation.r
 
 # Run clean up to remove unecessary files
 cd ../..
-#sh Scripts_Dissertation/clean_up.sh # comment this line out if you would like to view all intermediate temporary files
+sh Scripts_Dissertation/clean_up.sh # comment this line out if you would like to view all intermediate temporary files
 
 # Let the user know the operation is complete
 echo 'Analysis updated'

@@ -38,7 +38,7 @@ Dissertation-blx.bib
 .Rproj.user
 
 #Ignore random trouble shooting files
-/Dissertation_Stats/Syllable_Segmentation/Scratch_records.Rmd
+/Statistics/Segmentation/Scratch_records.Rmd
 pycharm-sorted.txt
 pycharm.txt
 rstudio-sorted.txt
