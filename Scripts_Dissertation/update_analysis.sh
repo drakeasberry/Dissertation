@@ -9,10 +9,10 @@ sh Scripts_Dissertation/build_directory.sh
 
 # Run segmentation analysis
 export PYTHONPATH=.
-pipenv run python Statistics/Segmentation/segAnalyze.py
+pipenv run python Statistics/Segmentation/seg_analyze.py
 
 # Run lexical access analysis
-pipenv run python Statistics/Lexical_Access/lexicalAnalyze.py
+pipenv run python Statistics/Lexical_Access/lexical_analyze.py
 
 # Run R analysis
 cd Statistics/Segmentation/
