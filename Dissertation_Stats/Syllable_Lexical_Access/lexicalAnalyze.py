@@ -14,9 +14,9 @@ directory_list = [original_dir, temp_dir, processed_dir, stats_temp_dir, stats_o
 # Create lists for separate file needed to analyze all experiments
 demCols = ['partNum', 'session', 'age', 'gender', 'birthCountry', 'placeResidence', 'education', 'preferLanguage',
            'date', 'expName']
-lexDuplicates = ['word', 'translation']
-lexEsp = ['corrAnsEspV', 'lexRespEsp', 'lexRespEspCorr', 'lexRespEspRT']
-lexEng = ['corrAnsEngV', 'lexRespEng', 'lexRespEngCorr', 'lexRespEngRT']
+lexDuplicates = ['word', 'translation', 'corrAns']
+lexEsp = ['lexRespEsp', 'lexRespEspCorr', 'lexRespEspRT']
+lexEng = ['lexRespEng', 'lexRespEngCorr', 'lexRespEngRT']
 syl = ['syllabification', 'corrSyl', 'corrAns', 'leftKey', 'rightKey', 'condition', 'sylResp', 'sylRespCorr',
        'sylRespRT', ]
 blp = ['questionNum', 'color', 'sectionEng', 'questionTextEng', 'languageEng', 'langHistResp1', 'langHistRT1',
@@ -50,15 +50,17 @@ dataPreparation.delPsyPyCols(csvList_new_headers, lexicalKeepCols, temp_dir, pro
 # get list of csv files to modify, splits files and moves to stats temporary directory
 csvList_to_split = dataPreparation.collectFiles(parent_dir, processed_dir)
 
+# moved list creation for skipped files out of loop HERE IS BEST I THINK
+
 # Splits file into subsets for analysis and pastes them into temporary directory of stats
 for curList in listOfLists:
     listName = listOfLists.get(curList)
     #print(csvList_to_split) # prints out list of filenames associated with query
     #print(curList) # prints list name
     #print(listName) # prints out column names to keep
-    #print(processed_dir) # prints directory path that data is pulled from
+    print(processed_dir) # prints directory path that data is pulled from
     #print(stats_temp_dir) # prints directory path that data is written to
-    dataPreparation.createAnalysisDirectories(csvList_to_split, curList, listName, processed_dir, stats_temp_dir)
+    dataPreparation.createAnalysisDirectories(parent_dir, csvList_to_split, curList, listName, processed_dir, stats_temp_dir)
 
 # creates subdirectories in rFiles directory for each experiment with subset files ready for rStudio import
 for curList in listOfLists:

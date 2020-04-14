@@ -11,9 +11,12 @@ sh Scripts_Dissertation/build_directory.sh
 export PYTHONPATH=.
 pipenv run python Dissertation_Stats/Syllable_Segmentation/segAnalyze.py
 
+# Run lexical access analysis
+pipenv run python Dissertation_Stats/Syllable_Lexical_Access/lexicalAnalyze.py
+
 # Run R analysis
-cd Dissertation_Stats/Syllable_Segmentation/
-Rscript Syllable_Segmentation.r
+#cd Dissertation_Stats/Syllable_Segmentation/
+#Rscript Syllable_Segmentation.r
 
 # Run clean up to remove unecessary files
 cd ../..

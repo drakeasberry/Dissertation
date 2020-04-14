@@ -63,13 +63,13 @@ for curList in listOfLists:
     #print(listName) # prints out column names to keep
     #print(processed_dir) # prints directory path that data is pulled from
     #print(stats_temp_dir) # prints directory path that data is written to
-    dataPreparation.createAnalysisDirectories(csvList_to_split, curList, listName, processed_dir, stats_temp_dir)
+    dataPreparation.createAnalysisDirectories(parent_dir, csvList_to_split, curList, listName, processed_dir, stats_temp_dir)
 
 # creates subdirectories in rFiles directory for each experiment with subset files ready for rStudio import
 for curList in listOfLists:
     listName = listOfLists.get(curList)
     list_dir = stats_temp_dir + '/' + curList
     csvList_to_subset = dataPreparation.collectFiles(parent_dir, list_dir)
-    dataPreparation.createAnalysisFiles(csvList_to_subset, curList, list_dir, parent_dir)
+    dataPreparation.createAnalysisFiles2(csvList_to_subset, curList, list_dir, parent_dir)
 
 
