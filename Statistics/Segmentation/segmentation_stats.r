@@ -54,9 +54,9 @@ words_to_column <- function(input_tibble, iterator_size, input_vector){
 
 
 # get all csv files from directory
-seg_dir = 'analyze_data' #set path to directory
+seg_dir = 'analyze_data/raw' #set path to directory
 seg_paths = list.files(path=seg_dir, pattern = '*.csv', full.names = TRUE) #list all the files with path
-#print(seg_paths) # prints path with filenames
+print(seg_paths) # prints path with filenames
 
 # transforms data structure for use in analysis
 for(csv_file in seg_paths){
@@ -90,7 +90,7 @@ for(csv_file in seg_paths){
   df_participant_clean <- filter(df_participant_transformed_correct_columns, fillerCarrier != 'targetSyl')
   
   # write transformed tibble to csv file
-  transformed_dir <- file.path(seg_dir, 'transformed/') # create new directory name for updated files
+  transformed_dir <- file.path(seg_dir, '../transformed/') # create new path to transformed directory name for updated files
   write_csv(df_participant_clean, file.path(transformed_dir, filename)) # write out corrected file to new directory
 }
 
@@ -104,7 +104,7 @@ rm(df_participant_clean, df_participant_transformed_correct_columns, df_particip
 # Segmentation Data Directory
 #seg_dir <- transformed_dir #set path to directory
 seg_files <- list.files(path=transformed_dir, pattern = '*.csv', full.names = TRUE) #list all the files with path
-#print(seg_files) # prints list of transformed files to be analyzed
+print(seg_files) # prints list of transformed files to be analyzed
 
 # read in all the files into one data frame
 # import multiple csv code modified from code posted at this link below:
@@ -117,6 +117,140 @@ df_seg_data_raw = ldply(seg_files, read_csv)
 rm(seg_files)
 #---
 
+
+
+##### This is likely where I will want to join columns recommended by Miquel ###############################
+# get all condition csv files from directory
+join_dir = 'analyze_data' #set path to directory
+join_paths = list.files(path=join_dir, pattern = '*.csv', full.names = TRUE) #list all the files with path
+print(join_paths) # prints path with filenames
+
+# Each trial loop runs one condition
+for(csv_condition in join_paths){
+  filename <- basename(csv_condition)
+  df_condition_raw <- read_csv(csv_condition, col_names = FALSE) #reads in raw data file from analyze_data directory
+  df_single_items <- df_condition_raw[-c(1, 2, 3),]
+
+  i <- 1
+  while (i <= 3) {
+    row <- paste('row',i, sep='_')
+    row_tran <- paste('row_tran',i, sep='_')
+    print(row)
+    col = filter(df_condition_raw, row_number() == i)
+    assign(row_tran, row_to_column(10,col[2:49]))
+    i = i + 1
+  }
+
+  j <- 1
+  labels <- df_single_items[,1]
+  names(labels) <- 'fillerCarrier'
+
+  while (j <= length(df_single_items)) {
+    exp_words <- df_single_items[,j]
+    names(exp_words) <- 'words'
+
+    if (j == 1){
+      out_vector <- labels
+    } else if (j==2) {
+      out_vector = bind_cols(out_vector, exp_words)
+    } else {
+      temp_vector = bind_cols(labels, exp_words)
+      out_vector <- rbind(out_vector, temp_vector)
+    }
+    df_cond_tran <- paste(row_tran,filename,sep = '_')
+    assign(filename,out_vector)
+    assign(df_cond_tran, tibble(block = row_tran_1, word_status = row_tran_2, target_syl = row_tran_3))
+    j = j + 1
+  }
+}
+
+expCondA.csv <- add_column(expCondA.csv,condition = 'A')
+expCondB.csv <- add_column(expCondB.csv,condition = 'B')
+expCondC.csv <- add_column(expCondC.csv,condition = 'C')
+expCondD.csv <- add_column(expCondD.csv,condition = 'D')
+all_conditions <- rbind(expCondA.csv, expCondB.csv, expCondC.csv, expCondD.csv)
+all_data_tranformations <- rbind(row_tran_3_expCondA.csv,row_tran_3_expCondB.csv,row_tran_3_expCondC.csv,row_tran_3_expCondD.csv)
+
+join_table <- bind_cols(all_data_tranformations, all_conditions)
+
+join_table$word_status <- gsub('Real[0-9]+', 'word', join_table$word_status)
+join_table$word_status <- gsub('Pseudo[0-9]+', 'nonword', join_table$word_status)
+join_table$target_structure <- ifelse(str_length(join_table$target_syl)==2, 'CV', 'CVC')
+vowels = c('a','e','i','o','u')
+join_table$initial_wd_syl <- ifelse(substr(join_table$words, 4, 4) %in% vowels , 'CV', 'CVC')
+join_table$matching <- ifelse(join_table$target_structure==join_table$initial_wd_syl, 'match', 'mismatch')
+
+rm(all_conditions,all_data_tranformations,col,df_cond_tran,df_condition_raw,df_single_items,exp_words,expCondA.csv,
+   expCondB.csv,expCondC.csv,expCondD.csv,labels,out_vector,row_tran_3_expCondA.csv,row_tran_3_expCondB.csv,
+   row_tran_3_expCondC.csv,row_tran_3_expCondD.csv,temp_vector,csv_condition,df_cond_tran,filename,i,j,join_dir,
+   join_paths,row,row_tran,row_tran_1,row_tran_2,row_tran_3,vowels)
+
+
+###################Run only to this line ###########################
+
+# Now I need to join these tables together before proceeding
+# Join join_table (1920) and df_seg_data_raw (36000)
+
+
+## subset dataframe to get 'targetSyl' row only once
+#df_target_column <- filter(df_condition_raw, row_number() == 2L)
+#df_word_status <- filter(df_condition_raw, row_number() == 1L)
+#
+## create vectors to transform syllable targets and block trial numbers
+#targets <- as.character(df_target_column) # creates vector of all targets
+#blocks <- as.character(colnames(df_condition_raw)) # creates a vector of all block labels
+#real_pseduo <- as.character(df_word_status)
+
+
+
+## transforms data structure for use in analysis
+#for(csv_file in join_paths){
+#  filename <- basename(csv_file)
+#  # Each trial loop runs one participant
+#  #print(csv_file) # print out filename for segmentation analysis
+#  df_condition_raw <- read_csv(csv_file) #reads in raw data file from analyze_data directory
+#
+#  # Create subset to build vectors for transformation
+#  df_condition_modified <- as_tibble(select(df_condition_raw, block01:block48)) #includes only trial columns (48)
+#
+#  # subset dataframe to get 'targetSyl' row only once
+#  df_target_column <- filter(df_condition_modified, row_number() == 2L)
+#  df_word_status <- filter(df_condition_modified, row_number() == 1L)
+#
+#  # create vectors to transform syllable targets and block trial numbers
+#  targets <- as.character(df_target_column) # creates vector of all targets
+#  blocks <- as.character(colnames(df_condition_modified)) # creates a vector of all block labels
+#  real_pseduo <- as.character(df_word_status)
+#
+#  #df_items <- head(df_condition_modified[3:12,])
+#  df_items <- df_condition_modified[-1,]
+#  df_items <- df_items[-1,]
+#
+#  df_transform <- transform.data.frame(df_condition_raw)
+#  length((df_transform))
+#  # Call function to expand vectors to match dataframe length
+#  target_syllable_column <- do.call('row_to_column',list(1,targets)) # converts target vector column with appropriate length
+#  block_column <- do.call('row_to_column',list(1,blocks)) # converts block label vector column with appropriate length
+#  word_column <- do.call('words_to_column',list(df_condition_raw, 1, blocks)) # grabs all words and puts them into one column
+#
+#  # Create new dataframe with three new transformed columns
+#  df_condition_transformed <- add_column(df_condition_raw, targetSyl= target_syllable_column, block= block_column, carriers= word_column)
+#
+#  # subset to keep only columns necessary
+#  df_condition_transformed_correct_columns <- select(df_condition_transformed, fillerCarrier, block, carriers, targetSyl, segResp, segRespRT, partNum, session, age, gender, birthCountry, placeResidence, education, preferLanguage, date, expName)
+#
+#  # Further subset to drop target syllable rows (48 in total)
+#  df_condition_clean <- filter(df_condition_transformed_correct_columns, fillerCarrier != 'targetSyl')
+#
+#  # write transformed tibble to csv file
+#  test_dir <- file.path(join_dir, 'test/') # create new path to transformed directory name for updated files
+#  write_csv(df_condition_clean, file.path(test_dir, filename)) # write out corrected file to new directory
+#}
+#
+#
+#df_join <- read_csv('analyze_data/join.csv')
+#df_test <- merge(df_join,df_seg_data_raw,by='carriers')
+
 # Need library 'tidyverse' loaded
 # Create subset of all critical items
 df_seg_critical_raw <- subset(df_seg_data_raw, df_seg_data_raw$fillerCarrier == 'carrierItem')
@@ -127,7 +261,7 @@ count(df_seg_critical_raw, vars=segResp)
 
 # Further subset critical data set to those that were NOT responded to by participants
 df_seg_critical_wrong <- subset(df_seg_critical_raw, df_seg_critical_raw$segResp == 'None')
-df_seg_critical_wrong #prints subsetted dataframe for all missed critical items
+#df_seg_critical_wrong #prints subsetted dataframe for all missed critical items
 
 # Create a tibble of participants who incorrectly did not respond to critical item including number of errors
 df_seg_critical_errors <- count(df_seg_critical_wrong, vars=partNum)
@@ -143,7 +277,7 @@ count(df_seg_filler_raw, vars=segResp)
 
 # Further subset filler data set to those that were responded to by participants
 df_seg_filler_wrong <- subset(df_seg_filler_raw, df_seg_filler_raw$segResp == 1)
-df_seg_filler_wrong #prints subsetted dataframe for all filler items responded to
+#df_seg_filler_wrong #prints subsetted dataframe for all filler items responded to
 
 # Create a dataframe of participants who incorrectly responded to a filler item
 df_seg_filler_errors <- count(df_seg_filler_wrong, vars=partNum)
@@ -165,17 +299,17 @@ tb_high_seg_critical_error_part #prints 2 column tibble of participant and error
 
 # Creates subset of wrong answers committed by high error rate participants
 df_high_seg_errors_part <- df_seg_filler_wrong[df_seg_filler_wrong$partNum %in% tb_high_seg_filler_error_part$vars,]
-df_high_seg_errors_part
+#df_high_seg_errors_part
 
 # Creates subset of wrong answers commited by low error rate participants
 df_low_seg_errors_part <- df_seg_filler_wrong[df_seg_filler_wrong$partNum %ni% tb_high_seg_filler_error_part$vars,]
-df_low_seg_errors_part
+#df_low_seg_errors_part
 
 # looks for too quick of response, anything below 200 ms
 button_held_high <- c(which(df_high_seg_errors_part$segRespRT < .200))
 print('prints responses given below 200ms')
 button_held_high
-tech_error_high <- df_high_seg_errors_part[button_held,7:6]
+tech_error_high <- df_high_seg_errors_part[button_held_high,7:6]
 print('prints responses given below 200ms by participant number')
 tech_error_high
 length(tech_error_high$segRespRT)
@@ -211,3 +345,4 @@ if(num_total_item==length(df_seg_data_raw$fillerCarrier)){
 
 # Write out csv for Miquel Meeting
 write_csv(df_seg_critical_raw,'~/Desktop/r-checking/segmentation_critical_items.csv')
+write_csv(join_table,'~/Desktop/r-checking/join_table.csv')
