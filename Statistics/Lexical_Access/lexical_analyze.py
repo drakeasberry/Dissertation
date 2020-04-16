@@ -37,20 +37,20 @@ for directory in directory_list:
     data_preparation.create_directory(directory)
 
 # create list of csv files to modify and rename headers
-csv_list = data_preparation.collect_files(parent_dir, original_dir)
+csv_list = data_preparation.collect_files(parent_dir, original_dir, '*.csv')
 #print(csv_list)
 
 # change the headers of csv files
 data_preparation.remap_pandas_headers('Scripts_Dissertation/replacement_map.json', csv_list, original_dir, temp_dir)
 
 # get list of csv files to modify and select desired columns
-csv_list_new_headers = data_preparation.collect_files(parent_dir, temp_dir)
+csv_list_new_headers = data_preparation.collect_files(parent_dir, temp_dir, '*.csv')
 
 # Eliminates all unnecessary columns written by PsychoPy
 data_preparation.del_psycopy_cols(csv_list_new_headers, lexical_keep_cols, temp_dir, processed_dir)
 
 # get list of csv files to modify, splits files and moves to stats temporary directory
-csv_list_to_split = data_preparation.collect_files(parent_dir, processed_dir)
+csv_list_to_split = data_preparation.collect_files(parent_dir, processed_dir, '*.csv')
 
 # moved list creation for skipped files out of loop HERE IS BEST I THINK
 print(os.getcwd())
@@ -75,7 +75,7 @@ for cur_list in list_of_lists:
     list_dir = stats_temp_dir + '/' + cur_list
     #print('parent directory: ', parent_dir)
     #print('list directory: ', list_dir)
-    csv_list_to_subset = data_preparation.collect_files(parent_dir, list_dir)
+    csv_list_to_subset = data_preparation.collect_files(parent_dir, list_dir, '*.csv')
     #print(csv_list_to_split)
     data_preparation.create_analysis_files(csv_list_to_subset, cur_list, list_dir, parent_dir)
 

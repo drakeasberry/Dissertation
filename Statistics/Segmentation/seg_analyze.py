@@ -41,23 +41,25 @@ for directory in directory_list:
     data_preparation.create_directory(directory)
 
 # create list of csv files to modify and rename headers
-csv_list = data_preparation.collect_files(parent_dir, original_dir)
+csv_list = data_preparation.collect_files(parent_dir, original_dir, '*.csv')
 
 # remove participants from analysis
-csv_list.remove('part044_inglés_C_Segmentation.csv') # removed for fluency in other langauges
-csv_list.remove('part047_español_D_Segmentation.csv') # removed for different Spanish variety (geographic location)
+try:
+    csv_list.remove('part044_inglés_C_Segmentation.csv') # removed for fluency in other langauges
+    csv_list.remove('part047_español_D_Segmentation.csv') # removed for different Spanish variety (geographic location)
+except: ValueError
 
 # change the headers of csv files
 data_preparation.remap_pandas_headers('Scripts_Dissertation/replacement_map.json', csv_list, original_dir, temp_dir)
 
 # get list of csv files to modify and select desired columns
-csv_list_new_headers = data_preparation.collect_files(parent_dir, temp_dir)
+csv_list_new_headers = data_preparation.collect_files(parent_dir, temp_dir, '*.csv')
 
 # Eliminates all unnecessary columns written by PsychoPy
 data_preparation.del_psycopy_cols(csv_list_new_headers, seg_keep_cols, temp_dir, processed_dir)
 
 # get list of csv files to modify, splits files and moves to stats temporary directory
-csv_list_to_split = data_preparation.collect_files(parent_dir, processed_dir)
+csv_list_to_split = data_preparation.collect_files(parent_dir, processed_dir, '*.csv')
 
 skip_files = [] # will always be empty for segmentation experiment because no one returned to lab for second time
 
@@ -75,7 +77,23 @@ for cur_list in list_of_lists:
 for cur_list in list_of_lists:
     list_name = list_of_lists.get(cur_list)
     list_dir = stats_temp_dir + '/' + cur_list
-    csv_list_to_subset = data_preparation.collect_files(parent_dir, list_dir)
+    csv_list_to_subset = data_preparation.collect_files(parent_dir, list_dir, '*.csv')
     data_preparation.create_analysis_files(csv_list_to_subset, cur_list, list_dir, parent_dir)
 
+# create file to join necessary columns
+data_preparation.csv_from_excel(
+    'Dissertation_Experiments/segmentation/Segmentation_Experimental_Item_Setup.xlsx',
+    'Critical_Items', 'Statistics/Segmentation/analyze_data/join.csv')
+
+# create join table
+#print(os.getcwd())
+search_directory = 'Dissertation_Experiments/segmentation/data/processed_data/exp_files'
+copy_directory = 'Statistics/Segmentation/analyze_data'
+csv_list = data_preparation.collect_files(parent_dir, search_directory, 'exp*')
+print(csv_list)
+
+data_preparation.remap_pandas_headers('Scripts_Dissertation/replacement_map.json',
+                                       csv_list, search_directory, copy_directory)
+csv_list_new_headers = data_preparation.collect_files(parent_dir, copy_directory, '*.csv')
+print(csv_list_new_headers)
 
