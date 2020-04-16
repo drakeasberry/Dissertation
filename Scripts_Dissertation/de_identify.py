@@ -1,9 +1,14 @@
-import dataPreparation
+import data_preparation
 import os
 
-parentDir = os.getcwd()
-startDir = 'Dissertation_Experiments/segmentation/data/original_data/part_files/'
-dropList = ["03_Nombre (First name):","04_Apellido (Last name):"]
+parent_dir = os.getcwd()
+start_directories = [
+    'Dissertation_Experiments/segmentation/data/original_data/part_files/',
+    'Dissertation_Experiments/lexicalAccess/data/original_data/part_files/']
+drop_list = ["03_Nombre (First name):", "04_Apellido (Last name):"]
 
-csvList = dataPreparation.collect_files(parentDir, startDir) # create list of csv files to deidentify
-dataPreparation.de_indentify(csvList, dropList, startDir, startDir) # currently keeping only the columns I need to drop
+for start_dir in start_directories:
+    # create list of csv files to deidentify
+    csv_list = data_preparation.collect_files(parent_dir, start_dir)
+    # drop identifying columns from dataset
+    data_preparation.de_indentify(csv_list, drop_list, start_dir, start_dir)
