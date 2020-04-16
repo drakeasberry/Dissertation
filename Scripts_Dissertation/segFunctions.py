@@ -1,3 +1,6 @@
+import xlrd
+import csv
+
 def csv_from_excel(workbookPath, sheetName, outputPath):
     """ Grabs a worksheet from Excel workbook and converts it to a csv file
 
@@ -9,8 +12,8 @@ def csv_from_excel(workbookPath, sheetName, outputPath):
     Return:
         outs a new csv file
     """
-    import xlrd
-    import csv
+    #import xlrd
+    #import csv
     wb = xlrd.open_workbook(workbookPath)
     sh = wb.sheet_by_name(sheetName)
     your_csv_file = open(outputPath, 'w')
@@ -25,7 +28,7 @@ def csv_from_excel(workbookPath, sheetName, outputPath):
 
 
 def fix_csv(input_path, output_path, column_converters):
-    import csv
+    #import csv
     with open(input_path, 'r') as input_file, open(output_path,
                                                    'w') as output_file:
         csv_reader = csv.DictReader(input_file)
