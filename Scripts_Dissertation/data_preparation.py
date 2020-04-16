@@ -4,7 +4,31 @@ import json
 import os
 import glob
 import pathlib
+import xlrd
+import csv
 
+def csv_from_excel(workbookPath, sheetName, outputPath):
+    """ Grabs a worksheet from Excel workbook and converts it to a csv file
+
+    Keyword arguments:
+        workbookPath - the file path of the current Excel Workbook
+        sheetName - the name of worksheet that you want to convert to csv
+        outputPath - path to write
+
+    Return:
+        outs a new csv file
+    """
+    wb = xlrd.open_workbook(workbookPath)
+    sh = wb.sheet_by_name(sheetName)
+    your_csv_file = open(outputPath, 'w')
+    wr = csv.writer(your_csv_file, quoting=csv.QUOTE_ALL)
+
+    for rownum in range(sh.nrows):
+        wr.writerow(sh.row_values(rownum))
+
+    your_csv_file.close()
+
+    return your_csv_file
 
 # checks to see if directory exists and creates new directories when not found
 def create_directory(path):
@@ -47,9 +71,9 @@ def remap_pandas_headers(json_path, csv_files, input_dir, output_dir):
 
 
 # creates a list of all csv files in specified directory
-def collect_files(parent_dir, search_dir):
+def collect_files(parent_dir, search_dir, search_criteria):
     os.chdir(search_dir)  # I had to add this in to avoid the housing directory from being part of file name
-    csv_list = glob.glob('*.csv')
+    csv_list = glob.glob(search_criteria)
     os.chdir(parent_dir)  # resets it back to where it needed to go. Is there an easier way to do this?
     return csv_list
 
