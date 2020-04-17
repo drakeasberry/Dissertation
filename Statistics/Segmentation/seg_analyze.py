@@ -50,13 +50,13 @@ try:
 except: ValueError
 
 # change the headers of csv files
-data_preparation.remap_pandas_headers('Scripts_Dissertation/replacement_map.json', csv_list, original_dir, temp_dir)
+data_preparation.remap_pandas_headers('Scripts_Dissertation/replacement_map.json', csv_list, original_dir, temp_dir, 0)
 
 # get list of csv files to modify and select desired columns
 csv_list_new_headers = data_preparation.collect_files(parent_dir, temp_dir, '*.csv')
 
 # Eliminates all unnecessary columns written by PsychoPy
-data_preparation.del_psycopy_cols(csv_list_new_headers, seg_keep_cols, temp_dir, processed_dir)
+data_preparation.del_psycopy_cols(csv_list_new_headers, seg_keep_cols, temp_dir, processed_dir, 0)
 
 # get list of csv files to modify, splits files and moves to stats temporary directory
 csv_list_to_split = data_preparation.collect_files(parent_dir, processed_dir, '*.csv')
@@ -71,29 +71,40 @@ for cur_list in list_of_lists:
     #print(list_name) # prints out column names to keep
     #print(processed_dir) # prints directory path that data is pulled from
     #print(stats_temp_dir) # prints directory path that data is written to
-    data_preparation.create_analysis_directories(skip_files, csv_list_to_split, cur_list, list_name, processed_dir, stats_temp_dir)
+    data_preparation.create_analysis_directories(skip_files, csv_list_to_split, cur_list, list_name, processed_dir, stats_temp_dir,0)
 
 # creates subdirectories in rFiles directory for each experiment with subset files ready for rStudio import
 for cur_list in list_of_lists:
     list_name = list_of_lists.get(cur_list)
     list_dir = stats_temp_dir + '/' + cur_list
     csv_list_to_subset = data_preparation.collect_files(parent_dir, list_dir, '*.csv')
-    data_preparation.create_analysis_files(csv_list_to_subset, cur_list, list_dir, parent_dir)
+    data_preparation.create_analysis_files(csv_list_to_subset, cur_list, list_dir, parent_dir,0)
 
-# create file to join necessary columns
-data_preparation.csv_from_excel(
-    'Dissertation_Experiments/segmentation/Segmentation_Experimental_Item_Setup.xlsx',
-    'Critical_Items', 'Statistics/Segmentation/analyze_data/join.csv')
+# paths needed to create join tables
+exp_search_directory = 'Dissertation_Experiments/segmentation/data/processed_data/exp_files'
+analyze_dir = 'Statistics/Segmentation/analyze_data'
 
-# create join table
-#print(os.getcwd())
-search_directory = 'Dissertation_Experiments/segmentation/data/processed_data/exp_files'
-copy_directory = 'Statistics/Segmentation/analyze_data'
-csv_list = data_preparation.collect_files(parent_dir, search_directory, 'exp*')
-print(csv_list)
+# get join files containing word frequency data
+excel_wb = 'Dissertation_Experiments/segmentation/Segmentation_Experimental_Item_Setup.xlsx'
+sheet_names = ['Critical_Items', 'RW_Filler_Items','PW_Filler_Items']
 
+for sheet in sheet_names:
+    out_file = analyze_dir + '/' + sheet + '.csv'
+    data_preparation.csv_from_excel(excel_wb, sheet, out_file)
+
+
+# create join table from experiment files
+exp_file_list = data_preparation.collect_files(parent_dir, exp_search_directory, 'exp*')
+data_preparation.copy_files(exp_file_list, exp_search_directory, analyze_dir)
+
+# remap headers and move to new directory
+join_csv_list = data_preparation.collect_files(parent_dir, analyze_dir, '*.csv')
 data_preparation.remap_pandas_headers('Scripts_Dissertation/replacement_map.json',
-                                       csv_list, search_directory, copy_directory)
-csv_list_new_headers = data_preparation.collect_files(parent_dir, copy_directory, '*.csv')
-print(csv_list_new_headers)
+                                      join_csv_list, analyze_dir, analyze_dir, False)
+
+
+
+
+
+
 

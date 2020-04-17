@@ -41,13 +41,13 @@ csv_list = data_preparation.collect_files(parent_dir, original_dir, '*.csv')
 #print(csv_list)
 
 # change the headers of csv files
-data_preparation.remap_pandas_headers('Scripts_Dissertation/replacement_map.json', csv_list, original_dir, temp_dir)
+data_preparation.remap_pandas_headers('Scripts_Dissertation/replacement_map.json', csv_list, original_dir, temp_dir, False)
 
 # get list of csv files to modify and select desired columns
 csv_list_new_headers = data_preparation.collect_files(parent_dir, temp_dir, '*.csv')
 
 # Eliminates all unnecessary columns written by PsychoPy
-data_preparation.del_psycopy_cols(csv_list_new_headers, lexical_keep_cols, temp_dir, processed_dir)
+data_preparation.del_psycopy_cols(csv_list_new_headers, lexical_keep_cols, temp_dir, processed_dir, 0)
 
 # get list of csv files to modify, splits files and moves to stats temporary directory
 csv_list_to_split = data_preparation.collect_files(parent_dir, processed_dir, '*.csv')
@@ -67,7 +67,7 @@ for cur_list in list_of_lists:
     #print(list_name) # prints out column names to keep
     #print(processed_dir) # prints directory path that data is pulled from
     #print(stats_temp_dir) # prints directory path that data is written to
-    data_preparation.create_analysis_directories(skip_files, csv_list_to_split, cur_list, list_name, processed_dir, stats_temp_dir)
+    data_preparation.create_analysis_directories(skip_files, csv_list_to_split, cur_list, list_name, processed_dir, stats_temp_dir, 0)
 
 # creates subdirectories in rFiles directory for each experiment with subset files ready for rStudio import
 for cur_list in list_of_lists:
@@ -77,6 +77,6 @@ for cur_list in list_of_lists:
     #print('list directory: ', list_dir)
     csv_list_to_subset = data_preparation.collect_files(parent_dir, list_dir, '*.csv')
     #print(csv_list_to_split)
-    data_preparation.create_analysis_files(csv_list_to_subset, cur_list, list_dir, parent_dir)
+    data_preparation.create_analysis_files(csv_list_to_subset, cur_list, list_dir, parent_dir, 0)
 
 

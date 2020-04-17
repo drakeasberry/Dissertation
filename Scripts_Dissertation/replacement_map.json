@@ -234,6 +234,15 @@
 	"rating_lang_att.rt":"langAttRT",
 	"lex_key_resp.keys":"lexicalResp",
 	"lex_key_resp.corr": "lexicalRespCorr",
-	"lex_key_resp.rt": "lexicalRespRT"
+	"lex_key_resp.rt": "lexicalRespRT",
+	"Critical_Word_CV": "word",
+	"Initial_Syl_Struct": "word_initial_syl",
+	"WordStatus": "word_status",
+	"Wd_Freq": "word_freq",
+	"Meaning": "meaning",
+	"stimuli": "word",
+	"Word_Freq_wpm_Subtlex": "word_freq",
+	"Syllable_Structure": "word_initial_syl",
+	"New_Pseudo": "word"
 }
 

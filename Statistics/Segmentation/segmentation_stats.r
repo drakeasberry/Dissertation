@@ -119,11 +119,35 @@ rm(seg_files)
 
 
 
+
+###################### On Monday start here with cleaning ############################
+
 ##### This is likely where I will want to join columns recommended by Miquel ###############################
 # get all condition csv files from directory
 join_dir = 'analyze_data' #set path to directory
-join_paths = list.files(path=join_dir, pattern = '*.csv', full.names = TRUE) #list all the files with path
-print(join_paths) # prints path with filenames
+join_paths = list.files(path=join_dir, pattern = '*[ABCD].csv', full.names = TRUE) #list all the files with path
+#print(join_paths) # prints path with filenames
+
+# read in extra files
+
+df_critical_info <- read_csv('analyze_data/Critical_Items.csv')
+df_exp <- subset(df_critical_info,Exp_Prac=='Experimental')
+df_exp <- df_exp[-c(1,4:8,10:15)]
+exp_error <- c('permsio','CVC','NA') # typo in experimental item added to list
+df_exp <- rbind(df_exp,exp_error)
+df_filler_info <- read_csv('analyze_data/RW_Filler_Items.csv')
+df_filler <- df_filler_info[-c(1,5:8)]
+exp_error_2 <- c('zarzuela',0.240384615,'CVC') # data missing in experimental file
+df_filler <- rbind(df_filler,exp_error_2)
+df_pw_filler_info <- read_csv('analyze_data/PW_Filler_Items.csv')
+df_pw_filler <- df_pw_filler_info[c('word','word_initial_syl')]
+df_pw_filler <- add_column(df_pw_filler,word_freq='NA')
+experimental_words <- rbind(df_exp,df_filler,df_pw_filler)
+
+rm(df_critical_info,df_exp,df_filler,df_filler_info,df_pw_filler,df_pw_filler_info, exp_error, exp_error_2)
+
+
+
 
 # Each trial loop runs one condition
 for(csv_condition in join_paths){
@@ -135,23 +159,22 @@ for(csv_condition in join_paths){
   while (i <= 3) {
     row <- paste('row',i, sep='_')
     row_tran <- paste('row_tran',i, sep='_')
-    print(row)
     col = filter(df_condition_raw, row_number() == i)
-    assign(row_tran, row_to_column(10,col[2:49]))
+    assign(row_tran, row_to_column(10,col[3:50]))
     i = i + 1
   }
 
-  j <- 1
-  labels <- df_single_items[,1]
+  j <- 2 # start at 2 to avoid repition of column names as data
+  labels <- df_single_items[,2]
   names(labels) <- 'fillerCarrier'
 
   while (j <= length(df_single_items)) {
     exp_words <- df_single_items[,j]
-    names(exp_words) <- 'words'
+    names(exp_words) <- 'word'
 
-    if (j == 1){
+    if (j == 2){
       out_vector <- labels
-    } else if (j==2) {
+    } else if (j==3) {
       out_vector = bind_cols(out_vector, exp_words)
     } else {
       temp_vector = bind_cols(labels, exp_words)
@@ -170,86 +193,59 @@ expCondC.csv <- add_column(expCondC.csv,condition = 'C')
 expCondD.csv <- add_column(expCondD.csv,condition = 'D')
 all_conditions <- rbind(expCondA.csv, expCondB.csv, expCondC.csv, expCondD.csv)
 all_data_tranformations <- rbind(row_tran_3_expCondA.csv,row_tran_3_expCondB.csv,row_tran_3_expCondC.csv,row_tran_3_expCondD.csv)
-
 join_table <- bind_cols(all_data_tranformations, all_conditions)
-
 join_table$word_status <- gsub('Real[0-9]+', 'word', join_table$word_status)
 join_table$word_status <- gsub('Pseudo[0-9]+', 'nonword', join_table$word_status)
-join_table$target_structure <- ifelse(str_length(join_table$target_syl)==2, 'CV', 'CVC')
-vowels = c('a','e','i','o','u')
-join_table$initial_wd_syl <- ifelse(substr(join_table$words, 4, 4) %in% vowels , 'CV', 'CVC')
-join_table$matching <- ifelse(join_table$target_structure==join_table$initial_wd_syl, 'match', 'mismatch')
+
+# join the tables together
+new_df <- left_join(join_table,experimental_words, by = 'word')
+#block_count <- count(new_df,vars = block)
+#more_than_40 <- filter(block_count,n>40)
+#sub <- subset(new_df, new_df$block %in% more_than_40$vars)
+#non <- subset(new_df, new_df$block %ni% more_than_40$vars)
+no_dup <- new_df[!duplicated(new_df),]
+#print(as_tibble(count(no_dup,block)),n=50)
+#print(as_tibble(count(no_dup,word_status)),n=50)
+#print(as_tibble(count(no_dup,target_syl)),n=50)
+#print(as_tibble(count(no_dup,fillerCarrier)),n=50)
+#print(as_tibble(count(no_dup,word)),n=600)
+#print(as_tibble(count(no_dup,condition)),n=50)
+#print(as_tibble(count(no_dup,word_initial_syl)),n=50)
+#print(colnames(no_dup))
+#error <- subset(no_dup,is.na(word_initial_syl))
+#zarzuela <- subset(join_table,word == 'zarzuela')
+#zarzuela_2 <- subset(experimental_words,word == 'zarzuela')
+# find error in tables using permsio and zarzuela (5 count)
+#block04 <- subset(no_dup, block == 'block04')
+
 
 rm(all_conditions,all_data_tranformations,col,df_cond_tran,df_condition_raw,df_single_items,exp_words,expCondA.csv,
    expCondB.csv,expCondC.csv,expCondD.csv,labels,out_vector,row_tran_3_expCondA.csv,row_tran_3_expCondB.csv,
-   row_tran_3_expCondC.csv,row_tran_3_expCondD.csv,temp_vector,csv_condition,df_cond_tran,filename,i,j,join_dir,
+   row_tran_3_expCondC.csv,row_tran_3_expCondD.csv,temp_vector,csv_condition,filename,i,j,join_dir,
    join_paths,row,row_tran,row_tran_1,row_tran_2,row_tran_3,vowels)
 
 
-###################Run only to this line ###########################
-
-# Now I need to join these tables together before proceeding
-# Join join_table (1920) and df_seg_data_raw (36000)
 
 
-## subset dataframe to get 'targetSyl' row only once
-#df_target_column <- filter(df_condition_raw, row_number() == 2L)
-#df_word_status <- filter(df_condition_raw, row_number() == 1L)
-#
-## create vectors to transform syllable targets and block trial numbers
-#targets <- as.character(df_target_column) # creates vector of all targets
-#blocks <- as.character(colnames(df_condition_raw)) # creates a vector of all block labels
-#real_pseduo <- as.character(df_word_status)
+colnames(df_seg_data_raw)[3] <- 'word' # changes colname 'carriers' 
+final_join <- no_dup[c('word','word_status','word_initial_syl','word_freq')]
+new_df_seg_data_raw <- inner_join(df_seg_data_raw,final_join, by = 'word')
+final_no_dup <- new_df_seg_data_raw[!duplicated(new_df_seg_data_raw),]
+final_no_dup$exp_word_type <- ifelse(final_no_dup$fillerCarrier =='carrierItem','carrier','filler')
+final_no_dup$target_syl_structure <- ifelse(str_length(final_no_dup$targetSyl)==2,'CV','CVC')
+final_no_dup$matching <- ifelse(final_no_dup$targetSyl== final_no_dup$target_syl_structure,'matching','mismatching')
+reorder <- final_no_dup[c("partNum","segResp","segRespRT","word","word_status","word_initial_syl","word_freq","targetSyl","target_syl_structure","matching", "exp_word_type","block","session","age","gender","birthCountry","placeResidence","education","preferLanguage","date","expName")]
+
+################### Tie back into existing code here after clean-up#########################
 
 
 
-## transforms data structure for use in analysis
-#for(csv_file in join_paths){
-#  filename <- basename(csv_file)
-#  # Each trial loop runs one participant
-#  #print(csv_file) # print out filename for segmentation analysis
-#  df_condition_raw <- read_csv(csv_file) #reads in raw data file from analyze_data directory
-#
-#  # Create subset to build vectors for transformation
-#  df_condition_modified <- as_tibble(select(df_condition_raw, block01:block48)) #includes only trial columns (48)
-#
-#  # subset dataframe to get 'targetSyl' row only once
-#  df_target_column <- filter(df_condition_modified, row_number() == 2L)
-#  df_word_status <- filter(df_condition_modified, row_number() == 1L)
-#
-#  # create vectors to transform syllable targets and block trial numbers
-#  targets <- as.character(df_target_column) # creates vector of all targets
-#  blocks <- as.character(colnames(df_condition_modified)) # creates a vector of all block labels
-#  real_pseduo <- as.character(df_word_status)
-#
-#  #df_items <- head(df_condition_modified[3:12,])
-#  df_items <- df_condition_modified[-1,]
-#  df_items <- df_items[-1,]
-#
-#  df_transform <- transform.data.frame(df_condition_raw)
-#  length((df_transform))
-#  # Call function to expand vectors to match dataframe length
-#  target_syllable_column <- do.call('row_to_column',list(1,targets)) # converts target vector column with appropriate length
-#  block_column <- do.call('row_to_column',list(1,blocks)) # converts block label vector column with appropriate length
-#  word_column <- do.call('words_to_column',list(df_condition_raw, 1, blocks)) # grabs all words and puts them into one column
-#
-#  # Create new dataframe with three new transformed columns
-#  df_condition_transformed <- add_column(df_condition_raw, targetSyl= target_syllable_column, block= block_column, carriers= word_column)
-#
-#  # subset to keep only columns necessary
-#  df_condition_transformed_correct_columns <- select(df_condition_transformed, fillerCarrier, block, carriers, targetSyl, segResp, segRespRT, partNum, session, age, gender, birthCountry, placeResidence, education, preferLanguage, date, expName)
-#
-#  # Further subset to drop target syllable rows (48 in total)
-#  df_condition_clean <- filter(df_condition_transformed_correct_columns, fillerCarrier != 'targetSyl')
-#
-#  # write transformed tibble to csv file
-#  test_dir <- file.path(join_dir, 'test/') # create new path to transformed directory name for updated files
-#  write_csv(df_condition_clean, file.path(test_dir, filename)) # write out corrected file to new directory
-#}
-#
-#
-#df_join <- read_csv('analyze_data/join.csv')
-#df_test <- merge(df_join,df_seg_data_raw,by='carriers')
+
+
+
+
+
+
 
 # Need library 'tidyverse' loaded
 # Create subset of all critical items

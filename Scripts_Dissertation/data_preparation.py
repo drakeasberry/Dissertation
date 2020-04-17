@@ -6,6 +6,14 @@ import glob
 import pathlib
 import xlrd
 import csv
+import shutil
+
+def copy_files(files, copy_directory,paste_directory):
+    for file in files:
+        file_copy = copy_directory + '/' + file
+        file_paste = paste_directory + '/' + file
+        shutil.copyfile(file_copy,file_paste)
+    return
 
 def csv_from_excel(workbookPath, sheetName, outputPath):
     """ Grabs a worksheet from Excel workbook and converts it to a csv file
@@ -37,9 +45,10 @@ def create_directory(path):
 
 
 # read in csv files as pandas dataframe
-def read_pandas(path, file):
+def read_pandas(path, file, indexing):
+    #print(indexing)
     read_dir = path + '/' + file
-    df = pd.read_csv(read_dir, index_col=0)
+    df = pd.read_csv(read_dir, index_col=indexing)
     return df
 
 
@@ -57,12 +66,12 @@ def de_indentify(csv_files, drop_columns, input_dir, output_dir):
 
 
 # replaces header names in csv files and creates a copy in a temporary directory
-def remap_pandas_headers(json_path, csv_files, input_dir, output_dir):
+def remap_pandas_headers(json_path, csv_files, input_dir, output_dir, indexing):
     with open(json_path, 'r') as json_file:
         replacement_map = json.load(json_file)
 
     for file in csv_files:
-        df = read_pandas(input_dir, file)
+        df = read_pandas(input_dir, file, indexing)
         original_header = list(df)
         new_header = [replacement_map.get(originalName) or originalName for originalName in original_header]
         write_dir = output_dir + '/' + file
@@ -79,9 +88,9 @@ def collect_files(parent_dir, search_dir, search_criteria):
 
 
 # Eliminates all unnecessary columns written by PsychoPy
-def del_psycopy_cols(csv_files, keep_columns, input_dir, output_dir):
+def del_psycopy_cols(csv_files, keep_columns, input_dir, output_dir, indexing):
     for file in csv_files:
-        df = read_pandas(input_dir, file)
+        df = read_pandas(input_dir, file, indexing)
         new_df = df.loc[:, df.columns.isin(keep_columns)]
         write_dir = output_dir + '/' + file
         new_df.to_csv(write_dir)
@@ -89,10 +98,10 @@ def del_psycopy_cols(csv_files, keep_columns, input_dir, output_dir):
 
 
 # prepares pandas dataframes to be moved to appropriate analysis directories
-def anaylsis_directory_moves(file, list_name, process_lists, input_dir, output_dir):
+def anaylsis_directory_moves(file, list_name, process_lists, input_dir, output_dir, indexing):
     # print('process list inside function: ',process_lists)
     # print('input directory inside function: ',input_dir)
-    df = read_pandas(input_dir, file)
+    df = read_pandas(input_dir, file, indexing)
     name, ext = os.path.splitext(file)
     # print('filename inside function: ',name)
     new_df = df.loc[:, df.columns.isin(process_lists)]
@@ -107,22 +116,22 @@ def anaylsis_directory_moves(file, list_name, process_lists, input_dir, output_d
 
 
 # Creates new directories and places new csv analysis files in appropriate subdirectories
-def create_analysis_directories(skip_files, csv_files, list_name, process_lists, input_dir, output_dir):
+def create_analysis_directories(skip_files, csv_files, list_name, process_lists, input_dir, output_dir, indexing):
     for file in csv_files:
         # print(file)
         if file in skip_files:  # this not matching expression
             if list_name == 'lexical_cols':
-                anaylsis_directory_moves(file, list_name, process_lists, input_dir, output_dir)
+                anaylsis_directory_moves(file, list_name, process_lists, input_dir, output_dir, indexing)
             else:
                 pass
                 #print(file, 'has been skipped for returning participant.')
         else:
-            anaylsis_directory_moves(file, list_name, process_lists, input_dir, output_dir)
+            anaylsis_directory_moves(file, list_name, process_lists, input_dir, output_dir, indexing)
     return
 
 
 # Creates new directories and places new csv analysis files in appropriate subdirectories
-def create_analysis_files(csv_files, list_name, input_dir, output_dir):
+def create_analysis_files(csv_files, list_name, input_dir, output_dir,indexing):
     subset_key_list = ['lextaleRespEngCorr', 'lextaleRespEspCorr', 'sylRespCorr', 'questionNum', 'fillerCarrier',
                        'lexicalRespCorr']
     demo_dir = 'Statistics/Demographics/analyze_data'
@@ -141,7 +150,7 @@ def create_analysis_files(csv_files, list_name, input_dir, output_dir):
                       'Statistics/Lexical_Access/analyze_data/temp_data/lexical_cols']
 
     for file in csv_files:
-        df = read_pandas(input_dir, file)
+        df = read_pandas(input_dir, file, indexing)
         name, ext = os.path.splitext(file)
 
         if input_dir in file_locations[0:2]:
