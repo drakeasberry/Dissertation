@@ -52,11 +52,10 @@ words_to_column <- function(input_tibble, iterator_size, input_vector){
   return(out_vector)
 }
 
-
 # get all csv files from directory
 seg_dir = 'analyze_data/raw' #set path to directory
 seg_paths = list.files(path=seg_dir, pattern = '*.csv', full.names = TRUE) #list all the files with path
-print(seg_paths) # prints path with filenames
+#print(seg_paths) # prints path with filenames
 
 # transforms data structure for use in analysis
 for(csv_file in seg_paths){
@@ -81,10 +80,10 @@ for(csv_file in seg_paths){
   word_column <- do.call('words_to_column',list(df_participant_raw, 11, blocks)) # grabs all words and puts them into one column
   
   # Create new dataframe with three new transformed columns
-  df_participant_transformed <- add_column(df_participant_raw, targetSyl= target_syllable_column, block= block_column, carriers= word_column)
+  df_participant_transformed <- add_column(df_participant_raw, targetSyl= target_syllable_column, block= block_column, word= word_column)
   
   # subset to keep only columns necessary
-  df_participant_transformed_correct_columns <- select(df_participant_transformed, fillerCarrier, block, carriers, targetSyl, segResp, segRespRT, partNum, session, age, gender, birthCountry, placeResidence, education, preferLanguage, date, expName)
+  df_participant_transformed_correct_columns <- select(df_participant_transformed, fillerCarrier, block, word, targetSyl, segResp, segRespRT, partNum, session, age, gender, birthCountry, placeResidence, education, preferLanguage, date, expName)
 
   # Further subset to drop target syllable rows (48 in total)
   df_participant_clean <- filter(df_participant_transformed_correct_columns, fillerCarrier != 'targetSyl')
@@ -94,189 +93,171 @@ for(csv_file in seg_paths){
   write_csv(df_participant_clean, file.path(transformed_dir, filename)) # write out corrected file to new directory
 }
 
-#---
-# These items are only used in the Rstudio environment
-# clean up items no longer needed from environment
-rm(df_participant_clean, df_participant_transformed_correct_columns, df_participant_transformed, df_participant_raw,df_participant_modified, df_target_column, targets, blocks, target_syllable_column, block_column, word_column, csv_file, filename, seg_dir, seg_paths)
-#---
-
 # This block requires 'plyr' and 'readr'
 # Segmentation Data Directory
-#seg_dir <- transformed_dir #set path to directory
 seg_files <- list.files(path=transformed_dir, pattern = '*.csv', full.names = TRUE) #list all the files with path
-print(seg_files) # prints list of transformed files to be analyzed
+#print(seg_files) # prints list of transformed files to be analyzed
 
 # read in all the files into one data frame
 # import multiple csv code modified from code posted at this link below:
 # https://datascienceplus.com/how-to-import-multiple-csv-files-simultaneously-in-r-and-create-a-data-frame/
-df_seg_data_raw = ldply(seg_files, read_csv)
+df_raw_seg = ldply(seg_files, read_csv)
 
 #---
 # These items are only used in the Rstudio environment
-# clean up unnecessary items in environment
-rm(seg_files)
+# Clean up unnecessary items in environment
+rm(df_participant_clean, df_participant_transformed_correct_columns,
+   df_participant_transformed, df_participant_raw,df_participant_modified,
+   df_target_column, targets, blocks, target_syllable_column, block_column,
+   word_column, csv_file, filename, seg_dir, seg_paths, seg_files, transformed_dir)
 #---
 
-
-
-
-###################### On Monday start here with cleaning ############################
-
-##### This is likely where I will want to join columns recommended by Miquel ###############################
-# get all condition csv files from directory
+# Create a new dataframe to join to participant data needed for analysis
+# Get all condition csv files copied from processed experiment directory
 join_dir = 'analyze_data' #set path to directory
 join_paths = list.files(path=join_dir, pattern = '*[ABCD].csv', full.names = TRUE) #list all the files with path
 #print(join_paths) # prints path with filenames
 
-# read in extra files
-
-df_critical_info <- read_csv('analyze_data/Critical_Items.csv')
-df_exp <- subset(df_critical_info,Exp_Prac=='Experimental')
-df_exp <- df_exp[-c(1,4:8,10:15)]
-exp_error <- c('permsio','CVC','NA') # typo in experimental item added to list
-df_exp <- rbind(df_exp,exp_error)
-df_filler_info <- read_csv('analyze_data/RW_Filler_Items.csv')
-df_filler <- df_filler_info[-c(1,5:8)]
-exp_error_2 <- c('zarzuela',0.240384615,'CVC') # data missing in experimental file
-df_filler <- rbind(df_filler,exp_error_2)
-df_pw_filler_info <- read_csv('analyze_data/PW_Filler_Items.csv')
-df_pw_filler <- df_pw_filler_info[c('word','word_initial_syl')]
-df_pw_filler <- add_column(df_pw_filler,word_freq='NA')
-experimental_words <- rbind(df_exp,df_filler,df_pw_filler)
-
-rm(df_critical_info,df_exp,df_filler,df_filler_info,df_pw_filler,df_pw_filler_info, exp_error, exp_error_2)
-
-
-
-
-# Each trial loop runs one condition
+# Each trial loop runs one condition A,B,C or D
 for(csv_condition in join_paths){
   filename <- basename(csv_condition)
-  df_condition_raw <- read_csv(csv_condition, col_names = FALSE) #reads in raw data file from analyze_data directory
-  df_single_items <- df_condition_raw[-c(1, 2, 3),]
+  cond <- str_sub(filename,8,8)
+  df_raw_cond <- read_csv(csv_condition, col_names = FALSE) #reads in raw data file from analyze_data directory
+  df_items <- df_raw_cond[-c(1, 2, 3),] #remove first three rows
 
   i <- 1
   while (i <= 3) {
     row <- paste('row',i, sep='_')
     row_tran <- paste('row_tran',i, sep='_')
-    col = filter(df_condition_raw, row_number() == i)
+    col = filter(df_raw_cond, row_number() == i)
     assign(row_tran, row_to_column(10,col[3:50]))
     i = i + 1
   }
 
   j <- 2 # start at 2 to avoid repition of column names as data
-  labels <- df_single_items[,2]
-  names(labels) <- 'fillerCarrier'
+  col_labels <- df_items[,2]
+  names(col_labels) <- 'fillerCarrier'
 
-  while (j <= length(df_single_items)) {
-    exp_words <- df_single_items[,j]
+  while (j <= length(df_items)) {
+    exp_words <- df_items[,j]
     names(exp_words) <- 'word'
 
     if (j == 2){
-      out_vector <- labels
+      out_vector <- col_labels
     } else if (j==3) {
       out_vector = bind_cols(out_vector, exp_words)
     } else {
-      temp_vector = bind_cols(labels, exp_words)
+      temp_vector = bind_cols(col_labels, exp_words)
       out_vector <- rbind(out_vector, temp_vector)
     }
     df_cond_tran <- paste(row_tran,filename,sep = '_')
-    assign(filename,out_vector)
-    assign(df_cond_tran, tibble(block = row_tran_1, word_status = row_tran_2, target_syl = row_tran_3))
     j = j + 1
   }
+  assign(df_cond_tran, tibble(block = row_tran_1, word_status = row_tran_2, target_syl = row_tran_3))
+  out_vector <- add_column(out_vector, condition = cond)
+  assign(filename, out_vector)
 }
 
-expCondA.csv <- add_column(expCondA.csv,condition = 'A')
-expCondB.csv <- add_column(expCondB.csv,condition = 'B')
-expCondC.csv <- add_column(expCondC.csv,condition = 'C')
-expCondD.csv <- add_column(expCondD.csv,condition = 'D')
 all_conditions <- rbind(expCondA.csv, expCondB.csv, expCondC.csv, expCondD.csv)
 all_data_tranformations <- rbind(row_tran_3_expCondA.csv,row_tran_3_expCondB.csv,row_tran_3_expCondC.csv,row_tran_3_expCondD.csv)
-join_table <- bind_cols(all_data_tranformations, all_conditions)
-join_table$word_status <- gsub('Real[0-9]+', 'word', join_table$word_status)
-join_table$word_status <- gsub('Pseudo[0-9]+', 'nonword', join_table$word_status)
+exp_joiner <- all_data_tranformations %>% 
+  bind_cols(all_conditions) %>%
+  mutate(word_status = ifelse(grepl('Real[0-9]+',word_status),'word','nonword'))
 
-# join the tables together
-new_df <- left_join(join_table,experimental_words, by = 'word')
-#block_count <- count(new_df,vars = block)
-#more_than_40 <- filter(block_count,n>40)
-#sub <- subset(new_df, new_df$block %in% more_than_40$vars)
-#non <- subset(new_df, new_df$block %ni% more_than_40$vars)
-no_dup <- new_df[!duplicated(new_df),]
-#print(as_tibble(count(no_dup,block)),n=50)
-#print(as_tibble(count(no_dup,word_status)),n=50)
-#print(as_tibble(count(no_dup,target_syl)),n=50)
-#print(as_tibble(count(no_dup,fillerCarrier)),n=50)
-#print(as_tibble(count(no_dup,word)),n=600)
-#print(as_tibble(count(no_dup,condition)),n=50)
-#print(as_tibble(count(no_dup,word_initial_syl)),n=50)
-#print(colnames(no_dup))
-#error <- subset(no_dup,is.na(word_initial_syl))
-#zarzuela <- subset(join_table,word == 'zarzuela')
-#zarzuela_2 <- subset(experimental_words,word == 'zarzuela')
-# find error in tables using permsio and zarzuela (5 count)
-#block04 <- subset(no_dup, block == 'block04')
+#---
+# These items are only used in the Rstudio environment
+# Clean up unnecessary items in environment
+rm(all_conditions, all_data_tranformations, col, df_cond_tran, df_raw_cond, df_items, exp_words, expCondA.csv,
+   expCondB.csv, expCondC.csv, expCondD.csv, col_labels, out_vector, row_tran_3_expCondA.csv, row_tran_3_expCondB.csv,
+   row_tran_3_expCondC.csv, row_tran_3_expCondD.csv, temp_vector, csv_condition, filename, i, j, row, row_tran, row_tran_1, 
+   row_tran_2, row_tran_3, cond)
+#---
 
+# Read in experiment files contatining information about experimental items needed
+# for analysis and will be joined to participant data
+keep_columns <- c('word','word_initial_syl','word_freq') # keep only these columns
 
-rm(all_conditions,all_data_tranformations,col,df_cond_tran,df_condition_raw,df_single_items,exp_words,expCondA.csv,
-   expCondB.csv,expCondC.csv,expCondD.csv,labels,out_vector,row_tran_3_expCondA.csv,row_tran_3_expCondB.csv,
-   row_tran_3_expCondC.csv,row_tran_3_expCondD.csv,temp_vector,csv_condition,filename,i,j,join_dir,
-   join_paths,row,row_tran,row_tran_1,row_tran_2,row_tran_3,vowels)
+# Build critical items table
+exp_error <- tibble(word='permsio',word_initial_syl='CVC') # typo in experimental item added to list
+df_critical <- read_csv('analyze_data/Critical_Items.csv')
+df_critical <- df_critical %>%
+  subset(Exp_Prac=='Experimental') %>%
+  select(keep_columns)
+# Bind error row and experimental items
+df_critical <- rbind.fill(df_critical, exp_error)
 
+# Build filler tables
+exp_error_2 <- tibble(word = 'zarzuela', word_initial_syl = 'CVC', word_freq = 0.240384615) # data missing in experimental file
+df_rw_filler <- read_csv('analyze_data/RW_Filler_Items.csv')
+df_pw_filler <- read_csv('analyze_data/PW_Filler_Items.csv')
 
+# combine pseudo/real word tiblles and drop unnecessary columns
+df_filler <- rbind.fill(df_rw_filler, df_pw_filler, exp_error_2) %>%
+  select(keep_columns)
 
+# Combine potential fillers and actual critical items into a single tibble
+corpus_joiner <- rbind(df_critical, df_filler)
 
-colnames(df_seg_data_raw)[3] <- 'word' # changes colname 'carriers' 
-final_join <- no_dup[c('word','word_status','word_initial_syl','word_freq')]
-new_df_seg_data_raw <- inner_join(df_seg_data_raw,final_join, by = 'word')
-final_no_dup <- new_df_seg_data_raw[!duplicated(new_df_seg_data_raw),]
-final_no_dup$exp_word_type <- ifelse(final_no_dup$fillerCarrier =='carrierItem','carrier','filler')
-final_no_dup$target_syl_structure <- ifelse(str_length(final_no_dup$targetSyl)==2,'CV','CVC')
-final_no_dup$matching <- ifelse(final_no_dup$targetSyl== final_no_dup$target_syl_structure,'matching','mismatching')
-reorder <- final_no_dup[c("partNum","segResp","segRespRT","word","word_status","word_initial_syl","word_freq","targetSyl","target_syl_structure","matching", "exp_word_type","block","session","age","gender","birthCountry","placeResidence","education","preferLanguage","date","expName")]
+# Join experimenatl condition with potentials from critical/filler joins
+complete_joiner <- exp_joiner %>%
+  inner_join(corpus_joiner, by = 'word') %>%
+  distinct() %>%
+  select(keep_columns,'word_status')
 
-################### Tie back into existing code here after clean-up#########################
-
-
-
-
+# I should probably write this out to a new file.....
+write_csv(complete_joiner,'~/Desktop/working_diss_files/r-checking/join_table.csv')
 
 
+# Join table with experimental results from participants
+#colnames(df_raw_seg)[3] <- 'word' # changes colname 'carriers'
+seg_data_join <- df_raw_seg %>%
+  inner_join(complete_joiner, by = 'word') %>%
+  distinct() %>% # remove duplicates
+  mutate(exp_word_type = ifelse(fillerCarrier =='carrierItem','carrier','filler'),
+         target_syl_structure = ifelse(str_length(targetSyl)==2,'CV','CVC'),
+         matching = ifelse(word_initial_syl == target_syl_structure,'matching','mismatching')) %>%
+  select("partNum","segResp","segRespRT","word","word_status","word_initial_syl","word_freq","targetSyl","target_syl_structure","matching", "exp_word_type","expName","block","session","age","gender","birthCountry","placeResidence","education","preferLanguage","date")
 
-
-
+write_csv(seg_data_join,'~/Desktop/working_diss_files/r-checking/segmentation_data.csv')
+#---
+# These items are only used in the Rstudio environment
+# Clean up unnecessary items in environment
+rm(df_critical, df_rw_filler, df_pw_filler, exp_error, exp_error_2, complete_joiner, corpus_joiner,
+   df_filler, exp_joiner, df_raw_seg, join_dir, join_paths, keep_columns)
+#---
 
 # Need library 'tidyverse' loaded
 # Create subset of all critical items
-df_seg_critical_raw <- subset(df_seg_data_raw, df_seg_data_raw$fillerCarrier == 'carrierItem')
 print('Counts of responses to critical items')
 print('1 = response and None = no response')
+seg_critical <- subset(seg_data_join, seg_data_join$exp_word_type == 'carrier')
 # Prints tibble showing all responses and frequency of response to critical items
-count(df_seg_critical_raw, vars=segResp)
+count(seg_critical, vars=segResp)
+write_csv(seg_critical,'~/Desktop/working_diss_files/r-checking/critical_items.csv')
 
 # Further subset critical data set to those that were NOT responded to by participants
-df_seg_critical_wrong <- subset(df_seg_critical_raw, df_seg_critical_raw$segResp == 'None')
-#df_seg_critical_wrong #prints subsetted dataframe for all missed critical items
+seg_critical_misses <- subset(seg_critical, seg_critical$segResp == 'None')
+write_csv(seg_critical_misses,'~/Desktop/working_diss_files/r-checking/critical_misses.csv')
 
 # Create a tibble of participants who incorrectly did not respond to critical item including number of errors
-df_seg_critical_errors <- count(df_seg_critical_wrong, vars=partNum)
+df_seg_critical_errors <- count(seg_critical_misses, vars=partNum)
 print('Counts of responses to critical items by participant')
 print(as_tibble(df_seg_critical_errors), n=100) # n default is 10, but here it has been changed to 100 viewable rows
 
 # Create a subset of all filler items
-df_seg_filler_raw <- subset(df_seg_data_raw, df_seg_data_raw$fillerCarrier %ni% c('carrierItem', 'targetSyl'))
+seg_filler <- subset(seg_data_join, seg_data_join$exp_word_type != 'carrier')
 print('Counts of responses to filler items')
 print('1 = response and None = no response')
 # Prints tibble showing all responses and frequency of response to filler items
-count(df_seg_filler_raw, vars=segResp)
+count(seg_filler, vars=segResp)
+write_csv(seg_filler,'~/Desktop/working_diss_files/r-checking/filler_items.csv')
 
 # Further subset filler data set to those that were responded to by participants
-df_seg_filler_wrong <- subset(df_seg_filler_raw, df_seg_filler_raw$segResp == 1)
-#df_seg_filler_wrong #prints subsetted dataframe for all filler items responded to
+seg_filler_responses <- subset(seg_filler, seg_filler$segResp == 1)
+write_csv(seg_filler_responses,'~/Desktop/working_diss_files/r-checking/filler_responses.csv')
 
 # Create a dataframe of participants who incorrectly responded to a filler item
-df_seg_filler_errors <- count(df_seg_filler_wrong, vars=partNum)
+df_seg_filler_errors <- count(seg_filler_responses, vars=partNum)
 print('Counts of responses to filler items by participant')
 print(as_tibble(df_seg_filler_errors), n=100) # n default is 10, but here it has been changed to 100 viewable rows
 
@@ -294,18 +275,18 @@ tb_high_seg_critical_error_part <- df_seg_critical_errors[high_miss_seg_critical
 tb_high_seg_critical_error_part #prints 2 column tibble of participant and error rate
 
 # Creates subset of wrong answers committed by high error rate participants
-df_high_seg_errors_part <- df_seg_filler_wrong[df_seg_filler_wrong$partNum %in% tb_high_seg_filler_error_part$vars,]
+df_high_seg_errors_part <- seg_filler_responses[seg_filler_responses$partNum %in% tb_high_seg_filler_error_part$vars,]
 #df_high_seg_errors_part
 
 # Creates subset of wrong answers commited by low error rate participants
-df_low_seg_errors_part <- df_seg_filler_wrong[df_seg_filler_wrong$partNum %ni% tb_high_seg_filler_error_part$vars,]
+df_low_seg_errors_part <- seg_filler_responses[seg_filler_responses$partNum %ni% tb_high_seg_filler_error_part$vars,]
 #df_low_seg_errors_part
 
 # looks for too quick of response, anything below 200 ms
 button_held_high <- c(which(df_high_seg_errors_part$segRespRT < .200))
 print('prints responses given below 200ms')
 button_held_high
-tech_error_high <- df_high_seg_errors_part[button_held_high,7:6]
+tech_error_high <- df_high_seg_errors_part[button_held_high,c('partNum','segRespRT')]
 print('prints responses given below 200ms by participant number')
 tech_error_high
 length(tech_error_high$segRespRT)
@@ -316,29 +297,27 @@ length(button_not_held_high)
 # Same as above but for low error committing participants
 button_held_low <- c(which(df_low_seg_errors_part$segRespRT < .200))
 button_held_low
-tech_error_low <- df_low_seg_errors_part[button_held_low,7:6]
+tech_error_low <- df_low_seg_errors_part[button_held_low,c('partNum','segRespRT')]
 button_not_held_low <- c(which(df_low_seg_errors_part$segRespRT >= .200))
 
 # Combine tibbles into new tibble
 tb_tech_part_error <- full_join(count(tech_error_high, vars=partNum), count(df_high_seg_errors_part, vars=partNum), by = 'vars', copy = FALSE, suffix = c("_tech_errors", "_total_errors"))
 
 # Add a column to new tibble with difference calculated to see real number of errors
+# This shows the number of errors committed by participant NOT due to technical issues
 tb_tech_error_removed <- add_column(tb_tech_part_error,non_technical_errors=tb_tech_part_error$n_total_errors - tb_tech_part_error$n_tech_errors,.after = 'n_total_errors')
 
 # Test to see if any participant has still committed more than 10% error rate to filler items
-re_investigate <- c(which(tb_tech_error_removed$non_technical_errors > 43))
-
-# get numbers of each type of item
-num_critical_items <- length(unique(df_seg_data_raw$partNum)) * 48 # number of participants \* 48 trial blocks \* 1 critical item per trial block
-num_filler_items <- length(unique(df_seg_data_raw$partNum)) * 48 * 9 # number of participants \* 48 trial blocks \* 9 filler items per trial block
-num_total_item <- num_critical_items + num_filler_items
-
-if(num_total_item==length(df_seg_data_raw$fillerCarrier)){
-  print('counts looks good: total counts match ')
-} else {
-  print('some counts are off, recheck data')
-}
-
-# Write out csv for Miquel Meeting
-write_csv(df_seg_critical_raw,'~/Desktop/r-checking/segmentation_critical_items.csv')
-write_csv(join_table,'~/Desktop/r-checking/join_table.csv')
+# If investigate has participants, they need to be removed for higher error rates,
+# If investigate is empty, this is a positive.
+investigate <- c(which(tb_tech_error_removed$non_technical_errors > 43))
+if(length(investigate) == 0){
+  print('No issues here')
+  rm(df_high_seg_errors_part,df_low_seg_errors_part, tb_high_seg_critical_error_part,
+     tb_high_seg_filler_error_part,tb_tech_error_removed,tb_tech_part_error,
+     tech_error_high,tech_error_low, button_held_high, button_held_low,
+     button_not_held_high, button_not_held_low, high_miss_seg_critical_responses, 
+     high_seg_filler_responses, df_seg_critical_errors, df_seg_filler_errors, investigate)
+  } else{
+    print('See who has many errors:')
+    }
