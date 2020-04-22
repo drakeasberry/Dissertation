@@ -16,7 +16,7 @@ pipenv run python Statistics/Lexical_Access/lexical_analyze.py
 
 # Run R analysis
 cd Statistics/Segmentation/
-#Rscript segmentation_stats.r
+Rscript segmentation_stats.r
 
 # Run clean up to remove unecessary files
 cd ../..

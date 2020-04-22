@@ -14,7 +14,7 @@ library(tidyverse)
 options(readr.num_columns = 0)
 
 # LexTALE-English Data Directory
-lex_eng_dir = 'analyze_data/lexEngCols' #set path to directory
+lex_eng_dir = 'analyze_data/lextale_eng_cols' #set path to directory
 lex_eng_files = list.files(path=lex_eng_dir, pattern = '*.csv', full.names = TRUE) #list all the files with path
 #print(engFiles)
 
@@ -22,14 +22,14 @@ lex_eng_files = list.files(path=lex_eng_dir, pattern = '*.csv', full.names = TRU
 lex_eng_data = ldply(lex_eng_files, read_csv)
 
 # LexTALE-Spanish Data Directory
-lex_esp_dir = 'analyze_data/lexEspCols' #set path to directory
+lex_esp_dir = 'analyze_data/lextale_esp_cols' #set path to directory
 lex_esp_files = list.files(path=lex_esp_dir, pattern = '*.csv', full.names = TRUE) #list all the files with path
 
 # read in all the files into one data frame
 lex_esp_data = ldply(lex_esp_files, read_csv)
 
 # Basic Langauge Profile Data Directory
-blp_dir = 'analyze_data/blpCols' #set path to directory
+blp_dir = 'analyze_data/blp_cols' #set path to directory
 blp_files = list.files(path=blp_dir, pattern = '*.csv', full.names = TRUE) #list all the files with path
 
 # read in all the files into one data frame
@@ -77,10 +77,10 @@ lex_esp_cleaned <- subset(lex_esp_data, lex_esp_data$Order !=0)
 # commented lines only for quick viewing purposes, NOT analysis
 #lex_eng_score <- aggregate(data=lex_eng_cleaned, lexRespEngCorr ~ partNum + birthCountry, FUN='mean')
 #lex_esp_score <- aggregate(data=lex_esp_cleaned, lexRespEspCorr ~ partNum + birthCountry, FUN='mean')
-lex_eng_score <- aggregate(data=lex_eng_cleaned, lexRespEngCorr ~ partNum, FUN='mean')
-names(lex_eng_score)[names(lex_eng_score)=='lexRespEngCorr'] <- 'lex_eng_correct'
-lex_esp_score <- aggregate(data=lex_esp_cleaned, lexRespEspCorr ~ partNum, FUN='mean')
-names(lex_esp_score)[names(lex_esp_score)=='lexRespEspCorr'] <- 'lex_esp_correct'
+lex_eng_score <- aggregate(data=lex_eng_cleaned, lextaleRespEngCorr ~ partNum, FUN='mean')
+names(lex_eng_score)[names(lex_eng_score)=='lextaleRespEngCorr'] <- 'lextale_eng_correct'
+lex_esp_score <- aggregate(data=lex_esp_cleaned, lextaleRespEspCorr ~ partNum, FUN='mean')
+names(lex_esp_score)[names(lex_esp_score)=='lextaleRespEspCorr'] <- 'lextale_esp_correct'
 
 # create dataframe for each blp section
 lang_history <- subset(blp_data_cleaned, blp_section == 'Language history')
@@ -155,7 +155,7 @@ lang_dom <- with(global_score,eng_score-esp_score)
 global_score$lang_dominance <- lang_dom
 global_score <- merge(global_score, lex_eng_score, by='partNum')
 global_score <- merge(global_score, lex_esp_score, by='partNum')
-part_scores <- select(global_score, c(partNum,eng_score,esp_score,lang_dominance,lex_eng_correct, lex_esp_correct))
+part_scores <- select(global_score, c(partNum,eng_score,esp_score,lang_dominance,lextale_eng_correct, lextale_esp_correct))
 part_scores_demographics <- merge(part_scores,demographics, by='partNum')
 
 rm(eng_score,esp_score,lang_dom, blp_data_cleaned,blp_attitude_score,blp_history_score,blp_proficiency_score,blp_use_score)
@@ -163,10 +163,10 @@ rm(eng_att,eng_hist,eng_prof,eng_use,esp_att,esp_hist,esp_prof,esp_use)
 rm(global_score, english, spanish, part_scores,lex_esp_score, lex_eng_score, demographics)
 
 # export csv for Miquel Meeting
-write_csv(lang_attitude_clean,'~/Desktop/r-checking/blp_attitude.csv')
-write_csv(lang_history_clean,'~/Desktop/r-checking/blp_history.csv')
-write_csv(lang_proficiency_clean,'~/Desktop/r-checking/blp_proficiency.csv')
-write_csv(lang_use_clean,'~/Desktop/r-checking/blp_use.csv')
-write_csv(lex_eng_cleaned,'~/Desktop/r-checking/lextale_english.csv')
-write_csv(lex_esp_cleaned,'~/Desktop/r-checking/lextale_spanish.csv')
-write_csv(part_scores_demographics,'~/Desktop/r-checking/participants_information.csv')
+write_csv(lang_attitude_clean,'~/Desktop/working_diss_files/r-checking/blp_attitude.csv')
+write_csv(lang_history_clean,'~/Desktop/working_diss_files/r-checking/blp_history.csv')
+write_csv(lang_proficiency_clean,'~/Desktop/working_diss_files/r-checking/blp_proficiency.csv')
+write_csv(lang_use_clean,'~/Desktop/working_diss_files/r-checking/blp_use.csv')
+write_csv(lex_eng_cleaned,'~/Desktop/working_diss_files/r-checking/lextale_english.csv')
+write_csv(lex_esp_cleaned,'~/Desktop/working_diss_files/r-checking/lextale_spanish.csv')
+write_csv(part_scores_demographics,'~/Desktop/working_diss_files/r-checking/participants_information.csv')

@@ -17,7 +17,7 @@ options(readr.num_columns = 0)
 row_to_column <- function(iterator_size, input_vector){
   i <- 1 # r indexing start at 1, not 0
   j <- iterator_size # how many rows need to be created
-  test_counter <- 1
+  counter <- 1
   
   # for every item in the input vector, create specified number of rows needed to match length
   for(item in input_vector){
@@ -28,7 +28,7 @@ row_to_column <- function(iterator_size, input_vector){
     }
     i <- i + iterator_size
     j <- j + iterator_size
-    test_counter <- test_counter + 1
+    counter <- counter + 1
   }
   return(out_vector)
 }
@@ -143,19 +143,19 @@ for(csv_condition in join_paths){
     names(exp_words) <- 'word'
 
     if (j == 2){
-      out_vector <- col_labels
+      out_tibble <- col_labels
     } else if (j==3) {
-      out_vector = bind_cols(out_vector, exp_words)
+      out_tibble = bind_cols(out_tibble, exp_words)
     } else {
-      temp_vector = bind_cols(col_labels, exp_words)
-      out_vector <- rbind(out_vector, temp_vector)
+      temp_tibble = bind_cols(col_labels, exp_words)
+      out_tibble <- rbind(out_tibble, temp_tibble)
     }
     df_cond_tran <- paste(row_tran,filename,sep = '_')
     j = j + 1
   }
   assign(df_cond_tran, tibble(block = row_tran_1, word_status = row_tran_2, target_syl = row_tran_3))
-  out_vector <- add_column(out_vector, condition = cond)
-  assign(filename, out_vector)
+  out_tibble <- add_column(out_tibble, condition = cond)
+  assign(filename, out_tibble)
 }
 
 all_conditions <- rbind(expCondA.csv, expCondB.csv, expCondC.csv, expCondD.csv)
@@ -168,8 +168,8 @@ exp_joiner <- all_data_tranformations %>%
 # These items are only used in the Rstudio environment
 # Clean up unnecessary items in environment
 rm(all_conditions, all_data_tranformations, col, df_cond_tran, df_raw_cond, df_items, exp_words, expCondA.csv,
-   expCondB.csv, expCondC.csv, expCondD.csv, col_labels, out_vector, row_tran_3_expCondA.csv, row_tran_3_expCondB.csv,
-   row_tran_3_expCondC.csv, row_tran_3_expCondD.csv, temp_vector, csv_condition, filename, i, j, row, row_tran, row_tran_1, 
+   expCondB.csv, expCondC.csv, expCondD.csv, col_labels, out_tibble, row_tran_3_expCondA.csv, row_tran_3_expCondB.csv,
+   row_tran_3_expCondC.csv, row_tran_3_expCondD.csv, temp_tibble, csv_condition, filename, i, j, row, row_tran, row_tran_1,
    row_tran_2, row_tran_3, cond)
 #---
 
@@ -228,11 +228,11 @@ rm(df_critical, df_rw_filler, df_pw_filler, exp_error, exp_error_2, complete_joi
 
 # Need library 'tidyverse' loaded
 # Create subset of all critical items
-print('Counts of responses to critical items')
-print('1 = response and None = no response')
+#print('Counts of responses to critical items')
+#print('1 = response and None = no response')
 seg_critical <- subset(seg_data_join, seg_data_join$exp_word_type == 'carrier')
 # Prints tibble showing all responses and frequency of response to critical items
-count(seg_critical, vars=segResp)
+#count(seg_critical, vars=segResp)
 write_csv(seg_critical,'~/Desktop/working_diss_files/r-checking/critical_items.csv')
 
 # Further subset critical data set to those that were NOT responded to by participants
@@ -241,15 +241,15 @@ write_csv(seg_critical_misses,'~/Desktop/working_diss_files/r-checking/critical_
 
 # Create a tibble of participants who incorrectly did not respond to critical item including number of errors
 df_seg_critical_errors <- count(seg_critical_misses, vars=partNum)
-print('Counts of responses to critical items by participant')
-print(as_tibble(df_seg_critical_errors), n=100) # n default is 10, but here it has been changed to 100 viewable rows
+#print('Counts of responses to critical items by participant')
+#print(as_tibble(df_seg_critical_errors), n=100) # n default is 10, but here it has been changed to 100 viewable rows
 
 # Create a subset of all filler items
 seg_filler <- subset(seg_data_join, seg_data_join$exp_word_type != 'carrier')
-print('Counts of responses to filler items')
-print('1 = response and None = no response')
+#print('Counts of responses to filler items')
+#print('1 = response and None = no response')
 # Prints tibble showing all responses and frequency of response to filler items
-count(seg_filler, vars=segResp)
+#count(seg_filler, vars=segResp)
 write_csv(seg_filler,'~/Desktop/working_diss_files/r-checking/filler_items.csv')
 
 # Further subset filler data set to those that were responded to by participants
@@ -258,8 +258,8 @@ write_csv(seg_filler_responses,'~/Desktop/working_diss_files/r-checking/filler_r
 
 # Create a dataframe of participants who incorrectly responded to a filler item
 df_seg_filler_errors <- count(seg_filler_responses, vars=partNum)
-print('Counts of responses to filler items by participant')
-print(as_tibble(df_seg_filler_errors), n=100) # n default is 10, but here it has been changed to 100 viewable rows
+#print('Counts of responses to filler items by participant')
+#print(as_tibble(df_seg_filler_errors), n=100) # n default is 10, but here it has been changed to 100 viewable rows
 
 # Find all participants who responded 43 or more times (>=10%) to filler items
 # or missed more than 5 critical item (>= 10%), and they will be used to index later
@@ -284,11 +284,11 @@ df_low_seg_errors_part <- seg_filler_responses[seg_filler_responses$partNum %ni%
 
 # looks for too quick of response, anything below 200 ms
 button_held_high <- c(which(df_high_seg_errors_part$segRespRT < .200))
-print('prints responses given below 200ms')
-button_held_high
+#print('prints responses given below 200ms')
+#button_held_high
 tech_error_high <- df_high_seg_errors_part[button_held_high,c('partNum','segRespRT')]
-print('prints responses given below 200ms by participant number')
-tech_error_high
+#print('prints responses given below 200ms by participant number')
+#tech_error_high
 length(tech_error_high$segRespRT)
 
 button_not_held_high <- c(which(df_high_seg_errors_part$segRespRT >= .200))
@@ -296,7 +296,7 @@ length(button_not_held_high)
 
 # Same as above but for low error committing participants
 button_held_low <- c(which(df_low_seg_errors_part$segRespRT < .200))
-button_held_low
+#button_held_low
 tech_error_low <- df_low_seg_errors_part[button_held_low,c('partNum','segRespRT')]
 button_not_held_low <- c(which(df_low_seg_errors_part$segRespRT >= .200))
 
@@ -319,5 +319,5 @@ if(length(investigate) == 0){
      button_not_held_high, button_not_held_low, high_miss_seg_critical_responses, 
      high_seg_filler_responses, df_seg_critical_errors, df_seg_filler_errors, investigate)
   } else{
-    print('See who has many errors:')
+    print('See who has too many errors:')
     }
