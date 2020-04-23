@@ -1,0 +1,7 @@
+﻿Order,Word,corrAnsEngV,ciclo.thisRepN,ciclo.thisTrialN,ciclo.thisN,ciclo.thisIndex,lexEsp_key_resp.keys,lexEsp_key_resp.corr,lexEsp_key_resp.rt,participant,date,expName,psychopyVersion,frameRate,
+0,platery,0,0,0,0,0,1,0,1.6814337680000335,test,2019_Mar_15_1009,decision_lexica_visual,3.0.5,60.106126622861765,
+0,denial,1,0,1,1,1,1,1,1.1833310619999793,test,2019_Mar_15_1009,decision_lexica_visual,3.0.5,60.106126622861765,
+0,generic,1,0,2,2,2,0,0,1.0973011980001957,test,2019_Mar_15_1009,decision_lexica_visual,3.0.5,60.106126622861765,
+1,mensible,0,0,3,3,3,0,1,1.1157528549999824,test,2019_Mar_15_1009,decision_lexica_visual,3.0.5,60.106126622861765,
+2,scornful,1,0,4,4,4,1,1,0.8667109809998692,test,2019_Mar_15_1009,decision_lexica_visual,3.0.5,60.106126622861765,
+3,stoutly,1,0,5,5,5,1,1,1.2493876169999112,test,2019_Mar_15_1009,decision_lexica_visual,3.0.5,60.106126622861765,

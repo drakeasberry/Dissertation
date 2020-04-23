@@ -1,0 +1,992 @@
+<?xml version="1.0" ?>
+<PsychoPy2experiment encoding="utf-8" version="3.0.5">
+  <Settings>
+    <Param name="Completed URL" updates="None" val="" valType="str"/>
+    <Param name="Data filename" updates="None" val="u'data/%s_%s_%s' % (expInfo['09_Participante (Participant):'], expName, expInfo['date'])" valType="code"/>
+    <Param name="Enable Escape" updates="None" val="True" valType="bool"/>
+    <Param name="Experiment info" updates="None" val="{'idioma': &quot;['', 'español', 'inglés']&quot;, '08_Idioma preferida (Preferred language):': &quot;['', 'español', 'inglés']&quot;, '09_Participante (Participant):': 'part000', '05_País de nacimiento (Birth country):': &quot;['', 'México', 'Estados Unidos']&quot;, '03_Edad (Age):': '', '07_Nivel más alto de formación académica (Highest level of formal education):': &quot;['', 'Menos de la escuela secundaria', 'Escuela Secundaria', 'Un poco de universidad', 'Universidad (diplomatura, licenciatura)', 'Un poco de escuela graduada', 'Máster', 'Doctorado']&quot;, '04_Sexo (Gender):': &quot;['', 'Hombre', 'Mujer']&quot;, '02_Apellido (Last name):': '', '01_Nombre (First name):': '', '06_Lugar de residencia (Place of residence):': &quot;['', 'Tucson', 'Hermosillo']&quot;}" valType="code"/>
+    <Param name="Force stereo" updates="None" val="True" valType="bool"/>
+    <Param name="Full-screen window" updates="None" val="True" valType="bool"/>
+    <Param name="HTML path" updates="None" val="html" valType="str"/>
+    <Param name="Incomplete URL" updates="None" val="" valType="str"/>
+    <Param name="JS libs" updates="None" val="packaged" valType="str"/>
+    <Param name="Monitor" updates="None" val="testMonitor" valType="str"/>
+    <Param name="OSF Project ID" updates="None" val="" valType="str"/>
+    <Param name="Save csv file" updates="None" val="False" valType="bool"/>
+    <Param name="Save excel file" updates="None" val="False" valType="bool"/>
+    <Param name="Save log file" updates="None" val="True" valType="bool"/>
+    <Param name="Save psydat file" updates="None" val="True" valType="bool"/>
+    <Param name="Save wide csv file" updates="None" val="True" valType="bool"/>
+    <Param name="Screen" updates="None" val="1" valType="num"/>
+    <Param name="Show info dlg" updates="None" val="True" valType="bool"/>
+    <Param name="Show mouse" updates="None" val="False" valType="bool"/>
+    <Param name="Units" updates="None" val="use prefs" valType="str"/>
+    <Param name="Use version" updates="None" val="" valType="str"/>
+    <Param name="Window size (pixels)" updates="None" val="[1280, 800]" valType="code"/>
+    <Param name="blendMode" updates="None" val="avg" valType="str"/>
+    <Param name="color" updates="None" val="$[0,0,0]" valType="str"/>
+    <Param name="colorSpace" updates="None" val="rgb" valType="str"/>
+    <Param name="expName" updates="None" val="blp" valType="str"/>
+    <Param name="exportHTML" updates="None" val="on Sync" valType="str"/>
+    <Param name="logging level" updates="None" val="exp" valType="code"/>
+  </Settings>
+  <Routines>
+    <Routine name="lang_use_ins">
+      <TextComponent name="text_lang_use_ins">
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
+        <Param name="name" updates="None" val="text_lang_use_ins" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="text" updates="constant" val="$langUse" valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+      <KeyboardComponent name="key_resp_lang_use">
+        <Param name="allowedKeys" updates="constant" val="'space'" valType="code"/>
+        <Param name="correctAns" updates="constant" val="" valType="str"/>
+        <Param name="discard previous" updates="constant" val="True" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="forceEndRoutine" updates="constant" val="True" valType="bool"/>
+        <Param name="name" updates="None" val="key_resp_lang_use" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="store" updates="constant" val="nothing" valType="str"/>
+        <Param name="storeCorrect" updates="constant" val="False" valType="bool"/>
+        <Param name="syncScreenRefresh" updates="constant" val="True" valType="bool"/>
+      </KeyboardComponent>
+    </Routine>
+    <Routine name="language_use">
+      <TextComponent name="text_section_lang_use">
+        <Param name="color" updates="constant" val="black" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
+        <Param name="name" updates="None" val="text_section_lang_use" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(0, 0.75)" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="text" updates="set every repeat" val="eval($section)" valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+      <TextComponent name="text_lang_use_question">
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
+        <Param name="name" updates="None" val="text_lang_use_question" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(0, 0.4)" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="text" updates="set every repeat" val="eval($questionText)" valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+      <TextComponent name="text_lang_use_lang">
+        <Param name="color" updates="set every repeat" val="$color" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
+        <Param name="name" updates="None" val="text_lang_use_lang" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(0, 0.1)" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="text" updates="set every repeat" val="eval($language)" valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+      <TextComponent name="text_lang_use_qnum">
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
+        <Param name="name" updates="None" val="text_lang_use_qnum" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(-0.9, 0.9)" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="text" updates="set every repeat" val="$questionNum" valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+      <RatingScaleComponent name="rating_lang_use">
+        <Param name="categoryChoices" updates="constant" val="0, 10, 20, 40, 50, 60, 70, 80, 90, 100" valType="str"/>
+        <Param name="customize_everything" updates="constant" val="" valType="str"/>
+        <Param name="disappear" updates="constant" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="forceEndRoutine" updates="constant" val="True" valType="bool"/>
+        <Param name="high" updates="constant" val="100" valType="code"/>
+        <Param name="labels" updates="constant" val="0%, 100%" valType="str"/>
+        <Param name="low" updates="constant" val="0" valType="code"/>
+        <Param name="marker" updates="constant" val="triangle" valType="str"/>
+        <Param name="markerStart" updates="constant" val="50" valType="str"/>
+        <Param name="name" updates="None" val="rating_lang_use" valType="code"/>
+        <Param name="pos" updates="constant" val="0, -0.1" valType="str"/>
+        <Param name="scaleDescription" updates="constant" val="" valType="str"/>
+        <Param name="showAccept" updates="constant" val="True" valType="bool"/>
+        <Param name="singleClick" updates="constant" val="False" valType="bool"/>
+        <Param name="size" updates="constant" val="1.5" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="condition" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="storeHistory" updates="constant" val="False" valType="bool"/>
+        <Param name="storeRating" updates="constant" val="True" valType="bool"/>
+        <Param name="storeRatingTime" updates="constant" val="True" valType="bool"/>
+        <Param name="tickHeight" updates="constant" val="" valType="str"/>
+        <Param name="visualAnalogScale" updates="constant" val="False" valType="bool"/>
+      </RatingScaleComponent>
+    </Routine>
+    <Routine name="language_proficiency">
+      <TextComponent name="text_section_lang_prof">
+        <Param name="color" updates="constant" val="black" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
+        <Param name="name" updates="None" val="text_section_lang_prof" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(0, 0.75)" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="text" updates="set every repeat" val="eval($section)" valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+      <TextComponent name="text_lang_prof_question">
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
+        <Param name="name" updates="None" val="text_lang_prof_question" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(0, 0.4)" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="text" updates="set every repeat" val="eval($questionText)" valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+      <TextComponent name="text_lang_prof_lang">
+        <Param name="color" updates="set every repeat" val="$color" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
+        <Param name="name" updates="None" val="text_lang_prof_lang" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(0.0, 0.1)" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="text" updates="set every repeat" val="eval($language)" valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+      <TextComponent name="text_lang_prof_qnum">
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
+        <Param name="name" updates="None" val="text_lang_prof_qnum" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(-0.9, 0.9)" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="text" updates="set every repeat" val="$questionNum" valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+      <RatingScaleComponent name="rating_lang_prof">
+        <Param name="categoryChoices" updates="constant" val="0,1,2,3,4,5,6" valType="str"/>
+        <Param name="customize_everything" updates="constant" val="" valType="str"/>
+        <Param name="disappear" updates="constant" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="forceEndRoutine" updates="constant" val="True" valType="bool"/>
+        <Param name="high" updates="constant" val="6" valType="code"/>
+        <Param name="labels" updates="constant" val="Not well at all, Very well" valType="str"/>
+        <Param name="low" updates="constant" val="0" valType="code"/>
+        <Param name="marker" updates="constant" val="triangle" valType="str"/>
+        <Param name="markerStart" updates="constant" val="3" valType="str"/>
+        <Param name="name" updates="None" val="rating_lang_prof" valType="code"/>
+        <Param name="pos" updates="constant" val="0, -0.1" valType="str"/>
+        <Param name="scaleDescription" updates="constant" val="" valType="str"/>
+        <Param name="showAccept" updates="constant" val="True" valType="bool"/>
+        <Param name="singleClick" updates="constant" val="False" valType="bool"/>
+        <Param name="size" updates="constant" val="1.5" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="condition" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="storeHistory" updates="constant" val="False" valType="bool"/>
+        <Param name="storeRating" updates="constant" val="True" valType="bool"/>
+        <Param name="storeRatingTime" updates="constant" val="True" valType="bool"/>
+        <Param name="tickHeight" updates="constant" val="" valType="str"/>
+        <Param name="visualAnalogScale" updates="constant" val="False" valType="bool"/>
+      </RatingScaleComponent>
+    </Routine>
+    <Routine name="lang_hist_ins">
+      <TextComponent name="text_lang_his_ins">
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
+        <Param name="name" updates="None" val="text_lang_his_ins" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="text" updates="constant" val="$langHist" valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+      <KeyboardComponent name="key_resp_lang_hist">
+        <Param name="allowedKeys" updates="constant" val="'space'" valType="code"/>
+        <Param name="correctAns" updates="constant" val="" valType="str"/>
+        <Param name="discard previous" updates="constant" val="True" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="forceEndRoutine" updates="constant" val="True" valType="bool"/>
+        <Param name="name" updates="None" val="key_resp_lang_hist" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="store" updates="constant" val="nothing" valType="str"/>
+        <Param name="storeCorrect" updates="constant" val="False" valType="bool"/>
+        <Param name="syncScreenRefresh" updates="constant" val="True" valType="bool"/>
+      </KeyboardComponent>
+    </Routine>
+    <Routine name="lang_att_ins">
+      <TextComponent name="text_lang_att_ins">
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
+        <Param name="name" updates="None" val="text_lang_att_ins" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="text" updates="constant" val="$langAtt" valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+      <KeyboardComponent name="key_resp_lang_att_ins">
+        <Param name="allowedKeys" updates="constant" val="'space'" valType="code"/>
+        <Param name="correctAns" updates="constant" val="" valType="str"/>
+        <Param name="discard previous" updates="constant" val="True" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="forceEndRoutine" updates="constant" val="True" valType="bool"/>
+        <Param name="name" updates="None" val="key_resp_lang_att_ins" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="store" updates="constant" val="nothing" valType="str"/>
+        <Param name="storeCorrect" updates="constant" val="False" valType="bool"/>
+        <Param name="syncScreenRefresh" updates="constant" val="True" valType="bool"/>
+      </KeyboardComponent>
+    </Routine>
+    <Routine name="language_attitudes">
+      <TextComponent name="text_lang_att_section">
+        <Param name="color" updates="constant" val="black" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
+        <Param name="name" updates="None" val="text_lang_att_section" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(0, 0.75)" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="text" updates="set every repeat" val="eval($section)" valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+      <TextComponent name="text_lang_att_ques">
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
+        <Param name="name" updates="None" val="text_lang_att_ques" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(0, .4)" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="text" updates="set every repeat" val="eval($questionText)" valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+      <TextComponent name="text_lang_att_qnum">
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
+        <Param name="name" updates="None" val="text_lang_att_qnum" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(-0.9, 0.9)" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="text" updates="set every repeat" val="$questionNum" valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+      <RatingScaleComponent name="rating_lang_att">
+        <Param name="categoryChoices" updates="constant" val="0,1,2,3,4,5,6" valType="str"/>
+        <Param name="customize_everything" updates="constant" val="" valType="str"/>
+        <Param name="disappear" updates="constant" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="forceEndRoutine" updates="constant" val="True" valType="bool"/>
+        <Param name="high" updates="constant" val="6" valType="code"/>
+        <Param name="labels" updates="constant" val="disagree, agree" valType="str"/>
+        <Param name="low" updates="constant" val="0" valType="code"/>
+        <Param name="marker" updates="constant" val="triangle" valType="str"/>
+        <Param name="markerStart" updates="constant" val="3" valType="str"/>
+        <Param name="name" updates="None" val="rating_lang_att" valType="code"/>
+        <Param name="pos" updates="constant" val="0, 0" valType="str"/>
+        <Param name="scaleDescription" updates="constant" val="" valType="str"/>
+        <Param name="showAccept" updates="constant" val="True" valType="bool"/>
+        <Param name="singleClick" updates="constant" val="False" valType="bool"/>
+        <Param name="size" updates="constant" val="1.5" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="condition" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="storeHistory" updates="constant" val="False" valType="bool"/>
+        <Param name="storeRating" updates="constant" val="True" valType="bool"/>
+        <Param name="storeRatingTime" updates="constant" val="True" valType="bool"/>
+        <Param name="tickHeight" updates="constant" val="" valType="str"/>
+        <Param name="visualAnalogScale" updates="constant" val="False" valType="bool"/>
+      </RatingScaleComponent>
+    </Routine>
+    <Routine name="lang_prof_ins">
+      <TextComponent name="text_lang_prof_ins">
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
+        <Param name="name" updates="None" val="text_lang_prof_ins" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="text" updates="constant" val="$langProf" valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+      <KeyboardComponent name="key_resp_lang_prof_ins">
+        <Param name="allowedKeys" updates="constant" val="'space'" valType="code"/>
+        <Param name="correctAns" updates="constant" val="" valType="str"/>
+        <Param name="discard previous" updates="constant" val="True" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="forceEndRoutine" updates="constant" val="True" valType="bool"/>
+        <Param name="name" updates="None" val="key_resp_lang_prof_ins" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="store" updates="constant" val="nothing" valType="str"/>
+        <Param name="storeCorrect" updates="constant" val="False" valType="bool"/>
+        <Param name="syncScreenRefresh" updates="constant" val="True" valType="bool"/>
+      </KeyboardComponent>
+    </Routine>
+    <Routine name="instructions">
+      <CodeComponent name="code">
+        <Param name="Begin Experiment" updates="constant" val="tmp = expInfo['08_Idioma preferida (Preferred language):']&amp;#10;lang = tmp[0]&amp;#10;&amp;#10;if 'e' == lang:&amp;#10;    preferLang = 'spanish'&amp;#10;    section = 'sectionEsp'&amp;#10;    questionText = 'questionTextEsp'&amp;#10;    language = 'languageEsp'&amp;#10;    instructions = 'Nos gustaría pedir su ayuda para contestar a las siguientes preguntas sobre su historial lingüístico, uso, actitudes y competencia. Esta encuesta ha sido creada con el apoyo del &quot;Center for Open Educational Resources and Language Learning&quot; de la Universidad de Texas en Austin para poder tener un mayor conocimiento sobre los perfiles de hablantes bilingües independientemente de sus diversos orígenes y en diferentes contextos. La encuesta contiene 19 preguntas y le llevará menos de 10 minutos para completar. Esto no es una prueba, por tanto no hay respuestas correctas ni incorrectas. Por favor conteste cada pregunta y responda con sinceridad, ya que solamente así se podrá garantizar el éxito de esta investigación. Muchas gracias por su ayuda.\n\nPresione el botón &quot;blanco&quot; para continuar.'&amp;#10;    langHist = 'Historial lingüístico\n\nEn esta sección, nos gustaría que contestara algunas preguntas sobre su historial lingüístico marcando la casilla apropiada.\n\nPresione el botón &quot;blanco&quot; para continuar.'&amp;#10;    langUse = 'Uso de lenguas\n\nEn esta sección, nos gustaría que contestara algunas preguntas sobre su uso de lenguas marcando la casilla apropiada. El uso total de todas las preguntas en cada pregunta debe llegar al 100%.\n\nPresione el botón &quot;blanco&quot; para continuar.'&amp;#10;    langProf = 'Competencia\n\nEn esta sección, nos gustaría que considerara su competencia de lengua marcando la casilla de 0 a 6.\n\nPresione el botón &quot;blanco&quot; para continuar.'&amp;#10;    langAtt = 'Actitudes\n\nEn esta sección, nos gustaría que contestara a las siguientes afirmaciones sobre actitudes lingüísticas marcando las casillas de 0 a 6.\n\nPresione el botón &quot;blanco&quot; para continuar.'&amp;#10;    labHist1 = 'Desde el Nacimiento,20+'&amp;#10;    #labUse&amp;#10;    #labProf&amp;#10;    #labAtt&amp;#10;elif 'i' == lang:&amp;#10;    preferLang = 'english'&amp;#10;    section = 'sectionEng'&amp;#10;    questionText = 'questionTextEng'&amp;#10;    language = 'languageEng'&amp;#10;    instructions = 'We would like to ask you to help us by answering the following questions concerning your language history, use, attitudes, and proficiency. This survey was created with support from the Center for Open Educational Resources and Language Learning at the University of Texas at Austin to better understand the profiles of bilingual speakers in diverse settings with diverse backgrounds. The survey consists of 19 questions and will take less than 10 minutes to complete. This is not a test, so there are no right or wrong answers. Please answer every question and give your answers sincerely. Thank you very much for your help.\n\nPress the &quot;white&quot; button to continue'&amp;#10;    langHist = 'Language history\n\nIn this section, we would like you to answer some factual questions about your language history by placing a check in the appropriate box.\n\nPress the &quot;white&quot; button to begin.'&amp;#10;    langUse = 'Language use\n\nIn this section, we would like you to answer some questions about your language use by placing a check in the appropriate box. Total use for all languages in a given question should equal 100%.\n\nPress the &quot;white&quot; button to begin.'&amp;#10;    langProf = 'Language proficiency\n\nIn this section, we would like you to rate your language proficiency by giving marks from 0 to 6.\n\nPress the &quot;white&quot; button to begin.'&amp;#10;    langAtt = 'Language attitudes\n\nIn this section, we would like you to respond to statements about language attitudes by giving marks from 0-6.\n\nPress the spacebar to begin.'&amp;#10;    labHist1 = 'Since birth,20+'&amp;#10;else:&amp;#10;    instructions = 'Por favor, hable con el investigador.\n\nPlease talk to the experimenter.'&amp;#10;" valType="extendedCode"/>
+        <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Code Type" updates="None" val="Py" valType="str"/>
+        <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="name" updates="None" val="code" valType="code"/>
+      </CodeComponent>
+      <TextComponent name="text_instructions">
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.07" valType="code"/>
+        <Param name="name" updates="None" val="text_instructions" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="text" updates="constant" val="$instructions" valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+      <KeyboardComponent name="key_resp_instructions">
+        <Param name="allowedKeys" updates="constant" val="'space'" valType="code"/>
+        <Param name="correctAns" updates="constant" val="" valType="str"/>
+        <Param name="discard previous" updates="constant" val="True" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="forceEndRoutine" updates="constant" val="True" valType="bool"/>
+        <Param name="name" updates="None" val="key_resp_instructions" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="store" updates="constant" val="nothing" valType="str"/>
+        <Param name="storeCorrect" updates="constant" val="False" valType="bool"/>
+        <Param name="syncScreenRefresh" updates="constant" val="True" valType="bool"/>
+      </KeyboardComponent>
+    </Routine>
+    <Routine name="language_history_2">
+      <TextComponent name="text_section_lang_hist_2">
+        <Param name="color" updates="constant" val="black" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
+        <Param name="name" updates="None" val="text_section_lang_hist_2" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(0, 0.75)" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="text" updates="set every repeat" val="eval($section)&amp;#10;" valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+      <TextComponent name="text_lang_hist_question_2">
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
+        <Param name="name" updates="None" val="text_lang_hist_question_2" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(0, 0.4)" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="text" updates="set every repeat" val="eval($questionText)" valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+      <TextComponent name="text_lang_hist_lang_2">
+        <Param name="color" updates="set every repeat" val="$color" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
+        <Param name="name" updates="None" val="text_lang_hist_lang_2" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="text" updates="set every repeat" val="eval($language)" valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+      <TextComponent name="text_lang_hist_qnum_2">
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
+        <Param name="name" updates="None" val="text_lang_hist_qnum_2" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(-0.9, 0.9)" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="text" updates="set every repeat" val="$questionNum" valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+      <RatingScaleComponent name="rating_lang_hist_2">
+        <Param name="categoryChoices" updates="constant" val="" valType="str"/>
+        <Param name="customize_everything" updates="constant" val="" valType="str"/>
+        <Param name="disappear" updates="constant" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="forceEndRoutine" updates="constant" val="True" valType="bool"/>
+        <Param name="high" updates="constant" val="20" valType="code"/>
+        <Param name="labels" updates="constant" val="0, 10, 20" valType="str"/>
+        <Param name="low" updates="constant" val="0" valType="code"/>
+        <Param name="marker" updates="constant" val="triangle" valType="str"/>
+        <Param name="markerStart" updates="constant" val="10" valType="str"/>
+        <Param name="name" updates="None" val="rating_lang_hist_2" valType="code"/>
+        <Param name="pos" updates="constant" val="0, -0.3" valType="str"/>
+        <Param name="scaleDescription" updates="constant" val="" valType="str"/>
+        <Param name="showAccept" updates="constant" val="True" valType="bool"/>
+        <Param name="singleClick" updates="constant" val="False" valType="bool"/>
+        <Param name="size" updates="constant" val="1.5" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="condition" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="storeHistory" updates="constant" val="False" valType="bool"/>
+        <Param name="storeRating" updates="constant" val="True" valType="bool"/>
+        <Param name="storeRatingTime" updates="constant" val="True" valType="bool"/>
+        <Param name="tickHeight" updates="constant" val="" valType="str"/>
+        <Param name="visualAnalogScale" updates="constant" val="False" valType="bool"/>
+      </RatingScaleComponent>
+    </Routine>
+    <Routine name="language_history">
+      <TextComponent name="text_section_lang_hist">
+        <Param name="color" updates="constant" val="black" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
+        <Param name="name" updates="None" val="text_section_lang_hist" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(0, 0.75)" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="text" updates="set every repeat" val="eval($section)&amp;#10;" valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+      <TextComponent name="text_lang_hist_question">
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
+        <Param name="name" updates="None" val="text_lang_hist_question" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(0, 0.4)" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="text" updates="set every repeat" val="eval($questionText)" valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+      <TextComponent name="text_lang_hist_lang">
+        <Param name="color" updates="set every repeat" val="$color" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
+        <Param name="name" updates="None" val="text_lang_hist_lang" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="text" updates="set every repeat" val="eval($language)" valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+      <TextComponent name="text_lang_hist_qnum">
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
+        <Param name="name" updates="None" val="text_lang_hist_qnum" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(-0.9, 0.9)" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="text" updates="set every repeat" val="$questionNum" valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+      <RatingScaleComponent name="rating_lang_hist">
+        <Param name="categoryChoices" updates="constant" val="" valType="str"/>
+        <Param name="customize_everything" updates="constant" val="" valType="str"/>
+        <Param name="disappear" updates="constant" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="forceEndRoutine" updates="constant" val="True" valType="bool"/>
+        <Param name="high" updates="constant" val="20" valType="code"/>
+        <Param name="labels" updates="constant" val="$labHist1" valType="str"/>
+        <Param name="low" updates="constant" val="0" valType="code"/>
+        <Param name="marker" updates="constant" val="triangle" valType="str"/>
+        <Param name="markerStart" updates="constant" val="10" valType="str"/>
+        <Param name="name" updates="None" val="rating_lang_hist" valType="code"/>
+        <Param name="pos" updates="constant" val="0, -0.3" valType="str"/>
+        <Param name="scaleDescription" updates="constant" val="" valType="str"/>
+        <Param name="showAccept" updates="constant" val="True" valType="bool"/>
+        <Param name="singleClick" updates="constant" val="False" valType="bool"/>
+        <Param name="size" updates="constant" val="1.5" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="condition" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="storeHistory" updates="constant" val="False" valType="bool"/>
+        <Param name="storeRating" updates="constant" val="True" valType="bool"/>
+        <Param name="storeRatingTime" updates="constant" val="True" valType="bool"/>
+        <Param name="tickHeight" updates="constant" val="" valType="str"/>
+        <Param name="visualAnalogScale" updates="constant" val="False" valType="bool"/>
+      </RatingScaleComponent>
+    </Routine>
+    <Routine name="language_history_3">
+      <TextComponent name="text_section_lang_hist_3">
+        <Param name="color" updates="constant" val="black" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
+        <Param name="name" updates="None" val="text_section_lang_hist_3" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(0, 0.75)" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="text" updates="set every repeat" val="eval($section)&amp;#10;" valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+      <TextComponent name="text_lang_hist_question_3">
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
+        <Param name="name" updates="None" val="text_lang_hist_question_3" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(0, 0.4)" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="text" updates="set every repeat" val="eval($questionText)" valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+      <TextComponent name="text_lang_hist_lang_3">
+        <Param name="color" updates="set every repeat" val="$color" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
+        <Param name="name" updates="None" val="text_lang_hist_lang_3" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="text" updates="set every repeat" val="eval($language)" valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+      <TextComponent name="text_lang_hist_qnum_3">
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
+        <Param name="name" updates="None" val="text_lang_hist_qnum_3" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(-0.9, 0.9)" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="text" updates="set every repeat" val="$questionNum" valType="str"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+      <RatingScaleComponent name="rating_lang_hist_3">
+        <Param name="categoryChoices" updates="constant" val="" valType="str"/>
+        <Param name="customize_everything" updates="constant" val="" valType="str"/>
+        <Param name="disappear" updates="constant" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="forceEndRoutine" updates="constant" val="True" valType="bool"/>
+        <Param name="high" updates="constant" val="20" valType="code"/>
+        <Param name="labels" updates="constant" val="0, 10, 20+" valType="str"/>
+        <Param name="low" updates="constant" val="0" valType="code"/>
+        <Param name="marker" updates="constant" val="triangle" valType="str"/>
+        <Param name="markerStart" updates="constant" val="10" valType="str"/>
+        <Param name="name" updates="None" val="rating_lang_hist_3" valType="code"/>
+        <Param name="pos" updates="constant" val="0, -0.3" valType="str"/>
+        <Param name="scaleDescription" updates="constant" val="" valType="str"/>
+        <Param name="showAccept" updates="constant" val="True" valType="bool"/>
+        <Param name="singleClick" updates="constant" val="False" valType="bool"/>
+        <Param name="size" updates="constant" val="1.5" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="condition" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="storeHistory" updates="constant" val="False" valType="bool"/>
+        <Param name="storeRating" updates="constant" val="True" valType="bool"/>
+        <Param name="storeRatingTime" updates="constant" val="True" valType="bool"/>
+        <Param name="tickHeight" updates="constant" val="" valType="str"/>
+        <Param name="visualAnalogScale" updates="constant" val="False" valType="bool"/>
+      </RatingScaleComponent>
+    </Routine>
+  </Routines>
+  <Flow>
+    <Routine name="instructions"/>
+    <Routine name="lang_hist_ins"/>
+    <LoopInitiator loopType="TrialHandler" name="trials_hist_1">
+      <Param name="Selected rows" updates="None" val="0" valType="str"/>
+      <Param name="conditions" updates="None" val="[OrderedDict([('questionNum', '1a'), ('color', 'purple'), ('sectionEng', 'Language history'), ('questionTextEng', 'At what age did you start learning the following languages?'), ('languageEng', 'English'), ('sectionEsp', 'Historial lingüístico'), ('questionTextEsp', '¿A qué edad empezó a aprender las siguientes lenguas?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '1b'), ('color', 'blue'), ('sectionEng', 'Language history'), ('questionTextEng', 'At what age did you start learning the following languages?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Historial lingüístico'), ('questionTextEsp', '¿A qué edad empezó a aprender las siguientes lenguas?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '2a'), ('color', 'purple'), ('sectionEng', 'Language history'), ('questionTextEng', 'At what age did you start to feel comfortable using the following languages?'), ('languageEng', 'English'), ('sectionEsp', 'Historial lingüístico'), ('questionTextEsp', '¿A qué edad empezó a sentirse cómodo usando las siguientes lenguas?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '2b'), ('color', 'blue'), ('sectionEng', 'Language history'), ('questionTextEng', 'At what age did you start to feel comfortable using the following languages?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Historial lingüístico'), ('questionTextEsp', '¿A qué edad empezó a sentirse cómodo usando las siguientes lenguas?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '3a'), ('color', 'purple'), ('sectionEng', 'Language history'), ('questionTextEng', 'How many years of classes (grammar, history, math, etc.) have you had in the following languages (primary school through university)?'), ('languageEng', 'English'), ('sectionEsp', 'Historial lingüístico'), ('questionTextEsp', 'Cuántos años de clases (gramática, historia, matemáticas, etc.) ha tenido en las siguientes lenguas (desde la escuela primaria a la universidad)?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '3b'), ('color', 'blue'), ('sectionEng', 'Language history'), ('questionTextEng', 'How many years of classes (grammar, history, math, etc.) have you had in the following languages (primary school through university)?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Historial lingüístico'), ('questionTextEsp', 'Cuántos años de clases (gramática, historia, matemáticas, etc.) ha tenido en las siguientes lenguas (desde la escuela primaria a la universidad)?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '4a'), ('color', 'purple'), ('sectionEng', 'Language history'), ('questionTextEng', 'How many years have you spent in a country/region where the following languages are spoken?'), ('languageEng', 'English'), ('sectionEsp', 'Historial lingüístico'), ('questionTextEsp', '¿Cuántos años ha pasado en un país/región donde se hablan las siguientes lenguas?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '4b'), ('color', 'blue'), ('sectionEng', 'Language history'), ('questionTextEng', 'How many years have you spent in a country/region where the following languages are spoken?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Historial lingüístico'), ('questionTextEsp', '¿Cuántos años ha pasado en un país/región donde se hablan las siguientes lenguas?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '5a'), ('color', 'purple'), ('sectionEng', 'Language history'), ('questionTextEng', 'How many years have you spent in a family where the following languages are spoken?'), ('languageEng', 'English'), ('sectionEsp', 'Historial lingüístico'), ('questionTextEsp', '¿Cuántos años ha pasado en familia hablando las siguientes lenguas?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '5b'), ('color', 'blue'), ('sectionEng', 'Language history'), ('questionTextEng', 'How many years have you spent in a family where the following languages are spoken?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Historial lingüístico'), ('questionTextEsp', '¿Cuántos años ha pasado en familia hablando las siguientes lenguas?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '6a'), ('color', 'purple'), ('sectionEng', 'Language history'), ('questionTextEng', 'How many years have you spent in a work environment where the following languages are spoken?'), ('languageEng', 'English'), ('sectionEsp', 'Historial lingüístico'), ('questionTextEsp', '¿Cuántos años ha pasado en un ambiente de trabajo donde se hablan las siguientes lenguas?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '6b'), ('color', 'blue'), ('sectionEng', 'Language history'), ('questionTextEng', 'How many years have you spent in a work environment where the following languages are spoken?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Historial lingüístico'), ('questionTextEsp', '¿Cuántos años ha pasado en un ambiente de trabajo donde se hablan las siguientes lenguas?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '7a'), ('color', 'purple'), ('sectionEng', 'Language use'), ('questionTextEng', 'In an average week, what percentage of the time do you use the following languages with friends?'), ('languageEng', 'English'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas con sus amigos?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '7b'), ('color', 'blue'), ('sectionEng', 'Language use'), ('questionTextEng', 'In an average week, what percentage of the time do you use the following languages with friends?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas con sus amigos?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '7c'), ('color', 'red'), ('sectionEng', 'Language use'), ('questionTextEng', 'In an average week, what percentage of the time do you use the following languages with friends?'), ('languageEng', 'Other languages'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas con sus amigos?'), ('languageEsp', 'otras lenguas')]), OrderedDict([('questionNum', '8a'), ('color', 'purple'), ('sectionEng', 'Language use'), ('questionTextEng', 'In an average week, what percentage of the time do you use the following languages with family?'), ('languageEng', 'English'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas con su familia?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '8b'), ('color', 'blue'), ('sectionEng', 'Language use'), ('questionTextEng', 'In an average week, what percentage of the time do you use the following languages with family?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas con su familia?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '8c'), ('color', 'red'), ('sectionEng', 'Language use'), ('questionTextEng', 'In an average week, what percentage of the time do you use the following languages with family?'), ('languageEng', 'Other languages'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas con su familia?'), ('languageEsp', 'otras lenguas')]), OrderedDict([('questionNum', '9a'), ('color', 'purple'), ('sectionEng', 'Language use'), ('questionTextEng', 'In an average week, what percentage of the time do you use the following languages at school/work?'), ('languageEng', 'English'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas en la escuela/el trabajo?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '9b'), ('color', 'blue'), ('sectionEng', 'Language use'), ('questionTextEng', 'In an average week, what percentage of the time do you use the following languages at school/work?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas en la escuela/el trabajo?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '9c'), ('color', 'red'), ('sectionEng', 'Language use'), ('questionTextEng', 'In an average week, what percentage of the time do you use the following languages at school/work?'), ('languageEng', 'Other languages'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas en la escuela/el trabajo?'), ('languageEsp', 'otras lenguas')]), OrderedDict([('questionNum', '10a'), ('color', 'purple'), ('sectionEng', 'Language use'), ('questionTextEng', 'When you talk to yourself, how often do you talk to yourself in the following languages?'), ('languageEng', 'English'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'Cuando se habla a usted mismo, ¿con qué frecuencia se habla a sí mismo en las siguientes lenguas?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '10b'), ('color', 'blue'), ('sectionEng', 'Language use'), ('questionTextEng', 'When you talk to yourself, how often do you talk to yourself in the following languages?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'Cuando se habla a usted mismo, ¿con qué frecuencia se habla a sí mismo en las siguientes lenguas?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '10c'), ('color', 'red'), ('sectionEng', 'Language use'), ('questionTextEng', 'When you talk to yourself, how often do you talk to yourself in the following languages?'), ('languageEng', 'Other languages'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'Cuando se habla a usted mismo, ¿con qué frecuencia se habla a sí mismo en las siguientes lenguas?'), ('languageEsp', 'otras lenguas')]), OrderedDict([('questionNum', '11a'), ('color', 'purple'), ('sectionEng', 'Language use'), ('questionTextEng', 'When you count, how often do you count in the following languages?'), ('languageEng', 'English'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'Cuando hace cálculos contando, ¿con qué frecuencia cuenta en las siguientes lenguas?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '11b'), ('color', 'blue'), ('sectionEng', 'Language use'), ('questionTextEng', 'When you count, how often do you count in the following languages?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'Cuando hace cálculos contando, ¿con qué frecuencia cuenta en las siguientes lenguas?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '11c'), ('color', 'red'), ('sectionEng', 'Language use'), ('questionTextEng', 'When you count, how often do you count in the following languages?'), ('languageEng', 'Other languages'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'Cuando hace cálculos contando, ¿con qué frecuencia cuenta en las siguientes lenguas?'), ('languageEsp', 'otras lenguas')]), OrderedDict([('questionNum', '12a'), ('color', 'purple'), ('sectionEng', 'Language proficiency'), ('questionTextEng', 'How well do you speak the following languages?'), ('languageEng', 'English'), ('sectionEsp', 'Competencia lingüística'), ('questionTextEsp', '¿Cómo habla en las siguientes lenguas?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '12b'), ('color', 'blue'), ('sectionEng', 'Language proficiency'), ('questionTextEng', 'How well do you speak the following languages?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Competencia lingüística'), ('questionTextEsp', '¿Cómo habla en las siguientes lenguas?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '13a'), ('color', 'purple'), ('sectionEng', 'Language proficiency'), ('questionTextEng', 'How well do you understand the following languages?'), ('languageEng', 'English'), ('sectionEsp', 'Competencia lingüística'), ('questionTextEsp', '¿Cómo entiende en las siguientes lenguas?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '13b'), ('color', 'blue'), ('sectionEng', 'Language proficiency'), ('questionTextEng', 'How well do you understand the following languages?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Competencia lingüística'), ('questionTextEsp', '¿Cómo entiende en las siguientes lenguas?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '14a'), ('color', 'purple'), ('sectionEng', 'Language proficiency'), ('questionTextEng', 'How well do you read the following languages?'), ('languageEng', 'English'), ('sectionEsp', 'Competencia lingüística'), ('questionTextEsp', '¿Cómo lee en las siguientes lenguas?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '14b'), ('color', 'blue'), ('sectionEng', 'Language proficiency'), ('questionTextEng', 'How well do you read the following languages?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Competencia lingüística'), ('questionTextEsp', '¿Cómo lee en las siguientes lenguas?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '15a'), ('color', 'purple'), ('sectionEng', 'Language proficiency'), ('questionTextEng', 'How well do you write the following languages?'), ('languageEng', 'English'), ('sectionEsp', 'Competencia lingüística'), ('questionTextEsp', '¿Cómo escribe en las siguientes lenguas?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '15b'), ('color', 'blue'), ('sectionEng', 'Language proficiency'), ('questionTextEng', 'How well do you write the following languages?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Competencia lingüística'), ('questionTextEsp', '¿Cómo escribe en las siguientes lenguas?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '16a'), ('color', 'purple'), ('sectionEng', 'Language attitudes'), ('questionTextEng', 'I feel like myself when I speak English.'), ('languageEng', 'English'), ('sectionEsp', 'Actitudes lingüísticas'), ('questionTextEsp', 'Me siento &quot;yo mismo&quot; cuando hablo en las siguientes lenguas.'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '16b'), ('color', 'blue'), ('sectionEng', 'Language attitudes'), ('questionTextEng', 'I feel like myself when I speak Spanish.'), ('languageEng', 'Spanish'), ('sectionEsp', 'Actitudes lingüísticas'), ('questionTextEsp', 'Me siento &quot;yo mismo&quot; cuando hablo en las siguientes lenguas.'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '17a'), ('color', 'purple'), ('sectionEng', 'Language attitudes'), ('questionTextEng', 'I identify with an English-speaking culture.'), ('languageEng', 'English'), ('sectionEsp', 'Actitudes lingüísticas'), ('questionTextEsp', 'Yo me identifico con las siguientes culturas.'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '17b'), ('color', 'blue'), ('sectionEng', 'Language attitudes'), ('questionTextEng', 'I identify with an Spanish-speaking culture.'), ('languageEng', 'Spanish'), ('sectionEsp', 'Actitudes lingüísticas'), ('questionTextEsp', 'Yo me identifico con las siguientes culturas.'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '18a'), ('color', 'purple'), ('sectionEng', 'Language attitudes'), ('questionTextEng', 'It is important to me to use (or eventually use) English like a native speaker.'), ('languageEng', 'English'), ('sectionEsp', 'Actitudes lingüísticas'), ('questionTextEsp', 'Es importante para mí usar (o llegar a usar) las siguientes lenguas como un hablante nativo.'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '18b'), ('color', 'blue'), ('sectionEng', 'Language attitudes'), ('questionTextEng', 'It is important to me to use (or eventually use) Spanish like a native speaker.'), ('languageEng', 'Spanish'), ('sectionEsp', 'Actitudes lingüísticas'), ('questionTextEsp', 'Es importante para mí usar (o llegar a usar) las siguientes lenguas como un hablante nativo.'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '19a'), ('color', 'purple'), ('sectionEng', 'Language attitudes'), ('questionTextEng', 'I want others to think I am a native speaker of English.'), ('languageEng', 'English'), ('sectionEsp', 'Actitudes lingüísticas'), ('questionTextEsp', 'Quiero que los demás piensen que soy un hablante nativo de las siguientes lenguas.'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '19b'), ('color', 'blue'), ('sectionEng', 'Language attitudes'), ('questionTextEng', ' I want others to think I am a native speaker of Spanish.'), ('languageEng', 'Spanish'), ('sectionEsp', 'Actitudes lingüísticas'), ('questionTextEsp', 'Quiero que los demás piensen que soy un hablante nativo de las siguientes lenguas.'), ('languageEsp', 'español')])]" valType="str"/>
+      <Param name="conditionsFile" updates="None" val="condition_file/sp_en_trials.csv" valType="str"/>
+      <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
+      <Param name="isTrials" updates="None" val="True" valType="bool"/>
+      <Param name="loopType" updates="None" val="sequential" valType="str"/>
+      <Param name="nReps" updates="None" val="1" valType="code"/>
+      <Param name="name" updates="None" val="trials_hist_1" valType="code"/>
+      <Param name="random seed" updates="None" val="" valType="code"/>
+    </LoopInitiator>
+    <Routine name="language_history"/>
+    <LoopTerminator name="trials_hist_1"/>
+    <LoopInitiator loopType="TrialHandler" name="trials_hist_2">
+      <Param name="Selected rows" updates="None" val="1" valType="str"/>
+      <Param name="conditions" updates="None" val="[OrderedDict([('questionNum', '1a'), ('color', 'purple'), ('sectionEng', 'Language history'), ('questionTextEng', 'At what age did you start learning the following languages?'), ('languageEng', 'English'), ('sectionEsp', 'Historial lingüístico'), ('questionTextEsp', '¿A qué edad empezó a aprender las siguientes lenguas?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '1b'), ('color', 'blue'), ('sectionEng', 'Language history'), ('questionTextEng', 'At what age did you start learning the following languages?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Historial lingüístico'), ('questionTextEsp', '¿A qué edad empezó a aprender las siguientes lenguas?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '2a'), ('color', 'purple'), ('sectionEng', 'Language history'), ('questionTextEng', 'At what age did you start to feel comfortable using the following languages?'), ('languageEng', 'English'), ('sectionEsp', 'Historial lingüístico'), ('questionTextEsp', '¿A qué edad empezó a sentirse cómodo usando las siguientes lenguas?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '2b'), ('color', 'blue'), ('sectionEng', 'Language history'), ('questionTextEng', 'At what age did you start to feel comfortable using the following languages?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Historial lingüístico'), ('questionTextEsp', '¿A qué edad empezó a sentirse cómodo usando las siguientes lenguas?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '3a'), ('color', 'purple'), ('sectionEng', 'Language history'), ('questionTextEng', 'How many years of classes (grammar, history, math, etc.) have you had in the following languages (primary school through university)?'), ('languageEng', 'English'), ('sectionEsp', 'Historial lingüístico'), ('questionTextEsp', 'Cuántos años de clases (gramática, historia, matemáticas, etc.) ha tenido en las siguientes lenguas (desde la escuela primaria a la universidad)?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '3b'), ('color', 'blue'), ('sectionEng', 'Language history'), ('questionTextEng', 'How many years of classes (grammar, history, math, etc.) have you had in the following languages (primary school through university)?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Historial lingüístico'), ('questionTextEsp', 'Cuántos años de clases (gramática, historia, matemáticas, etc.) ha tenido en las siguientes lenguas (desde la escuela primaria a la universidad)?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '4a'), ('color', 'purple'), ('sectionEng', 'Language history'), ('questionTextEng', 'How many years have you spent in a country/region where the following languages are spoken?'), ('languageEng', 'English'), ('sectionEsp', 'Historial lingüístico'), ('questionTextEsp', '¿Cuántos años ha pasado en un país/región donde se hablan las siguientes lenguas?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '4b'), ('color', 'blue'), ('sectionEng', 'Language history'), ('questionTextEng', 'How many years have you spent in a country/region where the following languages are spoken?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Historial lingüístico'), ('questionTextEsp', '¿Cuántos años ha pasado en un país/región donde se hablan las siguientes lenguas?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '5a'), ('color', 'purple'), ('sectionEng', 'Language history'), ('questionTextEng', 'How many years have you spent in a family where the following languages are spoken?'), ('languageEng', 'English'), ('sectionEsp', 'Historial lingüístico'), ('questionTextEsp', '¿Cuántos años ha pasado en familia hablando las siguientes lenguas?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '5b'), ('color', 'blue'), ('sectionEng', 'Language history'), ('questionTextEng', 'How many years have you spent in a family where the following languages are spoken?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Historial lingüístico'), ('questionTextEsp', '¿Cuántos años ha pasado en familia hablando las siguientes lenguas?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '6a'), ('color', 'purple'), ('sectionEng', 'Language history'), ('questionTextEng', 'How many years have you spent in a work environment where the following languages are spoken?'), ('languageEng', 'English'), ('sectionEsp', 'Historial lingüístico'), ('questionTextEsp', '¿Cuántos años ha pasado en un ambiente de trabajo donde se hablan las siguientes lenguas?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '6b'), ('color', 'blue'), ('sectionEng', 'Language history'), ('questionTextEng', 'How many years have you spent in a work environment where the following languages are spoken?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Historial lingüístico'), ('questionTextEsp', '¿Cuántos años ha pasado en un ambiente de trabajo donde se hablan las siguientes lenguas?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '7a'), ('color', 'purple'), ('sectionEng', 'Language use'), ('questionTextEng', 'In an average week, what percentage of the time do you use the following languages with friends?'), ('languageEng', 'English'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas con sus amigos?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '7b'), ('color', 'blue'), ('sectionEng', 'Language use'), ('questionTextEng', 'In an average week, what percentage of the time do you use the following languages with friends?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas con sus amigos?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '7c'), ('color', 'red'), ('sectionEng', 'Language use'), ('questionTextEng', 'In an average week, what percentage of the time do you use the following languages with friends?'), ('languageEng', 'Other languages'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas con sus amigos?'), ('languageEsp', 'otras lenguas')]), OrderedDict([('questionNum', '8a'), ('color', 'purple'), ('sectionEng', 'Language use'), ('questionTextEng', 'In an average week, what percentage of the time do you use the following languages with family?'), ('languageEng', 'English'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas con su familia?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '8b'), ('color', 'blue'), ('sectionEng', 'Language use'), ('questionTextEng', 'In an average week, what percentage of the time do you use the following languages with family?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas con su familia?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '8c'), ('color', 'red'), ('sectionEng', 'Language use'), ('questionTextEng', 'In an average week, what percentage of the time do you use the following languages with family?'), ('languageEng', 'Other languages'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas con su familia?'), ('languageEsp', 'otras lenguas')]), OrderedDict([('questionNum', '9a'), ('color', 'purple'), ('sectionEng', 'Language use'), ('questionTextEng', 'In an average week, what percentage of the time do you use the following languages at school/work?'), ('languageEng', 'English'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas en la escuela/el trabajo?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '9b'), ('color', 'blue'), ('sectionEng', 'Language use'), ('questionTextEng', 'In an average week, what percentage of the time do you use the following languages at school/work?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas en la escuela/el trabajo?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '9c'), ('color', 'red'), ('sectionEng', 'Language use'), ('questionTextEng', 'In an average week, what percentage of the time do you use the following languages at school/work?'), ('languageEng', 'Other languages'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas en la escuela/el trabajo?'), ('languageEsp', 'otras lenguas')]), OrderedDict([('questionNum', '10a'), ('color', 'purple'), ('sectionEng', 'Language use'), ('questionTextEng', 'When you talk to yourself, how often do you talk to yourself in the following languages?'), ('languageEng', 'English'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'Cuando se habla a usted mismo, ¿con qué frecuencia se habla a sí mismo en las siguientes lenguas?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '10b'), ('color', 'blue'), ('sectionEng', 'Language use'), ('questionTextEng', 'When you talk to yourself, how often do you talk to yourself in the following languages?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'Cuando se habla a usted mismo, ¿con qué frecuencia se habla a sí mismo en las siguientes lenguas?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '10c'), ('color', 'red'), ('sectionEng', 'Language use'), ('questionTextEng', 'When you talk to yourself, how often do you talk to yourself in the following languages?'), ('languageEng', 'Other languages'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'Cuando se habla a usted mismo, ¿con qué frecuencia se habla a sí mismo en las siguientes lenguas?'), ('languageEsp', 'otras lenguas')]), OrderedDict([('questionNum', '11a'), ('color', 'purple'), ('sectionEng', 'Language use'), ('questionTextEng', 'When you count, how often do you count in the following languages?'), ('languageEng', 'English'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'Cuando hace cálculos contando, ¿con qué frecuencia cuenta en las siguientes lenguas?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '11b'), ('color', 'blue'), ('sectionEng', 'Language use'), ('questionTextEng', 'When you count, how often do you count in the following languages?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'Cuando hace cálculos contando, ¿con qué frecuencia cuenta en las siguientes lenguas?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '11c'), ('color', 'red'), ('sectionEng', 'Language use'), ('questionTextEng', 'When you count, how often do you count in the following languages?'), ('languageEng', 'Other languages'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'Cuando hace cálculos contando, ¿con qué frecuencia cuenta en las siguientes lenguas?'), ('languageEsp', 'otras lenguas')]), OrderedDict([('questionNum', '12a'), ('color', 'purple'), ('sectionEng', 'Language proficiency'), ('questionTextEng', 'How well do you speak the following languages?'), ('languageEng', 'English'), ('sectionEsp', 'Competencia lingüística'), ('questionTextEsp', '¿Cómo habla en las siguientes lenguas?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '12b'), ('color', 'blue'), ('sectionEng', 'Language proficiency'), ('questionTextEng', 'How well do you speak the following languages?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Competencia lingüística'), ('questionTextEsp', '¿Cómo habla en las siguientes lenguas?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '13a'), ('color', 'purple'), ('sectionEng', 'Language proficiency'), ('questionTextEng', 'How well do you understand the following languages?'), ('languageEng', 'English'), ('sectionEsp', 'Competencia lingüística'), ('questionTextEsp', '¿Cómo entiende en las siguientes lenguas?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '13b'), ('color', 'blue'), ('sectionEng', 'Language proficiency'), ('questionTextEng', 'How well do you understand the following languages?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Competencia lingüística'), ('questionTextEsp', '¿Cómo entiende en las siguientes lenguas?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '14a'), ('color', 'purple'), ('sectionEng', 'Language proficiency'), ('questionTextEng', 'How well do you read the following languages?'), ('languageEng', 'English'), ('sectionEsp', 'Competencia lingüística'), ('questionTextEsp', '¿Cómo lee en las siguientes lenguas?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '14b'), ('color', 'blue'), ('sectionEng', 'Language proficiency'), ('questionTextEng', 'How well do you read the following languages?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Competencia lingüística'), ('questionTextEsp', '¿Cómo lee en las siguientes lenguas?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '15a'), ('color', 'purple'), ('sectionEng', 'Language proficiency'), ('questionTextEng', 'How well do you write the following languages?'), ('languageEng', 'English'), ('sectionEsp', 'Competencia lingüística'), ('questionTextEsp', '¿Cómo escribe en las siguientes lenguas?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '15b'), ('color', 'blue'), ('sectionEng', 'Language proficiency'), ('questionTextEng', 'How well do you write the following languages?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Competencia lingüística'), ('questionTextEsp', '¿Cómo escribe en las siguientes lenguas?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '16a'), ('color', 'purple'), ('sectionEng', 'Language attitudes'), ('questionTextEng', 'I feel like myself when I speak English.'), ('languageEng', 'English'), ('sectionEsp', 'Actitudes lingüísticas'), ('questionTextEsp', 'Me siento &quot;yo mismo&quot; cuando hablo en las siguientes lenguas.'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '16b'), ('color', 'blue'), ('sectionEng', 'Language attitudes'), ('questionTextEng', 'I feel like myself when I speak Spanish.'), ('languageEng', 'Spanish'), ('sectionEsp', 'Actitudes lingüísticas'), ('questionTextEsp', 'Me siento &quot;yo mismo&quot; cuando hablo en las siguientes lenguas.'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '17a'), ('color', 'purple'), ('sectionEng', 'Language attitudes'), ('questionTextEng', 'I identify with an English-speaking culture.'), ('languageEng', 'English'), ('sectionEsp', 'Actitudes lingüísticas'), ('questionTextEsp', 'Yo me identifico con las siguientes culturas.'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '17b'), ('color', 'blue'), ('sectionEng', 'Language attitudes'), ('questionTextEng', 'I identify with an Spanish-speaking culture.'), ('languageEng', 'Spanish'), ('sectionEsp', 'Actitudes lingüísticas'), ('questionTextEsp', 'Yo me identifico con las siguientes culturas.'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '18a'), ('color', 'purple'), ('sectionEng', 'Language attitudes'), ('questionTextEng', 'It is important to me to use (or eventually use) English like a native speaker.'), ('languageEng', 'English'), ('sectionEsp', 'Actitudes lingüísticas'), ('questionTextEsp', 'Es importante para mí usar (o llegar a usar) las siguientes lenguas como un hablante nativo.'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '18b'), ('color', 'blue'), ('sectionEng', 'Language attitudes'), ('questionTextEng', 'It is important to me to use (or eventually use) Spanish like a native speaker.'), ('languageEng', 'Spanish'), ('sectionEsp', 'Actitudes lingüísticas'), ('questionTextEsp', 'Es importante para mí usar (o llegar a usar) las siguientes lenguas como un hablante nativo.'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '19a'), ('color', 'purple'), ('sectionEng', 'Language attitudes'), ('questionTextEng', 'I want others to think I am a native speaker of English.'), ('languageEng', 'English'), ('sectionEsp', 'Actitudes lingüísticas'), ('questionTextEsp', 'Quiero que los demás piensen que soy un hablante nativo de las siguientes lenguas.'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '19b'), ('color', 'blue'), ('sectionEng', 'Language attitudes'), ('questionTextEng', ' I want others to think I am a native speaker of Spanish.'), ('languageEng', 'Spanish'), ('sectionEsp', 'Actitudes lingüísticas'), ('questionTextEsp', 'Quiero que los demás piensen que soy un hablante nativo de las siguientes lenguas.'), ('languageEsp', 'español')])]" valType="str"/>
+      <Param name="conditionsFile" updates="None" val="condition_file/sp_en_trials.csv" valType="str"/>
+      <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
+      <Param name="isTrials" updates="None" val="True" valType="bool"/>
+      <Param name="loopType" updates="None" val="sequential" valType="str"/>
+      <Param name="nReps" updates="None" val="1" valType="code"/>
+      <Param name="name" updates="None" val="trials_hist_2" valType="code"/>
+      <Param name="random seed" updates="None" val="" valType="code"/>
+    </LoopInitiator>
+    <Routine name="language_history_2"/>
+    <LoopTerminator name="trials_hist_2"/>
+    <LoopInitiator loopType="TrialHandler" name="trials_hist_3">
+      <Param name="Selected rows" updates="None" val="2:12" valType="str"/>
+      <Param name="conditions" updates="None" val="[OrderedDict([('questionNum', '1a'), ('color', 'purple'), ('sectionEng', 'Language history'), ('questionTextEng', 'At what age did you start learning the following languages?'), ('languageEng', 'English'), ('sectionEsp', 'Historial lingüístico'), ('questionTextEsp', '¿A qué edad empezó a aprender las siguientes lenguas?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '1b'), ('color', 'blue'), ('sectionEng', 'Language history'), ('questionTextEng', 'At what age did you start learning the following languages?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Historial lingüístico'), ('questionTextEsp', '¿A qué edad empezó a aprender las siguientes lenguas?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '2a'), ('color', 'purple'), ('sectionEng', 'Language history'), ('questionTextEng', 'At what age did you start to feel comfortable using the following languages?'), ('languageEng', 'English'), ('sectionEsp', 'Historial lingüístico'), ('questionTextEsp', '¿A qué edad empezó a sentirse cómodo usando las siguientes lenguas?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '2b'), ('color', 'blue'), ('sectionEng', 'Language history'), ('questionTextEng', 'At what age did you start to feel comfortable using the following languages?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Historial lingüístico'), ('questionTextEsp', '¿A qué edad empezó a sentirse cómodo usando las siguientes lenguas?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '3a'), ('color', 'purple'), ('sectionEng', 'Language history'), ('questionTextEng', 'How many years of classes (grammar, history, math, etc.) have you had in the following languages (primary school through university)?'), ('languageEng', 'English'), ('sectionEsp', 'Historial lingüístico'), ('questionTextEsp', 'Cuántos años de clases (gramática, historia, matemáticas, etc.) ha tenido en las siguientes lenguas (desde la escuela primaria a la universidad)?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '3b'), ('color', 'blue'), ('sectionEng', 'Language history'), ('questionTextEng', 'How many years of classes (grammar, history, math, etc.) have you had in the following languages (primary school through university)?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Historial lingüístico'), ('questionTextEsp', 'Cuántos años de clases (gramática, historia, matemáticas, etc.) ha tenido en las siguientes lenguas (desde la escuela primaria a la universidad)?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '4a'), ('color', 'purple'), ('sectionEng', 'Language history'), ('questionTextEng', 'How many years have you spent in a country/region where the following languages are spoken?'), ('languageEng', 'English'), ('sectionEsp', 'Historial lingüístico'), ('questionTextEsp', '¿Cuántos años ha pasado en un país/región donde se hablan las siguientes lenguas?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '4b'), ('color', 'blue'), ('sectionEng', 'Language history'), ('questionTextEng', 'How many years have you spent in a country/region where the following languages are spoken?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Historial lingüístico'), ('questionTextEsp', '¿Cuántos años ha pasado en un país/región donde se hablan las siguientes lenguas?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '5a'), ('color', 'purple'), ('sectionEng', 'Language history'), ('questionTextEng', 'How many years have you spent in a family where the following languages are spoken?'), ('languageEng', 'English'), ('sectionEsp', 'Historial lingüístico'), ('questionTextEsp', '¿Cuántos años ha pasado en familia hablando las siguientes lenguas?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '5b'), ('color', 'blue'), ('sectionEng', 'Language history'), ('questionTextEng', 'How many years have you spent in a family where the following languages are spoken?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Historial lingüístico'), ('questionTextEsp', '¿Cuántos años ha pasado en familia hablando las siguientes lenguas?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '6a'), ('color', 'purple'), ('sectionEng', 'Language history'), ('questionTextEng', 'How many years have you spent in a work environment where the following languages are spoken?'), ('languageEng', 'English'), ('sectionEsp', 'Historial lingüístico'), ('questionTextEsp', '¿Cuántos años ha pasado en un ambiente de trabajo donde se hablan las siguientes lenguas?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '6b'), ('color', 'blue'), ('sectionEng', 'Language history'), ('questionTextEng', 'How many years have you spent in a work environment where the following languages are spoken?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Historial lingüístico'), ('questionTextEsp', '¿Cuántos años ha pasado en un ambiente de trabajo donde se hablan las siguientes lenguas?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '7a'), ('color', 'purple'), ('sectionEng', 'Language use'), ('questionTextEng', 'In an average week, what percentage of the time do you use the following languages with friends?'), ('languageEng', 'English'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas con sus amigos?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '7b'), ('color', 'blue'), ('sectionEng', 'Language use'), ('questionTextEng', 'In an average week, what percentage of the time do you use the following languages with friends?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas con sus amigos?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '7c'), ('color', 'red'), ('sectionEng', 'Language use'), ('questionTextEng', 'In an average week, what percentage of the time do you use the following languages with friends?'), ('languageEng', 'Other languages'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas con sus amigos?'), ('languageEsp', 'otras lenguas')]), OrderedDict([('questionNum', '8a'), ('color', 'purple'), ('sectionEng', 'Language use'), ('questionTextEng', 'In an average week, what percentage of the time do you use the following languages with family?'), ('languageEng', 'English'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas con su familia?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '8b'), ('color', 'blue'), ('sectionEng', 'Language use'), ('questionTextEng', 'In an average week, what percentage of the time do you use the following languages with family?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas con su familia?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '8c'), ('color', 'red'), ('sectionEng', 'Language use'), ('questionTextEng', 'In an average week, what percentage of the time do you use the following languages with family?'), ('languageEng', 'Other languages'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas con su familia?'), ('languageEsp', 'otras lenguas')]), OrderedDict([('questionNum', '9a'), ('color', 'purple'), ('sectionEng', 'Language use'), ('questionTextEng', 'In an average week, what percentage of the time do you use the following languages at school/work?'), ('languageEng', 'English'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas en la escuela/el trabajo?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '9b'), ('color', 'blue'), ('sectionEng', 'Language use'), ('questionTextEng', 'In an average week, what percentage of the time do you use the following languages at school/work?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas en la escuela/el trabajo?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '9c'), ('color', 'red'), ('sectionEng', 'Language use'), ('questionTextEng', 'In an average week, what percentage of the time do you use the following languages at school/work?'), ('languageEng', 'Other languages'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas en la escuela/el trabajo?'), ('languageEsp', 'otras lenguas')]), OrderedDict([('questionNum', '10a'), ('color', 'purple'), ('sectionEng', 'Language use'), ('questionTextEng', 'When you talk to yourself, how often do you talk to yourself in the following languages?'), ('languageEng', 'English'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'Cuando se habla a usted mismo, ¿con qué frecuencia se habla a sí mismo en las siguientes lenguas?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '10b'), ('color', 'blue'), ('sectionEng', 'Language use'), ('questionTextEng', 'When you talk to yourself, how often do you talk to yourself in the following languages?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'Cuando se habla a usted mismo, ¿con qué frecuencia se habla a sí mismo en las siguientes lenguas?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '10c'), ('color', 'red'), ('sectionEng', 'Language use'), ('questionTextEng', 'When you talk to yourself, how often do you talk to yourself in the following languages?'), ('languageEng', 'Other languages'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'Cuando se habla a usted mismo, ¿con qué frecuencia se habla a sí mismo en las siguientes lenguas?'), ('languageEsp', 'otras lenguas')]), OrderedDict([('questionNum', '11a'), ('color', 'purple'), ('sectionEng', 'Language use'), ('questionTextEng', 'When you count, how often do you count in the following languages?'), ('languageEng', 'English'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'Cuando hace cálculos contando, ¿con qué frecuencia cuenta en las siguientes lenguas?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '11b'), ('color', 'blue'), ('sectionEng', 'Language use'), ('questionTextEng', 'When you count, how often do you count in the following languages?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'Cuando hace cálculos contando, ¿con qué frecuencia cuenta en las siguientes lenguas?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '11c'), ('color', 'red'), ('sectionEng', 'Language use'), ('questionTextEng', 'When you count, how often do you count in the following languages?'), ('languageEng', 'Other languages'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'Cuando hace cálculos contando, ¿con qué frecuencia cuenta en las siguientes lenguas?'), ('languageEsp', 'otras lenguas')]), OrderedDict([('questionNum', '12a'), ('color', 'purple'), ('sectionEng', 'Language proficiency'), ('questionTextEng', 'How well do you speak the following languages?'), ('languageEng', 'English'), ('sectionEsp', 'Competencia lingüística'), ('questionTextEsp', '¿Cómo habla en las siguientes lenguas?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '12b'), ('color', 'blue'), ('sectionEng', 'Language proficiency'), ('questionTextEng', 'How well do you speak the following languages?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Competencia lingüística'), ('questionTextEsp', '¿Cómo habla en las siguientes lenguas?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '13a'), ('color', 'purple'), ('sectionEng', 'Language proficiency'), ('questionTextEng', 'How well do you understand the following languages?'), ('languageEng', 'English'), ('sectionEsp', 'Competencia lingüística'), ('questionTextEsp', '¿Cómo entiende en las siguientes lenguas?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '13b'), ('color', 'blue'), ('sectionEng', 'Language proficiency'), ('questionTextEng', 'How well do you understand the following languages?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Competencia lingüística'), ('questionTextEsp', '¿Cómo entiende en las siguientes lenguas?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '14a'), ('color', 'purple'), ('sectionEng', 'Language proficiency'), ('questionTextEng', 'How well do you read the following languages?'), ('languageEng', 'English'), ('sectionEsp', 'Competencia lingüística'), ('questionTextEsp', '¿Cómo lee en las siguientes lenguas?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '14b'), ('color', 'blue'), ('sectionEng', 'Language proficiency'), ('questionTextEng', 'How well do you read the following languages?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Competencia lingüística'), ('questionTextEsp', '¿Cómo lee en las siguientes lenguas?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '15a'), ('color', 'purple'), ('sectionEng', 'Language proficiency'), ('questionTextEng', 'How well do you write the following languages?'), ('languageEng', 'English'), ('sectionEsp', 'Competencia lingüística'), ('questionTextEsp', '¿Cómo escribe en las siguientes lenguas?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '15b'), ('color', 'blue'), ('sectionEng', 'Language proficiency'), ('questionTextEng', 'How well do you write the following languages?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Competencia lingüística'), ('questionTextEsp', '¿Cómo escribe en las siguientes lenguas?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '16a'), ('color', 'purple'), ('sectionEng', 'Language attitudes'), ('questionTextEng', 'I feel like myself when I speak English.'), ('languageEng', 'English'), ('sectionEsp', 'Actitudes lingüísticas'), ('questionTextEsp', 'Me siento &quot;yo mismo&quot; cuando hablo en las siguientes lenguas.'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '16b'), ('color', 'blue'), ('sectionEng', 'Language attitudes'), ('questionTextEng', 'I feel like myself when I speak Spanish.'), ('languageEng', 'Spanish'), ('sectionEsp', 'Actitudes lingüísticas'), ('questionTextEsp', 'Me siento &quot;yo mismo&quot; cuando hablo en las siguientes lenguas.'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '17a'), ('color', 'purple'), ('sectionEng', 'Language attitudes'), ('questionTextEng', 'I identify with an English-speaking culture.'), ('languageEng', 'English'), ('sectionEsp', 'Actitudes lingüísticas'), ('questionTextEsp', 'Yo me identifico con las siguientes culturas.'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '17b'), ('color', 'blue'), ('sectionEng', 'Language attitudes'), ('questionTextEng', 'I identify with an Spanish-speaking culture.'), ('languageEng', 'Spanish'), ('sectionEsp', 'Actitudes lingüísticas'), ('questionTextEsp', 'Yo me identifico con las siguientes culturas.'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '18a'), ('color', 'purple'), ('sectionEng', 'Language attitudes'), ('questionTextEng', 'It is important to me to use (or eventually use) English like a native speaker.'), ('languageEng', 'English'), ('sectionEsp', 'Actitudes lingüísticas'), ('questionTextEsp', 'Es importante para mí usar (o llegar a usar) las siguientes lenguas como un hablante nativo.'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '18b'), ('color', 'blue'), ('sectionEng', 'Language attitudes'), ('questionTextEng', 'It is important to me to use (or eventually use) Spanish like a native speaker.'), ('languageEng', 'Spanish'), ('sectionEsp', 'Actitudes lingüísticas'), ('questionTextEsp', 'Es importante para mí usar (o llegar a usar) las siguientes lenguas como un hablante nativo.'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '19a'), ('color', 'purple'), ('sectionEng', 'Language attitudes'), ('questionTextEng', 'I want others to think I am a native speaker of English.'), ('languageEng', 'English'), ('sectionEsp', 'Actitudes lingüísticas'), ('questionTextEsp', 'Quiero que los demás piensen que soy un hablante nativo de las siguientes lenguas.'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '19b'), ('color', 'blue'), ('sectionEng', 'Language attitudes'), ('questionTextEng', ' I want others to think I am a native speaker of Spanish.'), ('languageEng', 'Spanish'), ('sectionEsp', 'Actitudes lingüísticas'), ('questionTextEsp', 'Quiero que los demás piensen que soy un hablante nativo de las siguientes lenguas.'), ('languageEsp', 'español')])]" valType="str"/>
+      <Param name="conditionsFile" updates="None" val="condition_file/sp_en_trials.csv" valType="str"/>
+      <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
+      <Param name="isTrials" updates="None" val="True" valType="bool"/>
+      <Param name="loopType" updates="None" val="sequential" valType="str"/>
+      <Param name="nReps" updates="None" val="1" valType="code"/>
+      <Param name="name" updates="None" val="trials_hist_3" valType="code"/>
+      <Param name="random seed" updates="None" val="" valType="code"/>
+    </LoopInitiator>
+    <Routine name="language_history_3"/>
+    <LoopTerminator name="trials_hist_3"/>
+    <Routine name="lang_use_ins"/>
+    <LoopInitiator loopType="TrialHandler" name="trials_use">
+      <Param name="Selected rows" updates="None" val="12:27" valType="str"/>
+      <Param name="conditions" updates="None" val="[OrderedDict([('questionNum', '1a'), ('color', 'purple'), ('sectionEng', 'Language history'), ('questionTextEng', 'At what age did you start learning the following languages?'), ('languageEng', 'English'), ('sectionEsp', 'Historial lingüístico'), ('questionTextEsp', '¿A qué edad empezó a aprender las siguientes lenguas?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '1b'), ('color', 'blue'), ('sectionEng', 'Language history'), ('questionTextEng', 'At what age did you start learning the following languages?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Historial lingüístico'), ('questionTextEsp', '¿A qué edad empezó a aprender las siguientes lenguas?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '2a'), ('color', 'purple'), ('sectionEng', 'Language history'), ('questionTextEng', 'At what age did you start to feel comfortable using the following languages?'), ('languageEng', 'English'), ('sectionEsp', 'Historial lingüístico'), ('questionTextEsp', '¿A qué edad empezó a sentirse cómodo usando las siguientes lenguas?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '2b'), ('color', 'blue'), ('sectionEng', 'Language history'), ('questionTextEng', 'At what age did you start to feel comfortable using the following languages?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Historial lingüístico'), ('questionTextEsp', '¿A qué edad empezó a sentirse cómodo usando las siguientes lenguas?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '3a'), ('color', 'purple'), ('sectionEng', 'Language history'), ('questionTextEng', 'How many years of classes (grammar, history, math, etc.) have you had in the following languages (primary school through university)?'), ('languageEng', 'English'), ('sectionEsp', 'Historial lingüístico'), ('questionTextEsp', 'Cuántos años de clases (gramática, historia, matemáticas, etc.) ha tenido en las siguientes lenguas (desde la escuela primaria a la universidad)?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '3b'), ('color', 'blue'), ('sectionEng', 'Language history'), ('questionTextEng', 'How many years of classes (grammar, history, math, etc.) have you had in the following languages (primary school through university)?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Historial lingüístico'), ('questionTextEsp', 'Cuántos años de clases (gramática, historia, matemáticas, etc.) ha tenido en las siguientes lenguas (desde la escuela primaria a la universidad)?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '4a'), ('color', 'purple'), ('sectionEng', 'Language history'), ('questionTextEng', 'How many years have you spent in a country/region where the following languages are spoken?'), ('languageEng', 'English'), ('sectionEsp', 'Historial lingüístico'), ('questionTextEsp', '¿Cuántos años ha pasado en un país/región donde se hablan las siguientes lenguas?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '4b'), ('color', 'blue'), ('sectionEng', 'Language history'), ('questionTextEng', 'How many years have you spent in a country/region where the following languages are spoken?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Historial lingüístico'), ('questionTextEsp', '¿Cuántos años ha pasado en un país/región donde se hablan las siguientes lenguas?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '5a'), ('color', 'purple'), ('sectionEng', 'Language history'), ('questionTextEng', 'How many years have you spent in a family where the following languages are spoken?'), ('languageEng', 'English'), ('sectionEsp', 'Historial lingüístico'), ('questionTextEsp', '¿Cuántos años ha pasado en familia hablando las siguientes lenguas?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '5b'), ('color', 'blue'), ('sectionEng', 'Language history'), ('questionTextEng', 'How many years have you spent in a family where the following languages are spoken?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Historial lingüístico'), ('questionTextEsp', '¿Cuántos años ha pasado en familia hablando las siguientes lenguas?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '6a'), ('color', 'purple'), ('sectionEng', 'Language history'), ('questionTextEng', 'How many years have you spent in a work environment where the following languages are spoken?'), ('languageEng', 'English'), ('sectionEsp', 'Historial lingüístico'), ('questionTextEsp', '¿Cuántos años ha pasado en un ambiente de trabajo donde se hablan las siguientes lenguas?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '6b'), ('color', 'blue'), ('sectionEng', 'Language history'), ('questionTextEng', 'How many years have you spent in a work environment where the following languages are spoken?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Historial lingüístico'), ('questionTextEsp', '¿Cuántos años ha pasado en un ambiente de trabajo donde se hablan las siguientes lenguas?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '7a'), ('color', 'purple'), ('sectionEng', 'Language use'), ('questionTextEng', 'In an average week, what percentage of the time do you use the following languages with friends?'), ('languageEng', 'English'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas con sus amigos?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '7b'), ('color', 'blue'), ('sectionEng', 'Language use'), ('questionTextEng', 'In an average week, what percentage of the time do you use the following languages with friends?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas con sus amigos?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '7c'), ('color', 'red'), ('sectionEng', 'Language use'), ('questionTextEng', 'In an average week, what percentage of the time do you use the following languages with friends?'), ('languageEng', 'Other languages'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas con sus amigos?'), ('languageEsp', 'otras lenguas')]), OrderedDict([('questionNum', '8a'), ('color', 'purple'), ('sectionEng', 'Language use'), ('questionTextEng', 'In an average week, what percentage of the time do you use the following languages with family?'), ('languageEng', 'English'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas con su familia?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '8b'), ('color', 'blue'), ('sectionEng', 'Language use'), ('questionTextEng', 'In an average week, what percentage of the time do you use the following languages with family?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas con su familia?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '8c'), ('color', 'red'), ('sectionEng', 'Language use'), ('questionTextEng', 'In an average week, what percentage of the time do you use the following languages with family?'), ('languageEng', 'Other languages'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas con su familia?'), ('languageEsp', 'otras lenguas')]), OrderedDict([('questionNum', '9a'), ('color', 'purple'), ('sectionEng', 'Language use'), ('questionTextEng', 'In an average week, what percentage of the time do you use the following languages at school/work?'), ('languageEng', 'English'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas en la escuela/el trabajo?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '9b'), ('color', 'blue'), ('sectionEng', 'Language use'), ('questionTextEng', 'In an average week, what percentage of the time do you use the following languages at school/work?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas en la escuela/el trabajo?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '9c'), ('color', 'red'), ('sectionEng', 'Language use'), ('questionTextEng', 'In an average week, what percentage of the time do you use the following languages at school/work?'), ('languageEng', 'Other languages'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas en la escuela/el trabajo?'), ('languageEsp', 'otras lenguas')]), OrderedDict([('questionNum', '10a'), ('color', 'purple'), ('sectionEng', 'Language use'), ('questionTextEng', 'When you talk to yourself, how often do you talk to yourself in the following languages?'), ('languageEng', 'English'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'Cuando se habla a usted mismo, ¿con qué frecuencia se habla a sí mismo en las siguientes lenguas?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '10b'), ('color', 'blue'), ('sectionEng', 'Language use'), ('questionTextEng', 'When you talk to yourself, how often do you talk to yourself in the following languages?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'Cuando se habla a usted mismo, ¿con qué frecuencia se habla a sí mismo en las siguientes lenguas?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '10c'), ('color', 'red'), ('sectionEng', 'Language use'), ('questionTextEng', 'When you talk to yourself, how often do you talk to yourself in the following languages?'), ('languageEng', 'Other languages'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'Cuando se habla a usted mismo, ¿con qué frecuencia se habla a sí mismo en las siguientes lenguas?'), ('languageEsp', 'otras lenguas')]), OrderedDict([('questionNum', '11a'), ('color', 'purple'), ('sectionEng', 'Language use'), ('questionTextEng', 'When you count, how often do you count in the following languages?'), ('languageEng', 'English'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'Cuando hace cálculos contando, ¿con qué frecuencia cuenta en las siguientes lenguas?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '11b'), ('color', 'blue'), ('sectionEng', 'Language use'), ('questionTextEng', 'When you count, how often do you count in the following languages?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'Cuando hace cálculos contando, ¿con qué frecuencia cuenta en las siguientes lenguas?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '11c'), ('color', 'red'), ('sectionEng', 'Language use'), ('questionTextEng', 'When you count, how often do you count in the following languages?'), ('languageEng', 'Other languages'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'Cuando hace cálculos contando, ¿con qué frecuencia cuenta en las siguientes lenguas?'), ('languageEsp', 'otras lenguas')]), OrderedDict([('questionNum', '12a'), ('color', 'purple'), ('sectionEng', 'Language proficiency'), ('questionTextEng', 'How well do you speak the following languages?'), ('languageEng', 'English'), ('sectionEsp', 'Competencia lingüística'), ('questionTextEsp', '¿Cómo habla en las siguientes lenguas?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '12b'), ('color', 'blue'), ('sectionEng', 'Language proficiency'), ('questionTextEng', 'How well do you speak the following languages?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Competencia lingüística'), ('questionTextEsp', '¿Cómo habla en las siguientes lenguas?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '13a'), ('color', 'purple'), ('sectionEng', 'Language proficiency'), ('questionTextEng', 'How well do you understand the following languages?'), ('languageEng', 'English'), ('sectionEsp', 'Competencia lingüística'), ('questionTextEsp', '¿Cómo entiende en las siguientes lenguas?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '13b'), ('color', 'blue'), ('sectionEng', 'Language proficiency'), ('questionTextEng', 'How well do you understand the following languages?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Competencia lingüística'), ('questionTextEsp', '¿Cómo entiende en las siguientes lenguas?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '14a'), ('color', 'purple'), ('sectionEng', 'Language proficiency'), ('questionTextEng', 'How well do you read the following languages?'), ('languageEng', 'English'), ('sectionEsp', 'Competencia lingüística'), ('questionTextEsp', '¿Cómo lee en las siguientes lenguas?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '14b'), ('color', 'blue'), ('sectionEng', 'Language proficiency'), ('questionTextEng', 'How well do you read the following languages?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Competencia lingüística'), ('questionTextEsp', '¿Cómo lee en las siguientes lenguas?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '15a'), ('color', 'purple'), ('sectionEng', 'Language proficiency'), ('questionTextEng', 'How well do you write the following languages?'), ('languageEng', 'English'), ('sectionEsp', 'Competencia lingüística'), ('questionTextEsp', '¿Cómo escribe en las siguientes lenguas?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '15b'), ('color', 'blue'), ('sectionEng', 'Language proficiency'), ('questionTextEng', 'How well do you write the following languages?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Competencia lingüística'), ('questionTextEsp', '¿Cómo escribe en las siguientes lenguas?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '16a'), ('color', 'purple'), ('sectionEng', 'Language attitudes'), ('questionTextEng', 'I feel like myself when I speak English.'), ('languageEng', 'English'), ('sectionEsp', 'Actitudes lingüísticas'), ('questionTextEsp', 'Me siento &quot;yo mismo&quot; cuando hablo en las siguientes lenguas.'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '16b'), ('color', 'blue'), ('sectionEng', 'Language attitudes'), ('questionTextEng', 'I feel like myself when I speak Spanish.'), ('languageEng', 'Spanish'), ('sectionEsp', 'Actitudes lingüísticas'), ('questionTextEsp', 'Me siento &quot;yo mismo&quot; cuando hablo en las siguientes lenguas.'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '17a'), ('color', 'purple'), ('sectionEng', 'Language attitudes'), ('questionTextEng', 'I identify with an English-speaking culture.'), ('languageEng', 'English'), ('sectionEsp', 'Actitudes lingüísticas'), ('questionTextEsp', 'Yo me identifico con las siguientes culturas.'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '17b'), ('color', 'blue'), ('sectionEng', 'Language attitudes'), ('questionTextEng', 'I identify with an Spanish-speaking culture.'), ('languageEng', 'Spanish'), ('sectionEsp', 'Actitudes lingüísticas'), ('questionTextEsp', 'Yo me identifico con las siguientes culturas.'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '18a'), ('color', 'purple'), ('sectionEng', 'Language attitudes'), ('questionTextEng', 'It is important to me to use (or eventually use) English like a native speaker.'), ('languageEng', 'English'), ('sectionEsp', 'Actitudes lingüísticas'), ('questionTextEsp', 'Es importante para mí usar (o llegar a usar) las siguientes lenguas como un hablante nativo.'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '18b'), ('color', 'blue'), ('sectionEng', 'Language attitudes'), ('questionTextEng', 'It is important to me to use (or eventually use) Spanish like a native speaker.'), ('languageEng', 'Spanish'), ('sectionEsp', 'Actitudes lingüísticas'), ('questionTextEsp', 'Es importante para mí usar (o llegar a usar) las siguientes lenguas como un hablante nativo.'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '19a'), ('color', 'purple'), ('sectionEng', 'Language attitudes'), ('questionTextEng', 'I want others to think I am a native speaker of English.'), ('languageEng', 'English'), ('sectionEsp', 'Actitudes lingüísticas'), ('questionTextEsp', 'Quiero que los demás piensen que soy un hablante nativo de las siguientes lenguas.'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '19b'), ('color', 'blue'), ('sectionEng', 'Language attitudes'), ('questionTextEng', ' I want others to think I am a native speaker of Spanish.'), ('languageEng', 'Spanish'), ('sectionEsp', 'Actitudes lingüísticas'), ('questionTextEsp', 'Quiero que los demás piensen que soy un hablante nativo de las siguientes lenguas.'), ('languageEsp', 'español')])]" valType="str"/>
+      <Param name="conditionsFile" updates="None" val="condition_file/sp_en_trials.csv" valType="str"/>
+      <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
+      <Param name="isTrials" updates="None" val="True" valType="bool"/>
+      <Param name="loopType" updates="None" val="sequential" valType="str"/>
+      <Param name="nReps" updates="None" val="1" valType="code"/>
+      <Param name="name" updates="None" val="trials_use" valType="code"/>
+      <Param name="random seed" updates="None" val="" valType="code"/>
+    </LoopInitiator>
+    <Routine name="language_use"/>
+    <LoopTerminator name="trials_use"/>
+    <Routine name="lang_prof_ins"/>
+    <LoopInitiator loopType="TrialHandler" name="trials_prof">
+      <Param name="Selected rows" updates="None" val="27:35" valType="str"/>
+      <Param name="conditions" updates="None" val="[OrderedDict([('questionNum', '1a'), ('color', 'purple'), ('sectionEng', 'Language history'), ('questionTextEng', 'At what age did you start learning the following languages?'), ('languageEng', 'English'), ('sectionEsp', 'Historial lingüístico'), ('questionTextEsp', '¿A qué edad empezó a aprender las siguientes lenguas?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '1b'), ('color', 'blue'), ('sectionEng', 'Language history'), ('questionTextEng', 'At what age did you start learning the following languages?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Historial lingüístico'), ('questionTextEsp', '¿A qué edad empezó a aprender las siguientes lenguas?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '2a'), ('color', 'purple'), ('sectionEng', 'Language history'), ('questionTextEng', 'At what age did you start to feel comfortable using the following languages?'), ('languageEng', 'English'), ('sectionEsp', 'Historial lingüístico'), ('questionTextEsp', '¿A qué edad empezó a sentirse cómodo usando las siguientes lenguas?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '2b'), ('color', 'blue'), ('sectionEng', 'Language history'), ('questionTextEng', 'At what age did you start to feel comfortable using the following languages?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Historial lingüístico'), ('questionTextEsp', '¿A qué edad empezó a sentirse cómodo usando las siguientes lenguas?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '3a'), ('color', 'purple'), ('sectionEng', 'Language history'), ('questionTextEng', 'How many years of classes (grammar, history, math, etc.) have you had in the following languages (primary school through university)?'), ('languageEng', 'English'), ('sectionEsp', 'Historial lingüístico'), ('questionTextEsp', 'Cuántos años de clases (gramática, historia, matemáticas, etc.) ha tenido en las siguientes lenguas (desde la escuela primaria a la universidad)?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '3b'), ('color', 'blue'), ('sectionEng', 'Language history'), ('questionTextEng', 'How many years of classes (grammar, history, math, etc.) have you had in the following languages (primary school through university)?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Historial lingüístico'), ('questionTextEsp', 'Cuántos años de clases (gramática, historia, matemáticas, etc.) ha tenido en las siguientes lenguas (desde la escuela primaria a la universidad)?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '4a'), ('color', 'purple'), ('sectionEng', 'Language history'), ('questionTextEng', 'How many years have you spent in a country/region where the following languages are spoken?'), ('languageEng', 'English'), ('sectionEsp', 'Historial lingüístico'), ('questionTextEsp', '¿Cuántos años ha pasado en un país/región donde se hablan las siguientes lenguas?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '4b'), ('color', 'blue'), ('sectionEng', 'Language history'), ('questionTextEng', 'How many years have you spent in a country/region where the following languages are spoken?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Historial lingüístico'), ('questionTextEsp', '¿Cuántos años ha pasado en un país/región donde se hablan las siguientes lenguas?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '5a'), ('color', 'purple'), ('sectionEng', 'Language history'), ('questionTextEng', 'How many years have you spent in a family where the following languages are spoken?'), ('languageEng', 'English'), ('sectionEsp', 'Historial lingüístico'), ('questionTextEsp', '¿Cuántos años ha pasado en familia hablando las siguientes lenguas?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '5b'), ('color', 'blue'), ('sectionEng', 'Language history'), ('questionTextEng', 'How many years have you spent in a family where the following languages are spoken?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Historial lingüístico'), ('questionTextEsp', '¿Cuántos años ha pasado en familia hablando las siguientes lenguas?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '6a'), ('color', 'purple'), ('sectionEng', 'Language history'), ('questionTextEng', 'How many years have you spent in a work environment where the following languages are spoken?'), ('languageEng', 'English'), ('sectionEsp', 'Historial lingüístico'), ('questionTextEsp', '¿Cuántos años ha pasado en un ambiente de trabajo donde se hablan las siguientes lenguas?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '6b'), ('color', 'blue'), ('sectionEng', 'Language history'), ('questionTextEng', 'How many years have you spent in a work environment where the following languages are spoken?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Historial lingüístico'), ('questionTextEsp', '¿Cuántos años ha pasado en un ambiente de trabajo donde se hablan las siguientes lenguas?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '7a'), ('color', 'purple'), ('sectionEng', 'Language use'), ('questionTextEng', 'In an average week, what percentage of the time do you use the following languages with friends?'), ('languageEng', 'English'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas con sus amigos?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '7b'), ('color', 'blue'), ('sectionEng', 'Language use'), ('questionTextEng', 'In an average week, what percentage of the time do you use the following languages with friends?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas con sus amigos?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '7c'), ('color', 'red'), ('sectionEng', 'Language use'), ('questionTextEng', 'In an average week, what percentage of the time do you use the following languages with friends?'), ('languageEng', 'Other languages'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas con sus amigos?'), ('languageEsp', 'otras lenguas')]), OrderedDict([('questionNum', '8a'), ('color', 'purple'), ('sectionEng', 'Language use'), ('questionTextEng', 'In an average week, what percentage of the time do you use the following languages with family?'), ('languageEng', 'English'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas con su familia?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '8b'), ('color', 'blue'), ('sectionEng', 'Language use'), ('questionTextEng', 'In an average week, what percentage of the time do you use the following languages with family?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas con su familia?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '8c'), ('color', 'red'), ('sectionEng', 'Language use'), ('questionTextEng', 'In an average week, what percentage of the time do you use the following languages with family?'), ('languageEng', 'Other languages'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas con su familia?'), ('languageEsp', 'otras lenguas')]), OrderedDict([('questionNum', '9a'), ('color', 'purple'), ('sectionEng', 'Language use'), ('questionTextEng', 'In an average week, what percentage of the time do you use the following languages at school/work?'), ('languageEng', 'English'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas en la escuela/el trabajo?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '9b'), ('color', 'blue'), ('sectionEng', 'Language use'), ('questionTextEng', 'In an average week, what percentage of the time do you use the following languages at school/work?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas en la escuela/el trabajo?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '9c'), ('color', 'red'), ('sectionEng', 'Language use'), ('questionTextEng', 'In an average week, what percentage of the time do you use the following languages at school/work?'), ('languageEng', 'Other languages'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas en la escuela/el trabajo?'), ('languageEsp', 'otras lenguas')]), OrderedDict([('questionNum', '10a'), ('color', 'purple'), ('sectionEng', 'Language use'), ('questionTextEng', 'When you talk to yourself, how often do you talk to yourself in the following languages?'), ('languageEng', 'English'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'Cuando se habla a usted mismo, ¿con qué frecuencia se habla a sí mismo en las siguientes lenguas?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '10b'), ('color', 'blue'), ('sectionEng', 'Language use'), ('questionTextEng', 'When you talk to yourself, how often do you talk to yourself in the following languages?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'Cuando se habla a usted mismo, ¿con qué frecuencia se habla a sí mismo en las siguientes lenguas?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '10c'), ('color', 'red'), ('sectionEng', 'Language use'), ('questionTextEng', 'When you talk to yourself, how often do you talk to yourself in the following languages?'), ('languageEng', 'Other languages'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'Cuando se habla a usted mismo, ¿con qué frecuencia se habla a sí mismo en las siguientes lenguas?'), ('languageEsp', 'otras lenguas')]), OrderedDict([('questionNum', '11a'), ('color', 'purple'), ('sectionEng', 'Language use'), ('questionTextEng', 'When you count, how often do you count in the following languages?'), ('languageEng', 'English'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'Cuando hace cálculos contando, ¿con qué frecuencia cuenta en las siguientes lenguas?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '11b'), ('color', 'blue'), ('sectionEng', 'Language use'), ('questionTextEng', 'When you count, how often do you count in the following languages?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'Cuando hace cálculos contando, ¿con qué frecuencia cuenta en las siguientes lenguas?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '11c'), ('color', 'red'), ('sectionEng', 'Language use'), ('questionTextEng', 'When you count, how often do you count in the following languages?'), ('languageEng', 'Other languages'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'Cuando hace cálculos contando, ¿con qué frecuencia cuenta en las siguientes lenguas?'), ('languageEsp', 'otras lenguas')]), OrderedDict([('questionNum', '12a'), ('color', 'purple'), ('sectionEng', 'Language proficiency'), ('questionTextEng', 'How well do you speak the following languages?'), ('languageEng', 'English'), ('sectionEsp', 'Competencia lingüística'), ('questionTextEsp', '¿Cómo habla en las siguientes lenguas?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '12b'), ('color', 'blue'), ('sectionEng', 'Language proficiency'), ('questionTextEng', 'How well do you speak the following languages?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Competencia lingüística'), ('questionTextEsp', '¿Cómo habla en las siguientes lenguas?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '13a'), ('color', 'purple'), ('sectionEng', 'Language proficiency'), ('questionTextEng', 'How well do you understand the following languages?'), ('languageEng', 'English'), ('sectionEsp', 'Competencia lingüística'), ('questionTextEsp', '¿Cómo entiende en las siguientes lenguas?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '13b'), ('color', 'blue'), ('sectionEng', 'Language proficiency'), ('questionTextEng', 'How well do you understand the following languages?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Competencia lingüística'), ('questionTextEsp', '¿Cómo entiende en las siguientes lenguas?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '14a'), ('color', 'purple'), ('sectionEng', 'Language proficiency'), ('questionTextEng', 'How well do you read the following languages?'), ('languageEng', 'English'), ('sectionEsp', 'Competencia lingüística'), ('questionTextEsp', '¿Cómo lee en las siguientes lenguas?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '14b'), ('color', 'blue'), ('sectionEng', 'Language proficiency'), ('questionTextEng', 'How well do you read the following languages?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Competencia lingüística'), ('questionTextEsp', '¿Cómo lee en las siguientes lenguas?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '15a'), ('color', 'purple'), ('sectionEng', 'Language proficiency'), ('questionTextEng', 'How well do you write the following languages?'), ('languageEng', 'English'), ('sectionEsp', 'Competencia lingüística'), ('questionTextEsp', '¿Cómo escribe en las siguientes lenguas?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '15b'), ('color', 'blue'), ('sectionEng', 'Language proficiency'), ('questionTextEng', 'How well do you write the following languages?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Competencia lingüística'), ('questionTextEsp', '¿Cómo escribe en las siguientes lenguas?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '16a'), ('color', 'purple'), ('sectionEng', 'Language attitudes'), ('questionTextEng', 'I feel like myself when I speak English.'), ('languageEng', 'English'), ('sectionEsp', 'Actitudes lingüísticas'), ('questionTextEsp', 'Me siento &quot;yo mismo&quot; cuando hablo en las siguientes lenguas.'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '16b'), ('color', 'blue'), ('sectionEng', 'Language attitudes'), ('questionTextEng', 'I feel like myself when I speak Spanish.'), ('languageEng', 'Spanish'), ('sectionEsp', 'Actitudes lingüísticas'), ('questionTextEsp', 'Me siento &quot;yo mismo&quot; cuando hablo en las siguientes lenguas.'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '17a'), ('color', 'purple'), ('sectionEng', 'Language attitudes'), ('questionTextEng', 'I identify with an English-speaking culture.'), ('languageEng', 'English'), ('sectionEsp', 'Actitudes lingüísticas'), ('questionTextEsp', 'Yo me identifico con las siguientes culturas.'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '17b'), ('color', 'blue'), ('sectionEng', 'Language attitudes'), ('questionTextEng', 'I identify with an Spanish-speaking culture.'), ('languageEng', 'Spanish'), ('sectionEsp', 'Actitudes lingüísticas'), ('questionTextEsp', 'Yo me identifico con las siguientes culturas.'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '18a'), ('color', 'purple'), ('sectionEng', 'Language attitudes'), ('questionTextEng', 'It is important to me to use (or eventually use) English like a native speaker.'), ('languageEng', 'English'), ('sectionEsp', 'Actitudes lingüísticas'), ('questionTextEsp', 'Es importante para mí usar (o llegar a usar) las siguientes lenguas como un hablante nativo.'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '18b'), ('color', 'blue'), ('sectionEng', 'Language attitudes'), ('questionTextEng', 'It is important to me to use (or eventually use) Spanish like a native speaker.'), ('languageEng', 'Spanish'), ('sectionEsp', 'Actitudes lingüísticas'), ('questionTextEsp', 'Es importante para mí usar (o llegar a usar) las siguientes lenguas como un hablante nativo.'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '19a'), ('color', 'purple'), ('sectionEng', 'Language attitudes'), ('questionTextEng', 'I want others to think I am a native speaker of English.'), ('languageEng', 'English'), ('sectionEsp', 'Actitudes lingüísticas'), ('questionTextEsp', 'Quiero que los demás piensen que soy un hablante nativo de las siguientes lenguas.'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '19b'), ('color', 'blue'), ('sectionEng', 'Language attitudes'), ('questionTextEng', ' I want others to think I am a native speaker of Spanish.'), ('languageEng', 'Spanish'), ('sectionEsp', 'Actitudes lingüísticas'), ('questionTextEsp', 'Quiero que los demás piensen que soy un hablante nativo de las siguientes lenguas.'), ('languageEsp', 'español')])]" valType="str"/>
+      <Param name="conditionsFile" updates="None" val="condition_file/sp_en_trials.csv" valType="str"/>
+      <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
+      <Param name="isTrials" updates="None" val="True" valType="bool"/>
+      <Param name="loopType" updates="None" val="sequential" valType="str"/>
+      <Param name="nReps" updates="None" val="1" valType="code"/>
+      <Param name="name" updates="None" val="trials_prof" valType="code"/>
+      <Param name="random seed" updates="None" val="" valType="code"/>
+    </LoopInitiator>
+    <Routine name="language_proficiency"/>
+    <LoopTerminator name="trials_prof"/>
+    <Routine name="lang_att_ins"/>
+    <LoopInitiator loopType="TrialHandler" name="trials_att">
+      <Param name="Selected rows" updates="None" val="35:43" valType="str"/>
+      <Param name="conditions" updates="None" val="[OrderedDict([('questionNum', '1a'), ('color', 'green'), ('sectionEng', 'Language history'), ('questionTextEng', 'At what age did you start learning the following languages?'), ('languageEng', 'English'), ('sectionEsp', 'Historial lingüístico'), ('questionTextEsp', '¿A qué edad empezó a aprender las siguientes lenguas?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '1b'), ('color', 'purple'), ('sectionEng', 'Language history'), ('questionTextEng', 'At what age did you start learning the following languages?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Historial lingüístico'), ('questionTextEsp', '¿A qué edad empezó a aprender las siguientes lenguas?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '2a'), ('color', 'green'), ('sectionEng', 'Language history'), ('questionTextEng', 'At what age did you start to feel comfortable using the following languages?'), ('languageEng', 'English'), ('sectionEsp', 'Historial lingüístico'), ('questionTextEsp', '¿A qué edad empezó a sentirse cómodo usando las siguientes lenguas?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '2b'), ('color', 'purple'), ('sectionEng', 'Language history'), ('questionTextEng', 'At what age did you start to feel comfortable using the following languages?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Historial lingüístico'), ('questionTextEsp', '¿A qué edad empezó a sentirse cómodo usando las siguientes lenguas?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '3a'), ('color', 'green'), ('sectionEng', 'Language history'), ('questionTextEng', 'How many years of classes (grammar, history, math, etc.) have you had in the following languages (primary school through university)?'), ('languageEng', 'English'), ('sectionEsp', 'Historial lingüístico'), ('questionTextEsp', 'Cuántos años de clases (gramática, historia, matemáticas, etc.) ha tenido en las siguientes lenguas (desde la escuela primaria a la universidad)?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '3b'), ('color', 'purple'), ('sectionEng', 'Language history'), ('questionTextEng', 'How many years of classes (grammar, history, math, etc.) have you had in the following languages (primary school through university)?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Historial lingüístico'), ('questionTextEsp', 'Cuántos años de clases (gramática, historia, matemáticas, etc.) ha tenido en las siguientes lenguas (desde la escuela primaria a la universidad)?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '4a'), ('color', 'green'), ('sectionEng', 'Language history'), ('questionTextEng', 'How many years have you spent in a country/region where the following languages are spoken?'), ('languageEng', 'English'), ('sectionEsp', 'Historial lingüístico'), ('questionTextEsp', '¿Cuántos años ha pasado en un país/región donde se hablan las siguientes lenguas?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '4b'), ('color', 'purple'), ('sectionEng', 'Language history'), ('questionTextEng', 'How many years have you spent in a country/region where the following languages are spoken?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Historial lingüístico'), ('questionTextEsp', '¿Cuántos años ha pasado en un país/región donde se hablan las siguientes lenguas?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '5a'), ('color', 'green'), ('sectionEng', 'Language history'), ('questionTextEng', 'How many years have you spent in a family where the following languages are spoken?'), ('languageEng', 'English'), ('sectionEsp', 'Historial lingüístico'), ('questionTextEsp', '¿Cuántos años ha pasado en familia hablando las siguientes lenguas?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '5b'), ('color', 'purple'), ('sectionEng', 'Language history'), ('questionTextEng', 'How many years have you spent in a family where the following languages are spoken?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Historial lingüístico'), ('questionTextEsp', '¿Cuántos años ha pasado en familia hablando las siguientes lenguas?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '6a'), ('color', 'green'), ('sectionEng', 'Language history'), ('questionTextEng', 'How many years have you spent in a work environment where the following languages are spoken?'), ('languageEng', 'English'), ('sectionEsp', 'Historial lingüístico'), ('questionTextEsp', '¿Cuántos años ha pasado en un ambiente de trabajo donde se hablan las siguientes lenguas?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '6b'), ('color', 'purple'), ('sectionEng', 'Language history'), ('questionTextEng', 'How many years have you spent in a work environment where the following languages are spoken?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Historial lingüístico'), ('questionTextEsp', '¿Cuántos años ha pasado en un ambiente de trabajo donde se hablan las siguientes lenguas?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '7a'), ('color', 'green'), ('sectionEng', 'Language use'), ('questionTextEng', 'In an average week, what percentage of the time do you use the following languages with friends?'), ('languageEng', 'English'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas con sus amigos?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '7b'), ('color', 'purple'), ('sectionEng', 'Language use'), ('questionTextEng', 'In an average week, what percentage of the time do you use the following languages with friends?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas con sus amigos?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '7c'), ('color', 'red'), ('sectionEng', 'Language use'), ('questionTextEng', 'In an average week, what percentage of the time do you use the following languages with friends?'), ('languageEng', 'Other languages'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas con sus amigos?'), ('languageEsp', 'otras lenguas')]), OrderedDict([('questionNum', '8a'), ('color', 'green'), ('sectionEng', 'Language use'), ('questionTextEng', 'In an average week, what percentage of the time do you use the following languages with family?'), ('languageEng', 'English'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas con su familia?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '8b'), ('color', 'purple'), ('sectionEng', 'Language use'), ('questionTextEng', 'In an average week, what percentage of the time do you use the following languages with family?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas con su familia?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '8c'), ('color', 'red'), ('sectionEng', 'Language use'), ('questionTextEng', 'In an average week, what percentage of the time do you use the following languages with family?'), ('languageEng', 'Other languages'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas con su familia?'), ('languageEsp', 'otras lenguas')]), OrderedDict([('questionNum', '9a'), ('color', 'green'), ('sectionEng', 'Language use'), ('questionTextEng', 'In an average week, what percentage of the time do you use the following languages at school/work?'), ('languageEng', 'English'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas en la escuela/el trabajo?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '9b'), ('color', 'purple'), ('sectionEng', 'Language use'), ('questionTextEng', 'In an average week, what percentage of the time do you use the following languages at school/work?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas en la escuela/el trabajo?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '9c'), ('color', 'red'), ('sectionEng', 'Language use'), ('questionTextEng', 'In an average week, what percentage of the time do you use the following languages at school/work?'), ('languageEng', 'Other languages'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas en la escuela/el trabajo?'), ('languageEsp', 'otras lenguas')]), OrderedDict([('questionNum', '10a'), ('color', 'green'), ('sectionEng', 'Language use'), ('questionTextEng', 'When you talk to yourself, how often do you talk to yourself in the following languages?'), ('languageEng', 'English'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'Cuando se habla a usted mismo, ¿con qué frecuencia se habla a sí mismo en las siguientes lenguas?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '10b'), ('color', 'purple'), ('sectionEng', 'Language use'), ('questionTextEng', 'When you talk to yourself, how often do you talk to yourself in the following languages?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'Cuando se habla a usted mismo, ¿con qué frecuencia se habla a sí mismo en las siguientes lenguas?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '10c'), ('color', 'red'), ('sectionEng', 'Language use'), ('questionTextEng', 'When you talk to yourself, how often do you talk to yourself in the following languages?'), ('languageEng', 'Other languages'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'Cuando se habla a usted mismo, ¿con qué frecuencia se habla a sí mismo en las siguientes lenguas?'), ('languageEsp', 'otras lenguas')]), OrderedDict([('questionNum', '11a'), ('color', 'green'), ('sectionEng', 'Language use'), ('questionTextEng', 'When you count, how often do you count in the following languages?'), ('languageEng', 'English'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'Cuando hace cálculos contando, ¿con qué frecuencia cuenta en las siguientes lenguas?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '11b'), ('color', 'purple'), ('sectionEng', 'Language use'), ('questionTextEng', 'When you count, how often do you count in the following languages?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'Cuando hace cálculos contando, ¿con qué frecuencia cuenta en las siguientes lenguas?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '11c'), ('color', 'red'), ('sectionEng', 'Language use'), ('questionTextEng', 'When you count, how often do you count in the following languages?'), ('languageEng', 'Other languages'), ('sectionEsp', 'Uso de lenguas'), ('questionTextEsp', 'Cuando hace cálculos contando, ¿con qué frecuencia cuenta en las siguientes lenguas?'), ('languageEsp', 'otras lenguas')]), OrderedDict([('questionNum', '12a'), ('color', 'green'), ('sectionEng', 'Language proficiency'), ('questionTextEng', 'How well do you speak the following languages?'), ('languageEng', 'English'), ('sectionEsp', 'Competencia lingüística'), ('questionTextEsp', '¿Cómo habla en las siguientes lenguas?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '12b'), ('color', 'purple'), ('sectionEng', 'Language proficiency'), ('questionTextEng', 'How well do you speak the following languages?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Competencia lingüística'), ('questionTextEsp', '¿Cómo habla en las siguientes lenguas?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '13a'), ('color', 'green'), ('sectionEng', 'Language proficiency'), ('questionTextEng', 'How well do you understand the following languages?'), ('languageEng', 'English'), ('sectionEsp', 'Competencia lingüística'), ('questionTextEsp', '¿Cómo entiende en las siguientes lenguas?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '13b'), ('color', 'purple'), ('sectionEng', 'Language proficiency'), ('questionTextEng', 'How well do you understand the following languages?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Competencia lingüística'), ('questionTextEsp', '¿Cómo entiende en las siguientes lenguas?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '14a'), ('color', 'green'), ('sectionEng', 'Language proficiency'), ('questionTextEng', 'How well do you read the following languages?'), ('languageEng', 'English'), ('sectionEsp', 'Competencia lingüística'), ('questionTextEsp', '¿Cómo lee en las siguientes lenguas?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '14b'), ('color', 'purple'), ('sectionEng', 'Language proficiency'), ('questionTextEng', 'How well do you read the following languages?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Competencia lingüística'), ('questionTextEsp', '¿Cómo lee en las siguientes lenguas?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '15a'), ('color', 'green'), ('sectionEng', 'Language proficiency'), ('questionTextEng', 'How well do you write the following languages?'), ('languageEng', 'English'), ('sectionEsp', 'Competencia lingüística'), ('questionTextEsp', '¿Cómo escribe en las siguientes lenguas?'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '15b'), ('color', 'purple'), ('sectionEng', 'Language proficiency'), ('questionTextEng', 'How well do you write the following languages?'), ('languageEng', 'Spanish'), ('sectionEsp', 'Competencia lingüística'), ('questionTextEsp', '¿Cómo escribe en las siguientes lenguas?'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '16a'), ('color', 'green'), ('sectionEng', 'Language attitudes'), ('questionTextEng', 'I feel like myself when I speak English.'), ('languageEng', 'English'), ('sectionEsp', 'Actitudes lingüísticas'), ('questionTextEsp', 'Me siento &quot;yo mismo&quot; cuando hablo en las siguientes lenguas.'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '16b'), ('color', 'purple'), ('sectionEng', 'Language attitudes'), ('questionTextEng', 'I feel like myself when I speak Spanish.'), ('languageEng', 'Spanish'), ('sectionEsp', 'Actitudes lingüísticas'), ('questionTextEsp', 'Me siento &quot;yo mismo&quot; cuando hablo en las siguientes lenguas.'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '17a'), ('color', 'green'), ('sectionEng', 'Language attitudes'), ('questionTextEng', 'I identify with an English-speaking culture.'), ('languageEng', 'English'), ('sectionEsp', 'Actitudes lingüísticas'), ('questionTextEsp', 'Yo me identifico con las siguientes culturas.'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '17b'), ('color', 'purple'), ('sectionEng', 'Language attitudes'), ('questionTextEng', 'I identify with an Spanish-speaking culture.'), ('languageEng', 'Spanish'), ('sectionEsp', 'Actitudes lingüísticas'), ('questionTextEsp', 'Yo me identifico con las siguientes culturas.'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '18a'), ('color', 'green'), ('sectionEng', 'Language attitudes'), ('questionTextEng', 'It is important to me to use (or eventually use) English like a native speaker.'), ('languageEng', 'English'), ('sectionEsp', 'Actitudes lingüísticas'), ('questionTextEsp', 'Es importante para mí usar (o llegar a usar) las siguientes lenguas como un hablante nativo.'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '18b'), ('color', 'purple'), ('sectionEng', 'Language attitudes'), ('questionTextEng', 'It is important to me to use (or eventually use) Spanish like a native speaker.'), ('languageEng', 'Spanish'), ('sectionEsp', 'Actitudes lingüísticas'), ('questionTextEsp', 'Es importante para mí usar (o llegar a usar) las siguientes lenguas como un hablante nativo.'), ('languageEsp', 'español')]), OrderedDict([('questionNum', '19a'), ('color', 'green'), ('sectionEng', 'Language attitudes'), ('questionTextEng', 'I want others to think I am a native speaker of English.'), ('languageEng', 'English'), ('sectionEsp', 'Actitudes lingüísticas'), ('questionTextEsp', 'Quiero que los demás piensen que soy un hablante nativo de las siguientes lenguas.'), ('languageEsp', 'inglés')]), OrderedDict([('questionNum', '19b'), ('color', 'purple'), ('sectionEng', 'Language attitudes'), ('questionTextEng', ' I want others to think I am a native speaker of Spanish.'), ('languageEng', 'Spanish'), ('sectionEsp', 'Actitudes lingüísticas'), ('questionTextEsp', 'Quiero que los demás piensen que soy un hablante nativo de las siguientes lenguas.'), ('languageEsp', 'español')])]" valType="str"/>
+      <Param name="conditionsFile" updates="None" val="condition_file/sp_en_trials.csv" valType="str"/>
+      <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
+      <Param name="isTrials" updates="None" val="True" valType="bool"/>
+      <Param name="loopType" updates="None" val="sequential" valType="str"/>
+      <Param name="nReps" updates="None" val="1" valType="code"/>
+      <Param name="name" updates="None" val="trials_att" valType="code"/>
+      <Param name="random seed" updates="None" val="" valType="code"/>
+    </LoopInitiator>
+    <Routine name="language_attitudes"/>
+    <LoopTerminator name="trials_att"/>
+  </Flow>
+</PsychoPy2experiment>
