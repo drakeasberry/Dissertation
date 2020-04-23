@@ -87,7 +87,7 @@ for(csv_file in seg_paths){
 
   # Further subset to drop target syllable rows (48 in total)
   df_participant_clean <- filter(df_participant_transformed_correct_columns, fillerCarrier != 'targetSyl')
-  
+
   # write transformed tibble to csv file
   transformed_dir <- file.path(seg_dir, '../transformed/') # create new path to transformed directory name for updated files
   write_csv(df_participant_clean, file.path(transformed_dir, filename)) # write out corrected file to new directory
@@ -95,21 +95,22 @@ for(csv_file in seg_paths){
 
 # This block requires 'plyr' and 'readr'
 # Segmentation Data Directory
-seg_files <- list.files(path=transformed_dir, pattern = '*.csv', full.names = TRUE) #list all the files with path
+seg_files <- list.files(path='analyze_data/transformed/', pattern = '*.csv', full.names = TRUE) #list all the files with path
 #print(seg_files) # prints list of transformed files to be analyzed
 
 # read in all the files into one data frame
 # import multiple csv code modified from code posted at this link below:
 # https://datascienceplus.com/how-to-import-multiple-csv-files-simultaneously-in-r-and-create-a-data-frame/
-df_raw_seg = ldply(seg_files, read_csv)
+df_raw_seg <- ldply(seg_files, read_csv)
 
 #---
 # These items are only used in the Rstudio environment
 # Clean up unnecessary items in environment
-rm(df_participant_clean, df_participant_transformed_correct_columns,
-   df_participant_transformed, df_participant_raw,df_participant_modified,
-   df_target_column, targets, blocks, target_syllable_column, block_column,
-   word_column, csv_file, filename, seg_dir, seg_paths, seg_files, transformed_dir)
+#rm(df_participant_clean, df_participant_transformed_correct_columns,
+   #df_participant_transformed, df_participant_raw,df_participant_modified,
+   #df_target_column, targets, blocks, target_syllable_column, block_column,
+   #word_column, csv_file, filename, seg_dir, seg_paths, seg_files, transformed_dir)
+rm(csv_file, seg_dir, seg_paths, seg_files)
 #---
 
 # Create a new dataframe to join to participant data needed for analysis
@@ -187,12 +188,11 @@ df_critical <- df_critical %>%
 df_critical <- rbind.fill(df_critical, exp_error)
 
 # Build filler tables
-exp_error_2 <- tibble(word = 'zarzuela', word_initial_syl = 'CVC', word_freq = 0.240384615) # data missing in experimental file
 df_rw_filler <- read_csv('analyze_data/RW_Filler_Items.csv')
 df_pw_filler <- read_csv('analyze_data/PW_Filler_Items.csv')
 
 # combine pseudo/real word tiblles and drop unnecessary columns
-df_filler <- rbind.fill(df_rw_filler, df_pw_filler, exp_error_2) %>%
+df_filler <- rbind.fill(df_rw_filler, df_pw_filler) %>%
   select(keep_columns)
 
 # Combine potential fillers and actual critical items into a single tibble
@@ -209,7 +209,6 @@ write_csv(complete_joiner,'~/Desktop/working_diss_files/r-checking/join_table.cs
 
 
 # Join table with experimental results from participants
-#colnames(df_raw_seg)[3] <- 'word' # changes colname 'carriers'
 seg_data_join <- df_raw_seg %>%
   inner_join(complete_joiner, by = 'word') %>%
   distinct() %>% # remove duplicates
@@ -222,7 +221,7 @@ write_csv(seg_data_join,'~/Desktop/working_diss_files/r-checking/segmentation_da
 #---
 # These items are only used in the Rstudio environment
 # Clean up unnecessary items in environment
-rm(df_critical, df_rw_filler, df_pw_filler, exp_error, exp_error_2, complete_joiner, corpus_joiner,
+rm(df_critical, df_rw_filler, df_pw_filler, exp_error, complete_joiner, corpus_joiner,
    df_filler, exp_joiner, df_raw_seg, join_dir, join_paths, keep_columns)
 #---
 
@@ -270,9 +269,9 @@ high_miss_seg_critical_responses #prints row numbers on critical data points exc
 
 # Create new tibbles based only on participants who committed a high number errors to fillers
 tb_high_seg_filler_error_part <- df_seg_filler_errors[high_seg_filler_responses,] # creates tibble of participants and number of errors
-tb_high_seg_filler_error_part #prints 2 column tibble of participant and error rate
+#tb_high_seg_filler_error_part #prints 2 column tibble of participant and error rate
 tb_high_seg_critical_error_part <- df_seg_critical_errors[high_miss_seg_critical_responses,] # creates tibble of participants and number of errors
-tb_high_seg_critical_error_part #prints 2 column tibble of participant and error rate
+#tb_high_seg_critical_error_part #prints 2 column tibble of participant and error rate
 
 # Creates subset of wrong answers committed by high error rate participants
 df_high_seg_errors_part <- seg_filler_responses[seg_filler_responses$partNum %in% tb_high_seg_filler_error_part$vars,]
@@ -289,10 +288,10 @@ button_held_high <- c(which(df_high_seg_errors_part$segRespRT < .200))
 tech_error_high <- df_high_seg_errors_part[button_held_high,c('partNum','segRespRT')]
 #print('prints responses given below 200ms by participant number')
 #tech_error_high
-length(tech_error_high$segRespRT)
+#length(tech_error_high$segRespRT)
 
 button_not_held_high <- c(which(df_high_seg_errors_part$segRespRT >= .200))
-length(button_not_held_high)
+#length(button_not_held_high)
 
 # Same as above but for low error committing participants
 button_held_low <- c(which(df_low_seg_errors_part$segRespRT < .200))

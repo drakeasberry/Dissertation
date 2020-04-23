@@ -45,7 +45,7 @@ csv_list = data_preparation.collect_files(parent_dir, original_dir, '*.csv')
 
 # remove participants from analysis
 try:
-    csv_list.remove('part044_inglés_C_Segmentation.csv') # removed for fluency in other langauges
+    csv_list.remove('part044_inglés_C_Segmentation.csv') # removed for fluency in other languages
     csv_list.remove('part047_español_D_Segmentation.csv') # removed for different Spanish variety (geographic location)
 except: ValueError
 
@@ -71,14 +71,14 @@ for cur_list in list_of_lists:
     #print(list_name) # prints out column names to keep
     #print(processed_dir) # prints directory path that data is pulled from
     #print(stats_temp_dir) # prints directory path that data is written to
-    data_preparation.create_analysis_directories(skip_files, csv_list_to_split, cur_list, list_name, processed_dir, stats_temp_dir,0)
+    data_preparation.create_analysis_directories(skip_files, csv_list_to_split, cur_list, list_name, processed_dir, stats_temp_dir, 0)
 
 # creates subdirectories in rFiles directory for each experiment with subset files ready for rStudio import
 for cur_list in list_of_lists:
     list_name = list_of_lists.get(cur_list)
     list_dir = stats_temp_dir + '/' + cur_list
     csv_list_to_subset = data_preparation.collect_files(parent_dir, list_dir, '*.csv')
-    data_preparation.create_analysis_files(csv_list_to_subset, cur_list, list_dir, parent_dir,0)
+    data_preparation.create_analysis_files(csv_list_to_subset, cur_list, list_dir, parent_dir, 0)
 
 # paths needed to create join tables
 exp_search_directory = 'Dissertation_Experiments/segmentation/data/processed_data/exp_files'

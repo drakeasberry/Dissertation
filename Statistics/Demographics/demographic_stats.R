@@ -63,15 +63,22 @@ while (i<length(blp_data$blp_question))
 }
 
 # deletes unnecessary columns
-blp_data_cleaned <- select(blp_data, -c(Order, color, langHistResp1, langHistRT1, langHistResp2, langHistRT2))
+blp_data_cleaned <- select(blp_data, -c(Order, color, langHistResp1, langHistRT1, langHistResp2, langHistRT2, word))
 
 # subset experimental and participant information 
 demographics <- select(blp_data_cleaned, 'partNum':'expName')
 demographics <- demographics[!duplicated(demographics$partNum),] # reduce to one row per participant
 
 # deletes practice rows in LexTALE test
-lex_eng_cleaned <- subset(lex_eng_data, lex_eng_data$Order !=0)
-lex_esp_cleaned <- subset(lex_esp_data, lex_esp_data$Order !=0)
+lex_eng_cleaned <- lex_eng_data %>%
+  subset(word != 'platery') %>%
+  subset(word != 'denial') %>%
+  subset(word != 'generic')
+
+lex_esp_cleaned <- lex_esp_data %>%
+  subset(word != 'pladeno') %>%
+  subset(word != 'delantera') %>%
+  subset(word != 'garbardina')
 
 # get LexTALE scores
 # commented lines only for quick viewing purposes, NOT analysis
