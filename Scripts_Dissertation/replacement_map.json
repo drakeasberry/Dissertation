@@ -243,6 +243,11 @@
 	"stimuli": "word",
 	"Word_Freq_wpm_Subtlex": "word_freq",
 	"Syllable_Structure": "word_initial_syl",
-	"New_Pseudo": "word"
+	"New_Pseudo": "word",
+	"Word": "word",
+	"wordStatus": "word_status",
+	"sylStruc": "word_initial_syl",
+	"freq_WPM": "word_freq",
+	"initialSylStress": "stress_word_initial"
 }
 
