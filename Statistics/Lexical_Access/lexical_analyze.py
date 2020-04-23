@@ -23,7 +23,7 @@ syl = ['syllabification', 'corrSyl', 'corrAns', 'leftKey', 'rightKey', 'conditio
 blp = ['questionNum', 'color', 'sectionEng', 'questionTextEng', 'languageEng', 'langHistResp1', 'langHistRT1',
        'langHistResp2', 'langHistRT2', 'langHistResp', 'langHistRT', 'langUseResp', 'langUseRT', 'langProfResp',
        'langProfRT', 'langAttResp', 'langAttRT']
-lexical = ['Word', 'corrAns', 'initialSylStress', 'sylStruc', 'wordStatus', 'freq_WPM', 'numRevealed', 'Prime', 'matching', 'lexicalResp', 'lexicalRespCorr', 'lexicalRespRT',]
+lexical = ['word', 'corrAns', 'stress_word_initial', 'word_initial_syl', 'word_status', 'word_freq', 'numRevealed', 'Prime', 'matching', 'lexicalResp', 'lexicalRespCorr', 'lexicalRespRT',]
 lextale_esp_cols = [*lextale_duplicates, *lextale_esp, *demo_cols]
 lextale_eng_cols = [*lextale_duplicates, *lextale_eng, *demo_cols]
 syl_cols = [*syl, *demo_cols]
@@ -47,16 +47,16 @@ data_preparation.remap_pandas_headers('Scripts_Dissertation/replacement_map.json
 csv_list_new_headers = data_preparation.collect_files(parent_dir, temp_dir, '*.csv')
 
 # Eliminates all unnecessary columns written by PsychoPy
-data_preparation.del_psycopy_cols(csv_list_new_headers, lexical_keep_cols, temp_dir, processed_dir, 0)
+data_preparation.del_psycopy_cols(csv_list_new_headers, lexical_keep_cols, temp_dir, processed_dir, 1)
 
 # get list of csv files to modify, splits files and moves to stats temporary directory
 csv_list_to_split = data_preparation.collect_files(parent_dir, processed_dir, '*.csv')
 
 # moved list creation for skipped files out of loop HERE IS BEST I THINK
-print(os.getcwd())
+#print(os.getcwd())
 os.chdir('Dissertation_Experiments/lexicalAccess/data/processed_data/part_files/')
 skip_files = glob.glob('*_No_Lexical_Access.csv')
-print(skip_files)
+#print(skip_files)
 os.chdir(parent_dir)
 
 # Splits file into subsets for analysis and pastes them into temporary directory of stats
