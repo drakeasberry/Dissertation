@@ -14,11 +14,11 @@ library(tidyverse)
 options(readr.num_columns = 0)
 
 # get all csv files from directory
-lexical_dir = 'analyze_data/raw' #set path to directory
+lexical_dir <- 'analyze_data/raw' #set path to directory
 lexical_files <- list.files(path=lexical_dir, pattern = '*.csv', full.names = TRUE) #list all the files with path
 
 # read all csv files into a single tibble
-lexical_data_raw = ldply(lexical_files, read_csv)
+lexical_data_raw <- ldply(lexical_files, read_csv)
 lexical_data <- lexical_data_raw %>%
   mutate(prime_syl_structure = ifelse(numRevealed == 2, 'CV', 'CVC'),
          match = ifelse(prime_syl_structure == word_initial_syl, 'match', 'mismatch'),
