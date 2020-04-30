@@ -21,9 +21,13 @@ mkdir -p Statistics/Demographics/analyze_data/blp_cols
 mkdir -p Statistics/Demographics/analyze_data/lextale_eng_cols
 mkdir -p Statistics/Demographics/analyze_data/lextale_esp_cols
 mkdir -p Statistics/Intuition/analyze_data
+mkdir -p Statistics/Intuition/analyze_data/raw
+mkdir -p Statistics/Intuition/analyze_data/transformed
 mkdir -p Statistics/Lexical_Access/analyze_data
+mkdir -p Statistics/Lexical_Access/analyze_data/raw
 mkdir -p Statistics/Lexical_Access/analyze_data/transformed
 mkdir -p Statistics/Segmentation/analyze_data
+mkdir -p Statistics/Segmentation/analyze_data/raw
 mkdir -p Statistics/Segmentation/analyze_data/transformed
 
 # Manuscript Directory
