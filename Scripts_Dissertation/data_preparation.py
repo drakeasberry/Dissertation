@@ -119,7 +119,7 @@ def anaylsis_directory_moves(file, list_name, process_lists, input_dir, output_d
 def create_analysis_directories(skip_files, csv_files, list_name, process_lists, input_dir, output_dir, indexing):
     for file in csv_files:
         # print(file)
-        if file in skip_files:  # this not matching expression
+        if file in skip_files: # capture files for participants in lexical access (one or both participation)
             if list_name == 'lexical_cols':
                 anaylsis_directory_moves(file, list_name, process_lists, input_dir, output_dir, indexing)
             else:
@@ -173,7 +173,7 @@ def create_analysis_files(csv_files, list_name, input_dir, output_dir,indexing):
             write_dir = os.path.join(output_dir, lexical_dir, 'raw')
         else:
             print('something went wrong')
-
+        # Drop rows based on NA columns according to Key_list
         new_df = df.dropna(subset=[key])
 
         pathlib.Path(write_dir).mkdir(parents=True, exist_ok=True)
