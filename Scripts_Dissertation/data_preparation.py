@@ -8,6 +8,13 @@ import xlrd
 import csv
 import shutil
 
+def clear_old_files(directory,file_type):
+    for file in os.listdir(directory):
+        if file.endswith(file_type):
+            #os.unlink(file)
+            print(file)
+    return
+
 def copy_files(files, copy_directory,paste_directory):
     for file in files:
         file_copy = copy_directory + '/' + file
@@ -98,7 +105,7 @@ def del_psycopy_cols(csv_files, keep_columns, input_dir, output_dir, indexing):
 
 
 # prepares pandas dataframes to be moved to appropriate analysis directories
-def anaylsis_directory_moves(file, list_name, process_lists, input_dir, output_dir, indexing):
+def analysis_directory_moves(file, list_name, process_lists, input_dir, output_dir, indexing):
     # print('process list inside function: ',process_lists)
     # print('input directory inside function: ',input_dir)
     df = read_pandas(input_dir, file, indexing)
@@ -121,12 +128,12 @@ def create_analysis_directories(skip_files, csv_files, list_name, process_lists,
         # print(file)
         if file in skip_files: # capture files for participants in lexical access (one or both participation)
             if list_name == 'lexical_cols':
-                anaylsis_directory_moves(file, list_name, process_lists, input_dir, output_dir, indexing)
+                analysis_directory_moves(file, list_name, process_lists, input_dir, output_dir, indexing)
             else:
                 pass
                 #print(file, 'has been skipped for returning participant.')
         else:
-            anaylsis_directory_moves(file, list_name, process_lists, input_dir, output_dir, indexing)
+            analysis_directory_moves(file, list_name, process_lists, input_dir, output_dir, indexing)
     return
 
 
@@ -148,15 +155,17 @@ def create_analysis_files(csv_files, list_name, input_dir, output_dir,indexing):
                       'Statistics/Lexical_Access/analyze_data/temp_data/blp_cols',
                       'Statistics/Segmentation/analyze_data/temp_data/seg_cols',
                       'Statistics/Lexical_Access/analyze_data/temp_data/lexical_cols']
-
+    output_files = []
     for file in csv_files:
         df = read_pandas(input_dir, file, indexing)
         name, ext = os.path.splitext(file)
 
-        if input_dir in file_locations[0:2]:
+        locations_lextale_eng = file_locations[0:2]
+        locations_lextale_esp = file_locations[2:4]
+        if input_dir in locations_lextale_eng:
             key = subset_key_list[0]
             write_dir = os.path.join(output_dir, demo_dir, list_name)
-        elif input_dir in file_locations[2:4]:
+        elif input_dir in locations_lextale_esp:
             key = subset_key_list[1]
             write_dir = os.path.join(output_dir, demo_dir, list_name)
         elif input_dir in file_locations[4:6]:
@@ -181,4 +190,5 @@ def create_analysis_files(csv_files, list_name, input_dir, output_dir,indexing):
         output_file = os.path.join(write_dir, file)
         #print('out file inside function: ', output_file)  # prints filename going to write directory
         new_df.to_csv(output_file)
-    return
+        output_files.append(output_file)
+    return output_files
