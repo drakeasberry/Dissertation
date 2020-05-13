@@ -11,8 +11,9 @@ import shutil
 def clear_old_files(directory,file_type):
     for file in os.listdir(directory):
         if file.endswith(file_type):
-            #os.unlink(file)
-            print(file)
+            file_to_delete = directory + file
+            os.unlink(file_to_delete)
+            #print(file)
     return
 
 def copy_files(files, copy_directory,paste_directory):
