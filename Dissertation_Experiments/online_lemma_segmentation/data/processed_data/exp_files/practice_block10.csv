@@ -1,0 +1,11 @@
+,block,word,wd_int_syl_str,tar_syl_str,tar_syl,wd_status,matching,lemma,first_3,item_type
+90,block10,garaje,CV,CVC,gar,word,mismatch,gar,gar,critical
+91,block10,tejado,CV,CVC,gar,word,mismatch,gar,tej,filler01
+92,block10,zumbido,CVC,CVC,gar,word,match,gar,zum,filler02
+93,block10,postigo,CVC,CVC,gar,word,match,gar,pos,filler03
+94,block10,fundillo,CVC,CVC,gar,word,match,gar,fun,filler04
+95,block10,pestillo,CVC,CVC,gar,word,match,gar,pes,filler05
+96,block10,filete,CV,CVC,gar,word,mismatch,gar,fil,filler06
+97,block10,velero,CV,CVC,gar,word,mismatch,gar,vel,filler07
+98,block10,semblanza,CVC,CVC,gar,word,match,gar,sem,filler08
+99,block10,tetilla,CV,CVC,gar,word,mismatch,gar,tet,filler09

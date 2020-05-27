@@ -1,0 +1,11 @@
+,block,word,wd_int_syl_str,tar_syl_str,tar_syl,wd_status,matching,lemma,first_3,item_type
+250,block26,garele,CV,CVC,gar,nonword,mismatch,gar,gar,critical
+251,block26,dezida,CV,CVC,gar,nonword,mismatch,gar,dez,filler01
+252,block26,dinona,CV,CVC,gar,nonword,mismatch,gar,din,filler02
+253,block26,sentirro,CVC,CVC,gar,nonword,match,gar,sen,filler03
+254,block26,puscalla,CVC,CVC,gar,nonword,match,gar,pus,filler04
+255,block26,cicisa,CV,CVC,gar,nonword,mismatch,gar,cic,filler05
+256,block26,binima,CV,CVC,gar,nonword,mismatch,gar,bin,filler06
+257,block26,fensuale,CVC,CVC,gar,nonword,match,gar,fen,filler07
+258,block26,suñuela,CV,CVC,gar,nonword,mismatch,gar,suñ,filler08
+259,block26,punfullo,CVC,CVC,gar,nonword,match,gar,pun,filler09

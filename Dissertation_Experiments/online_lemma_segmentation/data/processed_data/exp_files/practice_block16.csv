@@ -1,0 +1,11 @@
+,block,word,wd_int_syl_str,tar_syl_str,tar_syl,wd_status,matching,lemma,first_3,item_type
+150,block16,murmullo,CVC,CVC,mur,word,match,mur,mur,critical
+151,block16,ventana,CVC,CVC,mur,word,match,mur,ven,filler01
+152,block16,donaire,CV,CVC,mur,word,mismatch,mur,don,filler02
+153,block16,palmada,CVC,CVC,mur,word,match,mur,pal,filler03
+154,block16,pandilla,CVC,CVC,mur,word,match,mur,pan,filler04
+155,block16,bandera,CVC,CVC,mur,word,match,mur,ban,filler05
+156,block16,visillo,CV,CVC,mur,word,mismatch,mur,vis,filler06
+157,block16,salero,CV,CVC,mur,word,mismatch,mur,sal,filler07
+158,block16,velorio,CV,CVC,mur,word,mismatch,mur,vel,filler08
+159,block16,jaqueca,CV,CVC,mur,word,mismatch,mur,jaq,filler09

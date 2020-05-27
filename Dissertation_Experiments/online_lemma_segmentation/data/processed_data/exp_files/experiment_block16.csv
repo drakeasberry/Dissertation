@@ -1,0 +1,11 @@
+,block,word,wd_int_syl,tar_syl,wd_status,matching,lemma,first_3,item_type,corrAns
+150,block16,linlirna,CVC,CVC,nonword,match,lin,lin,critical,1
+151,block16,jagito,CV,CVC,nonword,mismatch,lin,jag,filler01,None
+152,block16,parsida,CVC,CVC,nonword,match,lin,par,filler02,None
+153,block16,ducoste,CV,CVC,nonword,mismatch,lin,duc,filler03,None
+154,block16,cortupto,CVC,CVC,nonword,match,lin,cor,filler04,None
+155,block16,tosaba,CV,CVC,nonword,mismatch,lin,tos,filler05,None
+156,block16,suseña,CV,CVC,nonword,mismatch,lin,sus,filler06,None
+157,block16,meptrona,CVC,CVC,nonword,match,lin,mep,filler07,None
+158,block16,deroda,CV,CVC,nonword,mismatch,lin,der,filler08,None
+159,block16,sutnido,CVC,CVC,nonword,match,lin,sut,filler09,None

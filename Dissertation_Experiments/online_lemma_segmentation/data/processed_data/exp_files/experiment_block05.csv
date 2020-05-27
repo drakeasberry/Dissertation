@@ -1,0 +1,11 @@
+,block,word,wd_int_syl,tar_syl,wd_status,matching,lemma,first_3,item_type,corrAns
+40,block05,balega,CV,CV,nonword,match,bal,bal,critical,1
+41,block05,soponso,CV,CV,nonword,match,bal,sop,filler01,None
+42,block05,zictencia,CVC,CV,nonword,mismatch,bal,zic,filler02,None
+43,block05,turjuma,CVC,CV,nonword,mismatch,bal,tur,filler03,None
+44,block05,cuntefa,CVC,CV,nonword,mismatch,bal,cun,filler04,None
+45,block05,cicaigo,CV,CV,nonword,match,bal,cic,filler05,None
+46,block05,soreto,CV,CV,nonword,match,bal,sor,filler06,None
+47,block05,dosbiente,CVC,CV,nonword,mismatch,bal,dos,filler07,None
+48,block05,fontama,CVC,CV,nonword,mismatch,bal,fon,filler08,None
+49,block05,decibio,CV,CV,nonword,match,bal,dec,filler09,None

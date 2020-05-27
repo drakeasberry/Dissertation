@@ -1,0 +1,11 @@
+,block,word,wd_int_syl,tar_syl,wd_status,matching,lemma,first_3,item_type,corrAns
+620,block63,palbira,CVC,CV,nonword,mismatch,pal,pal,critical,1
+621,block63,vinsenza,CVC,CV,nonword,mismatch,pal,vin,filler01,None
+622,block63,tudala,CV,CV,nonword,match,pal,tud,filler02,None
+623,block63,fivancia,CV,CV,nonword,match,pal,fiv,filler03,None
+624,block63,turquma,CVC,CV,nonword,mismatch,pal,tur,filler04,None
+625,block63,ruspina,CVC,CV,nonword,mismatch,pal,rus,filler05,None
+626,block63,detnana,CVC,CV,nonword,mismatch,pal,det,filler06,None
+627,block63,tifencio,CV,CV,nonword,match,pal,tif,filler07,None
+628,block63,ciroca,CV,CV,nonword,match,pal,cir,filler08,None
+629,block63,tocensia,CV,CV,nonword,match,pal,toc,filler09,None

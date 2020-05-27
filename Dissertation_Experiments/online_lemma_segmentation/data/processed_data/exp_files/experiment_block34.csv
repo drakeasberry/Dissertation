@@ -1,0 +1,11 @@
+,block,word,wd_int_syl,tar_syl,wd_status,matching,lemma,first_3,item_type,corrAns
+330,block34,camisa,CV,CVC,word,mismatch,cam,cam,critical,1
+331,block34,ponencia,CV,CVC,word,mismatch,cam,pon,filler01,None
+332,block34,sordera,CVC,CVC,word,match,cam,sor,filler02,None
+333,block34,doncella,CVC,CVC,word,match,cam,don,filler03,None
+334,block34,nevera,CV,CVC,word,mismatch,cam,nev,filler04,None
+335,block34,ventisca,CVC,CVC,word,match,cam,ven,filler05,None
+336,block34,pintura,CVC,CVC,word,match,cam,pin,filler06,None
+337,block34,perfidia,CVC,CVC,word,match,cam,per,filler07,None
+338,block34,tijera,CV,CVC,word,mismatch,cam,tij,filler08,None
+339,block34,fogata,CV,CVC,word,mismatch,cam,fog,filler09,None

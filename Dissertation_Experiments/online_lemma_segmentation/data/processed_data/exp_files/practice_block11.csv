@@ -1,0 +1,11 @@
+,block,word,wd_int_syl_str,tar_syl_str,tar_syl,wd_status,matching,lemma,first_3,item_type
+100,block11,joroba,CV,CVC,jor,word,mismatch,jor,jor,critical
+101,block11,zapato,CV,CVC,jor,word,mismatch,jor,zap,filler01
+102,block11,venganza,CVC,CVC,jor,word,match,jor,ven,filler02
+103,block11,fastidio,CVC,CVC,jor,word,match,jor,fas,filler03
+104,block11,piltrafa,CVC,CVC,jor,word,match,jor,pil,filler04
+105,block11,pulgada,CVC,CVC,jor,word,match,jor,pul,filler05
+106,block11,vistazo,CVC,CVC,jor,word,match,jor,vis,filler06
+107,block11,taquilla,CV,CVC,jor,word,mismatch,jor,taq,filler07
+108,block11,cizalla,CV,CVC,jor,word,mismatch,jor,ciz,filler08
+109,block11,cilindro,CV,CVC,jor,word,mismatch,jor,cil,filler09

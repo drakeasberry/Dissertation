@@ -1,0 +1,11 @@
+,block,word,wd_int_syl_str,tar_syl_str,tar_syl,wd_status,matching,lemma,first_3,item_type
+270,block28,murepla,CV,CVC,mur,nonword,mismatch,mur,mur,critical
+271,block28,poncilla,CVC,CVC,mur,nonword,match,mur,pon,filler01
+272,block28,sobisco,CV,CVC,mur,nonword,mismatch,mur,sob,filler02
+273,block28,nocena,CV,CVC,mur,nonword,mismatch,mur,noc,filler03
+274,block28,fascuna,CVC,CVC,mur,nonword,match,mur,fas,filler04
+275,block28,vantema,CVC,CVC,mur,nonword,match,mur,van,filler05
+276,block28,fañeilla,CV,CVC,mur,nonword,mismatch,mur,fañ,filler06
+277,block28,costonche,CVC,CVC,mur,nonword,match,mur,cos,filler07
+278,block28,deciro,CV,CVC,mur,nonword,mismatch,mur,dec,filler08
+279,block28,tenguga,CVC,CVC,mur,nonword,match,mur,ten,filler09

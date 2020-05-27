@@ -1,0 +1,11 @@
+,block,word,wd_int_syl,tar_syl,wd_status,matching,lemma,first_3,item_type,corrAns
+480,block49,moneda,CV,CV,word,match,mon,mon,critical,1
+481,block49,submundo,CVC,CV,word,mismatch,mon,sub,filler01,None
+482,block49,laxante,CV,CV,word,match,mon,lax,filler02,None
+483,block49,vislumbre,CVC,CV,word,mismatch,mon,vis,filler03,None
+484,block49,salchicha,CVC,CV,word,mismatch,mon,sal,filler04,None
+485,block49,lectura,CVC,CV,word,mismatch,mon,lec,filler05,None
+486,block49,cigarro,CV,CV,word,match,mon,cig,filler06,None
+487,block49,resabio,CV,CV,word,match,mon,res,filler07,None
+488,block49,rapiña,CV,CV,word,match,mon,rap,filler08,None
+489,block49,barbecho,CVC,CV,word,mismatch,mon,bar,filler09,None

@@ -1,0 +1,11 @@
+,block,word,wd_int_syl,tar_syl,wd_status,matching,lemma,first_3,item_type,corrAns
+20,block03,balada,CV,CVC,word,mismatch,bal,bal,critical,1
+21,block03,punzada,CVC,CVC,word,match,bal,pun,filler01,None
+22,block03,mortaja,CVC,CVC,word,match,bal,mor,filler02,None
+23,block03,puntilla,CVC,CVC,word,match,bal,pun,filler03,None
+24,block03,vergüenza,CVC,CVC,word,match,bal,ver,filler04,None
+25,block03,vendaje,CVC,CVC,word,match,bal,ven,filler05,None
+26,block03,remanso,CV,CVC,word,mismatch,bal,rem,filler06,None
+27,block03,recodo,CV,CVC,word,mismatch,bal,rec,filler07,None
+28,block03,rimero,CV,CVC,word,mismatch,bal,rim,filler08,None
+29,block03,fineza,CV,CVC,word,mismatch,bal,fin,filler09,None

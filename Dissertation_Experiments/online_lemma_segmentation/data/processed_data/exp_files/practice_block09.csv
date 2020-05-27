@@ -1,0 +1,11 @@
+,block,word,wd_int_syl_str,tar_syl_str,tar_syl,wd_status,matching,lemma,first_3,item_type
+80,block09,cereza,CV,CVC,cer,word,mismatch,cer,cer,critical
+81,block09,sandía,CVC,CVC,cer,word,match,cer,san,filler01
+82,block09,soltura,CVC,CVC,cer,word,match,cer,sol,filler02
+83,block09,ginebra,CV,CVC,cer,word,mismatch,cer,gin,filler03
+84,block09,solvencia,CVC,CVC,cer,word,match,cer,sol,filler04
+85,block09,tungsteno,CVC,CVC,cer,word,match,cer,tun,filler05
+86,block09,subsuelo,CVC,CVC,cer,word,match,cer,sub,filler06
+87,block09,gozada,CV,CVC,cer,word,mismatch,cer,goz,filler07
+88,block09,juguete,CV,CVC,cer,word,mismatch,cer,jug,filler08
+89,block09,jinete,CV,CVC,cer,word,mismatch,cer,jin,filler09

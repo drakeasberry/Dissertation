@@ -1,0 +1,11 @@
+,block,word,wd_int_syl,tar_syl,wd_status,matching,lemma,first_3,item_type,corrAns
+500,block51,montaña,CVC,CV,word,mismatch,mon,mon,critical,1
+501,block51,submundo,CVC,CV,word,mismatch,mon,sub,filler01,None
+502,block51,laxante,CV,CV,word,match,mon,lax,filler02,None
+503,block51,vislumbre,CVC,CV,word,mismatch,mon,vis,filler03,None
+504,block51,salchicha,CVC,CV,word,mismatch,mon,sal,filler04,None
+505,block51,lectura,CVC,CV,word,mismatch,mon,lec,filler05,None
+506,block51,tufillo,CV,CV,word,match,mon,tuf,filler06,None
+507,block51,resabio,CV,CV,word,match,mon,res,filler07,None
+508,block51,rapiña,CV,CV,word,match,mon,rap,filler08,None
+509,block51,tesina,CV,CV,word,match,mon,tes,filler09,None

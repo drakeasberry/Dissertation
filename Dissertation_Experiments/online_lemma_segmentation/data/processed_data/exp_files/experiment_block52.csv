@@ -1,0 +1,11 @@
+,block,word,wd_int_syl,tar_syl,wd_status,matching,lemma,first_3,item_type,corrAns
+510,block52,montaña,CVC,CVC,word,match,mon,mon,critical,1
+511,block52,barbecho,CVC,CVC,word,match,mon,bar,filler01,None
+512,block52,bufete,CV,CVC,word,mismatch,mon,buf,filler02,None
+513,block52,deltoides,CVC,CVC,word,match,mon,del,filler03,None
+514,block52,batuta,CV,CVC,word,mismatch,mon,bat,filler04,None
+515,block52,rabillo,CV,CVC,word,mismatch,mon,rab,filler05,None
+516,block52,vaquilla,CV,CVC,word,mismatch,mon,vaq,filler06,None
+517,block52,piropo,CV,CVC,word,mismatch,mon,pir,filler07,None
+518,block52,gorjeo,CVC,CVC,word,match,mon,gor,filler08,None
+519,block52,balbina,CVC,CVC,word,match,mon,bal,filler09,None

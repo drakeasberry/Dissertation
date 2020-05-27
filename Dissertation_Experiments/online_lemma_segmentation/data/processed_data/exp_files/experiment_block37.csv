@@ -1,0 +1,11 @@
+,block,word,wd_int_syl,tar_syl,wd_status,matching,lemma,first_3,item_type,corrAns
+360,block37,camofa,CV,CV,nonword,match,cam,cam,critical,1
+361,block37,depite,CV,CV,nonword,match,cam,dep,filler01,None
+362,block37,neteno,CV,CV,nonword,match,cam,net,filler02,None
+363,block37,nenedo,CV,CV,nonword,match,cam,nen,filler03,None
+364,block37,dedioro,CV,CV,nonword,match,cam,ded,filler04,None
+365,block37,sobvondo,CVC,CV,nonword,mismatch,cam,sob,filler05,None
+366,block37,tunruja,CVC,CV,nonword,mismatch,cam,tun,filler06,None
+367,block37,sunsanso,CVC,CV,nonword,mismatch,cam,sun,filler07,None
+368,block37,sutmido,CVC,CV,nonword,mismatch,cam,sut,filler08,None
+369,block37,fuztancia,CVC,CV,nonword,mismatch,cam,fuz,filler09,None

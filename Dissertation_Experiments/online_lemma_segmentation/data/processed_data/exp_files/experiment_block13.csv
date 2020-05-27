@@ -1,0 +1,11 @@
+,block,word,wd_int_syl,tar_syl,wd_status,matching,lemma,first_3,item_type,corrAns
+120,block13,linele,CV,CV,nonword,match,lin,lin,critical,1
+121,block13,parvida,CVC,CV,nonword,mismatch,lin,par,filler01,None
+122,block13,sociare,CV,CV,nonword,match,lin,soc,filler02,None
+123,block13,decanro,CV,CV,nonword,match,lin,dec,filler03,None
+124,block13,taviño,CV,CV,nonword,match,lin,tav,filler04,None
+125,block13,pospana,CVC,CV,nonword,mismatch,lin,pos,filler05,None
+126,block13,poscallo,CVC,CV,nonword,mismatch,lin,pos,filler06,None
+127,block13,tornanga,CVC,CV,nonword,mismatch,lin,tor,filler07,None
+128,block13,tusorto,CV,CV,nonword,match,lin,tus,filler08,None
+129,block13,tercega,CVC,CV,nonword,mismatch,lin,ter,filler09,None

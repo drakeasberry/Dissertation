@@ -1,0 +1,11 @@
+,block,word,wd_int_syl_str,tar_syl_str,tar_syl,wd_status,matching,lemma,first_3,item_type
+10,block02,garaje,CV,CV,ga,word,match,gar,gar,critical
+11,block02,lumbrera,CVC,CV,ga,word,mismatch,gar,lum,filler01
+12,block02,polvillo,CVC,CV,ga,word,mismatch,gar,pol,filler02
+13,block02,solera,CV,CV,ga,word,match,gar,sol,filler03
+14,block02,pinchazo,CVC,CV,ga,word,mismatch,gar,pin,filler04
+15,block02,mensaje,CVC,CV,ga,word,mismatch,gar,men,filler05
+16,block02,tendencia,CVC,CV,ga,word,mismatch,gar,ten,filler06
+17,block02,cimiento,CV,CV,ga,word,match,gar,cim,filler07
+18,block02,sopapo,CV,CV,ga,word,match,gar,sop,filler08
+19,block02,tiniebla,CV,CV,ga,word,match,gar,tin,filler09

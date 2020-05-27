@@ -1,0 +1,11 @@
+,block,word,wd_int_syl_str,tar_syl_str,tar_syl,wd_status,matching,lemma,first_3,item_type
+0,block01,cereza,CV,CV,ce,word,match,cer,cer,critical
+1,block01,tinaja,CV,CV,ce,word,match,cer,tin,filler01
+2,block01,sonrisa,CVC,CV,ce,word,mismatch,cer,son,filler02
+3,block01,sandalia,CVC,CV,ce,word,mismatch,cer,san,filler03
+4,block01,pancarta,CVC,CV,ce,word,mismatch,cer,pan,filler04
+5,block01,bolzano,CVC,CV,ce,word,mismatch,cer,bol,filler05
+6,block01,tinglado,CVC,CV,ce,word,mismatch,cer,tin,filler06
+7,block01,fajardo,CV,CV,ce,word,match,cer,faj,filler07
+8,block01,pomada,CV,CV,ce,word,match,cer,pom,filler08
+9,block01,gotera,CV,CV,ce,word,match,cer,got,filler09

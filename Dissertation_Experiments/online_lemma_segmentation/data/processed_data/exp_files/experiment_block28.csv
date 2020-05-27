@@ -1,0 +1,11 @@
+,block,word,wd_int_syl,tar_syl,wd_status,matching,lemma,first_3,item_type,corrAns
+270,block28,rosquilla,CVC,CVC,word,match,ros,ros,critical,1
+271,block28,bengala,CVC,CVC,word,match,ros,ben,filler01,None
+272,block28,lanzazo,CVC,CVC,word,match,ros,lan,filler02,None
+273,block28,pimiento,CV,CVC,word,mismatch,ros,pim,filler03,None
+274,block28,vigencia,CV,CVC,word,mismatch,ros,vig,filler04,None
+275,block28,pulsera,CVC,CVC,word,match,ros,pul,filler05,None
+276,block28,bacteria,CVC,CVC,word,match,ros,bac,filler06,None
+277,block28,bufido,CV,CVC,word,mismatch,ros,buf,filler07,None
+278,block28,cigoto,CV,CVC,word,mismatch,ros,cig,filler08,None
+279,block28,vinilo,CV,CVC,word,mismatch,ros,vin,filler09,None

@@ -1,0 +1,11 @@
+,block,word,wd_int_syl,tar_syl,wd_status,matching,lemma,first_3,item_type,corrAns
+540,block55,monseña,CVC,CV,nonword,mismatch,mon,mon,critical,1
+541,block55,hicuila,CV,CV,nonword,match,mon,hic,filler01,None
+542,block55,lisnombre,CVC,CV,nonword,mismatch,mon,lis,filler02,None
+543,block55,tecillo,CV,CV,nonword,match,mon,tec,filler03,None
+544,block55,pargaza,CVC,CV,nonword,mismatch,mon,par,filler04,None
+545,block55,tipallo,CV,CV,nonword,match,mon,tip,filler05,None
+546,block55,fernuera,CVC,CV,nonword,mismatch,mon,fer,filler06,None
+547,block55,rucilla,CV,CV,nonword,match,mon,ruc,filler07,None
+548,block55,viltancia,CVC,CV,nonword,mismatch,mon,vil,filler08,None
+549,block55,sabiba,CV,CV,nonword,match,mon,sab,filler09,None

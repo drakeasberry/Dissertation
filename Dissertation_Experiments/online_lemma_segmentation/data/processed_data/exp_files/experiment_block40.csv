@@ -1,0 +1,11 @@
+,block,word,wd_int_syl,tar_syl,wd_status,matching,lemma,first_3,item_type,corrAns
+390,block40,cambena,CVC,CVC,nonword,match,cam,cam,critical,1
+391,block40,devillo,CV,CVC,nonword,mismatch,cam,dev,filler01,None
+392,block40,nencida,CVC,CVC,nonword,match,cam,nen,filler02,None
+393,block40,pirijuo,CV,CVC,nonword,mismatch,cam,pir,filler03,None
+394,block40,bercillo,CVC,CVC,nonword,match,cam,ber,filler04,None
+395,block40,penvalla,CVC,CVC,nonword,match,cam,pen,filler05,None
+396,block40,voltura,CVC,CVC,nonword,match,cam,vol,filler06,None
+397,block40,dilisia,CV,CVC,nonword,mismatch,cam,dil,filler07,None
+398,block40,febago,CV,CVC,nonword,mismatch,cam,feb,filler08,None
+399,block40,lercuente,CVC,CVC,nonword,match,cam,ler,filler09,None

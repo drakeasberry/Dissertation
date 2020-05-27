@@ -1,0 +1,11 @@
+,block,word,wd_int_syl,tar_syl,wd_status,matching,lemma,first_3,item_type,corrAns
+560,block57,paloma,CV,CV,word,match,pal,pal,critical,1
+561,block57,gorguera,CVC,CV,word,mismatch,pal,gor,filler01,None
+562,block57,gorjeo,CVC,CV,word,mismatch,pal,gor,filler02,None
+563,block57,conducta,CVC,CV,word,mismatch,pal,con,filler03,None
+564,block57,vivero,CV,CV,word,match,pal,viv,filler04,None
+565,block57,fortuna,CVC,CV,word,mismatch,pal,for,filler05,None
+566,block57,cornada,CVC,CV,word,mismatch,pal,cor,filler06,None
+567,block57,regata,CV,CV,word,match,pal,reg,filler07,None
+568,block57,cigarra,CV,CV,word,match,pal,cig,filler08,None
+569,block57,giralda,CV,CV,word,match,pal,gir,filler09,None

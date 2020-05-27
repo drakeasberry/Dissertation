@@ -1,0 +1,11 @@
+,block,word,wd_int_syl_str,tar_syl_str,tar_syl,wd_status,matching,lemma,first_3,item_type
+180,block19,joruma,CV,CV,jo,nonword,match,jor,jor,critical
+181,block19,biluesa,CV,CV,jo,nonword,match,jor,bil,filler01
+182,block19,cividra,CV,CV,jo,nonword,match,jor,civ,filler02
+183,block19,gantarna,CVC,CV,jo,nonword,mismatch,jor,gan,filler03
+184,block19,banzalla,CVC,CV,jo,nonword,mismatch,jor,ban,filler04
+185,block19,piglillo,CVC,CV,jo,nonword,mismatch,jor,pig,filler05
+186,block19,tinneza,CVC,CV,jo,nonword,mismatch,jor,tin,filler06
+187,block19,fuzallo,CV,CV,jo,nonword,match,jor,fuz,filler07
+188,block19,vendagio,CVC,CV,jo,nonword,mismatch,jor,ven,filler08
+189,block19,bimina,CV,CV,jo,nonword,match,jor,bim,filler09

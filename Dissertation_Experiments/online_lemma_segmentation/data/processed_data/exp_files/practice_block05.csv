@@ -1,0 +1,11 @@
+,block,word,wd_int_syl_str,tar_syl_str,tar_syl,wd_status,matching,lemma,first_3,item_type
+40,block05,cerveza,CVC,CV,ce,word,mismatch,cer,cer,critical
+41,block05,tinaja,CV,CV,ce,word,match,cer,tin,filler01
+42,block05,sonrisa,CVC,CV,ce,word,mismatch,cer,son,filler02
+43,block05,sandalia,CVC,CV,ce,word,mismatch,cer,san,filler03
+44,block05,pancarta,CVC,CV,ce,word,mismatch,cer,pan,filler04
+45,block05,bolzano,CVC,CV,ce,word,mismatch,cer,bol,filler05
+46,block05,pimienta,CV,CV,ce,word,match,cer,pim,filler06
+47,block05,fajardo,CV,CV,ce,word,match,cer,faj,filler07
+48,block05,pomada,CV,CV,ce,word,match,cer,pom,filler08
+49,block05,gotera,CV,CV,ce,word,match,cer,got,filler09

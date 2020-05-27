@@ -1,0 +1,11 @@
+,block,word,wd_int_syl,tar_syl,wd_status,matching,lemma,first_3,item_type,corrAns
+80,block09,linaje,CV,CV,word,match,lin,lin,critical,1
+81,block09,tartana,CVC,CV,word,mismatch,lin,tar,filler01,None
+82,block09,portazo,CVC,CV,word,mismatch,lin,por,filler02,None
+83,block09,vereda,CV,CV,word,match,lin,ver,filler03,None
+84,block09,zarpazo,CVC,CV,word,mismatch,lin,zar,filler04,None
+85,block09,jasmina,CVC,CV,word,mismatch,lin,jas,filler05,None
+86,block09,captura,CVC,CV,word,mismatch,lin,cap,filler06,None
+87,block09,recurso,CV,CV,word,match,lin,rec,filler07,None
+88,block09,tocino,CV,CV,word,match,lin,toc,filler08,None
+89,block09,dureza,CV,CV,word,match,lin,dur,filler09,None

@@ -1,0 +1,11 @@
+,block,word,wd_int_syl_str,tar_syl_str,tar_syl,wd_status,matching,lemma,first_3,item_type
+30,block04,muralla,CV,CV,mu,word,match,mur,mur,critical
+31,block04,testigo,CVC,CV,mu,word,mismatch,mur,tes,filler01
+32,block04,vestuario,CVC,CV,mu,word,mismatch,mur,ves,filler02
+33,block04,poltrona,CVC,CV,mu,word,mismatch,mur,pol,filler03
+34,block04,lactancia,CVC,CV,mu,word,mismatch,mur,lac,filler04
+35,block04,vestigio,CVC,CV,mu,word,mismatch,mur,ves,filler05
+36,block04,tapete,CV,CV,mu,word,match,mur,tap,filler06
+37,block04,dolencia,CV,CV,mu,word,match,mur,dol,filler07
+38,block04,tibieza,CV,CV,mu,word,match,mur,tib,filler08
+39,block04,pizarra,CV,CV,mu,word,match,mur,piz,filler09

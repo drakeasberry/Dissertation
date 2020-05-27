@@ -1,0 +1,11 @@
+,block,word,wd_int_syl,tar_syl,wd_status,matching,lemma,first_3,item_type,corrAns
+190,block20,pestaña,CVC,CVC,word,match,pes,pes,critical,1
+191,block20,talante,CV,CVC,word,mismatch,pes,tal,filler01,None
+192,block20,tornillo,CVC,CVC,word,match,pes,tor,filler02,None
+193,block20,ruptura,CVC,CVC,word,match,pes,rup,filler03,None
+194,block20,durmiente,CVC,CVC,word,match,pes,dur,filler04,None
+195,block20,burbuja,CVC,CVC,word,match,pes,bur,filler05,None
+196,block20,viruela,CV,CVC,word,mismatch,pes,vir,filler06,None
+197,block20,lavabo,CV,CVC,word,mismatch,pes,lav,filler07,None
+198,block20,butaca,CV,CVC,word,mismatch,pes,but,filler08,None
+199,block20,ribera,CV,CVC,word,mismatch,pes,rib,filler09,None

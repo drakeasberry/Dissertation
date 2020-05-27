@@ -1,0 +1,11 @@
+,block,word,wd_int_syl,tar_syl,wd_status,matching,lemma,first_3,item_type,corrAns
+10,block02,baldosa,CVC,CV,word,mismatch,bal,bal,critical,1
+11,block02,renombre,CV,CV,word,match,bal,ren,filler01,None
+12,block02,tortuga,CVC,CV,word,mismatch,bal,tor,filler02,None
+13,block02,semilla,CV,CV,word,match,bal,sem,filler03,None
+14,block02,torpeza,CVC,CV,word,mismatch,bal,tor,filler04,None
+15,block02,sortija,CVC,CV,word,mismatch,bal,sor,filler05,None
+16,block02,tersura,CVC,CV,word,mismatch,bal,ter,filler06,None
+17,block02,picota,CV,CV,word,match,bal,pic,filler07,None
+18,block02,sotana,CV,CV,word,match,bal,sot,filler08,None
+19,block02,sonido,CV,CV,word,match,bal,son,filler09,None

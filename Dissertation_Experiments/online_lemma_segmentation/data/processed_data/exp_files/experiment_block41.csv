@@ -1,0 +1,11 @@
+,block,word,wd_int_syl,tar_syl,wd_status,matching,lemma,first_3,item_type,corrAns
+400,block41,culebra,CV,CV,word,match,cul,cul,critical,1
+401,block41,pintura,CVC,CV,word,mismatch,cul,pin,filler01,None
+402,block41,sarmiento,CVC,CV,word,mismatch,cul,sar,filler02,None
+403,block41,verdura,CVC,CV,word,mismatch,cul,ver,filler03,None
+404,block41,tobillo,CV,CV,word,match,cul,tob,filler04,None
+405,block41,vertiente,CVC,CV,word,mismatch,cul,ver,filler05,None
+406,block41,tarjeta,CVC,CV,word,mismatch,cul,tar,filler06,None
+407,block41,fijeza,CV,CV,word,match,cul,fij,filler07,None
+408,block41,tesoro,CV,CV,word,match,cul,tes,filler08,None
+409,block41,teniente,CV,CV,word,match,cul,ten,filler09,None

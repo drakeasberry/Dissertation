@@ -1,0 +1,11 @@
+,block,word,wd_int_syl,tar_syl,wd_status,matching,lemma,first_3,item_type,corrAns
+550,block56,monseña,CVC,CVC,nonword,match,mon,mon,critical,1
+551,block56,parvaza,CVC,CVC,nonword,match,mon,par,filler01,None
+552,block56,recinto,CV,CVC,nonword,mismatch,mon,rec,filler02,None
+553,block56,ternura,CVC,CVC,nonword,match,mon,ter,filler03,None
+554,block56,tarsallo,CVC,CVC,nonword,match,mon,tar,filler04,None
+555,block56,serpiente,CVC,CVC,nonword,match,mon,ser,filler05,None
+556,block56,reducto,CV,CVC,nonword,mismatch,mon,red,filler06,None
+557,block56,tarima,CV,CVC,nonword,mismatch,mon,tar,filler07,None
+558,block56,recado,CV,CVC,nonword,mismatch,mon,rec,filler08,None
+559,block56,sepulcro,CV,CVC,nonword,mismatch,mon,sep,filler09,None

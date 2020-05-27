@@ -1,0 +1,11 @@
+,block,word,wd_int_syl,tar_syl,wd_status,matching,lemma,first_3,item_type,corrAns
+250,block26,rosquilla,CVC,CV,word,mismatch,ros,ros,critical,1
+251,block26,pantalla,CVC,CV,word,mismatch,ros,pan,filler01,None
+252,block26,lenguaje,CVC,CV,word,mismatch,ros,len,filler02,None
+253,block26,cambiazo,CVC,CV,word,mismatch,ros,cam,filler03,None
+254,block26,campiña,CVC,CV,word,mismatch,ros,cam,filler04,None
+255,block26,putada,CV,CV,word,match,ros,put,filler05,None
+256,block26,pileta,CV,CV,word,match,ros,pil,filler06,None
+257,block26,legajo,CV,CV,word,match,ros,leg,filler07,None
+258,block26,veleta,CV,CV,word,match,ros,vel,filler08,None
+259,block26,pitillo,CV,CV,word,match,ros,pit,filler09,None

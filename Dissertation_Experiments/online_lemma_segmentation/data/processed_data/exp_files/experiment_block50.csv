@@ -1,0 +1,11 @@
+,block,word,wd_int_syl,tar_syl,wd_status,matching,lemma,first_3,item_type,corrAns
+490,block50,moneda,CV,CVC,word,mismatch,mon,mon,critical,1
+491,block50,tesina,CV,CVC,word,mismatch,mon,tes,filler01,None
+492,block50,bufete,CV,CVC,word,mismatch,mon,buf,filler02,None
+493,block50,deltoides,CVC,CVC,word,match,mon,del,filler03,None
+494,block50,talante,CV,CVC,word,mismatch,mon,tal,filler04,None
+495,block50,rabillo,CV,CVC,word,mismatch,mon,rab,filler05,None
+496,block50,farsante,CVC,CVC,word,match,mon,far,filler06,None
+497,block50,cordura,CVC,CVC,word,match,mon,cor,filler07,None
+498,block50,captura,CVC,CVC,word,match,mon,cap,filler08,None
+499,block50,tardanza,CVC,CVC,word,match,mon,tar,filler09,None
