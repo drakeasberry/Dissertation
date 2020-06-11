@@ -1,0 +1,3 @@
+[submodule "Dissertation_Experiments/lemma_version"]
+	path = Dissertation_Experiments/lemma_version
+	url = https://gitlab.pavlovia.org/drakeasberry/lemma_version.git
