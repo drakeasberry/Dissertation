@@ -20,8 +20,8 @@ for trial in trial_list:
                                     original_path + experiment_file + trial + '.csv')
 
 # Read csv data files containing experimental items
-practice = pd.read_csv(original_path + experiment_file + '16_prac_trials.csv')
-experiment = pd.read_csv(original_path + experiment_file + '64_exp_trials.csv')
+practice = pd.read_csv(original_path + experiment_file + '16_prac_trials.csv', encoding='utf8', index_col=False)
+experiment = pd.read_csv(original_path + experiment_file + '64_exp_trials.csv', encoding='utf8', index_col=False)
 
 def block_loop(df,dir,identifier):
     #print(dir)
@@ -30,7 +30,7 @@ def block_loop(df,dir,identifier):
         new_df = df[df.block == block]
         path = dir + identifier + block + '.csv'
         print(path)
-        new_df.to_csv(dir + identifier + block + '.csv')
+        new_df.to_csv(dir + identifier + block + '.csv', encoding='utf-8-sig', index=False)
 
 block_loop(practice, processed_path + experiment_file,'practice_')
 block_loop(experiment, processed_path + experiment_file,'experiment_')
