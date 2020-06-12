@@ -8,4 +8,5 @@ If you cloned the repository using `git clone`, then you can still download the 
 
 First change directory into your git repository using the `cd` command followed by the path to your repository.
 Then run:
+
 `git submodule init && git submodule update` 
