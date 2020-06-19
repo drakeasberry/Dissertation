@@ -60,3 +60,26 @@ Issues as they stand:
 5. In replciating the previous studies online with monolinguals, changing conditions for participant (Possibly best solution is create 4 separate experiments: 1 for condition A, 1 for B, 1 for C and 1 for D))
 6. What encoding solution have used 'utf-8-sig' for special characters. (Happened to notice that you were the one that started github issue)
 
+Meeting:
+1. add instructions/recruitment by clicking next you are consenting Do not collect name, prolific ac get link once initials, favorite color. Random number from Qualtrics, copy and paste number to begin experiment.
+
+windowed experiment go for worst case scenario 13" screen
+
+Add a image to click on to begin to avoid mouse on screen
+
+Would there be a way to make the carrier the item random in the last 5 (minimally at least not the first one)
+
+Null Effect will give a dissertation:
+You have to have n¡something baysian approach, versus frequentist. 
+Null effect is not a finding
+There is evidence for a null effect and extrapolate to phonological encoding. It is not that phonological encoding doesn't work but it is not working within this specific domain.
+By adding nonwords and words may have had a reason for the null effect
+Repetition effect could cause a null effect (lemma version)
+
+lemma version first
+- LexTale Spanish and Segmentation (30 minutes)
+- BLP 
+- Born and raised (Mexico or US), Family Language (Spanish, English aor Both), Leave Age TRUE/FALSE A/B options do not 
+
+info dialogue, lextale-ESP, segmentation thank you
+ 
