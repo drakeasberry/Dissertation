@@ -10,6 +10,15 @@
 	"09_Nivel más alto de formación académica (Highest level of formal education):":"education",
 	"10_Idioma preferido (Preferred language):":"preferLanguage",
 	"11_":"firstTime",
+	"participant":"partNum",
+	"Edad*":"age",
+	"Sexo*":"gender",
+	"País de nacimiento*":"birthCountry",
+	"País dónde creciste*":"raisedCountry",
+	"Lugar de residencia*":"placeResidence",
+	"Nivel más alto de formación académica*":"education",
+	"Idioma usado en casa*":"houseLanguage",
+	"Idioma preferido*":"preferLanguage",
 	"Word":"word",
 	"Translation":"translation",
 	"conditionA":"fillerCarrier",
@@ -244,10 +253,13 @@
 	"Word_Freq_wpm_Subtlex": "word_freq",
 	"Syllable_Structure": "word_initial_syl",
 	"New_Pseudo": "word",
-	"Word": "word",
 	"wordStatus": "word_status",
 	"sylStruc": "word_initial_syl",
 	"freq_WPM": "word_freq",
-	"initialSylStress": "stress_word_initial"
+	"initialSylStress": "stress_word_initial",
+	"expTrialLoop.thisN": "exp_pres_order",
+	"word": "expWord",
+	"Order": "lex_pres_order",
+	"item_type": "fillerCarrier"
 }
 
