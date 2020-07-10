@@ -178,9 +178,12 @@ def create_analysis_files(csv_files, list_name, input_dir, output_dir,indexing):
         elif input_dir in file_locations[7:9]:
             key = subset_key_list[3]
             write_dir = os.path.join(output_dir, demo_dir, list_name)
-        elif input_dir in file_locations[9:11]:
+        elif input_dir in file_locations[9:10]:
             key = subset_key_list[4]
             write_dir = os.path.join(output_dir, segmentation_dir, 'raw')
+        elif input_dir in file_locations[10]:
+            key = subset_key_list[4]
+            write_dir = os.path.join(output_dir, online_lemma_dir, 'raw')
         elif input_dir in file_locations[11]:
             key = subset_key_list[5]
             write_dir = os.path.join(output_dir, lexical_dir, 'raw')
