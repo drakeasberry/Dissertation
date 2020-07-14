@@ -146,18 +146,18 @@ def create_analysis_files(csv_files, list_name, input_dir, output_dir,indexing):
     syllable_dir = 'Statistics/Intuition/analyze_data'
     lexical_dir = 'Statistics/Lexical_Access/analyze_data'
     segmentation_dir = 'Statistics/Segmentation/analyze_data'
-    online_lemma_dir = 'Statistics/online_lemma/analyze_data'
+    online_lemma_dir = 'Statistics/Monolingual_lemma/analyze_data'
     file_locations = ['Statistics/Segmentation/analyze_data/temp_data/lextale_eng_cols',
                       'Statistics/Lexical_Access/analyze_data/temp_data/lextale_eng_cols',
                       'Statistics/Segmentation/analyze_data/temp_data/lextale_esp_cols',
                       'Statistics/Lexical_Access/analyze_data/temp_data/lextale_esp_cols',
-                      'Statistics/online_lemma/analyze_data/temp_data/lextale_esp_cols',
+                      'Statistics/Monolingual_lemma/analyze_data/temp_data/lextale_esp_cols',
                       'Statistics/Segmentation/analyze_data/temp_data/syl_cols',
                       'Statistics/Lexical_Access/analyze_data/temp_data/syl_cols',
                       'Statistics/Segmentation/analyze_data/temp_data/blp_cols',
                       'Statistics/Lexical_Access/analyze_data/temp_data/blp_cols',
                       'Statistics/Segmentation/analyze_data/temp_data/seg_cols',
-                      'Statistics/online_lemma/analyze_data/temp_data/seg_cols',
+                      'Statistics/Monolingual_lemma/analyze_data/temp_data/seg_cols',
                       'Statistics/Lexical_Access/analyze_data/temp_data/lexical_cols']
     output_files = []
     for file in csv_files:

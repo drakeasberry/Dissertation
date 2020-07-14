@@ -3,16 +3,16 @@ import os
 from Scripts_Dissertation import data_preparation
 
 # Set some constants
-STARTFILECOUNT = 10
-FILECOUNTAFTERREMOVAL = STARTFILECOUNT - 0
+STARTFILECOUNT = 68
+
 
 # Set some directory paths needed for project
 project_wd = os.getcwd()
 raw_part_dir = 'Dissertation_Experiments/lemma_version/data/original_data/part_files/'
 temp_part_dir = 'Dissertation_Experiments/lemma_version/data/temp_data'
 processed_part_dir = 'Dissertation_Experiments/lemma_version/data/processed_data/part_files'
-stats_temp_dir = 'Statistics/online_lemma/analyze_data/temp_data'
-stats_out_dir = 'Statistics/online_lemma/analyze_data/raw'
+stats_temp_dir = 'Statistics/Monolingual_lemma/analyze_data/temp_data'
+stats_out_dir = 'Statistics/Monolingual_lemma/analyze_data/raw'
 project_dir_list = [raw_part_dir, temp_part_dir, processed_part_dir, stats_temp_dir, stats_out_dir]
 
 # Create lists for separate file needed to analyze all 5 experimental tasks
@@ -48,6 +48,21 @@ for directory in project_dir_list:
 csv_list = data_preparation.collect_files(project_wd, raw_part_dir, '*.csv')
 
 assert len(csv_list) == STARTFILECOUNT
+# Check for valid data files
+valid_df = []
+invalid_df = []
+empty_df = []
+
+for file in csv_list:
+    try:
+        df = data_preparation.read_pandas(raw_part_dir,file,False)
+        #print(df.size)
+        if df.size == 60165:
+            valid_df.append(file)
+        else:
+            invalid_df.append(file)
+    except:
+        empty_df.append(file)
 # remove participants from analysis
 #try:
 #csv_list.remove('part044_inglés_C_Segmentation.csv') # removed for fluency in other languages
@@ -55,10 +70,12 @@ assert len(csv_list) == STARTFILECOUNT
 #csv_list.remove('part052_inglés_D_Segmentation.csv') # removed for birth country
 #except: ValueError
 # not a great programming standard (ask Julian later) probably not needed
-assert len(csv_list) == FILECOUNTAFTERREMOVAL
+REMOVELIST = len(invalid_df) + len(empty_df)
+FILECOUNTAFTERREMOVAL = STARTFILECOUNT - REMOVELIST
+assert len(valid_df) == FILECOUNTAFTERREMOVAL
 
 # change the headers of csv files
-data_preparation.remap_pandas_headers('Scripts_Dissertation/replacement_map.json', csv_list, raw_part_dir, temp_part_dir, False)
+data_preparation.remap_pandas_headers('Scripts_Dissertation/replacement_map.json', valid_df, raw_part_dir, temp_part_dir, False)
 
 # get list of csv files to modify and select desired columns
 csv_list_new_headers = data_preparation.collect_files(project_wd, temp_part_dir, '*.csv')
@@ -98,7 +115,7 @@ for cur_list in list_of_lists:
 
 # paths needed to create join tables
 exp_search_directory = 'Dissertation_Experiments/lemma_version/data/processed_data/exp_files'
-analyze_dir = 'Statistics/online_lemma/analyze_data'
+analyze_dir = 'Statistics/Monolingual_lemma/analyze_data'
 
 # get join files containing word frequency data
 excel_wb = 'Dissertation_Experiments/lemma_version/Online_Segmentation_Experimental_Item_Setup.xlsx'
@@ -126,8 +143,10 @@ data_preparation.remap_pandas_headers('Scripts_Dissertation/replacement_map.json
 # hard coded subset check (write script to automate check)
 
 # Find a raw data and compare with their results
-
-
+print(empty_df)
+print(invalid_df)
+print(sorted(valid_df))
+print('%d contain all expected data \n %d were incomplete \n %d were empty' % (len(valid_df), len(invalid_df) ,len(empty_df)))
 
 
 

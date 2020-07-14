@@ -28,6 +28,9 @@ lex_esp_files = list.files(path=lex_esp_dir, pattern = '*.csv', full.names = TRU
 # read in all the files into one data frame
 lex_esp_data = ldply(lex_esp_files, read_csv)
 
+# subset for those collected online
+mono_lex_esp <- subset(lex_esp_data, !is.na(lex_esp_data$OS))
+
 # Basic Langauge Profile Data Directory
 blp_dir = 'analyze_data/blp_cols' #set path to directory
 blp_files = list.files(path=blp_dir, pattern = '*.csv', full.names = TRUE) #list all the files with path
@@ -80,6 +83,10 @@ lex_esp_cleaned <- lex_esp_data %>%
   subset(word != 'delantera') %>%
   subset(word != 'garbardina')
 
+mono_lex_esp_cleaned <- mono_lex_esp %>%
+  subset(word != 'pladeno') %>%
+  subset(word != 'delantera') %>%
+  subset(word != 'garbardina')
 # get LexTALE scores
 # commented lines only for quick viewing purposes, NOT analysis
 #lex_eng_score <- aggregate(data=lex_eng_cleaned, lexRespEngCorr ~ partNum + birthCountry, FUN='mean')
@@ -88,6 +95,8 @@ lex_eng_score <- aggregate(data=lex_eng_cleaned, lextaleRespEngCorr ~ partNum, F
 names(lex_eng_score)[names(lex_eng_score)=='lextaleRespEngCorr'] <- 'lextale_eng_correct'
 lex_esp_score <- aggregate(data=lex_esp_cleaned, lextaleRespEspCorr ~ partNum, FUN='mean')
 names(lex_esp_score)[names(lex_esp_score)=='lextaleRespEspCorr'] <- 'lextale_esp_correct'
+mono_lex_esp_score <- aggregate(data=mono_lex_esp_cleaned, lextaleRespEspCorr ~ partNum, FUN='mean')
+names(mono_lex_esp_score)[names(mono_lex_esp_score)=='lextaleRespEspCorr'] <- 'lextale_esp_correct'
 
 # create dataframe for each blp section
 lang_history <- subset(blp_data_cleaned, blp_section == 'Language history')
