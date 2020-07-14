@@ -5,6 +5,7 @@
 library(plyr)
 library(readr)
 library(tidyverse)
+library(pysch)
 
 # Create 'not in' function
 '%ni%' <- Negate('%in%')
@@ -27,6 +28,10 @@ lex_esp_files = list.files(path=lex_esp_dir, pattern = '*.csv', full.names = TRU
 
 # read in all the files into one data frame
 lex_esp_data = ldply(lex_esp_files, read_csv)
+
+# subset for those collected in person
+bi_mx_lex_esp <- subset(lex_esp_data, is.na(lex_esp_data$OS) & lex_esp_data$placeResidence == 'Hermosillo')
+lex_esp <- subset(lex_esp_data, is.na(lex_esp_data$OS))
 
 # subset for those collected online
 mono_lex_esp <- subset(lex_esp_data, !is.na(lex_esp_data$OS))
@@ -78,7 +83,13 @@ lex_eng_cleaned <- lex_eng_data %>%
   subset(word != 'denial') %>%
   subset(word != 'generic')
 
-lex_esp_cleaned <- lex_esp_data %>%
+lex_esp_cleaned <- lex_esp %>%
+  subset(word != 'pladeno') %>%
+  subset(word != 'delantera') %>%
+  subset(word != 'garbardina')
+
+
+bi_mx_lex_esp_cleaned <- bi_mx_lex_esp %>%
   subset(word != 'pladeno') %>%
   subset(word != 'delantera') %>%
   subset(word != 'garbardina')
@@ -97,6 +108,43 @@ lex_esp_score <- aggregate(data=lex_esp_cleaned, lextaleRespEspCorr ~ partNum, F
 names(lex_esp_score)[names(lex_esp_score)=='lextaleRespEspCorr'] <- 'lextale_esp_correct'
 mono_lex_esp_score <- aggregate(data=mono_lex_esp_cleaned, lextaleRespEspCorr ~ partNum, FUN='mean')
 names(mono_lex_esp_score)[names(mono_lex_esp_score)=='lextaleRespEspCorr'] <- 'lextale_esp_correct'
+
+# Izura method of calculation Monolinguals
+mono_real_word <- subset(mono_lex_esp_cleaned,mono_lex_esp_cleaned$translation != "NW" & mono_lex_esp_cleaned$lextaleRespEspCorr == 1) 
+  
+mono_non_word <- subset(mono_lex_esp_cleaned,mono_lex_esp_cleaned$translation == "NW")# & mono_lex_esp_cleaned$lextaleRespEspCorr == 0)
+
+mono_wd_corr <- aggregate(data=mono_real_word, lextaleRespEspCorr ~ partNum, FUN='sum')
+names(mono_wd_corr)[names(mono_wd_corr)=='lextaleRespEspCorr'] <- 'yes_to_word'
+mono_nw_incorr <- aggregate(data=mono_non_word, lextaleRespEspCorr ~ partNum, FUN='sum') %>% 
+  add_column(., yes_to_nonword = 30 - mono_nw_incorr$lextaleRespEspCorr) %>% 
+  select(.,-c('lextaleRespEspCorr'))
+
+
+mono_lex_esp_izura <- merge(mono_wd_corr, mono_nw_incorr, by='partNum') %>% 
+  add_column(.,izura_score = .$yes_to_word - 2 * .$yes_to_nonword)
+
+mono_below_34 <- subset(mono_lex_esp_izura,mono_lex_esp_izura$izura_score < 34)
+
+# Izura method of calculation Spanish bilinguals from Mexico
+bi_mx_lex_esp <- subset(bi_mx_lex_esp_cleaned, bi_mx_lex_esp_cleaned$birthCountry == 'México')
+bi_mx_real_word <- subset(bi_mx_lex_esp,bi_mx_lex_esp$translation != "NW" & bi_mx_lex_esp$lextaleRespEspCorr == 1) 
+
+bi_mx_non_word <- subset(bi_mx_lex_esp,bi_mx_lex_esp$translation == "NW")# & mono_lex_esp_cleaned$lextaleRespEspCorr == 0)
+
+bi_mx_wd_corr <- aggregate(data=bi_mx_real_word, lextaleRespEspCorr ~ partNum, FUN='sum')
+names(bi_mx_wd_corr)[names(bi_mx_wd_corr)=='lextaleRespEspCorr'] <- 'yes_to_word'
+
+bi_mx_nw_incorr <- aggregate(data=bi_mx_non_word, lextaleRespEspCorr ~ partNum, FUN='sum') 
+
+bi_mx_nw_incorr <- add_column(bi_mx_nw_incorr, yes_to_nonword = 30 - bi_mx_nw_incorr$lextaleRespEspCorr) %>% 
+  select(.,-c('lextaleRespEspCorr'))
+
+
+bi_mx_lex_esp_izura <- merge(bi_mx_wd_corr, bi_mx_nw_incorr, by='partNum') %>% 
+  add_column(.,izura_score = .$yes_to_word - 2 * .$yes_to_nonword)
+
+bi_mx_below_34 <- subset(bi_mx_lex_esp_izura,bi_mx_lex_esp_izura$izura_score < 34)
 
 # create dataframe for each blp section
 lang_history <- subset(blp_data_cleaned, blp_section == 'Language history')
