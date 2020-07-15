@@ -3,7 +3,7 @@ import os
 from Scripts_Dissertation import data_preparation
 
 # Set some constants
-STARTFILECOUNT = 68
+STARTFILECOUNT = 74
 
 
 # Set some directory paths needed for project
