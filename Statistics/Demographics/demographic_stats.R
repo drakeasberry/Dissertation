@@ -99,6 +99,7 @@ mono_lex_esp_cleaned <- mono_lex_esp %>%
   subset(word != 'pladeno') %>%
   subset(word != 'delantera') %>%
   subset(word != 'garbardina')
+
 # get LexTALE scores
 # commented lines only for quick viewing purposes, NOT analysis
 #lex_eng_score <- aggregate(data=lex_eng_cleaned, lexRespEngCorr ~ partNum + birthCountry, FUN='mean')
@@ -122,41 +123,35 @@ mono_nw_incorr <- mono_nw_incorr %>%
   add_column(., yes_to_nonword = 30 - mono_nw_incorr$lextaleRespEspCorr) %>% 
   select(.,-c('lextaleRespEspCorr'))
 
-drop_list <- c("5e8dec12d5013b07b4d1fd09", "5ef13c6ab19a6e230cfac96b", "5b654ab940003400016f53ff")
+# Read vector from R session Monolingual Lemma Segmentation Visual
+segmentation_remaining <- readRDS("online_lemma_participants")
+
+#drop_list <- c("5e8dec12d5013b07b4d1fd09", "5ef13c6ab19a6e230cfac96b", "5b654ab940003400016f53ff")
 mono_lex_esp_izura <- merge(mono_wd_corr, mono_nw_incorr, by='partNum') %>% 
   add_column(.,izura_score = .$yes_to_word - 2 * .$yes_to_nonword) %>% 
-  subset(.,.$partNum %ni% drop_list)
+  subset(.,.$partNum %in% segmentation_remaining)
 
-densityplot(~izura_score, data = mono_lex_esp_izura, main = 'Density plot of all 52 participants') 
-histogram(~izura_score, data = mono_lex_esp_izura, main = '52 participants collected online') 
+# Monolingual Lextale-Esp distribution plots
+densityplot(~izura_score, data = mono_lex_esp_izura, main = 'Density plot of Monolingual participants') 
+histogram(~izura_score, data = mono_lex_esp_izura, main = 'Monolingual participants collected online') 
 
-mono_below_34 <- subset(mono_lex_esp_izura,mono_lex_esp_izura$izura_score < 34)
-mono_below_30 <- subset(mono_lex_esp_izura,mono_lex_esp_izura$izura_score < 30)
-mono_below_20 <- subset(mono_lex_esp_izura,mono_lex_esp_izura$izura_score < 20)
-mono_below_10 <- subset(mono_lex_esp_izura,mono_lex_esp_izura$izura_score < 10)
+# Monolingual Lextale-Esp descriptive statistics 
+describe(mono_lex_esp_izura$izura_score)
 
-segmentation_remaining <- c("5a4eabd13646f90001741bbf", "5a875d6cf1408d0001769479", "5a910c8a6475f900019f8cbc",
-                            "5b501a2ba0daa60001a336d4", "5b5fdd52b36c3400014718b9", "5bdf91dbb32fa800012ea282",
-                            "5c2e48a2867f660001afd5f1", "5c47c2564a1fb4000136e14a", "5c53e9b6b7cf140001d31e6a",
-                            "5c90617326e3ed00019896a5", "5cb025049495a600190e00f3", "5cb6bdcd029f810001b23cfe",
-                            "5cbe45745973850015f7b090", "5cccd9bee48e6700175286ca", "5d1288956e2c7b0016bbd0f6",
-                            "5d366eba9749cc00185c21fb", "5d51fdfb910d9e00017e62db", "5d5496bdd84ebe0001f5fb20",
-                            "5d58b26b5f36a80018f9975f", "5d65c6df8c012a00194fcbbe", "5dae5564baa8780015bc26a1",
-                            "5e4877398af5eb310bc6f58f", "5e522598d5aa4824b5829900", "5e9010494d246b3095f0e5a0",
-                            "5e9532e400703c8b14ab0e80", "5e9fe54e71ba9919c2d11b0e", "5ea1bad6173fb70a0dd4b01d",
-                            "5eaeebe9db992b0488624216", "5eb3966158efe7182e31ff92", "5ebb2ee7b15eb00f0e3e2e71",
-                            "5ebdf558e27afd134641d5dc", "5ec1f0724553ff4e23b1f4ca", "5ec2d81556541c0ec6bd0115",
-                            "5ec354adf348311a5ee4019e", "5ec3e5be68bbf2081da1eba2", "5ec6a814c615390ad63cbf1f",
-                            "5ec888262256df3457ab483b", "5edac57737984c7168bedc3b", "5ef58e6bd195c21efd19b29a",
-                            "5ef6821865a4f11673527f75", "5ef6c48340846d3c05b8236c", "5ef930974bc6e0000848aff7",
-                            "5efc0a523b88f81bec18ea9b", "5efcbbdd231bde0af2edb847", "5efe8b80a22068390f4e70f6",
-                            "5efeb01f2e80083c611538ea")
-remaining_46 <- subset(mono_lex_esp_izura,mono_lex_esp_izura$partNum %in% segmentation_remaining)
+#mono_below_34 <- subset(mono_lex_esp_izura,mono_lex_esp_izura$izura_score < 34)
+#mono_below_30 <- subset(mono_lex_esp_izura,mono_lex_esp_izura$izura_score < 30)
+#mono_below_20 <- subset(mono_lex_esp_izura,mono_lex_esp_izura$izura_score < 20)
+#mono_below_10 <- subset(mono_lex_esp_izura,mono_lex_esp_izura$izura_score < 10)
+#
+#
+#remaining_46 <- subset(mono_lex_esp_izura,mono_lex_esp_izura$partNum %in% segmentation_remaining)
+#
+#densityplot(~izura_score, data = remaining_46, main = 'Density plot of all 46 participants not cut from segmentation criteria') 
+#histogram(~izura_score, data = remaining_46, main = ' 46 participants not cut from segmentation criteria') 
+#
+#remaining_below_30 <- subset(remaining_46, remaining_46$izura_score < 30)  
 
-densityplot(~izura_score, data = remaining_46, main = 'Density plot of all 46 participants not cut from segmentation criteria') 
-histogram(~izura_score, data = remaining_46, main = ' 46 participants not cut from segmentation criteria') 
 
-remaining_below_30 <- subset(remaining_46, remaining_46$izura_score < 30)  
 
 # Izura method of calculatio Spanish bilinguals from Mexico
 bi_mx_lex_esp <- subset(bi_mx_lex_esp_cleaned, bi_mx_lex_esp_cleaned$birthCountry == 'México')

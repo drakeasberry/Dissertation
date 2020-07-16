@@ -188,8 +188,8 @@ seg_critical <- seg_critical_hits %>%
   subset(.,segRespRT >= 200 & segRespRT <= 1500) %>% # remove repsonse below 200ms
   subset(.,partNum %ni% high_miss_seg_critical_users$vars)
 
-unique(seg_critical$partNum)
-
+valid_part <- unique(seg_critical$partNum)
+saveRDS(valid_part, file="../Demographics/online_lemma_participants")
 
 
 # Run to here to check data validation participants provided good data 
@@ -217,76 +217,144 @@ densityplot(~segRespRT, data = seg_critical, main = ' Segmentation Reaction Time
 stripplot(~segRespRT, data = seg_critical, main = ' Segmentation Reaction Time in Milliseconds') 
 densityplot(~log_RT, data = seg_critical, main = 'Segmentation Reaction as Log') 
 
-# all groups
-with(seg_critical, bwplot(log_RT~wd_int_syl_str|tar_syl_str))
-with(seg_critical, bwplot(segRespRT~wd_int_syl_str))
+# Monolingual Reaction Times Plots
+with(seg_critical, bwplot(log_RT~wd_int_syl_str|tar_syl_str, main = 'log RT for Target Syllable Structure', xlab = 'Word Initial Syllable Structure'))
+with(seg_critical, bwplot(log_RT~wd_int_syl_str|tar_syl, main = 'log RT for Target Syllables', xlab = 'Word Initial Syllable Structure'))
+with(seg_critical, bwplot(segRespRT~wd_int_syl_str, main = 'RT (msec) for Word Intitial Syllable Structure', xlab = 'Word Initial Syllable Structure'))
+with(seg_critical, bwplot(segRespRT~tar_syl_str, main = 'RT (msec) for Target Syllable Structure', xlab = 'Target Syllable Structure'))
+
+# Monolingual Reaction Times Tables
+# rows are syllable structure type of target
+# columns are syllable structure of initial word syllable
 tapply(seg_critical$segRespRT, list(seg_critical$tar_syl_str,seg_critical$matching,seg_critical$partNum), FUN = mean)
+#tapply(seg_critical$segRespRT, list(seg_critical$tar_syl,seg_critical$matching,seg_critical$partNum), FUN = mean)
 #tapply(seg_critical$segRespRT, list(seg_critical$target_syl_structure,seg_critical$matching,seg_critical$partGroup), FUN = min)
 #Spanish Only
 #esp <- subset(seg_critical, partGroup == 'Spanish')
-with(seg_critical, bwplot(segRespRT~wd_int_syl_str|tar_syl_str))
+with(seg_critical, bwplot(segRespRT~wd_int_syl_str|tar_syl_str, main = 'RT (msec) by Target Syllable Structure', xlab = 'Word Initial Syllable Structure'))
 #df <- tibble(tapply(esp$segRespRT, list(esp$target_syl_structure,esp$matching,esp$partNum), FUN = mean))
 
 #(scale function) mean - token / stdev (zscoring) 
 # package(standardize)
-ag <- aggregate(seg_critical$segRespRT, by = list(seg_critical$partNum,seg_critical$matching,seg_critical$tar_syl_str), FUN = mean)
-cv_match <- subset(ag,Group.2 == 'match' & Group.3 == 'CV')
-cvc_match <- subset(ag,Group.2 == 'match' & Group.3 == 'CVC')
-cv_mismatch <- subset(ag,Group.2 == 'mismatch' & Group.3 == 'CV')
-cvc_mismatch <- subset(ag,Group.2 == 'mismatch' & Group.3 == 'CVC')
+ag_all <- aggregate(seg_critical$segRespRT, by = list(seg_critical$partNum,seg_critical$matching,seg_critical$tar_syl_str), FUN = mean)
+cv_match_all <- subset(ag_all,Group.2 == 'match' & Group.3 == 'CV')
+cvc_match_all <- subset(ag_all,Group.2 == 'match' & Group.3 == 'CVC')
+cv_mismatch_all <- subset(ag_all,Group.2 == 'mismatch' & Group.3 == 'CV')
+cvc_mismatch_all <- subset(ag_all,Group.2 == 'mismatch' & Group.3 == 'CVC')
 
-df_cv <- full_join(cv_match,cv_mismatch, by = 'Group.1')
-df_cvc <- full_join(cvc_match,cvc_mismatch, by = 'Group.1')
-df <- merge(df_cv,df_cvc, by.x = 'Group.1', by.y = 'Group.1')
-names(df) <- c("part", "cv_matching", "cv_matching_str", "cv_matching_rt", "cv_mis", "cv_mis_str", "cv_mis_rt", "cvc_matching", "cvc_matching_str", "cvc_matching_rt", "cvc_mis", "cvc_mis_str", "cvc_mis_rt")
+averaged_all <- ag_all
+averaged_all <- ag_all %>%
+  add_column(int_wd_syl = ifelse(averaged_all$Group.2 == 'match',averaged_all$Group.3,
+                                 ifelse(averaged_all$Group.2 != 'match' & averaged_all$Group.3 == 'CV','CVC','CV')))
+names(averaged_all) <- c('participant','int_syl_structure_match','target_syl','rt_ms','int_wd_syl')
 
-#test <- subset(df,part %in% rand_subset) %>%
-#  select("part","cv_matching_rt","cv_mis_rt","cvc_matching_rt","cvc_mis_rt")
+cvTargets_all <- subset(averaged_all,target_syl == 'CV')
+cvcTargets_all <- subset(averaged_all,target_syl == 'CVC')
+cvCarrier_all <- subset(averaged_all,int_wd_syl == 'CV')
+cvcCarrier_all <- subset(averaged_all,int_wd_syl == 'CVC')
+#t.testing
+t.test(cvTargets_all$rt_ms~cvTargets_all$int_wd_syl)
+t.test(cvcTargets_all$rt_ms~cvcTargets_all$int_wd_syl)
+t.test(cvCarrier_all$rt_ms~cvCarrier_all$target_syl)
+t.test(cvcCarrier_all$rt_ms~cvcCarrier_all$target_syl)
+
+mydata_all <- averaged_all %>%
+  group_by(target_syl,int_wd_syl) %>%
+  summarise(average = mean(rt_ms))
+
+#Crossover plots
+ggplot(data=mydata_all,aes(x=target_syl,y=average, group=int_wd_syl, color=int_wd_syl)) +
+  geom_line() + 
+  geom_point() + 
+  labs(title="RTs by Target and Carrier Item Syllable Structure Pooled",x="Target Structure",y= "Reaction Time (msec)")
 
 
-df_cv_expected <- subset(df, cv_matching_rt < cv_mis_rt)
-df_cv_odd <- subset(df, cv_matching_rt > cv_mis_rt)
-df_cvc_expected <- subset(df, cvc_matching_rt < cvc_mis_rt)
-df_cvc_odd <- subset(df, cvc_matching_rt > cvc_mis_rt)
 
-overlap <- merge(df_cv_odd,df_cvc_odd)
-add_column(overlap, cv_diff = overlap$cv_matching_rt - overlap$cv_mis_rt, .after = 'part')
-add_column(overlap, cvc_diff = overlap$cvc_matching_rt - overlap$cvc_mis_rt, .after = 'cv_diff')
+#df_cv <- full_join(cv_match,cv_mismatch, by = 'Group.1')
+#df_cvc <- full_join(cvc_match,cvc_mismatch, by = 'Group.1')
+#df <- merge(df_cv,df_cvc, by.x = 'Group.1', by.y = 'Group.1')
+#names(df) <- c("part", "cv_matching", "cv_matching_str", "cv_matching_rt", "cv_mis", "cv_mis_str", "cv_mis_rt", "cvc_matching", "cvc_matching_str", "cvc_matching_rt", "cvc_mis", "cvc_mis_str", "cvc_mis_rt")
+#
+#
+#df_cv_expected <- subset(df, cv_matching_rt < cv_mis_rt)
+#df_cv_odd <- subset(df, cv_matching_rt > cv_mis_rt)
+#df_cvc_expected <- subset(df, cvc_matching_rt < cvc_mis_rt)
+#df_cvc_odd <- subset(df, cvc_matching_rt > cvc_mis_rt)
+#
+#overlap <- merge(df_cv_odd,df_cvc_odd)
+#  add_column(overlap, cv_diff = overlap$cv_matching_rt - overlap$cv_mis_rt, .after = 'part') %>% 
+#  add_column(overlap, cvc_diff = overlap$cvc_matching_rt - overlap$cvc_mis_rt, .after = 'cv_diff')
+#
+#overlap <- merge(df_cv_odd,df_cvc_odd) %>%
+#  add_column(., cv_diff = overlap$cv_matching_rt - overlap$cv_mis_rt, .after = 'part') %>%
+#  add_column(., cvc_diff = overlap$cvc_matching_rt - overlap$cvc_mis_rt, .after = 'cv_diff')
+#
+#
+#colnames(overlap)
 
-overlap <- merge(df_cv_odd,df_cvc_odd) %>%
-  add_column(., cv_diff = overlap$cv_matching_rt - overlap$cv_mis_rt, .after = 'part') %>%
-  add_column(., cvc_diff = overlap$cvc_matching_rt - overlap$cvc_mis_rt, .after = 'cv_diff')
 
-
-colnames(overlap)
 # Subset for real words only
 seg_critical_words <- subset(seg_critical, wd_status == 'word')
 tapply(seg_critical_words$segRespRT, list(seg_critical_words$tar_syl_str,seg_critical_words$matching,seg_critical_words$partNum), FUN = mean)
 tapply(seg_critical_words$segRespRT, list(seg_critical_words$tar_syl_str,seg_critical_words$wd_int_syl_str,seg_critical_words$partNum), FUN = mean)
 
-averaged <- ag
-averaged <- ag %>%
-  add_column(int_wd_syl = ifelse(averaged$Group.2 == 'match',averaged$Group.3,
-                                 ifelse(averaged$Group.2 != 'match' & averaged$Group.3 == 'CV','CVC','CV')))
-names(averaged) <- c('participant','int_syl_structure_match','target_syl','rt_ms','int_wd_syl')
+ag_wd <- aggregate(seg_critical_words$segRespRT, by = list(seg_critical_words$partNum,seg_critical_words$matching,seg_critical_words$tar_syl_str), FUN = mean)
+averaged_wd <- ag_wd
+averaged_wd <- ag_wd %>%
+  add_column(int_wd_syl = ifelse(averaged_wd$Group.2 == 'match',averaged_wd$Group.3,
+                                 ifelse(averaged_wd$Group.2 != 'match' & averaged_wd$Group.3 == 'CV','CVC','CV')))
+names(averaged_wd) <- c('participant','int_syl_structure_match','target_syl','rt_ms','int_wd_syl')
 
-cvTargets <- subset(averaged,target_syl == 'CV')
-cvcTargets <- subset(averaged,target_syl == 'CVC')
-cvCarrier <- subset(averaged,int_wd_syl == 'CV')
-cvcCarrier <- subset(averaged,int_wd_syl == 'CVC')
+cvTargets_wd <- subset(averaged_wd,target_syl == 'CV')
+cvcTargets_wd <- subset(averaged_wd,target_syl == 'CVC')
+cvCarrier_wd <- subset(averaged_wd,int_wd_syl == 'CV')
+cvcCarrier_wd <- subset(averaged_wd,int_wd_syl == 'CVC')
 #t.testing
-t.test(cvTargets$rt_ms~cvTargets$int_wd_syl)
-t.test(cvcTargets$rt_ms~cvcTargets$int_wd_syl)
-t.test(cvCarrier$rt_ms~cvCarrier$target_syl)
-t.test(cvcCarrier$rt_ms~cvcCarrier$target_syl)
+t.test(cvTargets_wd$rt_ms~cvTargets_wd$int_wd_syl)
+t.test(cvcTargets_wd$rt_ms~cvcTargets_wd$int_wd_syl)
+t.test(cvCarrier_wd$rt_ms~cvCarrier_wd$target_syl)
+t.test(cvcCarrier_wd$rt_ms~cvcCarrier_wd$target_syl)
 
-mydata <- averaged %>%
+mydata_wd <- averaged_wd %>%
   group_by(target_syl,int_wd_syl) %>%
   summarise(average = mean(rt_ms))
 
 #Crossover plots
-ggplot(data=mydata,aes(x=target_syl,y=average, group=int_wd_syl, color=int_wd_syl)) +
+ggplot(data=mydata_wd,aes(x=target_syl,y=average, group=int_wd_syl, color=int_wd_syl)) +
   geom_line() + 
   geom_point() + 
-  labs(title="RTs by Target and Carrier Item Syllable Structure",x="Target Structure",y= "Reaction Time (msec)")
+  labs(title="RTs by Target and Carrier Item Syllable Structure for Words",x="Target Structure",y= "Reaction Time (msec)")
+
+# Subset for nonwords only
+seg_critical_nonwords <- subset(seg_critical, wd_status == 'nonword')
+tapply(seg_critical_nonwords$segRespRT, list(seg_critical_nonwords$tar_syl_str,seg_critical_nonwords$matching,seg_critical_nonwords$partNum), FUN = mean)
+tapply(seg_critical_nonwords$segRespRT, list(seg_critical_nonwords$tar_syl_str,seg_critical_nonwords$wd_int_syl_str,seg_critical_nonwords$partNum), FUN = mean)
+
+
+ag_nonwd <- aggregate(seg_critical_nonwords$segRespRT, by = list(seg_critical_nonwords$partNum,seg_critical_nonwords$matching,seg_critical_nonwords$tar_syl_str), FUN = mean)
+averaged_nonwd <- ag_nonwd
+averaged_nonwd <- ag_nonwd %>%
+  add_column(int_wd_syl = ifelse(averaged_nonwd$Group.2 == 'match',averaged_nonwd$Group.3,
+                                 ifelse(averaged_nonwd$Group.2 != 'match' & averaged_nonwd$Group.3 == 'CV','CVC','CV')))
+names(averaged_nonwd) <- c('participant','int_syl_structure_match','target_syl','rt_ms','int_wd_syl')
+
+cvTargets_nonwd <- subset(averaged_nonwd,target_syl == 'CV')
+cvcTargets_nonwd <- subset(averaged_nonwd,target_syl == 'CVC')
+cvCarrier_nonwd <- subset(averaged_nonwd,int_wd_syl == 'CV')
+cvcCarrier_nonwd <- subset(averaged_nonwd,int_wd_syl == 'CVC')
+#t.testing
+t.test(cvTargets_nonwd$rt_ms~cvTargets_nonwd$int_wd_syl)
+t.test(cvcTargets_nonwd$rt_ms~cvcTargets_nonwd$int_wd_syl)
+t.test(cvCarrier_nonwd$rt_ms~cvCarrier_nonwd$target_syl)
+t.test(cvcCarrier_nonwd$rt_ms~cvcCarrier_nonwd$target_syl)
+
+mydata_nonwd <- averaged_nonwd %>%
+  group_by(target_syl,int_wd_syl) %>%
+  summarise(average = mean(rt_ms))
+
+#Crossover plots
+ggplot(data=mydata_nonwd,aes(x=target_syl,y=average, group=int_wd_syl, color=int_wd_syl)) +
+  geom_line() + 
+  geom_point() + 
+  labs(title="RTs by Target and Carrier Item Syllable Structure for Nonwords",x="Target Structure",y= "Reaction Time (msec)")
 
