@@ -352,9 +352,36 @@ mydata_nonwd <- averaged_nonwd %>%
   group_by(target_syl,int_wd_syl) %>%
   summarise(average = mean(rt_ms))
 
+
 #Crossover plots
 ggplot(data=mydata_nonwd,aes(x=target_syl,y=average, group=int_wd_syl, color=int_wd_syl)) +
   geom_line() + 
   geom_point() + 
   labs(title="RTs by Target and Carrier Item Syllable Structure for Nonwords",x="Target Structure",y= "Reaction Time (msec)")
 
+
+
+## Meeting with Miquel
+miquel <- seg_critical %>%
+  group_by(tar_syl_str, wd_int_syl_str, partNum, wd_status) %>%
+  summarise(average = mean(segRespRT))
+
+miquel_wd <- subset(miquel, miquel$wd_status == 'word')
+miquel_nonwd <- subset(miquel, miquel$wd_status != 'word')
+
+# Write out files
+write_csv(miquel_nonwd, "monolingual_nonwords.csv")
+write_csv(miquel_wd, "monolingual_words.csv")
+write_csv(miquel, "monolingual_pooled.csv")
+
+# plot nonword 
+ggplot(data=miquel_nonwd,aes(x=tar_syl_str,y=average, group=wd_int_syl_str, color=wd_int_syl_str)) +
+  geom_line() + 
+  geom_point() + 
+  labs(title="RTs by Target and Carrier Item Syllable Structure for Nonwords",x="Target Structure",y= "Reaction Time (msec)")
+
+# plot word
+ggplot(data=miquel_wd,aes(x=tar_syl_str,y=average, group=wd_int_syl_str, color=wd_int_syl_str)) +
+  geom_line() + 
+  geom_point() + 
+  labs(title="RTs by Target and Carrier Item Syllable Structure for Words",x="Target Structure",y= "Reaction Time (msec)")
