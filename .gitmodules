@@ -1,3 +1,6 @@
 [submodule "Dissertation_Experiments/lemma_version"]
 	path = Dissertation_Experiments/lemma_version
 	url = https://gitlab.pavlovia.org/drakeasberry/lemma_version.git
+[submodule "Dissertation_Experiments/sec_lang_lemma"]
+	path = Dissertation_Experiments/sec_lang_lemma
+	url = git@gitlab.pavlovia.org:drakeasberry/sec_lang_lemma.git
