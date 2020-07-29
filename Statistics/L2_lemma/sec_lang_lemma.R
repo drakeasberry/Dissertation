@@ -21,14 +21,14 @@ library(ggplot2)
 #file01_exp <- drop_na(file01, any_of("corrAns"))
 
 # Load all files 
-seg_files <- list.files(path='analyze_data/raw/', pattern = '*.csv', full.names = TRUE) #list all the files with path
+seg_files <- list.files(path='analyze_data/raw', pattern = '*.csv', full.names = TRUE) #list all the files with path
 df_raw_seg <- ldply(seg_files, read_csv)
 
 # Delete practice trial rows
 file_exp <- drop_na(df_raw_seg, any_of("corrAns"))
 
 # write out all observations in segementation experiment
-write_csv(file_exp, 'all_participants_monolingual_all_segmenation_responses.csv')
+#write_csv(file_exp, 'all_participants_L2_all_segmenation_responses.csv')
 
 # Checking Data Demographics
 unique(file_exp$birthCountry)
@@ -38,13 +38,17 @@ unique(file_exp$houseLanguage)
 unique(file_exp$preferLanguage)
 unique(file_exp$OS)
 
-raised_country <- file_exp[ which(file_exp$raisedCountry =='Estados Unidos'),]
+#birth_country <- file_exp[ which(file_exp$birthCountry == 'otro país'),]
+birth_country <- file_exp[ which(file_exp$birthCountry != 'Estados Unidos'),]
+unique(birth_country$partNum)
+
+raised_country <- file_exp[ which(file_exp$raisedCountry != 'Estados Unidos'),]
 unique(raised_country$partNum)
 
-house_lang <- file_exp[ which(file_exp$houseLanguage!='español'),]
+house_lang <- file_exp[ which(file_exp$houseLanguage != 'inglés'),]
 unique(house_lang$partNum)
 
-prefer_lang <- file_exp[ which(file_exp$preferLanguage!='español'),]
+prefer_lang <- file_exp[ which(file_exp$preferLanguage != 'inglés'),]
 unique(prefer_lang$partNum)
 
 # Check accuracy (95% is probably a decent cut off since they can acieve 90% by not responding at all)
@@ -52,17 +56,23 @@ aggregate(file_exp[, c('segRespCorr')], list(file_exp$partNum), mean)
 
 # Participant exclusions
 # Kept
-# 5bdf91dbb32fa800012ea282 included because only had basic university English requirements
-# 5cbe45745973850015f7b090 included because only had basic English requirements (basic A2 on CEFR)
-# Dropped
-# 5e8dec12d5013b07b4d1fd09 dropped because they reported being raised in US and having an avanced level of English
-# 5ef13c6ab19a6e230cfac96b dropped because they reported being raised in US and having an avanced level of English
-# 5b654ab940003400016f53ff dropped because their level of English could not be verified
-# 5ec2d81556541c0ec6bd0115 dropped because of low score (< 10) on LexTALE-ESP
-# 5d65c6df8c012a00194fcbbe dropped because of low score (< 10) on LexTALE-ESP
+# 5be3b08c020df800016ecb39 kept because they overwrote Estados Unidos with U.S, inglés woth English for house and preferred language
+# 5c3820ee1ede2b0001155929  kept because they overwrote Estados Unidos with U.S, inglés woth English for house and preferred language
+# 5f0e11c834d11c124835db1d kept because they chose "otro país" in experiment but verified US with Prolific
+# 5e56aab647b0010401dad5ee kept because they reported preferred language as español, learned Spanish at 18
+# 5f034e503ad29e522d6632aa kept because they reported ambos for house language and preferred language as español, learned Spanish at 12
 
-drop_list <- c("5e8dec12d5013b07b4d1fd09", "5ef13c6ab19a6e230cfac96b", "5b654ab940003400016f53ff", 
-               "5d65c6df8c012a00194fcbbe", "5ec2d81556541c0ec6bd0115")
+# Dropped
+# 5e666e4fc34e833dea58fe65 dropped because they reported being raised in Mexico, preferred and house language español
+# 5e50b4a8e6ef3b1027fa3a5d dropped because they reported preferred and house language as español, espanol es su primer idioma
+# 5ebf1420ede6902fa8e8c5cd dropped because they reported knowing French and Italian as well
+# 5ce7b1fbb215230001627697 dropped because reported being born outside US
+# 5ecc3c30ff90f54436c7b336 dropped because they reported knowing Italian as well
+
+# 5c3820ee1ede2b0001155929 dropped for high filler error, check to see if code can do it
+
+drop_list <- c("5e666e4fc34e833dea58fe65", "5e50b4a8e6ef3b1027fa3a5d", "5ebf1420ede6902fa8e8c5cd", "5ecc3c30ff90f54436c7b336", 
+               "5ce7b1fbb215230001627697", "5c3820ee1ede2b0001155929")
 
 # drop participants who should not be analyzed
 drop_participants <- subset(file_exp, file_exp$partNum %ni% drop_list)
@@ -73,27 +83,43 @@ drop_participants <- subset(file_exp, file_exp$partNum %ni% drop_list)
 #print('1 = response and None = no response')
 seg_critical <- subset(drop_participants, drop_participants$fillerCarrier == 'critical')
 #Prints tibble showing all responses and frequency of response to critical items
-#count(seg_critical, vars=segResp)
-write_csv(seg_critical,'~/Desktop/working_diss_files/r-checking/critical_items_lemma.csv')
+count(seg_critical, vars=segResp)
+#write_csv(seg_critical,'~/Desktop/working_diss_files/r-checking/critical_items_L2_lemma.csv')
 
 # Further subset critical data set to those that were NOT responded to by participants
 seg_critical_misses <- subset(seg_critical, seg_critical$segRespCorr == 0)
-write_csv(seg_critical_misses,'~/Desktop/working_diss_files/r-checking/critical_misses_lemma.csv')
+#write_csv(seg_critical_misses,'~/Desktop/working_diss_files/r-checking/critical_misses_L2_lemma.csv')
 
 # Further subset critical data set to those that were NOT responded to by participants
 seg_critical_hits <- subset(seg_critical, seg_critical$segRespCorr == 1)
-write_csv(seg_critical_hits,'~/Desktop/working_diss_files/r-checking/critical_hits_lemma.csv')
+#write_csv(seg_critical_hits,'~/Desktop/working_diss_files/r-checking/critical_hits_L2_lemma.csv')
 
 # Create a tibble of participants who incorrectly did not respond to critical item including number of errors
 df_seg_critical_errors <- count(seg_critical_misses, vars=partNum)
-print('Counts of responses to critical items by participant')
+print('Counts of non-responses to critical items by participant')
 print(as_tibble(df_seg_critical_errors), n=100) # n default is 10, but here it has been changed to 100 viewable rows
 
 # Check for outliers accuracy
-#percent_correct <- aggregate(seg_critical$segRespCorr, by= list(seg_critical$partNum), FUN=mean)
-#histogram(~x, percent_correct)
-#with(percent_correct, bwplot(x~Group.1))
-#with(percent_correct, bwplot(x))
+percent_correct <- aggregate(seg_critical$segRespCorr, by= list(seg_critical$partNum), FUN=mean)
+histogram(~x, percent_correct)
+with(percent_correct, bwplot(x~Group.1))
+with(percent_correct, bwplot(x))
+
+mean(percent_correct$x)
+sd(percent_correct$x)
+
+percent_correct <- percent_correct %>%
+  mutate(zcore = (x - mean(x))/sd(x))
+
+df_seg_critical_hits <- count(seg_critical_hits, vars=partNum)
+with(df_seg_critical_hits, boxplot(n))
+mean(df_seg_critical_hits$n)
+sd(df_seg_critical_hits$n)
+
+with(df_seg_critical_errors, boxplot(n))
+mean(df_seg_critical_errors$n)
+sd(df_seg_critical_errors$n)
+
 
 # Create a subset of all filler items
 seg_filler <- subset(drop_participants, drop_participants$fillerCarrier != 'critical')
@@ -101,17 +127,22 @@ seg_filler <- subset(drop_participants, drop_participants$fillerCarrier != 'crit
 #print('Counts of responses to filler items')
 #print('1 = response and None = no response')
 # Prints tibble showing all responses and frequency of response to filler items
-#count(seg_filler, vars=segResp)
-write_csv(seg_filler,'~/Desktop/working_diss_files/r-checking/filler_items_lemma.csv')
+count(seg_filler, vars=segResp)
+#write_csv(seg_filler,'~/Desktop/working_diss_files/r-checking/filler_items_L2_lemma.csv')
 
 # Further subset filler data set to those that were responded to by participants
 seg_filler_responses <- subset(seg_filler, seg_filler$segRespCorr == 0)
-write_csv(seg_filler_responses,'~/Desktop/working_diss_files/r-checking/filler_responses_lemma.csv')
+#write_csv(seg_filler_responses,'~/Desktop/working_diss_files/r-checking/filler_responses_L2_lemma.csv')
 
 # Create a dataframe of participants who incorrectly responded to a filler item
 df_seg_filler_errors <- count(seg_filler_responses, vars=partNum)
 #print('Counts of responses to filler items by participant')
 print(as_tibble(df_seg_filler_errors), n=100) # n default is 10, but here it has been changed to 100 viewable rows
+
+
+with(df_seg_filler_errors, boxplot(n))
+mean(df_seg_filler_errors$n)
+sd(df_seg_filler_errors$n)
 
 # Find all participants who responded 57 or more times (>=10%) to filler items
 # or missed more than 6 critical item (>= 10%), and they will be used to index later
@@ -120,6 +151,12 @@ high_seg_filler_responses #prints row numbers on filler data points excedding 43
 high_miss_seg_critical_responses <- c(which(df_seg_critical_errors$n >= 6.4))
 high_miss_seg_critical_responses #prints row numbers on critical data points excedding 5
 high_miss_seg_critical_users <- subset(df_seg_critical_errors, df_seg_critical_errors$n >=6.4)
+
+# Get miss rate for all participants
+miss_seg_critical_responses <- c(which(df_seg_critical_errors$n >= 0))
+miss_seg_critical_responses #prints row numbers on critical data points excedding 5
+miss_seg_critical_users <- subset(df_seg_critical_errors, df_seg_critical_errors$n >=0)
+
 # Create new tibbles based only on participants who committed a high number errors to fillers
 tb_high_seg_filler_error_part <- df_seg_filler_errors[high_seg_filler_responses,] # creates tibble of participants and number of errors
 #tb_high_seg_filler_error_part #prints 2 column tibble of participant and error rate
@@ -174,8 +211,8 @@ if(length(investigate) == 0){
   print('See who has too many errors:')
 }
 
-rm(df_low_seg_errors_part,df_high_seg_errors_part,df_seg_filler_errors,df_seg_critical_errors,file_exp,
-   drop_participants,new_data,seg_files,seg_filler,seg_filler_responses,df_raw_seg)
+#rm(df_low_seg_errors_part,df_high_seg_errors_part,df_seg_filler_errors,df_seg_critical_errors,file_exp,
+#   drop_participants,new_data,seg_files,seg_filler,seg_filler_responses,df_raw_seg)
 
 #preseve original dataframe
 seg_critical_raw <- seg_critical
@@ -192,11 +229,15 @@ seg_critical <- seg_critical_hits %>%
   subset(.,partNum %ni% high_miss_seg_critical_users$vars)
 
 valid_part <- unique(seg_critical$partNum)
-saveRDS(valid_part, file="../Demographics/online_lemma_participants")
+#saveRDS(valid_part, file="../Demographics/online_lemma_participants")
 
 participant_responses_all <- subset(drop_participants, drop_participants$partNum %in% valid_part)
-write_csv(participant_responses_all, '44_monolingual_all_segmentation_responses.csv')
+#write_csv(participant_responses_all, '44_L2_all_segmentation_responses.csv')
 # Run to here to check data validation participants provided good data 
+
+
+
+
 
 
 #participants <- unique(select(seg_critical,c(partNum,session,preferLanguage)))
