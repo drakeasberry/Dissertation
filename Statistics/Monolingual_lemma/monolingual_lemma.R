@@ -27,6 +27,9 @@ df_raw_seg <- ldply(seg_files, read_csv)
 # Delete practice trial rows
 file_exp <- drop_na(df_raw_seg, any_of("corrAns"))
 
+# write out all observations in segementation experiment
+write_csv(file_exp, 'all_participants_monolingual_all_segmenation_responses.csv')
+
 # Checking Data Demographics
 unique(file_exp$birthCountry)
 unique(file_exp$raisedCountry)
@@ -191,7 +194,8 @@ seg_critical <- seg_critical_hits %>%
 valid_part <- unique(seg_critical$partNum)
 saveRDS(valid_part, file="../Demographics/online_lemma_participants")
 
-
+participant_responses_all <- subset(drop_participants, drop_participants$partNum %in% valid_part)
+write_csv(participant_responses_all, '44_monolingual_all_segmentation_responses.csv')
 # Run to here to check data validation participants provided good data 
 
 
