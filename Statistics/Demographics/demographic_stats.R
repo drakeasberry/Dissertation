@@ -100,6 +100,11 @@ mono_lex_esp_cleaned <- mono_lex_esp %>%
   subset(word != 'delantera') %>%
   subset(word != 'garbardina')
 
+# Read vector from R session Monolingual Lemma Segmentation Visual
+segmentation_remaining <- readRDS("online_lemma_participants")
+mono_lex_esp_cleaned <- subset(mono_lex_esp_cleaned, mono_lex_esp_cleaned$partNum %in% segmentation_remaining)
+write_csv(mono_lex_esp_cleaned, '44_monolingual_lextale_all_responses.csv')
+
 # get LexTALE scores
 # commented lines only for quick viewing purposes, NOT analysis
 #lex_eng_score <- aggregate(data=lex_eng_cleaned, lexRespEngCorr ~ partNum + birthCountry, FUN='mean')
@@ -123,13 +128,12 @@ mono_nw_incorr <- mono_nw_incorr %>%
   add_column(., yes_to_nonword = 30 - mono_nw_incorr$lextaleRespEspCorr) %>% 
   select(.,-c('lextaleRespEspCorr'))
 
-# Read vector from R session Monolingual Lemma Segmentation Visual
-segmentation_remaining <- readRDS("online_lemma_participants")
-
 #drop_list <- c("5e8dec12d5013b07b4d1fd09", "5ef13c6ab19a6e230cfac96b", "5b654ab940003400016f53ff")
 mono_lex_esp_izura <- merge(mono_wd_corr, mono_nw_incorr, by='partNum') %>% 
   add_column(.,izura_score = .$yes_to_word - 2 * .$yes_to_nonword) %>% 
   subset(.,.$partNum %in% segmentation_remaining)
+
+write_csv(mono_lex_esp_izura, '44_monolingual_izura_score.csv')
 
 # Monolingual Lextale-Esp distribution plots
 densityplot(~izura_score, data = mono_lex_esp_izura, main = 'Density plot of Monolingual participants') 
