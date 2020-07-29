@@ -1,0 +1,11 @@
+,block,expWord,wd_int_syl_str,tar_syl_str,tar_syl,wd_status,matching,lemma,first_3,fillerCarrier,corrAns
+0,block31,rosepio,CV,CVC,ros,nonword,mismatch,ros,ros,critical,b
+1,block31,divona,CV,CVC,ros,nonword,mismatch,ros,div,filler01,None
+2,block31,mipcura,CVC,CVC,ros,nonword,match,ros,mip,filler02,None
+3,block31,fivalia,CV,CVC,ros,nonword,mismatch,ros,fiv,filler03,None
+4,block31,baldeblo,CVC,CVC,ros,nonword,match,ros,bal,filler04,None
+5,block31,venetlo,CV,CVC,ros,nonword,mismatch,ros,ven,filler05,None
+6,block31,funclera,CVC,CVC,ros,nonword,match,ros,fun,filler06,None
+7,block31,mifena,CV,CVC,ros,nonword,mismatch,ros,mif,filler07,None
+8,block31,ventoble,CVC,CVC,ros,nonword,match,ros,ven,filler08,None
+9,block31,tenvila,CVC,CVC,ros,nonword,match,ros,ten,filler09,None

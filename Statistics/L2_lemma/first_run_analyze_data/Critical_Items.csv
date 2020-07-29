@@ -1,0 +1,113 @@
+,word,word_initial_syl,Fragment_Pairs,word_status,Ortho_Length,Phono_Length,Num_Syl,word_freq,IPA_Full,IPA_Stress,IPA_Narrow,IPA_Broad,meaning,Exp_Prac
+0,balega,CV,ba-bal,Nonword,6.0,6.0,3.0,,ba.ˈle.ɣa,baˈleɣa,baleɣa,baleɣa,,Experimental
+1,bolipo,CV,bo-bol,Nonword,6.0,6.0,3.0,,bo.ˈli.po,boˈlipo,bolipo,bolipo,,Experimental
+2,camofa,CV,ca-cam,Nonword,6.0,6.0,3.0,,ka.ˈmo.fa,kaˈmofa,kamofa,kamofa,,Experimental
+3,casozla,CV,ca-cas,Nonword,7.0,7.0,3.0,,ka.ˈsos̬.la,kaˈsos̬la,kasos̬la,kasosla,,Experimental
+4,cenoca,CV,ce-cen,Nonword,6.0,6.0,3.0,,se.ˈno.ka,seˈnoka,senoka,senoka,,Experimental
+5,cerida,CV,ce-cer,Nonword,6.0,6.0,3.0,,sɛ.ˈɾi.ða,sɛˈɾiða,sɛɾiða,sɛɾiða,,Experimental
+6,corede,CV,co-cor,Nonword,6.0,6.0,3.0,,ko.ˈɾe.ðe,koˈɾeðe,koɾeðe,koɾeðe,,Experimental
+7,corura,CV,co-cor,Nonword,6.0,6.0,3.0,,ko.ˈɾu.ɾa,koˈɾuɾa,koɾuɾa,koɾuɾa,,Experimental
+8,cosiba,CV,co-cos,Nonword,6.0,6.0,3.0,,ko.ˈsi.βa,koˈsiβa,kosiβa,kosiβa,,Experimental
+9,culitra,CV,cu-cul,Nonword,7.0,7.0,3.0,,ku.ˈlĩn.ra,kuˈlĩnra,kulĩnra,kulinra,,Experimental
+10,ganercia,CV,ga-gan,Nonword,8.0,8.0,3.0,,ɡa.ˈnɛɾ.sja,ɡaˈnɛɾsja,ɡanɛɾsja,ɡanɛɾsja,,Experimental
+11,garele,CV,ga-gar,Nonword,6.0,6.0,3.0,,ɡa.ˈɾe.le,ɡaˈɾele,ɡaɾele,ɡaɾele,,Experimental
+12,joruma,CV,jo-jor,Nonword,6.0,6.0,3.0,,xo.ˈɾu.ma,xoˈɾuma,xoɾuma,xoɾuma,,Experimental
+13,limucna,CV,li-lim,Nonword,7.0,7.0,3.0,,li.ˈmuf.na,liˈmufna,limufna,limufna,,Experimental
+14,linele,CV,li-lin,Nonword,6.0,6.0,3.0,,li.ˈne.le,liˈnele,linele,linele,,Experimental
+15,moniga,CV,mo-mon,Nonword,6.0,6.0,3.0,,mo.ˈni.ɣa,moˈniɣa,moniɣa,moniɣa,,Experimental
+16,moripa,CV,mo-mor,Nonword,6.0,6.0,3.0,,mo.ˈɾi.pa,moˈɾipa,moɾipa,moɾipa,,Experimental
+17,murepla,CV,mu-mur,Nonword,7.0,7.0,3.0,,mu.ˈɾɛs̬.la,muˈɾɛs̬la,muɾɛs̬la,muɾɛsla,,Experimental
+18,palura,CV,pa-pal,Nonword,6.0,6.0,3.0,,pa.ˈlu.ɾa,paˈluɾa,paluɾa,paluɾa,,Experimental
+19,paseñe,CV,pa-pas,Nonword,6.0,6.0,3.0,,pa.ˈse.ɲe,paˈseɲe,paseɲe,paseɲe,,Experimental
+20,periga,CV,pe-per,Nonword,6.0,6.0,3.0,,pɛ.ˈɾi.ɣa,pɛˈɾiɣa,pɛɾiɣa,pɛɾiɣa,,Experimental
+21,pesipa,CV,pe-pes,Nonword,6.0,6.0,3.0,,pe.ˈsi.pa,peˈsipa,pesipa,pesipa,,Experimental
+22,rosepio,CV,ro-ros,Nonword,7.0,7.0,3.0,,ro.ˈse.pjo,roˈsepjo,rosepjo,rosepjo,,Experimental
+23,voleste,CV,vo-vol,Nonword,7.0,7.0,3.0,,bo.ˈlɛs.te,boˈlɛste,bolɛste,bolɛste,,Experimental
+24,balbusa,CVC,ba-bal,Nonword,7.0,7.0,3.0,,bal.ˈβu.sa,balˈβusa,balβusa,balβusa,,Experimental
+25,bolfollo,CVC,bo-bol,Nonword,8.0,7.0,3.0,,bol.ˈfo.ʝo,bolˈfoʝo,bolfoʝo,bolfoʝo,,Experimental
+26,cambena,CVC,ca-cam,Nonword,7.0,7.0,3.0,,kãm.ˈbe.na,kãmˈbena,kãmbena,kambena,,Experimental
+27,casgollo,CVC,ca-cas,Nonword,8.0,7.0,3.0,,kas̬.ˈɣo.ʝo,kas̬ˈɣoʝo,kas̬ɣoʝo,kasɣoʝo,,Experimental
+28,cendevo,CVC,ce-cen,Nonword,7.0,7.0,3.0,,sɛ̃n̪.ˈde.βo,sɛ̃n̪ˈdeβo,sɛ̃n̪deβo,sɛndeβo,,Experimental
+29,cerliza,CVC,ce-cer,Nonword,7.0,7.0,3.0,,sɛɾ.ˈli.sa,sɛɾˈlisa,sɛɾlisa,sɛɾlisa,,Experimental
+30,corteta,CVC,co-cor,Nonword,7.0,7.0,3.0,,koɾ.ˈtɛ.ta,koɾˈtɛta,koɾtɛta,koɾtɛta,,Experimental
+31,cormiza,CVC,co-cor,Nonword,7.0,7.0,3.0,,koɾ.ˈmi.sa,koɾˈmisa,koɾmisa,koɾmisa,,Experimental
+32,coslolla,CVC,co-cos,Nonword,8.0,7.0,3.0,,kos̬.ˈlo.ʝa,kos̬ˈloʝa,kos̬loʝa,kosloʝa,,Experimental
+33,culseble,CVC,cu-cul,Nonword,8.0,8.0,3.0,,kul.ˈse.βle,kulˈseβle,kulseβle,kulseβle,,Experimental
+34,ganquillo,CVC,ga-gan,Nonword,9.0,7.0,3.0,,ɡãŋ.ˈki.ʝo,ɡãŋˈkiʝo,ɡãŋkiʝo,ɡaŋkiʝo,,Experimental
+35,garventa,CVC,ga-gar,Nonword,8.0,8.0,3.0,,ɡaɾ.ˈβɛ̃n̪.ta,ɡaɾˈβɛ̃n̪ta,ɡaɾβɛ̃n̪ta,ɡaɾβɛnta,,Experimental
+36,jorteda,CVC,jo-jor,Nonword,7.0,7.0,3.0,,xoɾ.ˈte.ða,xoɾˈteða,xoɾteða,xoɾteða,,Experimental
+37,limboza,CVC,li-lim,Nonword,7.0,7.0,3.0,,lĩm.ˈβo.sa,lĩmˈβosa,lĩmβosa,lĩmβosa,,Experimental
+38,linlirna,CVC,li-lin,Nonword,8.0,8.0,3.0,,lĩn.ˈliɾ.na,lĩnˈliɾna,lĩnliɾna,linliɾna,,Experimental
+39,monseña,CVC,mo-mon,Nonword,7.0,7.0,3.0,,mõn.ˈse.ɲa,mõnˈseɲa,mõnseɲa,monseɲa,,Experimental
+40,morbollo,CVC,mo-mor,Nonword,8.0,7.0,3.0,,moɾ.ˈβo.ʝo,moɾˈβoʝo,moɾβoʝo,moɾβoʝo,,Experimental
+41,murdallo,CVC,mu-mur,Nonword,8.0,7.0,3.0,,muɾ.ˈða.ʝo,muɾˈðaʝo,muɾðaʝo,muɾðaʝo,,Experimental
+42,palbira,CVC,pa-pal,Nonword,7.0,7.0,3.0,,pal.ˈβi.ɾa,palˈβiɾa,palβiɾa,palβiɾa,,Experimental
+43,paslolla,CVC,pa-pas,Nonword,8.0,7.0,3.0,,pas̬.ˈlo.ʝa,pas̬ˈloʝa,pas̬loʝa,pasloʝa,,Experimental
+44,pergoso,CVC,pe-per,Nonword,7.0,7.0,3.0,,pɛɾ.ˈɣo.so,pɛɾˈɣoso,pɛɾɣoso,pɛɾɣoso,,Experimental
+45,pesdeña,CVC,pe-pes,Nonword,7.0,7.0,3.0,,pɛs̬.ˈðe.ɲa,pɛs̬ˈðeɲa,pɛs̬ðeɲa,pɛsðeɲa,,Experimental
+46,rosvailla,CVC,ro-ros,Nonword,9.0,8.0,3.0,,ros̬.ˈβai̯.ʝa,ros̬ˈβai̯ʝa,ros̬βai̯ʝa,rosβaiʝa,,Experimental
+47,volpeje,CVC,vo-vol,Nonword,7.0,7.0,3.0,,bol.ˈpe.xe,bolˈpexe,bolpexe,bolpexe,,Experimental
+48,balada,CV,ba-bal,Word,6.0,6.0,3.0,0.8894230769230769,ba.ˈla.ða,baˈlaða,balaða,balaða,ballad,Experimental
+49,bolero,CV,bo-bol,Word,6.0,6.0,3.0,0.4807692307692307,bo.ˈlɛ.ɾo,boˈlɛɾo,bolɛɾo,bolɛɾo,jacket,Experimental
+50,camisa,CV,ca-cam,Word,6.0,6.0,3.0,46.27403846153846,ka.ˈmi.sa,kaˈmisa,kamisa,kamisa,shirt,Experimental
+51,casilla,CV,ca-cas,Word,7.0,6.0,3.0,2.9326923076923075,ka.ˈsi.ʝa,kaˈsiʝa,kasiʝa,kasiʝa,square; booth,Experimental
+52,ceniza,CV,ce-cen,Word,6.0,6.0,3.0,1.7788461538461535,se.ˈni.sa,seˈnisa,senisa,senisa,ash,Experimental
+53,cereza,CV,ce-cer,Word,6.0,6.0,3.0,4.831730769230768,sɛ.ˈɾe.sa,sɛˈɾesa,sɛɾesa,sɛɾesa,cherry,Experimental
+54,coraje,CV,co-cor,Word,6.0,6.0,3.0,15.528846153846152,ko.ˈɾa.xe,koˈɾaxe,koɾaxe,koɾaxe,courage,Experimental
+55,corona,CV,co-cor,Word,6.0,6.0,3.0,13.173076923076925,ko.ˈɾo.na,koˈɾona,koɾona,koɾona,crown,Experimental
+56,cosecha,CV,co-cos,Word,7.0,6.0,3.0,7.7163461538461515,ko.ˈse.ʧa,koˈseʧa,koseʧa,koseʧa,harvest; crop,Experimental
+57,culebra,CV,cu-cul,Word,7.0,7.0,3.0,0.7451923076923077,ku.ˈle.βɾa,kuˈleβɾa,kuleβɾa,kuleβɾa,snake,Experimental
+58,ganancia,CV,ga-gan,Word,8.0,8.0,3.0,5.697115384615384,ɡa.ˈnãn.sja,ɡaˈnãnsja,ɡanãnsja,ɡanansja,profit,Experimental
+59,garaje,CV,ga-gar,Word,6.0,6.0,3.0,21.875,ɡa.ˈɾa.xe,ɡaˈɾaxe,ɡaɾaxe,ɡaɾaxe,garage,Experimental
+60,joroba,CV,jo-jor,Word,6.0,6.0,3.0,1.2019230769230769,xo.ˈɾo.βa,xoˈɾoβa,xoɾoβa,xoɾoβa,hump (animal),Experimental
+61,limosna,CV,li-lim,Word,7.0,7.0,3.0,1.9230769230769231,li.ˈmos̬.na,liˈmos̬na,limos̬na,limosna,charity,Experimental
+62,linaje,CV,li-lin,Word,6.0,6.0,3.0,2.379807692307692,li.ˈna.xe,liˈnaxe,linaxe,linaxe,lineage,Experimental
+63,moneda,CV,mo-mon,Word,6.0,6.0,3.0,18.028846153846157,mo.ˈne.ða,moˈneða,moneða,moneða,coin; currency,Experimental
+64,morera,CV,mo-mor,Word,6.0,6.0,3.0,0.0,mo.ˈɾɛ.ɾa,moˈɾɛɾa,moɾɛɾa,moɾɛɾa,mulberry,Experimental
+65,muralla,CV,mu-mur,Word,7.0,6.0,3.0,1.995192307692308,mu.ˈɾa.ʝa,muˈɾaʝa,muɾaʝa,muɾaʝa,wall,Experimental
+66,paloma,CV,pa-pal,Word,6.0,6.0,3.0,6.1298076923076925,pa.ˈlo.ma,paˈloma,paloma,paloma,dove; pigeon,Experimental
+67,pasaje,CV,pa-pas,Word,6.0,6.0,3.0,11.971153846153845,pa.ˈsa.xe,paˈsaxe,pasaxe,pasaxe,voyage; ticket,Experimental
+68,pereza,CV,pe-per,Word,6.0,6.0,3.0,1.3701923076923077,pɛ.ˈɾe.sa,pɛˈɾesa,pɛɾesa,pɛɾesa,laziness,Experimental
+69,peseta,CV,pe-pes,Word,6.0,6.0,3.0,0.14423076923076922,pe.ˈsɛ.ta,peˈsɛta,pesɛta,pesɛta,cent,Experimental
+70,rosario,CV,ro-ros,Word,7.0,7.0,3.0,4.350961538461538,ro.ˈsa.ɾjo,roˈsaɾjo,rosaɾjo,rosaɾjo,rosary,Experimental
+71,volante,CV,vo-vol,Word,7.0,7.0,3.0,11.298076923076925,bo.ˈlãn̪.te,boˈlãn̪te,bolãn̪te,bolante,steering wheel,Experimental
+72,baldosa,CVC,ba-bal,Word,7.0,7.0,3.0,0.5528846153846154,bal̪.ˈdo.sa,bal̪ˈdosa,bal̪dosa,baldosa,floor tile,Experimental
+73,bolsillo,CVC,bo-bol,Word,8.0,7.0,3.0,28.53365384615385,bol.ˈsi.ʝo,bolˈsiʝo,bolsiʝo,bolsiʝo,pocket,Experimental
+74,campana,CVC,ca-cam,Word,7.0,7.0,3.0,9.302884615384617,kãm.ˈpa.na,kãmˈpana,kãmpana,kampana,bell,Experimental
+75,castillo,CVC,ca-cas,Word,8.0,7.0,3.0,21.298076923076927,kas.ˈti.ʝo,kasˈtiʝo,kastiʝo,kastiʝo,castle,Experimental
+76,centavo,CVC,ce-cen,Word,7.0,7.0,3.0,17.163461538461537,sɛ̃n̪.ˈta.βo,sɛ̃n̪ˈtaβo,sɛ̃n̪taβo,sɛntaβo,cent,Experimental
+77,cerveza,CVC,ce-cer,Word,7.0,7.0,3.0,79.61538461538461,sɛɾ.ˈβe.sa,sɛɾˈβesa,sɛɾβesa,sɛɾβesa,beer,Experimental
+78,corbata,CVC,co-cor,Word,7.0,7.0,3.0,15.264423076923075,koɾ.ˈβa.ta,koɾˈβata,koɾβata,koɾβata,tie,Experimental
+79,corteza,CVC,co-cor,Word,7.0,7.0,3.0,5.3125,koɾ.ˈte.sa,koɾˈtesa,koɾtesa,koɾtesa,bark (tree),Experimental
+80,costilla,CVC,co-cos,Word,8.0,7.0,3.0,3.1009615384615383,kos.ˈti.ʝa,kosˈtiʝa,kostiʝa,kostiʝa,rib,Experimental
+81,culpable,CVC,cu-cul,Word,8.0,8.0,3.0,61.466346153846146,kul.ˈpa.βle,kulˈpaβle,kulpaβle,kulpaβle,culprit,Experimental
+82,ganchillo,CVC,ga-gan,Word,9.0,7.0,3.0,0.048076923076923066,ɡãn̠.ˈʧi.ʝo,ɡãn̠ˈʧiʝo,ɡãn̠ʧiʝo,ɡanʧiʝo,crochet hook,Experimental
+83,garganta,CVC,ga-gar,Word,8.0,8.0,3.0,24.591346153846153,ɡaɾ.ˈɣãn̪.ta,ɡaɾˈɣãn̪ta,ɡaɾɣãn̪ta,ɡaɾɣanta,throat,Experimental
+84,jornada,CVC,jo-jor,Word,7.0,7.0,3.0,2.7163461538461537,xoɾ.ˈna.ða,xoɾˈnaða,xoɾnaða,xoɾnaða,workday; Shift,Experimental
+85,limpieza,CVC,li-lim,Word,8.0,8.0,3.0,20.02403846153846,lĩm.ˈpje.sa,lĩmˈpjesa,lĩmpjesa,limpjesa,cleanliness,Experimental
+86,linterna,CVC,li-lin,Word,8.0,8.0,3.0,10.240384615384617,lĩn̪.ˈtɛɾ.na,lĩn̪ˈtɛɾna,lĩn̪tɛɾna,lintɛɾna,lantern,Experimental
+87,montaña,CVC,mo-mon,Word,7.0,7.0,3.0,33.341346153846146,mõn̪.ˈta.ɲa,mõn̪ˈtaɲa,mõn̪taɲa,montaɲa,mountain,Experimental
+88,morcillo,CVC,mo-mor,Word,8.0,7.0,3.0,0.18,moɾ.ˈsi.ʝo,moɾˈsiʝo,moɾsiʝo,moɾsiʝo,beef shank,Experimental
+89,murmullo,CVC,mu-mur,Word,8.0,7.0,3.0,0.9375,muɾ.ˈmu.ʝo,muɾˈmuʝo,muɾmuʝo,muɾmuʝo,murmur,Experimental
+90,palmera,CVC,pa-pal,Word,7.0,7.0,3.0,1.2019230769230769,pal.ˈmɛ.ɾa,palˈmɛɾa,palmɛɾa,palmɛɾa,palm tree,Experimental
+91,pastilla,CVC,pa-pas,Word,8.0,7.0,3.0,6.490384615384616,pas.ˈti.ʝa,pasˈtiʝa,pastiʝa,pastiʝa,pill,Experimental
+92,permiso,CVC,pe-per,Word,7.0,7.0,3.0,99.63942307692308,pɛɾ.ˈmi.so,pɛɾˈmiso,pɛɾmiso,pɛɾmiso,permission,Experimental
+93,pestaña,CVC,pe-pes,Word,7.0,7.0,3.0,0.7692307692307692,pɛs.ˈta.ɲa,pɛsˈtaɲa,pɛstaɲa,pɛstaɲa,eyelash; tab,Experimental
+94,rosquilla,CVC,ro-ros,Word,9.0,7.0,3.0,3.677884615384616,ros.ˈki.ʝa,rosˈkiʝa,roskiʝa,roskiʝa,doughnut,Experimental
+95,voltaje,CVC,vo-vol,Word,7.0,7.0,3.0,2.019230769230769,bol̪.ˈta.xe,bol̪ˈtaxe,bol̪taxe,boltaxe,voltage,Experimental
+96,delirio,CV,de-del,Word,7.0,7.0,3.0,2.9567307692307687,de.ˈli.ɾjo,deˈliɾjo,deliɾjo,deliɾjo,delirium,Practice
+97,deltoides,CVC,de-del,Word,9.0,9.0,3.0,0.18,dɛl.ˈtoi̯.ðes,dɛlˈtoi̯ðes,dɛltoi̯ðes,dɛltoiðes,deltoid,Practice
+98,silicio,CV,si-sil,Word,7.0,7.0,3.0,0.8413461538461539,si.ˈli.sjo,siˈlisjo,silisjo,silisjo,silicon,Practice
+99,silbido,CVC,si-sil,Word,7.0,7.0,3.0,1.2019230769230769,sil.ˈβi.ðo,silˈβiðo,silβiðo,silβiðo,whistle,Practice
+100,venado,CV,ve-ven,Word,6.0,6.0,3.0,3.1971153846153846,be.ˈna.ðo,beˈnaðo,benaðo,benaðo,deer,Practice
+101,vendimia,CVC,ve-ven,Word,8.0,8.0,3.0,0.2644230769230769,bɛ̃n.ˈdi.mja,bɛ̃nˈdimja,bɛ̃ndimja,bɛndimja,grape harvest,Practice
+102,costumbre,CVC,co-cos,Word,9.0,9.0,3.0,13.028846153846152,kos.ˈtũm.bɾe,kosˈtũmbɾe,kostũmbɾe,kostumbɾe,custom; habit,Practice
+103,cosigna,CV,co-cos,Word,7.0,7.0,3.0,0.18,ko.ˈsiɣ.na,koˈsiɣna,kosiɣna,kosiɣna,order; slogan,Practice
+104,delbides,CVC,de-del,Nonword,8.0,8.0,3.0,,dɛl.ˈβi.ðes,dɛlˈβiðes,dɛlβiðes,dɛlβiðes,,Practice
+105,deletio,CV,de-del,Nonword,7.0,7.0,3.0,,di.ˈlɛ.tjo,diˈlɛtjo,dilɛtjo,dilɛtjo,,Practice
+106,siledio,CV,si-sil,Nonword,7.0,7.0,3.0,,si.ˈle.ðjo,siˈleðjo,sileðjo,sileðjo,,Practice
+107,sildedo,CVC,si-sil,Nonword,7.0,7.0,3.0,,sil.ˈde.ðo,silˈdeðo,sildeðo,sildeðo,,Practice
+108,venuro,CV,ve-ven,Nonword,6.0,6.0,3.0,,be.ˈnu.ɾo,beˈnuɾo,benuɾo,benuɾo,,Practice
+109,ventemia,CVC,ve-ven,Nonword,8.0,8.0,3.0,,bɛ̃n.ˈte.mja,bɛ̃nˈtemja,bɛ̃ntemja,bɛntemja,,Practice
+110,coserna,CV,co-cos,Nonword,7.0,7.0,3.0,,ko.ˈsɛɾ.na,koˈsɛɾna,kosɛɾna,kosɛɾna,,Practice
+111,cosdombre,CVC,co-cos,Nonword,9.0,9.0,3.0,,kos̬.ˈðõm.bɾe,kos̬ˈðõmbɾe,kos̬ðõmbɾe,kosðombɾe,,Practice

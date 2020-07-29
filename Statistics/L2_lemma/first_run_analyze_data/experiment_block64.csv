@@ -1,0 +1,11 @@
+,block,expWord,wd_int_syl_str,tar_syl_str,tar_syl,wd_status,matching,lemma,first_3,fillerCarrier,corrAns
+0,block64,palura,CV,CVC,pal,nonword,mismatch,pal,pal,critical,b
+1,block64,bitero,CV,CVC,pal,nonword,mismatch,pal,bit,filler01,None
+2,block64,tudala,CV,CVC,pal,nonword,mismatch,pal,tud,filler02,None
+3,block64,fivancia,CV,CVC,pal,nonword,mismatch,pal,fiv,filler03,None
+4,block64,turquma,CVC,CVC,pal,nonword,match,pal,tur,filler04,None
+5,block64,ruspina,CVC,CVC,pal,nonword,match,pal,rus,filler05,None
+6,block64,detnana,CVC,CVC,pal,nonword,match,pal,det,filler06,None
+7,block64,tifencio,CV,CVC,pal,nonword,mismatch,pal,tif,filler07,None
+8,block64,zurdado,CVC,CVC,pal,nonword,match,pal,zur,filler08,None
+9,block64,sisluño,CVC,CVC,pal,nonword,match,pal,sis,filler09,None

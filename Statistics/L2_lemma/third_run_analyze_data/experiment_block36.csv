@@ -1,0 +1,11 @@
+,block,expWord,wd_int_syl_str,tar_syl_str,tar_syl,wd_status,matching,lemma,first_3,fillerCarrier,corrAns
+0,block36,campana,CVC,CVC,cam,word,match,cam,cam,critical,b
+1,block36,fondillo,CVC,CVC,cam,word,match,cam,fon,filler01,None
+2,block36,sordera,CVC,CVC,cam,word,match,cam,sor,filler02,None
+3,block36,percance,CVC,CVC,cam,word,match,cam,per,filler03,None
+4,block36,rivera,CV,CVC,cam,word,mismatch,cam,riv,filler04,None
+5,block36,pinchazo,CVC,CVC,cam,word,match,cam,pin,filler05,None
+6,block36,renombre,CV,CVC,cam,word,mismatch,cam,ren,filler06,None
+7,block36,regazo,CV,CVC,cam,word,mismatch,cam,reg,filler07,None
+8,block36,regato,CV,CVC,cam,word,mismatch,cam,reg,filler08,None
+9,block36,pureza,CV,CVC,cam,word,mismatch,cam,pur,filler09,None

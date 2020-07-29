@@ -1,0 +1,11 @@
+,block,expWord,wd_int_syl_str,tar_syl_str,tar_syl,wd_status,matching,lemma,first_3,fillerCarrier,corrAns
+0,block58,paloma,CV,CVC,pal,word,mismatch,pal,pal,critical,b
+1,block58,certeza,CVC,CVC,pal,word,match,pal,cer,filler01,None
+2,block58,cordero,CVC,CVC,pal,word,match,pal,cor,filler02,None
+3,block58,cordura,CVC,CVC,pal,word,match,pal,cor,filler03,None
+4,block58,mordaza,CVC,CVC,pal,word,match,pal,mor,filler04,None
+5,block58,mordisco,CVC,CVC,pal,word,match,pal,mor,filler05,None
+6,block58,reguero,CV,CVC,pal,word,mismatch,pal,reg,filler06,None
+7,block58,rudeza,CV,CVC,pal,word,mismatch,pal,rud,filler07,None
+8,block58,gomina,CV,CVC,pal,word,mismatch,pal,gom,filler08,None
+9,block58,ciruelo,CV,CVC,pal,word,mismatch,pal,cir,filler09,None

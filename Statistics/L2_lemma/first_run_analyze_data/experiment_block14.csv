@@ -1,0 +1,11 @@
+,block,expWord,wd_int_syl_str,tar_syl_str,tar_syl,wd_status,matching,lemma,first_3,fillerCarrier,corrAns
+0,block14,linlirna,CVC,CV,li,nonword,mismatch,lin,lin,critical,b
+1,block14,parvida,CVC,CV,li,nonword,mismatch,lin,par,filler01,None
+2,block14,sociare,CV,CV,li,nonword,match,lin,soc,filler02,None
+3,block14,decanro,CV,CV,li,nonword,match,lin,dec,filler03,None
+4,block14,taviño,CV,CV,li,nonword,match,lin,tav,filler04,None
+5,block14,pospana,CVC,CV,li,nonword,mismatch,lin,pos,filler05,None
+6,block14,poscallo,CVC,CV,li,nonword,mismatch,lin,pos,filler06,None
+7,block14,gerotio,CV,CV,li,nonword,match,lin,ger,filler07,None
+8,block14,tusorto,CV,CV,li,nonword,match,lin,tus,filler08,None
+9,block14,tercega,CVC,CV,li,nonword,mismatch,lin,ter,filler09,None

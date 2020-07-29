@@ -1,0 +1,11 @@
+,block,expWord,wd_int_syl_str,tar_syl_str,tar_syl,wd_status,matching,lemma,first_3,fillerCarrier,corrAns
+0,block08,balbusa,CVC,CVC,bal,nonword,match,bal,bal,critical,b
+1,block08,denciña,CVC,CVC,bal,nonword,match,bal,den,filler01,None
+2,block08,cecaja,CV,CVC,bal,nonword,mismatch,bal,cec,filler02,None
+3,block08,vestolcio,CVC,CVC,bal,nonword,match,bal,ves,filler03,None
+4,block08,cicora,CV,CVC,bal,nonword,mismatch,bal,cic,filler04,None
+5,block08,sinvera,CVC,CVC,bal,nonword,match,bal,sin,filler05,None
+6,block08,simedo,CV,CVC,bal,nonword,mismatch,bal,sim,filler06,None
+7,block08,donania,CV,CVC,bal,nonword,mismatch,bal,don,filler07,None
+8,block08,vobita,CV,CVC,bal,nonword,mismatch,bal,vob,filler08,None
+9,block08,cencera,CVC,CVC,bal,nonword,match,bal,cen,filler09,None
