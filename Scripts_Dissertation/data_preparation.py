@@ -147,17 +147,20 @@ def create_analysis_files(csv_files, list_name, input_dir, output_dir,indexing):
     lexical_dir = 'Statistics/Lexical_Access/analyze_data'
     segmentation_dir = 'Statistics/Segmentation/analyze_data'
     online_lemma_dir = 'Statistics/Monolingual_lemma/analyze_data'
+    l2_lemma_dir = 'Statistics/L2_lemma/analyze_data'
     file_locations = ['Statistics/Segmentation/analyze_data/temp_data/lextale_eng_cols',
                       'Statistics/Lexical_Access/analyze_data/temp_data/lextale_eng_cols',
                       'Statistics/Segmentation/analyze_data/temp_data/lextale_esp_cols',
                       'Statistics/Lexical_Access/analyze_data/temp_data/lextale_esp_cols',
                       'Statistics/Monolingual_lemma/analyze_data/temp_data/lextale_esp_cols',
+                      'Statistics/L2_lemma/analyze_data/temp_data/lextale_esp_cols',
                       'Statistics/Segmentation/analyze_data/temp_data/syl_cols',
                       'Statistics/Lexical_Access/analyze_data/temp_data/syl_cols',
                       'Statistics/Segmentation/analyze_data/temp_data/blp_cols',
                       'Statistics/Lexical_Access/analyze_data/temp_data/blp_cols',
                       'Statistics/Segmentation/analyze_data/temp_data/seg_cols',
                       'Statistics/Monolingual_lemma/analyze_data/temp_data/seg_cols',
+                      'Statistics/L2_lemma/analyze_data/temp_data/seg_cols',
                       'Statistics/Lexical_Access/analyze_data/temp_data/lexical_cols']
     output_files = []
     for file in csv_files:
@@ -165,26 +168,29 @@ def create_analysis_files(csv_files, list_name, input_dir, output_dir,indexing):
         name, ext = os.path.splitext(file)
 
         locations_lextale_eng = file_locations[0:2]
-        locations_lextale_esp = file_locations[2:5]
+        locations_lextale_esp = file_locations[2:6]
         if input_dir in locations_lextale_eng:
             key = subset_key_list[0]
             write_dir = os.path.join(output_dir, demo_dir, list_name)
         elif input_dir in locations_lextale_esp:
             key = subset_key_list[1]
             write_dir = os.path.join(output_dir, demo_dir, list_name)
-        elif input_dir in file_locations[5:7]:
+        elif input_dir in file_locations[6:8]:
             key = subset_key_list[2]
             write_dir = os.path.join(output_dir, syllable_dir, 'raw')
-        elif input_dir in file_locations[7:9]:
+        elif input_dir in file_locations[8:10]:
             key = subset_key_list[3]
             write_dir = os.path.join(output_dir, demo_dir, list_name)
-        elif input_dir in file_locations[9:10]:
-            key = subset_key_list[4]
-            write_dir = os.path.join(output_dir, segmentation_dir, 'raw')
         elif input_dir in file_locations[10]:
             key = subset_key_list[4]
-            write_dir = os.path.join(output_dir, online_lemma_dir, 'raw')
+            write_dir = os.path.join(output_dir, segmentation_dir, 'raw')
         elif input_dir in file_locations[11]:
+            key = subset_key_list[4]
+            write_dir = os.path.join(output_dir, online_lemma_dir, 'raw')
+        elif input_dir in file_locations[12]:
+            key = subset_key_list[4]
+            write_dir = os.path.join(output_dir, l2_lemma_dir, 'raw')
+        elif input_dir in file_locations[13]:
             key = subset_key_list[5]
             write_dir = os.path.join(output_dir, lexical_dir, 'raw')
         else:
