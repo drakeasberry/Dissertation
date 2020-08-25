@@ -430,3 +430,13 @@ ggplot(data=miquel_wd,aes(x=tar_syl_str,y=average, group=wd_int_syl_str, color=w
   geom_line() + 
   geom_point() + 
   labs(title="RTs by Target and Carrier Item Syllable Structure for Words",x="Target Structure",y= "Reaction Time (msec)")
+
+
+# Need to create data set for demographics One line per participant
+# demogrpahics_all.csv
+# Create subset for Segmentation Experiment Demographics
+# segmentation_online_demo.csv - may need to combine with output from monolingual population
+# partID, LexTALE-ENG, LexTale-ESP, Bilingual Langauge Profile
+# Store in Box > Laboratory > Active > data > attributes
+# Segmentation Lab Data by participant (only lab)
+# Store in Box > Laboratory > Active > data > input

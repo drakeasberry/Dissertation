@@ -320,3 +320,12 @@ if(length(investigate) == 0){
   } else{
     print('See who has too many errors:')
     }
+
+# Need to create data set for demographics One line per participant
+# demogrpahics_all.csv
+# Create subset for Segmentation Experiment Demographics
+# segmentation_lab_demo.csv
+# partID, LexTALE-ENG, LexTale-ESP, Bilingual Langauge Profile
+# Store in Box > Laboratory > Active > data > attributes
+# Segmentation Lab Data by participant (only lab)
+# Store in Box > Laboratory > Active > data > input

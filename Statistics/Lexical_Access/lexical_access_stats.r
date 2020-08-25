@@ -28,4 +28,13 @@ lexical_data <- lexical_data_raw %>%
 
 # write out to miquel workspace
 write_csv(lexical_data,'~/Desktop/working_diss_files/r-checking/lexical_data.csv')
+
+# Need to create data set for demographics One line per participant
+# demogrpahics_all.csv
+# Create subset for Lexical Access Experiment Demographics
+# lexical_access_demo.csv
+# partID, LexTALE-ENG, LexTale-ESP, Bilingual Langauge Profile
+# Store in Box > Intuition > Active > data > attributes
+# Lexical Access Data by participant (only lab)
+# Store in Box > Laboratory > Active > data > input
  

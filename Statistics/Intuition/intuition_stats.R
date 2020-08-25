@@ -28,3 +28,12 @@ syllable_data <- syllable_data_raw %>%
 rm(syllable_data_raw,syllable_dir,syllable_files)
 # write out to miquel workspace
 write_csv(syllable_data,'~/Desktop/working_diss_files/r-checking/intuition_data.csv')
+
+# Need to create data set for demographics One line per participant
+# demogrpahics_all.csv
+# Create subset for Intuition Experiment Demographics
+# intuition_demo.csv
+# partID, LexTALE-ENG, LexTale-ESP, Bilingual Langauge Profile
+# Store in Box > Intuition > Active > data > attributes
+# Syllable Intuition Data by participant (only lab)
+# Store in Box > Intuition > Active > data > input

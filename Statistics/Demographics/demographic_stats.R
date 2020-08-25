@@ -257,6 +257,13 @@ rm(eng_score,esp_score,lang_dom, blp_data_cleaned,blp_attitude_score,blp_history
 rm(eng_att,eng_hist,eng_prof,eng_use,esp_att,esp_hist,esp_prof,esp_use)
 rm(global_score, english, spanish, part_scores,lex_esp_score, lex_eng_score, demographics)
 
+# Need to create data set for demographics One line per participant
+# demogrpahics_all.csv
+# Create subset for Intuition Experiment, Lexical Access and Segmenation Experiment (lab), Segmenation (online)
+# intuition_demo.csv, lexical_access_demo.csv, segmentation_lab_demo.csv, segmentation_online_demo.csv
+# partID, LexTALE-ENG, LexTale-ESP, Bilingual Langauge Profile
+# Store in Box > Intuition > Active > data > attirbutes
+
 # export csv for Miquel Meeting
 write_csv(lang_attitude_clean,'~/Desktop/working_diss_files/r-checking/blp_attitude.csv')
 write_csv(lang_history_clean,'~/Desktop/working_diss_files/r-checking/blp_history.csv')
