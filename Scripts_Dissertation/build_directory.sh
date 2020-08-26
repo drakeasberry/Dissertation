@@ -29,6 +29,10 @@ mkdir -p Statistics/Lexical_Access/analyze_data/transformed
 mkdir -p Statistics/Segmentation/analyze_data
 mkdir -p Statistics/Segmentation/analyze_data/raw
 mkdir -p Statistics/Segmentation/analyze_data/transformed
+mkdir -p Statistics/Monolingual_lemma/analyze_data/temp_data/lextale_esp_cols
+mkdir -p Statistics/Monolingual_lemma/analyze_data/temp_data/seg_cols
+mkdir -p Statistics/L2_lemma/analyze_data/temp_data/lextale_esp_cols
+mkdir -p Statistics/L2_lemma/analyze_data/temp_data/seg_cols
 
 # Manuscript Directory
 mkdir -p Asberry_Dissertation
