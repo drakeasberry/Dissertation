@@ -3,7 +3,7 @@ import os
 from Scripts_Dissertation import data_preparation
 
 # Set some constants
-STARTFILECOUNT = 162
+STARTFILECOUNT = 77
 
 
 # Set some directory paths needed for project
@@ -57,7 +57,7 @@ for file in csv_list:
     try:
         df = data_preparation.read_pandas(raw_part_dir,file,False)
         print(df.size)
-        if df.size == 65895:
+        if df.size == 66850:
             valid_df.append(file)
         else:
             invalid_df.append(file)
