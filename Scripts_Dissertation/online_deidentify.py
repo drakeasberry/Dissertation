@@ -35,5 +35,5 @@ for start_dir in start_directories:
             #print(out_dir)
             # write new csv file
             df.to_csv(out_dir)
-        except:
-            pd.errors.EmptyDataError
+        except pd.errors.EmptyDataError as e:
+            print(f'{file} is empty...ignoring file')
