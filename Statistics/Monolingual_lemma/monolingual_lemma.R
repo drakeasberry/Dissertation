@@ -14,7 +14,7 @@ library(ggplot2)
 
 # Surpress all readr messages by default
 # https://www.reddit.com/r/rstats/comments/739vf6/how_to_turn_off_readrs_messages_by_default/
-#options(readr.num_columns = 0)
+options(readr.num_columns = 0)
 
 # Individual file test
 #file01 <- read_csv("analyze_data/raw/5c53e9b6b7cf140001d31e6a_lemma_segmentation_2020-07-09_13h38.38.934_seg_cols.csv")
@@ -23,12 +23,13 @@ library(ggplot2)
 # Load all files 
 seg_files <- list.files(path='analyze_data/raw/', pattern = '*.csv', full.names = TRUE) #list all the files with path
 df_raw_seg <- ldply(seg_files, read_csv)
+write_csv(df_raw_seg,'all_55_mono_lemma_raw.csv')
 
 # Delete practice trial rows
 file_exp <- drop_na(df_raw_seg, any_of("corrAns"))
 
 # write out all observations in segementation experiment
-write_csv(file_exp, 'all_participants_monolingual_all_segmenation_responses.csv')
+write_csv(file_exp, 'all_55_participants_monolingual_all_lemma.csv')
 
 # Checking Data Demographics
 unique(file_exp$birthCountry)
@@ -52,20 +53,22 @@ aggregate(file_exp[, c('segRespCorr')], list(file_exp$partNum), mean)
 
 # Participant exclusions
 # Kept
-# 5bdf91dbb32fa800012ea282 included because only had basic university English requirements
-# 5cbe45745973850015f7b090 included because only had basic English requirements (basic A2 on CEFR)
-# Dropped
-# 5e8dec12d5013b07b4d1fd09 dropped because they reported being raised in US and having an avanced level of English
-# 5ef13c6ab19a6e230cfac96b dropped because they reported being raised in US and having an avanced level of English
-# 5b654ab940003400016f53ff dropped because their level of English could not be verified
-# 5ec2d81556541c0ec6bd0115 dropped because of low score (< 10) on LexTALE-ESP
-# 5d65c6df8c012a00194fcbbe dropped because of low score (< 10) on LexTALE-ESP
+# part206 included because only had basic university English requirements
+# part214 included because only had basic English requirements (basic A2 on CEFR)
 
-drop_list <- c("5e8dec12d5013b07b4d1fd09", "5ef13c6ab19a6e230cfac96b", "5b654ab940003400016f53ff", 
-               "5d65c6df8c012a00194fcbbe", "5ec2d81556541c0ec6bd0115")
+# Dropped
+# part226 dropped because they reported being raised in US and having an avanced level of English
+# part251 dropped because they reported being raised in US and having an avanced level of English
+# part205 dropped because their level of English could not be verified
+# part252 dropped because of low score (< 10) on LexTALE-ESP
+# part221 dropped because of low score (< 10) on LexTALE-ESP
+
+drop_list <- c("part226", "part251", "part205", 
+               "part221", "part252")
 
 # drop participants who should not be analyzed
 drop_participants <- subset(file_exp, file_exp$partNum %ni% drop_list)
+write_csv(drop_participants, 'all_50_eligible_mono_all_segmenation_responses.csv')
 
 # Need library 'tidyverse' loaded
 # Create subset of all critical items
@@ -74,15 +77,15 @@ drop_participants <- subset(file_exp, file_exp$partNum %ni% drop_list)
 seg_critical <- subset(drop_participants, drop_participants$fillerCarrier == 'critical')
 #Prints tibble showing all responses and frequency of response to critical items
 #count(seg_critical, vars=segResp)
-write_csv(seg_critical,'~/Desktop/working_diss_files/r-checking/critical_items_lemma.csv')
+write_csv(seg_critical,'mono_50_critical_items_lemma.csv')
 
 # Further subset critical data set to those that were NOT responded to by participants
 seg_critical_misses <- subset(seg_critical, seg_critical$segRespCorr == 0)
-write_csv(seg_critical_misses,'~/Desktop/working_diss_files/r-checking/critical_misses_lemma.csv')
+write_csv(seg_critical_misses,'critical_misses_lemma.csv')
 
 # Further subset critical data set to those that were NOT responded to by participants
 seg_critical_hits <- subset(seg_critical, seg_critical$segRespCorr == 1)
-write_csv(seg_critical_hits,'~/Desktop/working_diss_files/r-checking/critical_hits_lemma.csv')
+write_csv(seg_critical_hits,'critical_hits_lemma.csv')
 
 # Create a tibble of participants who incorrectly did not respond to critical item including number of errors
 df_seg_critical_errors <- count(seg_critical_misses, vars=partNum)
@@ -102,11 +105,11 @@ seg_filler <- subset(drop_participants, drop_participants$fillerCarrier != 'crit
 #print('1 = response and None = no response')
 # Prints tibble showing all responses and frequency of response to filler items
 #count(seg_filler, vars=segResp)
-write_csv(seg_filler,'~/Desktop/working_diss_files/r-checking/filler_items_lemma.csv')
+write_csv(seg_filler,'mono_50_filler_items_lemma.csv')
 
 # Further subset filler data set to those that were responded to by participants
 seg_filler_responses <- subset(seg_filler, seg_filler$segRespCorr == 0)
-write_csv(seg_filler_responses,'~/Desktop/working_diss_files/r-checking/filler_responses_lemma.csv')
+write_csv(seg_filler_responses,'filler_responses_lemma.csv')
 
 # Create a dataframe of participants who incorrectly responded to a filler item
 df_seg_filler_errors <- count(seg_filler_responses, vars=partNum)
@@ -175,7 +178,7 @@ if(length(investigate) == 0){
 }
 
 rm(df_low_seg_errors_part,df_high_seg_errors_part,df_seg_filler_errors,df_seg_critical_errors,file_exp,
-   drop_participants,new_data,seg_files,seg_filler,seg_filler_responses,df_raw_seg)
+   new_data,seg_files,seg_filler,seg_filler_responses,df_raw_seg)
 
 #preseve original dataframe
 seg_critical_raw <- seg_critical
@@ -192,10 +195,15 @@ seg_critical <- seg_critical_hits %>%
   subset(.,partNum %ni% high_miss_seg_critical_users$vars)
 
 valid_part <- unique(seg_critical$partNum)
-saveRDS(valid_part, file="../Demographics/online_lemma_participants")
+saveRDS(valid_part, file="../Demographics/mono_lemma_participants")
 
+# Write a csv file with valid data points for participants who meet inclusion criteria
+write_csv(seg_critical, '44_monolingual_valid_response_critical_items.csv')
+
+# Create subset with only participant responses who meet inclusion criteria
 participant_responses_all <- subset(drop_participants, drop_participants$partNum %in% valid_part)
 write_csv(participant_responses_all, '44_monolingual_all_segmentation_responses.csv')
+
 # Run to here to check data validation participants provided good data 
 
 

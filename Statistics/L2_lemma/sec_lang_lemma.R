@@ -56,23 +56,21 @@ aggregate(file_exp[, c('segRespCorr')], list(file_exp$partNum), mean)
 
 # Participant exclusions
 # Kept
-# 5be3b08c020df800016ecb39 kept because they overwrote Estados Unidos with U.S, inglés woth English for house and preferred language
-# 5c3820ee1ede2b0001155929  kept because they overwrote Estados Unidos with U.S, inglés woth English for house and preferred language
-# 5f0e11c834d11c124835db1d kept because they chose "otro país" in experiment but verified US with Prolific
-# 5e56aab647b0010401dad5ee kept because they reported preferred language as español, learned Spanish at 18
-# 5f034e503ad29e522d6632aa kept because they reported ambos for house language and preferred language as español, learned Spanish at 12
+# part255 kept because they overwrote Estados Unidos with U.S, inglés with English for house and preferred language
+# part280 kept because they overwrote Estados Unidos with U.S, inglés woth English for house and preferred language
+# part268 kept because they reported preferred language as español, learned Spanish at 18
+# part262 kept because they reported ambos for house language and preferred language as español, learned Spanish at 12
 
 # Dropped
-# 5e666e4fc34e833dea58fe65 dropped because they reported being raised in Mexico, preferred and house language español
-# 5e50b4a8e6ef3b1027fa3a5d dropped because they reported preferred and house language as español, espanol es su primer idioma
-# 5ebf1420ede6902fa8e8c5cd dropped because they reported knowing French and Italian as well
-# 5ce7b1fbb215230001627697 dropped because reported being born outside US
-# 5ecc3c30ff90f54436c7b336 dropped because they reported knowing Italian as well
+# part267 dropped because they reported being raised in Mexico, preferred and house language español
+# part287 dropped because they reported knowing French and Italian as well
+# part315 dropped because reported being born outside US
+# part294 dropped because they reported knowing Italian as well
 
-# 5c3820ee1ede2b0001155929 dropped for high filler error, check to see if code can do it
+# part280 dropped for high filler error, check to see if code can do it
 
-drop_list <- c("5e666e4fc34e833dea58fe65", "5e50b4a8e6ef3b1027fa3a5d", "5ebf1420ede6902fa8e8c5cd", "5ecc3c30ff90f54436c7b336", 
-               "5ce7b1fbb215230001627697", "5c3820ee1ede2b0001155929")
+drop_list <- c("part267", "part287", "part294", 
+               "part315", "part280")
 
 # drop participants who should not be analyzed
 drop_participants <- subset(file_exp, file_exp$partNum %ni% drop_list)

@@ -102,7 +102,7 @@ seg_files <- list.files(path='analyze_data/transformed/', pattern = '*.csv', ful
 # import multiple csv code modified from code posted at this link below:
 # https://datascienceplus.com/how-to-import-multiple-csv-files-simultaneously-in-r-and-create-a-data-frame/
 df_raw_seg <- ldply(seg_files, read_csv)
-
+write_csv(df_raw_seg, 'all_74_segementation_raw.csv')
 #---
 # These items are only used in the Rstudio environment
 # Clean up unnecessary items in environment
@@ -217,22 +217,39 @@ seg_data_join <- df_raw_seg %>%
          matching = ifelse(word_initial_syl == target_syl_structure,'matching','mismatching')) %>%
   select("partNum","segResp","segRespRT","word","word_status","word_initial_syl","word_freq","targetSyl","target_syl_structure","matching", "exp_word_type","expName","block","session","age","gender","birthCountry","placeResidence","education","preferLanguage","date")
 
-write_csv(seg_data_join,'~/Desktop/working_diss_files/r-checking/segmentation_data.csv')
+write_csv(seg_data_join,'all_74_segmentation_transformed.csv')
+
 #---
 # These items are only used in the Rstudio environment
 # Clean up unnecessary items in environment
 rm(df_critical, df_rw_filler, df_pw_filler, exp_error, complete_joiner, corpus_joiner,
    df_filler, exp_joiner, df_raw_seg, join_dir, join_paths, keep_columns)
 #---
+group_map <- read_csv('../../Scripts_Dissertation/participant_group_map.csv')
+
+segmentation_data <- seg_data_join %>% 
+  left_join(group_map, by = 'partNum') %>% 
+  select("partNum", "group", "segResp","segRespRT","word","word_status","word_initial_syl","word_freq","targetSyl","target_syl_structure","matching", "exp_word_type", "block")
+
+segmentation_data_no_heritage <- subset(segmentation_data, segmentation_data$group != "Childhood")
+segmentation_data_esp_part <- subset(segmentation_data, segmentation_data$group == "Spanish")
+segmentation_data_eng_part <- subset(segmentation_data, segmentation_data$group == "English")
+
+#segmentation_data_no_heritage <- segmentation_data_no_heritage %>% 
+#  select(-c("expName","session","age","gender","birthCountry","placeResidence","education","preferLanguage","date"))
+
+write_csv(segmentation_data_no_heritage, 'esp_eng_53_intuition.csv')
+#write_csv(segmentation_data_no_heritage, 'data.csv') # For PI Advisor
+
 
 # Need library 'tidyverse' loaded
 # Create subset of all critical items
 #print('Counts of responses to critical items')
 #print('1 = response and None = no response')
-seg_critical <- subset(seg_data_join, seg_data_join$exp_word_type == 'carrier')
+seg_critical <- subset(segmentation_data_no_heritage, segmentation_data_no_heritage$exp_word_type == 'carrier')
 # Prints tibble showing all responses and frequency of response to critical items
 #count(seg_critical, vars=segResp)
-write_csv(seg_critical,'~/Desktop/working_diss_files/r-checking/critical_items.csv')
+write_csv(seg_critical,'segmentation_all_critical_items.csv')
 
 # Further subset critical data set to those that were NOT responded to by participants
 seg_critical_misses <- subset(seg_critical, seg_critical$segResp == 'None')
@@ -249,7 +266,7 @@ seg_filler <- subset(seg_data_join, seg_data_join$exp_word_type != 'carrier')
 #print('1 = response and None = no response')
 # Prints tibble showing all responses and frequency of response to filler items
 #count(seg_filler, vars=segResp)
-write_csv(seg_filler,'~/Desktop/working_diss_files/r-checking/filler_items.csv')
+write_csv(seg_filler,'segmentation_all_filler_items.csv')
 
 # Further subset filler data set to those that were responded to by participants
 seg_filler_responses <- subset(seg_filler, seg_filler$segResp == 1)
