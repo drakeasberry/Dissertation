@@ -24,13 +24,25 @@ syllable_data_raw <- ldply(syllable_files, read_csv)
 syllable_data <- syllable_data_raw %>%
   left_join(group_map, by = 'partNum') %>% 
   mutate(word = ifelse(is.na(word) == TRUE,syllabification,word),
-         sylRespRT = round(sylRespRT * 100,0),
+         sylRespRTmsec = round(sylRespRT * 1000),
          syl_structure = ifelse(str_length(corrSyl) == 2, 'CV', 'CVC')) %>%
-  select("partNum", "group", "sylRespCorr","sylRespRT","syl_structure","corrSyl","word","expName","session","age","gender","birthCountry","placeResidence","education","preferLanguage","date")
+  rename(sylRespRTsec = sylRespRT) %>%
+  drop_na("sylRespRTsec") %>% 
+  select("partNum", "group", "sylRespCorr","sylRespRTsec","sylRespRTmsec","syl_structure","corrSyl","word")
 
-rm(syllable_data_raw,syllable_dir,syllable_files)
-# write out to miquel workspace
-write_csv(syllable_data,'all_102_participants_intuition_data.csv')
+# remove unecessary variables
+rm(syllable_data_raw, syllable_dir, syllable_files)
+
+# Check reaction times for range
+syllable_data %>%
+  summarise_at(vars(sylRespRTmsec), list(fastest = min, slowest = max)) 
+
+# Check to make sure no single value columns exist
+syllable_data %>%
+  summarise_all(n_distinct)
+
+# Keep this write statement
+#write_csv(syllable_data,'all_102_participants_intuition_data.csv')
 
 # Need to create data set for demographics One line per participant
 # demogrpahics_all.csv
@@ -41,11 +53,24 @@ write_csv(syllable_data,'all_102_participants_intuition_data.csv')
 # Syllable Intuition Data by participant (only lab)
 # Store in Box > Intuition > Active > data > input
 
+# Remove Heritage speaker group
 syllable_data_no_heritage <- subset(syllable_data, syllable_data$group != "Childhood")
+
+# Test to check counts when debugging
 syllable_data_esp_part <- subset(syllable_data, syllable_data$group == "Spanish")
 syllable_data_eng_part <- subset(syllable_data, syllable_data$group == "English")
 
-syllable_data_no_heritage <- syllable_data_no_heritage %>% 
-  select(-c("expName","session","age","gender","birthCountry","placeResidence","education","preferLanguage","date"))
+#syllable_data_no_heritage <- syllable_data_no_heritage %>% 
+#  select(-c("expName","session","age","gender","birthCountry","placeResidence","education","preferLanguage","date"))
+
+# Check to make sure no single value columns exist
+syllable_data_no_heritage %>%
+  summarise_all(n_distinct)
+
+# Write statement for file containing only necessary columns for intuition analysis
 write_csv(syllable_data_no_heritage, 'esp_eng_74_intuition.csv')
-#write_csv(syllable_data_no_heritage, 'data.csv') # For PI Advisor
+
+# For PI Advisor
+#write_csv(syllable_data_no_heritage, 'data.csv') 
+
+rm(group_map, syllable_data_eng_part, syllable_data_esp_part)
