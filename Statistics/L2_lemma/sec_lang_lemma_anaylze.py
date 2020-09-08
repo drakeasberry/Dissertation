@@ -3,7 +3,7 @@ import os
 from Scripts_Dissertation import data_preparation
 
 # Set some constants
-STARTFILECOUNT = 77
+STARTFILECOUNT = 78
 
 
 # Set some directory paths needed for project
@@ -17,7 +17,8 @@ project_dir_list = [raw_part_dir, temp_part_dir, processed_part_dir, stats_temp_
 
 # Create lists for separate file needed to analyze all 5 experimental tasks
 demo_cols = ['partNum', 'session', 'age', 'gender', 'birthCountry', 'placeResidence', 'education', 'preferLanguage',
-           'date', 'expName', 'OS', 'houseLanguage', 'raisedCountry']
+           'date', 'expName', 'OS', 'houseLanguage', 'raisedCountry', 'first_learning', 'speaking', 'listening',
+             'reading', 'writing', 'last_class']
 lextale_duplicates = ['lex_pres_order', 'word', 'translation']
 lextale_esp = ['corrAnsEspV', 'lextaleRespEsp', 'lextaleRespEspCorr', 'lextaleRespEspRT']
 #lextale_eng = ['corrAnsEngV', 'lextaleRespEng', 'lextaleRespEngCorr', 'lextaleRespEngRT']
