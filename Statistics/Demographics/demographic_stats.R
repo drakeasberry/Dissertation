@@ -25,7 +25,7 @@ lex_eng_files = list.files(path=lex_eng_dir, pattern = '*.csv', full.names = TRU
 
 # read in all the files into one data frame
 lex_eng_data = ldply(lex_eng_files, read_csv)
-write_csv(lex_eng_data, 'eng_lextale_raw.csv')
+#write_csv(lex_eng_data, 'eng_lextale_raw.csv')
 
 # Add Group to table and remove Demographic
 lex_eng_data <- lex_eng_data %>% 
@@ -33,6 +33,7 @@ lex_eng_data <- lex_eng_data %>%
   
 lex_eng_no_heritage <- subset(lex_eng_data, lex_eng_data$group != 'Childhood')
 
+# Check numbers while debugging
 lex_eng_no_heritage %>% 
   group_by(group) %>% 
   summarise(count = n_distinct(partNum)) 
@@ -48,7 +49,7 @@ lex_esp_files = list.files(path=lex_esp_dir, pattern = '*.csv', full.names = TRU
 
 # read in all the files into one data frame
 lex_esp_data = ldply(lex_esp_files, read_csv)
-write_csv(lex_esp_data, 'esp_lextale_raw.csv')
+#write_csv(lex_esp_data, 'esp_lextale_raw.csv')
 
 # Add Group to table and remove Demographic
 lex_esp_data <- lex_esp_data %>% 
@@ -56,6 +57,7 @@ lex_esp_data <- lex_esp_data %>%
 
 lex_esp_no_heritage <- subset(lex_esp_data, lex_esp_data$group != 'Childhood')
 
+# Check numbers while debugging
 lex_esp_no_heritage %>% 
   group_by(group) %>% 
   summarise(count = n_distinct(partNum)) 
@@ -64,7 +66,7 @@ lex_esp_data <-  lex_esp_no_heritage %>%
   select("partNum", "group", "word", "translation", "corrAnsEspV", "corrAns", "lextaleRespEsp", 
          "lextaleRespEspCorr", "lextaleRespEspRT")
 
-rm(lex_esp_no_heritage, lex_esp_dir, lex_esp_files)
+rm(lex_esp_no_heritage, lex_esp_dir)
 
 ## subset for those collected in person
 #bi_mx_lex_esp <- subset(lex_esp_data, is.na(lex_esp_data$OS) & lex_esp_data$placeResidence == 'Hermosillo')
@@ -86,6 +88,7 @@ blp_data <- blp_data %>%
 
 blp_no_heritage <- subset(blp_data, blp_data$group != 'Childhood')
 
+# Check numbers while debugging
 blp_no_heritage %>% 
   group_by(group) %>% 
   summarise(count = n_distinct(partNum)) 
@@ -136,7 +139,7 @@ lex_eng_cleaned <- lex_eng_data %>%
   subset(word != 'generic')
 
 # Create csv without practice trials
-write_csv(lex_eng_cleaned, 'eng_lextale.csv')
+#write_csv(lex_eng_cleaned, 'eng_lextale.csv')
 
 lex_esp_cleaned <- lex_esp_data %>%
   subset(word != 'pladeno') %>%
@@ -144,7 +147,9 @@ lex_esp_cleaned <- lex_esp_data %>%
   subset(word != 'garbardina')
 
 # Create csv without practice trials
-write_csv(lex_esp_cleaned, 'esp_lextale.csv')
+#write_csv(lex_esp_cleaned, 'esp_lextale.csv')
+
+
 #
 #bi_mx_lex_esp_cleaned <- bi_mx_lex_esp %>%
 #  subset(word != 'pladeno') %>%
@@ -170,12 +175,12 @@ rm(lex_eng_data, lex_esp_data, blp_data,i, j)
 lex_eng_score <- aggregate(data=lex_eng_cleaned, lextaleRespEngCorr ~ partNum, FUN='mean')
 names(lex_eng_score)[names(lex_eng_score)=='lextaleRespEngCorr'] <- 'lextale_eng_correct'
 # write file with participant number and english lextale score
-write_csv(lex_eng_score, 'eng_lex_score.csv')
+#write_csv(lex_eng_score, 'eng_lex_score.csv')
 
 lex_esp_score <- aggregate(data=lex_esp_cleaned, lextaleRespEspCorr ~ partNum, FUN='mean')
 names(lex_esp_score)[names(lex_esp_score)=='lextaleRespEspCorr'] <- 'lextale_esp_correct'
 # write file with participant number and english lextale score
-write_csv(lex_esp_score, 'esp_lex_score.csv')
+#write_csv(lex_esp_score, 'esp_lex_score.csv')
 
 # Izura method of calculation Monolinguals
 esp_real_word <- subset(lex_esp_cleaned,lex_esp_cleaned$translation != "NW" & lex_esp_cleaned$lextaleRespEspCorr == 1) 
@@ -194,7 +199,8 @@ esp_lex_esp_izura <- merge(esp_wd_corr, esp_nw_incorr, by='partNum') %>%
   add_column(.,izura_score = .$yes_to_word - 2 * .$yes_to_nonword)# %>% 
   #subset(.,.$partNum %in% segmentation_remaining)
 
-write_csv(esp_lex_esp_izura, '206_izura_score.csv')
+# Keep write statement
+#write_csv(esp_lex_esp_izura, '206_izura_score.csv')
 
 # All participants Lextale-Esp distribution plots
 densityplot(~izura_score, data = esp_lex_esp_izura, main = 'Density plot of All participants') 
@@ -328,7 +334,9 @@ spanish <- merge(spanish,esp_att,by='partNum')
 esp_score <- with(spanish,(esp_hist_score*0.454+esp_use_score*1.09+esp_prof_score*2.27+esp_att_score*2.27))
 spanish$esp_score <- esp_score
 
+# Merge table with English and Spanish global scores from BLP
 global_score <- merge(english, spanish,  by='partNum')
+
 # check that all values are between 0 and 218
 min(global_score$eng_score)
 min(global_score$esp_score)
@@ -336,7 +344,7 @@ max(global_score$eng_score)
 max(global_score$esp_score)
 
 # write csv with global scores
-write_csv(global_score, 'blp_global_scores.csv')
+#write_csv(global_score, 'blp_global_scores.csv')
 
 # get language dominance score
 # positive numbers indicate English dominance
@@ -348,9 +356,10 @@ global_score$lang_dominance <- lang_dom
 part_score <- merge(global_score, lex_eng_score, by='partNum') %>% 
   full_join(., lex_esp_score, by='partNum') %>% 
   left_join(., group_map, by = 'partNum') %>% 
-  left_join(., esp_lex_esp_izura, by = 'partNum')
-part_score <- part_score %>%  
-  select("partNum", "group", everything())
+  left_join(., esp_lex_esp_izura, by = 'partNum') %>% 
+  select("partNum", "group", everything()) %>% 
+  rename(global_eng_score = eng_score, global_esp_score = esp_score, 
+         izura_yes_to_words = yes_to_word, izura_yes_to_nonwords = yes_to_nonword)
 
 
 #part_scores <- select(global_score, c(partNum,eng_score,esp_score,lang_dominance,lextale_eng_correct, lextale_esp_correct))
@@ -363,7 +372,20 @@ rm(eng_score,esp_score,lang_dom, blp_data_cleaned,blp_attitude_score,blp_history
    blp_proficiency_score,blp_use_score, eng_att,eng_hist,eng_prof,eng_use,esp_att,esp_hist,
    esp_prof,esp_use, english, spanish, part_scores, lex_esp_score, lex_eng_score, demographics,
    lang_attitude_clean, lang_history_clean, lang_proficiency_clean, lang_use_clean,
-   esp_lex_esp_izura, global_score)
+   esp_lex_esp_izura, global_score, group_map)
+
+# Add additional demographic data from Prolific
+L2_demo <- read_csv('L2_demographics.csv')
+mono_demo <- read_csv('monolingual_demographics.csv') %>% 
+  add_column("Fluent languages" = NA) %>% 
+  add_column("Were you raised monolingual?" = NA)
+online_demo <- rbind(L2_demo,mono_demo)
+# Additional demogrpahic data from PsychoPy
+# read in all the files into one data frame
+demographics <- ldply(lex_esp_files, read_csv)
+demographics2 <- demographics %>% 
+  select(c("partNum":"expName", "raisedCountry":"last_class")) %>% 
+  left_join(online_demo, by = 'partNum')
 
 # Need to create data set for demographics One line per participant
 # demogrpahics_all.csv
@@ -372,13 +394,13 @@ rm(eng_score,esp_score,lang_dom, blp_data_cleaned,blp_attitude_score,blp_history
 # partID, LexTALE-ENG, LexTale-ESP, Bilingual Langauge Profile
 # Store in Box > Intuition > Active > data > attirbutes
 
-lab_part = read_csv('blp_lextale_lab_participants.csv')
-
-# export csv for Miquel Meeting
-write_csv(lang_attitude_clean,'~/Desktop/working_diss_files/r-checking/blp_attitude.csv')
-write_csv(lang_history_clean,'~/Desktop/working_diss_files/r-checking/blp_history.csv')
-write_csv(lang_proficiency_clean,'~/Desktop/working_diss_files/r-checking/blp_proficiency.csv')
-write_csv(lang_use_clean,'~/Desktop/working_diss_files/r-checking/blp_use.csv')
-write_csv(lex_eng_cleaned,'~/Desktop/working_diss_files/r-checking/lextale_english.csv')
-write_csv(lex_esp_cleaned,'~/Desktop/working_diss_files/r-checking/lextale_spanish.csv')
-write_csv(part_scores_demographics,'~/Desktop/working_diss_files/r-checking/participants_information.csv')
+#lab_part = read_csv('blp_lextale_lab_participants.csv')
+#
+## export csv for Miquel Meeting
+#write_csv(lang_attitude_clean,'~/Desktop/working_diss_files/r-checking/blp_attitude.csv')
+#write_csv(lang_history_clean,'~/Desktop/working_diss_files/r-checking/blp_history.csv')
+#write_csv(lang_proficiency_clean,'~/Desktop/working_diss_files/r-checking/blp_proficiency.csv')
+#write_csv(lang_use_clean,'~/Desktop/working_diss_files/r-checking/blp_use.csv')
+#write_csv(lex_eng_cleaned,'~/Desktop/working_diss_files/r-checking/lextale_english.csv')
+#write_csv(lex_esp_cleaned,'~/Desktop/working_diss_files/r-checking/lextale_spanish.csv')
+#write_csv(part_scores_demographics,'~/Desktop/working_diss_files/r-checking/participants_informat#ion.csv')
