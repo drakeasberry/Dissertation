@@ -7,6 +7,7 @@ library(readr)
 library(tidyverse)
 library(psych)
 library(lattice)
+library(tidyr)
 
 # Create 'not in' function
 '%ni%' <- Negate('%in%')
@@ -380,12 +381,143 @@ mono_demo <- read_csv('monolingual_demographics.csv') %>%
   add_column("Fluent languages" = NA) %>% 
   add_column("Were you raised monolingual?" = NA)
 online_demo <- rbind(L2_demo,mono_demo)
+
+rm(mono_demo, L2_demo)
+
 # Additional demogrpahic data from PsychoPy
 # read in all the files into one data frame
 demographics <- ldply(lex_esp_files, read_csv)
-demographics2 <- demographics %>% 
+demographics <- demographics %>% 
   select(c("partNum":"expName", "raisedCountry":"last_class")) %>% 
-  left_join(online_demo, by = 'partNum')
+  left_join(online_demo, by = 'partNum') %>%
+  #left_join(group_map, by = 'partNum') %>% 
+  left_join(part_score, by = 'partNum') %>% 
+  distinct()
+
+rm(online_demo, part_score)
+
+# Create table for all demographic information for participants in lab segmentation experiment
+lab_segmentation <- subset(demographics, expName == 'Segmentation') %>% 
+  select_if(~!all(is.na(.))) %>% 
+  subset(., group != 'Childhood') %>% 
+  select(-c('expName')) %>% 
+  rename(age = age.x) %>% 
+  select(c('partNum','eng_hist_score':'izura_score', 'age':'preferLanguage','group','session',
+            'date'))
+
+# Write statement for file containing only necessary columns for lab segmentation analysis
+write_csv(lab_segmentation, '53_lab_segmentation.csv')
+# For PI Advisor
+write_csv(lab_segmentation, 'lab_segmentation_attributes.csv')
+
+# This needs some work because several participants returned 2nd time and are listed only under
+#segmentation
+#lab_lexical <- subset(demographics, expName == 'Lexical_Access') %>% 
+#  select_if(~!all(is.na(.))) %>% 
+#  subset(., group != 'Childhood') %>% 
+#  select(-c('expName')) %>% 
+#  rename(age = age.x) %>% 
+#  select(c('partNum','eng_hist_score':'izura_score', 'age':'preferLanguage','group','session',
+#           'date'))
+
+# Create table for all demographic information for participants in intuition experiment  
+lab_intuition <- subset(demographics, expName != 'lemma_segmentation') %>%
+  select_if(~!all(is.na(.))) %>% 
+  subset(., group != 'Childhood') %>% 
+  rename(age = age.x) %>% 
+  select(c('partNum','eng_hist_score':'izura_score', 'age':'preferLanguage','group','session',
+           'expName', 'date'))
+
+# Write statement for file containing only necessary columns for lab intuition analysis
+write_csv(lab_intuition, '74_lab_intuition.csv')
+# For PI Advisor
+write_csv(lab_intuition, 'lab_intuition_attributes.csv')
+
+# Create table for all demographic information for participants in online experiments
+online_drop <- c("part205","part221","part226", "part251", "part252", "part259", "part263", 
+                 "part267", "part280", "part284", "part287", "part294", "part315")
+online_lemma <- subset(demographics, expName == 'lemma_segmentation') %>% 
+  select_if(~!all(is.na(.))) %>%
+  rename(birth_country = `Country of Birth`, acquisition_age = first_learning,
+         employed = `Employment Status`, native_lang = `First Language`,
+         fluent_lang = `Fluent languages`, student = `Student Status`,
+         raised_monolingual = `Were you raised monolingual?`) %>% 
+  mutate(age = ifelse(is.na(age), age.x, age),
+         current_residence = ifelse(is.na(`Current Country of Residence`), 
+                                    placeResidence, `Current Country of Residence`),
+         current_residence = ifelse(current_residence == "Estados Unidos", "United States",
+                                    current_residence),
+         preferLanguage = ifelse(preferLanguage == 'English', 'inglés', preferLanguage),
+         houseLanguage = ifelse(houseLanguage == 'English', 'inglés', houseLanguage),
+         Bilingual = ifelse(Bilingual == 'I know one other language in addition to English',  
+                             'native language + one other language', Bilingual),
+         Bilingual = ifelse(Bilingual == 'Not Used',  
+                            'native language + one other language', Bilingual),
+         acquisition_age = ifelse(acquisition_age == 'seis', 6, acquisition_age),
+         acquisition_age = ifelse(acquisition_age == 'A los 12 años de edad', 12, acquisition_age),
+         acquisition_age = ifelse(acquisition_age == 'a los 5 anos', 5, acquisition_age),
+         acquisition_age = ifelse(acquisition_age == 'con mi esposo', 99, acquisition_age),
+         speaking = ifelse(speaking == 'intermediate', 'intermedio', speaking),
+         listening = ifelse(listening == 'intermediate', 'intermedio', listening),
+         reading = ifelse(reading == 'intermediate', 'intermedio', reading),
+         writing = ifelse(writing == 'intermediate', 'intermedio', writing),
+         last_class = ifelse(last_class == 'a year ago', 'hace un año', last_class),
+         fluent_lang = ifelse(fluent_lang == 'Spanish, English', 'English, Spanish', fluent_lang),
+         education = ifelse(education == "University (diploma, bachelor's degree)", 
+                            "Universidad (diplomatura, licenciatura)", education),
+         raisedCountry = ifelse(raisedCountry == 'U.S', 'Estados Unidos', raisedCountry)) %>%
+  subset(., partNum %ni% online_drop) %>% 
+  select(c('partNum', 'group':'izura_score', 'age', 'acquisition_age':'last_class', 'native_lang',
+           'preferLanguage', 'houseLanguage', 'Bilingual', 'raised_monolingual', 'fluent_lang', 
+           'Nationality', 'birth_country', 'raisedCountry', 'current_residence', 'Sex', 'education',
+           'student', 'employed', 'date','OS'))
+
+# Write statement for file containing only necessary columns for online segmentation analysis
+write_csv(online_lemma, '120_lemma_online.csv')
+# For PI Advisor
+write_csv(online_lemma, 'online_attributes.csv')
+  
+# Used to check values. not part of final code
+#colnames(online_lemma)
+#select(online_lemma, c('partNum', 'native_lang', 'Bilingual')) #%>% 
+#  filter(group == 'L2 Learner')
+
+# Subset online experiment for Monolingual Speakers from Mexico
+mono_lemma <- subset(online_lemma, group == 'Monolingual Spanish') %>% 
+  select_if(~!all(is.na(.)))
+
+# Write statement for file containing only necessary columns for online segmentation analysis
+write_csv(mono_lemma, '50_lemma_online.csv')
+# For PI Advisor
+write_csv(mono_lemma, 'online_mono_attributes.csv')
+
+# Subset online experiment for L2 Spanish Speakers from US
+L2_lemma <- subset(online_lemma, group == 'L2 Learner')
+
+# Write statement for file containing only necessary columns for online segmentation analysis
+write_csv(L2_lemma, '70_lemma_online.csv')
+# For PI Advisor
+write_csv(L2_lemma, 'online_L2_attributes.csv')
+
+# Used to check columns and values
+lapply(lab_segmentation, function(x) length(table(x)))
+sapply(lab_segmentation,function(x) unique(x))
+lapply(lab_intuition, function(x) length(table(x)))
+sapply(lab_intuition,function(x) unique(x))
+lapply(online_lemma, function(x) length(table(x)))
+sapply(online_lemma,function(x) unique(x))
+lapply(mono_lemma, function(x) length(table(x)))
+sapply(mono_lemma,function(x) unique(x))
+lapply(L2_lemma, function(x) length(table(x)))
+sapply(L2_lemma,function(x) unique(x))
+
+
+#demographics<- demographics %>% 
+#  mutate(age = 
+#           age.y %>% 
+#           is.na %>%
+#           ifelse(age.x, age.y)) %>% 
+#  select(-c(age.x, age.y))
 
 # Need to create data set for demographics One line per participant
 # demogrpahics_all.csv
