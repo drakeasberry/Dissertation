@@ -57,14 +57,14 @@ aggregate(file_exp[, c('segRespCorr')], list(file_exp$partNum), mean)
 # part214 included because only had basic English requirements (basic A2 on CEFR)
 
 # Dropped
+# part205 dropped because their level of English could not be verified
+# part221 dropped because of low score (< 10) on LexTALE-ESP
 # part226 dropped because they reported being raised in US and having an avanced level of English
 # part251 dropped because they reported being raised in US and having an avanced level of English
-# part205 dropped because their level of English could not be verified
 # part252 dropped because of low score (< 10) on LexTALE-ESP
-# part221 dropped because of low score (< 10) on LexTALE-ESP
 
-drop_list <- c("part226", "part251", "part205", 
-               "part221", "part252")
+
+drop_list <- c("part205","part221","part226", "part251", "part252")
 
 # drop participants who should not be analyzed
 drop_participants <- subset(file_exp, file_exp$partNum %ni% drop_list)

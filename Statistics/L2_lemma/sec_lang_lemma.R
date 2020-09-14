@@ -57,20 +57,22 @@ aggregate(file_exp[, c('segRespCorr')], list(file_exp$partNum), mean)
 # Participant exclusions
 # Kept
 # part255 kept because they overwrote Estados Unidos with U.S, inglés with English for house and preferred language
-# part280 kept because they overwrote Estados Unidos with U.S, inglés woth English for house and preferred language
-# part268 kept because they reported preferred language as español, learned Spanish at 18
 # part262 kept because they reported ambos for house language and preferred language as español, learned Spanish at 12
+# part268 kept because they reported preferred language as español, learned Spanish at 18
+# part280 kept because they overwrote Estados Unidos with U.S, inglés woth English for house and preferred language
 
 # Dropped
+# part259 dropped because they are fluent in Korean as well
+# part263 dropped because they are fluent in French as well
 # part267 dropped because they reported being raised in Mexico, preferred and house language español
-# part287 dropped because they reported knowing French and Italian as well
-# part315 dropped because reported being born outside US
-# part294 dropped because they reported knowing Italian as well
-
 # part280 dropped for high filler error, check to see if code can do it
+# part284 dropped for not being a native English speaker
+# part287 dropped because they reported knowing French and Italian as well
+# part294 dropped because they reported knowing Italian as well
+# part315 dropped because reported being born outside US
 
-drop_list <- c("part267", "part287", "part294", 
-               "part315", "part280")
+
+drop_list <- c("part259", "part263", "part267", "part280", "part284", "part287", "part294", "part315")
 
 # drop participants who should not be analyzed
 drop_participants <- subset(file_exp, file_exp$partNum %ni% drop_list)
