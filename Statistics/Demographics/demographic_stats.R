@@ -31,17 +31,21 @@ lex_eng_data = ldply(lex_eng_files, read_csv)
 # Add Group to table and remove Demographic
 lex_eng_data <- lex_eng_data %>% 
   left_join(group_map, by = 'partNum')
-  
+
+# Remove heritage participants  
 lex_eng_no_heritage <- subset(lex_eng_data, lex_eng_data$group != 'Childhood')
 
 # Check numbers while debugging
 lex_eng_no_heritage %>% 
   group_by(group) %>% 
   summarise(count = n_distinct(partNum)) 
-  
+
+# Select columns to keep without heritage participant data  
 lex_eng_data <-  lex_eng_no_heritage %>%   
   select("partNum", "group", "word", "translation", "corrAnsEngV", "corrAns", "lextaleRespEng", 
          "lextaleRespEngCorr", "lextaleRespEngRT")
+
+# clean up data
 rm(lex_eng_no_heritage, lex_eng_dir, lex_eng_files)
 
 # LexTALE-Spanish Data Directory
@@ -56,6 +60,7 @@ lex_esp_data = ldply(lex_esp_files, read_csv)
 lex_esp_data <- lex_esp_data %>% 
   left_join(group_map, by = 'partNum')
 
+# Remove heritage participant data
 lex_esp_no_heritage <- subset(lex_esp_data, lex_esp_data$group != 'Childhood')
 
 # Check numbers while debugging
@@ -63,11 +68,15 @@ lex_esp_no_heritage %>%
   group_by(group) %>% 
   summarise(count = n_distinct(partNum)) 
 
+# Select columns to keep without heritage participant data
 lex_esp_data <-  lex_esp_no_heritage %>%   
   select("partNum", "group", "word", "translation", "corrAnsEspV", "corrAns", "lextaleRespEsp", 
          "lextaleRespEspCorr", "lextaleRespEspRT")
 
+# clean up data environemnt
 rm(lex_esp_no_heritage, lex_esp_dir)
+
+
 
 ## subset for those collected in person
 #bi_mx_lex_esp <- subset(lex_esp_data, is.na(lex_esp_data$OS) & lex_esp_data$placeResidence == 'Hermosillo')
@@ -75,6 +84,9 @@ rm(lex_esp_no_heritage, lex_esp_dir)
 #
 ## subset for those collected online
 #mono_lex_esp <- subset(lex_esp_data, !is.na(lex_esp_data$OS) & lex_esp_data$birthCountry == 'México')
+
+
+
 
 # Basic Langauge Profile Data Directory
 blp_dir = 'analyze_data/blp_cols' #set path to directory
@@ -87,6 +99,7 @@ blp_data = ldply(blp_files, read_csv)
 blp_data <- blp_data %>% 
   left_join(group_map, by = 'partNum')
 
+# Remove Heritage participant data
 blp_no_heritage <- subset(blp_data, blp_data$group != 'Childhood')
 
 # Check numbers while debugging
@@ -94,6 +107,7 @@ blp_no_heritage %>%
   group_by(group) %>% 
   summarise(count = n_distinct(partNum)) 
 
+# Select columns to keep without heritage participant data
 blp_data <-  blp_no_heritage %>%   
   select("partNum", "group", "sectionEng", "questionTextEng", "languageEng", "langHistResp1",
          "langHistRT1", "langHistResp2", "langHistRT2", "langHistResp", "langHistRT", "langUseResp",
@@ -151,7 +165,7 @@ lex_esp_cleaned <- lex_esp_data %>%
 #write_csv(lex_esp_cleaned, 'esp_lextale.csv')
 
 
-#
+
 #bi_mx_lex_esp_cleaned <- bi_mx_lex_esp %>%
 #  subset(word != 'pladeno') %>%
 #  subset(word != 'delantera') %>%
@@ -162,7 +176,12 @@ lex_esp_cleaned <- lex_esp_data %>%
 #  subset(word != 'delantera') %>%
 #  subset(word != 'garbardina')
 
+
+
+# Clean up data environment
 rm(lex_eng_data, lex_esp_data, blp_data,i, j)
+
+
 
 ## Read vector from R session Monolingual Lemma Segmentation Visual
 #segmentation_remaining <- readRDS("online_lemma_participants")
@@ -173,6 +192,7 @@ rm(lex_eng_data, lex_esp_data, blp_data,i, j)
 # commented lines only for quick viewing purposes, NOT analysis
 #lex_eng_score <- aggregate(data=lex_eng_cleaned, lexRespEngCorr ~ partNum + birthCountry, FUN='mean')
 #lex_esp_score <- aggregate(data=lex_esp_cleaned, lexRespEspCorr ~ partNum + birthCountry, FUN='mean')
+
 lex_eng_score <- aggregate(data=lex_eng_cleaned, lextaleRespEngCorr ~ partNum, FUN='mean')
 names(lex_eng_score)[names(lex_eng_score)=='lextaleRespEngCorr'] <- 'lextale_eng_correct'
 # write file with participant number and english lextale score
@@ -184,21 +204,27 @@ names(lex_esp_score)[names(lex_esp_score)=='lextaleRespEspCorr'] <- 'lextale_esp
 #write_csv(lex_esp_score, 'esp_lex_score.csv')
 
 # Izura method of calculation Monolinguals
+# Get all real words that were answered correctly
 esp_real_word <- subset(lex_esp_cleaned,lex_esp_cleaned$translation != "NW" & lex_esp_cleaned$lextaleRespEspCorr == 1) 
 
-esp_non_word <- subset(lex_esp_cleaned,lex_esp_cleaned$translation == "NW")# & mono_lex_esp_cleaned$lextaleRespEspCorr == 0)
+# Get all nonword data
+esp_non_word <- subset(lex_esp_cleaned,lex_esp_cleaned$translation == "NW")
 
+# Sum word response data by participant and rename column
 esp_wd_corr <- aggregate(data=esp_real_word, lextaleRespEspCorr ~ partNum, FUN='sum')
 names(esp_wd_corr)[names(esp_wd_corr)=='lextaleRespEspCorr'] <- 'yes_to_word'
+
+# Sum all incorrect responses to non words by participant
 esp_nw_incorr <- aggregate(data=esp_non_word, lextaleRespEspCorr ~ partNum, FUN='sum')
+# Add column to dataframe to storing number of incorrect responses to nonwords
 esp_nw_incorr <- esp_nw_incorr %>% 
   add_column(., yes_to_nonword = 30 - esp_nw_incorr$lextaleRespEspCorr) %>% 
   select(.,-c('lextaleRespEspCorr'))
 
-
+# merge real word and non word dataframe into one and store calculated izura score
 esp_lex_esp_izura <- merge(esp_wd_corr, esp_nw_incorr, by='partNum') %>% 
-  add_column(.,izura_score = .$yes_to_word - 2 * .$yes_to_nonword)# %>% 
-  #subset(.,.$partNum %in% segmentation_remaining)
+  add_column(.,izura_score = .$yes_to_word - 2 * .$yes_to_nonword)
+  
 
 # Keep write statement
 #write_csv(esp_lex_esp_izura, '206_izura_score.csv')
@@ -210,7 +236,11 @@ histogram(~izura_score, data = esp_lex_esp_izura, main = 'All participants colle
 # All participants Lextale-Esp descriptive statistics 
 describe(esp_lex_esp_izura$izura_score)
 
+# Clean up data environment
 rm(esp_non_word, esp_nw_incorr, esp_real_word, esp_wd_corr, lex_eng_cleaned, lex_esp_cleaned)
+
+
+
 
 ## Monolingual Spanish Speakers from Mexico
 #mono_lex_esp_score <- aggregate(data=mono_lex_esp_cleaned, lextaleRespEspCorr ~ partNum, FUN='mean')
@@ -277,13 +307,20 @@ rm(esp_non_word, esp_nw_incorr, esp_real_word, esp_wd_corr, lex_eng_cleaned, lex
 #
 #bi_mx_below_34 <- subset(bi_mx_lex_esp_izura,bi_mx_lex_esp_izura$izura_score < 34)
 
+
+
+
 # create dataframe for each blp section
+# create language history dataframe
 lang_history <- subset(blp_data_cleaned, blp_section == 'Language history')
 lang_history_clean <- select(lang_history, -c(langUseResp,langUseRT,langProfResp,langProfRT,langAttResp, langAttRT))
+# create language use dataframe
 lang_use <- subset(blp_data_cleaned, blp_section == 'Language use')
 lang_use_clean <- select(lang_use, -c(langHistResp,langHistRT,langProfResp,langProfRT,langAttResp, langAttRT))
+# create language proficiency dataframe
 lang_proficiency <- subset(blp_data_cleaned, blp_section == 'Language proficiency')
 lang_proficiency_clean <- select(lang_proficiency, -c(langHistResp,langHistRT,langUseResp,langUseRT,langAttResp, langAttRT))
+# create language attitude dataframe
 lang_attitude <- subset(blp_data_cleaned, blp_section == 'Language attitudes')
 lang_attitude_clean <- select(lang_attitude, -c(langHistResp,langHistRT,langUseResp,langUseRT,langProfResp,langProfRT))
 
@@ -291,48 +328,70 @@ lang_attitude_clean <- select(lang_attitude, -c(langHistResp,langHistRT,langUseR
 rm(lang_history,lang_use,lang_proficiency,lang_attitude)
 
 # create blp score tables
+# basic language profile history score
 blp_history_score <- aggregate(data=lang_history_clean, langHistResp ~ partNum + question_language, FUN='sum')
+# basic language profile use score
 blp_use_score <- aggregate(data=lang_use_clean, langUseResp ~ partNum + question_language, FUN='sum')
+# basic language profile proficiency score
 blp_proficiency_score <- aggregate(data=lang_proficiency_clean, langProfResp ~ partNum + question_language, FUN='sum')
+# basic language profile attitude score
 blp_attitude_score <- aggregate(data=lang_attitude_clean, langAttResp ~ partNum + question_language, FUN='sum')
 
-# Global Language Scores
+# Global Language Scores from BLP Calculation
 # English Scores
+# history score and rename column
 eng_hist <- blp_history_score[blp_history_score$question_language == 'English',]
 names(eng_hist)[names(eng_hist)=='langHistResp'] <- 'eng_hist_score'
 eng_hist <- select(eng_hist, -c(question_language))
+# use score and rename column
 eng_use <- blp_use_score[blp_use_score$question_language == 'English',]
 names(eng_use)[names(eng_use)=='langUseResp'] <- 'eng_use_score'
 eng_use <- select(eng_use, -c(question_language))
+# merge history and use dataframes
 english <- merge(eng_hist,eng_use,by='partNum')
+# proficiency score and rename column
 eng_prof <- blp_proficiency_score[blp_proficiency_score$question_language == 'English',]
 names(eng_prof)[names(eng_prof)=='langProfResp'] <- 'eng_prof_score'
 eng_prof <- select(eng_prof, -c(question_language))
+# add proficiency score to merged dataframe with history and use
 english <- merge(english,eng_prof,by='partNum')
+# attitude score and rename column
 eng_att <- blp_attitude_score[blp_attitude_score$question_language == 'English',]
 names(eng_att)[names(eng_att)=='langAttResp'] <- 'eng_att_score'
 eng_att <- select(eng_att, -c(question_language))
+# add attitude score to merged dataframe with history, use and proficiency
 english <- merge(english,eng_att,by='partNum')
+# add column with calculation of global score
 eng_score <- with(english,(eng_hist_score*0.454+eng_use_score*1.09+eng_prof_score*2.27+eng_att_score*2.27))
+# add English calculated score to dataframe containing individual section scores
 english$eng_score <- eng_score
 
 # Spanish scores
+# history score and rename column
 esp_hist <- blp_history_score[blp_history_score$question_language == 'Spanish',]
 names(esp_hist)[names(esp_hist)=='langHistResp'] <- 'esp_hist_score'
 esp_hist <- select(esp_hist, -c(question_language))
+# use score and rename column
 esp_use <- blp_use_score[blp_use_score$question_language == 'Spanish',]
 names(esp_use)[names(esp_use)=='langUseResp'] <- 'esp_use_score'
 esp_use <- select(esp_use, -c(question_language))
+# merge history and use dataframes
 spanish <- merge(esp_hist,esp_use,by='partNum')
+# proficiency score and rename column
 esp_prof <- blp_proficiency_score[blp_proficiency_score$question_language == 'Spanish',]
 names(esp_prof)[names(esp_prof)=='langProfResp'] <- 'esp_prof_score'
 esp_prof <- select(esp_prof, -c(question_language))
+# add proficiency score to merged dataframe with history and use
 spanish <- merge(spanish,esp_prof,by='partNum')
+# attitude score and rename column
 esp_att <- blp_attitude_score[blp_attitude_score$question_language == 'Spanish',]
 names(esp_att)[names(esp_att)=='langAttResp'] <- 'esp_att_score'
 esp_att <- select(esp_att, -c(question_language))
+# add attitude score to merged dataframe with history, use and proficiency
 spanish <- merge(spanish,esp_att,by='partNum')
+# add column with calculation of global score
 esp_score <- with(spanish,(esp_hist_score*0.454+esp_use_score*1.09+esp_prof_score*2.27+esp_att_score*2.27))
+# add English calculated score to dataframe containing individual section scores
 spanish$esp_score <- esp_score
 
 # Merge table with English and Spanish global scores from BLP
@@ -369,11 +428,12 @@ part_score <- merge(global_score, lex_eng_score, by='partNum') %>%
 
 #write_csv(part_scores_demographics, 'blp_lextale_lab_participants.csv')
 
+# Clean up data environment
 rm(eng_score,esp_score,lang_dom, blp_data_cleaned,blp_attitude_score,blp_history_score,
    blp_proficiency_score,blp_use_score, eng_att,eng_hist,eng_prof,eng_use,esp_att,esp_hist,
-   esp_prof,esp_use, english, spanish, part_scores, lex_esp_score, lex_eng_score, demographics,
-   lang_attitude_clean, lang_history_clean, lang_proficiency_clean, lang_use_clean,
-   esp_lex_esp_izura, global_score, group_map)
+   esp_prof,esp_use, english, spanish, lex_esp_score, lex_eng_score, lang_attitude_clean, 
+   lang_history_clean, lang_proficiency_clean, lang_use_clean, esp_lex_esp_izura, global_score, 
+   group_map)
 
 # Add additional demographic data from Prolific
 L2_demo <- read_csv('L2_demographics.csv')
@@ -394,6 +454,7 @@ demographics <- demographics %>%
   left_join(part_score, by = 'partNum') %>% 
   distinct()
 
+# clean up data environment
 rm(online_demo, part_score)
 
 # Create table for all demographic information for participants in lab segmentation experiment
