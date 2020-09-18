@@ -434,15 +434,26 @@ write_csv(lab_intuition, '74_lab_intuition.csv')
 write_csv(lab_intuition, 'lab_intuition_attributes.csv')
 
 # Create table for all demographic information for participants in online experiments
-online_drop <- c("part205","part221","part226", "part251", "part252", "part259", "part263", 
-                 "part267", "part280", "part284", "part287", "part294", "part315")
+# Dropped for error rates in experiment
+mono_error_drop <- c("part202", "part210", "part223", "part227", "part232", "part253") # n=6
+L2_error_drop <- c("part255", "part270", "part275", "part277", "part290", "part291",
+                   "part292", "part293", "part301", "part303", "part305", "part309",
+                   "part327", "part332", "part333") # n=15
+
+# Dropped for demographic information outside scope of project
+online_demo_drop <- c("part205","part221","part226", "part251", "part252", "part259", "part263", 
+                 "part267", "part280", "part284", "part287", "part294", "part315") # n=13
+
+# Combine all dropped participants
+online_drop <- c(mono_error_drop, L2_error_drop, online_demo_drop) # n=34
+
 online_lemma <- subset(demographics, expName == 'lemma_segmentation') %>% 
   select_if(~!all(is.na(.))) %>%
   rename(birth_country = `Country of Birth`, acquisition_age = first_learning,
          employed = `Employment Status`, native_lang = `First Language`,
          fluent_lang = `Fluent languages`, student = `Student Status`,
          raised_monolingual = `Were you raised monolingual?`) %>% 
-  mutate(age = ifelse(is.na(age), age.x, age),
+  mutate(age = ifelse(is.na(age.y), age.x, age.y),
          current_residence = ifelse(is.na(`Current Country of Residence`), 
                                     placeResidence, `Current Country of Residence`),
          current_residence = ifelse(current_residence == "Estados Unidos", "United States",
@@ -467,15 +478,22 @@ online_lemma <- subset(demographics, expName == 'lemma_segmentation') %>%
                             "Universidad (diplomatura, licenciatura)", education),
          raisedCountry = ifelse(raisedCountry == 'U.S', 'Estados Unidos', raisedCountry)) %>%
   subset(., partNum %ni% online_drop) %>% 
-  select(c('partNum', 'group':'izura_score', 'age', 'acquisition_age':'last_class', 'native_lang',
-           'preferLanguage', 'houseLanguage', 'Bilingual', 'raised_monolingual', 'fluent_lang', 
-           'Nationality', 'birth_country', 'raisedCountry', 'current_residence', 'Sex', 'education',
-           'student', 'employed', 'date','OS'))
+  select(c('partNum', 'group':'izura_score', 'age', 'acquisition_age':'last_class', 
+           'native_lang', 'preferLanguage', 'houseLanguage', 'Bilingual', 'raised_monolingual', 
+           'fluent_lang', 'Nationality', 'birth_country', 'raisedCountry', 'current_residence', 
+           'Sex', 'education', 'student', 'employed', 'date','OS'))
+
+natives <- subset(online_lemma, group == 'Monolingual Spanish')
+learners <- subset(online_lemma, group == 'L2 Learner')
+
+# Write csv files for PI Advisor
+write_csv(natives, 'natives.csv')
+write_csv(learners, 'learners.csv')
 
 # Write statement for file containing only necessary columns for online segmentation analysis
-write_csv(online_lemma, '120_lemma_online.csv')
+#write_csv(online_lemma, '120_lemma_online.csv')
 # For PI Advisor
-write_csv(online_lemma, 'online_attributes.csv')
+#write_csv(online_lemma, 'online_attributes.csv')
   
 # Used to check values. not part of final code
 #colnames(online_lemma)
@@ -483,21 +501,21 @@ write_csv(online_lemma, 'online_attributes.csv')
 #  filter(group == 'L2 Learner')
 
 # Subset online experiment for Monolingual Speakers from Mexico
-mono_lemma <- subset(online_lemma, group == 'Monolingual Spanish') %>% 
-  select_if(~!all(is.na(.)))
-
-# Write statement for file containing only necessary columns for online segmentation analysis
-write_csv(mono_lemma, '50_lemma_online.csv')
-# For PI Advisor
-write_csv(mono_lemma, 'online_mono_attributes.csv')
-
-# Subset online experiment for L2 Spanish Speakers from US
-L2_lemma <- subset(online_lemma, group == 'L2 Learner')
-
-# Write statement for file containing only necessary columns for online segmentation analysis
-write_csv(L2_lemma, '70_lemma_online.csv')
-# For PI Advisor
-write_csv(L2_lemma, 'online_L2_attributes.csv')
+#mono_lemma <- subset(online_lemma, group == 'Monolingual Spanish') %>% 
+#  select_if(~!all(is.na(.)))
+#
+## Write statement for file containing only necessary columns for online segmentation analysis
+#write_csv(mono_lemma, '50_lemma_online.csv')
+## For PI Advisor
+#write_csv(mono_lemma, 'online_mono_attributes.csv')
+#
+## Subset online experiment for L2 Spanish Speakers from US
+#L2_lemma <- subset(online_lemma, group == 'L2 Learner')
+#
+## Write statement for file containing only necessary columns for online segmentation analysis
+#write_csv(L2_lemma, '70_lemma_online.csv')
+## For PI Advisor
+#write_csv(L2_lemma, 'online_L2_attributes.csv')
 
 # Used to check columns and values
 lapply(lab_segmentation, function(x) length(table(x)))
@@ -506,10 +524,10 @@ lapply(lab_intuition, function(x) length(table(x)))
 sapply(lab_intuition,function(x) unique(x))
 lapply(online_lemma, function(x) length(table(x)))
 sapply(online_lemma,function(x) unique(x))
-lapply(mono_lemma, function(x) length(table(x)))
-sapply(mono_lemma,function(x) unique(x))
-lapply(L2_lemma, function(x) length(table(x)))
-sapply(L2_lemma,function(x) unique(x))
+lapply(natives, function(x) length(table(x)))
+sapply(natives,function(x) unique(x))
+lapply(learners, function(x) length(table(x)))
+sapply(learners,function(x) unique(x))
 
 
 #demographics<- demographics %>% 
