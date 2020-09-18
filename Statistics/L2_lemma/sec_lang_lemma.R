@@ -72,7 +72,8 @@ aggregate(file_exp[, c('segRespCorr')], list(file_exp$partNum), mean)
 # part315 dropped because reported being born outside US
 
 
-drop_list <- c("part259", "part263", "part267", "part280", "part284", "part287", "part294", "part315")
+drop_list <- c("part259", "part263", "part267", "part280", "part284", "part287", "part294",
+               "part315")
 
 # drop participants who should not be analyzed
 drop_participants <- subset(file_exp, file_exp$partNum %ni% drop_list)
@@ -235,7 +236,29 @@ participant_responses_all <- subset(drop_participants, drop_participants$partNum
 #write_csv(participant_responses_all, '44_L2_all_segmentation_responses.csv')
 # Run to here to check data validation participants provided good data 
 
+segmentation_data <- participant_responses_all %>% 
+  subset(., fillerCarrier == 'critical' & segResp == 'b') %>% # 99 critical errors removed
+  mutate(segRespRTmsec = round(segRespRT * 1000),
+         log_RT = log(segRespRT)) %>%
+  subset(., segRespRTmsec > 200) %>% # removed 1 point
+  subset(., segRespRTmsec < 1500) %>% # removed 69 points
+  rename(segRespRTsec = segRespRT, word = expWord, word_status = wd_status,
+         word_initial_syl = wd_int_syl_str, target_syl_structure = tar_syl_str,
+         targetSyl = tar_syl, word_initial_3_letters = first_3) %>% 
+  select("partNum","segRespRTsec", "segRespRTmsec", "log_RT", "lemma", "word", 
+         "word_initial_3_letters", "word_status","word_initial_syl", "targetSyl", 
+         "target_syl_structure","matching", "block")
 
+# Check to ensure no column only contains one unique value
+segmentation_data %>% 
+  summarise_all(n_distinct)
+
+# Check minimum and maximum reaction times 
+segmentation_data %>% 
+  summarise_at(vars(segRespRTmsec),list(quickest = min, slowest = max))
+
+# For PI Advisor
+write_csv(segmentation_data, 'learners.csv')
 
 
 

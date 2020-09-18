@@ -177,8 +177,8 @@ if(length(investigate) == 0){
   print('See who has too many errors:')
 }
 
-rm(df_low_seg_errors_part,df_high_seg_errors_part,df_seg_filler_errors,df_seg_critical_errors,file_exp,
-   new_data,seg_files,seg_filler,seg_filler_responses,df_raw_seg)
+rm(df_low_seg_errors_part,df_high_seg_errors_part,df_seg_filler_errors,df_seg_critical_errors
+   ,file_exp, new_data,seg_files,seg_filler,seg_filler_responses,df_raw_seg)
 
 #preseve original dataframe
 seg_critical_raw <- seg_critical
@@ -195,7 +195,7 @@ seg_critical <- seg_critical_hits %>%
   subset(.,partNum %ni% high_miss_seg_critical_users$vars)
 
 valid_part <- unique(seg_critical$partNum)
-saveRDS(valid_part, file="../Demographics/mono_lemma_participants")
+#saveRDS(valid_part, file="../Demographics/mono_lemma_participants")
 
 # Write a csv file with valid data points for participants who meet inclusion criteria
 write_csv(seg_critical, '44_monolingual_valid_response_critical_items.csv')
@@ -206,6 +206,29 @@ write_csv(participant_responses_all, '44_monolingual_all_segmentation_responses.
 
 # Run to here to check data validation participants provided good data 
 
+segmentation_data <- participant_responses_all %>% 
+  subset(., fillerCarrier == 'critical' & segResp == 'b') %>% # 100 critical errors removed
+  mutate(segRespRTmsec = round(segRespRT * 1000),
+         log_RT = log(segRespRT)) %>%
+  subset(., segRespRTmsec > 200) %>% # removed 1 point
+  subset(., segRespRTmsec < 1500) %>% # removed 47 points
+  rename(segRespRTsec = segRespRT, word = expWord, word_status = wd_status,
+         word_initial_syl = wd_int_syl_str, target_syl_structure = tar_syl_str,
+         targetSyl = tar_syl, word_initial_3_letters = first_3) %>% 
+  select("partNum","segRespRTsec", "segRespRTmsec", "log_RT", "lemma", "word", 
+         "word_initial_3_letters", "word_status","word_initial_syl", "targetSyl", 
+         "target_syl_structure","matching", "block")
+
+# Check to ensure no column only contains one unique value
+segmentation_data %>% 
+  summarise_all(n_distinct)
+
+# Check minimum and maximum reaction times 
+segmentation_data %>% 
+  summarise_at(vars(segRespRTmsec),list(quickest = min, slowest = max))
+
+# For PI Advisor
+write_csv(segmentation_data, 'natives.csv')
 
 #participants <- unique(select(seg_critical,c(partNum,session,preferLanguage)))
 #rand_subset <- c('part009','part081','part091','part035','part022','part058','part112','part079','part033','part024')
