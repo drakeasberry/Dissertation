@@ -5,33 +5,53 @@
 library(plyr)
 library(readr)
 library(tidyverse)
+library(ggplot2)
+library(kableExtra)
+library(qwraps2)
+library(jmv)
 
-# Create 'not in' function
+# Create and store functions 
+# create 'not in' function
 '%ni%' <- Negate('%in%')
+# create logit tranformation function
+logitTrans <- function(x) { log(x/(1-x)) }
 
 # Surpress all readr messages by default
 # https://www.reddit.com/r/rstats/comments/739vf6/how_to_turn_off_readrs_messages_by_default/
 options(readr.num_columns = 0)
 
-# get all csv files from directory
-syllable_dir <- 'analyze_data/raw' #set path to directory
-syllable_files <- list.files(path=syllable_dir, pattern = '*.csv', full.names = TRUE) #list all the files with path
+options(qwraps2_markup = "latex")
 
+# Load dataframe containing participant number and group affiliation 
 group_map <- read_csv('../../Scripts_Dissertation/participant_group_map.csv')
 
-# read all csv files into a single tibble
-syllable_data_raw <- ldply(syllable_files, read_csv)
-syllable_data <- syllable_data_raw %>%
-  left_join(group_map, by = 'partNum') %>% 
-  mutate(word = ifelse(is.na(word) == TRUE,syllabification,word),
-         sylRespRTmsec = round(sylRespRT * 1000),
-         syl_structure = ifelse(str_length(corrSyl) == 2, 'CV', 'CVC')) %>%
-  rename(sylRespRTsec = sylRespRT) %>%
-  drop_na("sylRespRTsec") %>% 
-  select("partNum", "group", "sylRespCorr","sylRespRTsec","sylRespRTmsec","syl_structure","corrSyl","word")
+# Get all csv files from directory
+# Set file directory path
+syllable_dir <- 'analyze_data/raw' 
+# Create vector of all files with path
+syllable_files <- list.files(path=syllable_dir, pattern = '*.csv', full.names = TRUE)
 
-# remove unecessary variables
-rm(syllable_data_raw, syllable_dir, syllable_files)
+# Read all csv files into a single dataframe
+syllable_data_raw <- ldply(syllable_files, read_csv)
+
+# Prepare raw data for anaylsis
+# Create new dataframe based off raw input dataframe
+syllable_data <- syllable_data_raw %>%
+  left_join(group_map, by = 'partNum') %>% # add group as dataframe column
+  # combine experiment words into signle column
+  mutate(word = ifelse(is.na(word) == TRUE, syllabification, word),
+         sylRespRTmsec = round(sylRespRT * 1000), # create new column with RT in (ms)
+         # create new column containing syllable structure
+         syl_structure = ifelse(str_length(corrSyl) == 2, 'CV', 'CVC')) %>%
+  rename(sylRespRTsec = sylRespRT) %>% #rename old column to sylRespRTsec
+  # dropped 4 no response items from part065 and 1 from part072
+  drop_na("sylRespRTsec") %>%
+  # select columns to keep in dataframe
+  select("partNum", "group", "sylRespCorr", "sylRespRTsec", "sylRespRTmsec", "syl_structure",
+         "corrSyl", "word")
+
+# Remove unnecessary elements from R environment
+rm(group_map, syllable_data_raw, syllable_dir, syllable_files)
 
 # Check reaction times for range
 syllable_data %>%
@@ -41,36 +61,131 @@ syllable_data %>%
 syllable_data %>%
   summarise_all(n_distinct)
 
-# Keep this write statement
-#write_csv(syllable_data,'all_102_participants_intuition_data.csv')
-
-# Need to create data set for demographics One line per participant
-# demogrpahics_all.csv
-# Create subset for Intuition Experiment Demographics
-# intuition_demo.csv
-# partID, LexTALE-ENG, LexTale-ESP, Bilingual Langauge Profile
-# Store in Box > Intuition > Active > data > attributes
-# Syllable Intuition Data by participant (only lab)
-# Store in Box > Intuition > Active > data > input
-
 # Remove Heritage speaker group
+# remove heritage participants in group "Childhood"
 syllable_data_no_heritage <- subset(syllable_data, syllable_data$group != "Childhood")
-
-# Test to check counts when debugging
-syllable_data_esp_part <- subset(syllable_data, syllable_data$group == "Spanish")
-syllable_data_eng_part <- subset(syllable_data, syllable_data$group == "English")
-
-#syllable_data_no_heritage <- syllable_data_no_heritage %>% 
-#  select(-c("expName","session","age","gender","birthCountry","placeResidence","education","preferLanguage","date"))
 
 # Check to make sure no single value columns exist
 syllable_data_no_heritage %>%
   summarise_all(n_distinct)
 
+# Remove unnecessary elements from R environment
+rm(syllable_data)
+
 # Write statement for file containing only necessary columns for intuition analysis
-write_csv(syllable_data_no_heritage, 'esp_eng_74_intuition.csv')
+write_csv(syllable_data_no_heritage, 'analyze_data/output/esp_eng_74_intuition.csv')
+# For PI Advisor naming convention in secure cloud storage
+#write_csv(syllable_data_no_heritage, 'analyze_data/output/data.csv') 
 
-# For PI Advisor
-#write_csv(syllable_data_no_heritage, 'data.csv') 
+# Jomovi Analysis Data Transformation 
+# Create new long form dataframe with new columns needed for analysis
+mydata_long <- syllable_data_no_heritage %>%
+  # keep participant, group and syllable structure column for summary
+  group_by(partNum, group, syl_structure) %>%
+  # add new column with percent correct by participant and syllable structure
+  summarise(correct = mean(sylRespCorr)) %>%
+  # transform current data in correct column from 1 to 0.9999 for regression
+  mutate(correct = ifelse(correct == 1, 0.9999, correct),
+         # apply logit function to percent correct column and store in new column
+         logit = logitTrans(correct))
 
-rm(group_map, syllable_data_eng_part, syllable_data_esp_part)
+# Write long form dataframe to csv
+write_csv(mydata_long, 'analyze_data/output/data_long.csv')
+
+# Create new wide form dataframe with new columns needed for analysis
+mydata_wide <- mydata_long %>%
+  # delete the percent correct column
+  select(-c(correct)) %>%
+  # transform syllable structure column into separate columns based on syllable structure
+  # keep the values from logit column and now should have only 1 row per participant
+  pivot_wider(names_from = syl_structure, values_from = logit)
+  
+# Write wdie form dataframe to csv
+write_csv(mydata_wide, 'analyze_data/output/data_wide.csv')
+
+# Remove unnecessary elements from R environment
+rm(syllable_data_no_heritage)
+
+# Demographic Information Descriptions
+# Load demographic data
+demo_data <- read_csv('analyze_data/demographics/74_lab_intuition.csv')
+
+# Box plots
+# Language Dominance
+ggplot(data = demo_data, 
+       aes(x = group,
+           y = lang_dominance)) +
+  geom_boxplot(color = "purple", width = 0.5,
+               outlier.shape = 8, outlier.size = 2) +
+  geom_violin(color = "red", fill = NA) +
+  geom_jitter(width = 0.1) +
+  ggtitle("Language Dominance") +
+  xlab("Native Language Group") +
+  ylab("Basic Language Profile Dominance Score")
+  
+# English Vocabulary Size
+ggplot(data = demo_data, 
+       aes(x = group,
+           y = lextale_eng_correct)) +
+  geom_boxplot(color = "purple", width = 0.5,
+               outlier.shape = 8, outlier.size = 2) +
+  geom_violin(color = "red", fill = NA) +
+  geom_jitter(width = 0.1) +
+  ggtitle("English Vocabulary Size") +
+  xlab("Native Language Group") +
+  ylab("English Vocabulary % correct")
+
+# Spanish Vocabulary Size
+ggplot(data = demo_data, 
+       aes(x = group,
+           y = lextale_esp_correct)) +
+  geom_boxplot(color = "purple", width = 0.5,
+               outlier.shape = 8, outlier.size = 2) +
+  geom_violin(color = "red", fill = NA) +
+  geom_jitter(width = 0.1) +
+  ggtitle("Spanish Vocabulary Size") +
+  xlab("Native Language Group") +
+  ylab("Spanish Vocabulary % correct")
+
+
+#demo_data %>%
+#  group_by(group) %>% 
+#  summarise("Langauge Dominance" = mean(lang_dominance),
+#            SD = sd(lang_dominance), n = n()) %>% 
+#  kbl(caption = "Descriptives") %>%
+#  kable_classic(full_width = F, html_font = "Cambria")
+#
+#demo_data %>%
+#  group_by(Group = group) %>% 
+#  summarise("Mean (sd)" = mean(lang_dominance),
+#            SD = sd(lang_dominance), N = n()) %>% 
+#  kbl(caption = "Descriptives") %>%
+#  kable_classic(full_width = F, html_font = "Cambria")
+
+summary <- list("Language Dominance" = list("mean (sd)" = ~ qwraps2::mean_sd(lang_dominance)))
+our_summary1 <-
+  list("Language Dominance" =
+         list("min"       = ~ min(lang_dominance),
+              "max"       = ~ max(lang_dominance),
+              "mean (sd)" = ~ qwraps2::mean_sd(lang_dominance)),
+       "English Vocabulary Size" =
+         list("min"       = ~ min(lextale_eng_correct),
+              "median"    = ~ median(lextale_eng_correct),
+              "max"       = ~ max(lextale_eng_correct),
+              "mean (sd)" = ~ qwraps2::mean_sd(lextale_eng_correct)),
+       "Spanish Vocabulary Size" =
+         list("min"       = ~ min(lextale_esp_correct),
+              "max"       = ~ max(lextale_esp_correct),
+              "mean (sd)" = ~ qwraps2::mean_sd(lextale_esp_correct))
+  )              
+
+by_lang <- summary_table(dplyr::group_by(demo_data, group),our_summary1)
+print(by_lang)
+ 
+by_lang %>% 
+  kbl(caption = "Descriptives") %>%
+  kable_styling() %>% 
+  pack_rows("Language Dominance", 1, 3) %>% 
+  pack_rows("English Vocabulary Size", 4, 7) %>%
+  pack_rows("Spanish Vocabulary Size", 8, 10) %>%
+  kable_classic(full_width = F, html_font = "Cambria")
