@@ -466,10 +466,20 @@ lab_segmentation <- subset(demographics, expName == 'Segmentation') %>%
   select(c('partNum','eng_hist_score':'izura_score', 'age':'preferLanguage','group','session',
             'date'))
 
+
+
+
+
 # Write statement for file containing only necessary columns for lab segmentation analysis
 write_csv(lab_segmentation, '53_lab_segmentation.csv')
 # For PI Advisor
 write_csv(lab_segmentation, 'lab_segmentation_attributes.csv')
+
+
+
+
+
+
 
 # This needs some work because several participants returned 2nd time and are listed only under
 #segmentation
@@ -490,9 +500,9 @@ lab_intuition <- subset(demographics, expName != 'lemma_segmentation') %>%
            'expName', 'date'))
 
 # Write statement for file containing only necessary columns for lab intuition analysis
-write_csv(lab_intuition, '74_lab_intuition.csv')
-# For PI Advisor
-write_csv(lab_intuition, 'lab_intuition_attributes.csv')
+write_csv(lab_intuition, '../Intuition/analyze_data/demographics/74_lab_intuition.csv')
+# For PI Advisor naming convention in secure cloud storage
+#write_csv(lab_intuition, '../Intuition/analyze_data/demographics/attributes.csv')
 
 # Create table for all demographic information for participants in online experiments
 # Dropped for error rates in experiment
