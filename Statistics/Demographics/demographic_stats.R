@@ -76,18 +76,6 @@ lex_esp_data <-  lex_esp_no_heritage %>%
 # clean up data environemnt
 rm(lex_esp_no_heritage, lex_esp_dir)
 
-
-
-## subset for those collected in person
-#bi_mx_lex_esp <- subset(lex_esp_data, is.na(lex_esp_data$OS) & lex_esp_data$placeResidence == 'Hermosillo')
-#lex_esp <- subset(lex_esp_data, is.na(lex_esp_data$OS))
-#
-## subset for those collected online
-#mono_lex_esp <- subset(lex_esp_data, !is.na(lex_esp_data$OS) & lex_esp_data$birthCountry == 'México')
-
-
-
-
 # Basic Langauge Profile Data Directory
 blp_dir = 'analyze_data/blp_cols' #set path to directory
 blp_files = list.files(path=blp_dir, pattern = '*.csv', full.names = TRUE) #list all the files with path
@@ -143,10 +131,6 @@ while (i<length(blp_data$blp_question))
 # deletes unnecessary columns
 blp_data_cleaned <- select(blp_data, -c(langHistResp1, langHistRT1, langHistResp2, langHistRT2))
 
-## subset experimental and participant information 
-#demographics <- select(blp_data_cleaned, 'partNum':'expName')
-#demographics <- demographics[!duplicated(demographics$partNum),] # reduce to one row per participant
-
 # deletes practice rows in LexTALE test
 lex_eng_cleaned <- lex_eng_data %>%
   subset(word != 'platery') %>%
@@ -164,35 +148,10 @@ lex_esp_cleaned <- lex_esp_data %>%
 # Create csv without practice trials
 #write_csv(lex_esp_cleaned, 'esp_lextale.csv')
 
-
-
-#bi_mx_lex_esp_cleaned <- bi_mx_lex_esp %>%
-#  subset(word != 'pladeno') %>%
-#  subset(word != 'delantera') %>%
-#  subset(word != 'garbardina')
-#
-#mono_lex_esp_cleaned <- mono_lex_esp %>%
-#  subset(word != 'pladeno') %>%
-#  subset(word != 'delantera') %>%
-#  subset(word != 'garbardina')
-
-
-
 # Clean up data environment
 rm(lex_eng_data, lex_esp_data, blp_data,i, j)
 
-
-
-## Read vector from R session Monolingual Lemma Segmentation Visual
-#segmentation_remaining <- readRDS("online_lemma_participants")
-#mono_lex_esp_cleaned <- subset(mono_lex_esp_cleaned, mono_lex_esp_cleaned$partNum %in% segmentation_remaining)
-#write_csv(mono_lex_esp_cleaned, '44_monolingual_lextale_all_responses.csv')
-
 # get LexTALE scores
-# commented lines only for quick viewing purposes, NOT analysis
-#lex_eng_score <- aggregate(data=lex_eng_cleaned, lexRespEngCorr ~ partNum + birthCountry, FUN='mean')
-#lex_esp_score <- aggregate(data=lex_esp_cleaned, lexRespEspCorr ~ partNum + birthCountry, FUN='mean')
-
 lex_eng_score <- aggregate(data=lex_eng_cleaned, lextaleRespEngCorr ~ partNum, FUN='mean')
 names(lex_eng_score)[names(lex_eng_score)=='lextaleRespEngCorr'] <- 'lextale_eng_correct'
 # write file with participant number and english lextale score
@@ -238,77 +197,6 @@ describe(esp_lex_esp_izura$izura_score)
 
 # Clean up data environment
 rm(esp_non_word, esp_nw_incorr, esp_real_word, esp_wd_corr, lex_eng_cleaned, lex_esp_cleaned)
-
-
-
-
-## Monolingual Spanish Speakers from Mexico
-#mono_lex_esp_score <- aggregate(data=mono_lex_esp_cleaned, lextaleRespEspCorr ~ partNum, FUN='mean')
-#names(mono_lex_esp_score)[names(mono_lex_esp_score)=='lextaleRespEspCorr'] <- 'lextale_esp_correct'
-#
-## Izura method of calculation Monolinguals
-#mono_real_word <- subset(mono_lex_esp_cleaned,mono_lex_esp_cleaned$translation != "NW" & mono_lex_esp_cleaned$lextaleRespEspCorr == 1) 
-#  
-#mono_non_word <- subset(mono_lex_esp_cleaned,mono_lex_esp_cleaned$translation == "NW")# & mono_lex_esp_cleaned$lextaleRespEspCorr == 0)
-#
-#mono_wd_corr <- aggregate(data=mono_real_word, lextaleRespEspCorr ~ partNum, FUN='sum')
-#names(mono_wd_corr)[names(mono_wd_corr)=='lextaleRespEspCorr'] <- 'yes_to_word'
-#mono_nw_incorr <- aggregate(data=mono_non_word, lextaleRespEspCorr ~ partNum, FUN='sum')
-#mono_nw_incorr <- mono_nw_incorr %>% 
-#  add_column(., yes_to_nonword = 30 - mono_nw_incorr$lextaleRespEspCorr) %>% 
-#  select(.,-c('lextaleRespEspCorr'))
-#
-#
-#mono_lex_esp_izura <- merge(mono_wd_corr, mono_nw_incorr, by='partNum') %>% 
-#  add_column(.,izura_score = .$yes_to_word - 2 * .$yes_to_nonword) %>% 
-#  subset(.,.$partNum %in% segmentation_remaining)
-#
-#write_csv(mono_lex_esp_izura, '44_monolingual_izura_score.csv')
-#
-## Monolingual Lextale-Esp distribution plots
-#densityplot(~izura_score, data = mono_lex_esp_izura, main = 'Density plot of Monolingual participants') 
-#histogram(~izura_score, data = mono_lex_esp_izura, main = 'Monolingual participants collected online') 
-#
-## Monolingual Lextale-Esp descriptive statistics 
-#describe(mono_lex_esp_izura$izura_score)
-
-#mono_below_34 <- subset(mono_lex_esp_izura,mono_lex_esp_izura$izura_score < 34)
-#mono_below_30 <- subset(mono_lex_esp_izura,mono_lex_esp_izura$izura_score < 30)
-#mono_below_20 <- subset(mono_lex_esp_izura,mono_lex_esp_izura$izura_score < 20)
-#mono_below_10 <- subset(mono_lex_esp_izura,mono_lex_esp_izura$izura_score < 10)
-#
-#
-#remaining_46 <- subset(mono_lex_esp_izura,mono_lex_esp_izura$partNum %in% segmentation_remaining)
-#
-#densityplot(~izura_score, data = remaining_46, main = 'Density plot of all 46 participants not cut from segmentation criteria') 
-#histogram(~izura_score, data = remaining_46, main = ' 46 participants not cut from segmentation criteria') 
-#
-#remaining_below_30 <- subset(remaining_46, remaining_46$izura_score < 30)  
-
-
-
-## Izura method of calculatio Spanish bilinguals from Mexico
-#bi_mx_lex_esp <- subset(bi_mx_lex_esp_cleaned, bi_mx_lex_esp_cleaned$birthCountry == 'México')
-#bi_mx_real_word <- subset(bi_mx_lex_esp,bi_mx_lex_esp$translation != "NW" & bi_mx_lex_esp$lextaleRespEspCorr == 1) #
-#
-#bi_mx_non_word <- subset(bi_mx_lex_esp,bi_mx_lex_esp$translation == "NW")# & mono_lex_esp_cleaned$lextaleRespEspCo#rr == 0)
-#
-#bi_mx_wd_corr <- aggregate(data=bi_mx_real_word, lextaleRespEspCorr ~ partNum, FUN='sum')
-#names(bi_mx_wd_corr)[names(bi_mx_wd_corr)=='lextaleRespEspCorr'] <- 'yes_to_word'
-#
-#bi_mx_nw_incorr <- aggregate(data=bi_mx_non_word, lextaleRespEspCorr ~ partNum, FUN='sum') 
-#
-#bi_mx_nw_incorr <- add_column(bi_mx_nw_incorr, yes_to_nonword = 30 - bi_mx_nw_incorr$lextaleRespEspCorr) %>% 
-#  select(.,-c('lextaleRespEspCorr'))
-#
-#
-#bi_mx_lex_esp_izura <- merge(bi_mx_wd_corr, bi_mx_nw_incorr, by='partNum') %>% 
-#  add_column(.,izura_score = .$yes_to_word - 2 * .$yes_to_nonword)
-#
-#bi_mx_below_34 <- subset(bi_mx_lex_esp_izura,bi_mx_lex_esp_izura$izura_score < 34)
-
-
-
 
 # create dataframe for each blp section
 # create language history dataframe
@@ -421,13 +309,6 @@ part_score <- merge(global_score, lex_eng_score, by='partNum') %>%
   rename(global_eng_score = eng_score, global_esp_score = esp_score, 
          izura_yes_to_words = yes_to_word, izura_yes_to_nonwords = yes_to_nonword)
 
-
-#part_scores <- select(global_score, c(partNum,eng_score,esp_score,lang_dominance,lextale_eng_correct, lextale_esp_correct))
-
-#part_scores_demographics <- merge(part_scores,demographics, by='partNum')
-
-#write_csv(part_scores_demographics, 'blp_lextale_lab_participants.csv')
-
 # Clean up data environment
 rm(eng_score,esp_score,lang_dom, blp_data_cleaned,blp_attitude_score,blp_history_score,
    blp_proficiency_score,blp_use_score, eng_att,eng_hist,eng_prof,eng_use,esp_att,esp_hist,
@@ -466,30 +347,40 @@ lab_segmentation <- subset(demographics, expName == 'Segmentation') %>%
   select(c('partNum','eng_hist_score':'izura_score', 'age':'preferLanguage','group','session',
             'date'))
 
+lab_drop <- c()
+lab_drop <- c('part007', 'part031', 'part033', 'part058', 'part019', 'part017')
 
+check <- lab_segmentation %>% 
+  subset(., partNum %in% lab_drop) %>% 
+  select(c('partNum','gender':'placeResidence', 'preferLanguage', 'group'))
 
+check2 <- demographics %>% 
+  subset(., lang_dominance < 50 & group == 'English')
 
+check3 <- demographics %>% 
+  subset(., lang_dominance > 0 & group == 'Spanish')
+
+check4 <- demographics %>% 
+  subset(., lextale_eng_correct > 0.8 & group != 'English')
+
+check5 <- demographics %>% 
+  subset(., lextale_eng_correct < lextale_esp_correct & group == 'English')
+
+check6 <- demographics %>% 
+  subset(., lextale_eng_correct > lextale_esp_correct & group == 'Spanish') %>% 
+  select(c('partNum','gender':'placeResidence', 'preferLanguage', 'group', 'lang_dominance':'lextale_esp_correct'))
+
+# spanish group not born in Mexico
+check7 <- demographics %>% 
+  subset(., birthCountry == 'Estados Unidos' & group == 'Spanish') # part027
+
+check8 <- demographics %>% 
+  subset(., birthCountry == 'México' & group == 'English')
 
 # Write statement for file containing only necessary columns for lab segmentation analysis
 write_csv(lab_segmentation, '53_lab_segmentation.csv')
 # For PI Advisor
 write_csv(lab_segmentation, 'lab_segmentation_attributes.csv')
-
-
-
-
-
-
-
-# This needs some work because several participants returned 2nd time and are listed only under
-#segmentation
-#lab_lexical <- subset(demographics, expName == 'Lexical_Access') %>% 
-#  select_if(~!all(is.na(.))) %>% 
-#  subset(., group != 'Childhood') %>% 
-#  select(-c('expName')) %>% 
-#  rename(age = age.x) %>% 
-#  select(c('partNum','eng_hist_score':'izura_score', 'age':'preferLanguage','group','session',
-#           'date'))
 
 # Create table for all demographic information for participants in intuition experiment  
 lab_intuition <- subset(demographics, expName != 'lemma_segmentation') %>%
@@ -561,33 +452,6 @@ learners <- subset(online_lemma, group == 'L2 Learner')
 write_csv(natives, 'natives.csv')
 write_csv(learners, 'learners.csv')
 
-# Write statement for file containing only necessary columns for online segmentation analysis
-#write_csv(online_lemma, '120_lemma_online.csv')
-# For PI Advisor
-#write_csv(online_lemma, 'online_attributes.csv')
-  
-# Used to check values. not part of final code
-#colnames(online_lemma)
-#select(online_lemma, c('partNum', 'native_lang', 'Bilingual')) #%>% 
-#  filter(group == 'L2 Learner')
-
-# Subset online experiment for Monolingual Speakers from Mexico
-#mono_lemma <- subset(online_lemma, group == 'Monolingual Spanish') %>% 
-#  select_if(~!all(is.na(.)))
-#
-## Write statement for file containing only necessary columns for online segmentation analysis
-#write_csv(mono_lemma, '50_lemma_online.csv')
-## For PI Advisor
-#write_csv(mono_lemma, 'online_mono_attributes.csv')
-#
-## Subset online experiment for L2 Spanish Speakers from US
-#L2_lemma <- subset(online_lemma, group == 'L2 Learner')
-#
-## Write statement for file containing only necessary columns for online segmentation analysis
-#write_csv(L2_lemma, '70_lemma_online.csv')
-## For PI Advisor
-#write_csv(L2_lemma, 'online_L2_attributes.csv')
-
 # Used to check columns and values
 lapply(lab_segmentation, function(x) length(table(x)))
 sapply(lab_segmentation,function(x) unique(x))
@@ -601,27 +465,3 @@ lapply(learners, function(x) length(table(x)))
 sapply(learners,function(x) unique(x))
 
 
-#demographics<- demographics %>% 
-#  mutate(age = 
-#           age.y %>% 
-#           is.na %>%
-#           ifelse(age.x, age.y)) %>% 
-#  select(-c(age.x, age.y))
-
-# Need to create data set for demographics One line per participant
-# demogrpahics_all.csv
-# Create subset for Intuition Experiment, Lexical Access and Segmenation Experiment (lab), Segmenation (online)
-# intuition_demo.csv, lexical_access_demo.csv, segmentation_lab_demo.csv, segmentation_online_demo.csv
-# partID, LexTALE-ENG, LexTale-ESP, Bilingual Langauge Profile
-# Store in Box > Intuition > Active > data > attirbutes
-
-#lab_part = read_csv('blp_lextale_lab_participants.csv')
-#
-## export csv for Miquel Meeting
-#write_csv(lang_attitude_clean,'~/Desktop/working_diss_files/r-checking/blp_attitude.csv')
-#write_csv(lang_history_clean,'~/Desktop/working_diss_files/r-checking/blp_history.csv')
-#write_csv(lang_proficiency_clean,'~/Desktop/working_diss_files/r-checking/blp_proficiency.csv')
-#write_csv(lang_use_clean,'~/Desktop/working_diss_files/r-checking/blp_use.csv')
-#write_csv(lex_eng_cleaned,'~/Desktop/working_diss_files/r-checking/lextale_english.csv')
-#write_csv(lex_esp_cleaned,'~/Desktop/working_diss_files/r-checking/lextale_spanish.csv')
-#write_csv(part_scores_demographics,'~/Desktop/working_diss_files/r-checking/participants_informat#ion.csv')
