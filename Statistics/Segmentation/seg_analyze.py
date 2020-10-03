@@ -4,7 +4,7 @@ from Scripts_Dissertation import data_preparation
 
 # Set some constants
 STARTFILECOUNT = 77
-FILECOUNTAFTERREMOVAL = STARTFILECOUNT - 3
+FILECOUNTAFTERREMOVAL = STARTFILECOUNT - 10
 
 # Set some directory paths needed for project
 project_wd = os.getcwd()
@@ -52,13 +52,26 @@ for directory in project_dir_list:
 csv_list = data_preparation.collect_files(project_wd, raw_part_dir, '*.csv')
 
 assert len(csv_list) == STARTFILECOUNT
+
 # remove participants from analysis
-#try:
-csv_list.remove('part044_inglés_C_Segmentation.csv') # removed for fluency in other languages
-csv_list.remove('part047_español_D_Segmentation.csv') # removed for different Spanish variety (geographic location)
-csv_list.remove('part052_inglés_D_Segmentation.csv') # removed for birth country
-#except: ValueError
-# not a great programming standard (ask Julian later) probably not needed
+# removed for birth location:
+csv_list.remove('part027_español_D_Segmentation.csv') # L1 Spanish born in US
+csv_list.remove('part047_español_D_Segmentation.csv') # L1 Spanish born and raised outside Sonora, MX
+csv_list.remove('part052_inglés_D_Segmentation.csv') # L1 Spanish born in US
+
+# removed for fluency in languages of than Spanish and English:
+csv_list.remove('part044_inglés_C_Segmentation.csv') # Fluency in Japanese, Catalan and Italian
+
+# removed for larger vocabularies in L2 than L1:
+csv_list.remove('part016_español_A_Segmentation.csv') # L1 Spanish lower than L2 English vocabulary
+csv_list.remove('part033_español_B_Segmentation.csv') # L1 Spanish lower than L2 English vocabulary
+csv_list.remove('part059_inglés_B_Segmentation.csv') # L1 Spanish lower than L2 English vocabulary
+
+# outliers in language dominance scores:
+csv_list.remove('part007_inglés_B_Segmentation.csv') # L1 English with dominance score below 50
+csv_list.remove('part031_inglés_D_Segmentation.csv') # L1 Spanish with dominance score above 0
+csv_list.remove('part058_inglés_A_Segmentation.csv') # L1 Spanish with dominance score above 0
+
 assert len(csv_list) == FILECOUNTAFTERREMOVAL
 
 # change the headers of csv files
