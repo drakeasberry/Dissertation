@@ -338,6 +338,39 @@ demographics <- demographics %>%
 # clean up data environment
 rm(online_demo, part_score)
 
+# Outliers in Language Dominance Test
+# English group outlier test
+english_outlier_dom <- demographics %>% 
+  subset(., lang_dominance < 50 & group == 'English') # part007
+# Spanish group outlier test
+spanish_outlier_dom <- demographics %>% 
+  subset(., lang_dominance > 0 & group == 'Spanish') # part031 & part058
+
+# Test to ensure L1 vocabulary is larger than L2 vocabulary
+eng_higher_L2_vocab <- demographics %>% 
+  subset(., lextale_eng_correct < lextale_esp_correct & group == 'English') %>% 
+  # No one removed
+  select(c('partNum','gender':'placeResidence', 'preferLanguage', 'group', 
+           'lang_dominance':'lextale_esp_correct')) 
+
+esp_higher_L2_vocab <- demographics %>% 
+  subset(., lextale_eng_correct > lextale_esp_correct & group == 'Spanish') %>% 
+  # part033 86 Eng 68 SP, part016 76 Eng 74 SP, part059 78 Eng 73 SP
+  select(c('partNum','gender':'placeResidence', 'preferLanguage', 'group', 
+           'lang_dominance':'lextale_esp_correct')) 
+
+# Check to ensure participant group identifications match
+# Spanish group not born in Mexico
+esp_wrong_demo <- demographics %>% 
+  subset(., birthCountry == 'Estados Unidos' & group == 'Spanish') # part027
+# English group not born in US
+eng_wrong_demo <- demographics %>% 
+  subset(., birthCountry == 'México' & group == 'English') # no one removed
+
+# Clean up environment
+rm(esp_wrong_demo, eng_wrong_demo, eng_higher_L2_vocab, english_outlier_dom, esp_higher_L2_vocab,
+   spanish_outlier_dom)
+
 # Create table for all demographic information for participants in lab segmentation experiment
 lab_segmentation <- subset(demographics, expName == 'Segmentation') %>% 
   select_if(~!all(is.na(.))) %>% 
@@ -345,55 +378,57 @@ lab_segmentation <- subset(demographics, expName == 'Segmentation') %>%
   select(-c('expName')) %>% 
   rename(age = age.x) %>% 
   select(c('partNum','eng_hist_score':'izura_score', 'age':'preferLanguage','group','session',
-            'date'))
+            'date')) %>% 
+  mutate(diff = lextale_eng_correct - lextale_esp_correct) # calulate difference between vocabularies
 
-lab_drop <- c()
-lab_drop <- c('part007', 'part031', 'part033', 'part058', 'part019', 'part017')
+# subset English group
+eng <- lab_segmentation %>%
+  subset(., group == 'English') %>% 
+  mutate(odd_dir = ifelse(diff > 0, 'keep', 'delete')) %>% 
+  select('partNum', 'group', 'diff', 'odd_dir')
 
-check <- lab_segmentation %>% 
-  subset(., partNum %in% lab_drop) %>% 
-  select(c('partNum','gender':'placeResidence', 'preferLanguage', 'group'))
+# subset Spanish group
+esp <- lab_segmentation %>%
+  subset(., group == 'Spanish') %>% 
+  mutate(odd_dir = ifelse(diff < 0, 'keep', 'delete')) %>% 
+  select('partNum', 'group', 'diff', 'odd_dir')
 
-check2 <- demographics %>% 
-  subset(., lang_dominance < 50 & group == 'English')
+# Combine English and Spanish groups 
+vocab_diff <- rbind(eng, esp)
 
-check3 <- demographics %>% 
-  subset(., lang_dominance > 0 & group == 'Spanish')
+# Clean up environment
+rm(eng, esp)
 
-check4 <- demographics %>% 
-  subset(., lextale_eng_correct > 0.8 & group != 'English')
-
-check5 <- demographics %>% 
-  subset(., lextale_eng_correct < lextale_esp_correct & group == 'English')
-
-check6 <- demographics %>% 
-  subset(., lextale_eng_correct > lextale_esp_correct & group == 'Spanish') %>% 
-  select(c('partNum','gender':'placeResidence', 'preferLanguage', 'group', 'lang_dominance':'lextale_esp_correct'))
-
-# spanish group not born in Mexico
-check7 <- demographics %>% 
-  subset(., birthCountry == 'Estados Unidos' & group == 'Spanish') # part027
-
-check8 <- demographics %>% 
-  subset(., birthCountry == 'México' & group == 'English')
+# Plot Language Vocabulary Difference
+ggplot(data = vocab_diff, 
+       aes(x = group,
+           y = diff)) +
+  geom_boxplot(color = "purple", width = 0.5,
+               outlier.shape = 8, outlier.size = 2) +
+  geom_violin(color = "red", fill = NA) +
+  geom_jitter(width = 0.1) +
+  ggtitle("Difference in L1 and L2 Vocabulary Size") +
+  xlab("Native Language Group") +
+  ylab("Vocabulary Difference = EN-SP")
 
 # Write statement for file containing only necessary columns for lab segmentation analysis
-write_csv(lab_segmentation, '53_lab_segmentation.csv')
+write_csv(lab_segmentation, '../Segmentation/46_lab_segmentation.csv')
 # For PI Advisor
-write_csv(lab_segmentation, 'lab_segmentation_attributes.csv')
+write_csv(lab_segmentation, '../Segmentation/attributes.csv')
 
 # Create table for all demographic information for participants in intuition experiment  
 lab_intuition <- subset(demographics, expName != 'lemma_segmentation') %>%
   select_if(~!all(is.na(.))) %>% 
-  subset(., group != 'Childhood') %>% 
+  subset(., group != 'Childhood') %>%
+  subset(., partNum %ni% lab_drop) %>% 
   rename(age = age.x) %>% 
   select(c('partNum','eng_hist_score':'izura_score', 'age':'preferLanguage','group','session',
            'expName', 'date'))
 
 # Write statement for file containing only necessary columns for lab intuition analysis
-write_csv(lab_intuition, '../Intuition/analyze_data/demographics/74_lab_intuition.csv')
+write_csv(lab_intuition, '../Intuition/analyze_data/demographics/70_lab_intuition.csv')
 # For PI Advisor naming convention in secure cloud storage
-#write_csv(lab_intuition, '../Intuition/analyze_data/demographics/attributes.csv')
+write_csv(lab_intuition, '../Intuition/analyze_data/demographics/attributes.csv')
 
 # Create table for all demographic information for participants in online experiments
 # Dropped for error rates in experiment
