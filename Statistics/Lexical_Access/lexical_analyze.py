@@ -3,6 +3,10 @@ import os
 import glob
 from Scripts_Dissertation import data_preparation
 
+# Set some constants
+STARTFILECOUNT = 58
+FILECOUNTAFTERREMOVAL = STARTFILECOUNT - 5
+
 # Set some directory paths needed for project
 parent_dir = os.getcwd()
 original_dir = 'Dissertation_Experiments/lexicalAccess/data/original_data/part_files/'
@@ -39,6 +43,22 @@ for directory in directory_list:
 # create list of csv files to modify and rename headers
 csv_list = data_preparation.collect_files(parent_dir, original_dir, '*.csv')
 #print(csv_list)
+
+assert len(csv_list) == STARTFILECOUNT
+
+# remove participants from analysis
+# removed for birth location:
+csv_list.remove('part063_español_A_No_Lexical_Access.csv') # part027 L1 Spanish born in US
+
+# removed for larger vocabularies in L2 than L1:
+csv_list.remove('part056_español_C_No_Lexical_Access.csv') # part016 L1 Spanish lower than L2 English vocabulary
+csv_list.remove('part064_español_C_No_Lexical_Access.csv') # part033 L1 Spanish lower than L2 English vocabulary
+
+# outliers in language dominance scores:
+csv_list.remove('part040_inglés_A_No_Lexical_Access.csv') # part007 L1 English with dominance score below 50
+csv_list.remove('part053_inglés_A_No_Lexical_Access.csv') # part 031 L1 Spanish with dominance score above 0
+
+assert len(csv_list) == FILECOUNTAFTERREMOVAL
 
 # change the headers of csv files
 data_preparation.remap_pandas_headers('Scripts_Dissertation/replacement_map.json', csv_list, original_dir, temp_dir, False)
