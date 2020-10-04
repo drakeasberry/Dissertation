@@ -381,33 +381,33 @@ lab_segmentation <- subset(demographics, expName == 'Segmentation') %>%
             'date')) %>% 
   mutate(diff = lextale_eng_correct - lextale_esp_correct) # calulate difference between vocabularies
 
-# subset English group
+# subset English group in lab segmentation experiment
 eng <- lab_segmentation %>%
   subset(., group == 'English') %>% 
   mutate(odd_dir = ifelse(diff > 0, 'keep', 'delete')) %>% 
   select('partNum', 'group', 'diff', 'odd_dir')
 
-# subset Spanish group
+# subset Spanish group in lab segmentation experiment
 esp <- lab_segmentation %>%
   subset(., group == 'Spanish') %>% 
   mutate(odd_dir = ifelse(diff < 0, 'keep', 'delete')) %>% 
   select('partNum', 'group', 'diff', 'odd_dir')
 
-# Combine English and Spanish groups 
-vocab_diff <- rbind(eng, esp)
+# Combine English and Spanish groups in lab segmentation experiment
+vocab_diff_segmenation <- rbind(eng, esp)
 
 # Clean up environment
 rm(eng, esp)
 
-# Plot Language Vocabulary Difference
-ggplot(data = vocab_diff, 
+# Plot Language Vocabulary Difference in lab segmentation experiment
+ggplot(data = vocab_diff_segmenation, 
        aes(x = group,
            y = diff)) +
   geom_boxplot(color = "purple", width = 0.5,
                outlier.shape = 8, outlier.size = 2) +
   geom_violin(color = "red", fill = NA) +
   geom_jitter(width = 0.1) +
-  ggtitle("Difference in L1 and L2 Vocabulary Size") +
+  ggtitle("Difference in L1 and L2 Vocabulary Size (Segmentation)") +
   xlab("Native Language Group") +
   ylab("Vocabulary Difference = EN-SP")
 
@@ -416,19 +416,113 @@ write_csv(lab_segmentation, '../Segmentation/46_lab_segmentation.csv')
 # For PI Advisor
 write_csv(lab_segmentation, '../Segmentation/attributes.csv')
 
+# Create table for all demographic information for participants only in lab Lexical access experiment
+lab_lexical_only <- subset(demographics, expName == 'Lexical_Access') %>% 
+  select_if(~!all(is.na(.))) %>% 
+  subset(., group != 'Childhood') %>% 
+  select(-c('expName')) %>% 
+  rename(age = age.x) %>% 
+  select(c('partNum','eng_hist_score':'izura_score', 'age':'preferLanguage','group','session',
+           'date')) %>% 
+  mutate(diff = lextale_eng_correct - lextale_esp_correct) # calulate difference between vocabularies
+
+# subset English group that gave syllable intuition data during Lab Lexical Access Experiment
+eng <- lab_lexical_only %>%
+  subset(., group == 'English') %>% 
+  mutate(odd_dir = ifelse(diff > 0, 'keep', 'delete')) %>% 
+  select('partNum', 'group', 'diff', 'odd_dir')
+
+# subset Spanish group that gave syllable intuition data during Lab Lexical Access Experiment
+esp <- lab_lexical_only %>%
+  subset(., group == 'Spanish') %>% 
+  mutate(odd_dir = ifelse(diff < 0, 'keep', 'delete')) %>% 
+  select('partNum', 'group', 'diff', 'odd_dir')
+
+# Combine English and Spanish groups who gave syllable intuition data during Lab Lexical Access Experiment
+vocab_diff_lexical_only <- rbind(eng, esp)
+
+# Clean up environment
+rm(eng, esp)
+
+# Plot Language Vocabulary Difference for participants giving data only during Lexical Access Experiment
+ggplot(data = vocab_diff_lexical_only, 
+       aes(x = group,
+           y = diff)) +
+  geom_boxplot(color = "purple", width = 0.5,
+               outlier.shape = 8, outlier.size = 2) +
+  geom_violin(color = "red", fill = NA) +
+  geom_jitter(width = 0.1) +
+  ggtitle("Difference in L1 and L2 Vocabulary Size (Lexical Access Only)") +
+  xlab("Native Language Group") +
+  ylab("Vocabulary Difference = EN-SP")
+
+# Write statement for file containing only necessary columns for lab lexical access only analysis
+write_csv(lab_lexical_only, '../Lexical_Access/21_lab_lexical_only.csv')
+# For PI Advisor
+write_csv(lab_lexical_only, '../Lexical_Access/lexical_only_attributes.csv')
+
+# Read in all lexical participants including those who returned for second iteration
+all_lexical_part <- read_csv('../Lexical_Access/42_lexical_access.csv')
+
+# Create table for all demographic information in lab Lexical access experiment
+lab_lexical <- subset(demographics, expName != 'lemma_segmentation' & 
+                        partNum %in% all_lexical_part$partNum) %>%
+  select_if(~!all(is.na(.))) %>% 
+  subset(., group != 'Childhood') %>% 
+  select(-c('expName')) %>% 
+  rename(age = age.x) %>% 
+  select(c('partNum','eng_hist_score':'izura_score', 'age':'preferLanguage','group','session',
+           'date')) %>% 
+  mutate(diff = lextale_eng_correct - lextale_esp_correct) # calulate difference between vocabularies
+
+# Plot Language Vocabulary Difference for participants giving data only during Lexical Access Experiment
+ggplot(data = lab_lexical, 
+       aes(x = group,
+           y = diff)) +
+  geom_boxplot(color = "purple", width = 0.5,
+               outlier.shape = 8, outlier.size = 2) +
+  geom_violin(color = "red", fill = NA) +
+  geom_jitter(width = 0.1) +
+  ggtitle("Difference in L1 and L2 Vocabulary Size (Lexical Access All)") +
+  xlab("Native Language Group") +
+  ylab("Vocabulary Difference = EN-SP")
+
+# Write statement for file containing only necessary columns for lab lexical access only analysis
+write_csv(lab_lexical, '../Lexical_Access/42_lab_lexical.csv')
+# For PI Advisor
+write_csv(lab_lexical, '../Lexical_Access/attributes.csv')
+
+# Combine segmenatation and lexical access dataframes for intuition experiment
+vocab_diff_intuition <- rbind(vocab_diff_segmenation, vocab_diff_lexical_only)
+
+# Plot Language Vocabulary Difference for intuition experiment
+ggplot(data = vocab_diff_intuition, 
+       aes(x = group,
+           y = diff)) +
+  geom_boxplot(color = "purple", width = 0.5,
+               outlier.shape = 8, outlier.size = 2) +
+  geom_violin(color = "red", fill = NA) +
+  geom_jitter(width = 0.1) +
+  ggtitle("Difference in L1 and L2 Vocabulary Size (Intuition)") +
+  xlab("Native Language Group") +
+  ylab("Vocabulary Difference = EN-SP")
+
 # Create table for all demographic information for participants in intuition experiment  
 lab_intuition <- subset(demographics, expName != 'lemma_segmentation') %>%
   select_if(~!all(is.na(.))) %>% 
   subset(., group != 'Childhood') %>%
-  subset(., partNum %ni% lab_drop) %>% 
+  subset(., partNum %in% vocab_diff_intuition$partNum) %>% 
   rename(age = age.x) %>% 
   select(c('partNum','eng_hist_score':'izura_score', 'age':'preferLanguage','group','session',
            'expName', 'date'))
 
 # Write statement for file containing only necessary columns for lab intuition analysis
-write_csv(lab_intuition, '../Intuition/analyze_data/demographics/70_lab_intuition.csv')
+write_csv(lab_intuition, '../Intuition/analyze_data/demographics/67_lab_intuition.csv')
 # For PI Advisor naming convention in secure cloud storage
 write_csv(lab_intuition, '../Intuition/analyze_data/demographics/attributes.csv')
+
+# Clean up environment
+rm(vocab_diff_intuition, vocab_diff_lexical_only, vocab_diff_segmenation, all_lexical_part)
 
 # Create table for all demographic information for participants in online experiments
 # Dropped for error rates in experiment
