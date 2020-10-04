@@ -9,6 +9,7 @@ library(ggplot2)
 library(kableExtra)
 library(qwraps2)
 library(jmv)
+library(stargazer)
 
 # Create and store functions 
 # create 'not in' function
@@ -72,14 +73,18 @@ syllable_data_no_heritage %>%
 # Remove unnecessary elements from R environment
 rm(syllable_data)
 
+#lab_drop <- c('part007', 'part031', 'part033', 'part058') # checked 017 & 019 but kept
+syllable_data <- syllable_data_no_heritage %>% 
+  subset(., partNum %ni% lab_drop)
+
 # Write statement for file containing only necessary columns for intuition analysis
-write_csv(syllable_data_no_heritage, 'analyze_data/output/esp_eng_74_intuition.csv')
+write_csv(syllable_data, 'analyze_data/output/esp_eng_70_intuition.csv')
 # For PI Advisor naming convention in secure cloud storage
 #write_csv(syllable_data_no_heritage, 'analyze_data/output/data.csv') 
 
 # Jomovi Analysis Data Transformation 
 # Create new long form dataframe with new columns needed for analysis
-mydata_long <- syllable_data_no_heritage %>%
+mydata_long <- syllable_data %>%
   # keep participant, group and syllable structure column for summary
   group_by(partNum, group, syl_structure) %>%
   # add new column with percent correct by participant and syllable structure
@@ -92,23 +97,23 @@ mydata_long <- syllable_data_no_heritage %>%
 # Write long form dataframe to csv
 write_csv(mydata_long, 'analyze_data/output/data_long.csv')
 
-# Create new wide form dataframe with new columns needed for analysis
-mydata_wide <- mydata_long %>%
-  # delete the percent correct column
-  select(-c(correct)) %>%
-  # transform syllable structure column into separate columns based on syllable structure
-  # keep the values from logit column and now should have only 1 row per participant
-  pivot_wider(names_from = syl_structure, values_from = logit)
-  
-# Write wdie form dataframe to csv
-write_csv(mydata_wide, 'analyze_data/output/data_wide.csv')
+## Create new wide form dataframe with new columns needed for analysis
+#mydata_wide <- mydata_long %>%
+#  # delete the percent correct column
+#  select(-c(correct)) %>%
+#  # transform syllable structure column into separate columns based on syllable structure
+#  # keep the values from logit column and now should have only 1 row per participant
+#  pivot_wider(names_from = syl_structure, values_from = logit)
+#  
+## Write wdie form dataframe to csv
+#write_csv(mydata_wide, 'analyze_data/output/data_wide.csv')
 
 # Remove unnecessary elements from R environment
 rm(syllable_data_no_heritage)
 
 # Demographic Information Descriptions
 # Load demographic data
-demo_data <- read_csv('analyze_data/demographics/74_lab_intuition.csv')
+demo_data <- read_csv('analyze_data/demographics/70_lab_intuition.csv')
 
 # Box plots
 # Language Dominance
@@ -148,44 +153,60 @@ ggplot(data = demo_data,
   ylab("Spanish Vocabulary % correct")
 
 
-#demo_data %>%
-#  group_by(group) %>% 
-#  summarise("Langauge Dominance" = mean(lang_dominance),
-#            SD = sd(lang_dominance), n = n()) %>% 
-#  kbl(caption = "Descriptives") %>%
-#  kable_classic(full_width = F, html_font = "Cambria")
-#
-#demo_data %>%
-#  group_by(Group = group) %>% 
-#  summarise("Mean (sd)" = mean(lang_dominance),
-#            SD = sd(lang_dominance), N = n()) %>% 
-#  kbl(caption = "Descriptives") %>%
-#  kable_classic(full_width = F, html_font = "Cambria")
-
-summary <- list("Language Dominance" = list("mean (sd)" = ~ qwraps2::mean_sd(lang_dominance)))
-our_summary1 <-
+#summary <- list("Language Dominance" = list("mean (sd)" = ~ qwraps2::mean_sd(lang_dominance)))
+dominance_summary <-
   list("Language Dominance" =
-         list("min"       = ~ min(lang_dominance),
-              "max"       = ~ max(lang_dominance),
+         list(#"min"       = ~ min(lang_dominance),
+              #"max"       = ~ max(lang_dominance),
               "mean (sd)" = ~ qwraps2::mean_sd(lang_dominance)),
        "English Vocabulary Size" =
-         list("min"       = ~ min(lextale_eng_correct),
-              "median"    = ~ median(lextale_eng_correct),
-              "max"       = ~ max(lextale_eng_correct),
+         list(#"min"       = ~ min(lextale_eng_correct),
+              #"median"    = ~ median(lextale_eng_correct),
+              #"max"       = ~ max(lextale_eng_correct),
               "mean (sd)" = ~ qwraps2::mean_sd(lextale_eng_correct)),
        "Spanish Vocabulary Size" =
-         list("min"       = ~ min(lextale_esp_correct),
-              "max"       = ~ max(lextale_esp_correct),
+         list(#"min"       = ~ min(lextale_esp_correct),
+              #"max"       = ~ max(lextale_esp_correct),
               "mean (sd)" = ~ qwraps2::mean_sd(lextale_esp_correct))
   )              
 
-by_lang <- summary_table(dplyr::group_by(demo_data, group),our_summary1)
+by_lang <- summary_table(dplyr::group_by(demo_data, group),dominance_summary)
 print(by_lang)
  
 by_lang %>% 
   kbl(caption = "Descriptives") %>%
   kable_styling() %>% 
-  pack_rows("Language Dominance", 1, 3) %>% 
-  pack_rows("English Vocabulary Size", 4, 7) %>%
-  pack_rows("Spanish Vocabulary Size", 8, 10) %>%
+  pack_rows("Language Dominance", 1, 1) %>% 
+  pack_rows("English Vocabulary Size", 2, 2) %>%
+  pack_rows("Spanish Vocabulary Size", 3, 3) %>%
   kable_classic(full_width = F, html_font = "Cambria")
+
+#intuition_summary <-
+#  list("CV" =
+#         list(#"min"       = ~ min(CV),
+#              #"max"       = ~ max(CV),
+#              "mean (sd)" = ~ qwraps2::mean_sd(CV)),
+#       "CVC" =
+#         list(#"min"       = ~ min(CVC),
+#              #"median"    = ~ median(CVC),
+#              #"max"       = ~ max(CVC),
+#              "mean (sd)" = ~ qwraps2::mean_sd(CVC)),
+#       "Spanish Vocabulary Size" =
+#         list(#"min"       = ~ min(lextale_esp_correct),
+#              #"max"       = ~ max(lextale_esp_correct),
+#              "mean (sd)" = ~ qwraps2::mean_sd(lextale_esp_correct))
+#  ) 
+#
+##intuition <- mydata_long %>% 
+##  summary_table(dplyr::group_by(intuition, group),intuition_summary)
+##
+#print(intuition)
+
+#stargazer(,
+#          title="Descriptive Statistics for Selected Study Variables", 
+#          type = "text", #This helps your preview in non-latex output in #the console
+#          summary = TRUE,
+#          rownames = TRUE,
+#          summary.stat = c("min", "max", "mean", "sd"),
+#          notes = "Notes: n = 150.")
+#
