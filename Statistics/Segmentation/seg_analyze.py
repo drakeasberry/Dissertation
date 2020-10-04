@@ -38,7 +38,8 @@ syl_cols = [*syl, *demo_cols]
 blp_cols = [*blp, *demo_cols]
 seg_cols = [*seg, *demo_cols]
 seg_keep_cols = [*lextale_duplicates, *lextale_esp, *lextale_eng, *syl_cols, *seg_cols, *blp_cols, *demo_cols]
-list_of_lists = {'lextale_eng_cols':lextale_eng_cols, 'lextale_esp_cols':lextale_esp_cols, 'syl_cols':syl_cols, 'blp_cols':blp_cols, 'seg_cols':seg_cols}
+list_of_lists = {'lextale_eng_cols':lextale_eng_cols, 'lextale_esp_cols':lextale_esp_cols, 'syl_cols':syl_cols,
+                 'blp_cols':blp_cols, 'seg_cols':seg_cols}
 
 path = os.getcwd()
 print('The starting working directory is %s: ' % path)
@@ -75,7 +76,8 @@ csv_list.remove('part058_inglés_A_Segmentation.csv') # L1 Spanish with dominan
 assert len(csv_list) == FILECOUNTAFTERREMOVAL
 
 # change the headers of csv files
-data_preparation.remap_pandas_headers('Scripts_Dissertation/replacement_map.json', csv_list, raw_part_dir, temp_part_dir, 0)
+data_preparation.remap_pandas_headers('Scripts_Dissertation/replacement_map.json', csv_list, raw_part_dir,
+                                      temp_part_dir, 0)
 
 # get list of csv files to modify and select desired columns
 csv_list_new_headers = data_preparation.collect_files(project_wd, temp_part_dir, '*.csv')
@@ -85,10 +87,10 @@ csv_list_new_headers = data_preparation.collect_files(project_wd, temp_part_dir,
 data_preparation.del_psycopy_cols(csv_list_new_headers, seg_keep_cols, temp_part_dir, processed_part_dir, 0)
 # assert columns after
 
-# assert length (74)
+# assert length (70)
 # get list of csv files to modify, splits files and moves to stats temporary directory
 csv_list_to_split = data_preparation.collect_files(project_wd, processed_part_dir, '*.csv')
-# assert length (74)
+# assert length (70)
 
 skip_files = [] # will always be empty for segmentation experiment because no one returned to lab for second time
 
@@ -100,7 +102,8 @@ for cur_list in list_of_lists:
     #print(list_name) # prints out column names to keep
     #print(processed_part_dir) # prints directory path that data is pulled from
     #print(stats_temp_dir) # prints directory path that data is written to
-    data_preparation.create_analysis_directories(skip_files, csv_list_to_split, cur_list, list_name, processed_part_dir, stats_temp_dir, 0)
+    data_preparation.create_analysis_directories(skip_files, csv_list_to_split, cur_list, list_name,
+                                                 processed_part_dir, stats_temp_dir, 0)
 
 # assert list out files and make sure number of files equals what I think
 
