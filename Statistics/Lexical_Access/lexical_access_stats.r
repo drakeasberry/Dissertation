@@ -53,6 +53,6 @@ lexical_data_no_heritage <- subset(lexical_data, lexical_data$group != "Childhoo
 rm(group_map, part_num_map, lexical_data, lexical_data_raw, lexical_dir, lexical_files)
 
 # Write out file ready for analysis without heritage speakers
-write_csv(lexical_data_no_heritage, '42_lexical_access.csv')
+write_csv(lexical_data_no_heritage, 'analyze_data/output/42_lexical_access.csv')
 # For PI Advisor
-write_csv(lexical_data_no_heritage, 'data.csv') 
+write_csv(lexical_data_no_heritage, 'analyze_data/output/data.csv') 
