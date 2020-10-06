@@ -279,7 +279,7 @@ seg_critical_correct %>%
   summarise_at(vars(segRespRTmsec),list(quickest = min, slowest = max))
 
 # Write statement for file containing only necessary columns for segmentation analysis
-write_csv(seg_critical_correct, 'analyze_data/output/esp_eng_46_segmentation_lab.csv')
+write_csv(seg_critical_correct, 'analyze_data/output/46_lab_segmentation.csv')
 # For PI Advisor
 write_csv(seg_critical_correct, 'analyze_data/output/data.csv')
 
