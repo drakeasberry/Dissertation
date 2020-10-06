@@ -412,9 +412,9 @@ ggplot(data = vocab_diff_segmenation,
   ylab("Vocabulary Difference = EN-SP")
 
 # Write statement for file containing only necessary columns for lab segmentation analysis
-write_csv(lab_segmentation, '../Segmentation/46_lab_segmentation.csv')
+write_csv(lab_segmentation, '../Segmentation/analyze_data/demographics/46_lab_segmentation.csv')
 # For PI Advisor
-write_csv(lab_segmentation, '../Segmentation/attributes.csv')
+write_csv(lab_segmentation, '../Segmentation/analyze_data/demographics/attributes.csv')
 
 # Create table for all demographic information for participants only in lab Lexical access experiment
 lab_lexical_only <- subset(demographics, expName == 'Lexical_Access') %>% 
@@ -457,9 +457,9 @@ ggplot(data = vocab_diff_lexical_only,
   ylab("Vocabulary Difference = EN-SP")
 
 # Write statement for file containing only necessary columns for lab lexical access only analysis
-write_csv(lab_lexical_only, '../Lexical_Access/21_lab_lexical_only.csv')
+write_csv(lab_lexical_only, '../Lexical_Access/analyze_data/demographics/21_lab_2nd_exp_only.csv')
 # For PI Advisor
-write_csv(lab_lexical_only, '../Lexical_Access/lexical_only_attributes.csv')
+write_csv(lab_lexical_only, '../Lexical_Access/analyze_data/demographics/2nd_exp_only_attributes.csv')
 
 # Read in all lexical participants including those who returned for second iteration
 all_lexical_part <- read_csv('../Lexical_Access/42_lexical_access.csv')
@@ -488,9 +488,9 @@ ggplot(data = lab_lexical,
   ylab("Vocabulary Difference = EN-SP")
 
 # Write statement for file containing only necessary columns for lab lexical access only analysis
-write_csv(lab_lexical, '../Lexical_Access/42_lab_lexical.csv')
+write_csv(lab_lexical, '../Lexical_Access/analyze_data/demographics/42_lab_lexical.csv')
 # For PI Advisor
-write_csv(lab_lexical, '../Lexical_Access/attributes.csv')
+write_csv(lab_lexical, '../Lexical_Access/analyze_data/demographics/attributes.csv')
 
 # Combine segmenatation and lexical access dataframes for intuition experiment
 vocab_diff_intuition <- rbind(vocab_diff_segmenation, vocab_diff_lexical_only)
