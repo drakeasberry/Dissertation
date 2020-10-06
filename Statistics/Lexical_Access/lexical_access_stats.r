@@ -22,7 +22,7 @@ lexical_data_raw <- ldply(lexical_files, read_csv)
 #write_csv(lexical_data_raw, 'all_53_lexical_items_raw.csv')
 
 # Match returning participants to original participant number
-part_num_map <- read_csv('partNum_mapping.csv')
+part_num_map <- read_csv('analyze_data/partNum_mapping.csv')
 part_num_map <- part_num_map[grep('part[0-9]+', part_num_map$Participated_E2),] %>%
   subset(Participated_E1 != 'Exp 2 Only')
 names(part_num_map)[2] = 'partNum'
