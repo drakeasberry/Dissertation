@@ -317,8 +317,8 @@ rm(eng_score,esp_score,lang_dom, blp_data_cleaned,blp_attitude_score,blp_history
    group_map)
 
 # Add additional demographic data from Prolific
-L2_demo <- read_csv('L2_demographics.csv')
-mono_demo <- read_csv('monolingual_demographics.csv') %>% 
+L2_demo <- read_csv('analyze_data/L2_demographics.csv')
+mono_demo <- read_csv('analyze_data/monolingual_demographics.csv') %>% 
   add_column("Fluent languages" = NA) %>% 
   add_column("Were you raised monolingual?" = NA)
 online_demo <- rbind(L2_demo,mono_demo)
@@ -462,7 +462,7 @@ write_csv(lab_lexical_only, '../Lexical_Access/analyze_data/demographics/21_lab_
 write_csv(lab_lexical_only, '../Lexical_Access/analyze_data/demographics/2nd_exp_only_attributes.csv')
 
 # Read in all lexical participants including those who returned for second iteration
-all_lexical_part <- read_csv('../Lexical_Access/42_lexical_access.csv')
+all_lexical_part <- read_csv('../Lexical_Access/analyze_data/output/42_lexical_access.csv')
 
 # Create table for all demographic information in lab Lexical access experiment
 lab_lexical <- subset(demographics, expName != 'lemma_segmentation' & 
