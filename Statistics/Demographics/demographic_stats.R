@@ -526,17 +526,18 @@ rm(vocab_diff_intuition, vocab_diff_lexical_only, vocab_diff_segmenation, all_le
 
 # Create table for all demographic information for participants in online experiments
 # Dropped for error rates in experiment
-mono_error_drop <- c("part202", "part210", "part223", "part227", "part232", "part253") # n=6
-L2_error_drop <- c("part255", "part270", "part275", "part277", "part290", "part291",
-                   "part292", "part293", "part301", "part303", "part305", "part309",
-                   "part327", "part332", "part333") # n=15
+#mono_error_drop <- c("part202", "part210", "part223", "part227", "part232", "part253") # n=6
+mono_error_user <- read_csv('analyze_data/natives_high_error_rates')
+mono_error_drop <- mono_error_user$partNum
 
-# Dropped for demographic information outside scope of project
-online_demo_drop <- c("part205","part221","part226", "part251", "part252", "part259", "part263", 
-                 "part267", "part280", "part284", "part287", "part294", "part315") # n=13
+learner_error_user <- read_csv('analyze_data/learners_high_error_rates')
+L2_error_drop <- learner_error_user$partNum
+#L2_error_drop <- c("part255", "part270", "part275", "part277", "part290", "part291",
+#                   "part292", "part293", "part301", "part303", "part305", "part309",
+#                   "part327", "part332", "part333") # n=15
 
 # Combine all dropped participants
-online_drop <- c(mono_error_drop, L2_error_drop, online_demo_drop) # n=34
+online_drop <- c(mono_error_drop, L2_error_drop) # n=34, now 29 (5 mono) now 21 (8 L2)
 
 online_lemma <- subset(demographics, expName == 'lemma_segmentation') %>% 
   select_if(~!all(is.na(.))) %>%
@@ -577,9 +578,13 @@ online_lemma <- subset(demographics, expName == 'lemma_segmentation') %>%
 natives <- subset(online_lemma, group == 'Monolingual Spanish')
 learners <- subset(online_lemma, group == 'L2 Learner')
 
+# Write out csv file with names
+write_csv(natives, '../Monolingual_lemma/analyze_data/demographics/natives.csv')
+write_csv(learners, '../L2_lemma/analyze_data/demographics/learners.csv')
+
 # Write csv files for PI Advisor
-write_csv(natives, 'natives.csv')
-write_csv(learners, 'learners.csv')
+#write_csv(natives, '../Monolingual_lemma/analyze_data/demographics/attributes.csv')
+#write_csv(learners, '../L2_lemma/analyze_data/demographics/attributes.csv')
 
 # Used to check columns and values
 lapply(lab_segmentation, function(x) length(table(x)))
@@ -593,4 +598,14 @@ sapply(natives,function(x) unique(x))
 lapply(learners, function(x) length(table(x)))
 sapply(learners,function(x) unique(x))
 
+miquel_learners <- read_csv('~/Box/Syllable Processing Asberry/Online/Active/data/input/learners.csv')
+miquel_part_l2 <- unique(miquel_learners$partNum)
+my_part_l2 <- unique(learners$partNum)
+setdiff(miquel_part_l2, my_part_l2)
+setdiff(my_part_l2, miquel_part_l2)
 
+miquel_native <- read_csv('~/Box/Syllable Processing Asberry/Online/Active/data/input/natives.csv')
+miquel_part_native <- unique(miquel_native$partNum)
+my_part_native <- unique(natives$partNum)
+setdiff(miquel_part_native, my_part_native)
+setdiff(my_part_native, miquel_part_native)

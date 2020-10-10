@@ -64,15 +64,34 @@ for file in csv_list:
             invalid_df.append(file)
     except:
         empty_df.append(file)
+
 # remove participants from analysis
-#try:
-#csv_list.remove('part044_inglés_C_Segmentation.csv') # removed for fluency in other languages
-#csv_list.remove('part047_español_D_Segmentation.csv') # removed for different Spanish variety (geographic location)
-#csv_list.remove('part052_inglés_D_Segmentation.csv') # removed for birth country
-#except: ValueError
-# not a great programming standard (ask Julian later) probably not needed
+# Questioned but verified and kept
+# part255 kept because they overwrote Estados Unidos with U.S, inglés with English for house and preferred language
+# part262 kept because they reported ambos for house language and preferred language as español, learned Spanish at 12
+# part268 kept because they reported preferred language as español, learned Spanish at 18
+# part280 kept because they overwrote Estados Unidos with U.S, inglés with English for house and preferred language
+
+# Dropped
+# part259 dropped because they are fluent in Korean as well
+valid_df.remove('part259_lemma_segmentation_2020-07-17_15h32.23.667.csv')
+# part263 dropped because they are fluent in French as well
+valid_df.remove('part263_lemma_segmentation_2020-07-17_16h34.01.316.csv')
+# part267 dropped because they reported being raised in Mexico, preferred and house language español
+valid_df.remove('part267_lemma_segmentation_2020-07-18_00h34.00.643.csv')
+# part280 dropped for high filler error, check to see if code can do it
+valid_df.remove('part280_lemma_segmentation_2020-07-17_19h01.55.230.csv')
+# part284 dropped for not being a native English speaker
+valid_df.remove('part284_lemma_segmentation_2020-07-17_19h44.00.293.csv')
+# part287 dropped because they reported knowing French and Italian as well
+valid_df.remove('part287_lemma_segmentation_2020-07-22_16h57.24.518.csv')
+# part294 dropped because they reported knowing Italian as well
+valid_df.remove('part294_lemma_segmentation_2020-07-22_19h44.45.764.csv')
+# part315 dropped because reported being born outside US
+valid_df.remove('part315_lemma_segmentation_2020-07-24_11h40.37.219.csv')
+
 REMOVELIST = len(invalid_df) + len(empty_df)
-FILECOUNTAFTERREMOVAL = STARTFILECOUNT - REMOVELIST
+FILECOUNTAFTERREMOVAL = STARTFILECOUNT - REMOVELIST - 8
 assert len(valid_df) == FILECOUNTAFTERREMOVAL
 
 # change the headers of csv files

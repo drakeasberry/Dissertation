@@ -63,15 +63,27 @@ for file in csv_list:
             invalid_df.append(file)
     except:
         empty_df.append(file)
+
 # remove participants from analysis
-#try:
-#csv_list.remove('part044_inglés_C_Segmentation.csv') # removed for fluency in other languages
-#csv_list.remove('part047_español_D_Segmentation.csv') # removed for different Spanish variety (geographic location)
-#csv_list.remove('part052_inglés_D_Segmentation.csv') # removed for birth country
-#except: ValueError
-# not a great programming standard (ask Julian later) probably not needed
+
+# Questioned but kept after verification
+# part206 included because only had basic university English requirements
+# part214 included because only had basic English requirements (basic A2 on CEFR)
+
+# Dropped
+# part205 dropped because their level of English could not be verified
+valid_df.remove('part205_lemma_segmentation_2020-07-10_23h29.11.532.csv')
+# part221 dropped because of low score (< 10) on LexTALE-ESP
+valid_df.remove('part221_lemma_segmentation_2020-07-09_13h22.21.239.csv')
+# part226 dropped because they reported being raised in US and having an advanced level of English
+valid_df.remove('part226_lemma_segmentation_2020-07-09_13h19.19.811.csv')
+# part251 dropped because they reported being raised in US and having an advanced level of English
+valid_df.remove('part251_lemma_segmentation_2020-07-13_23h14.18.450.csv')
+# part252 dropped because of low score (< 10) on LexTALE-ESP
+valid_df.remove('part252_lemma_segmentation_2020-07-14_00h50.17.446.csv')
+
 REMOVELIST = len(invalid_df) + len(empty_df)
-FILECOUNTAFTERREMOVAL = STARTFILECOUNT - REMOVELIST
+FILECOUNTAFTERREMOVAL = STARTFILECOUNT - REMOVELIST - 5
 assert len(valid_df) == FILECOUNTAFTERREMOVAL
 
 # change the headers of csv files

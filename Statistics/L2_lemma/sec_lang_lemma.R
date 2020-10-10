@@ -71,9 +71,8 @@ aggregate(file_exp[, c('segRespCorr')], list(file_exp$partNum), mean)
 # part294 dropped because they reported knowing Italian as well
 # part315 dropped because reported being born outside US
 
-
-drop_list <- c("part259", "part263", "part267", "part280", "part284", "part287", "part294",
-               "part315")
+drop_list <- c()
+#drop_list <- c("part259", "part263", "part267", "part280", "part284", "part287", "part294", "part315")
 
 # drop participants who should not be analyzed
 drop_participants <- subset(file_exp, file_exp$partNum %ni% drop_list)
@@ -152,6 +151,8 @@ high_seg_filler_responses #prints row numbers on filler data points excedding 43
 high_miss_seg_critical_responses <- c(which(df_seg_critical_errors$n >= 6.4))
 high_miss_seg_critical_responses #prints row numbers on critical data points excedding 5
 high_miss_seg_critical_users <- subset(df_seg_critical_errors, df_seg_critical_errors$n >=6.4)
+names(high_miss_seg_critical_users)[names(high_miss_seg_critical_users)=='vars'] <- 'partNum' 
+write_csv(high_miss_seg_critical_users, '../Demographics/analyze_data/learners_high_error_rates')
 
 # Get miss rate for all participants
 miss_seg_critical_responses <- c(which(df_seg_critical_errors$n >= 0))

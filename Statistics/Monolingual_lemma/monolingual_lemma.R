@@ -23,13 +23,13 @@ options(readr.num_columns = 0)
 # Load all files 
 seg_files <- list.files(path='analyze_data/raw/', pattern = '*.csv', full.names = TRUE) #list all the files with path
 df_raw_seg <- ldply(seg_files, read_csv)
-write_csv(df_raw_seg,'all_55_mono_lemma_raw.csv')
+#write_csv(df_raw_seg,'all_50_mono_lemma_raw.csv')
 
 # Delete practice trial rows
 file_exp <- drop_na(df_raw_seg, any_of("corrAns"))
 
 # write out all observations in segementation experiment
-write_csv(file_exp, 'all_55_participants_monolingual_all_lemma.csv')
+#write_csv(file_exp, 'all_50_participants_monolingual_all_lemma.csv')
 
 # Checking Data Demographics
 unique(file_exp$birthCountry)
@@ -64,28 +64,29 @@ aggregate(file_exp[, c('segRespCorr')], list(file_exp$partNum), mean)
 # part252 dropped because of low score (< 10) on LexTALE-ESP
 
 
-drop_list <- c("part205","part221","part226", "part251", "part252")
-
-# drop participants who should not be analyzed
-drop_participants <- subset(file_exp, file_exp$partNum %ni% drop_list)
-write_csv(drop_participants, 'all_50_eligible_mono_all_segmenation_responses.csv')
+#drop_list <- c("part205","part221","part226", "part251", "part252")
+#
+## drop participants who should not be analyzed
+#drop_participants <- subset(file_exp, file_exp$partNum %ni% drop_list)
+#write_csv(drop_participants, 'all_50_eligible_mono_all_segmenation_responses.csv')
 
 # Need library 'tidyverse' loaded
 # Create subset of all critical items
 #print('Counts of responses to critical items')
 #print('1 = response and None = no response')
-seg_critical <- subset(drop_participants, drop_participants$fillerCarrier == 'critical')
+seg_critical <- file_exp %>% 
+  subset(., fillerCarrier == 'critical')
 #Prints tibble showing all responses and frequency of response to critical items
 #count(seg_critical, vars=segResp)
-write_csv(seg_critical,'mono_50_critical_items_lemma.csv')
+#write_csv(seg_critical,'mono_50_critical_items_lemma.csv')
 
 # Further subset critical data set to those that were NOT responded to by participants
 seg_critical_misses <- subset(seg_critical, seg_critical$segRespCorr == 0)
-write_csv(seg_critical_misses,'critical_misses_lemma.csv')
+#write_csv(seg_critical_misses,'critical_misses_lemma.csv')
 
 # Further subset critical data set to those that were NOT responded to by participants
 seg_critical_hits <- subset(seg_critical, seg_critical$segRespCorr == 1)
-write_csv(seg_critical_hits,'critical_hits_lemma.csv')
+#write_csv(seg_critical_hits,'critical_hits_lemma.csv')
 
 # Create a tibble of participants who incorrectly did not respond to critical item including number of errors
 df_seg_critical_errors <- count(seg_critical_misses, vars=partNum)
@@ -99,17 +100,18 @@ print(as_tibble(df_seg_critical_errors), n=100) # n default is 10, but here it h
 #with(percent_correct, bwplot(x))
 
 # Create a subset of all filler items
-seg_filler <- subset(drop_participants, drop_participants$fillerCarrier != 'critical')
+seg_filler <- file_exp %>% 
+  subset(., fillerCarrier != 'critical')
 
 #print('Counts of responses to filler items')
 #print('1 = response and None = no response')
 # Prints tibble showing all responses and frequency of response to filler items
 #count(seg_filler, vars=segResp)
-write_csv(seg_filler,'mono_50_filler_items_lemma.csv')
+#write_csv(seg_filler,'mono_50_filler_items_lemma.csv')
 
 # Further subset filler data set to those that were responded to by participants
 seg_filler_responses <- subset(seg_filler, seg_filler$segRespCorr == 0)
-write_csv(seg_filler_responses,'filler_responses_lemma.csv')
+#write_csv(seg_filler_responses,'filler_responses_lemma.csv')
 
 # Create a dataframe of participants who incorrectly responded to a filler item
 df_seg_filler_errors <- count(seg_filler_responses, vars=partNum)
@@ -123,6 +125,8 @@ high_seg_filler_responses #prints row numbers on filler data points excedding 43
 high_miss_seg_critical_responses <- c(which(df_seg_critical_errors$n >= 6.4))
 high_miss_seg_critical_responses #prints row numbers on critical data points excedding 5
 high_miss_seg_critical_users <- subset(df_seg_critical_errors, df_seg_critical_errors$n >=6.4)
+names(high_miss_seg_critical_users)[names(high_miss_seg_critical_users)=='vars'] <- 'partNum' 
+write_csv(high_miss_seg_critical_users, '../Demographics/analyze_data/natives_high_error_rates')
 # Create new tibbles based only on participants who committed a high number errors to fillers
 tb_high_seg_filler_error_part <- df_seg_filler_errors[high_seg_filler_responses,] # creates tibble of participants and number of errors
 #tb_high_seg_filler_error_part #prints 2 column tibble of participant and error rate
