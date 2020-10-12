@@ -388,6 +388,8 @@ if(length(investigate$Participant) == 0){
   print('Output file being created...removing high critical error rate pariticipants.')
   print(sprintf('%d participant removed from data leaving %d participants remaing', 
                 length(high_miss_seg_critical_responses$partNum), length(unique(segmentation$partNum))))
+  print(sprintf('%s was removed', unique(high_miss_seg_critical_responses$partNum)))
+  print(sprintf('%s is eligible', unique(segmentation$partNum)))
   # Write statement for file containing only necessary columns for segmentation analysis
   write_csv(segmentation, 'analyze_data/output/45_lab_segmentation.csv')
   # For PI Advisor
