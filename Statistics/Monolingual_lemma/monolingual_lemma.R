@@ -16,173 +16,166 @@ library(ggplot2)
 # https://www.reddit.com/r/rstats/comments/739vf6/how_to_turn_off_readrs_messages_by_default/
 options(readr.num_columns = 0)
 
-# Individual file test
-#file01 <- read_csv("analyze_data/raw/5c53e9b6b7cf140001d31e6a_lemma_segmentation_2020-07-09_13h38.38.934_seg_cols.csv")
-#file01_exp <- drop_na(file01, any_of("corrAns"))
-
 # Load all files 
-seg_files <- list.files(path='analyze_data/raw/', pattern = '*.csv', full.names = TRUE) #list all the files with path
+# list all the files with path
+seg_files <- list.files(path='analyze_data/raw/', pattern = '*.csv', full.names = TRUE)
+
+# read in all the files into one data frame
+# import multiple csv code modified from code posted at this link below:
+#https://datascienceplus.com/how-to-import-multiple-csv-files-simultaneously-in-r-and-create-a-data-frame/
 df_raw_seg <- ldply(seg_files, read_csv)
-#write_csv(df_raw_seg,'all_50_mono_lemma_raw.csv')
 
 # Delete practice trial rows
-file_exp <- drop_na(df_raw_seg, any_of("corrAns"))
+exper_trials <- drop_na(df_raw_seg, any_of("corrAns"))
 
-# write out all observations in segementation experiment
-#write_csv(file_exp, 'all_50_participants_monolingual_all_lemma.csv')
+# Read file containing information that connects participant number to group affiliation
+group_map <- read_csv('../../Scripts_Dissertation/participant_group_map.csv')
 
-# Checking Data Demographics
-unique(file_exp$birthCountry)
-unique(file_exp$raisedCountry)
-unique(file_exp$placeResidence)
-unique(file_exp$houseLanguage)
-unique(file_exp$preferLanguage)
-unique(file_exp$OS)
+# Create complete dataset of all participants and their results for Segmenation Experiment 
+segmentation_data <- exper_trials %>% 
+  # add group map information
+  left_join(group_map, by = 'partNum') %>%
+  # create millisecond RT and log RT columns
+  mutate(segRespRTmsec = round(segRespRT * 1000),
+         log_RT = log(segRespRT)) %>% 
+  rename(segRespRTsec = segRespRT, 
+         word = expWord, 
+         word_status = wd_status,
+         word_initial_syl = wd_int_syl_str, 
+         target_syl_structure = tar_syl_str,
+         targetSyl = tar_syl, 
+         exp_word_type = fillerCarrier) %>% 
+  select("partNum", "group", "segResp", "segRespCorr", "segRespRTsec", "segRespRTmsec", "log_RT", "lemma", "word", 
+         "word_status", "word_initial_syl", "targetSyl", "target_syl_structure", "matching", 
+         "exp_word_type", "block")
 
-raised_country <- file_exp[ which(file_exp$raisedCountry =='Estados Unidos'),]
-unique(raised_country$partNum)
+#---
+# These items are only used in the Rstudio environment
+# Clean up unnecessary items in environment
+rm(df_raw_seg, exper_trials, group_map, seg_files)
+#---
 
-house_lang <- file_exp[ which(file_exp$houseLanguage!='español'),]
-unique(house_lang$partNum)
-
-prefer_lang <- file_exp[ which(file_exp$preferLanguage!='español'),]
-unique(prefer_lang$partNum)
-
-# Check accuracy (95% is probably a decent cut off since they can acieve 90% by not responding at all)
-aggregate(file_exp[, c('segRespCorr')], list(file_exp$partNum), mean)
-
-# Participant exclusions
-# Kept
-# part206 included because only had basic university English requirements
-# part214 included because only had basic English requirements (basic A2 on CEFR)
-
-# Dropped
-# part205 dropped because their level of English could not be verified
-# part221 dropped because of low score (< 10) on LexTALE-ESP
-# part226 dropped because they reported being raised in US and having an avanced level of English
-# part251 dropped because they reported being raised in US and having an avanced level of English
-# part252 dropped because of low score (< 10) on LexTALE-ESP
-
-
-#drop_list <- c("part205","part221","part226", "part251", "part252")
-#
-## drop participants who should not be analyzed
-#drop_participants <- subset(file_exp, file_exp$partNum %ni% drop_list)
-#write_csv(drop_participants, 'all_50_eligible_mono_all_segmenation_responses.csv')
-
-# Need library 'tidyverse' loaded
 # Create subset of all critical items
-#print('Counts of responses to critical items')
-#print('1 = response and None = no response')
-seg_critical <- file_exp %>% 
-  subset(., fillerCarrier == 'critical')
-#Prints tibble showing all responses and frequency of response to critical items
-#count(seg_critical, vars=segResp)
-#write_csv(seg_critical,'mono_50_critical_items_lemma.csv')
+seg_critical <- segmentation_data %>% 
+  subset(., exp_word_type == 'critical') 
+
+# Prints tibble showing all responses and frequency of response to critical items
+print('Counts of responses to critical items')
+print('1 = response and 0 = no response')
+count(seg_critical, vars=segRespCorr) %>% 
+  rename(Response = vars, Count = n)
+
+# Run initial pass according to previous literature
+seg_critical_correct <- seg_critical %>% 
+  subset(., segResp == 'b') %>% # remove all missed critical items n=166
+  subset(., segRespRTmsec > 200) %>% # remove response times less than 200ms n=1
+  subset(., segRespRTmsec < 1500) %>% # remove response times greater than 1500ms n=72
+  select(-c('exp_word_type', 'segResp')) # remove columns
+
+# Check to ensure no column only contains one unique value
+seg_critical_correct %>% 
+  summarise_all(n_distinct)
+
+# Check minimum and maximum reaction times 
+seg_critical_correct %>% 
+  summarise_at(vars(segRespRTmsec),list(quickest = min, slowest = max))
 
 # Further subset critical data set to those that were NOT responded to by participants
 seg_critical_misses <- subset(seg_critical, seg_critical$segRespCorr == 0)
-#write_csv(seg_critical_misses,'critical_misses_lemma.csv')
 
-# Further subset critical data set to those that were NOT responded to by participants
-seg_critical_hits <- subset(seg_critical, seg_critical$segRespCorr == 1)
-#write_csv(seg_critical_hits,'critical_hits_lemma.csv')
-
-# Create a tibble of participants who incorrectly did not respond to critical item including number of errors
-df_seg_critical_errors <- count(seg_critical_misses, vars=partNum)
+# Create a table of critical miss counts by participants
 print('Counts of responses to critical items by participant')
-print(as_tibble(df_seg_critical_errors), n=100) # n default is 10, but here it has been changed to 100 viewable rows
+df_seg_critical_errors <- count(seg_critical_misses, vars=partNum) %>% 
+  rename(Participant = vars, Critical_Misses = n) %>% 
+  print()
 
-# Check for outliers accuracy
-#percent_correct <- aggregate(seg_critical$segRespCorr, by= list(seg_critical$partNum), FUN=mean)
-#histogram(~x, percent_correct)
-#with(percent_correct, bwplot(x~Group.1))
-#with(percent_correct, bwplot(x))
+# Find users with greater than 10% error rate
+high_miss_seg_critical_responses <- subset(df_seg_critical_errors, 
+                                           df_seg_critical_errors$Critical_Misses >= 6.4) %>% 
+  rename(partNum = Participant) %>% # rename for ease in following scripts
+  print()
+
+# Write output file for use in Demographic analysis
+write_csv(high_miss_seg_critical_users, '../Demographics/analyze_data/online_natives_segmentation_high_error_rates')
+
 
 # Create a subset of all filler items
-seg_filler <- file_exp %>% 
-  subset(., fillerCarrier != 'critical')
-
-#print('Counts of responses to filler items')
-#print('1 = response and None = no response')
+seg_filler <- segmentation_data %>% 
+  subset(., exp_word_type != 'critical')
+print('Counts of responses to filler items')
+print('0 = response and 1 = no response')
 # Prints tibble showing all responses and frequency of response to filler items
-#count(seg_filler, vars=segResp)
-#write_csv(seg_filler,'mono_50_filler_items_lemma.csv')
+count(seg_filler, vars=segRespCorr) %>% 
+  rename(Response = vars, Count = n)
 
 # Further subset filler data set to those that were responded to by participants
 seg_filler_responses <- subset(seg_filler, seg_filler$segRespCorr == 0)
-#write_csv(seg_filler_responses,'filler_responses_lemma.csv')
 
 # Create a dataframe of participants who incorrectly responded to a filler item
-df_seg_filler_errors <- count(seg_filler_responses, vars=partNum)
-#print('Counts of responses to filler items by participant')
-print(as_tibble(df_seg_filler_errors), n=100) # n default is 10, but here it has been changed to 100 viewable rows
+print('Counts of responses to filler items by participant')
+df_seg_filler_errors <- count(seg_filler_responses, vars=partNum) %>% 
+  rename(Participant = vars, Count = n) %>% 
+  print()
 
 # Find all participants who responded 57 or more times (>=10%) to filler items
-# or missed more than 6 critical item (>= 10%), and they will be used to index later
-high_seg_filler_responses <- c(which(df_seg_filler_errors$n >= 57.6))
-high_seg_filler_responses #prints row numbers on filler data points excedding 43
-high_miss_seg_critical_responses <- c(which(df_seg_critical_errors$n >= 6.4))
-high_miss_seg_critical_responses #prints row numbers on critical data points excedding 5
-high_miss_seg_critical_users <- subset(df_seg_critical_errors, df_seg_critical_errors$n >=6.4)
-names(high_miss_seg_critical_users)[names(high_miss_seg_critical_users)=='vars'] <- 'partNum' 
-write_csv(high_miss_seg_critical_users, '../Demographics/analyze_data/natives_high_error_rates')
-# Create new tibbles based only on participants who committed a high number errors to fillers
-tb_high_seg_filler_error_part <- df_seg_filler_errors[high_seg_filler_responses,] # creates tibble of participants and number of errors
-#tb_high_seg_filler_error_part #prints 2 column tibble of participant and error rate
-tb_high_seg_critical_error_part <- df_seg_critical_errors[high_miss_seg_critical_responses,] # creates tibble of participants and number of errors
-#tb_high_seg_critical_error_part #prints 2 column tibble of participant and error rate
+high_seg_filler_responses <- subset(df_seg_filler_errors, df_seg_filler_errors$Count >= 57.6) %>%
+  rename(Filler_Errors = Count) %>% 
+  print()
 
-# Creates subset of wrong answers committed by high error rate participants
-df_high_seg_errors_part <- seg_filler_responses[seg_filler_responses$partNum %in% tb_high_seg_filler_error_part$vars,]
-#df_high_seg_errors_part
+if(length(high_seg_filler_responses$Participant)==0){
+  high_seg_filler_responses = seg_filler_responses
+  # Create table of errors committed by low error participants
+  high_filler_part_raw <- subset(seg_filler_responses, 
+                                 seg_filler_responses$partNum %ni% high_seg_filler_responses$Participant)
+} else{
+  high_seg_filler_responses = high_seg_filler_responses
+  # Create table of errors committed by high error participants
+  high_filler_part_raw <- subset(seg_filler_responses, 
+                                 seg_filler_responses$partNum %in% high_seg_filler_responses$Participant)
+}
 
-# Creates subset of wrong answers commited by low error rate participants
-df_low_seg_errors_part <- seg_filler_responses[seg_filler_responses$partNum %ni% tb_high_seg_filler_error_part$vars,]
-#df_low_seg_errors_part
 
-# looks for too quick of response, anything below 200 ms
-button_held_high <- c(which(df_high_seg_errors_part$segRespRT < .200))
-#print('prints responses given below 200ms')
-#button_held_high
-tech_error_high <- df_high_seg_errors_part[button_held_high,c('partNum','segRespRT')]
-#print('prints responses given below 200ms by participant number')
-#tech_error_high
-#length(tech_error_high$segRespRT)
 
-button_not_held_high <- c(which(df_high_seg_errors_part$segRespRT >= .200))
-#length(button_not_held_high)
+# Looks for too quick of response, anything below 200 ms caused by button being held from previous trial
+button_held_high <- subset(high_filler_part_raw, high_filler_part_raw$segRespRT < .200) %>% 
+  select('partNum','segRespRTsec') #n=218
 
-# Same as above but for low error committing participants
-button_held_low <- c(which(df_low_seg_errors_part$segRespRT < .200))
-#button_held_low
-tech_error_low <- df_low_seg_errors_part[button_held_low,c('partNum','segRespRT')]
-button_not_held_low <- c(which(df_low_seg_errors_part$segRespRT >= .200))
+# Not technical issue filler errors by high error rate participants
+button_not_held_high <- subset(high_filler_part_raw, high_filler_part_raw$segRespRT >= .200) #n=81
 
-# Combine tibbles into new tibble
-tb_tech_part_error <- full_join(count(tech_error_high, vars=partNum), count(df_high_seg_errors_part, vars=partNum), by = 'vars', copy = FALSE, suffix = c("_tech_errors", "_total_errors"))
-
-# Add a column to new tibble with difference calculated to see real number of errors
-# This shows the number of errors committed by participant NOT due to technical issues
-tb_tech_error_removed <- add_column(tb_tech_part_error,non_technical_errors=tb_tech_part_error$n_total_errors - tb_tech_part_error$n_tech_errors,.after = 'n_total_errors')
+# Number of errors committed by participant after correction for technical limitations
+high_filler_part_corrected <- count(button_not_held_high, vars = partNum) %>% 
+  rename(Participant = vars, Corrected_Filler_Errors = n) %>% 
+  print()
 
 # Test to see if any participant has still committed more than 10% error rate to filler items
 # If investigate has participants, they need to be removed for higher error rates,
 # If investigate is empty, this is a positive.
-investigate <- c(which(tb_tech_error_removed$non_technical_errors > 57))
-if(length(investigate) == 0){
-  print('No issues here')
-  rm(df_high_seg_errors_part,df_low_seg_errors_part, tb_high_seg_critical_error_part,
-     tb_high_seg_filler_error_part,tb_tech_error_removed,tb_tech_part_error,
-     tech_error_high,tech_error_low, button_held_high, button_held_low,
-     button_not_held_high, button_not_held_low, high_miss_seg_critical_responses, 
-     high_seg_filler_responses, df_seg_critical_errors, df_seg_filler_errors, investigate)
+investigate <- subset(high_filler_part_corrected,
+                      high_filler_part_corrected$Corrected_Filler_Errors > 43)
+
+if(length(investigate$Participant) == 0){
+  segmentation <- subset(seg_critical_correct, seg_critical_correct$partNum %ni% 
+                           high_miss_seg_critical_responses$partNum)
+  print('No issues here...')
+  print('Output file being created...removing high critical error rate pariticipants.')
+  print(sprintf('%d participants removed from data leaving %d participants remaining', 
+                length(high_miss_seg_critical_responses$partNum), length(unique(segmentation$partNum))))
+  print(sprintf('%s was removed', unique(high_miss_seg_critical_responses$partNum)))
+  print(sprintf('%s is eligible', unique(segmentation$partNum)))
+  # Write statement for file containing only necessary columns for segmentation analysis
+  write_csv(segmentation, 'analyze_data/output/44_lab_segmentation.csv')
+  # For PI Advisor
+  write_csv(segmentation, 'analyze_data/output/data.csv')
+  rm(button_held_high, button_not_held_high, high_miss_seg_critical_responses, 
+     high_seg_filler_responses, df_seg_critical_errors, df_seg_filler_errors, investigate,
+     high_filler_part_raw, high_filler_part_corrected, seg_critical, seg_critical_misses,
+     seg_filler, seg_filler_responses, seg_critical_correct)
 } else{
   print('See who has too many errors:')
+  print(investigate$Participant)
 }
 
-rm(df_low_seg_errors_part,df_high_seg_errors_part,df_seg_filler_errors,df_seg_critical_errors
-   ,file_exp, new_data,seg_files,seg_filler,seg_filler_responses,df_raw_seg)
 
 #preseve original dataframe
 seg_critical_raw <- seg_critical
