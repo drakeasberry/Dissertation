@@ -299,7 +299,7 @@ count(seg_critical, vars=segResp) %>%
 
 # Run initial pass according to previous literature
 seg_critical_correct <- seg_critical %>% 
-  subset(., segResp == 1) %>% # remove all missed critical items
+  subset(., segResp == 1) %>% # remove all missed critical items n=28
   subset(., segRespRTmsec > 200) %>% # remove response times less than 200ms n=31
   subset(., segRespRTmsec < 1500) %>% # remove response times greater than 1500ms n=15
   select(-c('exp_word_type', 'segResp')) # remove columns
@@ -386,7 +386,7 @@ if(length(investigate$Participant) == 0){
                           high_miss_seg_critical_responses$partNum)
   print('No issues here...')
   print('Output file being created...removing high critical error rate pariticipants.')
-  print(sprintf('%d participant removed from data leaving %d participants remaing', 
+  print(sprintf('%d participants removed from data leaving %d participants remaining', 
                 length(high_miss_seg_critical_responses$partNum), length(unique(segmentation$partNum))))
   print(sprintf('%s was removed', unique(high_miss_seg_critical_responses$partNum)))
   print(sprintf('%s is eligible', unique(segmentation$partNum)))
