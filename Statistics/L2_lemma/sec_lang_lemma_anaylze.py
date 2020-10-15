@@ -68,9 +68,18 @@ for file in csv_list:
 # remove participants from analysis
 # Questioned but verified and kept
 # part255 kept because they overwrote Estados Unidos with U.S, inglés with English for house and preferred language
+# part256 kept because they reported ambos for house language and preferred language as inglés, learned Spanish at 11
 # part262 kept because they reported ambos for house language and preferred language as español, learned Spanish at 12
+# part266 kept because they reported ambos for house language and preferred language as inglés, learned Spanish at 16
 # part268 kept because they reported preferred language as español, learned Spanish at 18
+# part274 kept because they reported ambos for house language and preferred language as inglés, learned Spanish at 15
 # part280 kept because they overwrote Estados Unidos with U.S, inglés with English for house and preferred language
+# part293 kept because they reported ambos for house language and preferred language as inglés, learned Spanish at 5
+# part295 kept because they reported ambos for house language and preferred language as inglés, learned Spanish at 10
+# part297 kept because they reported ambos for house language and preferred language as inglés, learned Spanish at 11
+# part302 kept because they reported ambos for house language and preferred language as inglés, learned Spanish at 26
+# part308 kept because they reported ambos for house language and preferred language as inglés, learned Spanish at 12
+# part332 kept because reported ambos for house language, preferred language as inglés, learned Spanish after marriage
 
 # Dropped
 # part259 dropped because they are fluent in Korean as well
@@ -89,9 +98,11 @@ valid_df.remove('part287_lemma_segmentation_2020-07-22_16h57.24.518.csv')
 valid_df.remove('part294_lemma_segmentation_2020-07-22_19h44.45.764.csv')
 # part315 dropped because reported being born outside US
 valid_df.remove('part315_lemma_segmentation_2020-07-24_11h40.37.219.csv')
+# part333 dropped because reported being raised in Mexico
+valid_df.remove('part333_lemma_segmentation_2020-07-29_08h45.17.314.csv')
 
 REMOVELIST = len(invalid_df) + len(empty_df)
-FILECOUNTAFTERREMOVAL = STARTFILECOUNT - REMOVELIST - 8
+FILECOUNTAFTERREMOVAL = STARTFILECOUNT - REMOVELIST - 9
 assert len(valid_df) == FILECOUNTAFTERREMOVAL
 
 # change the headers of csv files
