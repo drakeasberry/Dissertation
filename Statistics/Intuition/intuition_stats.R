@@ -45,7 +45,7 @@ syllable_data <- syllable_data_raw %>%
          # create new column containing syllable structure
          syl_structure = ifelse(str_length(corrSyl) == 2, 'CV', 'CVC')) %>%
   rename(sylRespRTsec = sylRespRT) %>% #rename old column to sylRespRTsec
-  # dropped 4 no response items from part065 and 1 from part072
+  # dropped 4 no response items from part065 and 1 from part072 (Experimental error caused this)
   drop_na("sylRespRTsec") %>%
   # select columns to keep in dataframe
   select("partNum", "group", "sylRespCorr", "sylRespRTsec", "sylRespRTmsec", "syl_structure",
