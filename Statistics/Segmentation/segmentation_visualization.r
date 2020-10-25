@@ -17,7 +17,7 @@ library(ggplot2)
 options(readr.num_columns = 0)
 
 # Read in experimental dataset
-my_data <- read_csv('analyze_data/output/44_online_natives_segmentation.csv')
+my_data <- read_csv('analyze_data/output/45_lab_segmentation.csv')
 summary(my_data)
 
 densityplot(~segRespRTmsec, data = my_data, main = ' Segmentation Reaction Time in Milliseconds') 
