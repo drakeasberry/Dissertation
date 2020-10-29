@@ -3,10 +3,7 @@
 
 # Load Libraries
 library(readr)
-library(tidyverse)
-library(ggpubr)
-library(rstatix)
-library(afex)
+
 
 # Soruce Scripts containing functions
 source("../../Scripts_Dissertation/segmentation_rm_anova_script.R")
@@ -18,88 +15,168 @@ source("../../Scripts_Dissertation/segmentation_rm_anova_script.R")
 # https://www.reddit.com/r/rstats/comments/739vf6/how_to_turn_off_readrs_messages_by_default/
 options(readr.num_columns = 0)
 
-# Run the analysis by target syllable
-by_target_syl <- seg_rm_anova('analyze_data/output/45_lab_segmentation.csv')
+# Read in data file
+my_data <- read_csv('analyze_data/output/45_lab_segmentation.csv')
 
-# Run analysis by word initial syllable
-by_word_init_syl <- seg_rm_anova('analyze_data/output/45_lab_segmentation.csv')
+# Transform data in long form with 1 row per participant per condition
+# List columns to group by
+grouping <- c("partNum", "group", "word_status", "word_initial_syl", 
+              "target_syl_structure", "matching")
+# Aggregaates and transforms data into long form
+# Adds median of RT in msec and log
+my_data_long <- trans_long(my_data, grouping) 
 
 
-
-# Read in experimental dataset
-my_data <- read_csv('analyze_data/output/45_lab_segmentation.csv') 
-#my_data <- read_csv('analyze_data/output/Miquel_data.csv')
-summary(my_data) 
-
-my_data_long <- my_data %>% 
-  group_by(partNum, group, word_status, word_initial_syl, matching) %>% 
-  summarise(rt_ms = median(segRespRTmsec), rt_log = median(log_RT))
-  #summarise(rt_ms = median(segRespRTmsec), rt_log = median(log_RT))
-
-# Subset data into learne groups
-learners <- my_data_long %>% 
-  subset(., group == 'English')
-
-natives <- my_data_long %>% 
-  subset(., group == 'Spanish')
-
-# Random sampling of each condition 
-set.seed(123)
-my_data_long %>% 
-  sample_n_by(word_status, word_initial_syl, matching, size =1)
-learners %>% 
-  sample_n_by(word_status, word_initial_syl, matching, size =1)
-natives %>% 
-  sample_n_by(word_status, word_initial_syl, matching, size =1)
-
-learners <- learners %>% 
-  mutate(condition = paste(word_initial_syl, matching, word_status, sep = "_")) %>% 
-  convert_as_factor(partNum, condition, word_initial_syl, matching, word_status)
-print(learners)
+# Create subgroups for Spanish learners and native speakers
+learners <- part_group(my_data_long, 'English')
+natives <- part_group(my_data_long, 'Spanish')
 
 # Group data by word initial syllable, matching condition, and word status, 
-# then summary statistics for score
-learners %>% 
-  group_by(word_initial_syl, matching, word_status) %>% 
-  get_summary_stats(rt_ms, type = "mean_sd")
+# then summary statistics for reaction time
+# Reaction time in miliseconds
+grouping_stats <- c("word_initial_syl", "target_syl_structure", "matching", "word_status")
 
 learners %>% 
-  group_by(word_initial_syl, matching, word_status) %>% 
-  get_summary_stats(rt_log, type = "median_iqr") 
-  
+  summary_stats(., grouping_stats, "median_RTmsec", "mean_sd")
+natives %>% 
+  summary_stats(., grouping_stats, "median_RTmsec", "mean_sd")
+
+# Reaction time after log transformation
+learners %>% 
+  summary_stats(., grouping_stats, "median_RTlog", "mean_sd")
+natives %>% 
+  summary_stats(., grouping_stats, "median_RTlog", "mean_sd")
 
 
-# Visualize data
-bxp <- ggboxplot(learners, x = "word_initial_syl", y = "rt_ms", color = "matching",
-                 palette = "jco", facet.by = "word_status", short.panel.labs = FALSE)
-bxp
+
+# Run the analysis by target syllable
+by_target <- c("target_syl_structure", "matching", "word_status")
+
+# Visualize learner data
+bxp_tar_learners <- ggboxplot(learners, "target_syl_structure", "median_RTmsec",
+                              color = "matching", 
+                              palette = "jco",
+                              title = "L2 Spanish by Target Syllable",
+                              xlab = "Target Syllable Structure",
+                              ylab = "Median Reaction Time (msec)",
+                              facet.by = "word_status") %>% 
+  print()
+
+# Visualize native data
+bxp_tar_natives <- ggboxplot(natives, "target_syl_structure", "median_RTmsec",
+                             color = "matching", 
+                             palette = "jco",
+                             title = "L1 Spanish by Target Syllable",
+                             xlab = "Target Syllable Structure",
+                             ylab = "Median Reaction Time (msec)",
+                             facet.by = "word_status") %>% 
+  print()
 
 # Check for outliers
-outliers <- learners %>% 
-  group_by(word_initial_syl, matching, word_status) %>% 
-  identify_outliers(rt_ms)
+outlier_by_tar_learner <- learners %>% 
+  outlier_chk(., by_target, "median_RTmsec")
+outlier_by_tar_native <- natives %>% 
+  outlier_chk(., by_target, "median_RTmsec")
 
 # Check for normality
-normality <- learners %>% 
-  group_by(word_initial_syl, matching, word_status) %>% 
-  shapiro_test(rt_ms)
+normality_by_tar_learner <- learners %>% 
+  normality_chk(., by_target, "median_RTmsec")
+normality_by_tar_native <- natives %>% 
+  normality_chk(., by_target, "median_RTmsec")
 
-# Create QQ plot
-ggqqplot(learners, "rt_ms", ggtheme = theme_bw()) +
+
+# Create QQ plots
+# Learners by milliseconds
+msec_tar_L2_qqplt <- ggqqplot(learners, "median_RTmsec", ggtheme = theme_bw(), 
+                              title = "QQ Plot by Target Syllable in Milliseconds by L2 Spanish Speakers") +
+  facet_grid(target_syl_structure + matching ~ word_status, labeller = "label_both") 
+print(msec_tar_L2_qqplt)
+
+# Learners by log values
+log_tar_L2_qqplt <- ggqqplot(learners, "median_RTlog", ggtheme = theme_bw(),
+                             title = "QQ Plot by Target Syllable in log by L2 Spanish Speakers") +
+  facet_grid(target_syl_structure + matching ~ word_status, labeller = "label_both")
+print(log_tar_L2_qqplt)
+
+# Natives by milliseconds
+msec_tar_L1_qqplt <- ggqqplot(natives, "median_RTmsec", ggtheme = theme_bw(), 
+                              title = "QQ Plot by Target Syllable in Milliseconds by L1 Spanish Speakers") +
+  facet_grid(target_syl_structure + matching ~ word_status, labeller = "label_both") 
+print(msec_tar_L1_qqplt)
+
+# Natives by milliseconds
+log_tar_L1_qqplt <- ggqqplot(natives, "median_RTlog", ggtheme = theme_bw(),
+                             title = "QQ Plot by Target Syllable in log by L1 Spanish Speakers") +
+  facet_grid(target_syl_structure + matching ~ word_status, labeller = "label_both")
+print(log_tar_L1_qqplt)
+
+# Run 3 way repeated measures anova
+aov_tar_learners <- seg_rm_anova(learners, by_target, "partNum", "median_RTlog")
+aov_tar_natives <- seg_rm_anova(natives, by_target, "partNum", "median_RTlog")
+
+
+
+# Run analysis by word initial syllable
+by_word <- c("word_initial_syl", "matching", "word_status")
+
+# Visualize learner data
+bxp_wd_learners <- ggboxplot(learners, "word_initial_syl", "median_RTmsec",
+                             color = "matching", 
+                             palette = "jco",
+                             title = "L2 Spanish by Word Initial Syllable",
+                             xlab = "Word Initial Syllable Structure",
+                             ylab = "Median Reaction Time (msec)",
+                             facet.by = "word_status") %>% 
+  print()
+
+# Visualize native data
+bxp_wd_natives <- ggboxplot(natives, "word_initial_syl", "median_RTmsec",
+                            color = "matching", 
+                            palette = "jco",
+                            title = "L1 Spanish by Word Initial Syllable",
+                            xlab = "Word Initial Syllable Structure",
+                            ylab = "Median Reaction Time (msec)",
+                            facet.by = "word_status") %>% 
+  print()
+
+# Check for outliers
+outlier_by_wd_learner <- learners %>% 
+  outlier_chk(., by_word, "median_RTmsec")
+outlier_by_wd_native <- natives %>% 
+  outlier_chk(., by_word, "median_RTmsec")
+
+# Check for normality
+normality_by_wd_learner <- learners %>% 
+  normality_chk(., by_word, "median_RTmsec")
+normality_by_wd_native <- natives %>% 
+  normality_chk(., by_word, "median_RTmsec")
+
+
+# Create QQ plots
+# Learners by milliseconds
+msec_wd_L2_qqplt <- ggqqplot(learners, "median_RTmsec", ggtheme = theme_bw(), 
+                             title = "QQ Plot by Word Initial Syllable in Milliseconds by L2 Spanish Speakers") +
+  facet_grid(word_initial_syl + matching ~ word_status, labeller = "label_both") 
+print(msec_wd_L2_qqplt)
+
+# Learners by log values
+log_wd_L2_qqplt <- ggqqplot(learners, "median_RTlog", ggtheme = theme_bw(),
+                            title = "QQ Plot by Word Initial Syllable in log by L2 Spanish Speakers") +
   facet_grid(word_initial_syl + matching ~ word_status, labeller = "label_both")
+print(log_wd_L2_qqplt)
 
-ggqqplot(learners, "rt_log", ggtheme = theme_bw()) +
+# Natives by milliseconds
+msec_wd_L1_qqplt <- ggqqplot(natives, "median_RTmsec", ggtheme = theme_bw(), 
+                             title = "QQ Plot by Word Initial Syllable in Milliseconds by L1 Spanish Speakers") +
+  facet_grid(word_initial_syl + matching ~ word_status, labeller = "label_both") 
+print(msec_wd_L1_qqplt)
+
+# Natives by milliseconds
+log_wd_L1_qqplt <- ggqqplot(natives, "median_RTlog", ggtheme = theme_bw(),
+                            title = "QQ Plot by Word Initial Syllable in log by L1 Spanish Speakers") +
   facet_grid(word_initial_syl + matching ~ word_status, labeller = "label_both")
+print(log_wd_L1_qqplt)
 
-
-glimpse(learners)
-
-
-# Compute three way repeated measures anova
-#m1 <- aov(rt_ms ~ word_initial_syl*matching*word_status + 
-#      Error(partNum/(word_initial_syl*matching*word_status)), 
-#    data = learners)
-#summary(m1)
-
-aov_ez("partNum", "rt_log", learners, within = c("word_initial_syl", "matching", "word_status"))
-
+# Run 3 way repeated measures anova
+aov_wd_learners <- seg_rm_anova(learners, by_word, "partNum", "median_RTlog")
+aov_wd_natives <- seg_rm_anova(natives, by_word, "partNum", "median_RTlog")
