@@ -173,8 +173,8 @@ with(words_learners, tapply(median_RTlog, matching, FUN = mean))
 tar_syl_main <- emmeans(aov_learners, pairwise ~ target_syl_structure) 
 tar_syl_main
 
-mat_wdstatus_int <- emmeans(aov_learners, pairwise ~ matching:word_status) 
-mat_wdstatus_int
+mat_lex_int <- emmeans(aov_learners, pairwise ~ matching:word_status) 
+mat_lex_int
 
 
 # Learner plots 
@@ -247,13 +247,13 @@ with(natives, tapply(median_RTlog, word_status, FUN = mean))
 
 # Estimated Marginal Means
 # get tabled results of estimated marginal means
-wd_status_main <- emmeans(aov_natives, pairwise ~ word_status) 
-wd_status_main
+mat_lex_int <- emmeans(aov_natives, pairwise ~ word_status) 
+mat_lex_int
 
 
 # Native plots
 # Main effect of lexicality
-l1_lexicality_main <- afex_plot(aov_natives, 
+l1_lex_main <- afex_plot(aov_natives, 
                                 x = "word_status", 
                                 error = "within",
                                 factor_levels = list(word_status = c(word = "Word", 
@@ -265,7 +265,7 @@ l1_lexicality_main <- afex_plot(aov_natives,
        y = "Reaction Time (log)") +
   scale_color_manual(values = c('darkorchid4', 'goldenrod4')) +
   theme(legend.position = "none")
-l1_lexicality_main
+l1_lex_main
 
 
 # Remove temporary data variables in environment
@@ -274,3 +274,17 @@ rm(my_data, my_data_long, learners, natives, words_learners, nonwords_learners)
 
 # Remove checks and unused plots
 rm(l2_mat_lex_int, normality_learner, normality_native, outlier_learner, outlier_native)
+
+
+# Save all analyses
+out_dir = 'analyze_data/output/figures/by_target/'
+
+# Save tabled data
+# https://tex.stackexchange.com/questions/481802/reporting-r-results-in-latex
+
+# Save plots
+ggsave('learners_descriptive_data.png', bxp_learners, 'png', out_dir)
+ggsave('natives_descriptive_data.png', bxp_natives, 'png', out_dir)
+ggsave('learners_tarsyl_main.png', l2_tar_syl_main, 'png', out_dir)
+ggsave('learners_lex_mat_int.png', l2_lex_mat_int, 'png', out_dir)
+ggsave('natives_lex_main.png', l1_lex_main, 'png', out_dir)
