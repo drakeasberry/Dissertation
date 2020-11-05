@@ -32,7 +32,7 @@ natives <- part_group(my_data_long, 'Spanish')
 
 
 # Group data by target syllable structure, matching condition, and word status, 
-grouping_stats <- c("target_syl_structure", "matching", "word_status")
+grouping_stats <- c("word_initial_syl", "matching", "word_status")
 
 # Summary statistics for reaction time
 # Reaction time in miliseconds
@@ -54,17 +54,17 @@ natives %>%
 # Learners
 bxp_learners <- learners %>% 
   mutate(wd_new = factor(word_status, levels = c("word", "nonword"),
-                         labels = c("Word", "Nonword")),
+                          labels = c("Word", "Nonword")),
          mat_new = factor(matching, levels = c("matching", "mismatching"),
                           labels = c("Matching", "Mismatching"))) %>% 
-  ggplot(aes(x = target_syl_structure,
+  ggplot(aes(x = word_initial_syl,
              y = median_RTmsec,
              color = mat_new)) +
   geom_boxplot(fill = NA, position = position_dodge(1)) +
   geom_violin(fill = NA, position = position_dodge(1)) +
   facet_wrap(. ~ wd_new) +
-  labs(title = "L2 Spanish by Target Syllable",
-       x = "Target Syllable Structure",
+  labs(title = "L2 Spanish by Word Initial Syllable",
+       x = "Word Initial Syllable Structure",
        y = "Reaction Time (msec)") +
   scale_color_manual(name = "Condition", values = c('darkorchid4', 'goldenrod4'))
 bxp_learners
@@ -75,18 +75,17 @@ bxp_natives <- natives %>%
                          labels = c("Word", "Nonword")),
          mat_new = factor(matching, levels = c("matching", "mismatching"),
                           labels = c("Matching", "Mismatching"))) %>% 
-  ggplot(aes(x = target_syl_structure,
+  ggplot(aes(x = word_initial_syl,
              y = median_RTmsec,
              color = mat_new)) +
   geom_boxplot(fill = NA, position = position_dodge(1)) +
   geom_violin(fill = NA, position = position_dodge(1)) +
   facet_grid(. ~ wd_new) +
-  labs(title = "L1 Spanish by Target Syllable",
-       x = "Target Syllable Structure",
+  labs(title = "L1 Spanish by Word Initial Syllable",
+       x = "Word Initial Syllable Structure",
        y = "Reaction Time (msec)") +
   scale_color_manual(name = "Condition", values = c('darkorchid4', 'goldenrod4'))
-bxp_natives 
-
+bxp_natives  
 
 # Check for outliers
 outlier_learner <- learners %>% 
@@ -106,43 +105,64 @@ normality_native <- natives %>%
 # Create QQ plots
 # Learners by milliseconds
 ggqqplot(learners, "median_RTmsec", ggtheme = theme_bw(), 
-         title = "QQ Plot by Target Syllable in Milliseconds by L2 Spanish Speakers") +
-  facet_grid(target_syl_structure + matching ~ word_status, labeller = "label_both") 
+         title = "QQ Plot by Word Initial Syllable in Milliseconds by L2 Spanish Speakers") +
+  facet_grid(word_initial_syl + matching ~ word_status, labeller = "label_both") 
 
 # Learners by log values
 ggqqplot(learners, "median_RTlog", ggtheme = theme_bw(),
-         title = "QQ Plot by Target Syllable in log by L2 Spanish Speakers") +
-  facet_grid(target_syl_structure + matching ~ word_status, labeller = "label_both")
+         title = "QQ Plot by Word Initial Syllable in log by L2 Spanish Speakers") +
+  facet_grid(word_initial_syl + matching ~ word_status, labeller = "label_both")
 
 # Natives by milliseconds
 ggqqplot(natives, "median_RTmsec", ggtheme = theme_bw(), 
-         title = "QQ Plot by Target Syllable in Milliseconds by L1 Spanish Speakers") +
-  facet_grid(target_syl_structure + matching ~ word_status, labeller = "label_both") 
+         title = "QQ Plot by Word Initial Syllable in Milliseconds by L1 Spanish Speakers") +
+  facet_grid(word_initial_syl + matching ~ word_status, labeller = "label_both") 
 
 # Natives by log values
 ggqqplot(natives, "median_RTlog", ggtheme = theme_bw(),
-                             title = "QQ Plot by Target Syllable in log by L1 Spanish Speakers") +
-  facet_grid(target_syl_structure + matching ~ word_status, labeller = "label_both")
+         title = "QQ Plot by Word Initial Syllable in log by L1 Spanish Speakers") +
+  facet_grid(word_initial_syl + matching ~ word_status, labeller = "label_both")
 
 
 # Run inferential statistics Learner group
 # Run 3 way repeated measures anova
 aov_learners <- aov_ez("partNum", "median_RTlog", learners, within = c(grouping_stats))
 aov_learners
-## main effect of target syllable structure
+## no significant main effects
+## two way interaction between word initial syllable and matching
 ## two way interaction between matching and word status
- 
+
 
 # Significant Main Effect Exploration
-# Learners t.test for target syllable structure
-t.test(learners$median_RTlog ~ learners$target_syl_structure, paired = TRUE) 
-## signficant
-
-# Descriptives to check direction of effect
-with(learners, tapply(median_RTlog, target_syl_structure, FUN = mean)) 
-## CVC faster than CV
+## none to explore
 
 # Interaction breakdown
+# Create subsets to explore interaction between word initial syllable and matching for Learners
+# CV subset
+cv_learners <- learners %>% 
+  subset(., word_initial_syl == "CV")
+
+# Create real word subset
+cvc_learners <- learners %>% 
+  subset(., word_initial_syl == "CVC")
+
+# CV syllable t.test
+t.test(cv_learners$median_RTlog ~ cv_learners$matching, paired = TRUE) 
+## is significant
+
+# Descriptives to check direction of effect
+with(cv_learners, tapply(median_RTlog, matching, FUN = mean))
+## CV word initial syllables mismatching the target syllable are responded to faster than matching
+
+# CVC sylable t.test
+t.test(cvc_learners$median_RTlog ~ cvc_learners$matching, paired = TRUE) 
+## is not significant
+
+# Descriptives to check direction of effect
+with(cvc_learners, tapply(median_RTlog, matching, FUN = mean)) 
+## no direction
+
+
 # Create subsets to explore interaction between matching and word status for Learners
 # Nonword subset
 nonwords_learners <- learners %>% 
@@ -170,37 +190,58 @@ with(words_learners, tapply(median_RTlog, matching, FUN = mean))
 
 # Estimated Marginal Means
 # get tabled results of estimated marginal means
-tar_syl_main <- emmeans(aov_learners, pairwise ~ target_syl_structure) 
-tar_syl_main
+wdsyl_mat_int <- emmeans(aov_learners, pairwise ~ word_initial_syl:matching) 
+wdsyl_mat_int
 
 mat_wdstatus_int <- emmeans(aov_learners, pairwise ~ matching:word_status) 
 mat_wdstatus_int
 
 
 # Learner plots 
-# Main effect of target syllable structure
-l2_tar_syl_main <- afex_plot(aov_learners, 
-                             x = "target_syl_structure", 
-                             error = "within",
-                             data_plot = FALSE,
-                             mapping = c("color", "shape")) +
+# Interaction between matching condition and lexicality with matching condition on x-axis
+l2_wdsyl_mat_int <- afex_plot(aov_learners, 
+                            x = "matching", 
+                            trace = "word_initial_syl",
+                            error = "within",
+                            mapping = c("shape", "color", "linetype"),
+                            factor_levels = list(matching = c("Matching", "Mismatching")),
+                            legend_title = "Word Initial Syllable",
+                            data_plot = FALSE) +
   labs(title = "Estimated Marginal Means L2 Spanish",
-       x = "Target Syllable Structure",
+       x = "Matching Condition",
        y = "Reaction Time (log)") +
-  scale_color_manual(values = c('darkorchid4', 'goldenrod4')) +
-  theme(legend.position = "none")
-l2_tar_syl_main
+  scale_color_manual(values = c('darkorchid4', 'goldenrod4'))
+l2_wdsyl_mat_int
+
+# Interaction between matching condition and lexicality with lexicality conditions on x-axis
+l2_mat_wdsyl_int <- afex_plot(aov_learners, 
+                            x = "word_initial_syl", 
+                            trace = "matching",
+                            error = "within",
+                            mapping = c("shape", "color", "linetype"),
+                            factor_levels = list(matching = c("Matching", "Mismatching")),
+                            legend_title = "Condition",
+                            data_plot = FALSE) +
+  labs(title = "Estimated Marginal Means L2 Spanish",
+       x = "Word Initial Syllable",
+       y = "Reaction Time (log)") +
+  scale_color_manual(values = c('darkorchid4', 'goldenrod4'))
+l2_mat_wdsyl_int
+
+# Plot side by side to determine which one is easier to understand data
+plot_grid(l2_wdsyl_mat_int, l2_mat_wdsyl_int)
+
 
 # Interaction between matching condition and lexicality with matching condition on x-axis
 l2_mat_lex_int <- afex_plot(aov_learners, 
-          x = "matching", 
-          trace = "word_status",
-          error = "within",
-          mapping = c("shape", "color", "linetype"),
-          factor_levels = list(word_status = c(word = "Word", nonword = "Noword"),
-                               matching = c("Matching", "Mismatching")),
-          legend_title = "Lexicality",
-          data_plot = FALSE) +
+                            x = "matching", 
+                            trace = "word_status",
+                            error = "within",
+                            mapping = c("shape", "color", "linetype"),
+                            factor_levels = list(word_status = c(word = "Word", nonword = "Noword"),
+                                                 matching = c("Matching", "Mismatching")),
+                            legend_title = "Lexicality",
+                            data_plot = FALSE) +
   labs(title = "Estimated Marginal Means L2 Spanish",
        x = "Matching Condition",
        y = "Reaction Time (log)") +
@@ -209,14 +250,14 @@ l2_mat_lex_int
 
 # Interaction between matching condition and lexicality with lexicality conditions on x-axis
 l2_lex_mat_int <- afex_plot(aov_learners, 
-                        x = "word_status", 
-                        trace = "matching",
-                        error = "within",
-                        mapping = c("shape", "color", "linetype"),
-                        factor_levels = list(word_status = c(word = "Word", nonword = "Noword"),
-                                             matching = c("Matching", "Mismatching")),
-                        legend_title = "Condition",
-                        data_plot = FALSE) +
+                            x = "word_status", 
+                            trace = "matching",
+                            error = "within",
+                            mapping = c("shape", "color", "linetype"),
+                            factor_levels = list(word_status = c(word = "Word", nonword = "Noword"),
+                                                 matching = c("Matching", "Mismatching")),
+                            legend_title = "Condition",
+                            data_plot = FALSE) +
   labs(title = "Estimated Marginal Means L2 Spanish",
        x = "Lexicality",
        y = "Reaction Time (log)") +
@@ -270,7 +311,8 @@ l1_lexicality_main
 
 # Remove temporary data variables in environment
 # Remove dataframes following analysis
-rm(my_data, my_data_long, learners, natives, words_learners, nonwords_learners)
+rm(my_data, my_data_long, learners, natives, words_learners, nonwords_learners, 
+   cvc_learners, cv_learners)
 
 # Remove checks and unused plots
 rm(l2_mat_lex_int, normality_learner, normality_native, outlier_learner, outlier_native)

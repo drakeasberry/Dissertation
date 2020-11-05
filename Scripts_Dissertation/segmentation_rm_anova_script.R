@@ -8,13 +8,7 @@ library(ggpubr)
 library(rstatix)
 library(afex)
 
-# Create 'not in' function
-'%ni%' <- Negate('%in%')
-
-# Surpress all readr messages by default
-# https://www.reddit.com/r/rstats/comments/739vf6/how_to_turn_off_readrs_messages_by_default/
-options(readr.num_columns = 0)
-
+# Convert the data into aggregated long form 
 trans_long <-  function(data, group_col){
   script_my_data_long <- data %>% 
     group_by(!!!syms(group_col)) %>% 
@@ -23,12 +17,13 @@ trans_long <-  function(data, group_col){
     convert_as_factor(!!!syms(grouping))
   }
 
+# Create named group subset
 part_group <- function(data, grp_name){
-  # Subset data into learne groups
   group <- data %>% 
     subset(., group == grp_name)
 }
 
+# populate named descriptive statistic
 summary_stats <- function(data, group_col, variable, stat){
   stat_data <- data %>%   
     group_by(!!!syms(group_col)) %>% 
@@ -36,26 +31,18 @@ summary_stats <- function(data, group_col, variable, stat){
     print()
 }
 
+# Check for outliers in data
 outlier_chk <- function(data, grouping_col, variable){
-  # Check for outliers
   outlier <- data %>% 
     group_by(!!!syms(grouping_col)) %>% 
     identify_outliers(!!sym(variable)) %>% 
     print()  
 }
 
-
+# Check for normality in data
 normality_chk <- function(data, grouping_col, variable){
-  # Check for outliers
   normality <- data %>% 
     group_by(!!!syms(grouping_col)) %>% 
     shapiro_test(!!sym(variable)) %>% 
     print()  
-}
-
-
-seg_rm_anova <- function(data, grouping_col, id, variable){
-  # run anova
-  results <- aov_ez(id, variable, data, within = c(grouping_col)) %>% 
-  print()
 }
