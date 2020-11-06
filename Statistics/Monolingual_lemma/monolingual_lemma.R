@@ -37,7 +37,7 @@ segmentation_data <- exper_trials %>%
   left_join(group_map, by = 'partNum') %>%
   # create millisecond RT and log RT columns
   mutate(segRespRTmsec = round(segRespRT * 1000),
-         log_RT = log(segRespRT)) %>% 
+         log_RT = log(segRespRTmsec)) %>% 
   rename(segRespRTsec = segRespRT, 
          word = expWord, 
          word_status = wd_status,
@@ -45,9 +45,9 @@ segmentation_data <- exper_trials %>%
          target_syl_structure = tar_syl_str,
          targetSyl = tar_syl, 
          exp_word_type = fillerCarrier) %>% 
-  select("partNum", "group", "segResp", "segRespCorr", "segRespRTsec", "segRespRTmsec", "log_RT", "lemma",
-         "word", "word_status", "word_initial_syl", "targetSyl", "target_syl_structure", "matching", 
-         "exp_word_type", "block")
+  select("partNum", "group", "segResp", "segRespCorr", "segRespRTsec", "segRespRTmsec", 
+         "log_RT", "lemma", "word", "word_status", "word_initial_syl", "targetSyl", 
+         "target_syl_structure", "matching", "exp_word_type", "block")
 
 #---
 # These items are only used in the Rstudio environment

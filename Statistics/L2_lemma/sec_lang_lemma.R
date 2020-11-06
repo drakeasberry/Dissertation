@@ -37,7 +37,7 @@ segmentation_data <- exper_trials %>%
   left_join(group_map, by = 'partNum') %>%
   # create millisecond RT and log RT columns
   mutate(segRespRTmsec = round(segRespRT * 1000),
-         log_RT = log(segRespRT)) %>% 
+         log_RT = log(segRespRTmsec)) %>% 
   rename(segRespRTsec = segRespRT, 
          word = expWord, 
          word_status = wd_status,
