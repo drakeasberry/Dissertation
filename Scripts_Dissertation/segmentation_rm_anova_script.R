@@ -14,7 +14,7 @@ trans_long <-  function(data, group_col){
     group_by(!!!syms(group_col)) %>% 
     summarise(median_RTmsec = median(.data$segRespRTmsec),
               median_RTlog = median(.data$log_RT)) %>% 
-    convert_as_factor(!!!syms(grouping))
+    convert_as_factor(!!!syms(group_col))
   }
 
 # Create named group subset
