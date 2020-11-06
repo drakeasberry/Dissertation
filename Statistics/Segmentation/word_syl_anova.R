@@ -142,7 +142,7 @@ aov_learners
 cv_learners <- learners %>% 
   subset(., word_initial_syl == "CV")
 
-# Create real word subset
+# CVC subset
 cvc_learners <- learners %>% 
   subset(., word_initial_syl == "CVC")
 
