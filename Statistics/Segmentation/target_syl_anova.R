@@ -131,41 +131,55 @@ aov_learners <- aov_ez("partNum", "median_RTlog", learners, within = c(grouping_
 aov_learners
 ## main effect of target syllable structure
 ## two way interaction between matching and word status
- 
+
+# Regroup to run paired t-test for target syllable over all other conditions 
+grouping_tarsyl <- grouping[! grouping %in% c("word_status", "word_initial_syl",
+                                              "matching", "group")]
+data_tarsyl_ag <- trans_long(my_data, grouping_tarsyl)
 
 # Significant Main Effect Exploration
 # Learners t.test for target syllable structure
-t.test(learners$median_RTlog ~ learners$target_syl_structure, paired = TRUE) 
-## signficant
+t.test(data_tarsyl_ag$median_RTlog ~ data_tarsyl_ag$target_syl_structure, paired = TRUE) 
+## not signficant
 
 # Descriptives to check direction of effect
-with(learners, tapply(median_RTlog, target_syl_structure, FUN = mean)) 
-## CVC faster than CV
+with(data_tarsyl_ag, tapply(median_RTlog, target_syl_structure, FUN = mean)) 
+## CVC faster than CV but not signficantly so
 
 # Interaction breakdown
+# Regroup to run paired t-test for matching/mismatching over all other conditions
+grouping_mat <- grouping[! grouping %in% c("word_status", "word_initial_syl",
+                                           "target_syl_structure", "group")]
+
 # Create subsets to explore interaction between matching and word status for Learners
 # Nonword subset
-nonwords_learners <- learners %>% 
-  subset(., word_status == "nonword")
+nonwords_learners <- my_data %>%
+  subset(., word_status == "nonword" & group == "English") %>% 
+  trans_long(., grouping_mat)
 
 # Create real word subset
-words_learners <- learners %>% 
-  subset(., word_status == "word")
+words_learners <- my_data %>%
+  subset(., word_status == "word" & group == "English") %>% 
+  trans_long(., grouping_mat)
 
-# Nonwords t.test
-t.test(nonwords_learners$median_RTlog ~ nonwords_learners$matching, paired = TRUE) 
-## not significant
+
+# Nonwords t.test one-tailed for matching
+t.test(nonwords_learners$median_RTlog ~ nonwords_learners$matching, paired = TRUE, 
+       alternative = "less") 
+## significant
 
 # Descriptives to check direction of effect
 with(nonwords_learners, tapply(median_RTlog, matching, FUN = mean))
+## nonwords inmatching condition are responded to faster than mismatching condition
 
-# Real words t.test
-t.test(words_learners$median_RTlog ~ words_learners$matching, paired = TRUE) 
-## is significant
+# Real words t.test ont-tailed for matching
+t.test(words_learners$median_RTlog ~ words_learners$matching, paired = TRUE,
+       alternative = "less") 
+## not significant in hypothesized direction
 
 # Descriptives to check direction of effect
 with(words_learners, tapply(median_RTlog, matching, FUN = mean)) 
-## Mismatching cond faster than matching
+## Words in the mismatching condition repsonded to faster than matching
 
 
 # Estimated Marginal Means
@@ -231,17 +245,21 @@ plot_grid(l2_mat_lex_int, l2_lex_mat_int)
 # Run 3 way repeated measures anova
 aov_natives <- aov_ez("partNum", "median_RTlog", natives, within = c(grouping_stats))
 aov_natives
-## main effect of word status
+## main effect of word status with part020, but is gone once you remove high error participant
 ## no signficant interactions
 
+# Regroup to run paired t-test for target syllable over all other conditions 
+grouping_lex <- grouping[! grouping %in% c("target_syl_structure", "word_initial_syl",
+                                              "matching", "group")]
+data_lex_ag <- trans_long(my_data, grouping_lex)
 
 # Significant Main Effect Exploration
 # Natives t.test for word status
-t.test(natives$median_RTlog ~ natives$word_status, paired = TRUE)
+t.test(data_lex_ag$median_RTlog ~ data_lex_ag$word_status, paired = TRUE)
 ## is significant
 
 # Descriptives to check direction of effect
-with(natives, tapply(median_RTlog, word_status, FUN = mean))
+with(data_lex_ag, tapply(median_RTlog, word_status, FUN = mean))
 ## words responded to faster than nonwords
 
 
