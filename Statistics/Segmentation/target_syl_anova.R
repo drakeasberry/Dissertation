@@ -135,16 +135,18 @@ aov_learners
 # Regroup to run paired t-test for target syllable over all other conditions 
 grouping_tarsyl <- grouping[! grouping %in% c("word_status", "word_initial_syl",
                                               "matching", "group")]
-data_tarsyl_ag <- trans_long(my_data, grouping_tarsyl)
+data_tarsyl_ag <- my_data %>% 
+  subset(., group == "English") %>% 
+  trans_long(., grouping_tarsyl)
 
 # Significant Main Effect Exploration
 # Learners t.test for target syllable structure
 t.test(data_tarsyl_ag$median_RTlog ~ data_tarsyl_ag$target_syl_structure, paired = TRUE) 
-## not signficant
+## is signficant
 
 # Descriptives to check direction of effect
 with(data_tarsyl_ag, tapply(median_RTlog, target_syl_structure, FUN = mean)) 
-## CVC faster than CV but not signficantly so
+## CVC faster than CV
 
 # Interaction breakdown
 # Regroup to run paired t-test for matching/mismatching over all other conditions
@@ -251,7 +253,9 @@ aov_natives
 # Regroup to run paired t-test for target syllable over all other conditions 
 grouping_lex <- grouping[! grouping %in% c("target_syl_structure", "word_initial_syl",
                                               "matching", "group")]
-data_lex_ag <- trans_long(my_data, grouping_lex)
+data_lex_ag <- my_data %>% 
+  subset(., group == "Spanish") %>% 
+  trans_long(., grouping_lex)
 
 # Significant Main Effect Exploration
 # Natives t.test for word status
