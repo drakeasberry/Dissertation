@@ -222,6 +222,7 @@ df_critical <- df_critical %>%
   # Remove irrelevant columns
   select(keep_columns)
 
+
 # Bind error row and experimental items
 df_critical <- rbind.fill(df_critical, exp_error)
 
@@ -334,7 +335,7 @@ high_miss_seg_critical_responses <- subset(df_seg_critical_errors,
   print()
 
 # Write output file for use in Demographic analysis
-write_csv(high_miss_seg_critical_users, '../Demographics/analyze_data/lab_segmentation_high_error_rates')
+write_csv(high_miss_seg_critical_responses, '../Demographics/analyze_data/lab_segmentation_high_error_rates')
 
 
 # Create a subset of all filler items
