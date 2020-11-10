@@ -21,6 +21,7 @@ my_data <- read_csv('analyze_data/output/44_online_natives_segmentation.csv')
 grouping <- c("partNum", "group", "word_status", "word_initial_syl", 
               "target_syl_structure", "matching")
 
+
 # Aggregaates and transforms data into long form
 # Adds columns for median of RT in msec and log
 my_data_long <- trans_long(my_data, grouping) 
@@ -64,15 +65,27 @@ bxp_natives
 
 # Check for outliers
 # Check pooled environment
-#my_online_l2 <- read_csv("../L2_lemma/analyze_data/output/55_online_learners_segmentation.csv")
-#my_data_online <- rbind(my_data, my_online_l2) %>% 
-#  trans_long(., grouping) 
-#
-#outlier_data <- my_data_online %>% 
-#  outlier_chk(., grouping_stats, "median_RTmsec")
+my_online_l2 <- read_csv("../L2_lemma/analyze_data/output/55_online_learners_segmentation.csv")
+my_data_online <- rbind(my_data, my_online_l2) %>% 
+  trans_long(., grouping) 
 
+outlier_data <- my_data_online %>% 
+  outlier_chk(., grouping_stats, "median_RTmsec")
+## part248 only extreme outlier in all 99 participants 
+
+# check only native speakers
 outlier_native <- natives %>% 
   outlier_chk(., grouping_stats, "median_RTmsec")
+
+# outliers after log transformation
+outlier_native_log <- natives %>% 
+  outlier_chk(., grouping_stats, "median_RTlog")
+
+natives %>% 
+  subset(., partNum == "part248")
+## part248 was extreme outlier in millisecond analysis for CVC mismatch condition
+## They were a slower participant overall and not extreme outlier after transformation
+## part248 was not excluded from analysis as a result
 
 # Check for normality
 normality_native <- natives %>% 
