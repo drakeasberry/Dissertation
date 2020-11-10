@@ -168,11 +168,11 @@ words_learners <- my_data %>%
 # Nonwords t.test one-tailed for matching
 t.test(nonwords_learners$median_RTlog ~ nonwords_learners$matching, paired = TRUE, 
        alternative = "less") 
-## significant
+## is significant
 
 # Descriptives to check direction of effect
 with(nonwords_learners, tapply(median_RTlog, matching, FUN = mean))
-## nonwords inmatching condition are responded to faster than mismatching condition
+## nonwords in matching condition are responded to faster than mismatching condition
 
 # Real words t.test ont-tailed for matching
 t.test(words_learners$median_RTlog ~ words_learners$matching, paired = TRUE,

@@ -88,16 +88,22 @@ ggqqplot(learners, "median_RTlog", ggtheme = theme_bw(),
 aov_learners <- aov_ez("partNum", "median_RTlog", learners, within = c(grouping_stats))
 aov_learners
 ## main effect of word initial syllable condition
+## main effect (trending) of matching condition
 ## 3 way interaction between word initial syllable, matching and word status
 
 
 # Significant Main Effect Exploration
+# Regroup to run paired t-test for word initial syllable over all other conditions
+grouping_wdsyl <- grouping[! grouping %in% c("word_status", "matching",
+                                           "target_syl_structure", "group")]
+data_wdsyl_ag <- trans_long(my_data, grouping_wdsyl)
+
 # learners t.test for word initial syllable
-t.test(learners$median_RTlog ~ learners$word_initial_syl, paired = TRUE)
+t.test(data_wdsyl_ag$median_RTlog ~ data_wdsyl_ag$word_initial_syl, paired = TRUE)
 ## is significant
 
 # Descriptives to check direction of effect
-with(learners, tapply(median_RTlog, word_initial_syl, FUN = mean))
+with(data_wdsyl_ag, tapply(median_RTlog, word_initial_syl, FUN = mean))
 ## CV word initial syllables responded to faster than CVC word initial syllables
 
 
@@ -122,6 +128,46 @@ l2_wdsyl_main <- afex_plot(aov_learners,
 l2_wdsyl_main
 
 
+## explore matching trend
+# Regroup to run paired t-test for matching/mismatching over all other conditions
+grouping_mat <- grouping[! grouping %in% c("word_status", "word_initial_syl",
+                                           "target_syl_structure", "group")]
+data_mat_ag <- trans_long(my_data, grouping_mat)
+
+# Significant Main Effect Exploration
+# Natives t.test for matching condition
+t.test(data_mat_ag$median_RTlog ~ data_mat_ag$matching, paired = TRUE,
+       alternative = "less")
+## is significant
+
+# Descriptives to check direction of effect
+with(data_mat_ag, tapply(median_RTlog, matching, FUN = mean))
+## matching condition responded to faster than mismatching condition
+
+
+# Estimated Marginal Means
+# get tabled results of estimated marginal means
+mat_main <- emmeans(aov_learners, pairwise ~ matching) 
+mat_main
+
+
+# Learner plots
+# Main effect of matching condition
+l1_mat_main <- afex_plot(aov_learners, 
+                         x = "matching", 
+                         error = "within",
+                         factor_levels = list(matching = c(match = "Matching", 
+                                                           mismatch = "Mismatching")),
+                         data_plot = FALSE,
+                         mapping = c("color", "shape")) +
+  labs(title = "Estimated Marginal Means L2 Spanish",
+       x = "Matching Condition",
+       y = "Reaction Time (log)") +
+  scale_color_manual(values = c('darkorchid4', 'goldenrod4')) +
+  theme(legend.position = "none")
+l1_mat_main
+
+
 # Break down the three way interaction between word initial syllable, word status and matching condition
 # Drop word status
 grouping_a <- grouping[! grouping %in% c("word_status")]
@@ -134,17 +180,12 @@ learners_a <- trans_long(my_data, grouping_a)
 aov_learners_a <- aov_ez("partNum", "median_RTlog", learners_a, within = c(grouping_stats_a))
 aov_learners_a
 ## main effect of word initial syllable condition
+## main effect (trending) of matching conidition 
 ## no significant interactions
 
 
 # Significant Main Effect Exploration
-# learners t.test for word initial syllable
-t.test(learners_a$median_RTlog ~ learners_a$word_initial_syl, paired = TRUE)
-## is significant
-
-# Descriptives to check direction of effect
-with(learners_a, tapply(median_RTlog, word_initial_syl, FUN = mean))
-## CV word initial syllables responded to faster than CVC word initial syllables
+## See main effect exploration from 3-way repeated measures ANOVA
 
 
 # Estimated Marginal Means
@@ -183,14 +224,7 @@ aov_learners_b
 
 
 # Significant Main Effect Exploration
-# learners t.test for word initial syllable
-t.test(learners_b$median_RTlog ~ learners_b$word_initial_syl, paired = TRUE)
-## is significant
-
-# Descriptives to check direction of effect
-with(learners_b, tapply(median_RTlog, word_initial_syl, FUN = mean))
-## CV word initial syllables responded to faster than CVC word initial syllables
-
+## See main effect exploration from 3-way repeated measures ANOVA
 
 # Estimated Marginal Means
 # get tabled results of estimated marginal means
@@ -228,14 +262,7 @@ aov_learners_c
 
 
 # Significant Main Effect Exploration
-# learners t.test for matching conditions
-t.test(learners_c$median_RTlog ~ learners_c$matching, paired = TRUE)
-## is significant
-
-# Descriptives to check direction of effect
-with(learners_c, tapply(median_RTlog, matching, FUN = mean))
-## matching condition responded to faster than mismatching condition
-
+## See main effect exploration from 3-way repeated measures ANOVA
 
 # Estimated Marginal Means
 # get tabled results of estimated marginal means

@@ -63,6 +63,14 @@ bxp_natives <- natives %>%
 bxp_natives  
 
 # Check for outliers
+# Check pooled environment
+#my_online_l2 <- read_csv("../L2_lemma/analyze_data/output/55_online_learners_segmentation.csv")
+#my_data_online <- rbind(my_data, my_online_l2) %>% 
+#  trans_long(., grouping) 
+#
+#outlier_data <- my_data_online %>% 
+#  outlier_chk(., grouping_stats, "median_RTmsec")
+
 outlier_native <- natives %>% 
   outlier_chk(., grouping_stats, "median_RTmsec")
 
@@ -87,25 +95,48 @@ ggqqplot(natives, "median_RTlog", ggtheme = theme_bw(),
 # Run 3 way repeated measures anova
 aov_natives <- aov_ez("partNum", "median_RTlog", natives, within = c(grouping_stats))
 aov_natives
-## main effect of matching conditions
+## main effect of matching condition and trending for word status
 ## no signficant interactions
+
+# Regroup to run paired t-test for matching/mismatching over all other conditions
+grouping_mat <- grouping[! grouping %in% c("word_status", "word_initial_syl",
+                                           "target_syl_structure", "group")]
+data_mat_ag <- trans_long(my_data, grouping_mat)
 
 
 # Significant Main Effect Exploration
-# Natives t.test for word status
-t.test(natives$median_RTlog ~ natives$matching, paired = TRUE)
+# Natives t.test for matching condition
+t.test(data_mat_ag$median_RTlog ~ data_mat_ag$matching, paired = TRUE, 
+       alternative = "less")
 ## is significant
 
 # Descriptives to check direction of effect
-with(natives, tapply(median_RTlog, matching, FUN = mean))
-## words responded to faster than nonwords
+with(data_mat_ag, tapply(median_RTlog, matching, FUN = mean))
+## matching condition responded to faster than mismatching condition
 
+
+# Significant Main Effect Trending Exploration
+# Regroup to run paired t-test for word status over all other conditions 
+grouping_lex <- grouping[! grouping %in% c("target_syl_structure", "word_initial_syl",
+                                           "matching", "group")]
+data_lex_ag <- my_data %>% 
+  trans_long(., grouping_lex)
+
+# Natives t.test for word status (trending)
+t.test(data_lex_ag$median_RTlog ~ data_lex_ag$word_status, paired = TRUE)
+## is not significant
+
+# Descriptives to check direction of effect
+with(data_lex_ag, tapply(median_RTlog, word_status, FUN = mean))
+## words responded to faster than nonwords, but not significantly so
 
 # Estimated Marginal Means
 # get tabled results of estimated marginal means
 mat_main <- emmeans(aov_natives, pairwise ~ matching) 
 mat_main
 
+lex_main <- emmeans(aov_natives, pairwise ~ word_status) 
+lex_main
 
 # Native plots
 # Main effect of matching condition
@@ -122,6 +153,25 @@ l1_mat_main <- afex_plot(aov_natives,
   scale_color_manual(values = c('darkorchid4', 'goldenrod4')) +
   theme(legend.position = "none")
 l1_mat_main
+
+# Main effect of lexicality
+l1_lex_main <- afex_plot(aov_natives, 
+                         x = "word_status", 
+                         error = "within",
+                         factor_levels = list(word_status = c(word = "Word", 
+                                                              nonword = "Noword")),
+                         data_plot = FALSE,
+                         mapping = c("color", "shape")) +
+  labs(title = "Estimated Marginal Means L1 Spanish",
+       x = "Lexicality",
+       y = "Reaction Time (log)") +
+  scale_color_manual(values = c('darkorchid4', 'goldenrod4')) +
+  theme(legend.position = "none")
+l1_lex_main
+
+
+# Interaction breakdown
+## No significant interactions to explore
 
 
 # Remove temporary data variables in environment
