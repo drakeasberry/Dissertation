@@ -15,6 +15,9 @@ source("../../Scripts_Dissertation/segmentation_rm_anova_script.R")
 # Read in data file
 my_data <- read_csv('analyze_data/output/45_lab_segmentation.csv')
 
+# Run analysis without outlier part008
+my_data <- my_data %>% 
+  subset(., partNum != "part008")
 
 # Transform data in long form with 1 row per participant per condition
 # List columns to group by
@@ -89,11 +92,51 @@ bxp_natives
 
 
 # Check for outliers
+# Check pooled data
+outlier_data <- my_data_long %>% 
+  outlier_chk(., grouping_stats, "median_RTmsec")
+## part008 only extreme outlier in al 45 participants
+
+# check in learner group
 outlier_learner <- learners %>% 
   outlier_chk(., grouping_stats, "median_RTmsec")
+## part008 is only extreme outlier 
 
+# outliers after log transformation
+outlier_learner_log <- learners %>% 
+  outlier_chk(., grouping_stats, "median_RTlog")
+
+my_data_long %>% 
+  subset(., partNum == "part008")
+## part008 is only extreme outlier in millisecond analysis for CV matching condition
+## This condition is quite different from rest of participant conditions,
+## but not an outlier after log transformation
+## part008 was not excluded from analysis as a result
+part008 <- my_data %>% 
+  subset(., partNum == "part008")
+
+part008_cv <- my_data %>% 
+  subset(., partNum == "part008" & word_initial_syl == "CV")
+
+part008_cv_mat <- my_data %>% 
+  subset(., partNum == "part008" & word_initial_syl == "CV" & matching == "matching")
+
+part008_out_condition <- my_data %>% 
+  subset(., partNum == "part008" & word_initial_syl == "CV" & matching == "matching" & word_status == "word")
+
+# read in raw data to investigate odd outlier in part008
+part008_data <- read_csv('analyze_data/transformed/part008_inglés_C_Segmentation_seg_cols.csv')
+  
+part008_data %>% 
+  subset(., fillerCarrier == "carrierItem") %>% 
+  subset(., segRespRT < 1.5) %>% # n=1 - block 12
+  subset(., segRespRT < .2) %>% # n=7 - blocks 31, 37, 38, 39, 43, 44 & 45
+  View()
+
+# check in native group
 outlier_native <- natives %>% 
   outlier_chk(., grouping_stats, "median_RTmsec")
+## no outliers
 
 # Check for normality
 normality_learner <- learners %>% 
@@ -168,7 +211,8 @@ words_learners <- my_data %>%
 # Nonwords t.test one-tailed for matching
 t.test(nonwords_learners$median_RTlog ~ nonwords_learners$matching, paired = TRUE, 
        alternative = "less") 
-## is significant
+## is significant t = -1.8042, df = 26, p-value = 0.0414
+## not significant when part008 is removed t = -1.632, df = 25, p-value = 0.05761
 
 # Descriptives to check direction of effect
 with(nonwords_learners, tapply(median_RTlog, matching, FUN = mean))
@@ -247,7 +291,7 @@ plot_grid(l2_mat_lex_int, l2_lex_mat_int)
 # Run 3 way repeated measures anova
 aov_natives <- aov_ez("partNum", "median_RTlog", natives, within = c(grouping_stats))
 aov_natives
-## main effect of word status with part020, but is gone once you remove high error participant
+## no significant main effects, but word status trending 
 ## no signficant interactions
 
 # Regroup to run paired t-test for target syllable over all other conditions 
@@ -269,8 +313,8 @@ with(data_lex_ag, tapply(median_RTlog, word_status, FUN = mean))
 
 # Estimated Marginal Means
 # get tabled results of estimated marginal means
-mat_lex_int <- emmeans(aov_natives, pairwise ~ word_status) 
-mat_lex_int
+lex_main <- emmeans(aov_natives, pairwise ~ word_status) 
+lex_main
 
 
 # Native plots
