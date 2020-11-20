@@ -247,7 +247,7 @@ complete_joiner <- exp_joiner %>%
   select(keep_columns,'word_status')
 
 
-# Join table with experimental results from participants
+# Join word freq table with experimental results from participants
 seg_data_join <- df_raw_seg %>%
   # join participant data
   inner_join(complete_joiner, by = 'word') %>%
@@ -298,11 +298,24 @@ print('1 = response and None = no response')
 count(seg_critical, vars=segResp) %>% 
   rename(Response = vars, Count = n)
 
+# Number of responses over 1500ms by participant
+seg_critical %>% 
+  subset(., segResp == 1) %>%
+  subset(., segRespRTmsec > 1500) %>%
+  View()
+  count(., vars = partNum)
+
+# Number of responses under 200ms by participant
+seg_critical %>% 
+  subset(., segResp == 1) %>%
+  subset(., segRespRTmsec < 200) %>% 
+  count(., vars = partNum)
+
 # Run initial pass according to previous literature
 seg_critical_correct <- seg_critical %>% 
   subset(., segResp == 1) %>% # remove all missed critical items n=28
-  subset(., segRespRTmsec > 200) %>% # remove response times less than 200ms n=31
-  subset(., segRespRTmsec < 1500) %>% # remove response times greater than 1500ms n=15
+  subset(., segRespRTmsec >= 200) %>% # remove response times less than 200ms n=27
+  subset(., segRespRTmsec <= 1500) %>% # remove response times greater than 1500ms n=11
   select(-c('exp_word_type', 'segResp')) # remove columns
 
 # Check to ensure no column only contains one unique value
@@ -335,7 +348,8 @@ high_miss_seg_critical_responses <- subset(df_seg_critical_errors,
   print()
 
 # Write output file for use in Demographic analysis
-write_csv(high_miss_seg_critical_responses, '../Demographics/analyze_data/lab_segmentation_high_error_rates')
+write_csv(high_miss_seg_critical_responses, 
+          '../Demographics/analyze_data/output/lab_segmentation_high_error_rates.csv')
 
 
 # Create a subset of all filler items
@@ -394,7 +408,11 @@ if(length(investigate$Participant) == 0){
   # Write statement for file containing only necessary columns for segmentation analysis
   write_csv(segmentation, 'analyze_data/output/45_lab_segmentation.csv')
   # For PI Advisor
-  write_csv(segmentation, 'analyze_data/output/data.csv')
+  #write_csv(segmentation, 'analyze_data/output/data.csv')
+  segmentation %>% 
+    select('partNum') %>% 
+    unique() %>% 
+    write_csv(., '../Demographics/analyze_data/45_eligible_lab_part.csv')
   rm(button_held_high, button_not_held_high, high_miss_seg_critical_responses, 
      high_seg_filler_responses, df_seg_critical_errors, df_seg_filler_errors, investigate,
      high_filler_part_raw, high_filler_part_corrected, seg_critical, seg_critical_misses,
