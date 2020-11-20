@@ -53,10 +53,10 @@ with(my_data, bwplot(segRespRTmsec~word_initial_syl|target_syl_structure,
 
 ag_all <- aggregate(my_data$segRespRTmsec, 
                     by = list(my_data$partNum,my_data$matching,my_data$target_syl_structure), FUN = mean)
-cv_match_all <- subset(ag_all,Group.2 == 'match' & Group.3 == 'CV')
-cvc_match_all <- subset(ag_all,Group.2 == 'match' & Group.3 == 'CVC')
-cv_mismatch_all <- subset(ag_all,Group.2 == 'mismatch' & Group.3 == 'CV')
-cvc_mismatch_all <- subset(ag_all,Group.2 == 'mismatch' & Group.3 == 'CVC')
+cv_match_all <- subset(ag_all,Group.2 == 'matching' & Group.3 == 'CV')
+cvc_match_all <- subset(ag_all,Group.2 == 'matching' & Group.3 == 'CVC')
+cv_mismatch_all <- subset(ag_all,Group.2 == 'mismatching' & Group.3 == 'CV')
+cvc_mismatch_all <- subset(ag_all,Group.2 == 'mismatching' & Group.3 == 'CVC')
 
 averaged_all <- ag_all
 averaged_all <- ag_all %>%
@@ -65,16 +65,16 @@ averaged_all <- ag_all %>%
                                         ,'CVC','CV')))
 names(averaged_all) <- c('participant','int_syl_structure_match','target_syl','rt_ms','int_wd_syl')
 
-cvTargets_all <- subset(averaged_all,target_syl == 'CV')
-cvcTargets_all <- subset(averaged_all,target_syl == 'CVC')
-cvCarrier_all <- subset(averaged_all,int_wd_syl == 'CV')
-cvcCarrier_all <- subset(averaged_all,int_wd_syl == 'CVC')
-
-#t.testing
-t.test(cvTargets_all$rt_ms~cvTargets_all$int_wd_syl)
-t.test(cvcTargets_all$rt_ms~cvcTargets_all$int_wd_syl)
-t.test(cvCarrier_all$rt_ms~cvCarrier_all$target_syl)
-t.test(cvcCarrier_all$rt_ms~cvcCarrier_all$target_syl)
+#cvTargets_all <- subset(averaged_all,target_syl == 'CV')
+#cvcTargets_all <- subset(averaged_all,target_syl == 'CVC')
+#cvCarrier_all <- subset(averaged_all,int_wd_syl == 'CV')
+#cvcCarrier_all <- subset(averaged_all,int_wd_syl == 'CVC')
+#
+##t.testing
+#t.test(cvTargets_all$rt_ms~cvTargets_all$int_wd_syl)
+#t.test(cvcTargets_all$rt_ms~cvcTargets_all$int_wd_syl)
+#t.test(cvCarrier_all$rt_ms~cvCarrier_all$target_syl)
+#t.test(cvcCarrier_all$rt_ms~cvcCarrier_all$target_syl)
 
 mydata_all <- averaged_all %>%
   group_by(target_syl,int_wd_syl) %>%
@@ -107,16 +107,16 @@ averaged_wd <- ag_wd %>%
                                         'CVC','CV')))
 names(averaged_wd) <- c('participant','int_syl_structure_match','target_syl','rt_ms','int_wd_syl')
 
-cvTargets_wd <- subset(averaged_wd,target_syl == 'CV')
-cvcTargets_wd <- subset(averaged_wd,target_syl == 'CVC')
-cvCarrier_wd <- subset(averaged_wd,int_wd_syl == 'CV')
-cvcCarrier_wd <- subset(averaged_wd,int_wd_syl == 'CVC')
-
-#t.testing
-t.test(cvTargets_wd$rt_ms~cvTargets_wd$int_wd_syl)
-t.test(cvcTargets_wd$rt_ms~cvcTargets_wd$int_wd_syl)
-t.test(cvCarrier_wd$rt_ms~cvCarrier_wd$target_syl)
-t.test(cvcCarrier_wd$rt_ms~cvcCarrier_wd$target_syl)
+#cvTargets_wd <- subset(averaged_wd,target_syl == 'CV')
+#cvcTargets_wd <- subset(averaged_wd,target_syl == 'CVC')
+#cvCarrier_wd <- subset(averaged_wd,int_wd_syl == 'CV')
+#cvcCarrier_wd <- subset(averaged_wd,int_wd_syl == 'CVC')
+#
+##t.testing
+#t.test(cvTargets_wd$rt_ms~cvTargets_wd$int_wd_syl)
+#t.test(cvcTargets_wd$rt_ms~cvcTargets_wd$int_wd_syl)
+#t.test(cvCarrier_wd$rt_ms~cvCarrier_wd$target_syl)
+#t.test(cvcCarrier_wd$rt_ms~cvcCarrier_wd$target_syl)
 
 mydata_wd <- averaged_wd %>%
   group_by(target_syl,int_wd_syl) %>%
@@ -150,16 +150,16 @@ averaged_nonwd <- ag_nonwd %>%
                                         'CVC','CV')))
 names(averaged_nonwd) <- c('participant','int_syl_structure_match','target_syl','rt_ms','int_wd_syl')
 
-cvTargets_nonwd <- subset(averaged_nonwd,target_syl == 'CV')
-cvcTargets_nonwd <- subset(averaged_nonwd,target_syl == 'CVC')
-cvCarrier_nonwd <- subset(averaged_nonwd,int_wd_syl == 'CV')
-cvcCarrier_nonwd <- subset(averaged_nonwd,int_wd_syl == 'CVC')
-
-#t.testing
-t.test(cvTargets_nonwd$rt_ms~cvTargets_nonwd$int_wd_syl)
-t.test(cvcTargets_nonwd$rt_ms~cvcTargets_nonwd$int_wd_syl)
-t.test(cvCarrier_nonwd$rt_ms~cvCarrier_nonwd$target_syl)
-t.test(cvcCarrier_nonwd$rt_ms~cvcCarrier_nonwd$target_syl)
+#cvTargets_nonwd <- subset(averaged_nonwd,target_syl == 'CV')
+#cvcTargets_nonwd <- subset(averaged_nonwd,target_syl == 'CVC')
+#cvCarrier_nonwd <- subset(averaged_nonwd,int_wd_syl == 'CV')
+#cvcCarrier_nonwd <- subset(averaged_nonwd,int_wd_syl == 'CVC')
+#
+##t.testing
+#t.test(cvTargets_nonwd$rt_ms~cvTargets_nonwd$int_wd_syl)
+#t.test(cvcTargets_nonwd$rt_ms~cvcTargets_nonwd$int_wd_syl)
+#t.test(cvCarrier_nonwd$rt_ms~cvCarrier_nonwd$target_syl)
+#t.test(cvcCarrier_nonwd$rt_ms~cvcCarrier_nonwd$target_syl)
 
 mydata_nonwd <- averaged_nonwd %>%
   group_by(target_syl,int_wd_syl) %>%
