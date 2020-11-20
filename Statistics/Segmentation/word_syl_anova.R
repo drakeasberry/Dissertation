@@ -194,6 +194,7 @@ t.test(nonwords_learners$median_RTlog ~ nonwords_learners$matching, paired = TRU
 t.test(nonwords_learners$median_RTlog ~ nonwords_learners$matching, paired = TRUE,
        alternative = "less") 
 ## is significant
+## we are only looking in one direction at 95% CI 
 
 # Descriptives to check direction of effect
 with(nonwords_learners, tapply(median_RTlog, matching, FUN = mean))
@@ -293,7 +294,7 @@ plot_grid(l2_mat_lex_int, l2_lex_mat_int)
 # Run 3 way repeated measures anova
 aov_natives <- aov_ez("partNum", "median_RTlog", natives, within = c(grouping_stats))
 aov_natives
-## no significant main effect
+## no significant main effect (Lexicality trending)
 ## no significant interactions
 
 
