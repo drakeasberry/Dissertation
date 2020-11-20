@@ -15,9 +15,6 @@ source("../../Scripts_Dissertation/segmentation_rm_anova_script.R")
 # Read in data file
 my_data <- read_csv('analyze_data/output/45_lab_segmentation.csv')
 
-# Run analysis without outlier part008
-my_data <- my_data %>% 
-  subset(., partNum != "part008")
 
 # Transform data in long form with 1 row per participant per condition
 # List columns to group by
@@ -95,7 +92,7 @@ bxp_natives
 # Check pooled data
 outlier_data <- my_data_long %>% 
   outlier_chk(., grouping_stats, "median_RTmsec")
-## part008 only extreme outlier in al 45 participants
+## part008 only extreme outlier in all 45 participants
 
 # check in learner group
 outlier_learner <- learners %>% 
@@ -105,33 +102,7 @@ outlier_learner <- learners %>%
 # outliers after log transformation
 outlier_learner_log <- learners %>% 
   outlier_chk(., grouping_stats, "median_RTlog")
-
-my_data_long %>% 
-  subset(., partNum == "part008")
-## part008 is only extreme outlier in millisecond analysis for CV matching condition
-## This condition is quite different from rest of participant conditions,
-## but not an outlier after log transformation
-## part008 was not excluded from analysis as a result
-part008 <- my_data %>% 
-  subset(., partNum == "part008")
-
-part008_cv <- my_data %>% 
-  subset(., partNum == "part008" & word_initial_syl == "CV")
-
-part008_cv_mat <- my_data %>% 
-  subset(., partNum == "part008" & word_initial_syl == "CV" & matching == "matching")
-
-part008_out_condition <- my_data %>% 
-  subset(., partNum == "part008" & word_initial_syl == "CV" & matching == "matching" & word_status == "word")
-
-# read in raw data to investigate odd outlier in part008
-part008_data <- read_csv('analyze_data/transformed/part008_inglés_C_Segmentation_seg_cols.csv')
-  
-part008_data %>% 
-  subset(., fillerCarrier == "carrierItem") %>% 
-  subset(., segRespRT < 1.5) %>% # n=1 - block 12
-  subset(., segRespRT < .2) %>% # n=7 - blocks 31, 37, 38, 39, 43, 44 & 45
-  View()
+## part008 is not outlier in log transformed data
 
 # check in native group
 outlier_native <- natives %>% 
@@ -185,7 +156,7 @@ data_tarsyl_ag <- my_data %>%
 # Significant Main Effect Exploration
 # Learners t.test for target syllable structure
 t.test(data_tarsyl_ag$median_RTlog ~ data_tarsyl_ag$target_syl_structure, paired = TRUE) 
-## is signficant
+## is signficant t = 2.4503, df = 26, p-value = 0.02132
 
 # Descriptives to check direction of effect
 with(data_tarsyl_ag, tapply(median_RTlog, target_syl_structure, FUN = mean)) 
@@ -211,8 +182,8 @@ words_learners <- my_data %>%
 # Nonwords t.test one-tailed for matching
 t.test(nonwords_learners$median_RTlog ~ nonwords_learners$matching, paired = TRUE, 
        alternative = "less") 
-## is significant t = -1.8042, df = 26, p-value = 0.0414
-## not significant when part008 is removed t = -1.632, df = 25, p-value = 0.05761
+## is not significant t = -1.8042, df = 26, p-value = 0.0414 (uncorrected for 2 tests)
+## alpha = 0.025
 
 # Descriptives to check direction of effect
 with(nonwords_learners, tapply(median_RTlog, matching, FUN = mean))
@@ -220,21 +191,19 @@ with(nonwords_learners, tapply(median_RTlog, matching, FUN = mean))
 
 # Real words t.test ont-tailed for matching
 t.test(words_learners$median_RTlog ~ words_learners$matching, paired = TRUE,
-       alternative = "less") 
-## not significant in hypothesized direction
+       alternative = "less")
+## not significant in hypothesized direction t = 2.1855, df = 26, p-value = 0.981
+
+
+#t.test(words_learners$median_RTlog ~ words_learners$matching, paired = TRUE,
+#       alternative = "greater")
+## One-tailed t-test 'greater' results
+## t = 2.1855, df = 26, p-value = 0.01903 (uncorrected for 2 tests) 
+## alpha = 0.025
 
 # Descriptives to check direction of effect
 with(words_learners, tapply(median_RTlog, matching, FUN = mean)) 
-## Words in the mismatching condition repsonded to faster than matching
-
-
-# Estimated Marginal Means
-# get tabled results of estimated marginal means
-tar_syl_main <- emmeans(aov_learners, pairwise ~ target_syl_structure) 
-tar_syl_main
-
-mat_lex_int <- emmeans(aov_learners, pairwise ~ matching:word_status) 
-mat_lex_int
+## Words in the mismatching condition repsonded to significantly faster than matching 
 
 
 # Learner plots 
@@ -294,7 +263,7 @@ aov_natives
 ## no significant main effects, but word status trending 
 ## no signficant interactions
 
-# Regroup to run paired t-test for target syllable over all other conditions 
+# Regroup to run paired t-test for word status over all other conditions 
 grouping_lex <- grouping[! grouping %in% c("target_syl_structure", "word_initial_syl",
                                               "matching", "group")]
 data_lex_ag <- my_data %>% 
@@ -304,17 +273,11 @@ data_lex_ag <- my_data %>%
 # Significant Main Effect Exploration
 # Natives t.test for word status
 t.test(data_lex_ag$median_RTlog ~ data_lex_ag$word_status, paired = TRUE)
-## is significant
+## is significant t = 2.2105, df = 17, p-value = 0.04106
 
 # Descriptives to check direction of effect
 with(data_lex_ag, tapply(median_RTlog, word_status, FUN = mean))
 ## words responded to faster than nonwords
-
-
-# Estimated Marginal Means
-# get tabled results of estimated marginal means
-lex_main <- emmeans(aov_natives, pairwise ~ word_status) 
-lex_main
 
 
 # Native plots
