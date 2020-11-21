@@ -145,7 +145,7 @@ cvc_learners <- my_data %>%
   trans_long(., grouping_mat)
 
 
-# CV syllable t.test
+# CV syllable t.test two-tailed
 t.test(cv_learners$median_RTlog ~ cv_learners$matching, paired = TRUE) 
 ## is significant
 
@@ -158,7 +158,7 @@ with(cv_learners, tapply(median_RTlog, matching, FUN = mean))
 ## CV target syllables matching the word inital syllable are responded to faster than mismatching
 
 
-# CVC sylable t.test
+# CVC sylable t.test two-tailed
 t.test(cvc_learners$median_RTlog ~ cvc_learners$matching, paired = TRUE) 
 ## is significant
 
