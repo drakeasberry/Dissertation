@@ -73,7 +73,7 @@ syllable_data_no_heritage %>%
 rm(syllable_data)
 
 # Write statement for file containing only necessary columns for intuition analysis
-write_csv(syllable_data_no_heritage, 'analyze_data/output/esp_eng_67_intuition.csv')
+write_csv(syllable_data_no_heritage, 'analyze_data/output/67_intuition.csv')
 # For PI Advisor naming convention in secure cloud storage
 #write_csv(syllable_data_no_heritage, 'analyze_data/output/data.csv') 
 

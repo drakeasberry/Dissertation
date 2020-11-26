@@ -302,7 +302,6 @@ count(seg_critical, vars=segResp) %>%
 seg_critical %>% 
   subset(., segResp == 1) %>%
   subset(., segRespRTmsec > 1500) %>%
-  View()
   count(., vars = partNum)
 
 # Number of responses under 200ms by participant
@@ -349,7 +348,7 @@ high_miss_seg_critical_responses <- subset(df_seg_critical_errors,
 
 # Write output file for use in Demographic analysis
 write_csv(high_miss_seg_critical_responses, 
-          '../Demographics/analyze_data/output/lab_segmentation_high_error_rates.csv')
+          '../Demographics/analyze_data/from_exp_analysis/lab_segmentation_high_error_rates.csv')
 
 
 # Create a subset of all filler items
@@ -412,7 +411,7 @@ if(length(investigate$Participant) == 0){
   segmentation %>% 
     select('partNum') %>% 
     unique() %>% 
-    write_csv(., '../Demographics/analyze_data/45_eligible_lab_part.csv')
+    write_csv(., '../Demographics/analyze_data/from_exp_analysis/45_eligible_lab_part.csv')
   rm(button_held_high, button_not_held_high, high_miss_seg_critical_responses, 
      high_seg_filler_responses, df_seg_critical_errors, df_seg_filler_errors, investigate,
      high_filler_part_raw, high_filler_part_corrected, seg_critical, seg_critical_misses,
