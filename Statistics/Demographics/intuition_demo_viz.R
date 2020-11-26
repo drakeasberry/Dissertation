@@ -2,85 +2,40 @@
 #!/usr/bin/Rscript
 
 # Load Libraries
-library(plyr)
-library(readr)
 library(tidyverse)
-library(psych)
-library(lattice)
-library(tidyr)
-library(ggplot2)
 library(kableExtra)
 library(qwraps2)
 
-# Create 'not in' function
-'%ni%' <- Negate('%in%')
 
 # Soruce Scripts containing functions
-source("../../Scripts_Dissertation/segmentation_dataviz_script.R")
+source("../../Scripts_Dissertation/diss_dataviz_script.R")
+
 
 # Read in data file
 vocab_size <- read_csv('analyze_data/output/intuition_vocab_sizes.csv')
 
+
 # Plot Language Vocabulary Difference in lab segmentation experiment
-all_demo <- vocab_diff_plt(vocab_size)
-all_demo
+vocab_diff_plt(vocab_size, "group", "diff")
 
 
 # Demographic Information Descriptions
 # Load demographic data
-demo_data <- read_csv('analyze_data/demographics/67_lab_intuition.csv')
+demo_data <- read_csv('../Intuition/analyze_data/demographics/67_lab_intuition.csv')
 
 
-# Box plots
+# Plot Demogrpahics
 # Language Dominance
-lang_dom <- ggplot(data = demo_data, 
-                   aes(x = group,
-                       y = lang_dominance)) +
-  geom_boxplot(color = "purple", 
-               width = 0.5,
-               outlier.shape = 8, 
-               outlier.size = 2) +
-  geom_violin(color = "red", 
-              fill = NA) +
-  geom_jitter(width = 0.1) +
-  ggtitle("Language Dominance") +
-  xlab("Native Language Group") +
-  ylab("Basic Language Profile Dominance Score")
-lang_dom
+language_dominance(demo_data, "group", "lang_dominance")
 
 
 # English Vocabulary Size
-eng_vocab <- ggplot(data = demo_data, 
-                    aes(x = group,
-                        y = lextale_eng_correct)) +
-  geom_boxplot(color = "purple", 
-               width = 0.5,
-               outlier.shape = 8, 
-               outlier.size = 2) +
-  geom_violin(color = "red", 
-              fill = NA) +
-  geom_jitter(width = 0.1) +
-  ggtitle("English Vocabulary Size") +
-  xlab("Native Language Group") +
-  ylab("English Vocabulary % correct")
-eng_vocab
+eng_lextale(demo_data, "group", "lextale_eng_correct")
 
 
 # Spanish Vocabulary Size
-esp_vocab <- ggplot(data = demo_data, 
-                    aes(x = group,
-                        y = lextale_esp_correct)) +
-  geom_boxplot(color = "purple", 
-               width = 0.5,
-               outlier.shape = 8, 
-               outlier.size = 2) +
-  geom_violin(color = "red", 
-              fill = NA) +
-  geom_jitter(width = 0.1) +
-  ggtitle("Spanish Vocabulary Size") +
-  xlab("Native Language Group") +
-  ylab("Spanish Vocabulary % correct")
-esp_vocab
+esp_lextale(demo_data, "group", "lextale_esp_correct")
+
 
 # Build summary table
 dominance_summary <-
@@ -106,4 +61,3 @@ by_lang %>%
   pack_rows("English Vocabulary Size", 2, 2) %>%
   pack_rows("Spanish Vocabulary Size", 3, 3) %>%
   kable_classic(full_width = F, html_font = "Cambria")
-
