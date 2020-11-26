@@ -96,7 +96,7 @@ high_miss_seg_critical_responses <- subset(df_seg_critical_errors,
   print()
 
 # Write output file for use in Demographic analysis
-write_csv(high_miss_seg_critical_responses, '../Demographics/analyze_data/online_natives_segmentation_high_error_rates')
+write_csv(high_miss_seg_critical_responses, '../Demographics/analyze_data/from_exp_analysis/online_natives_segmentation_high_error_rates.csv')
 
 
 # Create a subset of all filler items
@@ -166,7 +166,11 @@ if(length(investigate$Participant) == 0){
   # Write statement for file containing only necessary columns for segmentation analysis
   write_csv(segmentation, 'analyze_data/output/44_online_natives_segmentation.csv')
   # For PI Advisor
-  write_csv(segmentation, 'analyze_data/output/data.csv')
+  #write_csv(segmentation, 'analyze_data/output/data.csv')
+  segmentation %>% 
+    select('partNum') %>% 
+    unique() %>% 
+    write_csv(., '../Demographics/analyze_data/from_exp_analysis/44_eligible_online_mono_part.csv')
   rm(button_held_high, button_not_held_high, high_miss_seg_critical_responses, 
      high_seg_filler_responses, df_seg_critical_errors, df_seg_filler_errors, investigate,
      high_filler_part_raw, high_filler_part_corrected, seg_critical, seg_critical_misses,
