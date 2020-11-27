@@ -20,7 +20,7 @@ vocab_diff_plt(vocab_size, "group", "diff")
 
 
 # Segmentation higher errors and outlier participants
-lab_part_remove <- read_csv('analyze_data/45_eligible_lab_part.csv')
+lab_part_remove <- read_csv('analyze_data/from_exp_analysis/45_eligible_lab_part.csv')
 
 
 # Plot Language Vocabulary Difference for eligbile lab segmentation experiments
@@ -56,6 +56,15 @@ esp_lextale(demo_data, "group", "lextale_esp_correct")
 esp_lextale(eligible_demo_data, "group", "lextale_esp_correct")
 
 
+# Spanish Vocabulary Size (Izura Calculation)
+izura(demo_data, "group", "izura_score")
+izura(eligible_demo_data, "group", "izura_score")
+
+
+# Clean up environment
+rm(demo_data,lab_part_remove, vocab_size)
+
+
 # Build summary table
 dominance_summary <-
   list("Language Dominance" = 
@@ -63,7 +72,9 @@ dominance_summary <-
        "English Vocabulary Size" =
          list("mean (sd)" = ~ qwraps2::mean_sd(lextale_eng_correct)),
        "Spanish Vocabulary Size" =
-         list("mean (sd)" = ~ qwraps2::mean_sd(lextale_esp_correct))
+         list("mean (sd)" = ~ qwraps2::mean_sd(lextale_esp_correct)),
+       "Spanish Izura Score" = 
+         list("mean (sd)" = ~ qwraps2::mean_sd(izura_score))
   )              
 
 
@@ -79,4 +90,5 @@ by_lang %>%
   pack_rows("Language Dominance", 1, 1) %>% 
   pack_rows("English Vocabulary Size", 2, 2) %>%
   pack_rows("Spanish Vocabulary Size", 3, 3) %>%
+  pack_rows("Spanish Izura Score", 4, 4) %>%
   kable_classic(full_width = F, html_font = "Cambria")
