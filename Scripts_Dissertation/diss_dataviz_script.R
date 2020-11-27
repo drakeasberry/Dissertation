@@ -8,6 +8,8 @@ library(ggpubr)
 library(afex)
 library(ggplot2)
 
+# Create 'not in' function
+'%ni%' <- Negate('%in%')
 
 # Descriptives box, point, violin plot 
 descriptive_plot <- function(data, x_data, y_data){
@@ -70,4 +72,15 @@ esp_lextale <- function(data, x_data, y_data){
     ggtitle("Spanish Vocabulary Size") +
     xlab("Native Language Group") +
     ylab("Spanish Vocabulary % correct")
+}
+
+
+# Izura box, point, violin plot Descriptives
+izura <- function(data, x_data, y_data){
+  data %>% 
+    descriptive_plot(., x_data, y_data) +
+    geom_text(aes(label=labels, y = !!sym(y_data) + 5)) +
+    ggtitle("Spanish Vocabulary Size") +
+    xlab("Native Language Group") +
+    ylab("Izura Score")
 }
