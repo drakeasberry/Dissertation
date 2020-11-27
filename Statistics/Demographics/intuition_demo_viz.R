@@ -33,8 +33,12 @@ language_dominance(demo_data, "group", "lang_dominance")
 eng_lextale(demo_data, "group", "lextale_eng_correct")
 
 
-# Spanish Vocabulary Size
+# Spanish Vocabulary Size (% Correct)
 esp_lextale(demo_data, "group", "lextale_esp_correct")
+
+
+# Spanish Vocabulary Size (Izura Calculation)
+izura(demo_data, "group", "izura_score")
 
 
 # Build summary table
@@ -44,7 +48,9 @@ dominance_summary <-
        "English Vocabulary Size" =
          list("mean (sd)" = ~ qwraps2::mean_sd(lextale_eng_correct)),
        "Spanish Vocabulary Size" =
-         list("mean (sd)" = ~ qwraps2::mean_sd(lextale_esp_correct))
+         list("mean (sd)" = ~ qwraps2::mean_sd(lextale_esp_correct)),
+       "Spanish Izura Score" = 
+         list("mean (sd)" = ~ qwraps2::mean_sd(izura_score))
   )              
 
 
@@ -60,4 +66,5 @@ by_lang %>%
   pack_rows("Language Dominance", 1, 1) %>% 
   pack_rows("English Vocabulary Size", 2, 2) %>%
   pack_rows("Spanish Vocabulary Size", 3, 3) %>%
+  pack_rows("Spanish Izura Score", 4, 4) %>%
   kable_classic(full_width = F, html_font = "Cambria")
