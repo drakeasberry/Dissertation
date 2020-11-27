@@ -2,12 +2,9 @@
 #!/usr/bin/Rscript
 
 # Load Libraries
-library(plyr)
-library(readr)
 library(tidyverse)
 library(psych)
 library(lattice)
-library(tidyr)
 
 
 # Read csv file for Izura LexTALE-ESP calculations
