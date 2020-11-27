@@ -544,7 +544,7 @@ write_csv(vocab_diff_lexical, 'analyze_data/output/lab_lex_vocab_sizes.csv')
 
 
 # Clean up environment
-rm(eng, esp, all_lexical_part)
+rm(eng, esp, all_lexical_part, vocab_diff_lexical)
 
 
 # Write statement for file containing only necessary columns for lab lexical access only analysis
@@ -579,20 +579,6 @@ rm(vocab_diff_intuition, vocab_diff_lexical_only, vocab_diff_segmenation)
 
 
 # Create table for all demographic information for participants in online experiments
-# Dropped for error rates in experiment
-# Monolingual Spanish Participants
-mono_error_user <- read_csv('analyze_data/natives_high_error_rates')
-mono_error_drop <- mono_error_user$partNum
-
-# L2 Spanish Learners
-learner_error_user <- read_csv('analyze_data/learners_high_error_rates')
-L2_error_drop <- learner_error_user$partNum
-
-
-# Combine all dropped participants
-online_drop <- c(mono_error_drop, L2_error_drop) # n=34, now 29 (5 mono) now 21 (8 L2)
-
-
 # Create online subset and convert data to English
 online_lemma <- subset(demographics, expName == 'lemma_segmentation') %>% 
   select_if(~!all(is.na(.))) %>%
@@ -624,7 +610,6 @@ online_lemma <- subset(demographics, expName == 'lemma_segmentation') %>%
          education = ifelse(education == "University (diploma, bachelor's degree)", 
                             "Universidad (diplomatura, licenciatura)", education),
          raisedCountry = ifelse(raisedCountry == 'U.S', 'Estados Unidos', raisedCountry)) %>%
-  subset(., partNum %ni% online_drop) %>% 
   select(c('partNum', 'group':'izura_score', 'age', 'acquisition_age':'last_class', 
            'native_lang', 'preferLanguage', 'houseLanguage', 'Bilingual', 'raised_monolingual', 
            'fluent_lang', 'Nationality', 'birth_country', 'raisedCountry', 'current_residence', 
@@ -637,8 +622,9 @@ learners <- subset(online_lemma, group == 'L2 Learner')
 
 
 # Write out csv file with names
-write_csv(natives, '../Monolingual_lemma/analyze_data/demographics/natives.csv')
-write_csv(learners, '../L2_lemma/analyze_data/demographics/learners.csv')
+write_csv(natives, '../Monolingual_lemma/analyze_data/demographics/50_natives.csv')
+write_csv(learners, '../L2_lemma/analyze_data/demographics/70_learners.csv')
+write_csv(online_lemma, 'analyze_data/output/online_demo_data.csv')
 # Write csv files for PI Advisor
 #write_csv(natives, '../Monolingual_lemma/analyze_data/demographics/attributes.csv')
 #write_csv(learners, '../L2_lemma/analyze_data/demographics/attributes.csv')
