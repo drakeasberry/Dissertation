@@ -72,6 +72,6 @@ print(by_lang)
 by_lang %>% 
   kbl(caption = "Descriptives") %>%
   kable_styling() %>% 
-  pack_rows("Language Dominance", 1, 1) %>% 
+  pack_rows("Spanish Izura Score", 1, 1) %>% 
   pack_rows("Spanish Vocabulary Size", 2, 2) %>%
   kable_classic(full_width = F, html_font = "Cambria")
