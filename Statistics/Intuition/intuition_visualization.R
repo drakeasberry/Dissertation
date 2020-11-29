@@ -4,9 +4,8 @@
 # Load Libraries
 library(tidyverse)
 library(ggplot2)
-library(kableExtra)
-library(qwraps2)
-library(emmeans)
+library(effsize)
+
 
 # Soruce Scripts containing functions
 source("../../Scripts_Dissertation/segmentation_rm_anova_script.R")
@@ -91,13 +90,18 @@ normality_all <- my_data_long %>%
 # Run repeated measures anova
 aov <- aov_ez("partNum", "logit", my_data_long, within = 'syl_structure', between = 'group')
 aov
+## Main effects of group and syllable structure
 
 
 # Significant Main Effect Exploration
+# Group main effect
 # t.test for group main effect
 t.test(my_data_long$logit ~ my_data_long$group, paired = FALSE)
 
+cohen.d(my_data_long$logit, my_data_long$group, na.rm = TRUE, paired = FALSE)
+## Large effect size
 
+# Syllable structure main effect
 # t.test for syllable structure main effect
 t.test(my_data_long$logit ~ my_data_long$syl_structure, paired = TRUE)
 
@@ -105,16 +109,34 @@ t.test(my_data_long$logit ~ my_data_long$syl_structure, paired = TRUE)
 with(my_data_long, tapply(logit, syl_structure, FUN = mean))
 # CV are less accurate than CVC syllable
 
+cohen.d(my_data_long$logit, my_data_long$syl_structure, na.rm = TRUE, paired = TRUE)
+## small effect size
+
+
+# Plots
+# Main effect of group
+grp_main <- afex_plot(aov, 
+                      x = "group", 
+                      error = "between",
+                      data_plot = FALSE,
+                      mapping = c("color", "shape")) +
+  labs(title = "Estimated Marginal Means Correct Response",
+       x = "Language Group",
+       y = "Response Correct (logit)") +
+  scale_color_manual(values = c('darkorchid4', 'goldenrod4')) +
+  theme(legend.position = "none")
+grp_main
+
 
 # Main effect of syllable structure
 syl_main <- afex_plot(aov, 
-                             x = "syl_structure", 
-                             error = "within",
-                             data_plot = FALSE,
-                             mapping = c("color", "shape")) +
-  labs(title = "Estimated Marginal Means L2 Spanish",
+                      x = "syl_structure", 
+                      error = "within",
+                      data_plot = FALSE,
+                      mapping = c("color", "shape")) +
+  labs(title = "Estimated Marginal Means Syllable Structure",
        x = "Syllable Structure",
-       y = "Reaction Time (log)") +
+       y = "Response Correct (logit)") +
   scale_color_manual(values = c('darkorchid4', 'goldenrod4')) +
   theme(legend.position = "none")
 syl_main
@@ -133,32 +155,3 @@ grp_syl_int <- afex_plot(aov,
        y = "Response Correct (logit)") +
   scale_color_manual(values = c('darkorchid4', 'goldenrod4'))
 grp_syl_int
-
-
-
-# Build summary table
-descriptives <-
-  list("Language Dominance" = 
-         list("mean (sd)" = ~ qwraps2::mean_sd(lang_dominance)),
-       "English Vocabulary Size" =
-         list("mean (sd)" = ~ qwraps2::mean_sd(lextale_eng_correct)),
-       "Spanish Vocabulary Size" =
-         list("mean (sd)" = ~ qwraps2::mean_sd(lextale_esp_correct))
-  )     
-
-
-# Create latex formattable table
-by_lang <- summary_table(dplyr::group_by(demo_data, group),dominance_summary)
-print(by_lang)
-
-
-# Create image of tabled results
-by_lang %>% 
-  kbl(caption = "Descriptives") %>%
-  kable_styling() %>% 
-  pack_rows("Language Dominance", 1, 1) %>% 
-  pack_rows("English Vocabulary Size", 2, 2) %>%
-  pack_rows("Spanish Vocabulary Size", 3, 3) %>%
-  kable_classic(full_width = F, html_font = "Cambria")
-
-

@@ -2,11 +2,10 @@
 #!/usr/bin/Rscript
 
 # Load Libraries
-library(readr)
-library(emmeans)
+library(tidyverse)
 library(ggplot2)
 library(cowplot)
-
+library(effsize)
 
 # Soruce Scripts containing functions
 source("../../Scripts_Dissertation/segmentation_rm_anova_script.R")
@@ -102,20 +101,18 @@ data_mat_ag <- trans_long(my_data, grouping_mat)
 # Natives t.test for matching condition
 t.test(data_mat_ag$median_RTlog ~ data_mat_ag$matching, paired = TRUE,
        alternative = "less")
-## is significant
+## is significant (difference in F and T statistics)
 
 # Descriptives to check direction of effect
 with(data_mat_ag, tapply(median_RTlog, matching, FUN = mean))
 ## matching condition responded to faster than mismatching condition
 
-
-# Estimated Marginal Means
-# get tabled results of estimated marginal means
-mat_main <- emmeans(aov_learners, pairwise ~ matching) 
-mat_main
+# Calculate Cohen's D to estimate effect size
+cohen.d(data_mat_ag$median_RTlog, data_mat_ag$matching, na.rm = TRUE, paired = TRUE)
+## This will need a comment about the trend, but must be clear that it was not significant
 
 
-# Native plots
+# L2 Leartner plots
 # Main effect of matching condition
 l1_mat_main <- afex_plot(aov_learners, 
                          x = "matching", 
@@ -133,7 +130,7 @@ l1_mat_main
 
 
 # Interaction breakdown
-# Create subsets to explore interaction between target initial syllable and matching
+# Create subsets to explore interaction between target syllable and matching
 # CV subset
 cv_learners <- my_data %>% 
   subset(., target_syl_structure == "CV") %>% 
@@ -145,11 +142,7 @@ cvc_learners <- my_data %>%
   trans_long(., grouping_mat)
 
 
-# CV syllable t.test two-tailed
-t.test(cv_learners$median_RTlog ~ cv_learners$matching, paired = TRUE) 
-## is significant
-
-# CVC sylable t.test one-tailed
+# CV sylable t.test one-tailed
 t.test(cv_learners$median_RTlog ~ cv_learners$matching, paired = TRUE, alternative = "less")
 ##is significant
 
@@ -157,10 +150,9 @@ t.test(cv_learners$median_RTlog ~ cv_learners$matching, paired = TRUE, alternati
 with(cv_learners, tapply(median_RTlog, matching, FUN = mean))
 ## CV target syllables matching the word inital syllable are responded to faster than mismatching
 
+cohen.d(cv_learners$median_RTlog, cv_learners$matching, na.rm = TRUE, paired = TRUE)
+## small effect size d = -0.3604633
 
-# CVC sylable t.test two-tailed
-t.test(cvc_learners$median_RTlog ~ cvc_learners$matching, paired = TRUE) 
-## is significant
 
 # CVC sylable t.test one-tailed
 t.test(cvc_learners$median_RTlog ~ cvc_learners$matching, paired = TRUE, alternative = "less")
@@ -169,6 +161,9 @@ t.test(cvc_learners$median_RTlog ~ cvc_learners$matching, paired = TRUE, alterna
 # Descriptives to check direction of effect
 with(cvc_learners, tapply(median_RTlog, matching, FUN = mean)) 
 ## CVC target syllables matching the word inital syllable are responded to slower than mismatching
+
+cohen.d(cvc_learners$median_RTlog, cvc_learners$matching, na.rm = TRUE, paired = TRUE)
+## negligible effects size as well
 
 
 # Create subsets to explore interaction between target syllable structure and word status
@@ -193,6 +188,9 @@ t.test(nonwords_learners$median_RTlog ~ nonwords_learners$target_syl_structure, 
 with(nonwords_learners, tapply(median_RTlog, target_syl_structure , FUN = mean))
 ## CVC faster than CV target syllable for nonwords, but not signficantly so
 
+cohen.d(nonwords_learners$median_RTlog, nonwords_learners$target_syl_structure, na.rm = TRUE, paired = TRUE)
+
+
 # Real words t.test
 t.test(words_learners$median_RTlog ~ words_learners$target_syl_structure, paired = TRUE) 
 ## not significant
@@ -201,11 +199,15 @@ t.test(words_learners$median_RTlog ~ words_learners$target_syl_structure, paired
 with(words_learners, tapply(median_RTlog, target_syl_structure, FUN = mean)) 
 ## CV faster than CVC target syllable for words, but not significantly so
 
+cohen.d(words_learners$median_RTlog, words_learners$target_syl_structure, na.rm = TRUE, paired = TRUE)
+
+
 # Regroup to run paired t-test for word status over all other conditions 
 grouping_lex <- grouping[! grouping %in% c("target_syl_structure", "word_initial_syl",
                                            "matching", "group")]
 
-# Create subsets to explore interaction between target initial syllable and word status
+# Create subsets to explore interaction between target syllable and word status
+# Flipping variables to look at it from a different direction (Same as above interaction stats)
 # CV subset
 cv_learners_lex <- my_data %>% 
   subset(., target_syl_structure == "CV") %>% 
@@ -225,6 +227,9 @@ t.test(cv_learners_lex$median_RTlog ~ cv_learners_lex$word_status, paired = TRUE
 with(cv_learners_lex, tapply(median_RTlog, word_status, FUN = mean))
 ## CV target syllables are responded to faster for words than nonwords, but not significantly so
 
+cohen.d(cv_learners_lex$median_RTlog, cv_learners_lex$word_status, na.rm = TRUE, paired = TRUE)
+## negligible
+
 
 # CVC sylable t.test
 t.test(cvc_learners_lex$median_RTlog ~ cvc_learners_lex$word_status, paired = TRUE) 
@@ -233,6 +238,9 @@ t.test(cvc_learners_lex$median_RTlog ~ cvc_learners_lex$word_status, paired = TR
 # Descriptives to check direction of effect
 with(cvc_learners_lex, tapply(median_RTlog, word_status, FUN = mean)) 
 ## CVC target syllables are responded to faster for nonwords than words, but not significantly so
+
+cohen.d(cvc_learners_lex$median_RTlog, cvc_learners_lex$word_status, na.rm = TRUE, paired = TRUE)
+## negligible
 
 
 # Create subsets to explore interaction between matching and word status (trending)
@@ -250,11 +258,15 @@ words_learners_mat <- my_data %>%
 # Nonwords t.test one-tailed for matching
 t.test(nonwords_learners_mat$median_RTlog ~ nonwords_learners_mat$matching, paired = TRUE, 
        alternative = "less") 
-## is significant
+## is significant (difference between F and t statistics)
 
 # Descriptives to check direction of effect
 with(nonwords_learners_mat, tapply(median_RTlog, matching, FUN = mean))
 ## nonwords in matching condition are responded to faster than mismatching condition
+
+cohen.d(nonwords_learners_mat$median_RTlog, nonwords_learners_mat$matching, na.rm = TRUE, paired = TRUE)
+## negligible effect size
+
 
 # Real words t.test ont-tailed for matching
 t.test(words_learners_mat$median_RTlog ~ words_learners_mat$matching, paired = TRUE,
@@ -265,17 +277,8 @@ t.test(words_learners_mat$median_RTlog ~ words_learners_mat$matching, paired = T
 with(words_learners_mat, tapply(median_RTlog, matching, FUN = mean)) 
 ## Words in the matching condition repsonded to faster than nonmatching, but not significantly so
 
+cohen.d(words_learners_mat$median_RTlog, words_learners_mat$matching, na.rm = TRUE, paired = TRUE)
 
-# Estimated Marginal Means
-# get tabled results of estimated marginal means
-tarsyl_mat_int <- emmeans(aov_learners, pairwise ~ target_syl_structure:matching) 
-tarsyl_mat_int
-
-tarsyl_wdstatus_int <- emmeans(aov_learners, pairwise ~ target_syl_structure:word_status) 
-tarsyl_wdstatus_int
-
-wdstatus_mat_int <- emmeans(aov_learners, pairwise ~ matching:word_status) 
-wdstatus_mat_int
 
 # Learner plots 
 # Interaction between matching condition and target syllable with matching condition on x-axis
@@ -384,7 +387,8 @@ plot_grid(l2_mat_lex_int, l2_lex_mat_int)
 # Remove temporary data variables in environment
 # Remove dataframes following analysis
 rm(my_data, my_data_long, learners, words_learners, nonwords_learners,
-   cv_learners, cvc_learners)
+   cv_learners, cvc_learners, cv_learners_lex, cvc_learners_lex, data_mat_ag,
+   nonwords_learners_mat, words_learners_mat)
 
 # Remove checks and unused plots
 rm(l2_tarsyl_mat_int, l2_lex_tarsyl_int, normality_learner, outlier_learner)

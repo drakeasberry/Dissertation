@@ -2,11 +2,10 @@
 #!/usr/bin/Rscript
 
 # Load Libraries
-library(readr)
-library(emmeans)
+library(tidyverse)
 library(ggplot2)
 library(cowplot)
-
+library(effsize)
 
 # Soruce Scripts containing functions
 source("../../Scripts_Dissertation/segmentation_rm_anova_script.R")
@@ -86,12 +85,15 @@ ggqqplot(natives, "median_RTlog", ggtheme = theme_bw(),
 # Run 3 way repeated measures anova
 aov_natives <- aov_ez("partNum", "median_RTlog", natives, within = c(grouping_stats))
 aov_natives
-## main effect of matching condition and trending for word status
+## main effect of matching condition 
+## main effect trending for word status
 ## no signficant interactions
 
 # Regroup to run paired t-test for matching/mismatching over all other conditions
 grouping_mat <- grouping[! grouping %in% c("word_status", "word_initial_syl",
                                            "target_syl_structure", "group")]
+
+# Aggregate data by matching condition
 data_mat_ag <- trans_long(my_data, grouping_mat)
 
 
@@ -105,11 +107,16 @@ t.test(data_mat_ag$median_RTlog ~ data_mat_ag$matching, paired = TRUE,
 with(data_mat_ag, tapply(median_RTlog, matching, FUN = mean))
 ## matching condition responded to faster than mismatching condition
 
+# Calculate Cohen's D to estimate effect size
+cohen.d(data_mat_ag$median_RTlog, data_mat_ag$matching, na.rm = TRUE, paired = TRUE)
+
 
 # Significant Main Effect Trending Exploration
 # Regroup to run paired t-test for word status over all other conditions 
 grouping_lex <- grouping[! grouping %in% c("target_syl_structure", "word_initial_syl",
                                            "matching", "group")]
+
+# Aggregate data on word status
 data_lex_ag <- my_data %>% 
   trans_long(., grouping_lex)
 
@@ -121,13 +128,8 @@ t.test(data_lex_ag$median_RTlog ~ data_lex_ag$word_status, paired = TRUE)
 with(data_lex_ag, tapply(median_RTlog, word_status, FUN = mean))
 ## words responded to faster than nonwords, but not significantly so
 
-# Estimated Marginal Means
-# get tabled results of estimated marginal means
-mat_main <- emmeans(aov_natives, pairwise ~ matching) 
-mat_main
+cohen.d(data_lex_ag$median_RTlog, data_lex_ag$word_status, na.rm = TRUE, paired = TRUE)
 
-lex_main <- emmeans(aov_natives, pairwise ~ word_status) 
-lex_main
 
 # Native plots
 # Main effect of matching condition
@@ -167,7 +169,8 @@ l1_lex_main
 
 # Remove temporary data variables in environment
 # Remove dataframes following analysis
-rm(my_data, my_data_long, learners, natives, words_learners, nonwords_learners)
+rm(my_data, my_data_long, learners, natives, words_learners, nonwords_learners,
+   data_lex_ag, data_mat_ag)
 
 # Remove checks and unused plots
 rm(l2_mat_lex_int, normality_learner, normality_native, outlier_learner, outlier_native)

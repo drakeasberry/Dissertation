@@ -2,10 +2,10 @@
 #!/usr/bin/Rscript
 
 # Load Libraries
-library(readr)
-library(emmeans)
+library(tidyverse)
 library(ggplot2)
 library(cowplot)
+library(effsize)
 
 
 # Soruce Scripts containing functions
@@ -24,6 +24,10 @@ grouping <- c("partNum", "group", "word_status", "word_initial_syl",
 # Aggregaates and transforms data into long form
 # Adds columns for median of RT in msec and log
 my_data_long <- trans_long(my_data, grouping) 
+
+################################summary_field <- c("median(.data$segRespRTmsec)",
+################################                   "median(.data$log_RT)")
+################################my_data_test <- trans_wide(my_data, grouping, summary_field)
 
 
 # Create subgroups for Spanish learners and native speakers
@@ -128,6 +132,7 @@ ggqqplot(learners, "median_RTlog", ggtheme = theme_bw(),
          title = "QQ Plot by Target Syllable in log by L2 Spanish Speakers") +
   facet_grid(target_syl_structure + matching ~ word_status, labeller = "label_both")
 
+
 # Natives by milliseconds
 ggqqplot(natives, "median_RTmsec", ggtheme = theme_bw(), 
          title = "QQ Plot by Target Syllable in Milliseconds by L1 Spanish Speakers") +
@@ -162,6 +167,10 @@ t.test(data_tarsyl_ag$median_RTlog ~ data_tarsyl_ag$target_syl_structure, paired
 with(data_tarsyl_ag, tapply(median_RTlog, target_syl_structure, FUN = mean)) 
 ## CVC faster than CV
 
+cohen.d(data_tarsyl_ag$median_RTlog, data_tarsyl_ag$target_syl_structure, na.rm = TRUE, paired = TRUE)
+## small effect size
+
+
 # Interaction breakdown
 # Regroup to run paired t-test for matching/mismatching over all other conditions
 grouping_mat <- grouping[! grouping %in% c("word_status", "word_initial_syl",
@@ -187,7 +196,7 @@ t.test(nonwords_learners$median_RTlog ~ nonwords_learners$matching, paired = TRU
 
 # Descriptives to check direction of effect
 with(nonwords_learners, tapply(median_RTlog, matching, FUN = mean))
-## nonwords in matching condition are responded to faster than mismatching condition
+## nonwords in matching condition are responded to faster than mismatching, but not significnatly
 
 # Real words t.test ont-tailed for matching
 t.test(words_learners$median_RTlog ~ words_learners$matching, paired = TRUE,
@@ -205,6 +214,9 @@ t.test(words_learners$median_RTlog ~ words_learners$matching, paired = TRUE,
 with(words_learners, tapply(median_RTlog, matching, FUN = mean)) 
 ## Words in the mismatching condition repsonded to significantly faster than matching 
 
+cohen.d(words_learners$median_RTlog, words_learners$matching, na.rm = TRUE, paired = TRUE)
+## small effect size, but effect is in opposite direction
+
 
 # Learner plots 
 # Main effect of target syllable structure
@@ -219,6 +231,7 @@ l2_tar_syl_main <- afex_plot(aov_learners,
   scale_color_manual(values = c('darkorchid4', 'goldenrod4')) +
   theme(legend.position = "none")
 l2_tar_syl_main
+
 
 # Interaction between matching condition and lexicality with matching condition on x-axis
 l2_mat_lex_int <- afex_plot(aov_learners, 
@@ -236,6 +249,7 @@ l2_mat_lex_int <- afex_plot(aov_learners,
   scale_color_manual(values = c('darkorchid4', 'goldenrod4'))
 l2_mat_lex_int
 
+
 # Interaction between matching condition and lexicality with lexicality conditions on x-axis
 l2_lex_mat_int <- afex_plot(aov_learners, 
                         x = "word_status", 
@@ -251,6 +265,7 @@ l2_lex_mat_int <- afex_plot(aov_learners,
        y = "Reaction Time (log)") +
   scale_color_manual(values = c('darkorchid4', 'goldenrod4'))
 l2_lex_mat_int
+
 
 # Plot side by side to determine which one is easier to understand data
 plot_grid(l2_mat_lex_int, l2_lex_mat_int)
@@ -270,7 +285,7 @@ data_lex_ag <- my_data %>%
   subset(., group == "Spanish") %>% 
   trans_long(., grouping_lex)
 
-# Significant Main Effect Exploration
+# Trending Main Effect Exploration
 # Natives t.test for word status
 t.test(data_lex_ag$median_RTlog ~ data_lex_ag$word_status, paired = TRUE)
 ## is significant t = 2.2105, df = 17, p-value = 0.04106
@@ -278,6 +293,9 @@ t.test(data_lex_ag$median_RTlog ~ data_lex_ag$word_status, paired = TRUE)
 # Descriptives to check direction of effect
 with(data_lex_ag, tapply(median_RTlog, word_status, FUN = mean))
 ## words responded to faster than nonwords
+
+cohen.d(data_lex_ag$median_RTlog, data_lex_ag$word_status, na.rm = TRUE, paired = TRUE)
+## small effect size. Mention trends, but be careful not to say significant
 
 
 # Native plots
@@ -299,10 +317,12 @@ l1_lex_main
 
 # Remove temporary data variables in environment
 # Remove dataframes following analysis
-rm(my_data, my_data_long, learners, natives, words_learners, nonwords_learners)
+rm(my_data, my_data_long, learners, natives, words_learners, nonwords_learners,
+   data_lex_ag, data_tarsyl_ag)
 
 # Remove checks and unused plots
-rm(l2_mat_lex_int, normality_learner, normality_native, outlier_learner, outlier_native)
+rm(l2_mat_lex_int, normality_learner, normality_native, outlier_learner, outlier_native,
+   outlier_data, outlier_learner_log)
 
 
 # Save all analyses
