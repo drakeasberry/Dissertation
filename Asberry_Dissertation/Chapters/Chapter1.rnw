@@ -1,4 +1,20 @@
-% Chapter Template
+% Chapter 1 with LaTeX code only
+
+%----------------------------------------------------------------------------------------
+<<parent1, echo=FALSE, cache=FALSE>>=
+rm(list=ls())
+library(knitr)
+set_parent('../Dissertation.rnw')
+@
+%----------------------------------------------------------------------------------------
+
+
+%----------------------------------------------------------------------------------------
+% Load statistics in memory from separate file
+%<<content1, child='stat.rnw'>>=
+@
+%----------------------------------------------------------------------------------------
+
 
 \chapter{Introduction} % Main chapter title
 

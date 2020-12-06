@@ -1,4 +1,13 @@
-% Constants
+% Constants with LaTeX code only
+
+%----------------------------------------------------------------------------------------
+<<parentConstants, echo=FALSE, cache=FALSE>>=
+rm(list=ls())
+library(knitr)
+set_parent('../Dissertation.rnw')
+@
+%----------------------------------------------------------------------------------------
+
 %
 \begin{constants}{lr@{${}={}$}l} % The list of physical constants is a three column table
 

@@ -1,4 +1,20 @@
-% Chapter Template
+% Chapter 4 with LaTeX code only
+
+%----------------------------------------------------------------------------------------
+<<parent4, echo=FALSE, cache=FALSE>>=
+rm(list=ls())
+library(knitr)
+set_parent('../Dissertation.rnw')
+@
+%----------------------------------------------------------------------------------------
+
+
+%----------------------------------------------------------------------------------------
+% Load statistics in memory from separate file
+%<<content4, child='stat.rnw'>>=
+@
+%----------------------------------------------------------------------------------------
+
 
 \chapter{Visual Word Recognition} % Main chapter title
 

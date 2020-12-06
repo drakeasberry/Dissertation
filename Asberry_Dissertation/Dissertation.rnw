@@ -41,57 +41,7 @@ headsepline, % Uncomment to get a line under the header
 chapterinoneline, % Uncomment to place the chapter title next to the number on one line
 %consistentlayout, % Uncomment to change the layout of the declaration, abstract and acknowledgements pages to match the default layout
 openany, % eliminates all extra blank pages from entire document
-]{DoctoralThesis}\usepackage[]{graphicx}\usepackage[]{color}
-% maxwidth is the original width if it is less than linewidth
-% otherwise use linewidth (to make sure the graphics do not exceed the margin)
-\makeatletter
-\def\maxwidth{ %
-  \ifdim\Gin@nat@width>\linewidth
-    \linewidth
-  \else
-    \Gin@nat@width
-  \fi
-}
-\makeatother
-
-\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
-\newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
-\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
-\newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
-\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
-\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
-\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
-\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
-\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
-\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
-\let\hlipl\hlkwb
-
-\usepackage{framed}
-\makeatletter
-\newenvironment{kframe}{%
- \def\at@end@of@kframe{}%
- \ifinner\ifhmode%
-  \def\at@end@of@kframe{\end{minipage}}%
-  \begin{minipage}{\columnwidth}%
- \fi\fi%
- \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
- \colorbox{shadecolor}{##1}\hskip-\fboxsep
-     % There is no \\@totalrightmargin, so:
-     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
- \MakeFramed {\advance\hsize-\width
-   \@totalleftmargin\z@ \linewidth\hsize
-   \@setminipage}}%
- {\par\unskip\endMakeFramed%
- \at@end@of@kframe}
-\makeatother
-
-\definecolor{shadecolor}{rgb}{.97, .97, .97}
-\definecolor{messagecolor}{rgb}{0, 0, 0}
-\definecolor{warningcolor}{rgb}{1, 0, 1}
-\definecolor{errorcolor}{rgb}{1, 0, 0}
-\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
-
-\usepackage{alltt} % The class file specifying the document structure
+]{DoctoralThesis} % The class file specifying the document structure
 
 \usepackage[utf8]{inputenc} % Required for inputting international characters
 
@@ -167,9 +117,8 @@ openany, % eliminates all extra blank pages from entire document
 }
 
 %\usepackage{times} % Uncomment to use Times New Roman font
-\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
-\begin{document}
 
+\begin{document}
 
 %\frontmatter % Uncomment to use roman page numbering style (i, ii, iii, iv...) for the pre-content pages
 
@@ -333,7 +282,8 @@ Dissertation Director: \chairname \\
 %----------------------------------------------------------------------------------------
 %
 % Acknowledgements are not a necessary item. Comment out if not being used 
-\include{FrontBackMatter/Acknowledgements} % This calls the Acknowledgements.tex 
+% This calls the Acknowledgements.rnw
+\Sexpr{knit_child('FrontBackMatter/Acknowledgements.rnw')}
 
 
 %----------------------------------------------------------------------------------------
@@ -351,8 +301,8 @@ Dissertation Director: \chairname \\
 % This page is not really necessary, but if you feel the need to include some quote here is your
 % chance. 
 %
-%\include{FrontBackMatter/Quotation} % Uncomment to use. This calls the Quotation.tex
-
+% Uncomment to use. This calls the Quotation.rnw
+%\Sexpr{knit_child('FrontBackMatter/Quotation.rnw')}
 
 %----------------------------------------------------------------------------------------
 %	LIST OF CONTENTS/FIGURES/TABLES PAGES
@@ -376,7 +326,8 @@ Dissertation Director: \chairname \\
 %
 % Abbreviations are not a necessary item. Comment out the line below to remove from document
 %
-%\include{FrontBackMatter/Abbvreviations} % This calls the Abbreviations.tex Uncomment to include
+% This calls the Abbreviations.rnw Uncomment to include
+%\Sexpr{knit_child('FrontBackMatter/Abbvreviations.rnw')}
 
 
 %----------------------------------------------------------------------------------------
@@ -385,7 +336,8 @@ Dissertation Director: \chairname \\
 %
 % Constants are not a necessary item. Comment out the line below to remove from document
 %
-%\include{FrontBackMatter/Constants} % This calls the Constants.tex Uncomment to include
+% This calls the Constants.rnw Uncomment to include
+%\Sexpr{knit_child('FrontBackMatter/Constants.rnw')}
 
 
 %----------------------------------------------------------------------------------------
@@ -394,7 +346,8 @@ Dissertation Director: \chairname \\
 %
 % Symbols are not a necessary item. 
 %
-%\include{FrontBackMatter/Symbols} % This calls the Symbols.tex Uncomment to include
+% This calls the Symbols.rnw Uncomment to include
+%\Sexpr{knit_child('FrontBackMatter/Symbols.rnw')}
 
 
 %----------------------------------------------------------------------------------------
@@ -402,8 +355,8 @@ Dissertation Director: \chairname \\
 %----------------------------------------------------------------------------------------
 % This is required to appear before the first chapter of the dissertation
 
-\include{FrontBackMatter/Abstract} % This calls the Abstract.tex
-
+% This calls the Abstract.rnw
+\Sexpr{knit_child('FrontBackMatter/Abstract.rnw')}
 
 %----------------------------------------------------------------------------------------
 %	THESIS CONTENT - CHAPTERS
@@ -418,12 +371,14 @@ Dissertation Director: \chairname \\
 % Uncomment the lines as you write the chapters
 %\renewcommand{\chaptermarkformat}{\thechapter}
 
-\include{Chapters/Chapter1}
-\include{Chapters/Chapter2} 
-\include{Chapters/Chapter3}
-\include{Chapters/Chapter4} 
-\include{Chapters/Chapter5} 
-%\include{Chapters/Chapter6}
+\Sexpr{knit_child('Chapters/Chapter1.rnw')}
+\Sexpr{knit_child('Chapters/Chapter2.rnw')}
+\Sexpr{knit_child('Chapters/Chapter3.rnw')}
+\Sexpr{knit_child('Chapters/Chapter4.rnw')}
+\Sexpr{knit_child('Chapters/Chapter5.rnw')}
+\Sexpr{knit_child('Chapters/ChapterTemplate.rnw')}
+\Sexpr{knit_child('Chapters/Chapter_Instructions.rnw')}
+
 
 %----------------------------------------------------------------------------------------
 %	THESIS CONTENT - APPENDICES
@@ -446,9 +401,10 @@ Dissertation Director: \chairname \\
 % Include the appendices of the thesis as separate files from the Appendices folder
 % Uncomment the lines as you write the Appendices
 
-\include{Appendices/AppendixA}
-%\include{Appendices/AppendixB}
-%\include{Appendices/AppendixC}
+\Sexpr{knit_child('Appendices/AppendixA.rnw')}
+%\Sexpr{knit_child('Appendices/AppendixB.rnw')}
+%\Sexpr{knit_child('Appendices/AppendixC.rnw')}
+
 
 %----------------------------------------------------------------------------------------
 %	BIBLIOGRAPHY

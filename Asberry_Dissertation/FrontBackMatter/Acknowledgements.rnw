@@ -1,4 +1,13 @@
-% Acknowledgements
+% Acknowledgements with LaTeX code only
+
+%----------------------------------------------------------------------------------------
+<<parentAcknowledgements, echo=FALSE, cache=FALSE>>=
+rm(list=ls())
+library(knitr)
+set_parent('../Dissertation.rnw')
+@
+%----------------------------------------------------------------------------------------
+
 
 %\addchaptertocentry{\acknowledgementname} % Add the acknowledgements to the table of contents
 

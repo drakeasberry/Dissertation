@@ -1,4 +1,13 @@
-% Abstract
+% Abstract with LaTeX code only
+
+%----------------------------------------------------------------------------------------
+<<parentAbstract, echo=FALSE, cache=FALSE>>=
+rm(list=ls())
+library(knitr)
+set_parent('../Dissertation.rnw')
+@
+%----------------------------------------------------------------------------------------
+
 %
 % UA Requirements for Abstract:
 % Must follow Table of Contents OR List of Figures / List of Tables (when present)

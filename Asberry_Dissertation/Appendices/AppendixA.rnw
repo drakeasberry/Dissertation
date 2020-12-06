@@ -1,4 +1,13 @@
-% Appendix Template
+% Appendix A with LaTeX code only
+
+%----------------------------------------------------------------------------------------
+<<parentA, echo=FALSE, cache=FALSE>>=
+rm(list=ls())
+library(knitr)
+set_parent('../Dissertation.rnw')
+@
+%----------------------------------------------------------------------------------------
+
 
 \chapter{Wuggy Nonword Generator} % Main appendix title
 

@@ -1,4 +1,20 @@
-% Chapter Template
+% Chapter 5 with LaTeX code only
+
+%----------------------------------------------------------------------------------------
+<<parent5, echo=FALSE, cache=FALSE>>=
+rm(list=ls())
+library(knitr)
+set_parent('../Dissertation.rnw')
+@
+%----------------------------------------------------------------------------------------
+
+
+%----------------------------------------------------------------------------------------
+% Load statistics in memory from separate file
+%<<content5, child='stat.rnw'>>=
+@
+%----------------------------------------------------------------------------------------
+
 
 \chapter{Conclusion} % Main chapter title
 

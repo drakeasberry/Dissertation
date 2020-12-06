@@ -1,0 +1,17 @@
+% Abbvreviations with LaTeX code only
+
+%----------------------------------------------------------------------------------------
+<<parentAbbreviations, echo=FALSE, cache=FALSE>>=
+rm(list=ls())
+library(knitr)
+set_parent('../Dissertation.rnw')
+@
+%----------------------------------------------------------------------------------------
+
+%
+\begin{abbreviations}{ll} % Include a list of abbreviations (a table of two columns)
+
+\textbf{LAH} & \textbf{L}ist \textbf{A}bbreviations \textbf{H}ere\\
+\textbf{WSF} & \textbf{W}hat (it) \textbf{S}tands \textbf{F}or\\
+
+\end{abbreviations}

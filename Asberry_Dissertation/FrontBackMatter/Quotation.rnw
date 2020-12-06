@@ -1,4 +1,13 @@
-% Quotation Page
+% Quotation Page with LaTeX code only
+
+%----------------------------------------------------------------------------------------
+<<parentQuotations, echo=FALSE, cache=FALSE>>=
+rm(list=ls())
+library(knitr)
+set_parent('../Dissertation.rnw')
+@
+%----------------------------------------------------------------------------------------
+
 
 % This page is not really necessary, but if you feel the need to include some quote here is your
 % chance. Uncomment out this entire section to include in final document.

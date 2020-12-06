@@ -1,4 +1,19 @@
-% Chapter Template
+% Chapter 2 with LaTeX code only
+
+%----------------------------------------------------------------------------------------
+<<parent2, echo=FALSE, cache=FALSE>>=
+rm(list=ls())
+library(knitr)
+set_parent('../Dissertation.rnw')
+@
+%----------------------------------------------------------------------------------------
+
+
+%----------------------------------------------------------------------------------------
+% Load statistics in memory from separate file
+%<<content2, child='stat.rnw'>>=
+@
+%----------------------------------------------------------------------------------------
 
 \chapter{Syllabification} % Main chapter title
 
@@ -40,6 +55,16 @@ The syllable intuition experiment is an important step in the process because ho
 
 \subsection{Present Study}
 %Treiman
+
+
+\begin{figure}[th]
+\centering
+\includegraphics{Figures/three_way_test}
+\decoRule
+\caption[A test of figures]{testing 1, 2, 3}
+\label{fig:Test}
+\end{figure}
+
 
 %\textbf{DELETE ME The third section titled, “The Present Experiment” or “The Present Research”, follows and contains experimental descriptions and how they address the questions being asked. For most articles, keep your introduction under 10 pages}
 
