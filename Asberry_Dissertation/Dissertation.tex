@@ -1,0 +1,785 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Masters/Doctoral Thesis 
+% LaTeX Template
+% Version 2.5 (27/8/17)
+%
+% This template was downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Version 2.x major modifications by:
+% Vel (vel@latextemplates.com)
+%
+% This template is based on a template by:
+% Steve Gunn (http://users.ecs.soton.ac.uk/srg/softwaretools/document/templates/)
+% Sunil Patel (http://www.sunilpatel.co.uk/thesis-template/)
+%
+% Template license:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Modifications made by Drake Asberry to make document compliant with 
+% University of Arizona dissertation formatting Guide 2019-01-29
+% https://grad.arizona.edu/gsas/dissertations-theses/dissertation-and-thesis-formatting-guides
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[
+12pt, % The default document font size, options: 10pt, 11pt, 12pt
+%oneside, % Two side (alternating margins) for binding by default, uncomment to switch to one side
+english, % ngerman for German
+doublespacing, % Single line spacing (singlespacing), alternatives: onehalfspacing or doublespacing
+%draft, % Uncomment to enable draft mode (no pictures, no links, overfull hboxes indicated)
+nolistspacing, % If the document is onehalfspacing or doublespacing, uncomment this to set spacing in lists to single
+liststotoc, % Uncomment to add the list of figures/tables/etc to the table of contents
+%toctotoc, % Uncomment to add the main table of contents to the table of contents
+%parskip, % Uncomment to add space between paragraphs
+%nohyperref, % Uncomment to not load the hyperref package
+headsepline, % Uncomment to get a line under the header
+chapterinoneline, % Uncomment to place the chapter title next to the number on one line
+%consistentlayout, % Uncomment to change the layout of the declaration, abstract and acknowledgements pages to match the default layout
+openany, % eliminates all extra blank pages from entire document
+]{DoctoralThesis}\usepackage[]{graphicx}\usepackage[]{color}
+% maxwidth is the original width if it is less than linewidth
+% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{ %
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
+\newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
+\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
+\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
+\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
+\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
+\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
+\let\hlipl\hlkwb
+
+\usepackage{framed}
+\makeatletter
+\newenvironment{kframe}{%
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
+
+\usepackage{alltt} % The class file specifying the document structure
+
+\usepackage[utf8]{inputenc} % Required for inputting international characters
+
+\usepackage[T1]{fontenc} % Output font encoding for international characters
+
+\usepackage{mathpazo} % Use the Palatino font by default
+
+\usepackage[backend=bibtex,style=authoryear,natbib=true]{biblatex} % Use the bibtex backend with the authoryear citation style (which resembles APA)
+
+\addbibresource{references.bib} % The filename of the bibliography
+
+\usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
+
+\usepackage{todonotes} % Make renderable notes in pdf
+%----------------------------------------------------------------------------------------
+%	MARGIN SETTINGS
+%----------------------------------------------------------------------------------------
+
+\geometry{
+	paper = letterpaper, % Change to a4paper for international letter
+	inner = 1in, % Inner margin
+	outer=1in, % Outer margin
+	bindingoffset=.5in, % Binding offset
+	top=1in, % Top margin
+	bottom=1in, % Bottom margin
+	%showframe, % Uncomment to show how the type block is set on the page
+}
+
+%----------------------------------------------------------------------------------------
+%	THESIS INFORMATION
+%----------------------------------------------------------------------------------------
+% Replace content within green curly brackets to reflect your own work and names
+
+\thesistitle{Syllabification, Visual Segmentation and Visual Word Recognition in Spanish–English Bilinguals} % Your thesis title, this is used in the title, committee approval and abstract pages, print it elsewhere with \ttitle
+
+\chair{Dr. Miquel Simonet} % Your dissertation chair's name, this is used in the title, abstract and committee approval pages, print it elsewhere with \chairname
+
+\cochair{Co-Chair Name} % Your dissertation co-chair's name, this is not currently used anywhere in the template, but would be used in the title and committee approval page, print it elsewhere with \cochairname
+
+\examiner{Examiner Name} % Your examiner's name, this is not currently used anywhere in the template, print it elsewhere with \examname
+
+\degree{Doctor of Philosophy} % Your degree name, this is used in the title page and abstract, print it elsewhere with \degreename
+
+\author{Drake Asberry} % Your name, this is used in the title page and abstract, print it elsewhere with \authorname
+
+\addresses{Your Address} % Your address, this is not currently used anywhere in the template, print it elsewhere with \addressname
+
+\subject{Hispanic Linguistics} % Your subject area, this is not currently used anywhere in the template, print it elsewhere with \subjectname
+
+\keywords{} % Keywords for your thesis, this is not currently used anywhere in the template, print it elsewhere with \keywordnames
+
+\university{University of Arizona} % Your university's name and URL, this is used in the title page and abstract, print it elsewhere with \univname
+
+\department{Graduate Interdisciplinary Program in Second Language Acquisition and Teaching} % Your department's name and URL, this is used in the title page and abstract, print it elsewhere with \deptname
+
+\group{\href{http://researchgroup.university.com}{Research Group Name}} % Your research group's name and URL, this is not currently used anywhere in the template, print it elsewhere with \groupname
+
+\facultyA{Dr. Michael Hammond} % Your first faculty member's name and URL(can be added between green curly brackets before the member's name. Do not use this for your COMMITTEE CHAIR This is used in the committee approval page, print it elsewhere with \facnameA
+
+\facultyB{Dr. Adam Ussishkin} % Your first faculty member's name and URL(can be added between green curly brackets before the member's name. This is used in the committee approval page, print it elsewhere with \facnameB
+
+\facultyC{Dr. Maryia Fedzechkina} % Your first faculty member's name and URL(can be added between green curly brackets before the member's name. This may optionally be added to the committee approval page when number of committee members requires it, print it elsewhere with \facnameC
+
+\facultyD{5th Committee Member Name} % Your first faculty member's name and URL(can be added between green curly brackets before the member's name. This may optionally be added to the committee approval page when number of committee members requires it, print it elsewhere with \facnameD
+
+\defense{April 15, 2020} % This should have the long date format of your scheduled defense, print it elsewhere with \defensedate
+
+\AtBeginDocument{
+\hypersetup{pdftitle=\ttitle} % Set the PDF's title to your title
+\hypersetup{pdfauthor=\authorname} % Set the PDF's author to your name
+\hypersetup{pdfkeywords=\keywordnames} % Set the PDF's keywords to your keywords
+\hypersetup{hidelinks} % Set all hyperlinks standard color text
+}
+
+%\usepackage{times} % Uncomment to use Times New Roman font
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\begin{document}
+
+%\frontmatter % Uncomment to use roman page numbering style (i, ii, iii, iv...) for the pre-content pages
+
+\pagestyle{plain} % Default to the plain heading style until the thesis style is called for the body content
+
+
+%-------------------------------------------------------------------------------------------------------------------------------
+%	Pre-Thesis Content
+%-------------------------------------------------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+%
+% All requirements of the graduate college as of 2019-01-30
+% The title page must be the first page of your document (All pages must be numbered and match 
+% the numbers listed in Table of Contents. However, a page number is not required to be printed
+% on the actual title page).
+% The title page must meet the following requirements:
+% Title is set in ALL CAPS
+% Student name matches official name in UAccess
+% Rule line appears
+% Official Department Name is Used
+% Degree is indicated correctly
+% Copyright year matches year of graduation on page
+
+\begin{titlepage}
+\begin{singlespacing} % needed for documents set to 1.5 or 2.0 spacing, Comment out otherwise
+\begin{center}
+
+\vfill
+
+\MakeUppercase{\ttitle}\\ %Thesis Title in ALL CAPS
+\vspace{0.4in}
+by\\ \vspace{0.4in}
+{\authorname}\\ % Places author name as specified in preamble
+\vspace{0.6in}
+\HRule \\[0.1cm] % Horizontal line
+Copyright \textcopyright\space\authorname\space{\the\year}\\ % Copyright Date
+
+\vspace{0.4in}
+
+A Dissertation Submitted to the Faculty of the\\ % University required text
+\vspace{0.4in}
+\MakeUppercase{\deptname} \\  % Department name in Small Caps
+\vspace{0.4in}
+In Partial Fulfillment of the Requirements \\ \medskip % University required text
+For the Degree of \\  % University required text
+\vspace{0.4in}
+\MakeUppercase{\degreename} \\ % Thesis type
+\vspace{0.4in} 
+In the Graduate College \\  % University required text
+\vspace{0.4in}
+\MakeUppercase{The \univname} \\ % University name in Small Caps
+\vspace{0.6in}
+%\normalsize
+{\the\year}\\[4cm] % date
+%\includegraphics{Logo} % University/department logo - uncomment to place it
+
+\vfill
+\end{center}
+\end{singlespacing}% needed for documents set to 1.5 or 2.0 spacing, Comment out otherwise
+\end{titlepage}
+
+%\cleardoublepage %Uncomment to add blank page after Title page.
+
+
+\setcounter{page}{2} % Starts pagination at 2 on the Committee Approval Form with no page number displayed on Title page.
+
+%----------------------------------------------------------------------------------------
+%	COMMITTEE APPROVAL PAGE
+%----------------------------------------------------------------------------------------
+%
+% All requirements of the graduate college as of 2019-01-30
+% The committee approval page must be the second page of your document
+% The committee approval page must meet the following requirements:
+% Title on approval page matches title on page 1 (Title Page)
+% Dissertation chair (or co-chair) is indicated
+% All members and chair (or co-chairs) have signed the approval page
+% Date of defense is listed
+
+%\addchaptertocentry{Committee Approval Page} % Add the committee approval page to the table of contents
+\begin{singlespacing} % needed for documents set to 1.5 or 2.0 spacing, Comment out otherwise
+\begin{center}
+%\large
+
+THE \MakeUppercase{\univname} \\
+GRADUATE COLLEGE
+\end{center}
+
+\vspace*{0.3in}
+
+\noindent As members of the Dissertation Committee, we certify that we have read the dissertation prepared by \authorname \space entitled "\ttitle "\space and recommend that it be accepted as fulfilling the dissertation requirement for the Degree of \degreename.
+
+\vspace*{0.3in}
+
+\noindent\underline{\makebox[4.0in][r]{}} \hspace{0.4in} Date: \defensedate \\
+{\bfseries\chairname}\\
+\emph{(Chair)}
+\vspace*{0.3in}
+
+\noindent\underline{\makebox[4.0in][r]{}} \hspace{0.4in} Date: \defensedate \\
+{\bfseries\facnameA}\\
+\emph{(Member)}
+\vspace*{0.3in}
+
+\noindent\underline{\makebox[4.0in][r]{}} \hspace{0.4in} Date: \defensedate \\
+{\bfseries\facnameB}\\
+\emph{(Member)}
+\vspace*{0.3in}
+
+\noindent\underline{\makebox[4.0in][r]{}} \hspace{0.4in} Date: \defensedate \\
+{\bfseries\facnameC}\\
+\emph{(Member)}
+\vspace*{0.5in}
+
+% If 4th committee member is needed, copy the preceding 4 lines, change to facnameD in copied lines
+% You will then need to adjust vertical spacing to keep committee approval page to 1 page length
+
+\noindent Final approval and acceptance of this dissertation is contingent upon the candidate's submission of the final copies of the dissertation to the Graduate College.
+
+\vspace*{0.2in}
+
+\noindent I hereby certify that I have read this dissertation prepared under my direction and recommend that it be accepted as fulfilling the dissertation requirement.
+\vspace*{0.5in}
+
+\noindent\underline{\makebox[4.0in][r]{}} \hspace{0.4in} Date: \defensedate \\
+Dissertation Director: \chairname \\
+%{\bfseries \emph{Instructor \\ Hispanic Linguistics}} % Update hard-coded to job title and department
+\vfill
+\end{singlespacing}% needed for documents set to 1.5 or 2.0 spacing, Comment out otherwise
+
+
+
+%----------------------------------------------------------------------------------------
+%	STATEMENT BY AUTHOR
+%----------------------------------------------------------------------------------------
+%
+% No longer required for the graduate college as of 2019-01-30
+% Uncomment all lines in this section  with "%%" at the beginning if your document requires it
+
+%%\begin{statement}
+%%\begin{singlespacing} % needed for documents set to 1.5 or 2.0 spacing, Comment out otherwise
+%%\addchaptertocentry{\authorshipname} % Add the declaration to the table of contents
+
+%The following block of text was the required text of the Graduate College (2019-02-01)
+%%This dissertation has been submitted in partial fulfillment of the requirements for an advanced degree at the \univname\space and is deposited in the University Library to be made available to borrowers under rules of the Library. \\ \smallskip 
+
+%%Brief quotations from this dissertation are allowable without special permission, provided that an accurate acknowledgement of the source is made. Requests for permission for extended quotation from or reproduction of this manuscript in whole or in part may be granted by the copyright holder.
+
+%%\vspace*{0.3in}
+%%\begin{center} 
+%%SIGNED: \authorname
+%%\end{center}
+%%\end{singlespacing}% needed for documents set to 1.5 or 2.0 spacing, Comment out otherwise
+%%\end{statement}
+
+
+%----------------------------------------------------------------------------------------
+%	ACKNOWLEDGEMENTS
+%----------------------------------------------------------------------------------------
+%
+% Acknowledgements are not a necessary item. Comment out if not being used 
+\include{FrontBackMatter/Acknowledgements} % This calls the Acknowledgements.tex 
+
+
+%----------------------------------------------------------------------------------------
+%	DEDICATION
+%----------------------------------------------------------------------------------------
+%
+% Dedications are not a necessary item. Comment out to remove from document
+\dedicatory{For my family and friends. \\\bigskip Dedicated to my Granny and Pa who I lost during my time in Arizona. They have always supported me and rejoiced in my accomplishments. I only wish that they were still here today to celebrate the completion of this dissertation.} 
+
+
+%----------------------------------------------------------------------------------------
+%	Quotation
+%----------------------------------------------------------------------------------------
+%
+% This page is not really necessary, but if you feel the need to include some quote here is your
+% chance. 
+%
+%\include{FrontBackMatter/Quotation} % Uncomment to use. This calls the Quotation.tex
+
+
+%----------------------------------------------------------------------------------------
+%	LIST OF CONTENTS/FIGURES/TABLES PAGES
+%----------------------------------------------------------------------------------------
+%
+% Table of Contents (TOC) must include:
+% a: all major sections with the document in a consistent manner
+% b: section headings in document must match their listings (exact words) in TOC
+%
+\tableofcontents % Prints the main table of contents
+%
+% Lists of figures and tables must include accurate page numbers
+\listoffigures % Prints the list of figures
+
+\listoftables % Prints the list of tables
+
+
+%----------------------------------------------------------------------------------------
+%	ABBREVIATIONS
+%----------------------------------------------------------------------------------------
+%
+% Abbreviations are not a necessary item. Comment out the line below to remove from document
+%
+%\include{FrontBackMatter/Abbvreviations} % This calls the Abbreviations.tex Uncomment to include
+
+
+%----------------------------------------------------------------------------------------
+%	PHYSICAL CONSTANTS/OTHER DEFINITIONS
+%----------------------------------------------------------------------------------------
+%
+% Constants are not a necessary item. Comment out the line below to remove from document
+%
+%\include{FrontBackMatter/Constants} % This calls the Constants.tex Uncomment to include
+
+
+%----------------------------------------------------------------------------------------
+%	SYMBOLS
+%----------------------------------------------------------------------------------------
+%
+% Symbols are not a necessary item. 
+%
+%\include{FrontBackMatter/Symbols} % This calls the Symbols.tex Uncomment to include
+
+
+%----------------------------------------------------------------------------------------
+%	Abstract
+%----------------------------------------------------------------------------------------
+% This is required to appear before the first chapter of the dissertation
+
+\include{FrontBackMatter/Abstract} % This calls the Abstract.tex
+
+
+%----------------------------------------------------------------------------------------
+%	THESIS CONTENT - CHAPTERS
+%----------------------------------------------------------------------------------------
+
+%\mainmatter % Begin numeric (1,2,3...) page numbering Uncomment if using roman numerals in front matter
+
+
+\pagestyle{thesis} % Return the page headers back to the "thesis" style
+
+% Include the chapters of the thesis as separate files from the Chapters folder
+% Uncomment the lines as you write the chapters
+%\renewcommand{\chaptermarkformat}{\thechapter}
+
+
+% Chapter 1 with LaTeX code only
+
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+
+
+%----------------------------------------------------------------------------------------
+% Load statistics in memory from separate file
+%<<content1, child='stat.rnw'>>=
+@
+%----------------------------------------------------------------------------------------
+
+
+\chapter{Introduction} % Main chapter title
+
+\label{Chapter1} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{Chapter2}
+
+%----------------------------------------------------------------------------------------
+%	SECTION 0
+%----------------------------------------------------------------------------------------
+% Not needed for introduction
+%\section{Abstract}
+
+
+%----------------------------------------------------------------------------------------
+%	SECTION 1
+%----------------------------------------------------------------------------------------
+
+\section{Introduction}
+
+This three article dissertation was written in order to complete the degree requirements of the Second Language Acquisition and Teaching program (SLAT) at the University of Arizona. The participant population for this dissertation are three distinct groups early and late Spanish–English bilingual speakers. The early bilingual group consists of speakers who began learning before the age of %INSERT AGE%. 
+One of the late bilingual groups consists of native English speakers who were L2 learners of Spanish while the other consists of native Spanish speakers who were L2 learners of English. The dissertation investigates the ability of these three speaker populations and their ability to use the linguistic unit, a syllable, in their language processing strategies for Spanish. The three articles that compose this dissertation---chapters 2, 3 and 4---each correspond to one independent article and utiliize the same three bilingual speaker populations discussed above.
+
+%-----------------------------------
+%	SECTION 2
+%-----------------------------------
+\section{Background}
+%\emph{this may be too direct of a start for the introduction, maybe something a little lighter or broad scheme (funnel approach).}
+A syllable is a pronounceable linguistic unit of a given language that generally contains a highly sonorant sound as it nucleus—typically a vowel in most languages. Early research sought to discover the \emph{minimal perceptual unit} and the syllable was a logical and testable linguistic unit. In spoken language processing, the syllable made its highlight when it was found that participants could detect syllables faster than they could detect individual phonemes of which the syllable was comprised \citep*{Savin1970-oy}. This finding spurred interest in researchers focus on the syllable as well as other linguistic units such as word, phrases and sentences. The findings of these additional studies revealed that the processes involved in parsing spoken language were complex and a minimal perceptual unit was unlikely to be found. %\textbf{Should probably give more details about these studies here}.%
+Specifically, one linguistic unit—phoneme, syllable, word, etc.—could not be the sole mechanism in which listeners of language break the speech stream into smaller or processable chunks \citep{Foss1973-ll,Healy1976-js,McNeill1973-bo}. 
+
+Mehler and Hayes \parencite*{Mehler1981-wp} captured the need for a change in the direction of research regarding the syllable, “Traditionally, psycholinguistics research has invested the bulk of its efforts into uncovering the units used in speech processing. Although it is currently fashionable to claim that such work is pointless since it has no very clear outcome, many of the more meaningful advances in the field have come from projects whose framework included the problem of processing units.” They went on to delineate two different levels in which the research around the syllable could move forward: (1) The syllable as a phonological unit of the language which can efficiently explain the grammar of language and (2) The syllable as a unit which aides speech perception and language comprehension. As a result in the early 1980s, several researchers began refocusing their own investigations in accordance to this second vein of syllable research. %\textbf{Should cite and describe additional studies here}.% 
+Even as researchers conducted more pointed research on the syllable's role in language processing strategies, the results continued to suggest research questions needed further subdivision. Ultimately, two distinct subprocesses of language processing in which the syllable may play a role---segmentation and lexical access---were proposed. 
+% discuss the differences between segmentation and lexical access here.
+
+
+%-----------------------------------
+%	SECTION 3
+%-----------------------------------
+
+\section{Present Study}
+
+This dissertation utilizes several different methodologies as a means to investigate research questions that fall under Mehler and Hayes \parencite*{Mehler1981-wp} second level of research. There are three overarching questions that underlie this dissertation project as a whole:
+\begin{enumerate}
+%revisit these research questions later
+\item Whether or not the common linguistic unit—the syllable—is available to Spanish–English bilinguals when processing the Spanish language?
+\item Whether or not the syllable is a strategy used by Spanish–English bilinguals in language segmentation and/or lexical access?
+\item Does the age of acquisition, early versus late bilinguals, affect the ability and efficiency in which Spanish–English bilinguals can make use of the syllable?
+\end{enumerate}
+
+The three articles in this dissertation provide additional information about syllable structure and the representation of the syllable in Spanish to the knowledge base of the field. Within the segmentation strain of research, investigating differing types of bilingualism of the speaker who have the same two languages at their disposal provides new information to the fields of bilingualism and second language acquisition. At the time of writing this dissertation, the majority of research studies have been conducted with monolingual speakers. When studies have investigated the role of the syllable in language processing by bilinguals, they have generally compared the bilinguals against monolingual speakers of the two respective languages. However, previous studies suggest that bilinguals are not simply the summation of two independent monolingual speakers. For example, %Cutler citation% 
+found that French--English bilinguals listening to French responded in the same manner as French monolinguals, but when listening to English, these speakers did not respond similarly to English monolinguals. Therefore, this dissertation does not utilize monolingual Spanish or monolingual English speaker controls, but instead utilizes three distinct bilingual populations of Spanish and English which are compared against each other. %\textbf{This type of setup allows for the control group to be the Spanish native L2 English speaker group and two test groups be early and late learners of Spanish.}% 
+Many previous studies on lexical access have generally been conducted using the visual word recognition paradigm to study speech processing in conjunction with the syllable. Since the visual word recognition tasks have been conducted with both monolingual and bilingual populations, this dissertation seeks to add to the knowledge base of the syllable’s role through the replication of previous findings while testing a different population of bilingual speakers under the visual word recognition paradigm.
+
+The format for the remaining chapters of this dissertation project will be as follows in order to address the main overarching questions: chapter 2 explores the representation of the syllable in the minds of Spanish–English bilinguals with a two option forced-choice syllabic intuition task. Chapter 3 utilizes a visual word segmentation task to compare the efficiency of the processes employed by the bilingual speakers. Chapter 4 includes a visual priming experiment with a lexical decision task that explores the syllable’s role in lexical access by Spanish–English bilinguals. Chapter 5 then concludes the dissertation project by drawing overall conclusions and how all three individual studies were necessary to draw the conclusions that were borne out through the various testing methodologies used to explore the role of the syllable in Spanish language processing in the three articles of the dissertation.
+
+
+%----------------------------------------------------------------------------------------
+%	SECTION 2
+%----------------------------------------------------------------------------------------
+
+%\section{Methods}
+
+%Not needed
+
+%-----------------------------------
+%	SUBSECTION 2-1
+%-----------------------------------
+%\subsection{Participants}
+
+%Probably still important here to some degree
+
+%Give accurate descriptions of participant groups, how they were classified, number of participants, etc. 
+
+
+%----------------------------------------------------------------------------------------
+%	SECTION 3
+%----------------------------------------------------------------------------------------
+
+%\section{Results}
+
+%Not needed
+
+
+%----------------------------------------------------------------------------------------
+%	SECTION 4
+%----------------------------------------------------------------------------------------
+
+%\section{Discussion}
+%Not needed
+
+
+%----------------------------------------------------------------------------------------
+%	SECTION 5
+%----------------------------------------------------------------------------------------
+
+\section{References}
+
+%Insert references for this chapter here.
+
+
+
+
+
+
+
+
+
+
+% Chapter 2 with LaTeX code only
+
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+
+
+%----------------------------------------------------------------------------------------
+% Load statistics in memory from separate file
+%<<content1, child='stat.rnw'>>=
+@
+%----------------------------------------------------------------------------------------
+
+\chapter{Syllabification} % Main chapter title
+
+\label{Chapter2} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{Chapter2}
+
+%----------------------------------------------------------------------------------------
+%	SECTION 0
+%----------------------------------------------------------------------------------------
+
+\section{Abstract}
+
+Give Syllabification abstract here
+
+Keywords: (list all words necessary)
+
+%----------------------------------------------------------------------------------------
+%	SECTION 1
+%----------------------------------------------------------------------------------------
+
+\section{Introduction}
+
+%Talk about syllabificationdifferences in syllabification between spanish and english
+
+The syllable intuition experiment is an important step in the process because how the three groups of participants syllabify the words will have a direct effect on how fast or useful the syllable is in their segmentation strategy. It is expected that syllabic intuitions will vary based on being a native speaker of Spanish, an early learner of Spanish or a late learner of Spanish. These differences are likely to stem from age of acquisition, language dominance or type of schooling. This experiment will begin to build a data source of Spanish–English bilinguals syllabification of Spanish words that will help to determine whether or not age of acquisition or language dominance are sources are different syllabification patterns. 
+
+
+%\textbf{DELETE ME Write my introduction to the syllabification article here (Will write the introduction LAST) The section of your article most likely to be read, not skimmed or skipped. The first paragraph or two is the overview of the article: describe the problem, question or theory motivating the research.} 
+
+%-----------------------------------
+%	SUBSECTION 1-1
+%-----------------------------------
+\subsection{Background}
+
+%In the second part, describe relevant theories, review past research and give more details on the current research question. Do not forget about signposting, which headings and subheadings can naturally create for the reader.
+
+%-----------------------------------
+%	SUBSECTION 1-2
+%-----------------------------------
+
+\subsection{Present Study}
+%Treiman
+
+
+\begin{figure}[th]
+\centering
+\includegraphics{Figures/three_way_test}
+\decoRule
+\caption[A test of figures]{testing 1, 2, 3}
+\label{fig:Test}
+\end{figure}
+
+
+%\textbf{DELETE ME The third section titled, “The Present Experiment” or “The Present Research”, follows and contains experimental descriptions and how they address the questions being asked. For most articles, keep your introduction under 10 pages}
+
+%----------------------------------------------------------------------------------------
+%	SECTION 2
+%----------------------------------------------------------------------------------------
+
+\section{Methods}
+
+%Write this section FIRST is the section that describes how the research was conducted. A good one shows how well thought out the experiment design is and allows other researchers to easily replicate it. This section also follows a formula:
+
+%-----------------------------------
+%	SUBSECTION 2-1
+%-----------------------------------
+\subsection{Participants}
+
+The participants were split into three distinct populations of Spanish–English bilinguals. The Spanish–dominant group consisted of native speakers of Spanish that lived in Sonora, Mexico and learned English after %INSERT AGE%. 
+The English–dominant group were native English speakers that lived in Tucson, Arizona and learned Spanish after%INSERT AGE%. 
+The early bilingual group consisted of participants who lived in Tucson, Arizona, but were exposed to both English and Spanish before the %INSERT AGE%.
+\emph{The participants will be placed into their appropriate group based off of the combined results of Bilingual Language Profile (BLP), the LexTALE and the LexTALE-Esp vocabulary tests.} 
+
+Based off of responses in the BLP, participants who report proficiency in a language other than English and Spanish will be removed from the data analysis. According to the findings of Lemhöfer \& Broersma \parencite*{Lemhofer2012-hz}, the LexTALE vocabulary tests can distinguish between lower intermediate (up to 59 percent), upper intermediate (60–80 percent) and advanced (above 80 percent) levels of proficiency based on average percent correct responses. Participants that score lower than %INSERT CUTOFF PERCENTAGE HERE% 
+were excluded due to having too low of a proficiency score in one of the two languages. The Spanish–dominant group had a %INSERT CUTOFF PERCENTAGE HERE% 
+success rate in Spanish and it was higher than their English success rate. The English-dominant group scored %INSERT CUTOFF PERCENTAGE HERE%
+or higher in English and it was higher than their Spanish scores. The early bilingual group had a correctness score of %INSERT CUTOFF PERCENTAGE HERE% 
+or more in both English and Spanish. %INSERT NUMBER OF PARTICIPANTS% 
+participants were excluded from the analysis due to falling below the minimum standards used to describe each group. %INSERT NUMBER OF PARTICIPANTS%
+participants were recruited from each bilingual population and are reported in the analysis section. 
+\emph{During data collection, more participants than reported here were collected since it was expected that several participants would be removed for one or more of the reasons listed above. When more than %INSERT NUMBER OF PARTICIPANTS% 
+participants remained eligible after removing participants who did not fit the population criteria, a random sampling of %INSERT NUMBER OF PARTICIPANTS% 
+participants were selected from eligible pool of participants.}
+
+%\textbf{DELETE ME Give accurate descriptions of participant groups, how they were classified, number of participants, etc.}
+
+%-----------------------------------
+%	SUBSECTION 2-2
+%-----------------------------------
+%participants lexTALE BLP 
+% Computers, box in instrumentation
+\subsection{Instrumentation}
+The LexTALE and the LexTALE-Esp are tasks used to correlate vocabulary knowledge and language proficiency in English and Spanish respectively \citep{Izura2014-yw,Lemhofer2012-hz}. The LexTALE-Esp has also been shown to discriminate well between highly proficient Spanish speaking participants with different language dominances \citep{Ferre2017-jq}. The LexTALE and LexTALE-Esp tests will be used in order to group participants into the appropriate bilingual population—Spanish–dominant bilinguals of L2 English, English–dominant bilinguals of L2 Spanish or early bilinguals who were exposed to both English and Spanish before %INSERT AGE%. 
+LexTALE is publicly available online and has been designed to run in PRAAT, Matlab and Presentations. For data collection purposes in the current study, participants completed both the LexTALE and LexTALE-Esp using PsychoPy. 
+
+A second instrument used in this study was the Bilingual Language Profile (BLP), which is a survey based assessment tool for determining language dominance \citep{Birdsong2012-wd}. It assesses language history, use, proficiency and attitudes of participants in less than 10 minutes. This assessment tool has been used in numerous language studies with a focus on bilingualism and is available for free under the creative commons license. This tool allowed for the collection of information about participants demographics---name, age, sex, place of residence and educational background---which took place at experiment setup in the current study. It also allowed for participants to indicate their language history, use, proficiency and attitudes and was the last task complete during the current study. Since the BLP survey was completed after all experimental trials, the participants were able to choose whether they received Spanish or English instructions for the survey. The BLP is publicly available in a paper-based format or electronic format through the use of Google Forms. In an effort to make the experiment seamless as possible, the participants in the current study took the BLP within the PsychoPy platform as well. 
+
+%Button box
+The button box contained five different color buttons---left to right (white, green, blue, yellow and red)---which were referenced in all instruction 
+
+%\textbf{DELETE ME Any special instrumentation could be included here (I am not sure that mine deserves a devoted section to instrumentation.}
+
+
+%-----------------------------------
+%	SUBSECTION 2-3
+%-----------------------------------
+
+\subsection{Design}
+The syllabic intuitions were elicited from participants through a forced two-choice task and were given as much time as needed to respond. Participants were shown a real word in Spanish on the screen and then were presented with two options below that represented a CV or CVC structure. There were 24 critical word pairs that were used as the stimuli in a previous experiment. Each word pair shared the first three letters, but differed in initial syllable structure. Using the example word pair \emph{balada–baldosa} to illustrate, it can easily been seen that both words begin with the letters \emph{bal}. However, the initial syllable structure of \emph{balada} is \emph{ba}, a CV structure, while the initial syllable structure of \emph{baldosa} is \emph{bal}, a CVC structure, when following standard Spanish syllabification. All other word pairs followed the same pattern where one word had a CV word-initial syllable structure and the other word began with a CVC syllable---where C represents a consonant and V represents a vowel. The order of presentation for the two syllabic options, CV or CVC, remained the same for the entire experiment for the participant, but was counterbalanced across participants. In order to counterbalance for hand dominance and visual presentation in this task, half of the participants used the left response button to indicate a CVC response and the right response button to indicate a CV response while the other half of the participants did the opposite. Since the position of response buttons aligned with screen position, half of the participants visually saw the orthographic representation of the CVC syllable to the left of screen center and the CV syllable orthographic representation on the right while the other half of the participants saw the opposite visual displays for syllable orthographic representations.
+
+%\textbf{DELETE ME Give an accurate idea of how the overall project was designed, what previous studies is it based off, theoretical principles, etc. DO NOT write about what participants do in this section.}
+
+
+%-----------------------------------
+%	SUBSECTION 2-4
+%-----------------------------------
+
+\subsection{Procedure}
+Participants were seated in front of a laptop computer with a USB button box in order to complete the experiment in PsychoPy. At the beginning of the experiment, participants entered in demographic information as asked in the Basic Language Profile (BLP). Once they had entered the demographic information, all participants recruited from for this study completed the current experiment as an additional task of two additional ongoing experiments. Some participants completed this syllable intuition experiment following a visual word segmentation experiment while others completed it following a lexical decision experiment. Depending on the prior experiment completed, the overall procedural order of the time in the lab changed.
+
+When the syllable intuition experiment was followed by the visual segmentation experiment, %INSERT NUMBER OF PARTICIPANTS%
+participants began the experimental session with the Spanish vocabulary task---LexTALE-Esp. Immediately upon the completion of the LexTALE-Esp, participants were given instructions for the practice portion of the visual segmentation experiment. Following the practice portion, participants were given an instruction screen that indicated they had completed the practice portion, reminded about the controls needed for the experiment, allowed to ask any remaining question about the process. When the participant was ready to begin the actual experiment, they pressed the white button on the response box to begin. Once the participants had finished the entire visual segmentation experiment, they were presented with instructions for the practice trials of the syllable intuition experiment. Once they completed the practice trials, they were given a second instruction screen indicating they had completed the practice portion and were about to begin the real experiment. Once participants had completed the syllabic intuition experiment, they completed the LexTALE-Eng followed by the BLP. 
+
+When the syllable intuition experiment was followed lexical decision based priming experiment, the order differed slightly. In this scenario, participants were immediately presented with instructions for practice trials for the lexical decision priming experiment. Once they had completed the practice trials, a new instruction screen appeared stating that they were getting ready to start the actual experimental trials. Then participants received instructions for the syllable intuition experiment of which was immediately followed the three remaining tasks---LexTALE-Esp, LexTALE-Eng and the BLP.
+
+The participants were instructed that they would see Spanish words presented individually on the computer screen and that each word would be followed by two options for the first syllable of the presented word. There was no time constraint for the participant to select the option that they considered to be the first syllable of the presented word and the experiment would not progress until the participant had indicated a response. %In the second experiment (Lexical Access), this was initially ran with 4 second time limit. It affected participants 062, 065-067, 069-072, 074-076 so these 11 participants should be checked for missing values.% 
+In total, there were 10 practice trials that followed the same criteria and procedure as the 48 experimental trials presented to the participants. %same 11 participants had timing issue in practice trials, check if possible but values may not have been stored.% 
+For each trial, the word in lowercase letters appeared in the center of the screen for 1500 milliseconds before being replaced by the two syllable options---one a CV syllable and the other a CVC syllable---which remained on the screen, in all capital letters, until a response was entered. Following each response, the screen remained blank for 500 milliseconds before the next word appeared. %It may be good to create a visual representation of the experiment here to illustrate what each participant saw.%
+For half of the participants, the CV syllable option was on the left side of the screen while the CVC syllable option was on the right. For the other half of the participants, the CVC syllable option was on the left side of the screen while the CV syllable option was on the right. Participants were given separate instruction screens for practice and experimental trials that differed only in letting the participant know whether they are about to enter a practice or experimental phase. %\emph{Is this too repetitive? Should this be described here or in the Design section, currently it is in both} In this task it is worth noting that timing was not being measured but following the training session, most participants were trying to indicate their answer before the 1.5 second display time of the word since the syllables were always on the same side of the screen.
+
+%\textbf{DELETE ME WHEN FINISHED The first refer to mainly scope and size of research project while the procedure section is usually much more in-depth. Here, you connect your procedures to those in already published articles when possible and given detailed descriptions of classifications and scales used in procedure. Essentially ensure the reader does not suspect anything is being hidden and the researcher is honest. Do not repeat any unnecessary information in subsequent experiments of the paper.}
+
+%----------------------------------------------------------------------------------------
+%	SECTION 3
+%----------------------------------------------------------------------------------------
+
+\section{Results}
+
+The practice trials for syllabification were not recorded and therefore are not represented in the reported data below. Participants syllabification patterns are first analyzed by group and then are compared across groups. 
+
+
+%Discuss the deviation by group from the standard Spanish syllabification pattern. (Error rates)
+%Discuss whether significant differences between groups are found. (anova between subjects)
+
+%Are there patterns related to syllable structure CV or CVC.
+
+%stats from Miquel: 
+% 2 choice forced decision task (A or B) 
+% logistic regression
+% log Anova (Arcsin or logit)
+Columns needed include:
+\begin{enumerate}
+\item{participant}
+\item{correct syllable}
+\item{correct answer}
+\item{left key}
+\item{right key}
+\item{condition}
+\item{response}
+\item{correct response}
+\item{response time}
+\end{enumerate}
+
+%\textbf{DELETE ME describe the analyses the researcher has done, but do not overload. Instead of creating a laundry list of statistics, create the story you want to tell using only the statistics that are related to addressing your problem. For each task, review the hypothesis, give the statistics and say what the result of the test means. Do not discuss the findings until you reach the discussion session. This is where tables and figures can help keep the paper looking clean and crisp instead of cluttered unorganized statistical test lists that are hard to follow. Figures show patterns while tables give details.}
+
+%----------------------------------------------------------------------------------------
+%	SECTION 4
+%----------------------------------------------------------------------------------------
+
+\section{Discussion}
+
+%\textbf{split into several small sections following each individual experiment’s results sections where applicable. The General Discussion steps back and begins with an overview of the problem and then the findings. A general rule of thumb is to keep this section shorter than the introduction. Only give limitation directly related to the current study, not the general limitation of the research or the field as a whole and be sure to give a good reason for why these limitations are not as bad as they sound on the surface.}
+
+
+%----------------------------------------------------------------------------------------
+%	SECTION 5
+%----------------------------------------------------------------------------------------
+
+\section{References}
+
+%Insert references for this chapter here
+
+
+
+
+
+
+
+
+
+%\include{Chapters/Chapter1}
+%\include{Chapters/Chapter2} 
+%\include{Chapters/Chapter3}
+%\include{Chapters/Chapter4} 
+%\include{Chapters/Chapter5} 
+%\include{Chapters/Chapter6}
+
+%----------------------------------------------------------------------------------------
+%	THESIS CONTENT - APPENDICES
+%----------------------------------------------------------------------------------------
+%
+% Appendices Requirements (if used)
+% Follow content and precede References, unless used for manuscript/previous published article disserations
+% are distinguished by capital letters, Appendix A – title, Appendix B – title, etc.
+% must be correctly listed in Table of Contents
+% Pages must be numbered in manner consistent with the rest of the document
+% Permissions for including previously published articles are included
+%
+%If no appendices are used, comment out all active lines in this section
+%\pagestyle{thesis}
+
+\renewcommand\thechapter{}
+
+\appendix % Cue to tell LaTeX that the following "chapters" are Appendices
+
+% Include the appendices of the thesis as separate files from the Appendices folder
+% Uncomment the lines as you write the Appendices
+
+\include{Appendices/AppendixA}
+%\include{Appendices/AppendixB}
+%\include{Appendices/AppendixC}
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+%
+% References must be included in dissertation
+% References must be consisent (check your citation style formatting
+
+\printbibliography[heading=bibintoc]
+
+%----------------------------------------------------------------------------------------
+
+\end{document}  
