@@ -215,6 +215,9 @@ with(words_learners, tapply(median_RTlog, matching, FUN = mean))
 ## Words in the mismatching condition repsonded to significantly faster than matching 
 
 cohen.d(words_learners$median_RTlog, words_learners$matching, na.rm = TRUE, paired = TRUE)
+
+# Miquel and I testing
+#cohen.d(words_learners$median_RTlog, words_learners$matching, na.rm = TRUE, paired = TRUE, conf.level = 0.9)
 ## small effect size, but effect is in opposite direction
 
 
