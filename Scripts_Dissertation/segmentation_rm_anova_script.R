@@ -17,6 +17,14 @@ trans_long <-  function(data, group_col){
     convert_as_factor(!!!syms(group_col))
   }
 
+trans_wide <-  function(data, group_col, summary_col){
+  script_my_data_long <- data %>% 
+    group_by(!!!syms(group_col)) %>% 
+    summarise(!!!syms(summary_col)) %>% 
+    convert_as_factor(!!!syms(group_col))
+}
+
+
 # Create named group subset
 part_group <- function(data, grp_name){
   group <- data %>% 
