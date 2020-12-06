@@ -18,6 +18,7 @@ Dissertation-blx.bib
 *.gz
 *.toc
 *.pdf
+*-concordance.tex
 
 #Ignore jupyter notebook temporary files
 *ipynb_checkpoints*
