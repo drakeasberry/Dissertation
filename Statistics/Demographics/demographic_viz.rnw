@@ -1,21 +1,28 @@
-#!/bin/bash
-#!/usr/bin/Rscript
+% Visualization code
 
+<<gen_demo_lib, echo FALSE>>=
 # Load Libraries
 library(tidyverse)
 library(psych)
 library(lattice)
+@
 
 
-# Read csv file for Izura LexTALE-ESP calculations
-izura_score <- read_csv('analyze_data/output/izura_scores.csv')
+
+<<gen_izura_data, echo = FALSE>>=
+# Read csv file for all participants passed to experimental analysis
+eligible_part <- read_csv('analyze_data/output/all_participant_demo.csv')
+
+# Subset for Izura LexTALE-ESP calculations
+izura_score <- eligible_part %>% 
+  select('partNum', 'group', 'izura_score')
 
 # Read in group to participant mapping
-group_map <- read_csv('../../Scripts_Dissertation/participant_group_map.csv')
+#group_map <- read_csv('../../Scripts_Dissertation/participant_group_map.csv')
 
 # Add experimental group column
-izura_score <- izura_score %>% 
-  left_join(group_map, by = 'partNum')
+#izura_score <- izura_score %>% 
+#  left_join(group_map, by = 'partNum')
 
 # Counts by participant group
 izura_score %>% 
@@ -34,7 +41,7 @@ histogram(~izura_score,
 all <- describe(izura_score$izura_score) %>% 
   mutate(vars = "All participants") %>% 
   rename(group = vars)
-
+@
 
 # L1 Spanish participants Lextale-Esp distribution plots
 # Create subset Spanish natives
@@ -113,3 +120,5 @@ table_descriptives <- do.call('rbind', list(all, l1, l1_mono, l1_bi, l2))
 
 # Remove unnecessary objects
 rm(all, l1, l1_mono, l1_bi, l2)
+@
+

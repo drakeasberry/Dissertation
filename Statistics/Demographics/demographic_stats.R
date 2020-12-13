@@ -387,7 +387,7 @@ rm(eng_score,esp_score,lang_dom, blp_data_cleaned,blp_attitude_score,blp_history
    blp_proficiency_score,blp_use_score, eng_att,eng_hist,eng_prof,eng_use,esp_att,esp_hist,
    esp_prof,esp_use, english, spanish, lex_esp_score, lex_eng_score, lang_attitude_clean, 
    lang_history_clean, lang_proficiency_clean, lang_use_clean, esp_lex_esp_izura, global_score, 
-   group_map, eng_acq_age, esp_acq_age, lang_acq_age, esp_acquisition)
+   group_map, eng_acq_age, esp_acq_age, lang_acq_age)
 
 
 # Add additional demographic data from Prolific
@@ -419,7 +419,8 @@ demographics <- demographics %>%
 # Check data quality
 #lapply(all_participants, function(x) length(table(x)))
 #sapply(all_participants,function(x) unique(x))
-all_participants <- demographics %>% 
+all_participants <- demographics %>%
+  subset(., !is.na(group)) %>% 
   rename(birth_country = `Country of Birth`, acquisition_age = first_learning,
          employed = `Employment Status`, native_lang = `First Language`,
          fluent_lang = `Fluent languages`, student = `Student Status`,
@@ -494,11 +495,16 @@ all_participants <- demographics %>%
          raisedCountry = ifelse(raisedCountry == 'México', "MX", raisedCountry),
          gender = ifelse(gender == 'Mujer', 'Female', gender),
          gender = ifelse(gender == 'Woman', 'Female', gender),
-         gender = ifelse(gender == 'Hombre', 'Male', gender)) %>%
+         gender = ifelse(gender == 'Hombre', 'Male', gender),
+         birth_country = ifelse(is.na(birth_country), birthCountry, birth_country),
+         birth_country = ifelse(birth_country == 'United States' | birth_country == 'Estados Unidos',
+                                'US', birth_country),
+         birth_country = ifelse(birth_country == 'Mexico' | birth_country == 'México',
+                                'MX', birth_country)) %>%
   select(c('partNum', 'group', 'gender', 'age', 'speaking':'last_class', 'native_lang', 
            'houseLanguage', 'fluent_lang', 'education', 'Bilingual', 
            'Nationality', 'birth_country', 'raisedCountry', 'current_residence',
-           'eng_hist_score':'eng_acq_age'))
+           'eng_hist_score':'eng_acq_age', 'placeResidence', 'expName'))
 
 #sapply(all_participants,function(x) unique(x))
 #names(all2)
@@ -519,7 +525,7 @@ write_csv(all_participants, 'analyze_data/output/all_participant_demo.csv')
 # clean up data environment
 rm(online_demo, part_score)
 
-
+demographics <- all_participants
 # Outliers in Language Dominance Test
 # English group outlier test
 english_outlier_dom <- demographics %>% 
@@ -534,24 +540,24 @@ spanish_outlier_dom <- demographics %>%
 eng_higher_L2_vocab <- demographics %>% 
   subset(., lextale_eng_correct < lextale_esp_correct & group == 'English') %>% 
   ## No one removed
-  select(c('partNum','gender':'placeResidence', 'preferLanguage', 'group', 
+  select(c('partNum','gender':'placeResidence', 'group', 
            'lang_dominance':'lextale_esp_correct')) 
 
 esp_higher_L2_vocab <- demographics %>% 
   subset(., lextale_eng_correct > lextale_esp_correct & group == 'Spanish') %>% 
   ## part033 86 Eng 68 SP, part016 76 Eng 74 SP, part059 78 Eng 73 SP
-  select(c('partNum','gender':'placeResidence', 'preferLanguage', 'group', 
+  select(c('partNum','gender':'placeResidence', 'group', 
            'lang_dominance':'lextale_esp_correct')) 
 
 
 # Check to ensure participant group identifications match
 # Spanish group not born in Mexico
 esp_wrong_demo <- demographics %>% 
-  subset(., birthCountry == 'Estados Unidos' & group == 'Spanish') # part027
+  subset(., birth_country == 'US' & group == 'Spanish') # part027
 
 # English group not born in US
 eng_wrong_demo <- demographics %>% 
-  subset(., birthCountry == 'México' & group == 'English') # no one removed
+  subset(., birth_country == 'MX' & group == 'English') # no one removed
 
 
 # Clean up environment
@@ -565,9 +571,8 @@ lab_segmentation <- subset(demographics, expName == 'Segmentation') %>%
   subset(., group != 'Childhood') %>%
   #subset(., partNum %ni% lab_part_remove) %>% 
   select(-c('expName')) %>% 
-  rename(age = age.x) %>% 
-  select(c('partNum','eng_hist_score':'izura_score', 'age':'preferLanguage','group','session',
-            'date')) %>% 
+  #rename(age = age.x) %>% 
+  select(c('partNum','eng_hist_score':'izura_score', 'age':'education','group')) %>% 
   # calulate difference between vocabularies
   mutate(diff = lextale_eng_correct - lextale_esp_correct) 
 
@@ -607,9 +612,8 @@ lab_lexical_only <- subset(demographics, expName == 'Lexical_Access') %>%
   select_if(~!all(is.na(.))) %>% 
   subset(., group != 'Childhood') %>% 
   select(-c('expName')) %>% 
-  rename(age = age.x) %>% 
-  select(c('partNum','eng_hist_score':'izura_score', 'age':'preferLanguage','group','session',
-           'date')) %>% 
+  #rename(age = age.x) %>% 
+  select(c('partNum','eng_hist_score':'izura_score', 'age':'education','group')) %>% 
   # calulate difference between vocabularies
   mutate(diff = lextale_eng_correct - lextale_esp_correct) 
 
@@ -648,9 +652,8 @@ lab_lexical <- subset(demographics, expName != 'lemma_segmentation' &
   select_if(~!all(is.na(.))) %>% 
   subset(., group != 'Childhood') %>% 
   select(-c('expName')) %>% 
-  rename(age = age.x) %>% 
-  select(c('partNum','eng_hist_score':'izura_score', 'age':'preferLanguage','group','session',
-           'date')) %>% 
+  #rename(age = age.x) %>% 
+  select(c('partNum','eng_hist_score':'izura_score', 'age':'education','group')) %>% 
   # calulate difference between vocabularies
   mutate(diff = lextale_eng_correct - lextale_esp_correct)
 
@@ -700,9 +703,8 @@ lab_intuition <- subset(demographics, expName != 'lemma_segmentation') %>%
   select_if(~!all(is.na(.))) %>% 
   subset(., group != 'Childhood') %>%
   subset(., partNum %in% vocab_diff_intuition$partNum) %>% 
-  rename(age = age.x) %>% 
-  select(c('partNum','eng_hist_score':'izura_score', 'age':'preferLanguage','group','session',
-           'expName', 'date'))
+  #rename(age = age.x) %>% 
+  select(c('partNum','eng_hist_score':'izura_score', 'age':'education','group', 'expName'))
 
 # Write statement for file containing only necessary columns for lab intuition analysis
 write_csv(lab_intuition, '../Intuition/analyze_data/demographics/67_lab_intuition.csv')
@@ -715,42 +717,46 @@ rm(vocab_diff_intuition, vocab_diff_lexical_only, vocab_diff_segmenation)
 
 # Create table for all demographic information for participants in online experiments
 # Create online subset and convert data to English
+#online_lemma <- subset(demographics, expName == 'lemma_segmentation') %>% 
+#  select_if(~!all(is.na(.))) %>%
+#  rename(birth_country = `Country of Birth`, acquisition_age = first_learning,
+#         employed = `Employment Status`, native_lang = `First Language`,
+#         fluent_lang = `Fluent languages`, student = `Student Status`,
+#         raised_monolingual = `Were you raised monolingual?`) %>% 
+#  mutate(age = ifelse(is.na(age.y), age.x, age.y),
+#         current_residence = ifelse(is.na(`Current Country of Residence`), 
+#                                    placeResidence, `Current Country of Residence`),
+#         current_residence = ifelse(current_residence == "Estados Unidos", "United States",
+#                                    current_residence),
+#         preferLanguage = ifelse(preferLanguage == 'English', 'inglés', preferLanguage),
+#         houseLanguage = ifelse(houseLanguage == 'English', 'inglés', houseLanguage),
+#         Bilingual = ifelse(Bilingual == 'I know one other language in addition to English',  
+#                             'native language + one other language', Bilingual),
+#         Bilingual = ifelse(Bilingual == 'Not Used',  
+#                            'native language + one other language', Bilingual),
+#         acquisition_age = ifelse(acquisition_age == 'seis', 6, acquisition_age),
+#         acquisition_age = ifelse(acquisition_age == 'A los 12 años de edad', 12, acquisition_age),
+#         acquisition_age = ifelse(acquisition_age == 'a los 5 anos', 5, acquisition_age),
+#         acquisition_age = ifelse(acquisition_age == 'con mi esposo', 99, acquisition_age),
+#         speaking = ifelse(speaking == 'intermediate', 'intermedio', speaking),
+#         listening = ifelse(listening == 'intermediate', 'intermedio', listening),
+#         reading = ifelse(reading == 'intermediate', 'intermedio', reading),
+#         writing = ifelse(writing == 'intermediate', 'intermedio', writing),
+#         last_class = ifelse(last_class == 'a year ago', 'hace un año', last_class),
+#         fluent_lang = ifelse(fluent_lang == 'Spanish, English', 'English, Spanish', fluent_lang),
+#         education = ifelse(education == "University (diploma, bachelor's degree)", 
+#                            "Universidad (diplomatura, licenciatura)", education),
+#         raisedCountry = ifelse(raisedCountry == 'U.S', 'Estados Unidos', raisedCountry)) %>%
+#  select(c('partNum', 'group':'izura_score', 'age', 'acquisition_age':'last_class', 
+#           'native_lang', 'preferLanguage', 'houseLanguage', 'Bilingual', 'raised_monolingual', 
+#           'fluent_lang', 'Nationality', 'birth_country', 'raisedCountry', 'current_residence', 
+#           'Sex', 'education', 'student', 'employed', 'date','OS'))
+#
+
 online_lemma <- subset(demographics, expName == 'lemma_segmentation') %>% 
-  select_if(~!all(is.na(.))) %>%
-  rename(birth_country = `Country of Birth`, acquisition_age = first_learning,
-         employed = `Employment Status`, native_lang = `First Language`,
-         fluent_lang = `Fluent languages`, student = `Student Status`,
-         raised_monolingual = `Were you raised monolingual?`) %>% 
-  mutate(age = ifelse(is.na(age.y), age.x, age.y),
-         current_residence = ifelse(is.na(`Current Country of Residence`), 
-                                    placeResidence, `Current Country of Residence`),
-         current_residence = ifelse(current_residence == "Estados Unidos", "United States",
-                                    current_residence),
-         preferLanguage = ifelse(preferLanguage == 'English', 'inglés', preferLanguage),
-         houseLanguage = ifelse(houseLanguage == 'English', 'inglés', houseLanguage),
-         Bilingual = ifelse(Bilingual == 'I know one other language in addition to English',  
-                             'native language + one other language', Bilingual),
-         Bilingual = ifelse(Bilingual == 'Not Used',  
-                            'native language + one other language', Bilingual),
-         acquisition_age = ifelse(acquisition_age == 'seis', 6, acquisition_age),
-         acquisition_age = ifelse(acquisition_age == 'A los 12 años de edad', 12, acquisition_age),
-         acquisition_age = ifelse(acquisition_age == 'a los 5 anos', 5, acquisition_age),
-         acquisition_age = ifelse(acquisition_age == 'con mi esposo', 99, acquisition_age),
-         speaking = ifelse(speaking == 'intermediate', 'intermedio', speaking),
-         listening = ifelse(listening == 'intermediate', 'intermedio', listening),
-         reading = ifelse(reading == 'intermediate', 'intermedio', reading),
-         writing = ifelse(writing == 'intermediate', 'intermedio', writing),
-         last_class = ifelse(last_class == 'a year ago', 'hace un año', last_class),
-         fluent_lang = ifelse(fluent_lang == 'Spanish, English', 'English, Spanish', fluent_lang),
-         education = ifelse(education == "University (diploma, bachelor's degree)", 
-                            "Universidad (diplomatura, licenciatura)", education),
-         raisedCountry = ifelse(raisedCountry == 'U.S', 'Estados Unidos', raisedCountry)) %>%
-  select(c('partNum', 'group':'izura_score', 'age', 'acquisition_age':'last_class', 
-           'native_lang', 'preferLanguage', 'houseLanguage', 'Bilingual', 'raised_monolingual', 
-           'fluent_lang', 'Nationality', 'birth_country', 'raisedCountry', 'current_residence', 
-           'Sex', 'education', 'student', 'employed', 'date','OS'))
-
-
+    select(c('partNum', 'group':'current_residence', 'lextale_esp_correct':'span_acq_age'))
+             
+sapply(online_lemma,function(x) unique(x))
 # Create subsets for participant groups 
 natives <- subset(online_lemma, group == 'Monolingual Spanish')
 learners <- subset(online_lemma, group == 'L2 Learner')
