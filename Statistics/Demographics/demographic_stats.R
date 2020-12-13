@@ -78,6 +78,7 @@ lex_esp_data <- lex_esp_no_heritage %>%
   select("partNum", "group", "word", "translation", "corrAnsEspV", "corrAns", "lextaleRespEsp", 
          "lextaleRespEspCorr", "lextaleRespEspRT")
 
+
 # clean up data environemnt
 rm(lex_esp_no_heritage, lex_esp_dir)
 
@@ -210,6 +211,31 @@ lang_history <- subset(blp_data_cleaned, blp_section == 'Language history')
 lang_history_clean <- select(lang_history, 
                              -c(langUseResp, langUseRT, langProfResp, langProfRT,
                                 langAttResp, langAttRT))
+
+# get language acquisition ages for participants in lab from BLP
+lang_acq_age <- lang_history_clean
+
+# get Spanish acquistion age 
+esp_acq_age <- lang_acq_age %>% 
+  subset(., blp_question == 'At what age did you start learning the following languages?') %>% 
+  group_by(partNum, question_language, langHistResp) %>% 
+  spread(., question_language, langHistResp) %>% 
+  rename(span_acq_age = Spanish, eng_acq_age = English) %>% 
+  subset(., !is.na(span_acq_age)) %>% 
+  select('partNum', 'span_acq_age')
+
+# get English acquistion age
+eng_acq_age <- lang_acq_age %>% 
+  subset(., blp_question == 'At what age did you start learning the following languages?') %>% 
+  group_by(partNum, question_language, langHistResp) %>% 
+  spread(., question_language, langHistResp) %>% 
+  rename(span_acq_age = Spanish, eng_acq_age = English) %>% 
+  subset(., !is.na(eng_acq_age)) %>% 
+  select('partNum', 'eng_acq_age')
+
+# Combine language acquisition ages into one data frame
+lang_acq_age <- merge(esp_acq_age, eng_acq_age)
+
 
 # create language use dataframe
 lang_use <- subset(blp_data_cleaned, blp_section == 'Language use')
@@ -350,6 +376,7 @@ part_score <- merge(global_score, lex_eng_score, by='partNum') %>%
   full_join(., lex_esp_score, by='partNum') %>% 
   left_join(., group_map, by = 'partNum') %>% 
   left_join(., esp_lex_esp_izura, by = 'partNum') %>% 
+  left_join(., lang_acq_age, by = 'partNum') %>% 
   select("partNum", "group", everything()) %>% 
   rename(global_eng_score = eng_score, global_esp_score = esp_score, 
          izura_yes_to_words = yes_to_word, izura_yes_to_nonwords = yes_to_nonword)
@@ -360,7 +387,7 @@ rm(eng_score,esp_score,lang_dom, blp_data_cleaned,blp_attitude_score,blp_history
    blp_proficiency_score,blp_use_score, eng_att,eng_hist,eng_prof,eng_use,esp_att,esp_hist,
    esp_prof,esp_use, english, spanish, lex_esp_score, lex_eng_score, lang_attitude_clean, 
    lang_history_clean, lang_proficiency_clean, lang_use_clean, esp_lex_esp_izura, global_score, 
-   group_map)
+   group_map, eng_acq_age, esp_acq_age, lang_acq_age, esp_acquisition)
 
 
 # Add additional demographic data from Prolific
@@ -381,6 +408,114 @@ demographics <- demographics %>%
   left_join(part_score, by = 'partNum') %>% 
   distinct()
 
+# Create file with all participants and demographic information
+#all_participants <- demographics %>% 
+#  subset(., partNum %in% part_score$partNum) #%>% 
+#  #select(-c(names(part_score[3:17]), "session", "date", "OS"))
+#
+#names(all_participants)
+
+
+# Check data quality
+#lapply(all_participants, function(x) length(table(x)))
+#sapply(all_participants,function(x) unique(x))
+all_participants <- demographics %>% 
+  rename(birth_country = `Country of Birth`, acquisition_age = first_learning,
+         employed = `Employment Status`, native_lang = `First Language`,
+         fluent_lang = `Fluent languages`, student = `Student Status`,
+         raised_monolingual = `Were you raised monolingual?`) %>% 
+  mutate(age = ifelse(is.na(age.y), age.x, age.y),
+         current_residence = ifelse(is.na(`Current Country of Residence`), 
+                                    placeResidence, `Current Country of Residence`),
+         current_residence = ifelse(current_residence == "Estados Unidos", "United States",
+                                    current_residence),
+         preferLanguage = ifelse(preferLanguage == 'inglés', 'English', preferLanguage),
+         preferLanguage = ifelse(preferLanguage == 'español', 'Spanish', preferLanguage),
+         houseLanguage = ifelse(houseLanguage == 'inglés', 'English', houseLanguage),
+         houseLanguage = ifelse(houseLanguage == 'español', 'Spanish', houseLanguage),
+         houseLanguage = ifelse(houseLanguage == 'ambos', 'Both', houseLanguage),
+         Bilingual = ifelse(Bilingual == 'I know one other language in addition to English',  
+                            'native language + one other language', Bilingual),
+         Bilingual = ifelse(Bilingual == 'Not Used',  
+                            'native language + one other language', Bilingual),
+         acquisition_age = ifelse(acquisition_age == 'seis', 6, acquisition_age),
+         acquisition_age = ifelse(acquisition_age == 'A los 12 años de edad', 12, acquisition_age),
+         acquisition_age = ifelse(acquisition_age == 'a los 5 anos', 5, acquisition_age),
+         acquisition_age = ifelse(acquisition_age == 'con mi esposo', NA, acquisition_age),
+         span_acq_age = ifelse(is.na(span_acq_age), acquisition_age, span_acq_age),
+         span_acq_age = ifelse(group == 'Monolingual Spanish', 0, span_acq_age),
+         speaking = ifelse(speaking == 'principiante', 'Beginner', speaking),
+         speaking = ifelse(speaking == 'intermedio', 'Intermediate',  speaking),
+         speaking = ifelse(speaking == 'intermediate', 'Intermediate',  speaking),
+         speaking = ifelse(speaking == 'avanzado', 'Advanced', speaking),
+         speaking = ifelse(speaking == 'superior', 'Superior', speaking),
+         speaking = ifelse(speaking == 'nativo bilingüe', 'Native-like', speaking),
+         listening = ifelse(listening == 'principiante', 'Beginner', listening),
+         listening = ifelse(listening == 'intermedio', 'Intermediate',  listening),
+         listening = ifelse(listening == 'intermediate', 'Intermediate',  listening),
+         listening = ifelse(listening == 'avanzado', 'Advanced', listening),
+         listening = ifelse(listening == 'superior', 'Superior', listening),
+         listening = ifelse(listening == 'nativo bilingüe', 'Native-like', listening),
+         reading = ifelse(reading == 'principiante', 'Beginner', reading),
+         reading = ifelse(reading == 'intermedio', 'Intermediate',  reading),
+         reading = ifelse(reading == 'intermediate', 'Intermediate',  reading),
+         reading = ifelse(reading == 'avanzado', 'Advanced', reading),
+         reading = ifelse(reading == 'superior', 'Superior', reading),
+         reading = ifelse(reading == 'nativo bilingüe', 'Native-like', reading),
+         writing = ifelse(writing == 'principiante', 'Beginner', writing),
+         writing = ifelse(writing == 'intermedio', 'Intermediate',  writing),
+         writing = ifelse(writing == 'intermediate', 'Intermediate',  writing),
+         writing = ifelse(writing == 'avanzado', 'Advanced', writing),
+         writing = ifelse(writing == 'superior', 'Superior', writing),
+         writing = ifelse(writing == 'nativo bilingüe', 'Native-like', writing),
+         last_class = ifelse(last_class == 'durante el último año', 'During the last year', last_class),
+         last_class = ifelse(last_class == 'hace un año', '1 year ago', last_class),
+         last_class = ifelse(last_class == 'a year ago', '1 year ago', last_class),
+         last_class = ifelse(last_class == 'hace dos años', '2 years ago', last_class),
+         last_class = ifelse(last_class == 'hace tres años', '3 years ago', last_class),
+         last_class = ifelse(last_class == 'hace cuatro o más años', '4+ years ago', last_class),
+         fluent_lang = ifelse(fluent_lang == 'Spanish, English', 'English, Spanish', fluent_lang),
+         education = ifelse(education == "Escuela Secundaria", 
+                            "High School", education),
+         education = ifelse(education == "Un poco de universidad", 
+                            "Some College", education),
+         education = ifelse(education == "University (diploma, bachelor's degree)", 
+                            "Bachelor Degree", education),
+         education = ifelse(education == "Universidad (diplomatura, licenciatura)", 
+                            "Bachelor Degree", education),
+         education = ifelse(education == "Un poco de escuela graduada", 
+                            "Some Graduate Courses", education),
+         education = ifelse(education == "Máster", 
+                            "Master Degree", education),
+         education = ifelse(education == "Doctorado", 
+                            "Doctorate Degree", education),
+         raisedCountry = ifelse(raisedCountry == 'Estados Unidos', "US", raisedCountry),
+         raisedCountry = ifelse(raisedCountry == 'U.S', "US", raisedCountry),
+         raisedCountry = ifelse(raisedCountry == 'México', "MX", raisedCountry),
+         gender = ifelse(gender == 'Mujer', 'Female', gender),
+         gender = ifelse(gender == 'Woman', 'Female', gender),
+         gender = ifelse(gender == 'Hombre', 'Male', gender)) %>%
+  select(c('partNum', 'group', 'gender', 'age', 'speaking':'last_class', 'native_lang', 
+           'houseLanguage', 'fluent_lang', 'education', 'Bilingual', 
+           'Nationality', 'birth_country', 'raisedCountry', 'current_residence',
+           'eng_hist_score':'eng_acq_age'))
+
+#sapply(all_participants,function(x) unique(x))
+#names(all2)
+#unique(all2$gender)
+#all3 <- all2 %>% 
+#  select(c('partNum', 'group', 'gender', 'age', 'speaking':'last_class', 'native_lang', 
+#           'houseLanguage', 'fluent_lang', 'education', 'Bilingual', 
+#           'Nationality', 'birth_country', 'raisedCountry', 'current_residence',
+#           'eng_hist_score':'eng_acq_age'))
+#
+#sapply(all3,function(x) unique(x))
+#         
+#, 'student'))
+#names(all3)
+
+glimpse(all_participants)
+write_csv(all_participants, 'analyze_data/output/all_participant_demo.csv')
 # clean up data environment
 rm(online_demo, part_score)
 
