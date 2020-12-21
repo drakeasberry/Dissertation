@@ -84,3 +84,12 @@ izura <- function(data, x_data, y_data){
     xlab("Native Language Group") +
     ylab("Izura Score")
 }
+
+# Density plots
+density <- function(data, x_data, group){
+  data %>% 
+    ggplot(., aes(x=!!sym(x_data))) + #, 
+                  #fill = !!sym(group))) +
+    geom_density(fill="gray", outline.type = "full") +
+    geom_vline(xintercept = mean(data$izura_score), color = "blue", linetype = "dashed")
+}
