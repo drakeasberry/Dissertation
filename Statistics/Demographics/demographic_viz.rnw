@@ -1,124 +1,196 @@
 % Visualization code
 
-<<gen_demo_lib, echo FALSE>>=
+<<global_opts_none, echo=TRUE, cache=FALSE>>=
+library(knitr)
+library(here)
+
+knitr::opts_chunk$set(
+  echo = FALSE
+)
+here::here()
+set_parent(here('Asberry_Dissertation/Dissertation.Rnw'))
+@
+
+
+<<gen_demo_lib, echo = FALSE>>=
 # Load Libraries
 library(tidyverse)
 library(psych)
 library(lattice)
+
+source('../../Scripts_Dissertation/diss_dataviz_script.R')
 @
 
+<<test1, echo=TRUE, results='asis'>>=
+x <- 2 + 2
+@
 
-
-<<gen_izura_data, echo = FALSE>>=
+<<gen_eligible_data, echo = FALSE>>=
 # Read csv file for all participants passed to experimental analysis
 eligible_part <- read_csv('analyze_data/output/all_participant_demo.csv')
 
 # Subset for Izura LexTALE-ESP calculations
-izura_score <- eligible_part %>% 
+eligible_izura_score <- eligible_part %>% 
   select('partNum', 'group', 'izura_score')
 
-# Read in group to participant mapping
-#group_map <- read_csv('../../Scripts_Dissertation/participant_group_map.csv')
-
-# Add experimental group column
-#izura_score <- izura_score %>% 
-#  left_join(group_map, by = 'partNum')
-
 # Counts by participant group
-izura_score %>% 
+eligible_izura_score %>% 
   group_by(group) %>% 
   count()
 
 # All participants Lextale-Esp distribution plots
-densityplot(~izura_score, 
-            data = izura_score, 
-            main = 'Density plot of All participants') 
+plot_d <- densityplot(~izura_score, 
+            data = eligible_izura_score, 
+            main = 'Density plot of Eligible participants')
+plot_gg_d <- density(eligible_izura_score, 'izura_score', 'group') +
+  theme_classic() +
+  labs(title = 'Density plot of Eligible participants', x = 'Izura Score', y = 'Density') +
+  coord_cartesian(xlim = c(min(eligible_izura_score$izura_score)-10,
+                           max(eligible_izura_score$izura_score)+10))
+
 histogram(~izura_score, 
-          data = izura_score, 
-          main = 'All participants collected') 
+          data = eligible_izura_score, 
+          main = 'All eligible participants collected') 
 
 # All participants Lextale-Esp descriptive statistics 
-all <- describe(izura_score$izura_score) %>% 
-  mutate(vars = "All participants") %>% 
+eligible <- describe(eligible_izura_score$izura_score) %>% 
+  mutate(vars = "Eligible participants") %>% 
   rename(group = vars)
 @
 
-# L1 Spanish participants Lextale-Esp distribution plots
-# Create subset Spanish natives
-l1_spanish <- izura_score %>% 
-  subset(., group == "Spanish" | group == "Monolingual Spanish")
 
-densityplot(~izura_score, 
-            data = l1_spanish, 
-            main = 'Density plot of L1 Spanish participants') 
-histogram(~izura_score, 
-          data = l1_spanish, 
-          main = 'L1 Spanish participants collected')
+<<plot1, echo=FALSE, cache=FALSE, results='asis', fig.width=3, fig.height=3>>=
+#print(2+2)
+#print(x = 2^3)
+#cat(paste('\\newcommand{\\plotRandom}\n{', sep = ''))
+#cat('\\begin{figure}\n')
+plot(rnorm(100))
+      
+#cat(paste('\\caption{Testing the plotting placement calls}\n', sep = ''))
+#cat('\\label{plotRandom}')
+#cat('\\end{figure}\n')
+#cat(paste('}\n'))
 
-# L1 Spanish participants Lextale-Esp descriptive statistics 
-l1 <- describe(l1_spanish$izura_score) %>% 
-  mutate(vars = "Native Spanish") %>% 
-  rename(group = vars)
-
-
-# L1 Spanish bilingual participants Lextale-Esp distribution plots
-# Create subset Spanish natives bilingual
-l1_bi_spanish <- izura_score %>% 
-  subset(., group == "Spanish")
-
-densityplot(~izura_score, 
-            data = l1_bi_spanish, 
-            main = 'Density plot of L1 Spanish bilingual participants') 
-histogram(~izura_score, 
-          data = l1_bi_spanish, 
-          main = 'L1 Spanish bilingual participants collected')
-
-# L1 Spanish bilingual participants Lextale-Esp descriptive statistics 
-l1_bi <- describe(l1_bi_spanish$izura_score) %>% 
-  mutate(vars = "Native Spanish Bilingual") %>% 
-  rename(group = vars)
-
-
-# L1 Spanish monolingual participants Lextale-Esp distribution plots
-# Create subset Spanish natives monolingual
-l1_mono_spanish <- izura_score %>% 
-  subset(., group == "Monolingual Spanish")
-
-densityplot(~izura_score, 
-            data = l1_mono_spanish, 
-            main = 'Density plot of L1 Spanish monolingual participants') 
-histogram(~izura_score, 
-          data = l1_mono_spanish, 
-          main = 'L1 Spanish monolingual participants collected')
-
-# L1 Spanish monolingual participants Lextale-Esp descriptive statistics 
-l1_mono <- describe(l1_mono_spanish$izura_score) %>% 
-  mutate(vars = "Native Spanish Monolingual") %>% 
-  rename(group = vars)
-
-
-# L2 Spanish participants Lextale-Esp distribution plots
-# Create subset English natives
-l2_spanish <- izura_score %>% 
-  subset(., group == "English" | group == "L2 Learner")
-
-densityplot(~izura_score, 
-            data = l2_spanish, 
-            main = 'Density plot of L2 Spanish participants') 
-histogram(~izura_score, 
-          data = l2_spanish, 
-          main = 'L2 Spanish participants collected')
-
-# L2 Spanish participants Lextale-Esp descriptive statistics 
-l2 <- describe(l2_spanish$izura_score) %>% 
-  mutate(vars = "Native English") %>% 
-  rename(group = vars)
-
-
-# Create table of group statistics
-table_descriptives <- do.call('rbind', list(all, l1, l1_mono, l1_bi, l2))
-
-# Remove unnecessary objects
-rm(all, l1, l1_mono, l1_bi, l2)
 @
 
+%<<gen_analyzed_data, echo = FALSE, eval=TRUE>>=
+%# Remove participants who did not successfully/accurately complete study
+%# Load in datasets
+%intuition_part <- read_csv('analyze_data/from_exp_analysis/67_eligible_intuition_part.csv')
+%lab_seg_part <- read_csv('analyze_data/from_exp_analysis/45_eligible_lab_part.csv')
+%online_part_mono <- read_csv('analyze_data/from_exp_analysis/44_eligible_online_mono_part.csv')
+%online_part_learner <- read_csv('analyze_data/from_exp_analysis/55_eligible_online_learners_part.csv')
+%
+%# merge into one vector
+%kept_part <- rbind(intuition_part, lab_seg_part, online_part_mono, online_part_learner) %>% 
+%  unique()
+%
+%# remove participants eliminated from analysis in all experiments
+%analyzed_part <- eligible_part %>% 
+%  subset(., .$partNum %in% kept_part$partNum)
+%
+%# Subset for Izura LexTALE-ESP calculations
+%izura_score <- analyzed_part %>% 
+%  select('partNum', 'group', 'izura_score')
+%
+%# Counts by participant group
+%izura_score %>% 
+%  group_by(group) %>% 
+%  count()
+%
+%# All participants Lextale-Esp distribution plots
+%densityplot(~izura_score, 
+%            data = izura_score, 
+%            main = 'Density plot of All participants') 
+%histogram(~izura_score, 
+%          data = izura_score, 
+%          main = 'All participants collected') 
+%
+%# All participants Lextale-Esp descriptive statistics 
+%analyzed <- describe(izura_score$izura_score) %>% 
+%  mutate(vars = "All participants") %>% 
+%  rename(group = vars)
+%@
+%
+%
+%<<testing, eval=TRUE>>=
+%# L1 Spanish participants Lextale-Esp distribution plots
+%# Create subset Spanish natives
+%l1_spanish <- izura_score %>% 
+%  subset(., group == "Spanish" | group == "Monolingual Spanish")
+%
+%densityplot(~izura_score, 
+%            data = l1_spanish, 
+%            main = 'Density plot of L1 Spanish participants') 
+%histogram(~izura_score, 
+%          data = l1_spanish, 
+%          main = 'L1 Spanish participants collected')
+%
+%# L1 Spanish participants Lextale-Esp descriptive statistics 
+%l1 <- describe(l1_spanish$izura_score) %>% 
+%  mutate(vars = "Native Spanish") %>% 
+%  rename(group = vars)
+%
+%
+%# L1 Spanish bilingual participants Lextale-Esp distribution plots
+%# Create subset Spanish natives bilingual
+%l1_bi_spanish <- izura_score %>% 
+%  subset(., group == "Spanish")
+%
+%densityplot(~izura_score, 
+%            data = l1_bi_spanish, 
+%            main = 'Density plot of L1 Spanish bilingual participants') 
+%histogram(~izura_score, 
+%          data = l1_bi_spanish, 
+%          main = 'L1 Spanish bilingual participants collected')
+%
+%# L1 Spanish bilingual participants Lextale-Esp descriptive statistics 
+%l1_bi <- describe(l1_bi_spanish$izura_score) %>% 
+%  mutate(vars = "Native Spanish Bilingual") %>% 
+%  rename(group = vars)
+%
+%
+%# L1 Spanish monolingual participants Lextale-Esp distribution plots
+%# Create subset Spanish natives monolingual
+%l1_mono_spanish <- izura_score %>% 
+%  subset(., group == "Monolingual Spanish")
+%
+%densityplot(~izura_score, 
+%            data = l1_mono_spanish, 
+%            main = 'Density plot of L1 Spanish monolingual participants') 
+%histogram(~izura_score, 
+%          data = l1_mono_spanish, 
+%          main = 'L1 Spanish monolingual participants collected')
+%
+%# L1 Spanish monolingual participants Lextale-Esp descriptive statistics 
+%l1_mono <- describe(l1_mono_spanish$izura_score) %>% 
+%  mutate(vars = "Native Spanish Monolingual") %>% 
+%  rename(group = vars)
+%
+%
+%# L2 Spanish participants Lextale-Esp distribution plots
+%# Create subset English natives
+%l2_spanish <- izura_score %>% 
+%  subset(., group == "English" | group == "L2 Learner")
+%
+%densityplot(~izura_score, 
+%            data = l2_spanish, 
+%            main = 'Density plot of L2 Spanish participants') 
+%histogram(~izura_score, 
+%          data = l2_spanish, 
+%          main = 'L2 Spanish participants collected')
+%
+%# L2 Spanish participants Lextale-Esp descriptive statistics 
+%l2 <- describe(l2_spanish$izura_score) %>% 
+%  mutate(vars = "Native English") %>% 
+%  rename(group = vars)
+%
+%
+%# Create table of group statistics
+%table_descriptives <- do.call('rbind', list(all, l1, l1_mono, l1_bi, l2))
+%
+%# Remove unnecessary objects
+%rm(all, l1, l1_mono, l1_bi, l2)
+%@
+%
+%

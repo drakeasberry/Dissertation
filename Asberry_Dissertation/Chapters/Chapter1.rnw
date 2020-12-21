@@ -1,20 +1,23 @@
 % Chapter 1 with LaTeX code only
 
 %----------------------------------------------------------------------------------------
-<<parent1, echo=FALSE, cache=FALSE>>=
-rm(list=ls())
+<<global_opts, echo=FALSE, cache=FALSE, include=FALSE>>=
 library(knitr)
-set_parent('../Dissertation.rnw')
+library(here)
+
+knitr::opts_chunk$set(
+  echo = FALSE
+)
+here::here()
+set_parent(here('Asberry_Dissertation/Dissertation.Rnw'))
 @
 %----------------------------------------------------------------------------------------
-
 
 %----------------------------------------------------------------------------------------
 % Load statistics in memory from separate file
-%<<content1, child='stat.rnw'>>=
+<<content1, child=here('Statistics/Demographics/demographic_viz.rnw'), include=FALSE>>=
 @
 %----------------------------------------------------------------------------------------
-
 
 \chapter{Introduction} % Main chapter title
 
@@ -32,8 +35,22 @@ set_parent('../Dissertation.rnw')
 %----------------------------------------------------------------------------------------
 
 \section{Introduction}
+This three article dissertation was written in order to complete the degree requirements of the Second Language Acquisition and Teaching program (SLAT) at the University of Arizona. The participant population for this dissertation are three distinct groups early and late Spanish–English bilingual speakers. The early bilingual group consists of speakers who began learning before the age of %INSERT AGE%.
+% This prints numeric variable stored
+\Sexpr{x}
+% This prints the 5th row of partNum column in eligible_part dataframe
+\Sexpr{eligible_part$partNum[5]}
 
-This three article dissertation was written in order to complete the degree requirements of the Second Language Acquisition and Teaching program (SLAT) at the University of Arizona. The participant population for this dissertation are three distinct groups early and late Spanish–English bilingual speakers. The early bilingual group consists of speakers who began learning before the age of %INSERT AGE%. 
+% This prints the density plot
+\begin{figure}[h]
+<<fig.width= 3, fig.height= 3>>=
+plot_gg_d
+@      
+\caption[Randomized Plot]{Testing the plotting placement calls}
+\label{plotRandom}
+\end{figure}
+
+
 One of the late bilingual groups consists of native English speakers who were L2 learners of Spanish while the other consists of native Spanish speakers who were L2 learners of English. The dissertation investigates the ability of these three speaker populations and their ability to use the linguistic unit, a syllable, in their language processing strategies for Spanish. The three articles that compose this dissertation---chapters 2, 3 and 4---each correspond to one independent article and utiliize the same three bilingual speaker populations discussed above.
 
 %-----------------------------------
@@ -109,7 +126,7 @@ The format for the remaining chapters of this dissertation project will be as fo
 %	SECTION 5
 %----------------------------------------------------------------------------------------
 
-\section{References}
+%\section{References}
 
 %Insert references for this chapter here.
 

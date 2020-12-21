@@ -252,7 +252,6 @@ Dissertation Director: \chairname \\
 \end{singlespacing}% needed for documents set to 1.5 or 2.0 spacing, Comment out otherwise
 
 
-
 %----------------------------------------------------------------------------------------
 %	STATEMENT BY AUTHOR
 %----------------------------------------------------------------------------------------
@@ -356,8 +355,9 @@ Dissertation Director: \chairname \\
 % This is required to appear before the first chapter of the dissertation
 
 % This calls the Abstract.rnw
+\newpage
 \Sexpr{knit_child('FrontBackMatter/Abstract.rnw')}
-
+\newpage
 %----------------------------------------------------------------------------------------
 %	THESIS CONTENT - CHAPTERS
 %----------------------------------------------------------------------------------------
