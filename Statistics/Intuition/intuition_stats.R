@@ -91,3 +91,9 @@ mydata_long <- syllable_data_no_heritage %>%
 
 # Write long form dataframe to csv
 write_csv(mydata_long, 'analyze_data/output/data_long.csv')
+
+mydata_long %>% 
+  ungroup() %>% 
+  select(partNum) %>% 
+  unique() %>% 
+  write_csv(., '../Demographics/analyze_data/from_exp_analysis/67_eligible_intuition_part.csv')
