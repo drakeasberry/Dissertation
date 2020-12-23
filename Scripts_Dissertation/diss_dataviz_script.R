@@ -13,7 +13,7 @@ library(ggplot2)
 
 # Descriptives box, point, violin plot 
 descriptive_plot <- function(data, x_data, y_data){
-  data %>% 
+  data %>%
     group_by(!!sym(x_data)) %>% 
     add_count() %>% 
     mutate(labels = ifelse(!!sym(y_data) == max(!!sym(y_data)), paste0('n = ', n), '')) %>% 
@@ -87,9 +87,40 @@ izura <- function(data, x_data, y_data){
 
 # Density plots
 density <- function(data, x_data, group){
+  grp_data <- data %>% 
+    group_by(group) %>% 
+    summarise(grp_mean = mean(izura_score)) 
+    
   data %>% 
-    ggplot(., aes(x=!!sym(x_data))) + #, 
-                  #fill = !!sym(group))) +
-    geom_density(fill="gray", outline.type = "full") +
-    geom_vline(xintercept = mean(data$izura_score), color = "blue", linetype = "dashed")
+    ggplot(., aes(x=!!sym(x_data),
+                  fill = !!sym(group),
+                  color = !!sym(group))) +
+    geom_density(aes(linetype = !!sym(group)), outline.type = "full", alpha = .3) +
+    geom_vline(data = grp_data, aes(xintercept = grp_mean, color = !!sym(group)), linetype = "dashed") +
+    coord_cartesian(xlim = c(min(eligible_izura_score$izura_score)-10,
+                             max(eligible_izura_score$izura_score)+10)) +
+    scale_color_manual(name = "Group", values = c('darkorchid4', 'goldenrod4')) +
+    scale_fill_manual(name = "Group", values = c('darkorchid4', 'goldenrod4')) +
+    scale_linetype_manual(name = "Group", values = c('solid', 'dotted')) +
+    theme_light()
+}
+
+# Density plots
+histo <- function(data, x_data, group){
+  grp_data <- data %>% 
+    group_by(group) %>% 
+    summarise(grp_mean = mean(izura_score)) 
+  
+  data %>% 
+    ggplot(., aes(x=!!sym(x_data),
+                  fill = !!sym(group),
+                  color = !!sym(group))) +
+    geom_histogram(aes(linetype = !!sym(group)),binwidth = 5, alpha = .3, position = 'identity') +
+    #geom_vline(data = grp_data, aes(xintercept = grp_mean, color = !!sym(group)), linetype = "dashed") +
+    coord_cartesian(xlim = c(min(eligible_izura_score$izura_score)-10,
+                             max(eligible_izura_score$izura_score)+10)) +
+    scale_color_manual(name = "Group", values = c('darkorchid4', 'goldenrod4')) +
+    scale_fill_manual(name = "Group", values = c('darkorchid4', 'goldenrod4')) +
+    scale_linetype_manual(name = "Group", values = c('solid', 'dotted')) +
+    theme_light()
 }
