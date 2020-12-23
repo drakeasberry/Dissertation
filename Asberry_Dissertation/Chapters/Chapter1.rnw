@@ -27,29 +27,44 @@ set_parent(here('Asberry_Dissertation/Dissertation.Rnw'))
 %	SECTION 0
 %----------------------------------------------------------------------------------------
 % Not needed for introduction
-%\section{Abstract}
+\section{Abstract}
+YOU MUST DELETE OR COMMENT IT OUT BEFORE SUBMISSION!!!!!!!!!!!!
+This includes an exmaple of testing all graphics and tables and r code used to compile document.
 
+This prints numeric variable stored: \Sexpr{x} AND this prints the 5th row of participant number column in eligible participant dataframe: \Sexpr{eligible_part$partNum[5]}. Finally we can print the density plot. To reference the figure later use (see Figure \ref{plotTestDensity}).
+\begin{figure}[h]
+\begin{center}
 
+<<elig_part_density, fig.width= 4, fig.height= 1.5>>=
+density_eligible_pooled
+density_eligible_grouped
+@      
+\caption[Density Test Plots]{Testing the plotting placement calls}
+\label{plotTestDensity}
+\end{center}
+\end{figure}
+
+\newpage
+This prints the histograms
+\begin{figure}[h]
+\begin{center}
+
+<<elig_part_hist, fig.width= 5, fig.height= 2>>=
+hist_eligible_pooled
+hist_eligible_grouped
+@      
+\caption[Histogram Test Plots]{Testing the plotting placement calls}
+\label{plotTestHistogram}
+\end{center}
+\end{figure}
+
+To reference the figure later (see Figure \ref{plotTestHistogram})
 %----------------------------------------------------------------------------------------
 %	SECTION 1
 %----------------------------------------------------------------------------------------
 
 \section{Introduction}
 This three article dissertation was written in order to complete the degree requirements of the Second Language Acquisition and Teaching program (SLAT) at the University of Arizona. The participant population for this dissertation are three distinct groups early and late Spanish–English bilingual speakers. The early bilingual group consists of speakers who began learning before the age of %INSERT AGE%.
-% This prints numeric variable stored
-\Sexpr{x}
-% This prints the 5th row of partNum column in eligible_part dataframe
-\Sexpr{eligible_part$partNum[5]}
-
-% This prints the density plot
-\begin{figure}[h]
-<<fig.width= 3, fig.height= 3>>=
-plot_gg_d
-@      
-\caption[Randomized Plot]{Testing the plotting placement calls}
-\label{plotRandom}
-\end{figure}
-
 
 One of the late bilingual groups consists of native English speakers who were L2 learners of Spanish while the other consists of native Spanish speakers who were L2 learners of English. The dissertation investigates the ability of these three speaker populations and their ability to use the linguistic unit, a syllable, in their language processing strategies for Spanish. The three articles that compose this dissertation---chapters 2, 3 and 4---each correspond to one independent article and utiliize the same three bilingual speaker populations discussed above.
 
