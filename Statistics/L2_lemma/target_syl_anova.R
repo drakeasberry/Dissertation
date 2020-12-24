@@ -8,7 +8,7 @@ library(cowplot)
 library(effsize)
 
 # Soruce Scripts containing functions
-source("../../Scripts_Dissertation/segmentation_rm_anova_script.R")
+source("../../Scripts_Dissertation/analysis_functions.R")
 
 
 # Read in data file

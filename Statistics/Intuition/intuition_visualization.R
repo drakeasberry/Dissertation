@@ -7,8 +7,8 @@ library(ggplot2)
 library(effsize)
 
 
-# Soruce Scripts containing functions
-source("../../Scripts_Dissertation/segmentation_rm_anova_script.R")
+# Source Scripts containing functions
+source("../../Scripts_Dissertation/analysis_functions.R")
 
 
 # read in the data

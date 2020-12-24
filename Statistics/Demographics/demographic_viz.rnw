@@ -19,7 +19,7 @@ library(psych)
 library(lattice)
 
 source('../../Scripts_Dissertation/diss_dataviz_script.R')
-source('../../Scripts_Dissertation/segmentation_rm_anova_script.R')
+source('../../Scripts_Dissertation/analysis_functions.R')
 @
 
 <<test1, echo=TRUE, results='asis'>>=
