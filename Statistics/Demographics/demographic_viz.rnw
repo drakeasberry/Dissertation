@@ -72,8 +72,6 @@ eligible <- describe(eligible_izura_score$izura_score) %>%
   mutate(vars = "Eligible participants") %>% 
   rename(group = vars)
 
-y <- summarise(across(.cols = ))
-
 # Get counts of participants
 # grouped by gender and group (experiment here)
 counts_byGroup <- counts(eligible_part, grouping_col = c("group", "gender"))
