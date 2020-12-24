@@ -105,7 +105,7 @@ density <- function(data, x_data, group){
     theme_light()
 }
 
-# Density plots
+# Histogram plots
 histo <- function(data, x_data, group){
   grp_data <- data %>% 
     group_by(group) %>% 
