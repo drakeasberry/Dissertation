@@ -17,6 +17,7 @@ trans_long <-  function(data, group_col){
     convert_as_factor(!!!syms(group_col))
   }
 
+# This function is working because of the summarise pass (See quoting in my_stats function below)
 trans_wide <-  function(data, group_col, summary_col){
   script_my_data_long <- data %>% 
     group_by(!!!syms(group_col)) %>% 
@@ -53,4 +54,31 @@ normality_chk <- function(data, grouping_col, variable){
     group_by(!!!syms(grouping_col)) %>% 
     shapiro_test(!!sym(variable)) %>% 
     print()  
+}
+
+# Create Tables of Demographic Participant Data
+counts <- function(data, grouping_col){
+  data %>% 
+    group_by(!!!syms(grouping_col)) %>%
+    summarise(n = n())
+}
+
+# Statistic summary for numeric columns
+my_stats <- function(data, grp_col, sum_col, stats){
+  print(grp_col)
+  data_count <- counts(data, grp_col)
+  print(data_count)
+  data %>% 
+    group_by(!!!syms(grp_col), .drop = FALSE) %>%
+    summarise(across(.cols = c(!!!syms(sum_col)), 
+                     .fns = !!stats, na.rm = TRUE,
+                     .names = "{col}_{fn}")) %>%
+    {if(!is.null(grp_col)){ 
+      left_join(., data_count, by = c(grp_col)) %>% 
+            select(all_of(grp_col), n, everything())
+    } else { 
+        cbind(., data_count) %>% 
+          select(n, everything())}
+      } %>% 
+    mutate_at(vars(ends_with("_Mean")), list(~ round(., 1)))
 }
