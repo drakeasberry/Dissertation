@@ -19,6 +19,7 @@ library(psych)
 library(lattice)
 
 source('../../Scripts_Dissertation/diss_dataviz_script.R')
+source('../../Scripts_Dissertation/segmentation_rm_anova_script.R')
 @
 
 <<test1, echo=TRUE, results='asis'>>=
@@ -45,7 +46,8 @@ density_eligible_pooled <- densityplot(~izura_score,
 density_eligible_pooled
 
 density_eligible_grouped <- eligible_izura_score %>% 
-      mutate(group = ifelse(group == 'English' | group == 'L2 Learner', 'L1 English', "L1 Spanish")) %>% 
+      mutate(group = ifelse(group == 'English' | group == 'L2 Learner', 
+                            'L1 English', "L1 Spanish")) %>% 
   density(., 'izura_score', 'group') +
   labs(title = 'Eligible Participants', 
        x = 'Izura Score', 
@@ -56,7 +58,6 @@ hist_eligible_pooled <- histogram(~izura_score,
           data = eligible_izura_score, 
           main = 'Eligible Participants') 
 
-source('../../Scripts_Dissertation/diss_dataviz_script.R')
 hist_eligible_grouped <- eligible_izura_score %>% 
       mutate(group = ifelse(group == 'English' | group == 'L2 Learner', 
                             'L1 English', "L1 Spanish")) %>% 
@@ -70,6 +71,39 @@ hist_eligible_grouped
 eligible <- describe(eligible_izura_score$izura_score) %>% 
   mutate(vars = "Eligible participants") %>% 
   rename(group = vars)
+
+y <- summarise(across(.cols = ))
+
+# Get counts of participants
+# grouped by gender and group (experiment here)
+counts_byGroup <- counts(eligible_part, grouping_col = c("group", "gender"))
+# grouped by gender only
+counts_byGender <- counts(eligible_part, grouping_col = "gender")
+
+# Get summary stats for reporting
+# grouped by gender and group (experiment here)
+eligible_grp_den_desc <- my_stats(eligible_part, 
+              grp_col = c("group", "gender"), 
+              sum_col = c("age", "span_acq_age", "eng_acq_age"),
+              stats = quote(list(Mean = mean, Min = min, Max = max)))
+
+# grouped by gender only
+eligible_gen_desc <- my_stats(eligible_part, 
+              grp_col = c("gender"), 
+              sum_col = c("age", "span_acq_age", "eng_acq_age"),
+              stats = quote(list(Mean = mean, Min = min, Max = max)))
+
+# grouped by group only
+eligible_grp_desc <- my_stats(eligible_part, 
+              grp_col = c("group"), 
+              sum_col = c("age", "span_acq_age", "eng_acq_age"),
+              stats = quote(list(Mean = mean, Min = min, Max = max)))
+
+# no group 
+eligible_desc <- my_stats(eligible_part, 
+              grp_col = NULL, 
+              sum_col = c("age", "span_acq_age", "eng_acq_age"),
+              stats = quote(list(Mean = mean, Min = min, Max = max)))
 @
 
 
