@@ -371,11 +371,12 @@ Dissertation Director: \chairname \\
 % Uncomment the lines as you write the chapters
 %\renewcommand{\chaptermarkformat}{\thechapter}
 
-\Sexpr{knit_child('Chapters/Chapter1.rnw')}
-\Sexpr{knit_child('Chapters/Chapter2.rnw')}
-\Sexpr{knit_child('Chapters/Chapter3.rnw')}
-\Sexpr{knit_child('Chapters/Chapter4.rnw')}
-\Sexpr{knit_child('Chapters/Chapter5.rnw')}
+\Sexpr{knit_child('Chapters/Chapter_Introduction.rnw')}
+\Sexpr{knit_child('Chapters/Chapter_Sampling.rnw')}
+\Sexpr{knit_child('Chapters/Chapter_Intuition.rnw')}
+\Sexpr{knit_child('Chapters/Chapter_Segmentation_Lab.rnw')}
+\Sexpr{knit_child('Chapters/Chapter_Online_Segmentation.rnw')}
+\Sexpr{knit_child('Chapters/Chapter_Conclusion.rnw')}
 \Sexpr{knit_child('Chapters/ChapterTemplate.rnw')}
 \Sexpr{knit_child('Chapters/Chapter_Instructions.rnw')}
 

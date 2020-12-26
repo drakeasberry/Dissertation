@@ -1,7 +1,7 @@
 % Chapter 1 with LaTeX code only
 
 %----------------------------------------------------------------------------------------
-<<global_opts, echo=FALSE, cache=FALSE, include=FALSE>>=
+<<global_opts_intro, echo=FALSE, cache=FALSE, include=FALSE>>=
 library(knitr)
 library(here)
 
@@ -15,7 +15,7 @@ set_parent(here('Asberry_Dissertation/Dissertation.Rnw'))
 
 %----------------------------------------------------------------------------------------
 % Load statistics in memory from separate file
-<<content1, child=here('Statistics/Demographics/demographic_viz.rnw'), include=FALSE>>=
+<<contentIntro, child=here('Statistics/Demographics/demographic_viz.rnw'), include=FALSE>>=
 @
 %----------------------------------------------------------------------------------------
 

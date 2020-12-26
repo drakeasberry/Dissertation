@@ -1,0 +1,93 @@
+% Chapter 1 with LaTeX code only
+
+%----------------------------------------------------------------------------------------
+<<global_opts_sampling, echo=FALSE, cache=FALSE, include=FALSE>>=
+library(knitr)
+library(here)
+
+knitr::opts_chunk$set(
+  echo = FALSE
+)
+here::here()
+set_parent(here('Asberry_Dissertation/Dissertation.Rnw'))
+@
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+% Load statistics in memory from separate file
+%contentSampling, child=here('Statistics/Demographics/demographic_viz.rnw'), include=FALSE>>=
+%@
+%----------------------------------------------------------------------------------------
+
+\chapter{Sampling Methods and Population} % Main chapter title
+
+\label{Chapter2} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{Chapter2}
+
+%----------------------------------------------------------------------------------------
+%	SECTION 0
+%----------------------------------------------------------------------------------------
+% Not needed for introduction
+%\section{Abstract}
+
+%----------------------------------------------------------------------------------------
+%	SECTION 1
+%----------------------------------------------------------------------------------------
+
+\section{Introduction}
+
+%-----------------------------------
+%	SECTION 2
+%-----------------------------------
+\section{Background}
+
+
+
+%-----------------------------------
+%	SECTION 3
+%-----------------------------------
+
+\section{Present Study}
+
+
+%----------------------------------------------------------------------------------------
+%	SECTION 2
+%----------------------------------------------------------------------------------------
+
+%\section{Methods}
+
+%Not needed
+
+%-----------------------------------
+%	SUBSECTION 2-1
+%-----------------------------------
+%\subsection{Participants}
+
+%Probably still important here to some degree
+
+%Give accurate descriptions of participant groups, how they were classified, number of participants, etc. 
+
+
+%----------------------------------------------------------------------------------------
+%	SECTION 3
+%----------------------------------------------------------------------------------------
+
+%\section{Results}
+
+%Not needed
+
+
+%----------------------------------------------------------------------------------------
+%	SECTION 4
+%----------------------------------------------------------------------------------------
+
+%\section{Discussion}
+%Not needed
+
+
+%----------------------------------------------------------------------------------------
+%	SECTION 5
+%----------------------------------------------------------------------------------------
+
+%\section{References}
+
+%Insert references for this chapter here.
