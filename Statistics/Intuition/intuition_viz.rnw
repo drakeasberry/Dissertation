@@ -1,3 +1,6 @@
+% Intuition Visualization Code
+
+<<intuition_lib, echo = FALSE>>=
 #!/bin/bash
 #!/usr/bin/Rscript
 
@@ -9,8 +12,9 @@ library(effsize)
 
 # Source Scripts containing functions
 source("../../Scripts_Dissertation/analysis_functions.R")
+@
 
-
+<<>>=
 # read in the data
 my_data_long <- read_csv('analyze_data/output/data_long.csv')
 
@@ -67,7 +71,7 @@ my_data_long %>%
        x = "Language Group",
        y = "") +
   scale_fill_manual(name = "Syllable Structure", values = c('darkorchid4', 'goldenrod4')) +
-  theme_minimal()
+  theme_light()
 
  
 # Check for outliers
@@ -124,7 +128,9 @@ grp_main <- afex_plot(aov,
        x = "Language Group",
        y = "Response Correct (logit)") +
   scale_color_manual(values = c('darkorchid4', 'goldenrod4')) +
+  theme_light() +
   theme(legend.position = "none")
+  
 grp_main
 
 
@@ -155,3 +161,4 @@ grp_syl_int <- afex_plot(aov,
        y = "Response Correct (logit)") +
   scale_color_manual(values = c('darkorchid4', 'goldenrod4'))
 grp_syl_int
+@
