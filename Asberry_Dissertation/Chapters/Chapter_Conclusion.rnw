@@ -1,24 +1,30 @@
-% Chapter 5 with LaTeX code only
+% Conclusion Chapter with LaTeX code only
 
 %----------------------------------------------------------------------------------------
-<<parent5, echo=FALSE, cache=FALSE>>=
-rm(list=ls())
+<<global_opts_conclusion, echo=FALSE, cache=FALSE, include=FALSE>>=
 library(knitr)
-set_parent('../Dissertation.rnw')
+library(here)
+
+knitr::opts_chunk$set(
+  echo = FALSE
+)
+here::here()
+set_parent(here('Asberry_Dissertation/Dissertation.Rnw'))
 @
 %----------------------------------------------------------------------------------------
+
 
 
 %----------------------------------------------------------------------------------------
 % Load statistics in memory from separate file
-%<<content5, child='stat.rnw'>>=
-@
+%<contentConclusion, child='stat.rnw'>>=
+%@
 %----------------------------------------------------------------------------------------
 
 
 \chapter{Conclusion} % Main chapter title
 
-\label{Chapter5} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{Chapter5}
+\label{conclusion} % for referencing this chapter elsewhere, use \ref{conclusion}
 
 %----------------------------------------------------------------------------------------
 %	SECTION 1

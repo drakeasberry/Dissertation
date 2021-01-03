@@ -1,24 +1,29 @@
-% Chapter 3 with LaTeX code only
+% Lab-based Segmentation Chapter with LaTeX code only
 
 %----------------------------------------------------------------------------------------
-<<parent3, echo=FALSE, cache=FALSE>>=
-rm(list=ls())
+<<global_opts_labseg, echo=FALSE, cache=FALSE, include=FALSE>>=
 library(knitr)
-set_parent('../Dissertation.rnw')
+library(here)
+
+knitr::opts_chunk$set(
+  echo = FALSE
+)
+here::here()
+set_parent(here('Asberry_Dissertation/Dissertation.Rnw'))
 @
 %----------------------------------------------------------------------------------------
 
 
 %----------------------------------------------------------------------------------------
 % Load statistics in memory from separate file
-%<<content3, child='stat.rnw'>>=
-@
+%<contentLabseg, child='Statistics/Segmentation/target_syl_seg_viz.rnw'>>=
+%@
 %----------------------------------------------------------------------------------------
 
 
 \chapter{Visual Word Segementation} % Main chapter title
 
-\label{Chapter3} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{Chapter3}
+\label{labseg} % for referencing this chapter elsewhere, use \ref{labseg}
 %----------------------------------------------------------------------------------------
 %	SECTION 0
 %----------------------------------------------------------------------------------------
@@ -211,7 +216,7 @@ Another avenue to investigate would be the syllabic intuitions of participants, 
 %	SECTION 5
 %----------------------------------------------------------------------------------------
 
-\section{References}
+%\section{References}
 
 % Insert references for this chapter here.
 

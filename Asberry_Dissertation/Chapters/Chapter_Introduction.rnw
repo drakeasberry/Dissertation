@@ -1,4 +1,4 @@
-% Chapter 1 with LaTeX code only
+% Introduction chapter with LaTeX code only
 
 %----------------------------------------------------------------------------------------
 <<global_opts_intro, echo=FALSE, cache=FALSE, include=FALSE>>=
