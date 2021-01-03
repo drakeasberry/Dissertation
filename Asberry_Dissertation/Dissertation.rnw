@@ -374,11 +374,11 @@ Dissertation Director: \chairname \\
 \Sexpr{knit_child('Chapters/Chapter_Introduction.rnw')}
 \Sexpr{knit_child('Chapters/Chapter_Sampling.rnw')}
 \Sexpr{knit_child('Chapters/Chapter_Intuition.rnw')}
-\Sexpr{knit_child('Chapters/Chapter_Segmentation_Lab.rnw')}
+\Sexpr{knit_child('Chapters/Chapter_Lab_Segmentation.rnw')}
 \Sexpr{knit_child('Chapters/Chapter_Online_Segmentation.rnw')}
 \Sexpr{knit_child('Chapters/Chapter_Conclusion.rnw')}
-%\Sexpr{knit_child('Chapters/ChapterTemplate.rnw')}
-%\Sexpr{knit_child('Chapters/Chapter_Instructions.rnw')}
+%\Sexpr{knit_child('Chapters/Chapter_Template.rnw')}
+%\Sexpr{knit_child('Chapters/Template_Instructions.rnw')}
 
 
 %----------------------------------------------------------------------------------------
