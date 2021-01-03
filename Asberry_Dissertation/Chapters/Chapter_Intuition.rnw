@@ -1,4 +1,4 @@
-% Chapter 2 with LaTeX code only
+% Syllabic Intuition Chapter with LaTeX code only
 
 %----------------------------------------------------------------------------------------
 <<global_opts_intuition, echo=FALSE, cache=FALSE, include=FALSE>>=
@@ -15,23 +15,23 @@ set_parent(here('Asberry_Dissertation/Dissertation.Rnw'))
 
 %----------------------------------------------------------------------------------------
 % Load statistics in memory from separate file
-%<<content2, child='stat.rnw'>>=
+<<contentIntuition, child=here('Statistics/Intuition/intuition_viz.rnw'), include=FALSE>>=
 @
 %----------------------------------------------------------------------------------------
 
-\chapter{Syllabification} % Main chapter title
+\chapter{Syllabic Intuition} % Main chapter title
 
-\label{Chapter2} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{Chapter2}
+\label{intuition} % for referencing this chapter elsewhere, use \ref{intuition}
 
 %----------------------------------------------------------------------------------------
 %	SECTION 0
 %----------------------------------------------------------------------------------------
 
-\section{Abstract}
+%\section{Abstract}
 
-Give Syllabification abstract here
+%Give Syllabification abstract here
 
-Keywords: (list all words necessary)
+%eywords: (list all words necessary)
 
 %----------------------------------------------------------------------------------------
 %	SECTION 1
@@ -41,7 +41,7 @@ Keywords: (list all words necessary)
 
 %Talk about syllabificationdifferences in syllabification between spanish and english
 
-The syllable intuition experiment is an important step in the process because how the three groups of participants syllabify the words will have a direct effect on how fast or useful the syllable is in their segmentation strategy. It is expected that syllabic intuitions will vary based on being a native speaker of Spanish, an early learner of Spanish or a late learner of Spanish. These differences are likely to stem from age of acquisition, language dominance or type of schooling. This experiment will begin to build a data source of Spanish–English bilinguals syllabification of Spanish words that will help to determine whether or not age of acquisition or language dominance are sources are different syllabification patterns. 
+The syllable intuition experiment is an important step in the process because how the two groups of participants syllabify the words will have a direct effect on how fast or useful the syllable is in their segmentation strategy. It is expected that syllabic intuitions will vary based on being a native speaker of Spanish or a late learner of Spanish. These differences are likely to stem from age of acquisition and/or language dominance. This experiment will begin to build a data source of Spanish–English bilinguals syllabification of Spanish words that will help to determine whether or not age of acquisition or language dominance are sources are different syllabification patterns. 
 
 
 %\textbf{DELETE ME Write my introduction to the syllabification article here (Will write the introduction LAST) The section of your article most likely to be read, not skimmed or skipped. The first paragraph or two is the overview of the article: describe the problem, question or theory motivating the research.} 
@@ -60,14 +60,6 @@ The syllable intuition experiment is an important step in the process because ho
 \subsection{Present Study}
 %Treiman
 
-
-\begin{figure}[th]
-\centering
-\includegraphics{Figures/three_way_test}
-\decoRule
-\caption[A test of figures]{testing 1, 2, 3}
-\label{fig:Test}
-\end{figure}
 
 
 %\textbf{DELETE ME The third section titled, “The Present Experiment” or “The Present Research”, follows and contains experimental descriptions and how they address the questions being asked. For most articles, keep your introduction under 10 pages}
@@ -180,6 +172,17 @@ Columns needed include:
 \item{response time}
 \end{enumerate}
 
+\begin{figure}[h]
+\begin{center}
+
+<<group_intuition, fig.width= 4, fig.height= 3>>=
+grp_main
+@      
+\caption[Syllable Intuition]{Estimated mariginal means for correct responses}
+\label{plotIntuitionEMM}
+\end{center}
+\end{figure}
+
 %\textbf{DELETE ME describe the analyses the researcher has done, but do not overload. Instead of creating a laundry list of statistics, create the story you want to tell using only the statistics that are related to addressing your problem. For each task, review the hypothesis, give the statistics and say what the result of the test means. Do not discuss the findings until you reach the discussion session. This is where tables and figures can help keep the paper looking clean and crisp instead of cluttered unorganized statistical test lists that are hard to follow. Figures show patterns while tables give details.}
 
 %----------------------------------------------------------------------------------------
@@ -195,7 +198,7 @@ Columns needed include:
 %	SECTION 5
 %----------------------------------------------------------------------------------------
 
-\section{References}
+%\section{References}
 
 %Insert references for this chapter here
 
