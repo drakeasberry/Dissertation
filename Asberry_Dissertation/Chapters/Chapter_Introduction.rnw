@@ -21,7 +21,7 @@ set_parent(here('Asberry_Dissertation/Dissertation.Rnw'))
 
 \chapter{Introduction} % Main chapter title
 
-\label{Chapter1} % Change X to a consecutive number; for referencing this chapter elsewhere, use \ref{Chapter2}
+\label{intro} % for referencing this chapter elsewhere, use \ref{intro}
 
 %----------------------------------------------------------------------------------------
 %	SECTION 0
@@ -100,7 +100,7 @@ found that French--English bilinguals listening to French responded in the same 
 
 %Many previous studies on lexical access have generally been conducted using the visual word recognition paradigm to study speech processing in conjunction with the syllable. Since the visual word recognition tasks have been conducted with both monolingual and bilingual populations, this dissertation seeks to add to the knowledge base of the syllable’s role through the replication of previous findings while testing a different population of bilingual speakers under the visual word recognition paradigm.
 
-Following this introductory chapter, the structure for the remainder of this dissertation consists of five addtional chapters. Chapter 2 gives a detailed account of all sampling methods and participant populations. Chapter 3 explores the representation of the syllable in the minds of Spanish–English bilinguals with a two option forced-choice syllabic intuition task. Chapters 4 and 5 utilize a visual word segmentation task to compare the efficiency of the processes employed by monolingual and bilingual speakers of Spanish. The final chapter shows how all three experimental chapters were necessary to draw the conclusions that were borne out through the various testing methodologies used to explore the role of the syllable in Spanish language processing in the current dissertation research.
+Following this introductory chapter, the structure for the remainder of this dissertation consists of five addtional chapters. Chapter \ref{sampling} gives a detailed account of all sampling methods and participant populations. Chapter \ref{intuition} explores the representation of the syllable in the minds of Spanish–English bilinguals with a two option forced-choice syllabic intuition task. Chapters \ref{labseg} and \ref{onlineseg} utilize a visual word segmentation task to compare the efficiency of the processes employed by monolingual and bilingual speakers of Spanish. Finally, chapter \ref{conclusion} shows how all three experimental chapters were necessary to draw the conclusions that were borne out through the various testing methodologies used to explore the role of the syllable in Spanish language processing in the current dissertation research.
 
 % Excluded due to access to participants from COVID-19, includes a visual priming experiment with a lexical decision task that explores the syllable’s role in lexical access by Spanish–English bilinguals.
 
