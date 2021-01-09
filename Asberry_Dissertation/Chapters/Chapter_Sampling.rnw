@@ -32,13 +32,50 @@ set_parent(here('Asberry_Dissertation/Dissertation.Rnw'))
 %----------------------------------------------------------------------------------------
 %	SECTION 1
 %----------------------------------------------------------------------------------------
+In order to better understand the role of the Spanish syllable to segment words of Spanish, three distinct populations of speakers were recruited for this dissertation project. The participants from these three populations were utilized througout the experiments conducted during this dissertation project. This chapter serves to describe how these participants were recruited, the characteristics that makes these groups distinct from one another, inclusion criteria and study conditions for them during experimentation. 
 
-\section{Introduction}
+\section{Participants}
+%Describe the participants and how they were placed in to groups, give over all demographics of them. Set acronyms for all groupshere.
+
+More generally, the three groups represented monolingual Spanish speakers (MS), native Spanish speakers who were late learners of English (NS) and native English speakers who were late learners of Spanish (LS). While the characteristics of these groups did not change overall, there were some subtle differences within the NS and LS speaker groups related to the recruitment area and study conditions. These differences were necesitated by variables beyond the researcher's control and will be discussed below in greater detail.
+
+
+Intution Group: 
+
+The participants were split into three distinct populations of Spanish–English bilinguals. The Spanish–dominant group consisted of native speakers of Spanish that lived in Sonora, Mexico and learned English after %INSERT AGE%. 
+The English–dominant group were native English speakers that lived in Tucson, Arizona and learned Spanish after%INSERT AGE%. 
+The early bilingual group consisted of participants who lived in Tucson, Arizona, but were exposed to both English and Spanish before the %INSERT AGE%.
+\emph{The participants will be placed into their appropriate group based off of the combined results of Bilingual Language Profile (BLP), the LexTALE and the LexTALE-Esp vocabulary tests.} 
+
+Based off of responses in the BLP, participants who report proficiency in a language other than English and Spanish will be removed from the data analysis. According to the findings of Lemhöfer \& Broersma \parencite*{Lemhofer2012-hz}, the LexTALE vocabulary tests can distinguish between lower intermediate (up to 59 percent), upper intermediate (60–80 percent) and advanced (above 80 percent) levels of proficiency based on average percent correct responses. Participants that score lower than %INSERT CUTOFF PERCENTAGE HERE% 
+were excluded due to having too low of a proficiency score in one of the two languages. The Spanish–dominant group had a %INSERT CUTOFF PERCENTAGE HERE% 
+success rate in Spanish and it was higher than their English success rate. The English-dominant group scored %INSERT CUTOFF PERCENTAGE HERE%
+or higher in English and it was higher than their Spanish scores. The early bilingual group had a correctness score of %INSERT CUTOFF PERCENTAGE HERE% 
+or more in both English and Spanish. %INSERT NUMBER OF PARTICIPANTS% 
+participants were excluded from the analysis due to falling below the minimum standards used to describe each group. %INSERT NUMBER OF PARTICIPANTS%
+participants were recruited from each bilingual population and are reported in the analysis section. 
+\emph{During data collection, more participants than reported here were collected since it was expected that several participants would be removed for one or more of the reasons listed above. When more than %INSERT NUMBER OF PARTICIPANTS% 
+participants remained eligible after removing participants who did not fit the population criteria, a random sampling of %INSERT NUMBER OF PARTICIPANTS% 
+participants were selected from eligible pool of participants.}
+
 
 %-----------------------------------
 %	SECTION 2
 %-----------------------------------
-\section{Background}
+\subsection{Recruitment}
+In the main section how were the each group of participants recruited
+
+\subsection{Inclusion Criteria}
+What was used to include or exclude participants. Be specific to each group here.
+
+\subsection{Bilingual Language Profile}
+Describe the use of BLP here and what it is.
+
+\subsection{LexTALE}
+Describe the original LexTALE developed for English
+
+\subsection{LexTALE-Esp}
+Describe the modified LexTALE developed for Spanish
 
 
 
@@ -46,48 +83,20 @@ set_parent(here('Asberry_Dissertation/Dissertation.Rnw'))
 %	SECTION 3
 %-----------------------------------
 
-\section{Present Study}
+\section{Study Conditions}
+Describe both the online and laboratory conditions both in Mexico and US
 
+\subsection{In-person Data Collection}
+Describe library condition and participant oreintation
 
-%----------------------------------------------------------------------------------------
-%	SECTION 2
-%----------------------------------------------------------------------------------------
-
-%\section{Methods}
-
-%Not needed
-
-%-----------------------------------
-%	SUBSECTION 2-1
-%-----------------------------------
-%\subsection{Participants}
-
-%Probably still important here to some degree
-
-%Give accurate descriptions of participant groups, how they were classified, number of participants, etc. 
-
-
-%----------------------------------------------------------------------------------------
-%	SECTION 3
-%----------------------------------------------------------------------------------------
-
-%\section{Results}
-
-%Not needed
+\subsection{Online Data Collection}
+Describe online conditions
 
 
 %----------------------------------------------------------------------------------------
 %	SECTION 4
 %----------------------------------------------------------------------------------------
 
-%\section{Discussion}
-%Not needed
+\section{Summary of Sampling Procedures}
+Recap all the variables
 
-
-%----------------------------------------------------------------------------------------
-%	SECTION 5
-%----------------------------------------------------------------------------------------
-
-%\section{References}
-
-%Insert references for this chapter here.
