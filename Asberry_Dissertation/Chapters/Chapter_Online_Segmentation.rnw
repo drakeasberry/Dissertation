@@ -61,14 +61,16 @@ set_parent(here('Asberry_Dissertation/Dissertation.Rnw'))
 %	SECTION 2
 %----------------------------------------------------------------------------------------
 
-%\section{Methods}
+\section{Methods}
+Data collection will employ fully on-line collection methods. Two follow up studies will be added to provide additional support of initial findings, the materials are the same as those from the original experiments, but presented in a different manner. The first will rerun the segmentation task (second task of original approval) with only real words in one condition and only nonwords in the other. The second addition will not use Latin-Square design, where participants only see a subset of the items, but will have all participants see all experimental items.
 
-%Not needed
+\subsection{Procedure}
+All participants will first take the LexTale-ESP (Spanish language proficiency test) on their personal computer using their preferred internet browser. Then participants will begin the experimental task, segmentation (assigned to either real word experimental condition OR nonword experimental condition), where they will see visual stimuli on the computer screen and will press a single key on their keyboard to respond to each test stimuli. At this point the experiment will end for monolingual speakers of Spanish, but for bilingual participants a third task will be given—LexTale-EN (English language proficiency test).
 
 %-----------------------------------
 %	SUBSECTION 2-1
 %-----------------------------------
-%\subsection{Participants}
+\subsection{Participants}
 
 %Probably still important here to some degree
 
@@ -79,7 +81,7 @@ set_parent(here('Asberry_Dissertation/Dissertation.Rnw'))
 %	SECTION 3
 %----------------------------------------------------------------------------------------
 
-%\section{Results}
+\section{Results}
 
 %Not needed
 
