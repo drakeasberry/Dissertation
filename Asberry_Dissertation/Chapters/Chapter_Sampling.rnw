@@ -39,7 +39,7 @@ In order to better understand the role of the Spanish syllable to segment words 
 
 More generally, the three groups represented monolingual Spanish speakers (MS), native Spanish speakers who were late learners of English (NS) and native English speakers who were late learners of Spanish (LS). While the characteristics of these groups did not change overall, there were some subtle differences within the NS and LS speaker groups related to the recruitment area and study conditions. These differences were necesitated by variables beyond the researcher's control and will be discussed below in greater detail.
 
-\subsubsection{Monolingual Spanish Speakers (MS)}
+\subsection{Monolingual Spanish Speakers (MS)}
 The monolingual Spanish (MS) participants were all recruited through Prolific, which is a participant recruiting site. %INSERT (see recruitment and inclusion criteria sections for more details). 
 In short, all participants that were recruited reported being monolingual speakers of Spanish who were born and continue to reside in Mexico to minimize the dialectal differences effect that exists between countries. This does not exclude or assume that dialectal difference do not exist within the borders of Mexico, but that simply acknowledges that these differences are not the main focus of the study. 
 
