@@ -70,6 +70,10 @@ openany, % eliminates all extra blank pages from entire document
 	%showframe, % Uncomment to show how the type block is set on the page
 }
 
+% Change the depth of numbering in (sub)sections and their display in the table of contents
+\setcounter{tocdepth}{4}
+\setcounter{secnumdepth}{4}
+
 %----------------------------------------------------------------------------------------
 %	THESIS INFORMATION
 %----------------------------------------------------------------------------------------
