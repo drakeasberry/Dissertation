@@ -43,7 +43,29 @@ More generally, the three groups represented monolingual Spanish speakers (MS), 
 The monolingual Spanish (MS) participants were all recruited through Prolific, which is a participant recruiting site. %INSERT (see recruitment and inclusion criteria sections for more details). 
 In short, all participants that were recruited reported being monolingual speakers of Spanish who were born and continue to reside in Mexico to minimize the dialectal differences effect that exists between countries. This does not exclude or assume that dialectal difference do not exist within the borders of Mexico, but that simply acknowledges that these differences are not the main focus of the study. 
 
+In total, %INSERT (num of part)
+participants that met all inclusion criteria %INSERT (see inclusion criteria sections for more details)
+. completed an experiment for this dissertation project. The participants ages ranged from %INSERT (min age) to (max age) with an average of (mean age)
+. See Table \ref{tab:ms_demographics} for an overview of this demographic information.
 
+\begin{table}
+\caption{Demographic information for MS group BLP Language Dominance, LexTALE and LexTALE-Esp}
+\label{tab:ms_demographics}
+\centering
+\begin{tabular}{c c c}
+\toprule
+Language Dominance & LexTALE & LexTALE-Esp\\
+\midrule
+-198 & 0 & 90\\
+155 & 75 & 80\\
+\bottomrule\\
+\end{tabular}
+\end{table}
+
+
+\subsection{Native Spanish Speakers (NS)}
+The participants in this group were recruited for because they represented Spanish--English bilingual group. The participants were all born and raised in Mexico and reported learning English as a second language during their school age years in Mexico. %INSERT (age: min, max and mean for learning English) 
+At the time of recruitment, all participants were students at the University of Sonora in Sonora, Mexico. 
 
 Intution Group: 
 
