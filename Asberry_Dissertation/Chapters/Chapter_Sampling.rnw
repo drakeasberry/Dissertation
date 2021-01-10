@@ -39,6 +39,11 @@ In order to better understand the role of the Spanish syllable to segment words 
 
 More generally, the three groups represented monolingual Spanish speakers (MS), native Spanish speakers who were late learners of English (NS) and native English speakers who were late learners of Spanish (LS). While the characteristics of these groups did not change overall, there were some subtle differences within the NS and LS speaker groups related to the recruitment area and study conditions. These differences were necesitated by variables beyond the researcher's control and will be discussed below in greater detail.
 
+\subsubsection{Monolingual Spanish Speakers (MS)}
+The monolingual Spanish (MS) participants were all recruited through Prolific, which is a participant recruiting site. %INSERT (see recruitment and inclusion criteria sections for more details). 
+In short, all participants that were recruited reported being monolingual speakers of Spanish who were born and continue to reside in Mexico to minimize the dialectal differences effect that exists between countries. This does not exclude or assume that dialectal difference do not exist within the borders of Mexico, but that simply acknowledges that these differences are not the main focus of the study. 
+
+
 
 Intution Group: 
 
@@ -65,8 +70,27 @@ participants were selected from eligible pool of participants.}
 \subsection{Recruitment}
 In the main section how were the each group of participants recruited
 
+\subsubsection{In-person Experiments} 
+The principle investigator will write and distribute the flyers, emails, and social media posts to instructors of the Spanish and Portuguese department at the University of Arizona and the faculty of the University of Sonora to forward along to their students and friends. Emails, flyers and social media posts will be distributed containing a brief description of the study, the type of participants that are needed and contact information for the principle investigator for those who are interested in participating. The Spanish-dominant bilingual group participants will be recruited from Hermosillo, México while the English-dominant and balanced bilingual groups will be recruited from Tucson, AZ.
+
+\subsubsection{Online Experiments} 
+Prolific is a participant recruiting site based in the UK that maintains a pool of participants who would like to participate in research studies. The company does not allow identifiable information to be collected on participants (names, emails, phone numbers, etc.), but every participant is assigned a unique ID string consisting of 24 random numbers and letters when they register for the site. This ID is used for tracking completion and payment through Prolific and was used to ensure participants did not complete multiple submissions to any experiment during data collection. 
+
 \subsection{Inclusion Criteria}
 What was used to include or exclude participants. Be specific to each group here.
+
+Participants will be chosen based on their language background profiles according to the results of the LexTale test—a proficiency test used in second language research. All participants will fall into one of three bilingual profiles: (1) Spanish–dominant bilinguals of English as a second language; (2) English–dominant bilinguals of Spanish as a second language; or (3) Heritage bilinguals who were exposed to both English and Spanish since early childhood and have a near equal command of both Spanish and English. All participants will be 18 years of age and older. Spanish-dominant and balanced bilingual groups will also need to be speakers of Mexican Spanish to ensure results are not affected by dialectal differences found between different Spanish speaking countries. No selection criteria will be based on gender.
+
+Prolific requires that participants be screened for inclusion criteria before being asked to participate and is done through the filters provided by their site. For the MS group, the filters included the following criteria: 
+
+\begin{enumerate}
+\item Country of Birth: Mexico 
+\item Current Country of Residence: Mexico
+\item First Language: Spanish
+\item Bilingual: Only Native Language
+\end{enumerate}
+
+Given these filters for inclusion, only participants who have stated in Prolific profiles that they were born in Mexico, currently reside in Mexico, Spanish was their first language, and they speak only their native language would receive notifications directly in their Prolific dashboard of the studies for which they were eligible to participate. This process while limiting the number of potential participants that meet the criteria was reduced, it provided a much more homogeneous group of participants in a relatively short period of time.
 
 \subsection{Bilingual Language Profile}
 Describe the use of BLP here and what it is.
@@ -88,6 +112,9 @@ Describe both the online and laboratory conditions both in Mexico and US
 
 \subsection{In-person Data Collection}
 Describe library condition and participant oreintation
+
+Participants recruited in Tucson, AZ will come to quiet location on the University of Arizona campus. Participants recruited in Hermosillo, Mexico will come to a quiet location on the University of Sonora campus. Participants will first take the LexTale-ESP (Spanish language proficiency test) on the computer provided by the investigator. Then participants will begin the first experimental task, segmentation, where they will see visual stimuli on the computer screen and will press a single key on a button box to respond to each test stimuli.
+
 
 \subsection{Online Data Collection}
 Describe online conditions
