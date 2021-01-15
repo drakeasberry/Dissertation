@@ -89,11 +89,6 @@ Prolific is a participant recruiting site based in the UK that maintains a pool 
 %What was used to include or exclude participants. Be specific to each group here.
 Participants were chosen based on their language background profiles according to the results of the LexTALE test—a proficiency test used in second language research, the LexTALE-Esp which is the Spanish version of the LexTALE and the Basic Language Profile (BLP) or questions adapted from the BLP. All participants were 18 years of age and older. There was no selection criteria based on gender. Both monolingual speakers and native speakers of Spanish had to use a Mexican dialect of Spanish to ensure results are not affected by dialectal differences found between different Spanish speaking countries.
 
-Following the experiment, participants were removed based off of responses given during the experiments. 
-
-
-in the BLP, participants who report proficiency in a language other than English and Spanish will be removed from the data analysis.  
-
 Participants that score lower than %INSERT CUTOFF PERCENTAGE HERE% 
 were excluded due to having too low of a proficiency score in one of the two languages. The Spanish–dominant group had a %INSERT CUTOFF PERCENTAGE HERE% 
 success rate in Spanish and it was higher than their English success rate. The English-dominant group scored %INSERT CUTOFF PERCENTAGE HERE%
@@ -117,17 +112,24 @@ For the MS group, the Prolific filters included the following criteria:
 Given these filters for inclusion, only participants who have stated in Prolific profiles that they were born in Mexico, currently reside in Mexico, Spanish was their first language, and they speak only their native language would receive notifications directly in their Prolific dashboard of the studies for which they were eligible to participate. This process while limiting the number of potential participants that meet the criteria was reduced, it provided a much more homogeneous group of participants in a relatively short period of time.
 
 \subsection{Bilingual Language Profile}
-Describe the use of BLP here and what it is.
+One instrument used in this study was the Bilingual Language Profile (BLP), which is a survey based assessment tool for determining language dominance \citep{Birdsong2012-wd}. It assesses language history, use, proficiency and attitudes of participants in less than 10 minutes. This assessment tool has been used in numerous language studies with a focus on bilingualism and is available for free under the creative commons license. This tool allowed for the collection of information about participants demographics---name, age, sex, place of residence and educational background---which took place at experiment setup in the current study. It also allowed for participants to indicate their language history, use, proficiency and attitudes and was the last task complete during the current study. Since the BLP survey was completed after all experimental trials, the participants were able to choose whether they received Spanish or English instructions for the survey. This was done intentionally to avoid potentially activating one language over another prior to experiments, which could have affected the response times being collected for Spanish items. The BLP is publicly available in a paper-based format or electronic format through the use of Google Forms. However, in an effort to make the time in the lab and feel of the experiment as seamless as possible, the participants in this dissertation took the BLP within the PsychoPy platform as well. In addition to it being the last item of the experiment, it was also untimed allowing for the participant to ask clarification questions about the survey as it was taking place.
 
-According to the findings of Lemhöfer \& Broersma \parencite*{Lemhofer2012-hz}, the LexTALE vocabulary tests can distinguish between lower intermediate (up to 59 percent), upper intermediate (60–80 percent) and advanced (above 80 percent) levels of proficiency based on average percent correct responses.
 
 \subsection{LexTALE}
-Describe the original LexTALE developed for English
+The LexTALE task is used to correlate vocabulary knowledge and language proficiency in English \citep{Lemhofer2012-hz}. According to the findings of Lemhöfer \& Broersma \parencite*{Lemhofer2012-hz}, the LexTALE vocabulary tests can distinguish between lower intermediate (up to 59 percent), upper intermediate (60–80 percent) and advanced (above 80 percent) levels of proficiency based on average percent correct responses. 
+
+The LexTALE task was used to ensure that participants were placed into the appropriate bilingual population---NS or LS groups---and did not exists as outliers to the population with which they were analyzed. The MS group did not participate in the LexTALE task for fear that they may become discouraged at the fact they must guess whether a word is real or not in a language for which they had no prior knowledge. The LS group who completed the experiment in an online setting also did not complete this task in an effort to keep the experimental enivronment as similar as possible to their comparison group, monolingual Spanish speakers. The LexTALE task is publicly available online and has been designed to run in PRAAT, Matlab and Presentations. For data collection purposes in this disseration project, participants completed both the LexTALE using PsychoPy to create the feel of a single, connected experimental session.
+
+
 
 \subsection{LexTALE-Esp}
 Describe the modified LexTALE developed for Spanish
 
+The LexTALE and the LexTALE-Esp are tasks used to correlate vocabulary knowledge and language proficiency in English and Spanish respectively \parencite{Izura2014-yw,Lemhofer2012-hz}. 
 
+The LexTALE-Esp has also been shown to discriminate well between highly proficient Spanish speaking participants with different language dominances \parencite{Ferre2017-jq}. The LexTALE and LexTALE-Esp tests will be used in order to group participants into the appropriate bilingual population—Spanish–dominant bilinguals of L2 English, English–dominant bilinguals of L2 Spanish or early bilinguals who were exposed to both English and Spanish before %INSERT AGE HERE%. 
+LexTALE is publicly available online and has been designed to run in PRAAT, Matlab and Presentations. For data collection purposes in the current study, participants completed both the LexTALE and LexTALE-Esp using PsychoPy. 
+A second instrument used in this study was the Bilingual Language Profile (BLP), which is a survey based assessment tool for determining language dominance \parencite{Birdsong2012-wd}. It assesses language history, use, proficiency and attitudes of participants in less than 10 minutes. This assessment tool has been used in numerous language studies with a focus on bilingualism and is available for free under the creative commons license. This tool allowed for the collection of information about participants demographics---name, age, sex, place of residence and educational background---which took place at experiment setup in the current study. It also allowed for participants to indicate their language history, use, proficiency and attitudes and was the last task complete during the current study. Since the BLP survey was completed after all experimental trials, the participants were able to choose whether they received Spanish or English instructions for the survey. The BLP is publicly available in a paper-based format or electronic format through the use of Google Forms. In an effort to make the experiment seamless as possible, the participants in the current study took the BLP within the PsychoPy platform as well.
 
 %-----------------------------------
 %	SECTION 3
