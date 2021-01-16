@@ -94,12 +94,23 @@ For the MS group, the Prolific filters included the following criteria:
 \end{enumerate}
 \end{singlespace}
 
-Given these filters for inclusion, only participants who have stated in Prolific profiles that they were born in Mexico, currently reside in Mexico, Spanish was their first language, and they speak only their native language would receive notifications directly in their Prolific dashboard of the studies for which they were eligible to participate. This process while limiting the number of potential participants that meet the criteria was reduced, it provided a much more homogeneous group of participants in a relatively short period of time.
+For the LS group, the Prolific filters included the following criteria: 
+
+\begin{singlespace}
+\begin{enumerate}
+\item Country of Birth: United States
+\item Current Country of Residence: United States
+\item First Language: English
+\item Were you raised monolingual?: I was raised with my native language only
+\item Bilingual: Native Language + one other language
+\item Fluent Langauges: Spanish
+\end{enumerate}
+\end{singlespace}
+
+No participants in the NS group were recruited through Prolific or took part in an online experiment. Given these filters for inclusion, only people who have stated in Prolific profiles that they were born in Mexico, currently reside in Mexico, Spanish was their first language, and they speak only their native language would receive notifications directly in their Prolific dashboard of the studies for which they were eligible to participate in the MS group. For the LS group, only people who stated that they were born and currently resided in the United States, were raised as monolingual English speakers and were only fluent in Spanish as their one other language were invited to participate. The fluent language filter deserves a slightly deeper explanation as to why it was not English and Spanish. Due to conflicts with the Prolific filter, specifying Fluent Languages as Spanish, English conflicted with the previous filters based on language. Therefore, the experiment was incorrectly advertised to all participants who listed Englis or Spanish as a fluent language, but failed to exclude other languages at the same time such as Tagalog, French or Italian. Using the Bilingual and the Fluent Languages filters together produced the correct demogrpahic pool of participants for the study and was confirmed by the datatables of demographic information provided by Prolific for participants who completed the experiment. This process while limiting the number of potential participants that meet the criteria was reduced, it provided a much more homogeneous group of participants in a relatively short period of time.
 
 
-Participants that score lower than %INSERT CUTOFF PERCENTAGE HERE% 
-were excluded due to having too low of a proficiency score in one of the two languages. The Spanish–dominant group had a %INSERT CUTOFF PERCENTAGE HERE% 
-success rate in Spanish and it was higher than their English success rate. The English-dominant group scored %INSERT CUTOFF PERCENTAGE HERE%
+Participants that score lower than \ttodo{INSERT CUTOFF PERCENTAGE HERE} were excluded due to having too low of a proficiency score in one of the two languages. The MS group had a \ttodo{INSERT CUTOFF PERCENTAGE HERE} success rate in Spanish and no English score was considered as they did not complete the LexTALE task. The NS group had a \ttodo{INSERT CUTOFF PERCENTAGE HERE} success rate in Spanish and it was higher than their English success rate of \ttodo{INSERT success peRCENTAGE HERE}. The English-dominant group scored %INSERT CUTOFF PERCENTAGE HERE%
 or higher in English and it was higher than their Spanish scores. The early bilingual group had a correctness score of %INSERT CUTOFF PERCENTAGE HERE% 
 or more in both English and Spanish. %INSERT NUMBER OF PARTICIPANTS% 
 participants were excluded from the analysis due to falling below the minimum standards used to describe each group. %INSERT NUMBER OF PARTICIPANTS%
@@ -107,6 +118,8 @@ participants were recruited from each bilingual population and are reported in t
 \emph{During data collection, more participants than reported here were collected since it was expected that several participants would be removed for one or more of the reasons listed above. When more than %INSERT NUMBER OF PARTICIPANTS% 
 participants remained eligible after removing participants who did not fit the population criteria, a random sampling of %INSERT NUMBER OF PARTICIPANTS% 
 participants were selected from eligible pool of participants.}
+
+
 \subsection{Bilingual Language Profile}
 One instrument used in this study was the Bilingual Language Profile (BLP), which is a survey based assessment tool for determining language dominance \citep{Birdsong2012-wd}. It assesses language history, use, proficiency and attitudes of participants in less than 10 minutes. This assessment tool has been used in numerous language studies with a focus on bilingualism and is available for free under the creative commons license. This tool allowed for the collection of information about participants demographics---name, age, sex, place of residence and educational background---which took place at experiment setup in the current study. It also allowed for participants to indicate their language history, use, proficiency and attitudes and was the last task complete during the current study. Since the BLP survey was completed after all experimental trials, the participants were able to choose whether they received Spanish or English instructions for the survey. This was done intentionally to avoid potentially activating one language over another prior to experiments, which could have affected the response times being collected for Spanish items. The BLP is publicly available in a paper-based format or electronic format through the use of Google Forms. However, in an effort to make the time in the lab and feel of the experiment as seamless as possible, the participants in this dissertation took the BLP within the PsychoPy platform as well. In addition to it being the last item of the experiment, it was also untimed allowing for the participant to ask clarification questions about the survey as it was taking place.
 
