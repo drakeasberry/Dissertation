@@ -21,6 +21,7 @@ Dissertation-blx.bib
 *.pdf
 *.tex
 **/cache
+*.tdo
 
 #Ignore jupyter notebook temporary files
 *ipynb_checkpoints*
