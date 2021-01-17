@@ -12,6 +12,6 @@ set_parent('../Dissertation.rnw')
 
 \chapter{LexTALE: English Version} % Main appendix title
 
-\label{Appendix_LexTale} % Change Label; for referencing this appendix elsewhere, use \ref{Appendix_LexTALE}
+\label{Appendix_LexTALE} % Change Label; for referencing this appendix elsewhere, use \ref{Appendix_LexTALE}
 
 Write your content here.
