@@ -416,7 +416,7 @@ Dissertation Director: \chairname \\
 % Uncomment the lines as you write the Appendices
 
 
-\Sexpr{knit_child('Appendices/AppendixA.rnw')}
+\Sexpr{knit_child('Appendices/Appendix_Wuggy.rnw')}
 %\Sexpr{knit_child('Appendices/AppendixB.rnw')}
 %\Sexpr{knit_child('Appendices/AppendixC.rnw')}
 
