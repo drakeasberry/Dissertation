@@ -154,7 +154,7 @@ In both in-person data collection locations, initial contact was all conducted t
 
 
 \subsection{Online Data Collection}
-Describe online conditions
+In the online data collection experiments conducted as part of the dissertation, participants completed all tasks using their own personal equipment. As a result, the same level of control over software/hardware variables that were instituted in the in-person experiments. Variables that were unable to be controlled included the computer used including operating system, input controls, and internet connection. However, the online version of PsychoPy version 2020.1.2 was kept consistent across all participants. The PsychoPy version was required in order to host the experiment on Pavlovia which runs off of Javascript. The python 3 code written for the in-person experiments was converted to Javascript using a translation tool within PyschoPy with slight modiifications to translated code to reproduce the same experimental behavior.
 
 
 %----------------------------------------------------------------------------------------
