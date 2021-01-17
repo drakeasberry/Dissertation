@@ -1,0 +1,17 @@
+% Appendix LexTALE with LaTeX code only
+
+%----------------------------------------------------------------------------------------
+%Change ParentTemplate to something unique and meaningful to your project
+<<parentLexTALE, echo=FALSE, cache=FALSE>>=
+rm(list=ls())
+library(knitr)
+set_parent('../Dissertation.rnw')
+@
+%----------------------------------------------------------------------------------------
+
+
+\chapter{LexTALE: English Version} % Main appendix title
+
+\label{Appendix_LexTale} % Change Label; for referencing this appendix elsewhere, use \ref{Appendix_LexTALE}
+
+Write your content here.

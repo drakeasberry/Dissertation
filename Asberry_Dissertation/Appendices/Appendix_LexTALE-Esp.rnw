@@ -1,0 +1,17 @@
+% Appendix LexTALE-Esp with LaTeX code only
+
+%----------------------------------------------------------------------------------------
+%Change ParentTemplate to something unique and meaningful to your project
+<<parentLexTALE-Esp, echo=FALSE, cache=FALSE>>=
+rm(list=ls())
+library(knitr)
+set_parent('../Dissertation.rnw')
+@
+%----------------------------------------------------------------------------------------
+
+
+\chapter{LexTALE-ESP: Spanish Version} % Main appendix title
+
+\label{Appendix_LexTALE-Esp} % Change Label; for referencing this appendix elsewhere, use \ref{Appendix_LexTALE-Esp}
+
+Write your content here.
