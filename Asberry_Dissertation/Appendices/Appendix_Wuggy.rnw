@@ -1,7 +1,7 @@
-% Appendix A with LaTeX code only
+% Appendix Wuggy with LaTeX code only
 
 %----------------------------------------------------------------------------------------
-<<parentA, echo=FALSE, cache=FALSE>>=
+<<parentWuggy, echo=FALSE, cache=FALSE>>=
 rm(list=ls())
 library(knitr)
 set_parent('../Dissertation.rnw')
@@ -11,7 +11,7 @@ set_parent('../Dissertation.rnw')
 
 \chapter{Wuggy Nonword Generator} % Main appendix title
 
-\label{AppendixA} % Change X to a consecutive letter; for referencing this appendix elsewhere, use \ref{AppendixX}
+\label{Appendix_Wuggy} % for referencing this appendix elsewhere, use \ref{Appendix_Wuggy}
 
 This list of 80 critical items were entered into Wuggy.app as words and the second column gave Wuggy.app the correction Spanish syllabification of each critical word—generated from within the application. I then used the verify feature to ensure all data was correct. This resulted in one error because "malena" was not found in the Wuggy.app dictionary. Therefore, I gave the correct syllabification of "ma-le-na" where hypens represent syllable boundaries. I then re-verified the data before runnning the analysis. Once I receive no errors, I ran the following analysis to generate new nonwords.
 
