@@ -31,7 +31,7 @@ set_parent(here('Asberry_Dissertation/Dissertation.Rnw'))
 YOU MUST DELETE OR COMMENT IT OUT BEFORE SUBMISSION!!!!!!!!!!!!
 This includes an exmaple of testing all graphics and tables and r code used to compile document.
 
-This prints numeric variable stored: \Sexpr{x} AND this prints the 5th row of participant number column in eligible participant dataframe: \Sexpr{eligible_part$partNum[5]}. Finally we can print the density plot. To reference the figure later use (see Figure \ref{plotTestDensity}).
+This prints numeric variable stored: \Sexpr{x} or cell from dataframe \Sexpr{eligible_grp_desc$n[3]} AND this prints the 5th row of participant number column in eligible participant dataframe: \Sexpr{eligible_part$partNum[5]}. Finally we can print the density plot. To reference the figure later use (see Figure \ref{plotTestDensity}).
 \begin{figure}[h]
 \begin{center}
 
