@@ -94,19 +94,21 @@ summary_stats <- quote(list(Mean = mean, Min = min, Max = max))
 eligible_grp_den_desc <- my_stats(eligible_part, 
               grp_col = c("group", "gender"), 
               sum_col = stat_col,
-              stats = summary_stats)
+              stats = summary_stats) 
 
 # grouped by gender only
 eligible_gen_desc <- my_stats(eligible_part, 
               grp_col = c("gender"), 
               sum_col = stat_col,
-              stats = summary_stats)
+              stats = summary_stats) %>% 
+  column_to_rownames(., var = 'gender')
 
 # grouped by group only
 eligible_grp_desc <- my_stats(eligible_part, 
               grp_col = c("group"), 
               sum_col = stat_col,
-              stats = summary_stats)
+              stats = summary_stats) %>% 
+  column_to_rownames(., var = 'group')
 
 # no group 
 eligible_desc <- my_stats(eligible_part, 
