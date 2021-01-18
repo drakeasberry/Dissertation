@@ -77,6 +77,8 @@ valid_df.remove('part205_lemma_segmentation_2020-07-10_23h29.11.532.csv')
 valid_df.remove('part221_lemma_segmentation_2020-07-09_13h22.21.239.csv')
 # part226 dropped because they reported being raised in US and having an advanced level of English
 valid_df.remove('part226_lemma_segmentation_2020-07-09_13h19.19.811.csv')
+# part232 dropped because of low score (< 10) on LexTALE-ESP
+valid_df.remove('part232_lemma_segmentation_2020-07-10_15h08.11.678.csv')
 # part251 dropped because they reported being raised in US and having an advanced level of English
 valid_df.remove('part251_lemma_segmentation_2020-07-13_23h14.18.450.csv')
 # part252 dropped because of low score (< 10) on LexTALE-ESP

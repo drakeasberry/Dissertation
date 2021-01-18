@@ -13,8 +13,8 @@ source("../../Scripts_Dissertation/diss_dataviz_script.R")
 
 # Read in all data from participants who met population criteria
 demo_data <- read_csv('analyze_data/output/online_demo_data.csv')
-
-
+ 
+  
 # Counts by participant group
 demo_data %>% 
   group_by(group) %>% 
@@ -31,7 +31,7 @@ learner_error_user <- read_csv('analyze_data/from_exp_analysis/55_eligible_onlin
 
 
 # Combine all dropped participants
-online_drop <- rbind(mono_error_user, learner_error_user) # n=21,(6 mono & 15 L2 speakers)
+online_drop <- rbind(mono_error_user, learner_error_user) # n=20,(5 mono & 15 L2 speakers)
 
 
 # Remove participants that did not perform well in experimental tasks
