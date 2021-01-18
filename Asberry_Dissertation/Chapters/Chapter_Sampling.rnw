@@ -92,9 +92,33 @@ For the online data collection period, a target of 44 participants were recruite
 \section{Inclusion Criteria}
 \label{sec:inclusion}
 %What was used to include or exclude participants. Be specific to each group here.
-Participants were chosen based on their language background profiles according to the results of the LexTALE test—a proficiency test used in second language research, the LexTALE-Esp which is the Spanish version of the LexTALE and the Basic Language Profile (BLP) or questions adapted from the BLP. General criteria for all participants included being 18 years of age and older. No participant was specifically sought after or excluded from participating based on their assigned or sefl-identified gender. In terms of native Spanish speaker recruitment, both monolingual speakers and bilingual Spanish--English speakers had to self-report using a Mexican dialect of Spanish to ensure results were not affected by dialectal differences found between different Spanish speaking countries.
+Participants were chosen based on their language background profiles according to the results of the LexTALE test—a proficiency test used in second language research, the LexTALE-Esp which is the Spanish version of the LexTALE and the Basic Language Profile (BLP) or questions adapted from the BLP. General criteria for all participants included being 18 years of age and older. No participant was specifically sought after or excluded from participating based on their assigned or sefl-identified gender. In terms of native Spanish speaker recruitment, both monolingual speakers and bilingual Spanish--English speakers self-reported using a Mexican dialect of Spanish to ensure results were not affected by dialectal differences found between different Spanish speaking countries. For in-person experiments, the participants entered this information into the computer during the course of experimentation. The specific requirements to the NS and LS groups recruited for in-person data collection are detailed next. No MS group participants were recruited for in-person data collection.
 
-For the MS group, the Prolific filters included the following criteria: 
+Requirements for the in-person NS group:
+\begin{singlespacing}
+\begin{enumerate}
+\item Country of Birth: Mexico 
+\item Current Country of Residence: Mexico
+\item Native Language: Spanish
+\item Bilingual: Grew up with only Spanish in the household and learned English in school with no reported fluency in other languages.
+\item Student Status: Currently enrolled at the University of Sonora in Hermosillo, MX
+\end{enumerate}
+\end{singlespacing}
+
+Requirements for the in-person LS group:
+\begin{singlespacing}
+\begin{enumerate}
+\item Country of Birth: United States 
+\item Current Country of Residence: United States
+\item First Language: English
+\item Bilingual: Grew up with only English in the household and learned Spanish in school with no reported fluency in other languages. Students currently enrolled in SPAN 251 (fifth semester) or higher course or their equvialents. 
+\item Student Status: Currently enrolled at the University of Arizona in Tucson, AZ.
+\end{enumerate}
+\end{singlespacing}
+
+However, Prolific requires this to be done prior to the participants being given the opportunity to complete a research study. Therefore, the resposibility fell to the researcher to correctly set up filters provided by Prolific so that the experiment was advertised to only participants meeting the criteria of the study population. The filters used to recruit the MS and LS groups online are listed below.
+
+For the online MS group, the Prolific filters included the following criteria: 
 \begin{singlespacing}
 \begin{enumerate}
 \item Country of Birth: Mexico 
@@ -104,7 +128,7 @@ For the MS group, the Prolific filters included the following criteria:
 \end{enumerate}
 \end{singlespacing}
 
-For the LS group, the Prolific filters included the following criteria: 
+For the online LS group, the Prolific filters included the following criteria: 
 \begin{singlespacing}
 \begin{enumerate}
 \item Country of Birth: United States
@@ -118,7 +142,9 @@ For the LS group, the Prolific filters included the following criteria:
 
 No participants in the NS group were recruited through Prolific or took part in an online experiment. Given these filters for inclusion, only people who have stated in Prolific profiles that they were born in Mexico, currently reside in Mexico, Spanish was their first language, and they speak only their native language would receive notifications directly in their Prolific dashboard of the studies for which they were eligible to participate in the MS group. For the LS group, only people who stated that they were born and currently resided in the United States, were raised as monolingual English speakers and were only fluent in Spanish as their one other language were invited to participate. The fluent language filter deserves a slightly deeper explanation as to why it was not English and Spanish. Due to conflicts with the Prolific filter, specifying Fluent Languages as Spanish, English conflicted with the previous filters based on language. Therefore, the experiment was incorrectly advertised to all participants who listed English or Spanish as a fluent language, but failed to exclude other languages at the same time such as Tagalog, French or Italian. Using the Bilingual and the Fluent Languages filters together produced the correct demogrpahic pool of participants for the study and was confirmed by the datatables of demographic information provided by Prolific for participants who completed the experiment. This process while limiting the number of potential participants that meet the criteria was reduced, it provided a much more homogeneous group of participants in a relatively short period of time.
 
-Participants that score lower than \ttodo{INSERT CUTOFF PERCENTAGE HERE} were excluded due to having too low of a proficiency score in one of the two languages. The MS group had a cut-off score of 10 in Spanish based on the LexTALE-Esp and no English cut-off score was considered as they did not complete the LexTALE task. The NS group had a \ttodo{INSERT CUTOFF PERCENTAGE HERE} success rate in Spanish and it was higher than their English success rate of \ttodo{INSERT success peRCENTAGE HERE}. The LS group scored \ttodo{INSERT CUTOFF PERCENTAGE HERE}or higher in English and it was higher than their Spanish scores when comparison was available---in-person participants only because the online participants did not complete the LexTALE task. Of the \ttodo{INSERT Total NUMBER OF PARTICIPANTS} participants, \ttodo{INSERT NUMBER OF PARTICIPANTS} participants were excluded from the analysis due to falling below the minimum standards used to describe each group.
+\section{Instruments}
+\label{sec:instruments}
+Three instruments were used by the researcher to check and verify participant information to ensure participants were providing valid data as well as being placed into the appropriate group. These three instruments included the Bilingual Language Profile Questionnaire (See section \ref{ssec:BLP}), the LexTALE (See section \ref{ssec:LexTALE}) and the LexTALE-Esp (See section \ref{ssec:LexTALE-Esp}) which are described in the following three sections.
 
 
 \subsection{Bilingual Language Profile}
@@ -129,7 +155,7 @@ The BLP is publicly available in a paper-based format or electronic format throu
 
 
 \subsection{LexTALE}
-\label{ssec:lexEng}
+\label{ssec:LexTALE}
 The LexTALE task is used to correlate vocabulary knowledge and language proficiency in English \citep{Lemhofer2012-hz}. According to the findings of Lemhöfer \& Broersma \parencite*{Lemhofer2012-hz}, the LexTALE vocabulary tests can distinguish between lower intermediate (up to 59 percent), upper intermediate (60–80 percent) and advanced (above 80 percent) levels of proficiency based on average percent correct responses. 
 
 The actual tests consists items. \ttodo{describe how this task works}
@@ -140,12 +166,18 @@ The LexTALE task was used to ensure that participants were placed into the appro
 
 
 \subsection{LexTALE-Esp}
-\label{ssec:lexEsp}
+\label{ssec:LexTALE-Esp}
 The LexTALE and the LexTALE-Esp are tasks used to correlate vocabulary knowledge and language proficiency in English and Spanish respectively \parencite{Izura2014-yw,Lemhofer2012-hz}. The LexTALE-Esp has also been shown to discriminate well between highly proficient Spanish speaking participants with different language dominances \parencite{Ferre2017-jq}. The LexTALE-Esp results were used to group participants into the appropriate speaker populations and allowed for comparisons across all MS, NS and LS groups. LexTALE-Esp, like the LexTALE, the materials and instructions are publicly available online, but the researcher must design their own method of administering the test electronically. Therefore, participants completed both the LexTALE-Esp using PsychoPy to avoid having to switch platforms during the experimental session. The complete list of materials for the LexTALE-Esp are included in Appendix \ref{Appendix_LexTALE-Esp}.
 
 \ttodo{What does the actual task look like}
 
 \ttodo{How  were the scores computed because it is different than the English version and its signficance to group placement}
+
+\section{Participant Exclusion}
+\label{sec:exclusion}
+Participants that score lower than \ttodo{INSERT CUTOFF PERCENTAGE HERE} were excluded due to having too low of a proficiency score in one of the two languages. The MS group had a cut-off score of 10 in Spanish based on the LexTALE-Esp and no English cut-off score was considered as they did not complete the LexTALE task. The NS group had a \ttodo{INSERT CUTOFF PERCENTAGE HERE} success rate in Spanish and it was higher than their English success rate of \ttodo{INSERT success peRCENTAGE HERE}. The LS group scored \ttodo{INSERT CUTOFF PERCENTAGE HERE}or higher in English and it was higher than their Spanish scores when comparison was available---in-person participants only because the online participants did not complete the LexTALE task. Of the \ttodo{INSERT Total NUMBER OF PARTICIPANTS} participants, \ttodo{INSERT NUMBER OF PARTICIPANTS} participants were excluded from the analysis due to falling below the minimum standards used to describe each group.
+
+
 %-----------------------------------
 %	SECTION 3
 %-----------------------------------
