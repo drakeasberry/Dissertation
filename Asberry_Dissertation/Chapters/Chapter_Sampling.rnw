@@ -31,18 +31,18 @@ set_parent(here('Asberry_Dissertation/Dissertation.Rnw'))
 %----------------------------------------------------------------------------------------
 %	SECTION 1
 %----------------------------------------------------------------------------------------
-In order to better understand the role of the Spanish syllable to segment words of Spanish, three distinct populations of speakers were recruited for this dissertation project. The participants from these three populations were utilized througout the experiments conducted during this dissertation project. This chapter serves to describe how these participants were recruited, the characteristics making these groups distinct from one another, inclusion criteria and study conditions for them during experimentation. 
+In order to better understand the role of the Spanish syllable in segmenting words of Spanish, three distinct groups of speakers were recruited for this dissertation project. The participants from these three groups were utilized througout the experiments conducted during this dissertation project. This chapter serves to describe how these participants were recruited, the characteristics making these groups distinct from one another, inclusion/exclusion criteria and study conditions for them during experimentation. 
 
 \section{Participants}
 \label{sec:participants}
 %Describe the participants and how they were placed in to groups, give over all demographics of them. Set acronyms for all groups here.
-More generally, the three groups represented monolingual Spanish speakers (MS), native Spanish speakers who were late learners of English (NS) and native English speakers who were late learners of Spanish (LS). While the characteristics of these groups did not change overall, there were some subtle differences within the NS and LS speaker groups related to the recruitment area and study conditions. These differences were necesitated by variables beyond the researcher's control and will be discussed below in greater detail.
+More generally, the three groups represented monolingual Spanish speakers (MS), native Spanish speakers who were late learners of English (NS) and native English speakers who were late learners of Spanish (LS). While the characteristics of these groups did not change overall, there were some subtle differences within the LS speaker group related to the recruitment area and study conditions. These differences were necesitated by variables beyond the researcher's control and will be discussed below in greater detail.
 
 \subsection{Monolingual Spanish Speakers (MS)}
 \label{ssec:groupMS}
-The monolingual Spanish (MS) participants were all recruited through Prolific, which is a participant recruiting site. \ttodo{INSERT citation} See recruitment and inclusion criteria sections, section \ref{sec:recruit} and section \ref{sec:inclusion} respectively, for more details. In short, all participants that were recruited reported being monolingual speakers of Spanish who were born and continue to reside in Mexico to minimize the dialectal differences effect that exists between countries. This does not exclude or assume that dialectal difference do not exist within the borders of Mexico, but that simply acknowledges that these differences are not the main focus of the study. 
+The monolingual Spanish (MS) participants were all recruited through Prolific, which is a participant recruiting site. \ttodo{INSERT citation} See recruitment and inclusion criteria sections, section \ref{sec:recruit} and section \ref{sec:inclusion} respectively, for more details. In short, all participants that were recruited reported being monolingual speakers of Spanish who were born and continue to reside in Mexico. This allowed researchers to minimize the dialectal differences effect that exists between Spanish speaking countries. This does not exclude or assume that dialectal difference do not exist within the borders of Mexico, but simply acknowledges that these differences are not the main focus of the study. 
 
-In total, \Sexpr{eligible_grp_desc["Monolingual Spanish","n"]} participants that met all inclusion criteria completed an experiment for this dissertation project. See inclusion criteria, section \ref{sec:inclusion}, for complete details used in the inclusion/exclusion of participants. The participants ages ranged from \ttodo{INSERT min age to max age with an average of mean age}. See Table \ref{tab:ms_demographics} for an overview of this demographic information.
+In total, \Sexpr{eligible_grp_desc["Monolingual Spanish","n"]} participants that met all inclusion criteria completed an experiment for this dissertation project. See inclusion criteria, section \ref{sec:inclusion}, and exclusion criteria, section \ref{sec:exclusion}, for complete details used to include participants in a particular group and exclude them from data analysis when necessary. The participants ages ranged from \ttodo{INSERT min age to max age with an average of mean age}. See Table \ref{tab:ms_demographics} for an overview of this demographic information.
 
 \begin{table}
 \caption{Demographic information for MS group BLP Language Dominance, LexTALE and LexTALE-Esp}
@@ -63,11 +63,39 @@ Fill & Me & Out\\
 \label{ssec:groupNS}
 The participants in this group were recruited because they represented L1-Spanish--L2-English bilingual group. The participants were all born and raised in Mexico and reported learning English as a second language during their school age years in Mexico. \ttodo{INSERT age: min, max and mean for learning English}. At the time of recruitment, all participants were students at the University of Sonora in Hermosillo, Mexico. 
 
+For the current project, \Sexpr{eligible_grp_desc["Spanish","n"]} participants meeting all inclusion criteria completed an experiment. Section \ref{sec:inclusion} and section \ref{sec:exclusion} describe all inclusion and exclusion details. The participants ages ranged from \ttodo{INSERT min age to max age with an average of mean age}. See Table \ref{tab:ns_demographics} for an overview of this demographic information.
+
+\begin{table}
+\caption{Demographic information for MS group BLP Language Dominance, LexTALE and LexTALE-Esp}
+\label{tab:ns_demographics}
+\centering
+\begin{tabular}{c c c}
+\toprule
+Language Dominance & LexTALE & LexTALE-Esp\\
+\midrule
+Fill & Me & Out\\
+Fill & Me & Out\\
+\bottomrule\\
+\end{tabular}
+\end{table}
+
 \subsection{Late Learners of Spanish (LS)}
 \label{ssec:groupLS}
-This group of participants consisted of native English speakers who were born and currently resided in the US. They all reported learning English during their school age years while attending school in the United States. \ttodo{INSERT age: min, max and mean for learning Spanish}. There were two different recruitment stages for this group of participants. For those that completed in-person experiments, they were all recruited from the University of Arizona campus in Tucson, Arizona. This subpopulation was was mainly recruited from Spanish classes at the 5th semester and beyond. However, flyers were also distributed around campus looking for volunteers which brought participants that were not currently registered in Spanish classes, but self-reported being able to speak Spanish. The second subpopulation of this group was recruited through Prolific. Like those that completed in-person experiments, these participants self-reported being able to speak Spanish and being raised as monolingual English speakers who were born and currently reside in the US. They differed in that they were recruited online and were not current students at the University of Arizona.
+This group of participants consisted of native English speakers who were born and currently resided in the US. They all reported learning English during their school age years while attending school in the United States. \ttodo{INSERT age: min, max and mean for learning Spanish}. There were two different recruitment stages for this group of participants. For those that completed in-person experiments, they were all recruited from the University of Arizona campus in Tucson, Arizona. \Sexpr{eligible_grp_desc["English","n"]} participants made up this subgroup, which were mainly recruited from Spanish classes where students were currently enrolled in 5th semester or beyond. However, flyers were also distributed around campus looking for volunteers which brought participants that were not currently registered in Spanish classes, but self-reported being able to speak Spanish. The second subgroup of L2 Spanish learners, \Sexpr{eligible_grp_desc["L2 Learner","n"]} participants, were recruited through Prolific. Similar to the LS subgroup that completed in-person experiments, these participants self-reported being able to speak Spanish and being raised as monolingual English speakers who were born and currently reside in the US. They differed in that they were recruited online and were not current students at the University of Arizona. See Table \ref{tab:ls_demographics} for an overview of this demographic information.
 
-
+\begin{table}
+\caption{Demographic information for MS group BLP Language Dominance, LexTALE and LexTALE-Esp}
+\label{tab:ls_demographics}
+\centering
+\begin{tabular}{c c c}
+\toprule
+Language Dominance & LexTALE & LexTALE-Esp\\
+\midrule
+Fill & Me & Out\\
+Fill & Me & Out\\
+\bottomrule\\
+\end{tabular}
+\end{table}
 
 %-----------------------------------
 %	SECTION 2
@@ -78,15 +106,15 @@ Participant recruitment took on two separate forms for the experiments included 
 
 \subsection{In-person Experiments} 
 \label{ssec:recruit-person}
-The principle investigator wrote and distributed the flyers and emails to instructors of the Spanish and Portuguese department at the University of Arizona and the faculty of the University of Sonora to forward along to their students and friends. All emails and flyers that were distributed contained a brief description of the study, the type of participants that were needed and contact information for the principle investigator for those who were interested in participating. The emails and flyers were written in the laguage of the country where recruitment was taking place. The NS participants were recruited from Hermosillo, México while the LS participants were recruited from Tucson, Arizona. 
+The principle investigator wrote and distributed flyers and emails to instructors of the Spanish and Portuguese department at the University of Arizona and the faculty of the University of Sonora to forward along to their students, friends and colleagues. All emails and flyers that were distributed contained a brief description of the study, the type of participants that were needed and contact information for the principle investigator for those who were interested in participating. The emails and flyers were written in the laguage of the country where recruitment was taking place. The NS participants were recruited from Hermosillo, México while the LS participants were recruited from Tucson, Arizona. 
 
-During the data collection period, a target of 40 participants were recruited for both the NS and LS groups. This number was higher than the number of participants needed to run the statistics with sufficient power, but was purposefully done since it was expected that several participants would be removed for one or more of the reasons described in the inclusion criteria---section \ref{sec:inclusion}. In the end, only \ttodo{INSERT NS NUMBER OF PARTICIPANTS} NS participants and \ttodo{INSERT NS NUMBER OF PARTICIPANTS} LS participants were recruited before social distancing measure were put into place. 
+During the data collection period, a recruitment target of 40 participants for both the NS and LS groupswas set. This target number was higher than the number of participants needed to run the statistical analysis with sufficient power following previous research studies as a model \ttodo{Insert citations}. Setting the recruitment target higher than needed was purposefully done since it was expected that several participants would be removed for one or more of the reasons described in the inclusion criteria---section \ref{sec:inclusion}. In the end, only \Sexpr{eligible_grp_desc["Spanish","n"]} NS participants and \Sexpr{eligible_grp_desc["English","n"]} LS participants were recruited before social distancing measures were put into place. 
 
 \subsection{Online Experiments} 
 \label{ssec:recruit-online}
-Prolific is a participant recruiting site based in the UK that maintains a pool of participants who would like to participate in research studies. The company does not allow identifiable information to be collected on participants (names, emails, phone numbers, etc.), but every participant is assigned a unique ID string consisting of 24 random numbers and letters when they register for the site. This ID is used for tracking completion and payment through Prolific and was used to ensure participants did not complete multiple submissions to any one experiment during data collection. Prolific requires that participants be screened for inclusion criteria before being asked to participate and is done through the filters provided by their site. As a result, the research simply setup the filters that describes the population of interest and Prolific advertises it to its registered applicant pool based on their self reported asnwers when they created their Prolific accounts. People who have answered questions that would eliminate their eligibility to certain population demograhic are never presented the opportunity to complete the experiment. This allowed for a large sample of participants to be gathered in a short amount of time with minimal effort given to the screening process from the researcher.
+Prolific is a participant recruiting site based in the UK that maintains a pool of participants who would like to participate in research studies. The company does not allow identifiable information to be collected on participants (names, emails, phone numbers, etc.), but every participant is assigned a unique ID string consisting of 24 random numbers and letters when they register for the site. This ID is used for tracking completion and payment through Prolific. The researchers used this ID to ensure participants did not complete multiple submissions to any one experiment during data collection. Prolific requires that participants be screened for inclusion criteria before being asked to participate and is done through the filters provided by their site. As a result, the researcher simply set up the filters that described the groups of interest and Prolific advertises it to its registered applicant pool based on their self reported asnwers when they created their Prolific accounts. People who have answered questions that would eliminate their eligibility to certain group demograhic are never presented the opportunity to complete the experiment. This allowed for a large sample of participants to be gathered in a short amount of time with minimal effort given to the screening process from the researcher.
 
-For the online data collection period, a target of 44 participants were recruited for both the MS and LS groups. This number was derived from a statistical power test run by the researhcers prior to beginning data collection. The researchers used the LexTALE-ESP and repsonse accuaracy scores, described in the inclusion section \ref{sec:inclusion} below, as a daily check on the number of participants who had completed the online experiment in good faith. This daily check was repeated until the numbe rof participants needed had been reached.
+For the online data collection period, a target of 44 participants were recruited for both the MS and LS groups. This number was derived from a statistical power test run by the researchers prior to beginning data collection. The researchers used the LexTALE-ESP and repsonse accuaracy scores, described in the exclusion criteria (section \ref{sec:exclusion}), as a daily check on the number of participants who had completed the online experiment in good faith. This daily check was repeated until the number of participants needed had been reached and the study on Prolific's site was closed.
 
 
 \section{Inclusion Criteria}
@@ -167,7 +195,7 @@ The LexTALE task was used to ensure that participants were placed into the appro
 
 \subsection{LexTALE-Esp}
 \label{ssec:LexTALE-Esp}
-The LexTALE and the LexTALE-Esp are tasks used to correlate vocabulary knowledge and language proficiency in English and Spanish respectively \parencite{Izura2014-yw,Lemhofer2012-hz}. The LexTALE-Esp has also been shown to discriminate well between highly proficient Spanish speaking participants with different language dominances \parencite{Ferre2017-jq}. The LexTALE-Esp results were used to group participants into the appropriate speaker populations and allowed for comparisons across all MS, NS and LS groups. LexTALE-Esp, like the LexTALE, the materials and instructions are publicly available online, but the researcher must design their own method of administering the test electronically. Therefore, participants completed both the LexTALE-Esp using PsychoPy to avoid having to switch platforms during the experimental session. The complete list of materials for the LexTALE-Esp are included in Appendix \ref{Appendix_LexTALE-Esp}.
+The LexTALE and the LexTALE-Esp are tasks used to correlate vocabulary knowledge and language proficiency in English and Spanish respectively \parencite{Izura2014-yw,Lemhofer2012-hz}. The LexTALE-Esp has also been shown to discriminate well between highly proficient Spanish speaking participants with different language dominances \parencite{Ferre2017-jq}. The LexTALE-Esp results were used to group participants into the appropriate speaker groups and allowed for comparisons across all MS, NS and LS groups. LexTALE-Esp, like the LexTALE, the materials and instructions are publicly available online, but the researcher must design their own method of administering the test electronically. Therefore, participants completed both the LexTALE-Esp using PsychoPy to avoid having to switch platforms during the experimental session. The complete list of materials for the LexTALE-Esp are included in Appendix \ref{Appendix_LexTALE-Esp}.
 
 \ttodo{What does the actual task look like}
 
