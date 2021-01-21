@@ -120,7 +120,7 @@ For the online data collection period, a target of 44 participants were recruite
 \section{Inclusion Criteria}
 \label{sec:inclusion}
 %What was used to include or exclude participants. Be specific to each group here.
-Participants were chosen based on their language background profiles according to the results of the LexTALE test—a proficiency test used in second language research, the LexTALE-Esp which is the Spanish version of the LexTALE and the Basic Language Profile (BLP) or questions adapted from the BLP. General criteria for all participants included being 18 years of age and older. No participant was specifically sought after or excluded from participating based on their assigned or sefl-identified gender. In terms of native Spanish speaker recruitment, both monolingual speakers and bilingual Spanish--English speakers self-reported using a Mexican dialect of Spanish to ensure results were not affected by dialectal differences found between different Spanish speaking countries. For in-person experiments, the participants entered this information into the computer during the course of experimentation. The specific requirements to the NS and LS groups recruited for in-person data collection are detailed next. No MS group participants were recruited for in-person data collection.
+Participants were chosen based on their language background profiles according to the results of the LexTALE test—a vocabulary based proficiency test used in second language research, the LexTALE-Esp which is the Spanish version of the LexTALE and the Basic Language Profile (BLP) or questions adapted from the BLP. General criteria for all participants included being 18 years of age and older. No participant was specifically sought after or excluded from participating based on their assigned or self-identified gender. In terms of native Spanish speaker recruitment, both monolingual speakers and bilingual Spanish--English speakers had to self-report using a Mexican dialect of Spanish to ensure results were not affected by dialectal differences found between different Spanish speaking countries. The participants entered this information into the computer during the course of experimentation. The specific requirements for the NS and LS groups recruited for in-person data collection are detailed next. No MS group participants were recruited for in-person data collection.\newline
 
 Requirements for the in-person NS group:
 \begin{singlespacing}
@@ -129,7 +129,7 @@ Requirements for the in-person NS group:
 \item Current Country of Residence: Mexico
 \item Native Language: Spanish
 \item Bilingual: Grew up with only Spanish in the household and learned English in school with no reported fluency in other languages.
-\item Student Status: Currently enrolled at the University of Sonora in Hermosillo, MX
+\item Student Status: Currently enrolled at the University of Sonora in Hermosillo, MX\newline
 \end{enumerate}
 \end{singlespacing}
 
@@ -139,12 +139,12 @@ Requirements for the in-person LS group:
 \item Country of Birth: United States 
 \item Current Country of Residence: United States
 \item First Language: English
-\item Bilingual: Grew up with only English in the household and learned Spanish in school with no reported fluency in other languages. Students currently enrolled in SPAN 251 (fifth semester) or higher course or their equvialents. 
+\item Bilingual: Grew up with only English in the household and learned Spanish in school with no reported fluency in other languages. Students had enrolled in SPAN 251 (fifth semester) or higher course in the Department of Spanish and Portuguese or their equvialents. 
 \item Student Status: Currently enrolled at the University of Arizona in Tucson, AZ.
 \end{enumerate}
 \end{singlespacing}
 
-However, Prolific requires this to be done prior to the participants being given the opportunity to complete a research study. Therefore, the resposibility fell to the researcher to correctly set up filters provided by Prolific so that the experiment was advertised to only participants meeting the criteria of the study population. The filters used to recruit the MS and LS groups online are listed below.
+Unlike participants who were recruited for in-person experiments, online recruitment procedures differed due to the recruitment site regulations. Prolific requires all inclusion criteria to be done prior to the participants being given the opportunity to complete a research study. Therefore, the resposibility fell to the researcher to correctly set up filters provided by Prolific so that the experiment was advertised to only participants meeting the criteria of the study population. The filters used to recruit the MS and LS groups online are listed below.\newline
 
 For the online MS group, the Prolific filters included the following criteria: 
 \begin{singlespacing}
@@ -152,7 +152,7 @@ For the online MS group, the Prolific filters included the following criteria:
 \item Country of Birth: Mexico 
 \item Current Country of Residence: Mexico
 \item First Language: Spanish
-\item Bilingual: Only Native Language
+\item Bilingual: Only Native Language\newline
 \end{enumerate}
 \end{singlespacing}
 
@@ -168,7 +168,9 @@ For the online LS group, the Prolific filters included the following criteria:
 \end{enumerate}
 \end{singlespacing}
 
-No participants in the NS group were recruited through Prolific or took part in an online experiment. Given these filters for inclusion, only people who have stated in Prolific profiles that they were born in Mexico, currently reside in Mexico, Spanish was their first language, and they speak only their native language would receive notifications directly in their Prolific dashboard of the studies for which they were eligible to participate in the MS group. For the LS group, only people who stated that they were born and currently resided in the United States, were raised as monolingual English speakers and were only fluent in Spanish as their one other language were invited to participate. The fluent language filter deserves a slightly deeper explanation as to why it was not English and Spanish. Due to conflicts with the Prolific filter, specifying Fluent Languages as Spanish, English conflicted with the previous filters based on language. Therefore, the experiment was incorrectly advertised to all participants who listed English or Spanish as a fluent language, but failed to exclude other languages at the same time such as Tagalog, French or Italian. Using the Bilingual and the Fluent Languages filters together produced the correct demogrpahic pool of participants for the study and was confirmed by the datatables of demographic information provided by Prolific for participants who completed the experiment. This process while limiting the number of potential participants that meet the criteria was reduced, it provided a much more homogeneous group of participants in a relatively short period of time.
+No participants in the NS group were recruited through Prolific or took part in an online experiment. Given these filters for inclusion, only people who have stated in Prolific profiles that they were born in Mexico, currently reside in Mexico, Spanish was their first language, and they speak only their native language would receive notifications directly in their Prolific dashboard of the studies for which they were eligible to participate as a representative of the MS group. For the LS group, only people who stated that they were born and currently resided in the United States, were raised as monolingual English speakers and were only fluent in Spanish as their one other language were invited to participate. 
+
+The fluent language filter listed under NS group deserves a slightly deeper explanation as to why it was not English and Spanish. Due to conflicts with the Prolific filter, specifying Fluent Languages as Spanish and English produced unexpected results. Therefore, the experiment was incorrectly advertised to all participants who listed English or Spanish as a fluent language, but failed to exclude other languages at the same time such as Tagalog, French or Italian. Using the Bilingual and the Fluent Languages filters together produced the correct demographic pool of participants for the study and was confirmed by the data files of demographic information provided by Prolific for participants who completed the experiment. This process while limiting the number of potential participants that met the criteria was reduced, it provided a much more homogeneous group of participants in a relatively short period of time.
 
 \section{Instruments}
 \label{sec:instruments}
