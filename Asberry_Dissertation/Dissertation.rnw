@@ -55,6 +55,7 @@ openany, % eliminates all extra blank pages from entire document
 
 \usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
 
+\usepackage{amsmath} % Required to format math based equations
 %----------------------------------------------------------------------------------------
 % TODO PACKAGE
 %----------------------------------------------------------------------------------------
@@ -88,7 +89,7 @@ openany, % eliminates all extra blank pages from entire document
 %----------------------------------------------------------------------------------------
 % Replace content within green curly brackets to reflect your own work and names
 
-\thesistitle{Syllabification, Visual Segmentation and Visual Word Recognition in Spanish–English Bilinguals} % Your thesis title, this is used in the title, committee approval and abstract pages, print it elsewhere with \ttitle
+\thesistitle{Syllabification and Visual Word Segmentation in Spanish–English Bilinguals} % Your thesis title, this is used in the title, committee approval and abstract pages, print it elsewhere with \ttitle
 
 \chair{Dr. Miquel Simonet} % Your dissertation chair's name, this is used in the title, abstract and committee approval pages, print it elsewhere with \chairname
 
@@ -138,9 +139,14 @@ openany, % eliminates all extra blank pages from entire document
 \pagestyle{plain} % Default to the plain heading style until the thesis style is called for the body content
 
 
-%-------------------------------------------------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------------------
 %	Pre-Thesis Content
-%-------------------------------------------------------------------------------------------------------------------------------
+%------------------------------------------------------------------------------------------------
+% Minimize added spacing above and below equations
+\setlength{\belowdisplayskip}{0pt}
+\setlength{\belowdisplayshortskip}{0pt}
+\setlength{\abovedisplayskip}{0pt}
+\setlength{\abovedisplayshortskip}{0pt}
 
 %----------------------------------------------------------------------------------------
 %	TITLE PAGE
