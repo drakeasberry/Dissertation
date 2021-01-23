@@ -219,13 +219,19 @@ The participants who completed experiments online saw modified versions of BLP q
 
 \subsection{LexTALE}
 \label{ssec:LexTALE}
-The LexTALE task is used to correlate vocabulary knowledge and language proficiency in English \citep{Lemhofer2012-hz}. According to the findings of Lemhöfer \& Broersma \parencite*{Lemhofer2012-hz}, the LexTALE vocabulary tests can distinguish between lower intermediate (up to 59 percent), upper intermediate (60–80 percent) and advanced (above 80 percent) levels of proficiency based on average percent correct responses. 
+In order to better understand the English language proficiency of participants, a Lexical Test for Advanced Learners of English (LexTALE) was used. The LexTALE contains 60 vocabulary items presented as an untimed visual lexical decision task. The LexTALE task is used to correlate vocabulary knowledge and language proficiency in English \citep{Lemhofer2012-hz}. According to the findings of Lemhöfer \& Broersma \parencite*{Lemhofer2012-hz}, that self-ratings such as writing, reading, listening and speaking proficiency, while significant in some cases, did not have the same predicative power as the LexTALE for translation accuracy and overall proficiency. For example, the LexTALE vocabulary test was able to distinguish between lower intermediate (up to 59 percent), upper intermediate (60–80 percent) and advanced (above 80 percent) levels of proficiency based on average percent correct responses. In terms of word recognition experiments, the LexTALE remained a significant predictor of success while self-ratings was not. The LexTALE task is publicly available online at www.lextale.com and has been designed to run in PRAAT, Matlab and Presentations. For data collection purposes in this disseration project, participants completed both the LexTALE using PsychoPy to create the feel of a single, connected experimental session.
+
+Similar to the BLP, on participants in the NS and LS groups that completed experiments in-person took the LexTALE. The MS group did not participate in the LexTALE task for fear that they may become discouraged at the fact they must guess whether a word is real or not in a language for which they had no prior knowledge when the experiment was advertised as a Spanish language study. As a result, the LS group who completed the experiment in an online setting did not complete this task in an effort to keep the experimental enivronment as similar as possible to their comparison MS group, monolingual Spanish speakers. Also like the BLP task, the LexTALE task also followed all tasks where Spanish and reaction times in relation to processing Spanish were recorded. This allowed the allowed the instructions for the task to be presented to participants in English or Spanish based off of their response to \emph{preferred language} in the experiment startup dialog box.
+
+For the participants completing the LexTALE, they first saw an instruction
+
+ 
 
 The actual tests consists items. \ttodo{describe how this task works}
+\ttodo{How were the scores computed and its significance for each group}
 
-The LexTALE task was used to ensure that participants were placed into the appropriate bilingual population---NS or LS groups---and did not exists as outliers to the population with which they were analyzed. The MS group did not participate in the LexTALE task for fear that they may become discouraged at the fact they must guess whether a word is real or not in a language for which they had no prior knowledge. The LS group who completed the experiment in an online setting also did not complete this task in an effort to keep the experimental enivronment as similar as possible to their comparison group, monolingual Spanish speakers. The LexTALE task is publicly available online and has been designed to run in PRAAT, Matlab and Presentations. For data collection purposes in this disseration project, participants completed both the LexTALE using PsychoPy to create the feel of a single, connected experimental session. 
 
-\ttodo{How were the scores computed and its significance for each group}A full list of items and materials used in this project can be found in Appendix \ref{Appendix_LexTALE}.
+A full list of items and materials used in this project can be found in Appendix \ref{Appendix_LexTALE}.
 
 
 \subsection{LexTALE-Esp}
@@ -238,6 +244,9 @@ The LexTALE and the LexTALE-Esp are tasks used to correlate vocabulary knowledge
 
 \section{Participant Exclusion}
 \label{sec:exclusion}
+
+The LexTALE task was used to ensure that participants were placed into the appropriate bilingual population---NS or LS groups---and did not exists as outliers to the population with which they were analyzed. 
+
 Participants that score lower than \ttodo{INSERT CUTOFF PERCENTAGE HERE} were excluded due to having too low of a proficiency score in one of the two languages. The MS group had a cut-off score of 10 in Spanish based on the LexTALE-Esp and no English cut-off score was considered as they did not complete the LexTALE task. The NS group had a \ttodo{INSERT CUTOFF PERCENTAGE HERE} success rate in Spanish and it was higher than their English success rate of \ttodo{INSERT success peRCENTAGE HERE}. The LS group scored \ttodo{INSERT CUTOFF PERCENTAGE HERE}or higher in English and it was higher than their Spanish scores when comparison was available---in-person participants only because the online participants did not complete the LexTALE task. Of the \ttodo{INSERT Total NUMBER OF PARTICIPANTS} participants, \ttodo{INSERT NUMBER OF PARTICIPANTS} participants were excluded from the analysis due to falling below the minimum standards used to describe each group.
 
 
