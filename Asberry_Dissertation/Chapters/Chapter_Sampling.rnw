@@ -125,7 +125,7 @@ For the online data collection period, a target of 44 participants were recruite
 \section{Inclusion Criteria}
 \label{sec:inclusion}
 %What was used to include or exclude participants. Be specific to each group here.
-Participants were chosen based on their language background profiles according to the results of the LexTALE test—a vocabulary based proficiency test used in second language research, the LexTALE-Esp which is the Spanish version of the LexTALE and the Basic Language Profile (BLP) or questions adapted from the BLP. General criteria for all participants included being 18 years of age and older. No participant was specifically sought after or excluded from participating based on their assigned or self-identified gender. In terms of native Spanish speaker recruitment, both monolingual speakers and bilingual Spanish--English speakers had to self-report using a Mexican dialect of Spanish to ensure results were not affected by dialectal differences found between different Spanish speaking countries. The participants entered this information into the computer during the course of experimentation. 
+Participants were chosen based on their language background profiles according to the results of the LexTALE test—a vocabulary based proficiency test used in second language research, the LexTALE-Esp which is the Spanish version of the LexTALE and the Bilingual Language Profile (BLP) or questions adapted from the BLP. General criteria for all participants included being 18 years of age and older. No participant was specifically sought after or excluded from participating based on their assigned or self-identified gender. In terms of native Spanish speaker recruitment, both monolingual speakers and bilingual Spanish--English speakers had to self-report using a Mexican dialect of Spanish to ensure results were not affected by dialectal differences found between different Spanish speaking countries. The participants entered this information into the computer during the course of experimentation. 
 
 \subsection{In-person Participant Groups} 
 The specific requirements for the NS and LS groups recruited for in-person data collection are detailed next. No MS group participants were recruited for in-person data collection.\newline
@@ -204,7 +204,15 @@ In order to calculate the language dominance score for a participant, a module s
 
 \subparagraph{Language History.}
 The language history section contains six questions on a scale range of 0 to 20 and is the most complicated section for scoring. The first two questions ask about the age of learning a language and being comfortable with a language, which have a reverse scoring. For example learning a language at the age of 1 actually scores 19 and starting to feel comfortable using the language at 19 will score a 1 and 20+ will score a zero for the calculation. These first two questions also have phrasal responses where the zero represents response \emph{Not yet} and 20 represents phrasal responses \emph{Since birth} and \emph{For as long as I can remember}. The remaining four questions in this section ask about time frames measured in number of years, which have a 1 to 1 relationship with the scale and its value in the calculation. For example, living in a family speaking a particular language for 1 year scores a value of 1 for the calculation and 20+ scores a 20. 
-
+\begin{gather}
+English_{History} = Q1a + Q2a + Q3a + Q4a + Q5a + Q5a + Q6a\\
+Spanish_{History} = Q1b + Q2b + Q3b + Q4b + Q5b + Q5b + Q6b
+\end{gather}
+\begin{align*}
+\intertext{where:}
+a & = \text{questions asking about English language history}\\[-2ex]
+b & = \text{questions asking about Spanish language history}\\[-2ex]
+\end{align*}
 \subparagraph{Language Use.}
 The second section, language use, asks five questions about a participant's language use of language 1, language 2 and other languages. In the case of this project, language 1 was English while language 2 was Spanish. This section was the most confusing for participants because the sum of all languages must equal 100 percent and participants had a difficult time tracking the percentages that they gave to each language. Due to technical limitations, the tick marks on the scale in PsychoPy were displayed as 0 to 10 where 0 represented 0 percent and 10 represented 100 percent, which added to the confusion. At the start of this section in the questionnaire, the researcher walked the participants through the instructions and checked for understanding. Many times the researcher had to offer a personal example in order to try to minimize the confusion which could have led to participants submitting inaccurate percentage data for this section. 
 
@@ -249,19 +257,16 @@ For the participants completing the LexTALE, they were instructed that they woul
 
 \subsubsection{Scoring}
 The scoring of the LexTALE task is quite simple and reported as a percentage of correct responses. The first step was to remove the first three items as they were practice items and should not count towards the participant's score. This left the 60 experimental items remaining where 40 of them were real English word and 20 were nonwords. Equation \ref{eqn:LexTALE_eq} was used in accordance with the documentation provided by the LexTALE creators. This equation also corrected for the proportion inequality of words versus nonwords used in the task. A full list of items and materials used in this project can be found in Appendix \ref{Appendix_LexTALE}.
-
-\begin{singlespacing}
 \begin{equation}
 Score_{LexTALE} = \frac{(\frac{n_{Word}}{40}*100) + (\frac{n_{Nonword}}{20}*100)}{2} 
 \label{eqn:LexTALE_eq}
 \end{equation}
 \begin{align*}
 \intertext{where:}
-Score_{LexTALE} & = \text{reported as percentage correct}\\
-n_{Word} & = \text{number of correct responses to real words}\\
-n_{Nonword} & = \text{number of correct responses to nonwords}\\
+Score_{LexTALE} & = \text{reported as percentage correct}\\[-2ex]
+n_{Word} & = \text{number of correct responses to real words}\\[-2ex]
+n_{Nonword} & = \text{number of correct responses to nonwords}\\[-2ex]
 \end{align*}
-\end{singlespacing}
 \vspace{-0.5in} % modified manually because equation fell at end of section causing too much whitespace
 
 
@@ -290,40 +295,35 @@ Item 3 & generic & garbardina (\emph{trench coat}) &  Word\\
 All participants reported in this dissertation project regardless of whether they were recruited for in-person or online data collection completed the LexTALE-Esp. Every participants completed the LexTALE-Esp as the initial task of the experiment. This was done intentionally to serve as a buffer of language mode activation, which could have affected reaction times in the Spanish processing tasks. This was necessary since many of the LS group participants were very likely to speak in English with the researcher througout the consent obtaining process. As with the LexTALE task, participants were instructed that they were going to see strings of letters appear on the screen and that they were to respond \emph{sí} if they thought the letters represented a real Spanish word and to respond \emph{no} if they believed the word did not exist in Spanish. The instructions clearly indicated that they could take as much time as they needed to respond as the task was untimed. Participants pressed a button on the provided button box to begin the task which brough up the initial trial screen. The first word appeared in the center of the screen along with available responses also displaying below the word and off of center screen. The \emph{sí} response appeared to the left of center screen while \emph{no} response appeared to the right of center screen. PyschoPy waited until it registered a response through the button box before it displayed the next word in the task. This cycle repeated until the participant had responded to all 90 items and the instructions for the next section were displayed on the screen. No randomization of item presentation order was utilized as in the LexTALE task.
 
 \subsubsection{Scoring}
-The scoring of the LexTALE-Esp task is only documented in Izura, Cuetos and Brysbaert \parencite*{Izura2014-yw}. While it differs from the LexTALE calculation, equation \ref{eqn:LexTALE-Esp_eq} used in the LexTALE-Esp remains quite simple, but does report the score as a percentage of correct responses. Since, the current project added three practice trials, the first step was to remove them because they should not count towards the participant's score. This left the 60 real Spanish words and 30 Spanish nonwords which were used in the computation of each participant's Spanish vocabulary score. 
-
-\begin{singlespacing}
+The scoring of the LexTALE-Esp task is only documented in Izura, Cuetos and Brysbaert \parencite*{Izura2014-yw}. While it differs from the LexTALE calculation, equation \ref{eqn:LexTALE-Esp_eq} used in the LexTALE-Esp remains quite simple, but does report the score as a percentage of correct responses. Since, the current project added three practice trials, the first step was to remove them because they should not count towards the participant's score. This left the 60 real Spanish words and 30 Spanish nonwords which were used in the computation of each participant's Spanish vocabulary score.
 \begin{equation}
 Score_{LexTALE-Esp} = n_{Word} - 2 * n_{Nonword}
 \label{eqn:LexTALE-Esp_eq}
 \end{equation}
 \begin{align*}
 \intertext{where:}
-%Score_{LexTALE-Esp} & = \text{reported as percentage correct}\\
-n_{Word} & = \text{number of yes responses to real words}\\
-n_{Nonword} & = \text{number of yes responses to nonwords}\\
+n_{Word} & = \text{number of yes responses to real words}\\[-2ex]
+n_{Nonword} & = \text{number of yes responses to nonwords}\\[-2ex]
 \end{align*}
-\end{singlespacing}
 
 In case other researcher preferred the percentage score, Izura, Cuetos and Brysbaert \parencite*{Izura2014-yw} provided equation \ref{eqn:LexTALE-ESP-percent_eq} as a footnote in the documentation. However, all LexTALE-Esp scores reported in the current project were calculated using equation \ref{eqn:LexTALE-Esp_eq}. The complete list of materials used for the LexTALE-Esp are included in Appendix \ref{Appendix_LexTALE-Esp}.
-
-\begin{singlespacing}
 \begin{equation}
 Score_{LexTALE-Esp} = \frac{n_{Word}}{60} - \frac{n_{Nonword}}{30}
 \label{eqn:LexTALE-ESP-percent_eq}
 \end{equation}
 \begin{align*}
 \intertext{where:}
-Score_{LexTALE-Esp} & = \text{reported as percentage correct}\\
-n_{Word} & = \text{number of yes responses to real words}\\
-n_{Nonword} & = \text{number of yes responses to nonwords}\\
+Score_{LexTALE-Esp} & = \text{reported as percentage correct}\\[-2ex]
+n_{Word} & = \text{number of yes responses to real words}\\[-2ex]
+n_{Nonword} & = \text{number of yes responses to nonwords}\\[-2ex]
 \end{align*}
-\end{singlespacing}
 \vspace{-0.5in} % modified manually because equation fell at end of section causing too much whitespace
+
 
 \subsection{Button Box}
 \label{ssec:button_box}
-Describe the button box briefly here and then give tests and details in appendix
+Many of the measures in this dissertations had a dependent variable based on reaction time. As a result of previous study findings, the difference in reaction times for different experimental conditions were expected to be small, a button box was used during in-person experiments. The response box was used in all tasks except for the BLP where the internal keyboard and mouse were more efficient for data input and reaction time was not measured. The response box used was built by the researcher using an arduino Adafruit Feather 32u4 Adalogger microcontroller. This microcontoller was powered through the USB 3.0 port on the researcher's computer during experiments. It was mounted inside of a laser cut acrylic box and wired to five 30mm arcade style buttons mounted in the top face of the box---white, green, blue, yellow and red moving from left to right. The the white button was always used to progress to next screen and were offset at 2.25 inches on center from the remaining four colored buttons, which were evenly spaced at at 1.75 inches on center. Before deploying the use of the button box, testing was done using a Raspberry Pi 3 B+ following guidelines for building a LagBox \ttodo{Insert citation German university}. The Raspberry Pi testing instrument was tested using a mouse to ensure the readings being provided were in an acceptable tolerance. For full details on building and testing a button box such as the one used here, please refer to Appendix \ref{button_box}.
+
 
 \section{Participant Exclusion}
 \label{sec:exclusion}
