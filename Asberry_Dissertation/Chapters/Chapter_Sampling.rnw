@@ -31,20 +31,22 @@ set_parent(here('Asberry_Dissertation/Dissertation.Rnw'))
 %----------------------------------------------------------------------------------------
 %	SECTION 1
 %----------------------------------------------------------------------------------------
-In order to better understand the role of the Spanish syllable in segmenting words of Spanish, three distinct groups of speakers were recruited for this dissertation project. The participants from these three groups were utilized througout the experiments conducted during this dissertation project. This chapter serves to describe how these participants were recruited, the characteristics making these groups distinct from one another, inclusion/exclusion criteria and study conditions for them during experimentation. 
+In order to better understand the role of the Spanish syllable in segmenting words of Spanish, three distinct groups of speakers were recruited for this dissertation project. The participants from these three groups were utilized througout the experiments conducted during this dissertation project. This chapter serves to describe how these participants were recruited, the characteristics making these groups distinct from one another, inclusion criteria and study conditions for them during experimentation. 
 
 
 \section{Participants}
 \label{sec:participants}
 %Describe the participants and how they were placed in to groups, give over all demographics of them. Set acronyms for all groups here.
-More generally, the three groups represented monolingual Spanish speakers (MS), native Spanish speakers who were late learners of English (NS) and native English speakers who were late learners of Spanish (LS). While the characteristics of these groups did not change overall, there were some subtle differences within the LS speaker group related to the recruitment area and study conditions. These differences were necesitated by variables beyond the researcher's control and will be discussed below in greater detail.
+More generally, the three groups represented monolingual Spanish speakers (MS), native Spanish speakers who were late learners of English (NS) and native English speakers who were late learners of Spanish (LS). While the characteristics of these groups did not change overall, there were some subtle differences within the LS speaker group related to the recruitment area and study conditions. These differences were necesitated by variables beyond the researcher's control and will be discussed below in greater detail. 
+
+For the entire disseration project, \Sexpr{eligible_desc[1, "n"]} participants---\Sexpr{eligible_gen_desc["Female","n"]} females and \Sexpr{eligible_gen_desc["Male","n"]} males--- were recruited that met all inclusion criteria discussed in section \ref{sec:inclusion}. The participants' ages ranged from \Sexpr{eligible_desc[1, "age_Min"]} to \Sexpr{eligible_desc[1, "age_Max"]} years old with an average of \Sexpr{eligible_desc[1, "age_Mean"]} years. In terms of Spanish vocabulary size two distinct populations are seen based on the L1 of the speaker.
 
 
 \subsection{Monolingual Spanish Speakers (MS)}
 \label{ssec:groupMS}
 The monolingual Spanish (MS) participants were all recruited through Prolific, which is a participant recruiting site. \ttodo{INSERT citation} See recruitment and inclusion criteria sections, section \ref{sec:recruit} and section \ref{sec:inclusion} respectively, for more details. In short, all participants that were recruited reported being monolingual speakers of Spanish who were born and continue to reside in Mexico. This allowed researchers to minimize the dialectal differences effect that exists between Spanish speaking countries. This does not exclude or assume that dialectal difference do not exist within the borders of Mexico, but simply acknowledges that these differences are not the main focus of the study. 
 
-In total, \Sexpr{eligible_grp_desc["Monolingual Spanish","n"]} participants that met all inclusion criteria completed an experiment for this dissertation project. See inclusion criteria, section \ref{sec:inclusion}, and exclusion criteria, section \ref{sec:exclusion}, for complete details used to include participants in a particular group and exclude them from data analysis when necessary. The participants ages ranged from \ttodo{INSERT min age to max age with an average of mean age}. See Table \ref{tab:ms_demographics} for an overview of this demographic information.
+In total, \Sexpr{eligible_grp_desc["Monolingual Spanish","n"]} participants that met all inclusion criteria completed an experiment for this dissertation project. See inclusion criteria, section \ref{sec:inclusion}, for complete details used to include participants in a particular group and exclude them from data analysis when necessary. The participants ages ranged from \ttodo{INSERT min age to max age with an average of mean age}. See Table \ref{tab:ms_demographics} for an overview of this demographic information.
 
 \begin{table}
 \caption{Demographic information for MS group BLP Language Dominance, LexTALE and LexTALE-Esp}
@@ -65,7 +67,7 @@ Fill & Me & Out\\
 \label{ssec:groupNS}
 The participants in this group were recruited because they represented L1-Spanish--L2-English bilingual group. The participants were all born and raised in Mexico and reported learning English as a second language during their school age years in Mexico. \ttodo{INSERT age: min, max and mean for learning English}. At the time of recruitment, all participants were students at the University of Sonora in Hermosillo, Mexico. 
 
-For the current project, \Sexpr{eligible_grp_desc["Spanish","n"]} participants meeting all inclusion criteria completed an experiment. Section \ref{sec:inclusion} and section \ref{sec:exclusion} describe all inclusion and exclusion details. The participants ages ranged from \ttodo{INSERT min age to max age with an average of mean age}. See Table \ref{tab:ns_demographics} for an overview of this demographic information.
+For the current project, \Sexpr{eligible_grp_desc["Spanish","n"]} participants meeting all inclusion criteria completed an experiment. Section \ref{sec:inclusion} describes all inclusion details for eligible participants. The participants ages ranged from \ttodo{INSERT min age to max age with an average of mean age}. See Table \ref{tab:ns_demographics} for an overview of this demographic information.
 
 \begin{table}
 \caption{Demographic information for MS group BLP Language Dominance, LexTALE and LexTALE-Esp}
@@ -119,7 +121,7 @@ During the data collection period, a recruitment target of 40 participants for b
 \label{ssec:recruit-online}
 Prolific is a participant recruiting site based in the UK that maintains a pool of participants who would like to participate in research studies. The company does not allow identifiable information to be collected on participants (names, emails, phone numbers, etc.), but every participant is assigned a unique ID string consisting of 24 random numbers and letters when they register for the site. This ID is used for tracking completion and payment through Prolific. The researchers used this ID to ensure participants did not complete multiple submissions to any one experiment during data collection. Prolific requires that participants be screened for inclusion criteria before being asked to participate and is done through the filters provided by their site. As a result, the researcher simply set up the filters that described the groups of interest and Prolific advertises it to its registered applicant pool based on their self reported asnwers when they created their Prolific accounts. People who have answered questions that would eliminate their eligibility to certain group demograhic are never presented the opportunity to complete the experiment. This allowed for a large sample of participants to be gathered in a short amount of time with minimal effort given to the screening process from the researcher.
 
-For the online data collection period, a target of 44 participants were recruited for both the MS and LS groups. This number was derived from a statistical power test run by the researchers prior to beginning data collection. The researchers used the LexTALE-ESP and repsonse accuaracy scores, described in the exclusion criteria (section \ref{sec:exclusion}), as a daily check on the number of participants who had completed the online experiment in good faith. This daily check was repeated until the number of participants needed had been reached and the study on Prolific's site was closed.
+For the online data collection period, a target of 44 participants were recruited for both the MS and LS groups. This number was derived from a statistical power test run by the researchers prior to beginning data collection. The researchers used the repsonse accuaracy scores to ensure at least the minimum of 44 eligibile participants would be available for analysis as a regular check on the number of participants who had completed the online experiment in good faith. This check was repeated until the number of participants needed had been reached and the study on Prolific's site was closed.
 
 
 \section{Inclusion Criteria}
@@ -237,7 +239,15 @@ Language Attitudes & 2.27\\
 \bottomrule\\
 \end{tabular}
 \end{table}
-
+%\begin{gather}
+%Global Score_{English} = (\text{Language History} * 0.454) + (Use_{English} * 1.09) +(\text{Langu%age History} * 0.454) +(\text{Language History} * 0.454)\\
+%Global Score_{Spanish} = Q1b + Q2b + Q3b + Q4b + Q5b + Q5b + Q6b
+%\end{gather}
+%\begin{align*}
+%\intertext{where:}
+%a & = \text{questions asking about English language history}\\[-2ex]
+%b & = \text{questions asking about Spanish language history}\\[-2ex]
+%\end{align*}
 \paragraph{Language Dominance Score.}
 Finally, the language dominance score was calculated by substracting the global English score for language 1 from the global Spanish score for language 2. As previously mentioned, this score can range from -218 to 218. A negative number indicates that the participant has a stronger preference language 2 whereas a positive number shows a participant's stronger preference for language 1. In the current project, a negative langauge dominance score indicated a stronger dominance for Spanish while a positive score indicated English as the more dominant language of the participant. For a detailed walk through of these calculations using real participant data as an example and the materials for the full BLP questionnaire actually used during the current project, see Appendix \ref{Appendix_BLP}.
 
@@ -246,7 +256,7 @@ Finally, the language dominance score was calculated by substracting the global 
 The participants who completed experiments online saw modified versions of BLP questions at the beginning of the experiment setup process screen. This was done to keep it consistent among online participants since one group was monolingual speakers of Spanish. Due to the fact that the full BLP was not completed by these participants, it was not possible to caluculate the language dominance of speakers that were computed for in-person participants. For online participants, these modified versions of the BLP questions served as a check to verify the responses that they had responed to when creating their Prolific profiles. For example, some participants reponded with conflicting information to critical inclusion criterion such as langauge use at home, preferred language, birth place, current residence, etc. Prolific provides communication between researchers and participants who have completed their studies. It was through this method that the conflicting answers were attempted to be resolved. In most cases, the participant verified that the information entered into the experiment was more accurate than their Prolific profiles, they remained in the applicant pool and were advised to update their Prolific profile to match. However, in some cases the answers provided in the experiment were more accurate, which made them ineligible to participate. To illustrate a common possibility with language research studies is that a participant has learned a new language since registering with Prolific. In these cases, the participants were asked to update their profiles to match their current conditions and excluded from data downloads and analysis. Researchers were able to pass this information along to Prolific who would follow-up with them to ensure the problems were resolved and maintain integrity of participant pool. The materials actually used during the online experiments in this disseration can be found in Appendix \ref{Appendix_BLP}.
 
 
-\subsection{LexTALE}
+\subsection{English Vocabulary Size}
 \label{ssec:LexTALE}
 In order to better understand the English language proficiency of participants, a Lexical Test for Advanced Learners of English (LexTALE) was used. The LexTALE contains 60 vocabulary items presented as an untimed visual lexical decision task plus three additional practice items that always appeared as the first three items. The LexTALE task is used to correlate vocabulary knowledge and language proficiency in English \parencite{Lemhofer2012-hz}. According to the findings of Lemhöfer \& Broersma \parencite*{Lemhofer2012-hz}, that self-ratings such as writing, reading, listening and speaking proficiency, while significant in some cases, did not have the same predicative power as the LexTALE for translation accuracy and overall proficiency. For example, the LexTALE vocabulary test was able to distinguish between lower intermediate (up to 59 percent), upper intermediate (60–80 percent) and advanced (above 80 percent) levels of proficiency based on average percent correct responses. In terms of word recognition experiments, the LexTALE remained a significant predictor of success while self-ratings was not \parencite{Lemhofer2012-hz}. The LexTALE task is publicly available online at www.lextale.com and has been designed to run in PRAAT, Matlab and Presentations. For data collection purposes in this disseration project, participants completed both the LexTALE using PsychoPy to create the feel of a single, connected experimental session.
 
@@ -270,7 +280,7 @@ n_{Nonword} & = \text{number of correct responses to nonwords}\\[-2ex]
 \vspace{-0.5in} % modified manually because equation fell at end of section causing too much whitespace
 
 
-\subsection{LexTALE-Esp}
+\subsection{Spanish Vocabulary Size}
 \label{ssec:LexTALE-Esp}
 The LexTALE and the LexTALE-Esp are tasks used to correlate vocabulary knowledge and language proficiency in English and Spanish respectively \parencite{Izura2014-yw,Lemhofer2012-hz}. While the LexTALE was orginally available for English, Dutch and German, there was not version of the available for Spanish. The LexTALE-Esp was created as an adaption of the original LexTALE to provide a similar objecetive vocabulary test for Spanish that could serve as a predictor of language proficiency \parencite{Izura2014-yw}. While the its original intent prodcued the expected results, the LexTALE-Esp has also been shown to discriminate well between highly proficient Spanish speaking participants with different language dominances \parencite{Ferre2017-jq}. The LexTALE-Esp contains 90 items rather than 60 items found in the original LexTALE version, but the increase in item number did not create time constraints as it could still be completed in approximately five minutes. 
 
