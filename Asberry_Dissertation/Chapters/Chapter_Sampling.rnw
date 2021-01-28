@@ -39,8 +39,17 @@ In order to better understand the role of the Spanish syllable in segmenting wor
 %Describe the participants and how they were placed in to groups, give over all demographics of them. Set acronyms for all groups here.
 More generally, the three groups represented monolingual Spanish speakers (MS), native Spanish speakers who were late learners of English (NS) and native English speakers who were late learners of Spanish (LS). While the characteristics of these groups did not change overall, there were some subtle differences within the LS speaker group related to the recruitment area and study conditions. These differences were necesitated by variables beyond the researcher's control and will be discussed below in greater detail. 
 
-For the entire disseration project, \Sexpr{eligible_desc[1, "n"]} participants---\Sexpr{eligible_gen_desc["Female","n"]} females and \Sexpr{eligible_gen_desc["Male","n"]} males--- were recruited that met all inclusion criteria discussed in section \ref{sec:inclusion}. The participants' ages ranged from \Sexpr{eligible_desc[1, "age_Min"]} to \Sexpr{eligible_desc[1, "age_Max"]} years old with an average of \Sexpr{eligible_desc[1, "age_Mean"]} years. In terms of Spanish vocabulary size two distinct populations are seen based on the L1 of the speaker.
+For the entire disseration project, \Sexpr{eligible_desc[1, "n"]} participants---\Sexpr{eligible_gen_desc["Female","n"]} females and \Sexpr{eligible_gen_desc["Male","n"]} males--- were recruited that met all inclusion criteria discussed in section \ref{sec:inclusion}. The participants' ages ranged from \Sexpr{eligible_desc[1, "age_Min"]} to \Sexpr{eligible_desc[1, "age_Max"]} years old with an average of \Sexpr{eligible_desc[1, "age_Mean"]} years. In terms of Spanish vocabulary size two distinct populations are seen based on the L1 of the speaker. The two distributions can be seen in Figure \ref{plt:hist_eligible_part}.
 
+\begin{figure}[h]
+\begin{center}
+<<elig_part_hist, fig.width= 5, fig.height= 2>>=
+hist_eligible_grouped
+@      
+\caption[Histogram: Eligible Participants]{Shows the Spanish vocabulary size distributed by native language calculated through the equation provided by \parencite{Izura2014-yw}}
+\label{plt:hist_eligible_part}
+\end{center}
+\end{figure}
 
 \subsection{Monolingual Spanish Speakers (MS)}
 \label{ssec:groupMS}
