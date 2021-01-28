@@ -163,7 +163,7 @@ density_analyzed_grouped
 # produced with lattice package
 hist_anaylzed_pooled <- histogram(~izura_score, 
           data = analyzed_izura_score, 
-          main = 'All Participants') 
+          main = 'Spanish Vocabulary Size by Native Language') 
 hist_anaylzed_pooled
 
 # produced by histo function written for dissertation consistency
@@ -171,7 +171,7 @@ hist_eligible_grouped <- analyzed_izura_score %>%
       mutate(group = ifelse(group == 'English' | group == 'L2 Learner', 
                             'L1 English', "L1 Spanish")) %>% 
   histo(., 'izura_score', 'group') +
-  labs(title = 'All Participants', 
+  labs(title = 'Spanish Vocabulary Size by Native Language', 
        x = 'Izura Score', 
        y = 'Frequency')
 hist_eligible_grouped
