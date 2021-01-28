@@ -27,38 +27,11 @@ set_parent(here('Asberry_Dissertation/Dissertation.Rnw'))
 %	SECTION 0
 %----------------------------------------------------------------------------------------
 % Not needed for introduction
-\section{Abstract}
-YOU MUST DELETE OR COMMENT IT OUT BEFORE SUBMISSION!!!!!!!!!!!!
-This includes an exmaple of testing all graphics and tables and r code used to compile document.
+%\section{Abstract}
+%YOU MUST DELETE OR COMMENT IT OUT BEFORE SUBMISSION!!!!!!!!!!!!
+%This includes an exmaple of testing all graphics and tables and r code used to compile document.
 
-This prints numeric variable stored: \Sexpr{x} or cell from dataframe \Sexpr{eligible_grp_desc$n[3]} AND this prints the 5th row of participant number column in eligible participant dataframe: \Sexpr{eligible_part$partNum[5]}. Finally we can print the density plot. To reference the figure later use (see Figure \ref{plotTestDensity}).
-\begin{figure}[h]
-\begin{center}
 
-<<elig_part_density, fig.width= 4, fig.height= 1.5>>=
-density_eligible_pooled
-density_eligible_grouped
-@      
-\caption[Density Test Plots]{Testing the plotting placement calls}
-\label{plotTestDensity}
-\end{center}
-\end{figure}
-
-\newpage
-This prints the histograms
-\begin{figure}[h]
-\begin{center}
-
-<<elig_part_hist, fig.width= 5, fig.height= 2>>=
-hist_eligible_pooled
-hist_eligible_grouped
-@      
-\caption[Histogram Test Plots]{Testing the plotting placement calls}
-\label{plotTestHistogram}
-\end{center}
-\end{figure}
-
-To reference the figure later (see Figure \ref{plotTestHistogram})
 %----------------------------------------------------------------------------------------
 %	SECTION 1
 %----------------------------------------------------------------------------------------
