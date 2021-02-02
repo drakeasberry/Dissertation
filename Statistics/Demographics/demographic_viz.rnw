@@ -72,6 +72,25 @@ hist_eligible_grouped <- eligible_izura_score %>%
        y = 'Frequency')
 hist_eligible_grouped
 
+# produced by histo function written for dissertation consistency
+eligible_eng_grouped <- eligible_izura_score %>% 
+  subset(., group == 'English' | group == 'L2 Learner') %>%
+  mutate(group = ifelse(group == 'English', "In-person", "Online"))
+
+eligible_eng_grouped %>% 
+  group_by(group) %>% 
+  summarise(Mean = mean(izura_score),
+            SD = sd(izura_score))
+t.test(eligible_eng_grouped$izura_score ~ eligible_eng_grouped$group)
+
+
+hist_eligible_eng_grouped <- eligible_eng_grouped %>%   
+  histo(., 'izura_score', 'group') +
+  labs(title = 'Eligible LS Participants by Recruitment Type', 
+       x = 'Izura Score', 
+       y = 'Frequency')
+hist_eligible_eng_grouped
+
 # All participants Lextale-Esp descriptive statistics 
 eligible_lexesp <- describe(eligible_izura_score$izura_score) %>% 
   mutate(vars = "Eligible participants") %>% 
