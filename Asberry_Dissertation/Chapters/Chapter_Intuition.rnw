@@ -20,7 +20,6 @@ set_parent(here('Asberry_Dissertation/Dissertation.Rnw'))
 %----------------------------------------------------------------------------------------
 
 \chapter{Syllabic Intuition} % Main chapter title
-
 \label{intuition} % for referencing this chapter elsewhere, use \ref{intuition}
 
 %----------------------------------------------------------------------------------------
@@ -37,7 +36,7 @@ set_parent(here('Asberry_Dissertation/Dissertation.Rnw'))
 %	SECTION 1
 %----------------------------------------------------------------------------------------
 
-\section{Introduction}
+\section{Background}
 
 %Talk about syllabificationdifferences in syllabification between spanish and english
 
@@ -45,11 +44,6 @@ The syllable intuition experiment is an important step in the process because ho
 
 
 %\textbf{DELETE ME Write my introduction to the syllabification article here (Will write the introduction LAST) The section of your article most likely to be read, not skimmed or skipped. The first paragraph or two is the overview of the article: describe the problem, question or theory motivating the research.} 
-
-%-----------------------------------
-%	SUBSECTION 1-1
-%-----------------------------------
-\subsection{Background}
 
 %In the second part, describe relevant theories, review past research and give more details on the current research question. Do not forget about signposting, which headings and subheadings can naturally create for the reader.
 
