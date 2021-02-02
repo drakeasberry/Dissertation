@@ -31,22 +31,22 @@ set_parent(here('Asberry_Dissertation/Dissertation.Rnw'))
 %----------------------------------------------------------------------------------------
 %	SECTION 1
 %----------------------------------------------------------------------------------------
-In order to better understand the role of the Spanish syllable in segmenting words of Spanish, three distinct groups of speakers were recruited for this dissertation project. The participants from these three groups were utilized througout the experiments conducted during this dissertation project. This chapter serves to describe how these participants were recruited, the characteristics making these groups distinct from one another, inclusion criteria and study conditions for them during experimentation. 
+In order to better understand the role of the Spanish syllable in segmenting words of Spanish, three distinct groups of speakers were recruited for this dissertation. The participants from these three groups were utilized througout the experiments conducted during this dissertation project. This chapter serves to describe how these participants were recruited, the characteristics making these groups distinct from one another, inclusion criteria and study conditions for them during experimentation. 
 
 
 \section{Participants}
 \label{sec:participants}
 %Describe the participants and how they were placed in to groups, give over all demographics of them. Set acronyms for all groups here.
-More generally, the three groups represented monolingual Spanish speakers (MS), native Spanish speakers who were late learners of English (NS) and native English speakers who were late learners of Spanish (LS). While the characteristics of these groups did not change overall, there were some subtle differences within the LS speaker group related to the recruitment area and study conditions. These differences were necesitated by variables beyond the researcher's control and will be discussed below in greater detail. 
+More generally, the three groups represented monolingual Spanish speakers (MS), native Spanish speakers who were late learners of English (NS) and native English speakers who were late learners of Spanish (LS). While the characteristics of these groups did not change overall, there were some subtle differences within the LS speaker group related to the recruitment, tasks completed and study conditions. These differences were necesitated by variables beyond the researcher's control and will be discussed below in greater detail. 
 
-For the entire disseration project, \Sexpr{eligible_desc[1, "n"]} participants---\Sexpr{eligible_gen_desc["Female","n"]} females and \Sexpr{eligible_gen_desc["Male","n"]} males--- were recruited that met all inclusion criteria discussed in section \ref{sec:inclusion}. The participants' ages ranged from \Sexpr{eligible_desc[1, "age_Min"]} to \Sexpr{eligible_desc[1, "age_Max"]} years old with an average of \Sexpr{eligible_desc[1, "age_Mean"]} years. In terms of Spanish vocabulary size two distinct populations are seen based on the L1 of the speaker. The two distributions can be seen in Figure \ref{plt:hist_eligible_part}.
+For the entire disseration project, \Sexpr{eligible_desc[1, "n"]} participants---\Sexpr{eligible_gen_desc["Female","n"]} females and \Sexpr{eligible_gen_desc["Male","n"]} males--- were recruited that met all inclusion criteria discussed in section \ref{sec:inclusion}. The participants' ages ranged from \Sexpr{eligible_desc[1, "age_Min"]} to \Sexpr{eligible_desc[1, "age_Max"]} years old with an average of \Sexpr{eligible_desc[1, "age_Mean"]} years. In terms of Spanish vocabulary size two distinct populations are seen based on the L1 of the participant. The two distributions can be seen in Figure \ref{plt:hist_eligible_part}.
 
 \begin{figure}[h]
 \begin{center}
 <<elig_part_hist, fig.width= 5, fig.height= 2>>=
 hist_eligible_grouped
 @      
-\caption[Histogram: Eligible Participants]{Shows the Spanish vocabulary size distributed by native language calculated through the equation provided by \parencite{Izura2014-yw}}
+\caption[Histogram: Eligible Participants]{Shows the Spanish vocabulary size for all participants meeting the inclusion criteria distributed by native language calculated through the equation provided by \parencite{Izura2014-yw}}
 \label{plt:hist_eligible_part}
 \end{center}
 \end{figure}
@@ -55,7 +55,7 @@ hist_eligible_grouped
 \label{ssec:groupMS}
 The monolingual Spanish (MS) participants were all recruited through Prolific, which is a participant recruiting site \parencite{noauthor_2020-xx}. See recruitment and inclusion criteria sections, section \ref{sec:recruit} and section \ref{sec:inclusion} respectively, for more details. In short, all participants that were recruited reported being monolingual speakers of Spanish who were born and continue to reside in Mexico. This allowed researchers to minimize the dialectal differences effect that exists between Spanish speaking countries. This does not exclude or assume that dialectal difference do not exist within the borders of Mexico, but simply acknowledges that these differences are not the main focus of the study. 
 
-In total, \Sexpr{eligible_grp_desc["Monolingual Spanish","n"]} participants that met all inclusion criteria completed an experiment for this dissertation project. See inclusion criteria, section \ref{sec:inclusion}, for complete details used to include participants in a particular group and exclude them from data analysis when necessary. The participants ages ranged from \Sexpr{eligible_grp_desc["Monolingual Spanish","age_Min"]} years old to \Sexpr{eligible_grp_desc["Monolingual Spanish","age_Max"]} years old with an average age of \Sexpr{eligible_grp_desc["Monolingual Spanish","age_Mean"]}. 
+In total, \Sexpr{eligible_grp_desc["Monolingual Spanish","n"]} participants that met all inclusion criteria completed an experiment for this dissertation. See inclusion criteria, section \ref{sec:inclusion}, for complete details used to include participants in a particular group. The participants' ages ranged from \Sexpr{eligible_grp_desc["Monolingual Spanish","age_Min"]} years old to \Sexpr{eligible_grp_desc["Monolingual Spanish","age_Max"]} years old with an average age of \Sexpr{eligible_grp_desc["Monolingual Spanish","age_Mean"]}. 
 %Table \ref{tab:ms_demographics} for an overview of this demographic information.
 %\begin{table}
 %\caption{Demographic information for MS group BLP Language Dominance, LexTALE and LexTALE-Esp}
@@ -74,7 +74,7 @@ In total, \Sexpr{eligible_grp_desc["Monolingual Spanish","n"]} participants that
 
 \subsection{Native Spanish Speakers (NS)}
 \label{ssec:groupNS}
-The participants in this group were recruited because they represented L1-Spanish--L2-English bilingual group. The participants were all born and raised in Mexico and reported learning English as a second language during their school age years in Mexico. The average age reported for the beginning to study English was \Sexpr{eligible_grp_desc["Spanish","eng_acq_age_Mean"]}. At the time of recruitment, all participants were students at the University of Sonora in Hermosillo, Mexico. 
+The participants in this group were recruited because they represented L1-Spanish--L2-English bilingual group. These participants were all born and raised in Mexico and reported learning English as a second language during their school age years in Mexico. The average age that participants reported for the beginning to study English was \Sexpr{eligible_grp_desc["Spanish","eng_acq_age_Mean"]}. At the time of recruitment, all participants were students at the University of Sonora in Hermosillo, Mexico. 
 
 For the current project, \Sexpr{eligible_grp_desc["Spanish","n"]} participants meeting all inclusion criteria completed an experiment. Section \ref{sec:inclusion} describes all inclusion details for eligible participants. The participants ages ranged from \Sexpr{eligible_grp_desc["Spanish","age_Min"]} to \Sexpr{eligible_grp_desc["Spanish","age_Max"]} years old with a mean age of \Sexpr{eligible_grp_desc["Spanish","age_Mean"]} years. 
 %See Table \ref{tab:ns_demographics} for an overview of this demographic information.
@@ -96,9 +96,19 @@ For the current project, \Sexpr{eligible_grp_desc["Spanish","n"]} participants m
 
 \subsection{Late Learners of Spanish (LS)}
 \label{ssec:groupLS}
-This group of participants consisted of native English speakers who were born and currently resided in the US. They all reported learning English during their school age years while attending school in the United States. There were two different recruitment stages for this group of participants. For those that completed in-person experiments, they were all recruited from the University of Arizona campus in Tucson, Arizona. \Sexpr{eligible_grp_desc["English","n"]} participants made up this subgroup, which were mainly recruited from Spanish classes where students were currently enrolled in 5th semester or beyond. However, flyers were also distributed around campus looking for volunteers which brought participants that were not currently registered in Spanish classes, but self-reported being able to speak Spanish. The participant's ages for those completing in-person experiments ranged from \Sexpr{eligible_grp_desc["English","age_Min"]} to \Sexpr{eligible_grp_desc["English","age_Max"]} with an average of \Sexpr{eligible_grp_desc["English","age_Mean"]} years of age. 
+This group of participants consisted of native English speakers who were born and currently resided in the US. They all reported learning English during their school age years while attending school in the United States. There were two different recruitment stages for this group of participants, which led to differences in recruitment and and how they participated in experimental tasks. For those that completed in-person experiments, they were all recruited from the University of Arizona campus in Tucson, Arizona. \Sexpr{eligible_grp_desc["English","n"]} participants made up this subgroup, which were mainly recruited from Spanish classes where students were currently enrolled in the fifth semester of study or beyond. However, flyers were also distributed around campus looking for volunteers which brought participants that were not currently registered in Spanish classes, but self-reported being able to speak Spanish. The participant's ages for those completing in-person experiments ranged from \Sexpr{eligible_grp_desc["English","age_Min"]} to \Sexpr{eligible_grp_desc["English","age_Max"]} with an average of \Sexpr{eligible_grp_desc["English","age_Mean"]} years of age. 
 
-The second subgroup of L2 Spanish learners, \Sexpr{eligible_grp_desc["L2 Learner","n"]} participants, were recruited through Prolific. Similar to the LS subgroup that completed in-person experiments, these participants self-reported being able to speak Spanish and being raised as monolingual English speakers who were born and currently reside in the US. They differed in that they were recruited online and were not current students at the University of Arizona. The participant ages for those completing in-person experiments ranged from \Sexpr{eligible_grp_desc["L2 Learner","age_Min"]} to \Sexpr{eligible_grp_desc["L2 Learner","age_Max"]} years old with an average age of \Sexpr{eligible_grp_desc["L2 Learner","age_Mean"]} years. 
+The second subgroup of L2 Spanish learners, \Sexpr{eligible_grp_desc["L2 Learner","n"]} participants, were recruited through Prolific. Similar to the LS subgroup that completed in-person experiments, these participants self-reported being able to speak Spanish and being raised as monolingual English speakers who were born and currently reside in the US. They differed in that they were recruited online and were not current students at the University of Arizona. The participant ages for those completing in-person experiments ranged from \Sexpr{eligible_grp_desc["L2 Learner","age_Min"]} to \Sexpr{eligible_grp_desc["L2 Learner","age_Max"]} years old with an average age of \Sexpr{eligible_grp_desc["L2 Learner","age_Mean"]} years. Figure \label{plt:hist_eligible_ls_part} shows the overlap between the two distribution which are signficantly different from one another in vocabulary size. The L2 group recruited online had larger Spanish vocabulary size, (M=4.70, SD=7.88) than the L2 group recruited in-person (M=14.67, SD=13.7), \emph{t}(104.13)= -4.7834, p < 0.0001. The 95\% confidence intervals [-14.101, -5.836]. \ttodo{I know we have talked about reporting these stats, but I have forgotten. Help here would be appreciated.}
+
+\begin{figure}[h]
+\begin{center}
+<<elig_ls_part_hist, fig.width= 5, fig.height= 2>>=
+hist_eligible_eng_grouped
+@      
+\caption[Histogram: Eligible Participants]{Shows the Spanish vocabulary size for English native speaker participants distributed by native language calculated through the equation provided by \parencite{Izura2014-yw}}
+\label{plt:hist_eligible_ls_part}
+\end{center}
+\end{figure}
 %See Table \ref{tab:ls_demographics} for an overview of this demographic information.
 %
 %\begin{table}
@@ -413,5 +423,5 @@ In the online data collection experiments conducted as part of the dissertation,
 %	SECTION 4
 %----------------------------------------------------------------------------------------
 
-\section{Summary of Sampling Procedures}
-Recap all the variables
+%\section{Summary of Sampling Procedures}
+%Recap all the variables
