@@ -26,7 +26,6 @@ set_parent(here('Asberry_Dissertation/Dissertation.Rnw'))
 %----------------------------------------------------------------------------------------
 
 \chapter{Online Segmentation} % Main chapter title
-
 \label{onlineseg} % for referencing this chapter elsewhere, use \ref{onlineseg}
 
 %----------------------------------------------------------------------------------------
@@ -71,10 +70,7 @@ All participants will first take the LexTale-ESP (Spanish language proficiency t
 %	SUBSECTION 2-1
 %-----------------------------------
 \subsection{Participants}
-
-%Probably still important here to some degree
-
-%Give accurate descriptions of participant groups, how they were classified, number of participants, etc. 
+\ttodo{Give accurate descriptions of participant groups, how they were classified, number of participants, etc.}
 
 
 %----------------------------------------------------------------------------------------
@@ -83,21 +79,9 @@ All participants will first take the LexTale-ESP (Spanish language proficiency t
 
 \section{Results}
 
-%Not needed
-
 
 %----------------------------------------------------------------------------------------
 %	SECTION 4
 %----------------------------------------------------------------------------------------
 
-%\section{Discussion}
-%Not needed
-
-
-%----------------------------------------------------------------------------------------
-%	SECTION 5
-%----------------------------------------------------------------------------------------
-
-%\section{References}
-
-%Insert references for this chapter here.
+\section{Discussion}
