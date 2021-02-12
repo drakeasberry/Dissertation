@@ -37,7 +37,7 @@ set_parent(here('Asberry_Dissertation/Dissertation.Rnw'))
 %----------------------------------------------------------------------------------------
 
 \section{Background}
-\todo{Talk about syllabificationdifferences in syllabification between spanish and english}
+\ttodo{Talk about syllabificationdifferences in syllabification between spanish and english}
 The syllable intuition experiment is an important step in the process because how the two groups of participants syllabify the words will have a direct effect on how fast or useful the syllable is in their segmentation strategy. It is expected that syllabic intuitions will vary based on being a native speaker of Spanish or a late learner of Spanish. These differences are likely to stem from age of acquisition and/or language dominance. This experiment will begin to build a data source of Spanish–English bilinguals syllabification of Spanish words that will help to determine whether or not age of acquisition or language dominance are sources are different syllabification patterns. 
 
 

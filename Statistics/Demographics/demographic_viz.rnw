@@ -107,7 +107,7 @@ counts_byGender <- counts(eligible_part, grouping_col = "gender")
 stat_col <- c("age", "span_acq_age", "eng_acq_age")
 
 # Stats I want to run
-summary_stats <- quote(list(Mean = mean, Min = min, Max = max))
+summary_stats <- quote(list(Mean = mean, Min = min, Max = max, SD = sd))
 
 # grouped by gender and group (experiment here)
 eligible_grp_den_desc <- my_stats(eligible_part, 
