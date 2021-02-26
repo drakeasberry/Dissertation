@@ -1,4 +1,5 @@
 # Ignore user files created by Rstudio
+*.Rapp.history
 *.Rproj.user/*
 *.Rproj.user
 *.Rhistory
