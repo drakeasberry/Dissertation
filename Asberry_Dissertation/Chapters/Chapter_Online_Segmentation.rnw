@@ -64,6 +64,7 @@ set_parent(here('Asberry_Dissertation/Dissertation.Rnw'))
 Data collection will employ fully on-line collection methods. Two follow up studies will be added to provide additional support of initial findings, the materials are the same as those from the original experiments, but presented in a different manner. The first will rerun the segmentation task (second task of original approval) with only real words in one condition and only nonwords in the other. The second addition will not use Latin-Square design, where participants only see a subset of the items, but will have all participants see all experimental items.
 
 \subsection{Procedure}
+\ttodo{explain the actual task at hand, then explain the whole exxperience so that the most important informaiton is presented first and the whole experience will be understandable by the reader because they will have been introduced to all the concepts by that point.}
 All participants will first take the LexTale-ESP (Spanish language proficiency test) on their personal computer using their preferred internet browser. Then participants will begin the experimental task, segmentation (assigned to either real word experimental condition OR nonword experimental condition), where they will see visual stimuli on the computer screen and will press a single key on their keyboard to respond to each test stimuli. At this point the experiment will end for monolingual speakers of Spanish, but for bilingual participants a third task will be given—LexTale-EN (English language proficiency test).
 
 %-----------------------------------
@@ -72,7 +73,7 @@ All participants will first take the LexTale-ESP (Spanish language proficiency t
 \subsection{Participants}
 \ttodo{Give accurate descriptions of participant groups, how they were classified, number of participants, etc.}
 
-
+\ttodo{explain that we will not be looking for a crossover effect as found in previous studies but rather a parallel structure due to the way it was analyzed. matching versus mismatching condition by target. It is a simple concept but needs explanation}
 %----------------------------------------------------------------------------------------
 %	SECTION 3
 %----------------------------------------------------------------------------------------

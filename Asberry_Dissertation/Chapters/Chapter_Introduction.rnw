@@ -62,7 +62,7 @@ Mehler and Hayes \parencite*{Mehler1981-wp} captured the need for a change in th
 
 This is will be a whole paragraph or complete section. \ttodo{discuss the differences between auditory and visual segmentation here.}
 
-This will be a whole section \ttodo{discuss why phonological activation research based in reading.}
+This will be a whole section \ttodo{discuss why phonological activation research based in reading. This is needed to justify the methodolgy of visual word segmentation rather than auditory word segmentation which has been mainly done in the past. Episodic versus abstract could play role in structure we buy into. In the first, using the visual methodology would not actually remove low-level phonetic detail because the /l/ in balada and the /l/ in baldosa would be stored as different representations. The later however would removed the low-level phonetic detail that may be playing a role in the results of previous studies. We went with visual to avoid having this confound.}
 
 
 %-----------------------------------
