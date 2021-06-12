@@ -247,12 +247,12 @@ GRADUATE COLLEGE
 \noindent\underline{\makebox[4.0in][r]{}} \hspace{0.4in} Date: \defensedate \\
 {\bfseries\facnameB}\\
 \emph{(Member)}
-\vspace*{0.3in}
-
-\noindent\underline{\makebox[4.0in][r]{}} \hspace{0.4in} Date: \defensedate \\
-{\bfseries\facnameC}\\
-\emph{(Member)}
 \vspace*{0.5in}
+
+%\noindent\underline{\makebox[4.0in][r]{}} \hspace{0.4in} Date: \defensedate \\
+%{\bfseries\facnameC}\\
+%\emph{(Member)}
+%\vspace*{0.5in}
 
 % If 4th committee member is needed, copy the preceding 4 lines, change to facnameD in copied lines
 % You will then need to adjust vertical spacing to keep committee approval page to 1 page length
@@ -269,7 +269,7 @@ Dissertation Director: \chairname \\
 %{\bfseries \emph{Instructor \\ Hispanic Linguistics}} % Update hard-coded to job title and department
 \vfill
 \end{singlespacing}% needed for documents set to 1.5 or 2.0 spacing, Comment out otherwise
-
+\pagebreak
 
 %----------------------------------------------------------------------------------------
 %	STATEMENT BY AUTHOR
