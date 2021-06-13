@@ -21,18 +21,7 @@ set_parent(here('Asberry_Dissertation/Dissertation.Rnw'))
 
 \chapter{Sampling Methods and Population} % Main chapter title
 \label{sampling} % for referencing this chapter elsewhere, use \ref{sampling}
-
-%----------------------------------------------------------------------------------------
-%	SECTION 0
-%----------------------------------------------------------------------------------------
-% Not needed for introduction
-%\section{Abstract}
-
-%----------------------------------------------------------------------------------------
-%	SECTION 1
-%----------------------------------------------------------------------------------------
-In order to better understand the role of the Spanish syllable in segmenting words of Spanish, three distinct groups of speakers were recruited for this dissertation. \ttodo{explain the story COVID-19, null results (adapted). We did not set out to have three groups, but native versus non-native. Initially, it made sense that bilinguals should be compared to bilinguals rather than monolingual speakers. Monolingual speakers are still the control group and represent the native speaker perspective} The participants from these three groups were utilized througout the experiments conducted during this dissertation project. This chapter serves to describe how these participants were recruited, the characteristics making these groups distinct from one another, inclusion criteria and study conditions for them during experimentation. 
-
+In order to better understand the role of the Spanish syllable in segmenting words of Spanish, three distinct groups of speakers were recruited for this dissertation. \ttodo{explain the story COVID-19, null results (adapted). We did not set out to have three groups, but native versus non-native. Initially, it made sense that bilinguals should be compared to bilinguals rather than monolingual speakers. Monolingual speakers are still the control group and represent the native speaker perspective} The participants from these three groups were utilized througout the experiments conducted during this dissertation project. This chapter serves to describe how these participants were recruited, the characteristics making these groups distinct from one another, inclusion criteria and study conditions for them during experimentation. \ttodo{Explain here what happened during data collection. Don't hide it because it leaves readers wondering. First, you intended to collect x and y. You collected the data here and there, using this technique, and your populations of interest where x and y. Then, you realized your data samples were probably two small and your experiment design could have introduced unwanted noise in the data. Therefore, you set out to collect more data in a different format. Since the pandemic had hit by that time, you were left to collecting data online. This opened the door to gathering data differently and also gathering more data (larger samples). In this second round of experiments, your populations of interest were x and y, your technique was x, and you collected data here and there. Before that, you must say something wider: your populations of interest are actually two. Native Spanish speakers and native English speakers whose second language is Spanish.}
 
 \section{Participants}
 \label{sec:participants}
@@ -71,7 +60,6 @@ In total, \Sexpr{eligible_grp_desc["Monolingual Spanish","n"]} participants that
 %\end{tabular}
 %\end{table}
 
-
 \subsection{Native Spanish Speakers (NS)}
 \label{ssec:groupNS}
 The participants in this group were recruited because they represented L1-Spanish--L2-English bilingual group. These participants were all born and raised in Mexico and reported learning English as a second language during their school age years in Mexico. The average age that participants reported for the beginning to study English was \Sexpr{eligible_grp_desc["Spanish","eng_acq_age_Mean"]}. At the time of recruitment, all participants were students at the University of Sonora in Hermosillo, Mexico. 
@@ -92,7 +80,6 @@ For the current project, \Sexpr{eligible_grp_desc["Spanish","n"]} participants m
 %\bottomrule\\
 %\end{tabular}
 %\end{table}
-
 
 \subsection{Late Learners of Spanish (LS)}
 \label{ssec:groupLS}
@@ -125,13 +112,9 @@ hist_eligible_eng_grouped
 %\end{tabular}
 %\end{table}
 
-%-----------------------------------
-%	SECTION 2
-%-----------------------------------
 \section{Recruitment}
 \label{sec:recruit}
 Participant recruitment took on two separate forms for the experiments included in this dissertation---recruitment of in-person participants and recruitment of online participants. These two forms of recruitment were a result of environmental variables beyond the researcher's control and are explained in detail below for each type of recruitment.
-
 
 \subsection{In-person Experiments} 
 \label{ssec:recruit-person}
@@ -139,13 +122,12 @@ The principle investigator wrote and distributed flyers and emails to instructor
 
 During the data collection period, a recruitment target of 40 participants for both the NS and LS groupswas set. This target number was higher than the number of participants needed to run the statistical analysis with sufficient power following previous research studies as a model \ttodo{This is the section about power analysis}. Setting the recruitment target higher than needed was purposefully done since it was expected that several participants would be removed for one or more of the reasons described in the inclusion criteria---section \ref{sec:inclusion}. In the end, only \Sexpr{eligible_grp_desc["Spanish","n"]} NS participants and \Sexpr{eligible_grp_desc["English","n"]} LS participants were recruited before social distancing measures were put into place. 
 
-
 \subsection{Online Experiments} 
 \label{ssec:recruit-online}
+\ttodo{Fine, but you don't explain why at all, never. Motivate, not just state! Why were you collecting online data? Also, start your sections saying something more general about the sort of information in the section. Don't jump to details. For instance, start by saying: "Participant recruitment was moved online because ... We used a service called Prolific to recruit two samples of participants" Then you explain what Prolific is.}
 Prolific is a participant recruiting site based in the UK that maintains a pool of participants who would like to participate in research studies. The company does not allow identifiable information to be collected on participants (names, emails, phone numbers, etc.), but every participant is assigned a unique ID string consisting of 24 random numbers and letters when they register for the site. This ID is used for tracking completion and payment through Prolific. The researchers used this ID to ensure participants did not complete multiple submissions to any one experiment during data collection. Prolific requires that participants be screened for inclusion criteria before being asked to participate and is done through the filters provided by their site. As a result, the researcher simply set up the filters that described the groups of interest and Prolific advertises it to its registered applicant pool based on their self reported asnwers when they created their Prolific accounts. People who have answered questions that would eliminate their eligibility to certain group demograhic are never presented the opportunity to complete the experiment. This allowed for a large sample of participants to be gathered in a short amount of time with minimal effort given to the screening process from the researcher.
 
-For the online data collection period, a target of 44 participants were recruited for both the MS and LS groups. This number was derived from a statistical power test run by the researchers prior to beginning data collection. The researchers used the repsonse accuaracy scores to ensure at least the minimum of 44 eligibile participants would be available for analysis as a regular check on the number of participants who had completed the online experiment in good faith. This check was repeated until the number of participants needed had been reached and the study on Prolific's site was closed.
-
+For the online data collection period, a target of 44 participants were recruited for both the MS and LS groups. This number was derived from a statistical power test run by the researchers prior to beginning data collection. \ttodo{You have to report the results of your power analyses and your assumptions!} The researchers used the repsonse accuaracy scores to ensure at least the minimum of 44 eligibile participants would be available for analysis as a regular check on the number of participants who had completed the online experiment in good faith. This check was repeated until the number of participants needed had been reached and the study on Prolific's site was closed.
 
 \section{Inclusion Criteria}
 \label{sec:inclusion}
@@ -165,7 +147,6 @@ The specific requirements for the NS and LS groups recruited for in-person data 
 \item Student Status: Currently enrolled at the University of Sonora in Hermosillo, MX.\newline
 \end{enumerate}
 \end{singlespacing}
-
 
 \noindent Requirements for the in-person LS group:
 \begin{singlespacing}
@@ -191,7 +172,6 @@ Unlike participants who were recruited for in-person experiments, online recruit
 \end{enumerate}
 \end{singlespacing}
 
-
 \noindent For the online LS group, the Prolific filters included the following criteria: 
 \begin{singlespacing}
 \begin{enumerate}
@@ -208,11 +188,9 @@ No participants in the NS group were recruited through Prolific or took part in 
 
 The fluent language filter listed under NS group deserves a slightly deeper explanation as to why it was not English and Spanish. Due to conflicts with the Prolific filter, specifying Fluent Languages as Spanish and English produced unexpected results. Therefore, the experiment was incorrectly advertised to all participants who listed English or Spanish as a fluent language, but failed to exclude other languages at the same time such as Tagalog, French or Italian. Using the Bilingual and the Fluent Languages filters together produced the correct demographic pool of participants for the study and was confirmed by the data files of demographic information provided by Prolific for participants who completed the experiment. This process while limiting the number of potential participants that met the criteria was reduced, it provided a much more homogeneous group of participants in a relatively short period of time.
 
-
 \section{Instruments}
 \label{sec:instruments}
-Three task based instruments were used by the researcher to check and verify participant information to ensure participants were providing valid data as well as being placed into the appropriate group. These three instruments included the Bilingual Language Profile Questionnaire (See section \ref{ssec:BLP}), the LexTALE (See section \ref{ssec:LexTALE}) and the LexTALE-Esp (See section \ref{ssec:LexTALE-Esp}) which are described in the following three sections.
-
+Three task based instruments were used by the researcher to check \ttodo[inline]{No, this is not why you need these information. Just delete this sentence. Say you collected additional data about the linguistic experience and proficiency of your participants.} and verify participant information to ensure participants were providing valid data as well as being placed into the appropriate group. These three instruments included the Bilingual Language Profile Questionnaire (See section \ref{ssec:BLP}), the LexTALE (See section \ref{ssec:LexTALE}) and the LexTALE-Esp (See section \ref{ssec:LexTALE-Esp}) which are described in the following three sections. \ttodo{You see the problem? You constantly end up having to refer backwards and forward because the information is distributed across to many subsections. Before this moment, you only needed to say you assessed "linguistic experience by means of a survey and proficiency by means of a vocabulary-size test". You did not need to use the terms "LexTale" or "BLP" until now. As soon as you mention them, they must be cited, explained and motivated.}
 
 \subsection{Bilingual Language Profile}
 \label{ssec:BLP}
@@ -221,7 +199,6 @@ One instrument used in this study was the Bilingual Language Profile (BLP), whic
 
 The BLP assessment tool has been used in numerous language studies with a focus on bilingualism and is available for free under the creative commons license. The BLP is available in a paper-based format and electronically through the use of Google Forms. However, in an effort to make the time in the lab and the feel of the experiment as seamless as possible, the participants in this dissertation took the BLP within the PsychoPy platform as well. No modifications were made to BLP questions or their ordering, but they were formatted in a .csv file that PsychoPy could read. During the experiment, the language that the question was interested in changed color to highlight the difference for participants---English was written in purple, Spanish in blue and other languages in red. In addition to it being the last item of the experiment, it was also untimed allowing for the participant to ask clarification questions about the survey as it was taking place in their preferred language choice without compromising data integrity experimental tasks focused on the processing of Spanish. 
 
-
 \subsubsection{In-person Experiments}
 Only participants that completed experiments during in-person data collection procedures actually completed the full BLP survey. This allowed the researchers to compute a language dominance score for each participant. The language dominance score falls on a scale between -218 and 218 where -218 represents one language, Spanish in this project, and 218 represents the other language, English in this case. Therefore, a person that has a language dominance closer to zero would represent a more balanced bilingual.
 
@@ -229,7 +206,7 @@ Only participants that completed experiments during in-person data collection pr
 In order to calculate the language dominance score for a participant, a module score must be calculated for each of the four sections---Language History, Language Use, Language Proficiency and Language Attitudes---for both languages individually. In other words, participants receive two scores for each module. One is the sum of all answers in the module that ask about English while the second is the sum of all questions in the module asking about Spanish. The contents of each module, numbers of questions and scoring scales, are different for each of the four modules, which are described in detail below. 
 
 \subparagraph{Language History.}
-The language history section contains six questions on a scale range of 0 to 20 and is the most complicated section for scoring. The first two questions ask about the age of learning a language and being comfortable with a language, which have a reverse scoring. For example learning a language at the age of 1 actually scores 19 and starting to feel comfortable using the language at 19 will score a 1 and 20+ will score a zero for the calculation. These first two questions also have phrasal responses where the zero represents response \emph{Not yet} and 20 represents phrasal responses \emph{Since birth} and \emph{For as long as I can remember}. The remaining four questions in this section ask about time frames measured in number of years, which have a 1 to 1 relationship with the scale and its value in the calculation. For example, living in a family speaking a particular language for 1 year scores a value of 1 for the calculation and 20+ scores a 20.
+The language history section contains six questions on a scale range of 0 to 20 and is the most complicated section for scoring. The first two questions ask about the age of learning a language and being comfortable with a language, which have a reverse scoring. \ttodo[inline]{give us a sense of the types of questions included in this module. You jump to detailed problems with scoring as if your reader had the BLP in front of them and knew it well. Present, then explain details.} For example learning a language at the age of 1 actually scores 19 and starting to feel comfortable using the language at 19 will score a 1 and 20+ will score a zero for the calculation. These first two questions also have phrasal responses where the zero represents response \emph{Not yet} and 20 represents phrasal responses \emph{Since birth} and \emph{For as long as I can remember}. The remaining four questions in this section ask about time frames measured in number of years, which have a 1 to 1 relationship with the scale and its value in the calculation. For example, living in a family speaking a particular language for 1 year scores a value of 1 for the calculation and 20+ scores a 20.
 
 \begin{gather}
 English_{History} = Q1a + Q2a + Q3a + Q4a + Q5a + Q6a\\
@@ -240,6 +217,8 @@ Spanish_{History} = Q1b + Q2b + Q3b + Q4b + Q5b + Q6b
 a & = \text{questions asking about English language history}\\[-2ex]
 b & = \text{questions asking about Spanish language history}\\[-2ex]
 \end{align*}
+\ttodo{conclude with a sentence in which you explain how to interpret the scoring in general: higher numbers indicate x and lower numbers indicate y.}
+
 \subparagraph{Language Use.}
 The second section, language use, asks five questions about a participant's language use of language 1, language 2 and other languages. In the case of this project, language 1 was English while language 2 was Spanish. This section was the most confusing for participants because the sum of all languages must equal 100 percent and participants had a difficult time tracking the percentages that they gave to each language. Due to technical limitations, the tick marks on the scale in PsychoPy were displayed as 0 to 10 where 0 represented 0 percent and 10 represented 100 percent, which added to the confusion. At the start of this section in the questionnaire, the researcher walked the participants through the instructions and checked for understanding. Many times the researcher had to offer a personal example in order to try to minimize the confusion which could have led to participants submitting inaccurate percentage data for this section. 
 
@@ -307,7 +286,6 @@ Language Dominance = Global Score_{English} - Global Score_{Spanish}
 \subsubsection{Online Experiments}
 The participants who completed experiments online saw modified versions of BLP questions at the beginning of the experiment setup process screen. This was done to keep it consistent among online participants since one group was monolingual speakers of Spanish. Due to the fact that the full BLP was not completed by these participants, it was not possible to caluculate the language dominance of speakers that were computed for in-person participants. For online participants, these modified versions of the BLP questions served as a check to verify the responses that they had responed to when creating their Prolific profiles. For example, some participants reponded with conflicting information to critical inclusion criterion such as langauge use at home, preferred language, birth place, current residence, etc. Prolific provides communication between researchers and participants who have completed their studies. It was through this method that the conflicting answers were attempted to be resolved. In most cases, the participant verified that the information entered into the experiment was more accurate than their Prolific profiles, they remained in the applicant pool and were advised to update their Prolific profile to match. However, in some cases the answers provided in the experiment were more accurate, which made them ineligible to participate. To illustrate a common possibility with language research studies is that a participant has learned a new language since registering with Prolific. In these cases, the participants were asked to update their profiles to match their current conditions and excluded from data downloads and analysis. Researchers were able to pass this information along to Prolific who would follow-up with them to ensure the problems were resolved and maintain integrity of participant pool. The materials actually used during the online experiments in this disseration can be found in Appendix \ref{Appendix_BLP}.
 
-
 \subsection{English Vocabulary Size}
 \label{ssec:LexTALE}
 In order to better understand the English language proficiency of participants, a Lexical Test for Advanced Learners of English (LexTALE) was used. The LexTALE contains 60 vocabulary items presented as an untimed visual lexical decision task plus three additional practice items that always appeared as the first three items. The LexTALE task is used to correlate vocabulary knowledge and language proficiency in English \parencite{Lemhofer2012-hz}. According to the findings of Lemhöfer \& Broersma \parencite*{Lemhofer2012-hz}, that self-ratings such as writing, reading, listening and speaking proficiency, while significant in some cases, did not have the same predicative power as the LexTALE for translation accuracy and overall proficiency. For example, the LexTALE vocabulary test was able to distinguish between lower intermediate (up to 59 percent), upper intermediate (60–80 percent) and advanced (above 80 percent) levels of proficiency based on average percent correct responses. In terms of word recognition experiments, the LexTALE remained a significant predictor of success while self-ratings was not \parencite{Lemhofer2012-hz}. The LexTALE task is publicly available online at www.lextale.com and has been designed to run in PRAAT, Matlab and Presentations. For data collection purposes in this disseration project, participants completed both the LexTALE using PsychoPy to create the feel of a single, connected experimental session.
@@ -331,7 +309,6 @@ n_{Word} & = \text{number of correct responses to real words}\\[-2ex]
 n_{Nonword} & = \text{number of correct responses to nonwords}\\[-2ex]
 \end{align*}
 \vspace{-0.5in} % modified manually because equation fell at end of section causing too much whitespace
-
 
 \subsection{Spanish Vocabulary Size}
 \label{ssec:LexTALE-Esp}
@@ -384,28 +361,13 @@ n_{Nonword} & = \text{number of yes responses to nonwords}\\[-2ex]
 \end{align*}
 \vspace{-0.5in} % modified manually because equation fell at end of section causing too much whitespace
 
-
 \subsection{Button Box}
 \label{ssec:button_box}
 Many of the measures in this dissertations had a dependent variable based on reaction time. As a result of previous study findings, the difference in reaction times for different experimental conditions were expected to be small, a button box was used during in-person experiments. The response box was used in all tasks except for the BLP where the internal keyboard and mouse were more efficient for data input and reaction time was not measured. The response box used was built by the researcher using an arduino Adafruit Feather 32u4 Adalogger microcontroller. This microcontoller was powered through the USB 3.0 port on the researcher's computer during experiments. It was mounted inside of a laser cut acrylic box and wired to five 30mm arcade style buttons mounted in the top face of the box---white, green, blue, yellow and red moving from left to right. The the white button was always used to progress to next screen and were offset at 2.25 inches on center from the remaining four colored buttons, which were evenly spaced at at 1.75 inches on center. Before deploying the use of the button box, testing was done using a Raspberry Pi 3 B+ following guidelines for building a LagBox \parencite{Bockes2018-mn}. The Raspberry Pi testing instrument was tested using a mouse to ensure the readings being provided were in an acceptable tolerance. For full details on building and testing a button box such as the one used here, please refer to Appendix \ref{button_box}.
 
-
-%\section{Participant Exclusion}
-%\label{sec:exclusion}
-%The LexTALE task was used to ensure that participants were placed into the appropriate bilingual %population---NS or LS groups---and did not exists as outliers to the population with which they were %analyzed. 
-%
-%The LexTALE-Esp results were used to group participants into the appropriate speaker groups and allowed %for comparisons across all MS, NS and LS groups.
-%
-%Participants that score lower than \ttodo{INSERT CUTOFF PERCENTAGE HERE} were excluded due to having too %low of a proficiency score in one of the two languages. The MS group had a cut-off score of 10 in %Spanish based on the LexTALE-Esp and no English cut-off score was considered as they did not complete %the LexTALE task. The NS group had a \ttodo{INSERT CUTOFF PERCENTAGE HERE} success rate in Spanish and %it was higher than their English success rate of \ttodo{INSERT success peRCENTAGE HERE}. The LS group %scored \ttodo{INSERT CUTOFF PERCENTAGE HERE}or higher in English and it was higher than their Spanish %scores when comparison was available---in-person participants only because the online participants did %not complete the LexTALE task. Of the \ttodo{INSERT Total NUMBER OF PARTICIPANTS} participants, %\ttodo{INSERT NUMBER OF PARTICIPANTS} participants were excluded from the analysis due to falling below %the minimum standards used to describe each group.
-
-%-----------------------------------
-%	SECTION 3
-%-----------------------------------
-
 \section{Study Conditions}
 \label{sec:conditions}
 The data collection locations for the entire dissertation were conducted in the United States and Mexico. Throughout the project, data collection methods changed from laboratory conditions for in-person data collection to online data collection methods as a necessity in response to the COVID-19 social distancing requirements. Below are detailed descriptions of both data collection methods and site locations.
-
 
 \subsection{In-person Data Collection}
 \label{ssec:conditions-person}
@@ -415,14 +377,7 @@ Participants recruited in Hermosillo, Mexico came to a quiet location in library
 
 In both in-person data collection locations, initial contact was all conducted through email. A participant wrote the initial email to the researcher after receiving information from a flyer, class announcement or word of mouth from previous participants to express interest. Once interest was expressed, the potential participant was sent an invite to calendar where they could register for available 1 hour time-slots through Google Appointments. Once they had registered for a time-slot, they received the details of the location of the experiment and procedures via e-mail. Participants in Tucson, AZ were greeted at the main entrance of the library and were briefed on the experiment and gave consent was given before escorting them to the fourth floor experimental room. Participants in Hermosillo, MX were given explicit instructions to table in the back of the library and description of the researcher and button box they could identify on the table. They were briefed on the experiment and gave consent before beginning the experiment. The experimental variables related to hardware and software were completely controlled for in-person experiments. This level of control was available because the researcher provided all equipment used during the experiment. All participants used the 13-inch Mid 2012 MacBook Pro with a 2.9 GHz Intel Core i7 processor running 16 GB 1600 MHz DDR3 of memory. The operating system during experimentation was macOS Mojave version 10.14.6 and PsychoPy version 3.0.7 was responsible for running all experiments. All participants also used the same button box which connected to the laptop via a USB cable to enter responses to all experimental tasks except the BLP questionnaire where everyone used the built-in keyboard to respond.
 
-
 \subsection{Online Data Collection}
 \label{ssec:conditions-online}
 In the online data collection experiments conducted as part of the dissertation, participants completed all tasks using their own personal equipment. As a result, the same level of control over software/hardware variables that were instituted in the in-person experiments. Variables that were unable to be controlled included the computer used including operating system, input controls, and internet connection. However, the online version of PsychoPy version 2020.1.2 was kept consistent across all participants. The PsychoPy version was required in order to host the experiment on Pavlovia which runs off of Javascript. The python 3 code written for the in-person experiments was converted to Javascript using a translation tool within PyschoPy with slight modiifications to translated code to reproduce the same experimental behavior.
-
-%----------------------------------------------------------------------------------------
-%	SECTION 4
-%----------------------------------------------------------------------------------------
-
-%\section{Summary of Sampling Procedures}
-%Recap all the variables
+\ttodo{I remember having sent you a few articles that make the point that, when you have enough data, keyboard data (online data) are almost as good as laboratory data. You should add some sentences making the point that online data are good data.}
