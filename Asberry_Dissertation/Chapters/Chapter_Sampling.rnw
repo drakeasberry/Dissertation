@@ -57,7 +57,7 @@ Participants were chosen based on their language background profiles according t
 \subsection{Monolingual Spanish Speakers (MS)}
 \label{ssec:groupMS}
 \ttodo{Control group for Chapter 5}
-The monolingual Spanish (MS) participants were all recruited through Prolific, which is a participant recruiting site \parencite{noauthor_2020-xx}. \ttodo{Prolific has not been described at this point. Consider just stating they recruited online OR I need to explain what Prolific is} See recruitment and inclusion criteria sections, section \ref{sec:recruit} and section \ref{sec:inclusion} respectively, for more details. In short, all participants that were recruited reported being monolingual \ttodo[inline]{Give a description of what I mean by monolingual speakers: 1st language, born and raised in Mexico, no knowledge of any language other than Spanish with the exception of required English classes to get through educational system. No speaker was should be fluent in English.} speakers of Spanish who were born and continue to reside in Mexico. This allowed researchers to minimize the dialectal differences effect that exists between Spanish speaking countries. This does not exclude or assume that dialectal difference do not exist within the borders of Mexico, but simply acknowledges that these differences are not the main focus of the study. \ttodo{Why did I actuall choose this group? Don't defend the decision, just explain it. COVID restricition and participant sample size.}
+The monolingual Spanish (MS) participants were all recruited through Prolific, which is a participant recruiting site \parencite{noauthor_2020-xx}. \ttodo{Prolific has not been described at this point. Consider just stating they recruited online OR I need to explain what Prolific is} In short, all participants that were recruited reported being monolingual \ttodo[inline]{Give a description of what I mean by monolingual speakers: 1st language, born and raised in Mexico, no knowledge of any language other than Spanish with the exception of required English classes to get through educational system. No speaker was should be fluent in English.} speakers of Spanish who were born and continue to reside in Mexico. This allowed researchers to minimize the dialectal differences effect that exists between Spanish speaking countries. This does not exclude or assume that dialectal difference do not exist within the borders of Mexico, but simply acknowledges that these differences are not the main focus of the study. \ttodo{Why did I actuall choose this group? Don't defend the decision, just explain it. COVID restricition and participant sample size.}
 
 \noindent For the online MS group, the Prolific filters included the following criteria: 
 \begin{singlespacing}
@@ -69,7 +69,7 @@ The monolingual Spanish (MS) participants were all recruited through Prolific, w
 \end{enumerate}
 \end{singlespacing}
 
-In total, \Sexpr{eligible_grp_desc["Monolingual Spanish","n"]} participants that met all inclusion criteria completed an experiment for this dissertation. See inclusion criteria, section \ref{sec:inclusion}, for complete details used to include participants in a particular group. The participants' ages ranged from \Sexpr{eligible_grp_desc["Monolingual Spanish","age_Min"]} years old to \Sexpr{eligible_grp_desc["Monolingual Spanish","age_Max"]} years old with an average age of \Sexpr{eligible_grp_desc["Monolingual Spanish","age_Mean"]}. 
+In total, \Sexpr{eligible_grp_desc["Monolingual Spanish","n"]} participants that met all inclusion criteria completed an experiment for this dissertation. The participants' ages ranged from \Sexpr{eligible_grp_desc["Monolingual Spanish","age_Min"]} years old to \Sexpr{eligible_grp_desc["Monolingual Spanish","age_Max"]} years old with an average age of \Sexpr{eligible_grp_desc["Monolingual Spanish","age_Mean"]}. 
 %Table \ref{tab:ms_demographics} for an overview of this demographic information.
 %\begin{table}
 %\caption{Demographic information for MS group BLP Language Dominance, LexTALE and LexTALE-Esp}
@@ -105,7 +105,7 @@ The participants in this group were recruited because they represented L1-Spanis
 \end{enumerate}
 \end{singlespacing}
 
-For the current project, \Sexpr{eligible_grp_desc["Spanish","n"]} participants meeting all inclusion criteria completed an experiment. Section \ref{sec:inclusion} describes all inclusion details for eligible participants. The participants ages ranged from \Sexpr{eligible_grp_desc["Spanish","age_Min"]} to \Sexpr{eligible_grp_desc["Spanish","age_Max"]} years old with a mean age of \Sexpr{eligible_grp_desc["Spanish","age_Mean"]} years. 
+For the current project, \Sexpr{eligible_grp_desc["Spanish","n"]} participants meeting all inclusion criteria completed an experiment. The participants ages ranged from \Sexpr{eligible_grp_desc["Spanish","age_Min"]} to \Sexpr{eligible_grp_desc["Spanish","age_Max"]} years old with a mean age of \Sexpr{eligible_grp_desc["Spanish","age_Mean"]} years. 
 %See Table \ref{tab:ns_demographics} for an overview of this demographic information.
 %
 %\begin{table}
@@ -181,7 +181,7 @@ hist_eligible_eng_grouped
 %\end{table}
 
 \ttodo{This will be a good wrap up to participants for entire project. However tools will still not have been described if left here and would require some significant rewriting in order to be clear for the reader because it is still referring to Izura scores which have not been explained to the reader yet}
-For the entire disseration project, \Sexpr{eligible_desc[1, "n"]} participants---\Sexpr{eligible_gen_desc["Female","n"]} females and \Sexpr{eligible_gen_desc["Male","n"]} males--- were recruited that met all inclusion criteria discussed in section \ref{sec:inclusion}. The participants' ages ranged from \Sexpr{eligible_desc[1, "age_Min"]} to \Sexpr{eligible_desc[1, "age_Max"]} years old with an average of \Sexpr{eligible_desc[1, "age_Mean"]} years. In terms of Spanish vocabulary size two distinct populations are seen based on the L1 of the participant. The two distributions can be seen in Figure \ref{plt:hist_eligible_part}.
+For the entire disseration project, \Sexpr{eligible_desc[1, "n"]} participants---\Sexpr{eligible_gen_desc["Female","n"]} females and \Sexpr{eligible_gen_desc["Male","n"]} males---were recruited that met all inclusion criteria. The participants' ages ranged from \Sexpr{eligible_desc[1, "age_Min"]} to \Sexpr{eligible_desc[1, "age_Max"]} years old with an average of \Sexpr{eligible_desc[1, "age_Mean"]} years. In terms of Spanish vocabulary size two distinct populations are seen based on the L1 of the participant. The two distributions can be seen in Figure \ref{plt:hist_eligible_part}.
 
 \begin{figure}[h]
 \begin{center}
@@ -192,16 +192,6 @@ hist_eligible_grouped
 \label{plt:hist_eligible_part}
 \end{center}
 \end{figure}
-
-
-
-\section{Inclusion Criteria}
-\label{sec:inclusion}
-\subsection{In-person Participant Groups} 
-\subsection{Online Participant Groups}
-
-
-
 
 \section{Instruments}
 \label{sec:instruments}
@@ -216,10 +206,9 @@ One instrument used in this study was the Bilingual Language Profile (BLP), whic
 The BLP assessment tool has been used in numerous language studies with a focus on bilingualism and is available for free under the creative commons license. The BLP is available in a paper-based format and electronically through the use of Google Forms. However, in an effort to make the time in the lab and the feel of the experiment as seamless as possible, the participants in this dissertation took the BLP within the PsychoPy platform as well. \ttodo[inline]{This only works if PyschoPy is explained before this point. Otherwise it needs to be reworded.} No modifications were made to BLP questions or their ordering, but they were formatted in a .csv file that PsychoPy could read. During the experiment, the language that the question was interested in changed color to highlight the difference for participants---English was written in purple, Spanish in blue and other languages in red. \ttodo[inline]{This description is unclear to readers who are not familiar with BLP. Explain what the survey looked like in plain English} In addition to it being the last item of the experiment, it was also untimed allowing for the participant to ask clarification questions about the survey as it was taking place in their preferred language choice without compromising the integrity of the data of the experiments focused on the processing of Spanish. 
 
 \ttodo{reduce the number of subsections. In-person versus online}
-\subsubsection{In-person Experiments}
 Only participants that completed experiments during in-person data collection procedures actually completed the full BLP survey. This allowed the researchers to compute a language dominance score for each participant. The language dominance score falls on a scale between -218 and 218 where -218 represents one language, Spanish in this project, and 218 represents the other language, English in this case. Therefore, a person that has a language dominance closer to zero would represent a more balanced bilingual.
 
-\paragraph{Module Scores.}
+\subparagraph{Module Scores.}
 In order to calculate the language dominance score for a participant, a module score must be calculated for each of the four sections---Language History, Language Use, Language Proficiency and Language Attitudes---for both languages individually. In other words, participants receive two scores for each module. One is the sum of all answers in the module that asks about English while the second is the sum of all questions in the module asking about Spanish. The contents of each module, numbers of questions and scoring scales, are different for each of the four modules. 
 
 \subparagraph{Language History.}
@@ -266,7 +255,8 @@ b & = \text{questions asking about Spanish proficiency}\\[-2ex]
 c & = \text{questions asking about language attitude towards English}\\[-2ex]
 d & = \text{questions asking about language attitude towards Spanish}\\[-2ex]
 \end{align*}
-\paragraph{Global Language Scores.}
+
+\subparagraph{Global Language Scores.}
 Once all four module scores had been calculated for both language 1 and language 2, English and Spanish respectively, the global language score could be calculated for each of the two langauges individually. The questionnaire weighted each module score differently for the computation of the global language scores (see Table \ref{tab:BLP_weights}). Since the global language score was computed for each language independent of the other, the minimum score for each language is 0 and the maximum score achieveable is 218.
 
 \begin{table}
@@ -294,14 +284,14 @@ Global Score_{Language} & = (History_{Language} * 0.454) + (Use_{Language} * 1.0
 \intertext{where:}
 Language & = \text{English or Spanish}\\[-2ex]
 \end{align*}
-\paragraph{Language Dominance Score.}
+
+\subparagraph{Language Dominance Score.}
 Finally, the language dominance score was calculated by substracting the global English score for language 1 from the global Spanish score for language 2. As previously mentioned, this score can range from -218 to 218. A negative number indicates that the participant has a stronger preference for language 2 whereas a positive number shows a participant's stronger preference for language 1. In the current project, a negative language dominance score indicated a stronger dominance for Spanish while a positive score indicated English as the more dominant language of the participant. For a detailed walk through of these calculations using real participant data as an example and the materials for the full BLP questionnaire actually used during the current project, see Appendix \ref{Appendix_BLP}.
 
 \begin{equation}
 Language Dominance = Global Score_{English} - Global Score_{Spanish}
 \end{equation}
 
-\subsubsection{Online Experiments}
 The participants who completed experiments online saw modified versions of BLP questions at the beginning of the experiment setup process screen. \ttodo[inline]{Explain this in detail: What was modified - i.e. questions at startup, How did I modify it, What questions did I include and why?} This was done to keep it consistent among online participants since one group was monolingual speakers of Spanish. \ttodo[inline]{Why can't the BLP used with monolinguals? Explain in clear English.} Due to the fact that the full BLP was not completed by these participants, it was not possible to calculate the language dominance of speakers that were computed for in-person participants. For online participants, these modified versions of the BLP questions served as a check to verify the responses that they had responded to when creating their Prolific profiles. For example, some participants reponded with conflicting information to critical inclusion criteria such as language use at home, preferred language, birth place, current residence, etc. Prolific provides communication between researchers and participants who have completed their studies. It was through this method that the conflicting answers were attempted to be resolved. In most cases, the participant verified that the information entered into the experiment was more accurate than their Prolific profiles, they remained in the applicant pool and were advised to update their Prolific profile to match. However, in some cases the answers provided in the experiment were more accurate, which made them ineligible to participate. To illustrate a common possibility with language research studies is that a participant has learned a new language since registering with Prolific. In these cases, the participants were asked to update their profiles to match their current conditions and excluded from data downloads and analysis. Researchers were able to pass this information along to Prolific who would follow-up with them to ensure the problems were resolved and maintain integrity of participant pool. The materials actually used during the online experiments in this disseration can be found in Appendix \ref{Appendix_BLP}.
 
 \subsection{English Vocabulary Size}
@@ -310,10 +300,8 @@ In order to better understand the English language proficiency of participants, 
 
 Similar to the BLP, participants in the NS and LS groups that completed experiments in-person took the LexTALE. \ttodo[inline]{This is unclear and hard to read.} The MS group did not participate in the LexTALE task for fear that they may become discouraged at the fact they must guess whether a word is real or not in a language for which they had no prior knowledge when the experiment was advertised as a Spanish language study.\ttodo[inline]{English ability was not concern here.} As a result, the LS group who completed the experiment in an online setting did not complete this task in an effort to keep the experimental environment as similar as possible to their comparison MS group, monolingual Spanish speakers.\ttodo[inline]{Targeting native English speakers so no need to test their English ability.} Also like the BLP task, the LexTALE task also followed all tasks where Spanish and reaction times in relation to processing Spanish were recorded. This allowed the allowed the instructions for the task to be presented to participants in English or Spanish based off of their response to \emph{preferred language} in the experiment startup dialog box.
 
-\subsubsection{Procedures}
 For the participants completing the LexTALE, they were instructed that they were going to see strings of letters appear on the screen and that they were to respond \emph{yes} if they thought the letters were actually a real word in English and to respond \emph{no} if they believed the word to not exist in English. The instructions also clearly indicated that the task was untimed and that they could take as much time as they needed to respond. The participant pressed a button on the provided button box to begin the task and the first word appeared in the center of the screen along with \emph{sí} below the word and to the left of center screen while \emph{no} appeared below the word and to the right of center screen. PyschoPy kept the screen constant until the participant entered the response through the button box. When PyschoPy registered a response, it displayed the next word in the task until the participant had responded to all 60 items and displayed the instructions for the next section. All participants saw the 60 items in the same order.
 
-\subsubsection{Scoring}
 The scoring of the LexTALE task is reported as a percentage of correct responses. The first step was to remove the first three items as they were practice items and should not count towards the participant's score. This left the 60 experimental items remaining, where 40 of them were real English word and 20 were nonwords. Equation \ref{eqn:LexTALE_eq} was used in accordance with the documentation provided by the LexTALE creators. This equation also corrected for the proportion inequality of words versus nonwords used in the task. A full list of items and materials used in this project can be found in Appendix \ref{Appendix_LexTALE}.
 
 \begin{equation}
@@ -349,10 +337,8 @@ Item 3 & generic & garbardina (\emph{trench coat}) &  Word\\
 \end{tabular}
 \end{table}
 
-\subsubsection{Procedures}
 All participants reported in this dissertation project regardless of whether they were recruited for in-person or online data collection completed the LexTALE-Esp. Every participant completed the LexTALE-Esp as the initial task of the experiment. This was done intentionally to serve as a buffer of language mode activation, which could have affected reaction times in the Spanish processing tasks. This was necessary since many of the LS group participants were very likely to speak in English with the researcher througout the consent obtaining process. As with the LexTALE task, participants were instructed that they were going to see strings of letters appear on the screen and that they were to respond \emph{sí} if they thought the letters represented a real Spanish word and to respond \emph{no} if they believed the word did not exist in Spanish. The instructions clearly indicated that they could take as much time as they needed to respond as the task was untimed. Participants pressed a button on the provided button box to begin the task which brough up the initial trial screen. The first word appeared in the center of the screen along with available responses also displaying below the word and off of center screen. The \emph{sí} response appeared to the left of center screen while \emph{no} response appeared to the right of center screen. PyschoPy waited until it registered a response through the button box before it displayed the next word in the task. This cycle repeated until the participant had responded to all 90 items and the instructions for the next section were displayed on the screen. No randomization of item presentation order was utilized as in the LexTALE task. \ttodo{ This is a feature of LexTALE. Say that so it is clear as to why I made this choice and be clear that it was not a personal decision that was unfounded.}
 
-\subsubsection{Scoring}
 The scoring of the LexTALE-Esp task is only documented in Izura, Cuetos and Brysbaert \parencite*{Izura2014-yw}. While it differs from the LexTALE calculation, equation \ref{eqn:LexTALE-Esp_eq} used in the LexTALE-Esp remains quite simple, but does report the score as a percentage of correct responses. Since, the current project added three practice trials, the first step was to remove them because they should not count towards the participant's score. This left the 60 real Spanish words and 30 Spanish nonwords which were used in the computation of each participant's Spanish vocabulary score.
 
 \begin{equation}
