@@ -195,7 +195,16 @@ hist_eligible_grouped
 
 \section{Instruments}
 \label{sec:instruments}
+\ttodo{Give 2 or 3 sentence introducing the section}
+
+\subsection{Button Box}
+\label{ssec:button_box}
+Many of the measures in this dissertations had a dependent variable based on reaction time. As a result of previous study findings, the difference in reaction times for different experimental conditions were expected to be small, a button box was used during in-person experiments. The response box was used in all tasks except for the BLP where the internal keyboard and mouse were more efficient for data input and reaction time was not measured. The response box used was built by the researcher using an arduino Adafruit Feather 32u4 Adalogger microcontroller. This microcontoller was powered through the USB 3.0 port on the researcher's computer during experiments. It was mounted inside of a laser cut acrylic box and wired to five 30mm arcade style buttons mounted in the top face of the box---white, green, blue, yellow and red moving from left to right. The white button was always used to progress to next screen and were offset at 2.25 inches on center from the remaining four colored buttons, which were evenly spaced at at 1.75 inches on center. Before deploying the use of the button box, testing was done using a Raspberry Pi 3 B+ following guidelines for building a LagBox \parencite{Bockes2018-mn}. The Raspberry Pi testing instrument was tested using a mouse to ensure the readings being provided were in an acceptable tolerance. For full details on building and testing a button box such as the one used here, please refer to Appendix \ref{button_box}.
+
+\subsection{PsychoPy}
+\label{ssec:psychopy}
 \ttodo{The first part of this section may be the most logical place to explain PsychoPy. Then it can be mentioned when talking about the three main tasks being used in PsychoPy as well.}
+
 \ttodo{This may be useful here: the LexTALE test—a vocabulary based proficiency test used in second language research, the LexTALE-Esp which is the Spanish version of the LexTALE and the Bilingual Language Profile (BLP) or questions adapted from the BLP.} 
 Three task based instruments were used to check \ttodo[inline]{No, this is not why you need these information. Just delete this sentence. Say you collected additional data about the linguistic experience and proficiency of your participants.} and verify participant information to ensure participants were providing valid data as well as being placed into the appropriate group. These three instruments included the Bilingual Language Profile Questionnaire (See section \ref{ssec:BLP}), the LexTALE (See section \ref{ssec:LexTALE}) and the LexTALE-Esp (See section \ref{ssec:LexTALE-Esp}) which are described in the following three sections. \ttodo{You see the problem? You constantly end up having to refer backwards and forward because the information is distributed across to many subsections. Before this moment, you only needed to say you assessed "linguistic experience by means of a survey and proficiency by means of a vocabulary-size test". You did not need to use the terms "LexTale" or "BLP" until now. As soon as you mention them, they must be cited, explained and motivated.}
 
@@ -364,10 +373,6 @@ n_{Word} & = \text{number of yes responses to real words}\\[-2ex]
 n_{Nonword} & = \text{number of yes responses to nonwords}\\[-2ex]
 \end{align*}
 \vspace{-0.5in} % modified manually because equation fell at end of section causing too much whitespace
-
-\subsection{Button Box}
-\label{ssec:button_box}
-Many of the measures in this dissertations had a dependent variable based on reaction time. As a result of previous study findings, the difference in reaction times for different experimental conditions were expected to be small, a button box was used during in-person experiments. The response box was used in all tasks except for the BLP where the internal keyboard and mouse were more efficient for data input and reaction time was not measured. The response box used was built by the researcher using an arduino Adafruit Feather 32u4 Adalogger microcontroller. This microcontoller was powered through the USB 3.0 port on the researcher's computer during experiments. It was mounted inside of a laser cut acrylic box and wired to five 30mm arcade style buttons mounted in the top face of the box---white, green, blue, yellow and red moving from left to right. The white button was always used to progress to next screen and were offset at 2.25 inches on center from the remaining four colored buttons, which were evenly spaced at at 1.75 inches on center. Before deploying the use of the button box, testing was done using a Raspberry Pi 3 B+ following guidelines for building a LagBox \parencite{Bockes2018-mn}. The Raspberry Pi testing instrument was tested using a mouse to ensure the readings being provided were in an acceptable tolerance. For full details on building and testing a button box such as the one used here, please refer to Appendix \ref{button_box}.
 
 \section{Study Conditions}
 \label{sec:conditions}
