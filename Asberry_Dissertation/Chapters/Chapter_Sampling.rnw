@@ -45,11 +45,19 @@ Due to the fact that this second wave of recruitment occured in response changin
 
 \section{Participants}
 \label{sec:participants}
-This dissertation only utilized two groups of participants for its design and analysis. The control group always consisted of native Spanish speakers while the target groups was always made up of native English speakers. The control group participants were native Spanish speakers who were late learners of English (NS) and monolingual Spanish speakers (MS). The NS group data was collected in person while the MS group data was collected online in accordance with social distancing guidelines, but both groups represented the native Spanish speaker control. The target group participants consisted of native English speakers who were late learners of Spanish (LS). Recruitment and data collection for this group was also done in person and online at separate times due to social distancing. In all cases, participants were chosen based on their language backgrounds according to the results of a survey. Their language proficiency was also considered and was determined by a vocabulary size test. In addition to their language-based characteristics, some general criteria also applied to eligibility requirements. All participants had to be 18 years of age or older. No participant was specifically sought after or excluded from participating based on their assigned or self-identified gender. All other group inclusion criteria was layered over the general specifications and differed between target and control groups. These difference are detailed below.
+This dissertation only utilized two groups of participants for its design and analysis. The control group always consisted of native Spanish speakers while the target groups was always made up of native English speakers. The control group participants were native Spanish speakers who were late learners of English (LE) and monolingual Spanish speakers (MS). The NS group data was collected in person while the MS group data was collected online in accordance with social distancing guidelines, but both groups represented the native Spanish speaker control. The target group participants consisted of native English speakers who were late learners of Spanish (LS). Recruitment and data collection for this group was also done in person and online at separate times due to social distancing. In all cases, participants were chosen based on their language backgrounds according to the results of a survey. Their language proficiency was also considered and was determined by a vocabulary size test. In addition to their language-based characteristics, some general criteria also applied to eligibility requirements. All participants had to be 18 years of age or older. No participant was specifically sought after or excluded from participating based on their assigned or self-identified gender. All other group inclusion criteria was layered over the general specifications and differed between target and control groups. These difference are detailed below.
 
-\subsection{Monolingual Spanish Speakers (MS)}
-\label{ssec:groupMS}
+\subsection{Native Spanish Speakers}
+\label{ssec:groupNS}
+As stated above, due to COVID-19 restriction that were put into place during the course of this dissertation project, two separate recruitment periods were required. The first group of native Spanish speakers were recruited for in-person experiments and occured prior to the restrictions. These participants were recruited because they were late learners of English (LE) and represented L1-Spanish--L2-English bilingual group. These LE participants were all born and raised in Mexico where Spanish was the only language spoken in the home. They all reported learning English as a second language during their school age years in Mexico and no fluency in any language other than English and Spanish. At the time of recruitment, all participants still resided in Mexico and were enrolled at the University of Sonora in Hermosillo, Mexico. All participation in experimental tasks were completed in person on the University of Sonora campus library. No participants in the LE group were recruited through Prolific or took part in an online experiment.  
+
+For the current project, \Sexpr{eligible_grp_desc["Spanish","n"]} participants meeting all inclusion criteria completed an experiment. The participants ages ranged from \Sexpr{eligible_grp_desc["Spanish","age_Min"]} to \Sexpr{eligible_grp_desc["Spanish","age_Max"]} years old with a mean age of \Sexpr{eligible_grp_desc["Spanish","age_Mean"]} years. The average age that participants reported for the beginning to study English was \Sexpr{eligible_grp_desc["Spanish","eng_acq_age_Mean"]}. The data collected from the LE participants was used to represent the control group for syllabic intuitions, Chapter \ref{intuition}, and syllabic segmentation experiments completed in person, Chapter \ref{labseg}.
+
+\todo{Insert table results as well}
+
+\subparagraph{Monolingual Spanish Speakers (MS)}
 \ttodo{Control group for Chapter 5}
+\ttodo{make sure the motivation for describing the second control separately has been discussed by this point.}
 The monolingual Spanish (MS) participants were all recruited through Prolific, which is a participant recruiting site \parencite{noauthor_2020-xx}. \ttodo{Prolific has not been described at this point. Consider just stating they recruited online OR I need to explain what Prolific is} In short, all participants that were recruited reported being monolingual \ttodo[inline]{Give a description of what I mean by monolingual speakers: 1st language, born and raised in Mexico, no knowledge of any language other than Spanish with the exception of required English classes to get through educational system. No speaker was should be fluent in English.} speakers of Spanish who were born and continue to reside in Mexico. This allowed researchers to minimize the dialectal differences effect that exists between Spanish speaking countries. This does not exclude or assume that dialectal difference do not exist within the borders of Mexico, but simply acknowledges that these differences are not the main focus of the study. \ttodo{Why did I actuall choose this group? Don't defend the decision, just explain it. COVID restricition and participant sample size.}
 
 \noindent For the online MS group, the Prolific filters included the following criteria: 
@@ -63,20 +71,7 @@ The monolingual Spanish (MS) participants were all recruited through Prolific, w
 \end{singlespacing}
 
 In total, \Sexpr{eligible_grp_desc["Monolingual Spanish","n"]} participants that met all inclusion criteria completed an experiment for this dissertation. The participants' ages ranged from \Sexpr{eligible_grp_desc["Monolingual Spanish","age_Min"]} years old to \Sexpr{eligible_grp_desc["Monolingual Spanish","age_Max"]} years old with an average age of \Sexpr{eligible_grp_desc["Monolingual Spanish","age_Mean"]}. 
-%Table \ref{tab:ms_demographics} for an overview of this demographic information.
-%\begin{table}
-%\caption{Demographic information for MS group BLP Language Dominance, LexTALE and LexTALE-Esp}
-%\label{tab:ms_demographics}
-%\centering
-%\begin{tabular}{c c c}
-%\toprule
-%Language Dominance & LexTALE & LexTALE-Esp\\
-%\midrule
-%Fill & Me & Out\\
-%Fill & Me & Out\\
-%\bottomrule\\
-%\end{tabular}
-%\end{table}
+
 
 In terms of native Spanish speaker recruitment, both monolingual speakers and bilingual Spanish--English speakers had to self-report using a Mexican dialect of Spanish to ensure results were not affected by dialectal differences found between different Spanish speaking countries. The participants entered this information into the computer during the course of experimentation. 
 
@@ -88,42 +83,7 @@ The fluent language filter listed under NS group deserves a slightly deeper expl
 
 \ttodo{This may be useful here or dispersed amongst each group}Unlike participants who were recruited for in-person experiments, online recruitment procedures differed due to the recruitment site regulations. Prolific requires all inclusion criteria to be done prior to the participants being given the opportunity to complete a research study. Therefore, the resposibility fell to the researcher to correctly set up filters provided by Prolific so that the experiment was advertised to only participants meeting the criteria of the study population. The filters used to recruit the MS and LS groups online are listed below.
 
-\subsection{Native Spanish Speakers (NS)}
-\label{ssec:groupNS}
-\ttodo{Control Group for Chapters 3 and 4}
-\ttodo{make sure the motivation for describing the second control separately has been discussed by this point.}
-The participants in this group were recruited because they represented L1-Spanish--L2-English bilingual group. These participants were all born and raised in Mexico and reported learning English as a second language during their school age years in Mexico. The average age that participants reported for the beginning to study English was \Sexpr{eligible_grp_desc["Spanish","eng_acq_age_Mean"]}. At the time of recruitment, all participants were students at the University of Sonora in Hermosillo, Mexico. 
-
-\noindent Requirements for the in-person NS group:
-\begin{singlespacing}
-\begin{enumerate}
-\item Country of Birth: Mexico 
-\item Current Country of Residence: Mexico
-\item Native Language: Spanish
-\item Bilingual: Grew up with only Spanish in the household and learned English in school with no reported fluency in other languages.
-\item Student Status: Currently enrolled at the University of Sonora in Hermosillo, MX.\newline
-\end{enumerate}
-\end{singlespacing}
-
-For the current project, \Sexpr{eligible_grp_desc["Spanish","n"]} participants meeting all inclusion criteria completed an experiment. The participants ages ranged from \Sexpr{eligible_grp_desc["Spanish","age_Min"]} to \Sexpr{eligible_grp_desc["Spanish","age_Max"]} years old with a mean age of \Sexpr{eligible_grp_desc["Spanish","age_Mean"]} years. 
-%See Table \ref{tab:ns_demographics} for an overview of this demographic information.
-%
-%\begin{table}
-%\caption{Demographic information for MS group BLP Language Dominance, LexTALE and LexTALE-Esp}
-%\label{tab:ns_demographics}
-%\centering
-%\begin{tabular}{c c c}
-%\toprule
-%Language Dominance & LexTALE & LexTALE-Esp\\
-%\midrule
-%Fill & Me & Out\\
-%Fill & Me & Out\\
-%\bottomrule\\
-%\end{tabular}
-%\end{table}
-No participants in the NS group were recruited through Prolific or took part in an online experiment. 
-
-\subsection{Late Learners of Spanish (LS)}
+\subsection{Native English Speakers}
 \label{ssec:groupLS}
 \ttodo{Target Group for Chapters 3, 4 and 5}
 This group of participants consisted of native English speakers who were born and currently resided in the US. They all reported learning Spanish during their school age years while attending school in the United States. There were two different recruitment stages for this group of participants, which led to differences in recruitment and how they participated in experimental tasks. For those that completed in-person experiments, they were all recruited from the University of Arizona campus in Tucson, Arizona. \Sexpr{eligible_grp_desc["English","n"]} participants made up this subgroup, which were mainly recruited from Spanish classes where students were currently enrolled in the fifth semester of study or beyond. However, flyers were also distributed around campus looking for volunteers which brought participants that were not currently registered in Spanish classes, but self-reported being able to speak Spanish. The participant's ages for those completing in-person experiments ranged from \Sexpr{eligible_grp_desc["English","age_Min"]} to \Sexpr{eligible_grp_desc["English","age_Max"]} with an average of \Sexpr{eligible_grp_desc["English","age_Mean"]} years of age. 
@@ -164,21 +124,7 @@ hist_eligible_eng_grouped
 \label{plt:hist_eligible_ls_part}
 \end{center}
 \end{figure}
-%See Table \ref{tab:ls_demographics} for an overview of this demographic information.
-%
-%\begin{table}
-%\caption{Demographic information for MS group BLP Language Dominance, LexTALE and LexTALE-Esp}
-%\label{tab:ls_demographics}
-%\centering
-%\begin{tabular}{c c c}
-%\toprule
-%Language Dominance & LexTALE & LexTALE-Esp\\
-%\midrule
-%Fill & Me & Out\\
-%Fill & Me & Out\\
-%\bottomrule\\
-%\end{tabular}
-%\end{table}
+
 
 \ttodo{This will be a good wrap up to participants for entire project. However tools will still not have been described if left here and would require some significant rewriting in order to be clear for the reader because it is still referring to Izura scores which have not been explained to the reader yet}
 For the entire disseration project, \Sexpr{eligible_desc[1, "n"]} participants---\Sexpr{eligible_gen_desc["Female","n"]} females and \Sexpr{eligible_gen_desc["Male","n"]} males---were recruited that met all inclusion criteria. The participants' ages ranged from \Sexpr{eligible_desc[1, "age_Min"]} to \Sexpr{eligible_desc[1, "age_Max"]} years old with an average of \Sexpr{eligible_desc[1, "age_Mean"]} years. In terms of Spanish vocabulary size two distinct populations are seen based on the L1 of the participant. The two distributions can be seen in Figure \ref{plt:hist_eligible_part}.
@@ -390,3 +336,49 @@ In both in-person data collection locations, initial contact was all conducted t
 \label{ssec:conditions-online}
 In the online data collection experiments conducted as part of the dissertation, participants completed all tasks using their own personal equipment. As a result, the same level of control over software/hardware variables that were instituted in the in-person experiments. Variables that were unable to be controlled included the computer used including operating system, input controls, and internet connection. However, the online version of PsychoPy version 2020.1.2 was kept consistent across all participants. The PsychoPy version was required in order to host the experiment on Pavlovia which runs off of Javascript. The python 3 code written for the in-person experiments was converted to Javascript using a translation tool within PyschoPy with slight modifications to translated code to reproduce the same experimental behavior.
 \ttodo{I remember having sent you a few articles that make the point that, when you have enough data, keyboard data (online data) are almost as good as laboratory data. You should add some sentences making the point that online data are good data.}
+
+%See Table \ref{tab:ns_demographics} for an overview of this demographic information.
+%\begin{table}
+%\caption{Demographic information for MS group BLP Language Dominance, LexTALE and LexTALE-Esp}
+%\label{tab:ns_demographics}
+%\centering
+%\begin{tabular}{c c c}
+%\toprule
+%Language Dominance & LexTALE & LexTALE-Esp\\
+%\midrule
+%Fill & Me & Out\\
+%Fill & Me & Out\\
+%\bottomrule\\
+%\end{tabular}
+%\end{table}
+
+%Table \ref{tab:ms_demographics} for an overview of this demographic information.
+%\begin{table}
+%\caption{Demographic information for MS group BLP Language Dominance, LexTALE and LexTALE-Esp}
+%\label{tab:ms_demographics}
+%\centering
+%\begin{tabular}{c c c}
+%\toprule
+%Language Dominance & LexTALE & LexTALE-Esp\\
+%\midrule
+%Fill & Me & Out\\
+%Fill & Me & Out\\
+%\bottomrule\\
+%\end{tabular}
+%\end{table}
+
+%See Table \ref{tab:ls_demographics} for an overview of this demographic information.
+%
+%\begin{table}
+%\caption{Demographic information for MS group BLP Language Dominance, LexTALE and LexTALE-Esp}
+%\label{tab:ls_demographics}
+%\centering
+%\begin{tabular}{c c c}
+%\toprule
+%Language Dominance & LexTALE & LexTALE-Esp\\
+%\midrule
+%Fill & Me & Out\\
+%Fill & Me & Out\\
+%\bottomrule\\
+%\end{tabular}
+%\end{table}
