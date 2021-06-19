@@ -55,7 +55,7 @@ For the current project, \Sexpr{eligible_grp_desc["Spanish","n"]} participants m
 
 \todo[inline]{Insert table results as well}
 
-The second recruitment perdiod for native Spanish speakers began after the implementation of the social distancing guidelines. Given that this group of participants were being recruited for a second round of experimentation and following up on previous null findings, monolingual Spanish (MS) speaking participants were the targeted demographic. This decision was made because given previous studies on syllable monitoring the monolingual groups were more consistent in their findings whereas bilingual populations of the those langauge pairings did not always behave as their monolingual counterparts \parencite{Bradley1993-qq, Cutler1986-zl, Cutler1992-qq, Mehler1981-vi, Sebastian-Galles1992-xd}. Like these previous studies, it was decided that monolingual Spanish speakers should be recruited since monolingual serve as the baseline behavior because they are unaffected by any subsequent language learning experience. This also allowed us to ensure that experimental items were not the root cause of the null findings in earlier experiment. Lastly, while there is no evidence to suggest that syllable monitoring would be affected by dialectal differences, only monolingual Spanish speakers from Mexico were recruited in order to minimize differences between control groups across this project's experiments. In short, all participants that were recruited reported being monolingual Spanish speakers who were born, raised and continued to reside in Mexico. They reported not having any fluency in any other language, including English, even though most school systems required the study of English in order to graduate. 
+The second recruitment perdiod for native Spanish speakers began after the implementation of the social distancing guidelines. Given that this group of participants were being recruited for a second round of experimentation and following up on previous null findings, monolingual Spanish (MS) speaking participants were the targeted demographic. This decision was made because given previous studies on syllable monitoring the monolingual groups were more consistent in their findings whereas bilingual populations of the those langauge pairings did not always behave as their monolingual counterparts \parencite{Bradley1993-qq, Cutler1986-zl, Cutler1992-qq, Mehler1981-vi, Sebastian-Galles1992-xd}. Like these previous studies, it was decided that monolingual Spanish speakers should be recruited since monolingual serve as the baseline behavior because they are unaffected by any subsequent language learning experience. This also allowed us to ensure that experimental items were not the root cause of the null findings in earlier experiment. Lastly, only monolingual Spanish speakers from Mexico were recruited in order to minimize differences between control groups across this project's experiments. In short, all participants that were recruited reported being monolingual Spanish speakers who were born, raised and continued to reside in Mexico. They reported not having any fluency in any other language, including English, even though most school systems required the study of English in order to graduate. 
 
 No MS group participants were recruited for in-person data collection. These participants were recruited to participate in the online experiments and were recruited through Prolific \parencite{noauthor_2020-xx}. Unlike participants who were recruited for in-person experiments, online recruitment procedures differed due to the recruitment site regulations. Prolific required all screening, filtering based on inclusion criteria, to be done prior to the participants being given the opportunity to complete a research study. Therefore, the resposibility fell to the researcher to correctly set up filters provided by Prolific so that the experiment was advertised to only participants meeting the inclusion criteria of the desired control group demographics. In order to filter the participants recruited for the online MS control group, the four Prolific filters utilized are listed below:
 
@@ -74,23 +74,16 @@ In total, \Sexpr{eligible_grp_desc["Monolingual Spanish","n"]} participants that
 
 \subsection{Native English Speakers}
 \label{ssec:groupLS}
-\ttodo{Target Group for Chapters 3, 4 and 5}
-This group of participants consisted of native English speakers who were born and currently resided in the US. They all reported learning Spanish during their school age years while attending school in the United States. There were two different recruitment stages for this group of participants, which led to differences in recruitment and how they participated in experimental tasks. For those that completed in-person experiments, they were all recruited from the University of Arizona campus in Tucson, Arizona. \Sexpr{eligible_grp_desc["English","n"]} participants made up this subgroup, which were mainly recruited from Spanish classes where students were currently enrolled in the fifth semester of study or beyond. However, flyers were also distributed around campus looking for volunteers which brought participants that were not currently registered in Spanish classes, but self-reported being able to speak Spanish. The participant's ages for those completing in-person experiments ranged from \Sexpr{eligible_grp_desc["English","age_Min"]} to \Sexpr{eligible_grp_desc["English","age_Max"]} with an average of \Sexpr{eligible_grp_desc["English","age_Mean"]} years of age. 
+Similar to the native Spanish speaker control groups, recruitment and data collection for the native English speaker target groups also had separate phases. The first group of participants consisted of native English speakers who, again, were recruited and participated in person before social distancing restrictions forced online methods to be used. For those that completed in-person experiments, they were all recruited from the University of Arizona campus in Tucson, Arizona. All participants were born and currently resided in the US. They were all raised as English monolinguals where only English was spoken in the household. They all reported learning Spanish during their school age years while attending school in the United States. In addition, the majority of participants were recruited from Spanish classes where students were currently enrolled in the fifth semester of study or beyond. However, flyers were also distributed around campus,which brought participants that were not currently registered in Spanish classes, but self-reported being able to speak Spanish at an equivalent level.
 
-\noindent Requirements for the in-person LS group:
-\begin{singlespacing}
-\begin{enumerate}
-\item Country of Birth: United States 
-\item Current Country of Residence: United States
-\item First Language: English
-\item Bilingual: Grew up with only English in the household and learned Spanish in school with no reported fluency in other languages. Students had enrolled in SPAN 251 (fifth semester) or higher course in the Department of Spanish and Portuguese or their equvialents. 
-\item Student Status: Currently enrolled at the University of Arizona in Tucson, AZ.\newline
-\end{enumerate}
-\end{singlespacing}
+In total, \Sexpr{eligible_grp_desc["English","n"]} participants made up this in-person experiment subgroup. The participants' ages for those completing in-person experiments ranged from \Sexpr{eligible_grp_desc["English","age_Min"]} to \Sexpr{eligible_grp_desc["English","age_Max"]} with an average of \Sexpr{eligible_grp_desc["English","age_Mean"]} years of age. The average age that participants reported for the beginning to study Spanish was \Sexpr{eligible_grp_desc["English","esp_acq_age_Mean"]}.\ttodo{no average age for learning Spanish available, check data files} The data collected from the first groups of LS participants was used to represent the target group for syllabic intuitions, Chapter \ref{intuition}, and syllabic segmentation experiments completed in person, Chapter \ref{labseg}.
 
-The second subgroup of L2 Spanish learners, \Sexpr{eligible_grp_desc["L2 Learner","n"]} participants, were recruited through Prolific. Similar to the LS subgroup that completed in-person experiments, these participants self-reported being able to speak Spanish and being raised as monolingual English speakers who were born and currently reside in the US. They differed in that they were recruited online and were not current students at the University of Arizona. 
+\todo[inline]{Insert table results as well}
 
-\noindent For the online LS group, the Prolific filters included the following criteria: 
+The second subgroup of L2 Spanish learners, \Sexpr{eligible_grp_desc["L2 Learner","n"]} participants, were recruited through Prolific in the same manner as the MS control group had been. Similar to the LS subgroup that completed in-person experiments, these participants self-reported being able to speak Spanish and being raised as monolingual English speakers who were born and still resided in the US. These participants also reported not having fluency in any language other than Spanish and English. They differed in that they were recruited online and they were not current students at the University of Arizona. 
+
+In order to utilize the pre-built filters within the Prolific site for recruitment, a more complex and less transparent filter structure was required. The \emph{Fluent Languages} filter deserves a slightly deeper explanation as to why it was not English and Spanish. Due to conflicts with the Prolific filters, specifying \emph{Fluent Languages} as Spanish and English produced unexpected results. Therefore, the experiment was incorrectly advertised to all participants who listed English or Spanish as a fluent language. This failed to exclude other languages such as Tagalog, French or Italian that participants may have listed. Using the \emph{Bilingual} and the \emph{Fluent Languages} filters together produced the most correct demographic pool of participants for the study. This was confirmed by the data files of demographic information provided by Prolific for participants who had completed the experiment. While this did not perfectly define the desired group demographics, it did greatly reduce the number of potential participants who did not meet the inclusion criteria. At the time of writing this dissertation, Prolific had added a warning to this filter, but the underlying issue had not been addressed. I would recommend that other researchers studying English bilinguals to use English as the \emph{First Language} filter and their other language of interest as the value for the \emph{Fluent Languages} where possible. Since English is a more widely taught around the world, researchers are likely to recruit more unuseable data from participants until Prolific resolves the issue giving the capability to select specific langauge pairings using an AND rather than an OR operator. For this project, it was possible to cross check this information with the response given to the \emph{Bilingual} filter. For example, it was easy to identify people who reported fluency in Spanish and Italian with English as their native langauge and had also incorrectly reported knowing only one language in addition to their native language. This was a minor inconvience, but allowed for their removal before analyses were run and resulted in paying for very few unusebale data points. The Prolific filters used to recruit the LS group for online experiments included the following 6 filters listed below:
+
 \begin{singlespacing}
 \begin{enumerate}
 \item Country of Birth: United States
@@ -102,38 +95,18 @@ The second subgroup of L2 Spanish learners, \Sexpr{eligible_grp_desc["L2 Learner
 \end{enumerate}
 \end{singlespacing}
 
-For the LS group, only people who stated that they were born and currently resided in the United States, were raised as monolingual English speakers and were only fluent in Spanish as their one other language were invited to participate. The filters used to recruit the MS and LS groups online are listed below.
+The participant ages for those completing in-person experiments ranged from \Sexpr{eligible_grp_desc["L2 Learner","age_Min"]} to \Sexpr{eligible_grp_desc["L2 Learner","age_Max"]} years old with an average age of \Sexpr{eligible_grp_desc["L2 Learner","age_Mean"]} years. The average age that participants reported for the beginning to study Spanish was \Sexpr{eligible_grp_desc["L2 Learner","esp_acq_age_Mean"]}.\ttodo{no average age for learning Spanish available, check data files} The data collected from the second LS target group recruited was used in the analysis conducted for Chapter \ref{onlineseg}.
 
-The participant ages for those completing in-person experiments ranged from \Sexpr{eligible_grp_desc["L2 Learner","age_Min"]} to \Sexpr{eligible_grp_desc["L2 Learner","age_Max"]} years old with an average age of \Sexpr{eligible_grp_desc["L2 Learner","age_Mean"]} years. Figure \label{plt:hist_eligible_ls_part} shows the overlap between the two distribution which are signficantly different from one another in vocabulary size. The L2 group recruited online had larger Spanish vocabulary size, (M=4.70, SD=7.88) than the L2 group recruited in-person \ttodo{if the story has been explained before this point i.e. izura score, then this is all good. However, at this point it leaves the reader confused because why should there be a difference between the participants recruited online and those in-person?} (M=14.67, SD=13.7), \emph{t}(104.13)= -4.7834, p < 0.0001. The 95\% confidence intervals [-14.101, -5.836]. \ttodo{I know we have talked about reporting these stats, but I have forgotten. Help here would be appreciated. Are these CIs for one group or the difference between group means? I need to provide average and/or mean difference.}
+\todo[inline]{Insert table results as well}
 
-\begin{figure}[h]
-\begin{center}
-<<elig_ls_part_hist, fig.width= 5, fig.height= 2>>=
-hist_eligible_eng_grouped
-@      
-\caption[Histogram: Eligible Participants]{Shows the Spanish vocabulary size for English native speaker participants distributed by native language calculated through the equation provided by \parencite{Izura2014-yw}}
-\label{plt:hist_eligible_ls_part}
-\end{center}
-\end{figure}
+For the entire disseration project, \Sexpr{eligible_desc[1, "n"]} participants---\Sexpr{eligible_gen_desc["Female","n"]} females and \Sexpr{eligible_gen_desc["Male","n"]} males---were recruited that met all inclusion criteria. The participants' ages ranged from \Sexpr{eligible_desc[1, "age_Min"]} to \Sexpr{eligible_desc[1, "age_Max"]} years old with an average of \Sexpr{eligible_desc[1, "age_Mean"]} years. 
 
-The fluent language filter listed under NS group deserves a slightly deeper explanation as to why it was not English and Spanish. Due to conflicts with the Prolific filter, specifying Fluent Languages as Spanish and English produced unexpected results. Therefore, the experiment was incorrectly advertised to all participants who listed English or Spanish as a fluent language, but failed to exclude other languages at the same time such as Tagalog, French or Italian. Using the Bilingual and the Fluent Languages filters together produced the correct demographic pool of participants for the study and was confirmed by the data files of demographic information provided by Prolific for participants who completed the experiment. This process while limiting the number of potential participants that met the criteria was reduced, it provided a much more homogeneous group of participants in a relatively short period of time. \ttodo[inline]{The previous sentence is ungrammatical or too difficult to parse.}
-
-\ttodo{This will be a good wrap up to participants for entire project. However tools will still not have been described if left here and would require some significant rewriting in order to be clear for the reader because it is still referring to Izura scores which have not been explained to the reader yet}
-For the entire disseration project, \Sexpr{eligible_desc[1, "n"]} participants---\Sexpr{eligible_gen_desc["Female","n"]} females and \Sexpr{eligible_gen_desc["Male","n"]} males---were recruited that met all inclusion criteria. The participants' ages ranged from \Sexpr{eligible_desc[1, "age_Min"]} to \Sexpr{eligible_desc[1, "age_Max"]} years old with an average of \Sexpr{eligible_desc[1, "age_Mean"]} years. In terms of Spanish vocabulary size two distinct populations are seen based on the L1 of the participant. The two distributions can be seen in Figure \ref{plt:hist_eligible_part}.
-
-\begin{figure}[h]
-\begin{center}
-<<elig_part_hist, fig.width= 5, fig.height= 2>>=
-hist_eligible_grouped
-@      
-\caption[Histogram: Eligible Participants]{Shows the Spanish vocabulary size for all participants meeting the inclusion criteria distributed by native language calculated through the equation provided by \parencite{Izura2014-yw}}
-\label{plt:hist_eligible_part}
-\end{center}
-\end{figure}
+\todo[inline]{Insert table results as well}
 
 \section{Instruments}
 \label{sec:instruments}
-\ttodo{Give 2 or 3 sentence introducing the section}
+
+\ttodo[inline]{Give 2 or 3 sentence introducing the section}
 
 \subsection{Button Box}
 \label{ssec:button_box}
@@ -143,7 +116,8 @@ Many of the measures in this dissertations had a dependent variable based on rea
 \label{ssec:psychopy}
 \ttodo{The first part of this section may be the most logical place to explain PsychoPy. Then it can be mentioned when talking about the three main tasks being used in PsychoPy as well.}
 
-\ttodo{This may be useful here: the LexTALE test—a vocabulary based proficiency test used in second language research, the LexTALE-Esp which is the Spanish version of the LexTALE and the Bilingual Language Profile (BLP) or questions adapted from the BLP.} 
+\ttodo{This may be useful here: the LexTALE test—a vocabulary based proficiency test used in second language research, the LexTALE-Esp which is the Spanish version of the LexTALE and the Bilingual Language Profile (BLP) or questions adapted from the BLP.}
+
 Three task based instruments were used to check \ttodo[inline]{No, this is not why you need these information. Just delete this sentence. Say you collected additional data about the linguistic experience and proficiency of your participants.} and verify participant information to ensure participants were providing valid data as well as being placed into the appropriate group. These three instruments included the Bilingual Language Profile Questionnaire (See section \ref{ssec:BLP}), the LexTALE (See section \ref{ssec:LexTALE}) and the LexTALE-Esp (See section \ref{ssec:LexTALE-Esp}) which are described in the following three sections. \ttodo{You see the problem? You constantly end up having to refer backwards and forward because the information is distributed across to many subsections. Before this moment, you only needed to say you assessed "linguistic experience by means of a survey and proficiency by means of a vocabulary-size test". You did not need to use the terms "LexTale" or "BLP" until now. As soon as you mention them, they must be cited, explained and motivated.}
 
 \subsection{Bilingual Language Profile}
@@ -374,3 +348,30 @@ In the online data collection experiments conducted as part of the dissertation,
 %\bottomrule\\
 %\end{tabular}
 %\end{table}
+There were two different recruitment stages for this group of participants, which led to differences in recruitment and how they participated in experimental tasks.
+
+
+Figure \label{plt:hist_eligible_ls_part} shows the overlap between the two distribution which are signficantly different from one another in vocabulary size. The L2 group recruited online had larger Spanish vocabulary size, (M=4.70, SD=7.88) than the L2 group recruited in-person \ttodo{if the story has been explained before this point i.e. izura score, then this is all good. However, at this point it leaves the reader confused because why should there be a difference between the participants recruited online and those in-person?} (M=14.67, SD=13.7), \emph{t}(104.13)= -4.7834, p < 0.0001. The 95\% confidence intervals [-14.101, -5.836]. \ttodo{I know we have talked about reporting these stats, but I have forgotten. Help here would be appreciated. Are these CIs for one group or the difference between group means? I need to provide average and/or mean difference.}
+
+\begin{figure}[h]
+\begin{center}
+<<elig_ls_part_hist, fig.width= 5, fig.height= 2>>=
+hist_eligible_eng_grouped
+@      
+\caption[Histogram: Eligible Participants]{Shows the Spanish vocabulary size for English native speaker participants distributed by native language calculated through the equation provided by \parencite{Izura2014-yw}}
+\label{plt:hist_eligible_ls_part}
+\end{center}
+\end{figure}
+
+
+In terms of Spanish vocabulary size two distinct populations are seen based on the L1 of the participant. The two distributions can be seen in Figure \ref{plt:hist_eligible_part}.
+
+\begin{figure}[h]
+\begin{center}
+<<elig_part_hist, fig.width= 5, fig.height= 2>>=
+hist_eligible_grouped
+@      
+\caption[Histogram: Eligible Participants]{Shows the Spanish vocabulary size for all participants meeting the inclusion criteria distributed by native language calculated through the equation provided by \parencite{Izura2014-yw}}
+\label{plt:hist_eligible_part}
+\end{center}
+\end{figure}
