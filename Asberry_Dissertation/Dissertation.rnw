@@ -421,10 +421,10 @@ Dissertation Director: \chairname \\
 % Include the appendices of the thesis as separate files from the Appendices folder
 % Uncomment the lines as you write the Appendices
 
+\Sexpr{knit_child('Appendices/Appendix_Button_Box.rnw')}
 \Sexpr{knit_child('Appendices/Appendix_BLP.rnw')}
 \Sexpr{knit_child('Appendices/Appendix_LexTALE.rnw')}
 \Sexpr{knit_child('Appendices/Appendix_LexTALE-Esp.rnw')}
-\Sexpr{knit_child('Appendices/Appendix_Button_Box.rnw')}
 \Sexpr{knit_child('Appendices/Appendix_Wuggy.rnw')}
 
 

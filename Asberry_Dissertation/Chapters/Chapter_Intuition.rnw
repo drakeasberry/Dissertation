@@ -20,7 +20,7 @@ set_parent(here('Asberry_Dissertation/Dissertation.Rnw'))
 %----------------------------------------------------------------------------------------
 
 \chapter{Syllabic Intuition} % Main chapter title
-\label{intuition} % for referencing this chapter elsewhere, use \ref{intuition}
+\label{ch-intuition} % for referencing this chapter elsewhere, use \ref{intuition}
 
 %----------------------------------------------------------------------------------------
 %	SECTION 0
@@ -66,7 +66,7 @@ The syllable intuition experiment is an important step in the process because ho
 %	SUBSECTION 2-1
 %-----------------------------------
 \subsection{Participants}
-Two groups of participants took part in the syllabic intuition experiment---the L1 Spanish--L2 English group (NS) and the L1 English--L2 Spanish group (LS). All \ttodo{number of participants} participants completed this experiment in-person and full details of inclusion criteria and study conditions can be found in sections \ref{sec:inclusion} and \ref{sec:conditions}. The participants were placed into their appropriate group based off of the combined results of Bilingual Language Profile (BLP), the LexTALE and the LexTALE-Esp vocabulary tests, which are described in full detail in section \ref{sec:instruments}.
+Two groups of participants took part in the syllabic intuition experiment---the L1 Spanish--L2 English group (NS) and the L1 English--L2 Spanish group (LS). All \ttodo{number of participants} participants completed this experiment in-person and full details of inclusion criteria and study conditions can be found in sections \ref{sec-inclusion} and \ref{sec-conditions}. The participants were placed into their appropriate group based off of the combined results of Bilingual Language Profile (BLP), the LexTALE and the LexTALE-Esp vocabulary tests, which are described in full detail in section \ref{sec-instruments}.
 
 
 %\textbf{DELETE ME Give accurate descriptions of participant groups, how they were classified, number of participants, etc.}
@@ -96,6 +96,7 @@ When the syllable intuition experiment was followed lexical decision based primi
 
 The participants were instructed that they would see Spanish words presented individually on the computer screen and that each word would be followed by two options for the first syllable of the presented word. There was no time constraint for the participant to select the option that they considered to be the first syllable of the presented word and the experiment would not progress until the participant had indicated a response. \ttodo{In the second experiment (Lexical Access), this was initially ran with 4 second time limit. It affected participants 062, 065-067, 069-072, 074-076 so these 11 participants should be checked for missing values.} In total, there were 10 practice trials that followed the same criteria and procedure as the 48 experimental trials presented to the participants. \ttodo{same 11 participants had timing issue in practice trials, check if possible but values may not have been stored.} For each trial, the word in lowercase letters appeared in the center of the screen for 1500 milliseconds before being replaced by the two syllable options---one a CV syllable and the other a CVC syllable---which remained on the screen, in all capital letters, until a response was entered. Following each response, the screen remained blank for 500 milliseconds before the next word appeared. \ttodo{It may be good to create a visual representation of the experiment here to illustrate what each participant saw.} For half of the participants, the CV syllable option was on the left side of the screen while the CVC syllable option was on the right. For the other half of the participants, the CVC syllable option was on the left side of the screen while the CV syllable option was on the right. Participants were given separate instruction screens for practice and experimental trials that differed only in letting the participant know whether they are about to enter a practice or experimental phase. \ttodo{Is this too repetitive? Should this be described here or in the Design section, currently it is in both} In this task it is worth noting that timing was not being measured but following the training session, most participants were trying to indicate their answer before the 1.5 second display time of the word since the syllables were always on the same side of the screen.
 
+\subsection{Analysis}
 %\textbf{DELETE ME WHEN FINISHED The first refer to mainly scope and size of research project while the procedure section is usually much more in-depth. Here, you connect your procedures to those in already published articles when possible and given detailed descriptions of classifications and scales used in procedure. Essentially ensure the reader does not suspect anything is being hidden and the researcher is honest. Do not repeat any unnecessary information in subsequent experiments of the paper.}
 
 %----------------------------------------------------------------------------------------
@@ -134,7 +135,7 @@ Columns needed include:
 grp_main
 @      
 \caption[Syllable Intuition]{Estimated mariginal means for correct responses}
-\label{plotIntuitionEMM}
+\label{plt-intuition-emm}
 \end{center}
 \end{figure}
 

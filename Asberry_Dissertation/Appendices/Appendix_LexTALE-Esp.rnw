@@ -11,7 +11,6 @@ set_parent('../Dissertation.rnw')
 
 
 \chapter{LexTALE-ESP: Spanish Version} % Main appendix title
-
-\label{Appendix_LexTALE-Esp} % Change Label; for referencing this appendix elsewhere, use \ref{Appendix_LexTALE-Esp}
+\label{app-lextale-esp} % Change Label; for referencing this appendix elsewhere, use \ref{Appendix_LexTALE-Esp}
 
 Write your content here.

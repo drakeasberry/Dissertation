@@ -11,7 +11,7 @@ set_parent('../Dissertation.rnw')
 
 \chapter{Wuggy Nonword Generator} % Main appendix title
 
-\label{Appendix_Wuggy} % for referencing this appendix elsewhere, use \ref{Appendix_Wuggy}
+\label{app-wuggy} % for referencing this appendix elsewhere, use \ref{Appendix_Wuggy}
 
 This list of 80 critical items were entered into Wuggy.app as words and the second column gave Wuggy.app the correction Spanish syllabification of each critical word—generated from within the application. I then used the verify feature to ensure all data was correct. This resulted in one error because "malena" was not found in the Wuggy.app dictionary. Therefore, I gave the correct syllabification of "ma-le-na" where hypens represent syllable boundaries. I then re-verified the data before runnning the analysis. Once I receive no errors, I ran the following analysis to generate new nonwords.
 

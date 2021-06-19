@@ -11,6 +11,6 @@ set_parent('../Dissertation.rnw')
 
 
 \chapter{Button Box} % Main appendix title
-\label{button_box} % Change Label; for referencing this appendix elsewhere, use \ref{AppendixLabel}
+\label{app-button-box} % Change Label; for referencing this appendix elsewhere, use \ref{AppendixLabel}
 
 Write your content here. Give all the testing criteria

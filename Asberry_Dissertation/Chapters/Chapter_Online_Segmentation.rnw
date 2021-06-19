@@ -26,7 +26,7 @@ set_parent(here('Asberry_Dissertation/Dissertation.Rnw'))
 %----------------------------------------------------------------------------------------
 
 \chapter{Online Segmentation} % Main chapter title
-\label{onlineseg} % for referencing this chapter elsewhere, use \ref{onlineseg}
+\label{ch-seg-online} % for referencing this chapter elsewhere, use \ref{onlineseg}
 
 %----------------------------------------------------------------------------------------
 %	SECTION 0
@@ -74,6 +74,8 @@ All participants will first take the LexTale-ESP (Spanish language proficiency t
 \ttodo{Give accurate descriptions of participant groups, how they were classified, number of participants, etc.}
 
 \ttodo{explain that we will not be looking for a crossover effect as found in previous studies but rather a parallel structure due to the way it was analyzed. matching versus mismatching condition by target. It is a simple concept but needs explanation}
+
+\subsection{Analysis}
 %----------------------------------------------------------------------------------------
 %	SECTION 3
 %----------------------------------------------------------------------------------------
