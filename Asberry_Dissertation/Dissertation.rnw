@@ -56,6 +56,9 @@ openany, % eliminates all extra blank pages from entire document
 \usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
 
 \usepackage{amsmath} % Required to format math based equations
+\usepackage{enumitem} % Required to format spacing of lists
+\setlist{noitemsep} % sets global verticle space between list items to zero
+
 %----------------------------------------------------------------------------------------
 % TODO PACKAGE
 %----------------------------------------------------------------------------------------
@@ -133,7 +136,6 @@ openany, % eliminates all extra blank pages from entire document
 %\usepackage{times} % Uncomment to use Times New Roman font
 
 \begin{document}
-
 %\frontmatter % Uncomment to use roman page numbering style (i, ii, iii, iv...) for the pre-content pages
 
 \pagestyle{plain} % Default to the plain heading style until the thesis style is called for the body content
