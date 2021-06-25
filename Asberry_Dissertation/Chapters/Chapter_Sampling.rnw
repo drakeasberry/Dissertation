@@ -173,7 +173,7 @@ For the entire disseration project, \Sexpr{eligible_desc[1, "n"]} participants--
 \caption{Attributes of all recruited participants.}
 \label{tab-demo-part}
 \centering
-\begin{tabular}{c c c c c c c}
+\begin{tabular}{l c c c c c c}
 \toprule
 & & \multicolumn{3}{c}{Age} &  \multicolumn{2}{c}{Mean Age of Acquisition}\\
 \cmidrule(lr){3-5}\cmidrule(lr){6-7}
@@ -317,12 +317,17 @@ The language dominance score originally was thought to be a very important facto
 
 \begin{singlespacing}
 \begin{enumerate}
-\item ¿A qué edad empezó a aprender español? 'What age did you start learning Spanish?'
-\item ¿Cómo habla en español? 'How well do you speak Spanish?'
-\item ¿Cómo entiende en español? 'How well do you understand Spanish?'
-\item ¿Cómo lee en español? 'How well do you read in Spanish?'
-\item ¿Cómo escribe en español? 'How well do you write in Spanish?'
-\item ¿Cuándo fue la última vez que tomó una clase de español? 'When was the last time you took a Spanish class?'
+\item ¿A qué edad empezó a aprender español?\newline \emph{'What age did you start learning Spanish?'}
+\vspace{.1in}
+\item ¿Cómo habla en español?\newline \emph{'How well do you speak Spanish?'}
+\vspace{.1in}
+\item ¿Cómo entiende en español?\newline \emph{'How well do you understand Spanish?'}
+\vspace{.1in}
+\item ¿Cómo lee en español?\newline \emph{'How well do you read in Spanish?'}
+\vspace{.1in}
+\item ¿Cómo escribe en español?\newline \emph{'How well do you write in Spanish?'}
+\vspace{.1in}
+\item ¿Cuándo fue la última vez que tomó una clase de español?\newline \emph{'When was the last time you took a Spanish class?'}
 \end{enumerate}
 \end{singlespacing}
 
@@ -360,7 +365,7 @@ Similar to the LexTALE, the materials and instructions for the LexTALE-Esp were 
 \caption{Practice items for the LexTALE and LexTALE-Esp.}
 \label{tab-prac-lextale-esp}
 \centering
-\begin{tabular}{c c c c}
+\begin{tabular}{l l l l}
 \toprule
 Order & LexTALE & LexTALE-ESP & Word Status\\
 \midrule
