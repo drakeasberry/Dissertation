@@ -53,7 +53,24 @@ As stated above, due to COVID-19 restriction that were put into place during the
 
 For the current project, \Sexpr{eligible_grp_desc["Spanish","n"]} participants meeting all inclusion criteria completed an experiment. The participants ages ranged from \Sexpr{eligible_grp_desc["Spanish","age_Min"]} to \Sexpr{eligible_grp_desc["Spanish","age_Max"]} years old with a mean age of \Sexpr{eligible_grp_desc["Spanish","age_Mean"]} years. The average age that participants reported for the beginning to study English was \Sexpr{eligible_grp_desc["Spanish","eng_acq_age_Mean"]}. The data collected from the LE participants was used to represent the control group for syllabic intuitions, Chapter \ref{ch-intuition}, and syllabic segmentation experiments completed in person, Chapter \ref{ch-seg-lab}.
 
-\todo[inline]{Insert table results as well}
+\begin{table}
+\caption{Attributes of recruited L2 English in-person participants.}
+\label{tab-demo-lab-esp}
+\centering
+\begin{tabular}{c c c c}
+\toprule
+\multicolumn{3}{c}{Age} & English Acquisition Age\\
+\cmidrule(lr){1-3}\cmidrule(lr){4-4}
+Min & Max & Mean & Mean\\
+\midrule
+\Sexpr{eligible_grp_desc["Spanish","age_Min"]} 
+& \Sexpr{eligible_grp_desc["Spanish","age_Max"]} 
+& \Sexpr{eligible_grp_desc["Spanish","age_Mean"]} 
+& \Sexpr{eligible_grp_desc["Spanish","eng_acq_age_Mean"]}\\
+\bottomrule
+\multicolumn{4}{l}{Total participants: n = \Sexpr{eligible_grp_desc["Spanish","n"]}}\\
+\end{tabular}
+\end{table}
 
 The second recruitment perdiod for native Spanish speakers began after the implementation of the social distancing guidelines. Given that this group of participants were being recruited for a second round of experimentation and following up on previous null findings, monolingual Spanish (MS) speaking participants were the targeted demographic. This decision was made because given previous studies on syllable monitoring the monolingual groups were more consistent in their findings whereas bilingual populations of the those langauge pairings did not always behave as their monolingual counterparts \parencite{Bradley1993-qq, Cutler1986-zl, Cutler1992-qq, Mehler1981-vi, Sebastian-Galles1992-xd}. Like these previous studies, it was decided that monolingual Spanish speakers should be recruited since monolingual serve as the baseline behavior because they are unaffected by any subsequent language learning experience. This also allowed us to ensure that experimental items were not the root cause of the null findings in earlier experiment. Lastly, only monolingual Spanish speakers from Mexico were recruited in order to minimize differences between control groups across this project's experiments. In short, all participants that were recruited reported being monolingual Spanish speakers who were born, raised and continued to reside in Mexico. They reported not having any fluency in any other language, including English, even though most school systems required the study of English in order to graduate. 
 
@@ -70,7 +87,24 @@ No MS group participants were recruited for in-person data collection. These par
 
 In total, \Sexpr{eligible_grp_desc["Monolingual Spanish","n"]} participants that met all inclusion criteria completed an experiment for this dissertation. The participants' ages ranged from \Sexpr{eligible_grp_desc["Monolingual Spanish","age_Min"]} years old to \Sexpr{eligible_grp_desc["Monolingual Spanish","age_Max"]} years old with an average age of \Sexpr{eligible_grp_desc["Monolingual Spanish","age_Mean"]}. The data collected from MS control group was used in the analysis conducted for Chapter \ref{ch-seg-online}.
 
-\todo[inline]{Insert table results as well}
+\begin{table}
+\caption{Attributes of recruited monolingual Spanish online participants.}
+\label{tab-demo-online-esp}
+\centering
+\begin{tabular}{c c c c}
+\toprule
+\multicolumn{3}{c}{Age} & English Acquisition Age\\
+\cmidrule(lr){1-3}\cmidrule(lr){4-4}
+Min & Max & Mean & Mean\\
+\midrule
+\Sexpr{eligible_grp_desc["Monolingual Spanish","age_Min"]} 
+& \Sexpr{eligible_grp_desc["Monolingual Spanish","age_Max"]} 
+& \Sexpr{eligible_grp_desc["Monolingual Spanish","age_Mean"]} 
+& \emph{NA}\\
+\bottomrule
+\multicolumn{4}{l}{Total participants: n = \Sexpr{eligible_grp_desc["Monolingual Spanish","n"]}}\\
+\end{tabular}
+\end{table}
 
 \subsection{Native English Speakers}
 \label{ssec-group-ls}
@@ -78,7 +112,24 @@ Similar to the native Spanish speaker control groups, recruitment and data colle
 
 In total, \Sexpr{eligible_grp_desc["English","n"]} participants made up this in-person experiment subgroup. The participants' ages for those completing in-person experiments ranged from \Sexpr{eligible_grp_desc["English","age_Min"]} to \Sexpr{eligible_grp_desc["English","age_Max"]} with an average of \Sexpr{eligible_grp_desc["English","age_Mean"]} years of age. The average age that participants reported for the beginning to study Spanish was \Sexpr{eligible_grp_desc["English","span_acq_age_Mean"]}. The data collected from the first groups of LS participants was used to represent the target group for syllabic intuitions, Chapter \ref{ch-intuition}, and syllabic segmentation experiments completed in person, Chapter \ref{ch-seg-lab}.
 
-\todo[inline]{Insert table results as well}
+\begin{table}
+\caption{Attributes of recruited L2 Spanish in-person participants.}
+\label{tab-demo-lab-eng}
+\centering
+\begin{tabular}{c c c c}
+\toprule
+\multicolumn{3}{c}{Age} & Spanish Acquisition Age\\
+\cmidrule(lr){1-3}\cmidrule(lr){4-4}
+Min & Max & Mean & Mean\\
+\midrule
+\Sexpr{eligible_grp_desc["English","age_Min"]} 
+& \Sexpr{eligible_grp_desc["English","age_Max"]} 
+& \Sexpr{eligible_grp_desc["English","age_Mean"]} 
+& \Sexpr{eligible_grp_desc["English","span_acq_age_Mean"]}\\
+\bottomrule
+\multicolumn{4}{l}{Total participants: n = \Sexpr{eligible_grp_desc["English","n"]}}\\
+\end{tabular}
+\end{table}
 
 The second subgroup of L2 Spanish learners, \Sexpr{eligible_grp_desc["L2 Learner","n"]} participants, were recruited through Prolific in the same manner as the MS control group had been. Similar to the LS subgroup that completed in-person experiments, these participants self-reported being able to speak Spanish and being raised as monolingual English speakers who were born and still resided in the US. These participants also reported not having fluency in any language other than Spanish and English. They differed in that they were recruited online and they were not current students at the University of Arizona. 
 
@@ -97,11 +148,55 @@ In order to utilize the pre-built filters within the Prolific site for recruitme
 
 The participant ages for those completing in-person experiments ranged from \Sexpr{eligible_grp_desc["L2 Learner","age_Min"]} to \Sexpr{eligible_grp_desc["L2 Learner","age_Max"]} years old with an average age of \Sexpr{eligible_grp_desc["L2 Learner","age_Mean"]} years. The average age that participants reported for the beginning to study Spanish was \Sexpr{eligible_grp_desc["L2 Learner","span_acq_age_Mean"]}. The data collected from the second LS target group recruited was used in the analysis conducted for Chapter \ref{ch-seg-online}.
 
-\todo[inline]{Insert table results as well}
+\begin{table}
+\caption{Attributes of recruited L2 Spanish online participants.}
+\label{tab-demo-online-eng}
+\centering
+\begin{tabular}{c c c c}
+\toprule
+\multicolumn{3}{c}{Age} & Spanish Acquisition Age\\
+\cmidrule(lr){1-3}\cmidrule(lr){4-4}
+Min & Max & Mean & Mean\\
+\midrule
+\Sexpr{eligible_grp_desc["L2 Learner","age_Min"]} 
+& \Sexpr{eligible_grp_desc["L2 Learner","age_Max"]} 
+& \Sexpr{eligible_grp_desc["L2 Learner","age_Mean"]} 
+& \Sexpr{eligible_grp_desc["L2 Learner","span_acq_age_Mean"]}\\
+\bottomrule
+\multicolumn{4}{l}{Total participants: n = \Sexpr{eligible_grp_desc["L2 Learner","n"]}}\\
+\end{tabular}
+\end{table}
 
 For the entire disseration project, \Sexpr{eligible_desc[1, "n"]} participants---\Sexpr{eligible_gen_desc["Female","n"]} females and \Sexpr{eligible_gen_desc["Male","n"]} males---were recruited that met all inclusion criteria. The participants' ages ranged from \Sexpr{eligible_desc[1, "age_Min"]} to \Sexpr{eligible_desc[1, "age_Max"]} years old with an average of \Sexpr{eligible_desc[1, "age_Mean"]} years. 
 
-\todo[inline]{Insert table results as well}
+\begin{table}
+\caption{Attributes of all recruited participants.}
+\label{tab-demo-part}
+\centering
+\begin{tabular}{c c c c c c c}
+\toprule
+& & \multicolumn{3}{c}{Age} &  \multicolumn{2}{c}{Mean Age of Acquisition}\\
+\cmidrule(lr){3-5}\cmidrule(lr){6-7}
+& n & Min & Max & Mean & Spanish & English\\
+\midrule
+Female
+& \Sexpr{eligible_gen_desc["Female","n"]}
+& \Sexpr{eligible_gen_desc["Female","age_Min"]} 
+& \Sexpr{eligible_gen_desc["Female","age_Max"]} 
+& \Sexpr{eligible_gen_desc["Female","age_Mean"]} 
+& \Sexpr{eligible_gen_desc["Female","span_acq_age_Mean"]}
+& \Sexpr{eligible_gen_desc["Female","eng_acq_age_Mean"]}\\
+Male
+& \Sexpr{eligible_gen_desc["Male","n"]}
+& \Sexpr{eligible_gen_desc["Male","age_Min"]} 
+& \Sexpr{eligible_gen_desc["Male","age_Max"]} 
+& \Sexpr{eligible_gen_desc["Male","age_Mean"]} 
+& \Sexpr{eligible_gen_desc["Male","span_acq_age_Mean"]}
+& \Sexpr{eligible_gen_desc["Male","eng_acq_age_Mean"]}\\
+\bottomrule
+\multicolumn{6}{l}{Total participants: n = \Sexpr{eligible_gen_desc["Female","n"]+ eligible_gen_desc["Male","n"]}}\\
+\end{tabular}
+\end{table}
 
 \section{Instruments}
 \label{sec-instruments}
