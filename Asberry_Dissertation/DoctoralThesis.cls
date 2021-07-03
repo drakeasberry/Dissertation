@@ -275,7 +275,7 @@
 %----------------------------------------------------------------------------------------
 
 \doublehyphendemerits=10000 % No consecutive line hyphens
-\hyphenpenalty=10000 % Stop hyphenation Added to original template
+\hyphenpenalty=100 % Stop hyphenation Added to original template
 \brokenpenalty=10000 % No broken words across columns/pages
 \widowpenalty=9999 % Almost no widows at bottom of page
 \clubpenalty=9999 % Almost no orphans at top of page
