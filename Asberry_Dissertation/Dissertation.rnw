@@ -49,7 +49,7 @@ openany, % eliminates all extra blank pages from entire document
 
 \usepackage{mathpazo} % Use the Palatino font by default
 
-\usepackage[backend=bibtex,style=authoryear,natbib=true]{biblatex} % Use the bibtex backend with the authoryear citation style (which resembles APA)
+\usepackage[backend=bibtex, style=authoryear, sorting=nyt, natbib=true]{biblatex} % Use the bibtex backend with the authoryear citation style (which resembles APA) , natbib=true
 
 \addbibresource{references.bib} % The filename of the bibliography
 
