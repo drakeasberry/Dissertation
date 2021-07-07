@@ -21,6 +21,7 @@ Dissertation-blx.bib
 *.toc
 *.pdf
 *.tex
+*.bcf
 **/cache
 *.tdo
 
