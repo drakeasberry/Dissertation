@@ -13,13 +13,16 @@ set_parent(here('Asberry_Dissertation/Dissertation.Rnw'))
 @
 %----------------------------------------------------------------------------------------
 
-
 %----------------------------------------------------------------------------------------
-% Load statistics in memory from separate file
+% Load statistics in memory from separate file for In-person segmentation
 %<contentLabseg, child='Statistics/Segmentation/target_syl_seg_viz.rnw'>>=
 %@
-%----------------------------------------------------------------------------------------
 
+%----------------------------------------------------------------------------------------
+% Load statistics in memory from separate file for Pilot Data
+<<contentPilot, child=here('Statistics/Pilot/Pilot.rnw'), include=FALSE>>=
+@
+%----------------------------------------------------------------------------------------
 
 \chapter{Visual Word Segmentation} % Main chapter title
 \label{ch-seg-lab} % for referencing this chapter elsewhere, use \ref{labseg}
@@ -29,7 +32,19 @@ set_parent(here('Asberry_Dissertation/Dissertation.Rnw'))
 %Keywords: (list all words necessary)
 
 \section{Background}
-Most of the early studies focusing on the syllable in language processing involved French and English monolingual speakers \parencite{Mehler1981-vi, Cutler1986-zl}. Then, in the early 90s, bilingual French--English speakers were studied under the same paradigm \parencite{Cutler1992-qq}. Finally, around the same time, Spanish speakers were studied for the first time \parencite{Sebastian-Galles1992-xd, Bradley1993-qq}. These previous findings reported most of their findings in terms of whether or not a crossover effect was found or not. Understanding what is meant by the crossover effect is paramount to understanding the results found in previous literature and interpreting the results of the current study. In previous literature, researchers analyzed the data according to (2) x (2) anova where the target syllable structure, the syllable for which participants monitored, was the first factor and contained two levels---CV and CVC. The second factor was the word-initial syllable of the presented word where the participant could find the target syllable for which they were monitoring. Similarly, the second factor---word-initial syllable---had two levels which were also CV and CVC structures. The crossover effect was considered the result of favorable conditions that produced faster reaction times for matching conditions. For example, if a syllabic segmentation strategy is being used, then monitoring for a CV syllable string should be detected faster when the presented word has a CV word-initial syllable when compared to a presented word that has a CVC word-initial syllable. Likewise, monitoring for a CVC syllable structure should be found faster when the word containing the target begins with a CVC word-initial syllable rather than a CV one. In other words, monitoring for a syllable structure that matches the initial syllable structure of the word containing it makes it an easier task. The easier task is marked by the faster reaction times needed to indicate the syllable had been detected. The results of statistical analysis indicated the crossover effect was present with a significant interaction between the search target structure and the initial syllable structure of the presented word containing the target. \ttodo{may consider putting an illustration from previous paper here to show the difference between crossover effect and not Could run the stats from pilot study to illustrate or generate random sample. Have to run those anyways so probably better just to use that.} 
+Most of the early studies focusing on the syllable in language processing involved French and English monolingual speakers \parencite{Mehler1981-vi, Cutler1986-zl}. Then, in the early 90s, bilingual French--English speakers were studied under the same paradigm \parencite{Cutler1992-qq}. Finally, around the same time, Spanish speakers were studied for the first time \parencite{Sebastian-Galles1992-xd, Bradley1993-qq}. These previous findings reported most of their findings in terms of whether or not a crossover effect was found or not. Understanding what is meant by the crossover effect is paramount to understanding the results found in previous literature and interpreting the results of the current study. In previous literature, researchers analyzed the data according to (2) x (2) anova where the target syllable structure, the syllable for which participants monitored, was the first factor and contained two levels---CV and CVC. The second factor was the word-initial syllable of the presented word where the participant could find the target syllable for which they were monitoring. Similarly, the second factor---word-initial syllable---had two levels which were also CV and CVC structures. The crossover effect was considered the result of favorable conditions that produced faster reaction times for matching conditions. For example, if a syllabic segmentation strategy is being used, then monitoring for a CV syllable string should be detected faster when the presented word has a CV word-initial syllable when compared to a presented word that has a CVC word-initial syllable. Likewise, monitoring for a CVC syllable structure should be found faster when the word containing the target begins with a CVC word-initial syllable rather than a CV one. In other words, monitoring for a syllable structure that matches the initial syllable structure of the word containing it makes it an easier task. The easier task is marked by the faster reaction times needed to indicate the syllable had been detected. The results of statistical analysis indicated the crossover effect was present with a significant interaction between the search target structure and the initial syllable structure of the presented word containing the target. 
+
+\ttodo[inline]{may consider putting an illustration from previous paper here to show the difference between crossover effect and not Could run the stats from pilot study to illustrate or generate random sample. Have to run those anyways so probably better just to use that.}
+
+\begin{figure}[h]
+\begin{center}
+<<sample_crossover, fig.width= 5, fig.height= 2>>=
+crossover_example
+@      
+\caption[Plot: Sample Crossover Effect]{Shows an example of what the crossover effect looked like historically.}
+\label{plt-sample-crossover}
+\end{center}
+\end{figure}
 
 Sebastián-Gallés et al. \parencite*{Sebastian-Galles1992-xd} investigated Catalan--Spanish bilingual speakers by continuing with the monitoring paradigm and expanding it to languages not yet studied, specifically Spanish and Catalan. The researchers conducted a series of three experiments all within the monitoring paradigm using CV and CVC structures for target items that could match or mismatch the CV or CVC syllable structure word-initially. Sebastián-Gallés et al. \parencite*{Sebastian-Galles1992-xd} noted that French stress was fixed and always fell on the last syllable of the word, but in English stress was variable. The authors argued that Spanish and Catalan were prime candidates to study the issue of stress because it overcame the experimental design flaws of French and English studies \parencite{Mehler1981-vi, Cutler1986-zl, Cutler1992-qq}. To illustrate their claim, Sebastián-Gallés et al. \parencite*{Sebastian-Galles1992-xd} argued that since Spanish and Catalan both had variable word stress, a direct comparison between the two languages. They utilized 5 quadruplet sets for Spanish and 5 quadruplet sets for Catalan. In each quadruplet set, two of the words began with CV syllables and two began with CVC syllables. Additionally, two of the words were stressed word-initially while the other two were unstressed in the word initial syllable.
 

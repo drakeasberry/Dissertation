@@ -1,0 +1,156 @@
+% Visualization code
+
+<<global_opts_pilot, echo=TRUE, cache=FALSE>>=
+library(knitr)
+library(here)
+
+knitr::opts_chunk$set(
+  echo = FALSE
+)
+here::here()
+set_parent(here('Asberry_Dissertation/Dissertation.Rnw'))
+@
+
+
+<<pilot_lib, echo = FALSE>>=
+# Load Libraries
+library(tidyverse)
+library(ggplot2)
+library(dplyr)
+library(effsize)
+
+source('../../Scripts_Dissertation/diss_dataviz_script.R')
+source('../../Scripts_Dissertation/analysis_functions.R')
+@
+
+<<pilot_data, echo = FALSE>>=
+my_data <- read_csv('data/pilot_data.csv')
+
+# Columns that I care about
+grouping <- c("participant", "Target", "Carrier")
+  
+# Get summary stats for reporting (my_stats function used for dissertation consistency)
+# Columns that I want summary stats for
+stat_col <- c("RTmsec")
+
+# Stats I want to run
+summary_stats <- quote(list(Mean = mean, Min = min, Max = max, SD = sd))
+
+# grouped by target and carrier syllable structure (pilot experiment)
+my_data_summarized <- my_stats(my_data, 
+              grp_col = grouping, 
+              sum_col = stat_col,
+              stats = summary_stats) 
+  
+# Run anova   
+aov_pilot <- aov_ez("participant", "RTmsec", my_data, within = c("Target", "Carrier"))
+aov_pilot
+
+# Interaction breakdown
+# Create subsets to explore interaction between target syllable and carrier syllable
+# CV Target subset
+cv_targets <- my_data %>% 
+  subset(., Target == "CV") 
+  
+cv_tar_sum <- my_stats(cv_targets, 
+                       grp_col = grouping, 
+                       sum_col = stat_col,
+                       stats = summary_stats)
+
+# CVC subset
+cvc_targets <- my_data %>% 
+  subset(., Target == "CVC") 
+  
+cvc_tar_sum <- my_stats(cvc_targets, 
+                       grp_col = grouping, 
+                       sum_col = stat_col,
+                       stats = summary_stats)
+
+# CV sylable t.test
+t.test(cv_tar_sum$RTmsec_Mean ~ cv_tar_sum$Carrier, paired = TRUE)#, alternative = "less")
+
+# Descriptives to check direction of effect
+with(cv_targets, tapply(RTmsec, Carrier, FUN = mean))
+
+# Effect Size
+cohen.d(cv_tar_sum$RTmsec_Mean, cv_tar_sum$Carrier, na.rm = TRUE, paired = TRUE)
+
+# CVC sylable t.test
+t.test(cvc_tar_sum$RTmsec_Mean ~ cvc_tar_sum$Carrier, paired = TRUE)#, alternative = "less")
+
+# Descriptives to check direction of effect
+with(cvc_targets, tapply(RTmsec, Carrier, FUN = mean))
+
+# Effect Size
+cohen.d(cvc_tar_sum$RTmsec_Mean, cvc_tar_sum$Carrier, na.rm = TRUE, paired = TRUE)
+
+# plot example crossover interaction
+int_tar_car_pilot <- afex_plot(aov_pilot, 
+                        x = "Target", 
+                        trace = "Carrier",
+                        error = "within",
+                        mapping = c("shape", "color", "linetype"),
+                        factor_levels = list(Target = c(CV = "CV", CVC = "CVC"),
+                                             Carrier = c(CV = "CV", CVC = "CVC")),
+                        legend_title = "Word",
+                        data_plot = FALSE) +
+  labs(title = "Crossover Effect Example",
+       x = "Target",
+       y = "Reaction Time (ms)") +
+  scale_color_manual(values = c('darkorchid4', 'goldenrod4'))
+int_tar_car_pilot
+
+# Interaction breakdown
+# Create subsets to explore interaction between target syllable and carrier syllable
+# CV Carrier subset
+cv_carrier <- my_data %>% 
+  subset(., Carrier == "CV") 
+  
+cv_car_sum <- my_stats(cv_carrier, 
+                       grp_col = grouping, 
+                       sum_col = stat_col,
+                       stats = summary_stats)
+
+# CVC Carrier subset
+cvc_carrier <- my_data %>% 
+  subset(., Carrier == "CVC") 
+  
+cvc_car_sum <- my_stats(cvc_carrier, 
+                       grp_col = grouping, 
+                       sum_col = stat_col,
+                       stats = summary_stats)
+
+# CV sylable t.test
+t.test(cv_car_sum$RTmsec_Mean ~ cv_car_sum$Target, paired = TRUE)#, alternative = "less")
+
+# Descriptives to check direction of effect
+with(cv_carrier, tapply(RTmsec, Target, FUN = mean))
+
+# Effect Size
+cohen.d(cv_car_sum$RTmsec_Mean, cv_car_sum$Target, na.rm = TRUE, paired = TRUE)
+
+# CVC sylable t.test
+t.test(cvc_car_sum$RTmsec_Mean ~ cvc_car_sum$Target, paired = TRUE)#, alternative = "less")
+
+# Descriptives to check direction of effect
+with(cvc_carrier, tapply(RTmsec, Target, FUN = mean))
+
+# Effect Size
+cohen.d(cvc_car_sum$RTmsec_Mean, cvc_car_sum$Target, na.rm = TRUE, paired = TRUE)
+
+d <- tapply(my_data$RTmsec, list(my_data$participant, my_data$Carrier), mean)
+ag <- aggregate(RTmsec ~ Target + Carrier, data = my_data, FUN = mean)
+
+#Crossover plots
+crossover_example <- ggplot(data=ag,
+       aes(x=Target, y=RTmsec, group=Carrier, color=Carrier)) +
+  geom_line(aes(linetype=Carrier)) + 
+  geom_point(aes(shape=Carrier)) + 
+  labs(title="Example Crossover Interaction Plot",
+       x="Target Structure",
+       y= "Reaction Time (ms)",
+       fill= "x") +
+  theme_light() +
+  scale_color_manual(values = c('darkorchid4', 'goldenrod4'))
+crossover_example
+@
