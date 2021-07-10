@@ -38,10 +38,10 @@ Most of the early studies focusing on the syllable in language processing involv
 
 \begin{figure}[h]
 \begin{center}
-<<sample_crossover, fig.width= 5, fig.height= 2>>=
+<<sample_crossover, fig.width= 5, fig.height= 3>>=
 crossover_example
 @      
-\caption[Plot: Sample Crossover Effect]{Shows an example of what the crossover effect looked like historically.}
+\caption[Plot: Sample Crossover Effect]{Shows an example of what the crossover effect results in previous literature. The interaction can be seen in the lines representing the initial syllable structure of the word crossing due to faster detection times from monitoring experiments when the target syllable structure and the word-initial syllable matched structure matched.}
 \label{plt-sample-crossover}
 \end{center}
 \end{figure}
