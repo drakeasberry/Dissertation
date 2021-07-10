@@ -138,7 +138,7 @@ with(cvc_carrier, tapply(RTmsec, Target, FUN = mean))
 # Effect Size
 cohen.d(cvc_car_sum$RTmsec_Mean, cvc_car_sum$Target, na.rm = TRUE, paired = TRUE)
 
-d <- tapply(my_data$RTmsec, list(my_data$participant, my_data$Carrier), mean)
+tapply(my_data$RTmsec, list(my_data$participant, my_data$Carrier), mean)
 ag <- aggregate(RTmsec ~ Target + Carrier, data = my_data, FUN = mean)
 
 #Crossover plots
@@ -146,6 +146,12 @@ crossover_example <- ggplot(data=ag,
        aes(x=Target, y=RTmsec, group=Carrier, color=Carrier)) +
   geom_line(aes(linetype=Carrier)) + 
   geom_point(aes(shape=Carrier)) + 
+  geom_text(aes(label=paste("(",round(RTmsec,0),")"), 
+                hjust=-.2, 
+                vjust=1),
+            size = 3,
+            colour = "black",
+            show.legend=FALSE) +
   labs(title="Example Crossover Interaction Plot",
        x="Target Structure",
        y= "Reaction Time (ms)",
