@@ -43,22 +43,26 @@ chapterinoneline, % Uncomment to place the chapter title next to the number on o
 openany, % eliminates all extra blank pages from entire document
 ]{DoctoralThesis} % The class file specifying the document structure
 
-\usepackage[utf8]{inputenc} % Required for inputting international characters
+%\usepackage[utf8]{inputenc} % Required for inputting international characters
 
 \usepackage[T1]{fontenc} % Output font encoding for international characters
 
 \usepackage{mathpazo} % Use the Palatino font by default
 
-\usepackage[backend=biber, style=apa, citestyle=authoryear, sorting=nyt, doi=false, natbib=true]{biblatex} % Create apa style bibliography without doi being listed
+\usepackage[backend=bibtex, style=authoryear, sorting=nyt, doi=false, natbib=true]{biblatex} % Create apa style bibliography without doi being listed
+
+%\usepackage[backend=biber, style=apa, citestyle=authoryear, sorting=nyt, doi=false, natbib=true]{biblatex} % Create apa style bibliography without doi being listed
 
 \addbibresource{references.bib} % The filename of the bibliography
 
 \usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
 
 \usepackage{amsmath} % Required to format math based equations
+
 \usepackage{enumitem} % Required to format spacing of lists
 \setlist{noitemsep} % sets global verticle space between list items to zero
 
+\usepackage{tipa} % Required for IPA symbols
 %----------------------------------------------------------------------------------------
 % TODO PACKAGE
 %----------------------------------------------------------------------------------------
