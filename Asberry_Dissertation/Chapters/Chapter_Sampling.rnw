@@ -13,12 +13,6 @@ set_parent(here('Asberry_Dissertation/Dissertation.Rnw'))
 @
 %----------------------------------------------------------------------------------------
 
-%----------------------------------------------------------------------------------------
-% Load statistics in memory from separate file
-%contentSampling, child=here('Statistics/Demographics/demographic_viz.rnw'), include=FALSE>>=
-%@
-%----------------------------------------------------------------------------------------
-
 \chapter{Sampling Methods and Population} % Main chapter title
 \label{ch-sampling} % for referencing this chapter elsewhere, use \ref{sampling}
 In order to better understand the role of the Spanish syllable in segmenting words of Spanish, two distinct groups of speakers were recruited for this dissertation. When the project was originally designed, the hope was to move past the traditional approach of comparing second language learners against monolingual speakers of the target language. Instead, the original intent was to compare bilingual groups against one another where both bilingual populations only shared the same two languages---English and Spanish. The initial design of this project planned to recruit one control group and two separate target groups to investigate the research questions revolving around the processing of Spanish. The control group was to be native Spanish speakers who were adult learners of English. The first target group was to be native English speakers who were adult learners of Spanish while the second target group was to consist of people who had spoken both English and Spanish since early childhood. However, COVID-19 broke out during the data collection process for this study. This world-wide pandemic brought unforeseen restrictions to travel and the ability to bring people together in social spaces, which prevented further in-person data collection. 
