@@ -46,6 +46,8 @@ my_data_summarized <- my_stats(my_data,
 aov_pilot <- aov_ez("participant", "RTmsec", my_data, within = c("Target", "Carrier"))
 aov_pilot
 
+#test <- aov(RTmsec ~ Target*Carrier + Error(participant/(Target*Carrier)), data = my_data)
+#summary(test)
 # Interaction breakdown
 # Create subsets to explore interaction between target syllable and carrier syllable
 # CV Target subset
@@ -111,6 +113,10 @@ cv_car_sum <- my_stats(cv_carrier,
                        sum_col = stat_col,
                        stats = summary_stats)
 
+# CIs and Means one sample t-test
+t1_cv_car <- t.test(cv_carrier$RTmsec)
+t1_cv_car
+
 # CVC Carrier subset
 cvc_carrier <- my_data %>% 
   subset(., Carrier == "CVC") 
@@ -120,8 +126,12 @@ cvc_car_sum <- my_stats(cvc_carrier,
                        sum_col = stat_col,
                        stats = summary_stats)
 
+# CIs and Means one sample t-test
+t1_cvc_car <- t.test(cvc_carrier$RTmsec)
+t1_cvc_car
+
 # CV sylable t.test
-t.test(cv_car_sum$RTmsec_Mean ~ cv_car_sum$Target, paired = TRUE)#, alternative = "less")
+t_cv_car <- t.test(cv_car_sum$RTmsec_Mean ~ cv_car_sum$Target, paired = TRUE)#, alternative = "less")
 
 # Descriptives to check direction of effect
 with(cv_carrier, tapply(RTmsec, Target, FUN = mean))
@@ -130,7 +140,7 @@ with(cv_carrier, tapply(RTmsec, Target, FUN = mean))
 cohen.d(cv_car_sum$RTmsec_Mean, cv_car_sum$Target, na.rm = TRUE, paired = TRUE)
 
 # CVC sylable t.test
-t.test(cvc_car_sum$RTmsec_Mean ~ cvc_car_sum$Target, paired = TRUE)#, alternative = "less")
+t_cvc_car <- t.test(cvc_car_sum$RTmsec_Mean ~ cvc_car_sum$Target, paired = TRUE)#, alternative = "less")
 
 # Descriptives to check direction of effect
 with(cvc_carrier, tapply(RTmsec, Target, FUN = mean))
@@ -140,6 +150,16 @@ cohen.d(cvc_car_sum$RTmsec_Mean, cvc_car_sum$Target, na.rm = TRUE, paired = TRUE
 
 tapply(my_data$RTmsec, list(my_data$participant, my_data$Carrier), mean)
 ag <- aggregate(RTmsec ~ Target + Carrier, data = my_data, FUN = mean)
+###################################
+pilot_stat_compare <- my_data %>% 
+  group_by(Target, Carrier) %>% 
+  summarise(Mean = mean(RTmsec),
+            SD = sd(RTmsec)) %>% 
+  mutate(index = paste0(Target, "_tar-",Carrier,"_car")) %>% 
+  column_to_rownames(., var = "index")
+###################################
+t.test(my_data$RTmsec ~ my_data$Target)
+t.test(my_data$RTmsec ~ my_data$Carrier)
 
 #Crossover plots
 crossover_example <- ggplot(data=ag,
@@ -156,6 +176,7 @@ crossover_example <- ggplot(data=ag,
        x="Target Structure",
        y= "Reaction Time (ms)",
        fill= "x") +
+  ylim(660, 760) +
   theme_light() +
   scale_color_manual(values = c('darkorchid4', 'goldenrod4'))
 crossover_example
