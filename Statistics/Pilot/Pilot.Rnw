@@ -24,7 +24,8 @@ source('../../Scripts_Dissertation/analysis_functions.R')
 @
 
 <<pilot_data, echo = FALSE>>=
-my_data <- read_csv('data/pilot_data.csv')
+my_data <- read_csv('data/pilot_seg_data.csv')
+syl_data <- read_csv('data/pilot_syl_data.csv')
 
 # Columns that I care about
 grouping <- c("participant", "Target", "Carrier")
@@ -180,4 +181,14 @@ crossover_example <- ggplot(data=ag,
   theme_light() +
   scale_color_manual(values = c('darkorchid4', 'goldenrod4'))
 crossover_example
+
+syl_data_summarized <- my_stats(syl_data, 
+              grp_col = "participant", 
+              sum_col = "Resp_Corr",
+              stats = summary_stats)
+
+syl_data <- syl_data %>% 
+  mutate(Resp_Corr = ifelse(Resp_Corr == 'Yes', 1, 0))
+  
+tapply(syl_data$Resp_Corr, syl_data$participant, mean)
 @
