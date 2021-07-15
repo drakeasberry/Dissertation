@@ -1,68 +1,20 @@
-% Lab Segmentation Visualization code
+#!/bin/bash
+#!/usr/bin/Rscript
 
-<<global_opts_lab, echo=TRUE, cache=FALSE>>=
-library(knitr)
-library(here)
-
-knitr::opts_chunk$set(
-  echo = FALSE
-)
-here::here()
-set_parent(here('Asberry_Dissertation/Dissertation.Rnw'))
-@
-
-
-<<gen_lab_lib, echo = FALSE>>=
 # Load Libraries
 library(tidyverse)
-library(psych)
-library(lattice)
 library(ggplot2)
 library(cowplot)
 library(effsize)
-library(plyr)
-library(dplyr)
 
-source('../../Scripts_Dissertation/diss_dataviz_script.R')
-source('../../Scripts_Dissertation/analysis_functions.R')
-@
 
-<<lab_participants, echo = FALSE>>=
-# Read in group to participant mapping
-group_map <- read_csv('../../Scripts_Dissertation/participant_group_map.csv')
+# Source Scripts containing functions
+source("../../Scripts_Dissertation/analysis_functions.R")
 
-lab_files <- list.files(path='../../Dissertation_Experiments/segmentation/data/original_data/part_files/', pattern = '*.csv', full.names = TRUE)  
 
-# read in all the files into one data frame
-lab_completed <- ldply(lab_files, read_csv) %>% 
-  mutate(partNum = `01_Participante (Participant):`,
-         age = `05_Edad (Age):`) %>% 
-  left_join(., group_map) %>% 
-  subset(., group != 'Childhood') %>% 
-  select(partNum, group, age) %>% 
-  unique() %>%
-  convert_as_factor(group)
-
-# have to detach to prevent conflicts with dplyr group_by()
-detach(package:plyr)
-
-lab_stat_compare <- lab_completed %>%
-  group_by(group) %>% 
-  summarise(n = n(),
-            Mean_age = mean(age, na.rm = TRUE),
-            SD_age = sd(age, na.rm = TRUE)) %>% 
-  column_to_rownames(., var = "group")
-
-eng_lab_complete <- lab_completed %>% 
-  subset(., group == 'English')
-
-esp_lab_complete <- lab_completed %>% 
-  subset(., group == 'Spanish')
-@
-
-<<lab_data, echo = FALSE>>=
 # Read in data file
 my_data <- read_csv('analyze_data/output/45_lab_segmentation.csv')
+
 
 # Transform data in long form with 1 row per participant per condition
 # List columns to group by
@@ -383,9 +335,8 @@ out_dir = 'analyze_data/output/figures/by_target/'
 # https://tex.stackexchange.com/questions/481802/reporting-r-results-in-latex
 
 # Save plots
-#ggsave('learners_descriptive_data.png', bxp_learners, 'png', #out_dir)
-#ggsave('natives_descriptive_data.png', bxp_natives, 'png', out_dir)
-#ggsave('learners_tarsyl_main.png', l2_tar_syl_main, 'png', out_dir)
-#ggsave('learners_lex_mat_int.png', l2_lex_mat_int, 'png', out_dir)
-#ggsave('natives_lex_main.png', l1_lex_main, 'png', out_dir)
-@
+ggsave('learners_descriptive_data.png', bxp_learners, 'png', out_dir)
+ggsave('natives_descriptive_data.png', bxp_natives, 'png', out_dir)
+ggsave('learners_tarsyl_main.png', l2_tar_syl_main, 'png', out_dir)
+ggsave('learners_lex_mat_int.png', l2_lex_mat_int, 'png', out_dir)
+ggsave('natives_lex_main.png', l1_lex_main, 'png', out_dir)
