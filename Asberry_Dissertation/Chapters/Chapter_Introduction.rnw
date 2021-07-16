@@ -15,7 +15,7 @@ set_parent(here('Asberry_Dissertation/Dissertation.Rnw'))
 
 %----------------------------------------------------------------------------------------
 % Load statistics in memory from separate file
-<<contentIntro, child=here('Statistics/Demographics/demographic_viz.rnw'), cache=TRUE, include=FALSE>>=
+<<contentIntro, child=here('Statistics/Demographics/demographic_viz.rnw'), cache=FALSE, include=FALSE>>=
 @
 %----------------------------------------------------------------------------------------
 
