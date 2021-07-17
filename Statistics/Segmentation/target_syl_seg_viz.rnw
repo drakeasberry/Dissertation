@@ -38,7 +38,7 @@ lab_completed <- ldply(lab_files, read_csv) %>%
   mutate(partNum = `01_Participante (Participant):`,
          age = `05_Edad (Age):`) %>% 
   left_join(., group_map) %>% 
-  subset(., group != 'Childhood') %>% 
+  subset(., group != 'Childhood') %>% #removes 21 heritage
   select(partNum, group, age) %>% 
   unique() %>%
   convert_as_factor(group)
@@ -52,6 +52,79 @@ lab_stat_compare <- lab_completed %>%
             Mean_age = mean(age, na.rm = TRUE),
             SD_age = sd(age, na.rm = TRUE)) %>% 
   column_to_rownames(., var = "group")
+
+# create removal table with reason
+remove_part <- tibble(partNum = c("part007", 
+                                  "part031",
+                                  "part058",
+                                  "part016",
+                                  "part033",
+                                  "part059",
+                                  "part027",
+                                  "part047",
+                                  "part052",
+                                  "part044",
+                                  "part020"), 
+                      reason = c("dominance", 
+                                 "dominance", 
+                                 "dominance",
+                                 "vocabulary",
+                                 "vocabulary",
+                                 "vocabulary",
+                                 "location",
+                                 "location",
+                                 "location",
+                                 "fluency",
+                                 "error"),
+                      long_reason = c(
+                        "L1 English with dominance score below 50",
+                        "L1 Spanish with dominance score above 0",
+                        "L1 Spanish with dominance score above 0",
+                        "L1 Spanish lower than L2 English vocabulary",
+                        "L1 Spanish lower than L2 English vocabulary",
+                        "L1 Spanish lower than L2 English vocabulary",
+                        "L1 Spanish born in US",
+                        "L1 Spanish born and raised outside Sonora MX",
+                        "L1 Spanish born in US",
+                        "Fluency in Japanese, Catalan and Italian",
+                        "More than 10% error rate to critical trials")) %>%
+  arrange(partNum)
+
+# create reference table for report  
+part_removal <- left_join(remove_part, 
+                          lab_completed, 
+                          by = "partNum") %>% 
+  mutate(number = str_sub(partNum, start = -3L, end = -1L)) %>% 
+  column_to_rownames(., var = "number")
+
+part_removal_sum <- part_removal %>% 
+  group_by(group, reason) %>% 
+  summarise(n = n()) %>% 
+  mutate(index = paste0(reason,"-",group)) %>%
+  select(n, everything()) %>% 
+  column_to_rownames(., var = "index")
+
+demo_removal <- part_removal %>% 
+  subset(., reason != "error")
+
+lab_completed_eligible <- lab_completed %>% 
+  subset(., partNum %ni% demo_removal$partNum)
+
+lab_completed_eligible_sum <- lab_completed_eligible %>% 
+  group_by(group) %>% 
+  summarise(n = n()) %>% 
+  column_to_rownames(., var = "group")
+
+error_removal <- part_removal %>% 
+  subset(., reason == "error")
+
+lab_analyzed <- lab_completed_eligible %>% 
+  subset(., partNum %ni% error_removal$partNum)
+
+lab_analyzed_sum <- lab_analyzed %>% 
+  group_by(group) %>% 
+  summarise(n = n()) %>% 
+  column_to_rownames(., var = "group")  
 
 eng_lab_complete <- lab_completed %>% 
   subset(., group == 'English')
