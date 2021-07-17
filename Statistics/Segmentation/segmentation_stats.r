@@ -298,6 +298,7 @@ print('1 = response and None = no response')
 count(seg_critical, vars=segResp) %>% 
   rename(Response = vars, Count = n)
 
+
 # Number of responses over 1500ms by participant
 seg_critical %>% 
   subset(., segResp == 1) %>%
@@ -350,9 +351,14 @@ high_miss_seg_critical_responses <- subset(df_seg_critical_errors,
 write_csv(high_miss_seg_critical_responses, 
           '../Demographics/analyze_data/from_exp_analysis/lab_segmentation_high_error_rates.csv')
 
+# remove high error participants and write file with all critical items
+seg_critical %>%
+  subset(., partNum %ni% high_miss_seg_critical_responses$partNum) %>% 
+  write_csv(., 'analyze_data/output/45_raw_lab_segmentation.csv')
+
 
 # Create a subset of all filler items
-seg_filler <- subset(seg_data_join, seg_data_join$exp_word_type != 'carrier')
+seg_filler <- subset(segmentation_data_no_heritage, segmentation_data_no_heritage$exp_word_type != 'carrier')
 print('Counts of responses to filler items')
 print('1 = response and None = no response')
 # Prints tibble showing all responses and frequency of response to filler items
@@ -366,6 +372,16 @@ seg_filler_responses <- subset(seg_filler, seg_filler$segResp == 1)
 print('Counts of responses to filler items by participant')
 df_seg_filler_errors <- count(seg_filler_responses, vars=partNum) %>% 
   rename(Participant = vars, Count = n) %>% 
+  print() #n=322
+
+tech_error <- seg_filler_responses %>% 
+  subset(., seg_filler_responses$segRespRTmsec < 200) #n=203
+
+non_tech_error <- seg_filler_responses %>% 
+  subset(., seg_filler_responses$segRespRTmsec >= 200) #n=129
+
+non_tech_error %>% count(., vars=partNum) %>% 
+  rename(Participant = vars, Count = n) %>% 
   print()
 
 # Find all participants who responded 43 or more times (>=10%) to filler items
@@ -378,11 +394,11 @@ high_filler_part_raw <- subset(seg_filler_responses,
                                seg_filler_responses$partNum %in% high_seg_filler_responses$Participant)
 
 # Looks for too quick of response, anything below 200 ms caused by button being held from previous trial
-button_held_high <- subset(high_filler_part_raw, high_filler_part_raw$segRespRT < .200) %>% 
-  select('partNum','segRespRT') #n=218
+button_held_high <- subset(high_filler_part_raw, high_filler_part_raw$segRespRTmsec < 200) %>% 
+  select('partNum','segRespRTmsec') #n=121
 
 # Not technical issue filler errors by high error rate participants
-button_not_held_high <- subset(high_filler_part_raw, high_filler_part_raw$segRespRT >= .200) #n=81
+button_not_held_high <- subset(high_filler_part_raw, high_filler_part_raw$segRespRTmsec >= 200) #n=54
 
 # Number of errors committed by participant after correction for technical limitations
 high_filler_part_corrected <- count(button_not_held_high, vars = partNum) %>% 
