@@ -525,6 +525,8 @@ write_csv(all_participants, 'analyze_data/output/all_participant_demo.csv')
 # clean up data environment
 rm(online_demo, part_score)
 
+# gives a checkpoint to start from if no data has been changed
+all_participants <- read_csv('analyze_data/output/all_participant_demo.csv')
 demographics <- all_participants
 # Outliers in Language Dominance Test
 # English group outlier test
@@ -553,7 +555,7 @@ esp_higher_L2_vocab <- demographics %>%
 # Check to ensure participant group identifications match
 # Spanish group not born in Mexico
 esp_wrong_demo <- demographics %>% 
-  subset(., birth_country == 'US' & group == 'Spanish') # part027
+  subset(., birth_country == 'US' & group == 'Spanish') # part027, part052
 
 # English group not born in US
 eng_wrong_demo <- demographics %>% 
