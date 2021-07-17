@@ -125,17 +125,28 @@ lab_analyzed_sum <- lab_analyzed %>%
   group_by(group) %>% 
   summarise(n = n()) %>% 
   column_to_rownames(., var = "group")  
-
-eng_lab_complete <- lab_completed %>% 
-  subset(., group == 'English')
-
-esp_lab_complete <- lab_completed %>% 
-  subset(., group == 'Spanish')
 @
 
 <<lab_data, echo = FALSE>>=
-# Read in data file
+# Read in data that was output from r-script
 my_data <- read_csv('analyze_data/output/45_lab_segmentation.csv')
+lab_critical <- read_csv('analyze_data/output/45_raw_lab_segmentation.csv')
+
+# incorrect responses
+lab_critical_incorrect <- lab_critical %>% 
+  subset(., segResp != 1) 
+
+# correct responses
+lab_critical_correct <- lab_critical %>% 
+  subset(., segResp == 1) # remove all missed critical
+
+# responses under 200 milliseconds
+lab_under_200 <- lab_critical_correct %>% 
+  subset(., segRespRTmsec < 200)
+
+# responses over 1500 milliseconds
+lab_over_1500 <- lab_critical_correct %>% 
+  subset(., segRespRTmsec > 1500)
 
 # Transform data in long form with 1 row per participant per condition
 # List columns to group by
@@ -461,4 +472,5 @@ out_dir = 'analyze_data/output/figures/by_target/'
 #ggsave('learners_tarsyl_main.png', l2_tar_syl_main, 'png', out_dir)
 #ggsave('learners_lex_mat_int.png', l2_lex_mat_int, 'png', out_dir)
 #ggsave('natives_lex_main.png', l1_lex_main, 'png', out_dir)
+
 @
