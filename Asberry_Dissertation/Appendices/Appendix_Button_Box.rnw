@@ -14,3 +14,8 @@ set_parent('../Dissertation.rnw')
 \label{app-button-box} % Change Label; for referencing this appendix elsewhere, use \ref{AppendixLabel}
 
 Write your content here. Give all the testing criteria
+
+\ttodo{This paragraph includes part044 and part047 data and needs updating}
+The 77 participants provided a total of 36960 data points of which 3696 were in response to critical items while 33264 were in response to filler items. The first step in the analysis checked to ensure the data provided by participants were valid and that no participants had error rates greater than 10 percent for their responses to critical and filler items, which had been set as the cut-off point prior to data collection. In responses to filler items, 52 of the 77 participants committed 1 or more errors resulting in a total of 722 errors. Of the 722 errors, 475 of the errors were produced by participants with less than a 200 ms reaction time. It is thought that the participant was not intending to respond to these stimuli, but were the result of resting a hand on the button box or responding too late to the previous stimulus trial. As a result 247 responses (0.74\%) were actual errors made by participants and no participant was removed from analysis for having more than a 10 percent error rate to filler items.
+
+\ttodo[inline]{add detail about tech errors in each subgroup high and low error committing folks in lab segmentation experiment}
