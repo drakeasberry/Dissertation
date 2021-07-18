@@ -129,7 +129,7 @@ lab_analyzed_sum <- lab_analyzed %>%
 
 <<lab_data, echo = FALSE>>=
 # Read in data that was output from r-script
-my_data <- read_csv('analyze_data/output/45_lab_segmentation.csv')
+my_data_check <- read_csv('analyze_data/output/45_lab_segmentation.csv')
 lab_critical <- read_csv('analyze_data/output/45_raw_lab_segmentation.csv')
 
 # incorrect responses
@@ -148,6 +148,12 @@ lab_under_200 <- lab_critical_correct %>%
 lab_over_1500 <- lab_critical_correct %>% 
   subset(., segRespRTmsec > 1500)
 
+my_lab_data <- lab_critical %>% 
+  subset(., segResp == 1) %>% 
+  subset(., segRespRTmsec >= 200) %>% 
+  subset(., segRespRTmsec <= 1500) %>% 
+  select(-c(segResp, exp_word_type))
+
 # Transform data in long form with 1 row per participant per condition
 # List columns to group by
 grouping <- c("partNum", "group", "word_status", "word_initial_syl", 
@@ -155,16 +161,16 @@ grouping <- c("partNum", "group", "word_status", "word_initial_syl",
 
 # Aggregaates and transforms data into long form
 # Adds columns for median of RT in msec and log
-my_data_long <- trans_long(my_data, grouping) 
+my_lab_data_long <- trans_long(my_lab_data, grouping) 
 
 ################################summary_field <- c("median(.data$segRespRTmsec)",
 ################################                   "median(.data$log_RT)")
-################################my_data_test <- trans_wide(my_data, grouping, summary_field)
+################################my_lab_data_test <- trans_wide(my_lab_data, grouping, summary_field)
 
 
 # Create subgroups for Spanish learners and native speakers
-learners <- part_group(my_data_long, 'English')
-natives <- part_group(my_data_long, 'Spanish')
+learners <- part_group(my_lab_data_long, 'English')
+natives <- part_group(my_lab_data_long, 'Spanish')
 
 
 # Group data by target syllable structure, matching condition, and word status, 
@@ -226,7 +232,7 @@ bxp_natives
 
 # Check for outliers
 # Check pooled data
-outlier_data <- my_data_long %>% 
+outlier_data <- my_lab_data_long %>% 
   outlier_chk(., grouping_stats, "median_RTmsec")
 ## part008 only extreme outlier in all 45 participants
 
@@ -286,7 +292,7 @@ aov_learners
 # Regroup to run paired t-test for target syllable over all other conditions 
 grouping_tarsyl <- grouping[! grouping %in% c("word_status", "word_initial_syl",
                                               "matching", "group")]
-data_tarsyl_ag <- my_data %>% 
+data_tarsyl_ag <- my_lab_data %>% 
   subset(., group == "English") %>% 
   trans_long(., grouping_tarsyl)
 
@@ -310,12 +316,12 @@ grouping_mat <- grouping[! grouping %in% c("word_status", "word_initial_syl",
 
 # Create subsets to explore interaction between matching and word status for Learners
 # Nonword subset
-nonwords_learners <- my_data %>%
+nonwords_learners <- my_lab_data %>%
   subset(., word_status == "nonword" & group == "English") %>% 
   trans_long(., grouping_mat)
 
 # Create real word subset
-words_learners <- my_data %>%
+words_learners <- my_lab_data %>%
   subset(., word_status == "word" & group == "English") %>% 
   trans_long(., grouping_mat)
 
@@ -416,7 +422,7 @@ aov_natives
 # Regroup to run paired t-test for word status over all other conditions 
 grouping_lex <- grouping[! grouping %in% c("target_syl_structure", "word_initial_syl",
                                               "matching", "group")]
-data_lex_ag <- my_data %>% 
+data_lex_ag <- my_lab_data %>% 
   subset(., group == "Spanish") %>% 
   trans_long(., grouping_lex)
 
@@ -452,7 +458,7 @@ l1_lex_main
 
 # Remove temporary data variables in environment
 # Remove dataframes following analysis
-rm(my_data, my_data_long, learners, natives, words_learners, nonwords_learners,
+rm(my_lab_data_long, learners, natives, words_learners, nonwords_learners,
    data_lex_ag, data_tarsyl_ag)
 
 # Remove checks and unused plots
@@ -462,15 +468,4 @@ rm(l2_mat_lex_int, normality_learner, normality_native, outlier_learner, outlier
 
 # Save all analyses
 out_dir = 'analyze_data/output/figures/by_target/'
-
-# Save tabled data
-# https://tex.stackexchange.com/questions/481802/reporting-r-results-in-latex
-
-# Save plots
-#ggsave('learners_descriptive_data.png', bxp_learners, 'png', #out_dir)
-#ggsave('natives_descriptive_data.png', bxp_natives, 'png', out_dir)
-#ggsave('learners_tarsyl_main.png', l2_tar_syl_main, 'png', out_dir)
-#ggsave('learners_lex_mat_int.png', l2_lex_mat_int, 'png', out_dir)
-#ggsave('natives_lex_main.png', l1_lex_main, 'png', out_dir)
-
 @
