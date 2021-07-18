@@ -371,7 +371,7 @@ analyzed_desc <- my_stats(analyzed_part,
 @
 
 
-<<testing, echo=FALSE>>=
+<<lang_groups_demo, echo=FALSE>>=
 # L1 Spanish participants Lextale-Esp distribution plots
 # Create subset Spanish natives
 l1_spanish <- analyzed_izura_score %>% 
@@ -442,11 +442,4 @@ histogram(~izura_score,
 l2 <- describe(l2_spanish$izura_score) %>% 
   mutate(vars = "Native English") %>% 
   rename(group = vars)
-
-
-# Create table of group statistics
-#table_descriptives <- do.call('rbind', list(all, l1, l1_mono, l1_bi, l2))
-
-# Remove unnecessary objects
-#rm(all, l1, l1_mono, l1_bi, l2)
 @
