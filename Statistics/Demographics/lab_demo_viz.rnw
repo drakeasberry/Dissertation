@@ -12,7 +12,7 @@ set_parent(here('Asberry_Dissertation/Dissertation.Rnw'))
 @
 
 
-<<gen_demo_lib, echo = FALSE>>=
+<<lab_demo_lib, echo = FALSE>>=
 # Load Libraries
 library(tidyverse)
 library(kableExtra)
