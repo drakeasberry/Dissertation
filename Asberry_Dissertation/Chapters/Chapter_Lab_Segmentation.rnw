@@ -17,11 +17,11 @@ set_parent(here('Asberry_Dissertation/Dissertation.Rnw'))
 % Load statistics in memory from separate file
 <<contentLab, child=here('Statistics/Segmentation/target_syl_seg_viz.rnw'), include=FALSE>>=
 @
-%----------------------------------------------------------------------------------------
 
-%----------------------------------------------------------------------------------------
-% Load statistics in memory from separate file for Pilot Data
 <<contentPilot, child=here('Statistics/Pilot/Pilot.rnw'), include=FALSE>>=
+@
+
+<<contentLabDeom, child=here('Statistics/Demographics/lab_demo_viz.rnw'), include=FALSE>>=
 @
 %----------------------------------------------------------------------------------------
 
@@ -113,6 +113,20 @@ Before the data could be submitted for analysis, some data preparation was still
 The data ananlyzed 
 \ttodo{explain that we will not be looking for a crossover effect as found in previous studies but rather a parallel structure due to the way it was analyzed. matching versus mismatching condition by target. It is a simple concept but needs explanation}
 
+
+\begin{figure}[h]
+\begin{center}
+<<test_table, fig.width= 5, fig.height= 2>>=
+by_lang
+@      
+\caption[Demographics Test]{Shows the demographics for participants.}
+\label{test-table}
+\end{center}
+\end{figure}
+
+<<test_table_2, results='asis'>>=
+by_lang
+@ 
 
 \section{Results}
 \ttodo[inline]{interpret the results of the analysis describe above}
