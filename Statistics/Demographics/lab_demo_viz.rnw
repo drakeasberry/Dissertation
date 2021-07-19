@@ -24,24 +24,27 @@ source('../../Scripts_Dissertation/analysis_functions.R')
 
 <<lab_demo_viz, echo=FALSE>>=
 # Read in data file
-vocab_size <- read_csv('analyze_data/output/lab_vocab_sizes.csv')
+vocab_size <- read_csv('analyze_data/output/lab_vocab_sizes.csv') 
 
 # Plot Language Vocabulary Difference in lab segmentation experiment
-vocab_diff_plt(vocab_size, "group", "diff")
+vocab_diff_plt(vocab_size, "group", "vocab_diff")
 
 # Segmentation higher errors and outlier participants
-lab_part_remove <- read_csv('analyze_data/from_exp_analysis/45_eligible_lab_part.csv')
+lab_part_remove <- read_csv(
+  'analyze_data/from_exp_analysis/45_eligible_lab_part.csv')
 
 # Plot Language Vocabulary Difference for eligbile lab segmentation experiments
 # This plot removes all participants removed due to experimental conditions
 # Not paying attention, high error rates, technical difficulties, etc.
-vocab_size %>% 
+lab_vocab_diff <- vocab_size %>% 
   subset(., partNum %in% lab_part_remove$partNum) %>% 
-  vocab_diff_plt("group", "diff")
+  vocab_diff_plt("group", "vocab_diff")
+lab_vocab_diff
 
 # Demographic Information Descriptions
 # Load demographic data (Meets all population requirements)
-demo_data <- read_csv('../Segmentation/analyze_data/demographics/46_lab_segmentation.csv')
+demo_data <- read_csv(
+  '../Segmentation/analyze_data/demographics/46_lab_segmentation.csv')
 
 # Remove participants that did not perform well in experimental tasks
 eligible_demo_data <- demo_data %>% 
@@ -49,26 +52,77 @@ eligible_demo_data <- demo_data %>%
 
 # Plot Demogrpahics
 # Language Dominance
-# Meet all population requirement
+# Meet all population requirements
 language_dominance(demo_data, "group", "lang_dominance") 
+
 # Successfully and accurately completed the experiment
-language_dominance(eligible_demo_data, "group", "lang_dominance")
+lab_lang_dom <- language_dominance(eligible_demo_data, 
+                                   "group", 
+                                   "lang_dominance")
+lab_lang_dom
 
 # English Vocabulary Size
 eng_lextale(demo_data, "group", "lextale_eng_correct")
-eng_lextale(eligible_demo_data, "group", "lextale_eng_correct")
+lab_eng_vocab <- eng_lextale(eligible_demo_data, 
+                             "group", 
+                             "lextale_eng_correct")
+lab_eng_vocab
 
 # Spanish Vocabulary Size
 esp_lextale(demo_data, "group", "lextale_esp_correct")
-esp_lextale(eligible_demo_data, "group", "lextale_esp_correct")
+lab_esp_vocab <- esp_lextale(eligible_demo_data, 
+                             "group", 
+                             "lextale_esp_correct")
+lab_esp_vocab
 
 # Spanish Vocabulary Size (Izura Calculation)
 izura(demo_data, "group", "izura_score")
-izura(eligible_demo_data, "group", "izura_score")
+lab_izura <- izura(eligible_demo_data, 
+                   "group", 
+                   "izura_score")
+lab_izura
 
 # Clean up environment
-rm(demo_data,lab_part_remove, vocab_size)
+rm(demo_data,
+   lab_part_remove, 
+   vocab_size)
 
+# Get summary stats for reporting (my_stats function used for dissertation consistency)
+# Columns that I want summary stats for
+stat_col <- c("eng_hist_score",
+              "eng_use_score", 
+              "eng_prof_score",
+              "eng_att_score",
+              "global_eng_score",
+              "esp_hist_score",
+              "esp_use_score",
+              "esp_prof_score",
+              "esp_att_score",
+              "global_esp_score",
+              "lang_dominance",
+              "lextale_eng_correct",
+              "lextale_esp_correct",
+              "izura_yes_to_words",
+              "izura_yes_to_nonwords",
+              "izura_score",
+              "age",
+              "vocab_diff")
+
+# Stats I want to run
+summary_stats <- quote(list(Mean = mean, 
+                            Min = min, 
+                            Max = max, 
+                            SD = sd))
+
+# grouped by gender and group (experiment here)
+lab_grp_desc <- my_stats(eligible_demo_data, 
+              grp_col = c("group"), 
+              sum_col = stat_col,
+              stats = summary_stats) %>% 
+  column_to_rownames(., var = "group")
+@
+
+<<lab_demo_tabled, echo=FALSE>>=
 # Build summary table
 dominance_summary <-
   list("Language Dominance" = 
