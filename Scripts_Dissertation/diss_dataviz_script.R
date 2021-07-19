@@ -19,12 +19,12 @@ descriptive_plot <- function(data, x_data, y_data){
     mutate(labels = ifelse(!!sym(y_data) == max(!!sym(y_data)), paste0('n = ', n), '')) %>% 
     ggplot(aes(x = !!sym(x_data),
                y = !!sym(y_data))) +
-    geom_boxplot(color = "purple", 
+    geom_boxplot(color = 'darkorchid4', 
                  width = 0.5,
                  outlier.shape = 8, 
                  outlier.size = 2) +
     
-    geom_violin(color = "red", 
+    geom_violin(color ='goldenrod4', 
                 fill = NA) +
     geom_jitter(width = 0.1) +
     theme_light()
@@ -35,10 +35,10 @@ descriptive_plot <- function(data, x_data, y_data){
 vocab_diff_plt <- function(data, x_data, y_data){
   data %>% 
     descriptive_plot(., x_data, y_data) +
-    geom_text(aes(label=labels, y = !!sym(y_data) + .05)) +
+    geom_text(aes(label=labels, y = !!sym(y_data) + 8)) +
     ggtitle("Difference in L1 and L2 Vocabulary Size") +
     xlab("Native Language") +
-    ylab("Vocabulary Difference = EN-SP")
+    ylab("Vocabulary Difference \nEN-SP")
 }
 
 
@@ -46,9 +46,9 @@ vocab_diff_plt <- function(data, x_data, y_data){
 language_dominance <- function(data, x_data, y_data){
   data %>% 
     descriptive_plot(., x_data, y_data) +
-    geom_text(aes(label=labels, y = !!sym(y_data) + 15)) +
+    geom_text(aes(label=labels, y = !!sym(y_data) + 20)) +
     ggtitle("Language Dominance") +
-    xlab("Native Language Group") +
+    xlab("Native Language") +
     ylab("Basic Language Profile Dominance Score")
 }
 
@@ -57,10 +57,10 @@ language_dominance <- function(data, x_data, y_data){
 eng_lextale <- function(data, x_data, y_data){
   data %>% 
     descriptive_plot(., x_data, y_data) +
-    geom_text(aes(label=labels, y = !!sym(y_data) + .05)) +
+    geom_text(aes(label=labels, y = !!sym(y_data) + 5)) +
     ggtitle("English Vocabulary Size") +
-    xlab("Native Language Group") +
-    ylab("English Vocabulary % correct")
+    xlab("Native Language") +
+    ylab("English Vocabulary \n% correct")
 }
 
 
@@ -68,10 +68,10 @@ eng_lextale <- function(data, x_data, y_data){
 esp_lextale <- function(data, x_data, y_data){
   data %>% 
     descriptive_plot(., x_data, y_data) +
-    geom_text(aes(label=labels, y = !!sym(y_data) + .05)) +
+    geom_text(aes(label=labels, y = !!sym(y_data) + 5)) +
     ggtitle("Spanish Vocabulary Size") +
-    xlab("Native Language Group") +
-    ylab("Spanish Vocabulary % correct")
+    xlab("Native Language") +
+    ylab("Spanish Vocabulary \n% correct")
 }
 
 
@@ -79,9 +79,9 @@ esp_lextale <- function(data, x_data, y_data){
 izura <- function(data, x_data, y_data){
   data %>% 
     descriptive_plot(., x_data, y_data) +
-    geom_text(aes(label=labels, y = !!sym(y_data) + 5)) +
+    geom_text(aes(label=labels, y = !!sym(y_data) + 7)) +
     ggtitle("Spanish Vocabulary Size") +
-    xlab("Native Language Group") +
+    xlab("Native Language") +
     ylab("Izura Score")
 }
 
