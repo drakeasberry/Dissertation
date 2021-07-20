@@ -106,84 +106,124 @@ Due to the method used in data collection several pre-analysis steps were conduc
 
 In total, there were \Sexpr{lab_stat_compare["English", "n"] + lab_stat_compare["Spanish", "n"]} participants that completed the study. Using responses to the BLP, \Sexpr{part_removal_sum["fluency-English", "n"] + part_removal_sum["location-Spanish", "n"] + part_removal_sum["dominance-English", "n"] + part_removal_sum["dominance-Spanish", "n"]} were removed because they did not accurately represent the groups for which they had been recruited. \Sexpr{part_removal_sum["fluency-English", "n"]} native English speaker was removed because they reported fluency in languages other than Spanish and English. \Sexpr{part_removal_sum["location-Spanish", "n"]} native Spanish speakers were removed because they reported being born and/or raised outside of Mexico. \Sexpr{part_removal_sum["dominance-English", "n"] + part_removal_sum["dominance-Spanish", "n"]} particiants were removed because they were outliers in terms of language dominance scores calculated by the BLP. Lastly, using the scores from both the LexTALE and LexTALE-Esp, \Sexpr{part_removal_sum["vocabulary-Spanish", "n"]} native Spanish speakers were removed because their scores indicated a larger L2 English vocabulary size than their L1 Spanish vocabulary size.
 
-Once the demographic removals had been completed, an accuracy response rate for the experiment was conducted on the remaining \Sexpr{lab_completed_eligible_sum["English", "n"] + lab_completed_eligible_sum["Spanish", "n"]} participants. A predetermined accuracy rate of 90 percent was used as the cut-off and any participant responding incorrectly to filler or critical trials more than 10 percent of the time was removed from the analysis. All participants correctly responded to filler trials above the cut-off point; however, \Sexpr{length(error_removal$partNum)} participant was removed for committing errors at rate greater than 10 percent to critical trials. After the removal of participants, \Sexpr{lab_stat_compare["English", "n"] - lab_analyzed_sum["English", "n"]} participants from the LS group and \Sexpr{lab_stat_compare["Spanish", "n"] - lab_analyzed_sum["Spanish", "n"]} participants from the LE group were removed. This left a total of \Sexpr{lab_analyzed_sum["English", "n"] + lab_analyzed_sum["Spanish", "n"]} participants---\Sexpr{lab_analyzed_sum["English", "n"]} native English speakers and \Sexpr{lab_analyzed_sum["Spanish", "n"]} native Spanish speakers, that had data submitted to the analysis and only these participants are included in reported statistics and figures below.
-
-Before the data could be submitted for analysis, some data preparation was still required. The first step in preparing the data for analysis was to remove all the filler trials from the dataset. This left 2160 data points for critical trials by participant. Due to a typo in one of the stimuli, \emph{permiso} 'permission' was typed as \emph{permsio}. This created a nonword critical item inside of a real word block of filler items. As a result, this item was removed from the analysis resulting in the removal of 10 critical items. Since incorrect responses to critical items were a non-response by the participant, the \Sexpr{length(lab_critical_incorrect$word)} missed items were removed. The last pass removed any individual participant responses under 200 milliseconds---\Sexpr{length(lab_under_200$word)} items---following the lower criteria range used by \textcite{Bradley1993-qq}. The upper cut-off limit was set at 1500 milliseconds, which removed an additional \Sexpr{length(lab_over_1500$word)} items. In total, \Sexpr{length(lab_critical_incorrect$word) + length(lab_under_200$word) + length(lab_over_1500$word) + 10} trials, or \Sexpr{round((length(lab_critical_incorrect$word) + length(lab_under_200$word) + length(lab_over_1500$word))/length(lab_critical$word)*100,2)}\% of the data, were removed leaving \Sexpr{length(my_lab_data$word)} critical data points to be submitted for analysis.
+Once the demographic removals had been completed, an accuracy response rate for the experiment was conducted on the remaining \Sexpr{lab_completed_eligible_sum["English", "n"] + lab_completed_eligible_sum["Spanish", "n"]} participants. A predetermined accuracy rate of 90 percent was used as the cut-off and any participant responding incorrectly to filler or critical trials more than 10 percent of the time was removed from the analysis. All participants correctly responded to filler trials above the cut-off point; however, \Sexpr{length(error_removal$partNum)} participant was removed for committing errors at rate greater than 10 percent to critical trials. After the removal of participants, \Sexpr{lab_stat_compare["English", "n"] - lab_analyzed_sum["English", "n"]} participants from the LS group and \Sexpr{lab_stat_compare["Spanish", "n"] - lab_analyzed_sum["Spanish", "n"]} participants from the LE group were removed. This left a total of \Sexpr{lab_analyzed_sum["English", "n"] + lab_analyzed_sum["Spanish", "n"]} participants---\Sexpr{lab_analyzed_sum["English", "n"]} native English speakers and \Sexpr{lab_analyzed_sum["Spanish", "n"]} native Spanish speakers, that had data submitted to the analysis and only these participants are included in reported statistics and figures below. Table \ref{tab-lab-demo-part} gives age related data about participants, Table \ref{tab-lab-vocab-part} give data related to participant vocabulary sizes and Table \ref{tab-lab-lang-blp-part} shows language scores collected through the BLP.
 
 \begin{table}
-\caption{Attributes of all lab based segmentation participants.}
-\label{tab-lab-demo-part}
 \centering
-\begin{tabular}{l c c c c c c}
+\begin{tabular}{l c c c c c c c c c}
 \toprule
-& & \multicolumn{3}{c}{Age} &  \multicolumn{2}{c}{Global Language Scores}\\
-\cmidrule(lr){3-5}\cmidrule(lr){6-7}
-& n & Min & Max & Mean & Spanish & English\\
+& & & & & &\multicolumn{4}{c}{Age of Acquisition}\\
+\cmidrule(lr){7-10}
+& & \multicolumn{4}{c}{Age} & \multicolumn{2}{c}{Spanish} & 
+\multicolumn{2}{c}{English}\\
+\cmidrule(lr){3-6}\cmidrule(lr){7-8}\cmidrule(lr){9-10}
+& n & Min & Max & Mean & SD & Mean & SD & Mean & SD\\
 \midrule
+English
+& \Sexpr{lab_grp_desc["English","n"]}
+& \Sexpr{lab_grp_desc["English","age_Min"]} 
+& \Sexpr{lab_grp_desc["English","age_Max"]} 
+& \Sexpr{lab_grp_desc["English","age_Mean"]}
+& \Sexpr{lab_grp_desc["English","age_SD"]}
+& \Sexpr{lab_grp_desc["English","span_acq_age_Mean"]}
+& \Sexpr{lab_grp_desc["English","span_acq_age_SD"]}
+& \Sexpr{lab_grp_desc["English","eng_acq_age_Mean"]}
+& \Sexpr{lab_grp_desc["English","eng_acq_age_SD"]}\\
 Spanish
 & \Sexpr{lab_grp_desc["Spanish","n"]}
 & \Sexpr{lab_grp_desc["Spanish","age_Min"]} 
 & \Sexpr{lab_grp_desc["Spanish","age_Max"]} 
 & \Sexpr{lab_grp_desc["Spanish","age_Mean"]} 
-& \Sexpr{lab_grp_desc["Spanish","global_eng_score_Mean"]}
-& \Sexpr{lab_grp_desc["Spanish","global_esp_score_Mean"]}\\
-English
-& \Sexpr{lab_grp_desc["English","n"]}
-& \Sexpr{lab_grp_desc["English","age_Min"]} 
-& \Sexpr{lab_grp_desc["English","age_Max"]} 
-& \Sexpr{lab_grp_desc["English","age_Mean"]} 
-& \Sexpr{lab_grp_desc["English","global_eng_score_Mean"]}
-& \Sexpr{lab_grp_desc["English","global_esp_score_Mean"]}\\
+& \Sexpr{lab_grp_desc["Spanish","age_SD"]}
+& \Sexpr{lab_grp_desc["Spanish","span_acq_age_Mean"]}
+& \Sexpr{lab_grp_desc["Spanish","span_acq_age_SD"]}
+& \Sexpr{lab_grp_desc["Spanish","eng_acq_age_Mean"]}
+& \Sexpr{lab_grp_desc["Spanish","eng_acq_age_SD"]}\\
 \bottomrule
 \multicolumn{6}{l}{Total participants: n = \Sexpr{lab_grp_desc["Spanish","n"] + lab_grp_desc["English","n"]}}\\
 \end{tabular}
+\caption{Attributes of all lab based segmentation participants.}
+\label{tab-lab-demo-part}
+
+\vspace{.4in}
+
+\begin{tabular}{l c c c c c c c c c}
+\toprule
+& & \multicolumn{6}{c}{Vocabulary Size \% Correct}\\
+\cmidrule(lr){3-8}
+& & \multicolumn{2}{c}{English} & \multicolumn{2}{c}{Spanish} & 
+\multicolumn{2}{c}{Difference} & \multicolumn{2}{c}{Izura Score}\\
+\cmidrule(lr){3-4}\cmidrule(lr){5-6}\cmidrule(lr){7-8}\cmidrule(lr){9-10}
+& n & Mean & SD & Mean & SD & Mean & SD & Mean & SD\\
+\midrule
+English
+& \Sexpr{lab_grp_desc["English","n"]}
+& \Sexpr{lab_grp_desc["English","lextale_eng_correct_Mean"]} 
+& \Sexpr{lab_grp_desc["English","lextale_eng_correct_SD"]} 
+& \Sexpr{lab_grp_desc["English","lextale_esp_correct_Mean"]}
+& \Sexpr{lab_grp_desc["English","lextale_esp_correct_SD"]}
+& \Sexpr{lab_grp_desc["English","vocab_diff_Mean"]}
+& \Sexpr{lab_grp_desc["English","vocab_diff_SD"]}
+& \Sexpr{lab_grp_desc["English","izura_score_Mean"]}
+& \Sexpr{lab_grp_desc["English","izura_score_SD"]}\\
+Spanish
+& \Sexpr{lab_grp_desc["Spanish","n"]}
+& \Sexpr{lab_grp_desc["Spanish","lextale_eng_correct_Mean"]} 
+& \Sexpr{lab_grp_desc["Spanish","lextale_eng_correct_SD"]} 
+& \Sexpr{lab_grp_desc["Spanish","lextale_esp_correct_Mean"]} 
+& \Sexpr{lab_grp_desc["Spanish","lextale_esp_correct_SD"]}
+& \Sexpr{lab_grp_desc["Spanish","vocab_diff_Mean"]}
+& \Sexpr{lab_grp_desc["Spanish","vocab_diff_SD"]}
+& \Sexpr{lab_grp_desc["Spanish","izura_score_Mean"]}
+& \Sexpr{lab_grp_desc["Spanish","izura_score_SD"]}\\
+\bottomrule
+\multicolumn{6}{l}{Total participants: n = \Sexpr{lab_grp_desc["Spanish","n"] + lab_grp_desc["English","n"]}}\\
+\end{tabular}
+\caption{Vocabulary scores for participants in English and Spanish calculated as a percent correct score along with the differences in means. Spanish vocabulary size as calculated by \textcite{Izura2014-yw}.}
+\label{tab-lab-vocab-part}
+
+\vspace{.4in}
+
+\begin{tabular}{l c c c c c c c}
+\toprule
+& & \multicolumn{4}{c}{Global Language Scores}\\
+\cmidrule(lr){3-6}
+& & \multicolumn{2}{c}{English} & \multicolumn{2}{c}{Spanish} & 
+\multicolumn{2}{c}{Language Dominance}\\
+\cmidrule(lr){3-4}\cmidrule(lr){5-6}\cmidrule(lr){7-8}
+& n & Mean & SD & Mean & SD & Mean & SD\\
+\midrule
+English
+& \Sexpr{lab_grp_desc["English","n"]}
+& \Sexpr{lab_grp_desc["English","global_eng_score_Mean"]} 
+& \Sexpr{lab_grp_desc["English","global_eng_score_SD"]} 
+& \Sexpr{lab_grp_desc["English","global_esp_score_Mean"]}
+& \Sexpr{lab_grp_desc["English","global_esp_score_SD"]}
+& \Sexpr{lab_grp_desc["English","lang_dominance_Mean"]}
+& \Sexpr{lab_grp_desc["English","lang_dominance_SD"]}\\
+Spanish
+& \Sexpr{lab_grp_desc["Spanish","n"]}
+& \Sexpr{lab_grp_desc["Spanish","global_eng_score_Mean"]} 
+& \Sexpr{lab_grp_desc["Spanish","global_eng_score_SD"]} 
+& \Sexpr{lab_grp_desc["Spanish","global_esp_score_Mean"]} 
+& \Sexpr{lab_grp_desc["Spanish","global_esp_score_SD"]}
+& \Sexpr{lab_grp_desc["Spanish","lang_dominance_Mean"]}
+& \Sexpr{lab_grp_desc["Spanish","lang_dominance_SD"]}\\
+\bottomrule
+\multicolumn{6}{l}{Total participants: n = \Sexpr{lab_grp_desc["Spanish","n"] + lab_grp_desc["English","n"]}}\\
+\end{tabular}
+\caption{Individual language based values and language dominance scores for participants. All values were calculated according to creators of the Basic Language Profile.}
+\label{tab-lab-lang-blp-part}
 \end{table}
+
+Before the data could be submitted for analysis, some data preparation was still required. The first step in preparing the data for analysis was to remove all the filler trials from the dataset. This left 2160 data points for critical trials by participant. Due to a typo in one of the stimuli, \emph{permiso} 'permission' was typed as \emph{permsio}. This created a nonword critical item inside of a real word block of filler items. As a result, this item was removed from the analysis resulting in the removal of 10 critical items. Since incorrect responses to critical items were a non-response by the participant, the \Sexpr{length(lab_critical_incorrect$word)} missed items were removed. The last pass removed any individual participant responses under 200 milliseconds---\Sexpr{length(lab_under_200$word)} items---following the lower criteria range used by \textcite{Bradley1993-qq}. The upper cut-off limit was set at 1500 milliseconds, which removed an additional \Sexpr{length(lab_over_1500$word)} items. In total, \Sexpr{length(lab_critical_incorrect$word) + length(lab_under_200$word) + length(lab_over_1500$word) + 10} trials, or \Sexpr{round((length(lab_critical_incorrect$word) + length(lab_under_200$word) + length(lab_over_1500$word))/length(lab_critical$word)*100,2)}\% of the data, were removed leaving \Sexpr{length(my_lab_data$word)} critical data points to be submitted for analysis.
+
 
 The data ananlyzed 
 
 
-\begin{table}
-\caption{Attributes of all lab based segmentation participants.}
-\label{tab-lab-demo-part}
-\centering
-\begin{tabular}{l c c c c c c}
-\toprule
-& & \multicolumn{3}{c}{Age} &  \multicolumn{2}{c}{Global Language Scores}\\
-\cmidrule(lr){3-5}\cmidrule(lr){6-7}
-& n & Min & Max & Mean & Spanish & English\\
-\midrule
-Spanish
-& \Sexpr{lab_grp_desc["Spanish","n"]}
-& \Sexpr{lab_grp_desc["Spanish","age_Min"]} 
-& \Sexpr{lab_grp_desc["Spanish","age_Max"]} 
-& \Sexpr{lab_grp_desc["Spanish","age_Mean"]} 
-& \Sexpr{lab_grp_desc["Spanish","global_eng_score_Mean"]}
-& \Sexpr{lab_grp_desc["Spanish","global_esp_score_Mean"]}\\
-English
-& \Sexpr{lab_grp_desc["English","n"]}
-& \Sexpr{lab_grp_desc["English","age_Min"]} 
-& \Sexpr{lab_grp_desc["English","age_Max"]} 
-& \Sexpr{lab_grp_desc["English","age_Mean"]} 
-& \Sexpr{lab_grp_desc["English","global_eng_score_Mean"]}
-& \Sexpr{lab_grp_desc["English","global_esp_score_Mean"]}\\
-\bottomrule
-\multicolumn{6}{l}{Total participants: n = \Sexpr{lab_grp_desc["Spanish","n"]+ eligible_gen_desc["English","n"]}}\\
-\end{tabular}
-\end{table}
 
-\begin{figure}[h]
-\begin{center}
-<<test_table, fig.width= 5, fig.height= 2>>=
-by_lang
-@      
-\caption[Demographics Test]{Shows the demographics for participants.}
-\label{test-table}
-\end{center}
-\end{figure}
 
-<<test_table_2, results='asis'>>=
-by_lang
-@ 
 
 \section{Results}
 \ttodo[inline]{interpret the results of the analysis describe above. Make sure to explain that we will not be looking for a crossover effect as found in previous studies but rather a parallel structure due to the way it was analyzed. matching versus mismatching condition by target. It is a simple concept but needs explanation}
