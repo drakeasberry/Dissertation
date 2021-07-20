@@ -89,7 +89,10 @@ rm(demo_data,
 
 # Get summary stats for reporting (my_stats function used for dissertation consistency)
 # Columns that I want summary stats for
-stat_col <- c("eng_hist_score",
+stat_col <- c("age",
+              "span_acq_age",
+              "eng_acq_age",
+              "eng_hist_score",
               "eng_use_score", 
               "eng_prof_score",
               "eng_att_score",
@@ -102,11 +105,10 @@ stat_col <- c("eng_hist_score",
               "lang_dominance",
               "lextale_eng_correct",
               "lextale_esp_correct",
+              "vocab_diff",
               "izura_yes_to_words",
               "izura_yes_to_nonwords",
-              "izura_score",
-              "age",
-              "vocab_diff")
+              "izura_score")
 
 # Stats I want to run
 summary_stats <- quote(list(Mean = mean, 
