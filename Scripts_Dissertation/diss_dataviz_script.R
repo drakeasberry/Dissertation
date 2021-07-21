@@ -11,6 +11,9 @@ library(ggplot2)
 # Create 'not in' function
 '%ni%' <- Negate('%in%')
 
+# Create Color Scheme
+plt_color_2 <- c('darkorchid4', 'goldenrod4')
+
 # Descriptives box, point, violin plot 
 descriptive_plot <- function(data, x_data, y_data){
   data %>%
