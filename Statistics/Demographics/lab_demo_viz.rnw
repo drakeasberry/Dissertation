@@ -120,7 +120,15 @@ summary_stats <- quote(list(Mean = mean,
 lab_grp_desc <- my_stats(eligible_demo_data, 
               grp_col = c("group"), 
               sum_col = stat_col,
-              stats = summary_stats) %>% 
+              stats = summary_stats) %>%
+  mutate_at(vars(ends_with("_Mean")), 
+              list(~ round(., 2))) %>% 
+  mutate_at(vars(ends_with("_SD")), 
+              list(~ round(., 2))) %>% 
+  mutate_at(vars(ends_with("_Min")), 
+              list(~ round(., 2))) %>% 
+  mutate_at(vars(ends_with("_Max")), 
+              list(~ round(., 2))) %>% 
   column_to_rownames(., var = "group")
 @
 

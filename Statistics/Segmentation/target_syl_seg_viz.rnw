@@ -134,10 +134,8 @@ lab_analyzed_sum <- lab_analyzed %>%
 rm(lab_files,
    lab_completed,
    lab_completed_eligible,
-   lab_completed_eligible_sum,
    lab_analyzed,
    lab_demo_removal,
-   lab_error_removal,
    lab_remove_part,
    lab_part_removal,
    group_map)
@@ -209,6 +207,9 @@ lab_ind_sum <- my_stats(lab_my_data,
               grp_col = lab_grouping, 
               sum_col = lab_stat_col,
               stats = lab_summary_stats)
+  
+
+    
 
 # grouped by group and condition
 lab_grp_sum <- my_stats(lab_my_data, 
@@ -218,7 +219,17 @@ lab_grp_sum <- my_stats(lab_my_data,
   mutate(index = paste(group,
                        target_syl_structure,
                        word_initial_syl,
-                       word_status, sep = "-")) %>% 
+                       word_status, sep = "-")) %>%
+  mutate_at(vars(ends_with("_Mean")), 
+              list(~ round(., 2))) %>% 
+  mutate_at(vars(ends_with("_SD")), 
+              list(~ round(., 2))) %>% 
+  mutate_at(vars(ends_with("_Median")), 
+              list(~ round(., 2))) %>%
+  mutate_at(vars(ends_with("_Min")), 
+              list(~ round(., 2))) %>% 
+  mutate_at(vars(ends_with("_Max")), 
+              list(~ round(., 2))) %>% 
   column_to_rownames(., var = "index")
 
 # Create subgroups for Spanish learners and native speakers
@@ -610,7 +621,7 @@ rm(lab_learners,
    lab_nonwords_learners,
    lab_data_lex_ag, 
    lab_data_tarsyl_ag,
-   my_data_check,)
+   my_data_check)
 
 # Remove checks and unused plots
 rm(lab_l2_mat_lex_int, 
