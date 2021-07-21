@@ -63,6 +63,8 @@ openany, % eliminates all extra blank pages from entire document
 \setlist{noitemsep} % sets global verticle space between list items to zero
 
 \usepackage{tipa} % Required for IPA symbols
+
+\usepackage{multirow} % Required for multirow cells in tables
 %----------------------------------------------------------------------------------------
 % TODO PACKAGE
 %----------------------------------------------------------------------------------------
