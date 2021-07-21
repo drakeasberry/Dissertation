@@ -79,10 +79,5 @@ my_stats <- function(data, grp_col, sum_col, stats){
     } else { 
         cbind(., data_count) %>% 
           select(n, everything())}
-      } %>% 
-    mutate_at(vars(ends_with("_Mean")), 
-              list(~ round(., 2))) %>% 
-    mutate_at(vars(ends_with("_SD")), 
-              list(~ round(., 2)))
-              
+      }
 }
