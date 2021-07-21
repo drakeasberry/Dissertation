@@ -104,9 +104,9 @@ All participants began the experimental session with the Spanish vocabulary task
 \subsection{Analysis Process}
 Due to the method used in data collection several pre-analysis steps were conducted to ensure that participants actually represented the intended group for which they were recruited. This was completed by using the additional data collected through the LexTALE, LexTALE-Esp and the Bilingual Language Profile (BLP) tasks that were completed during the same visit as the syllable monitoring experiment. 
 
-In total, there were \Sexpr{lab_stat_compare["English", "n"] + lab_stat_compare["Spanish", "n"]} participants that completed the study. Using responses to the BLP, \Sexpr{part_removal_sum["fluency-English", "n"] + part_removal_sum["location-Spanish", "n"] + part_removal_sum["dominance-English", "n"] + part_removal_sum["dominance-Spanish", "n"]} were removed because they did not accurately represent the groups for which they had been recruited. \Sexpr{part_removal_sum["fluency-English", "n"]} native English speaker was removed because they reported fluency in languages other than Spanish and English. \Sexpr{part_removal_sum["location-Spanish", "n"]} native Spanish speakers were removed because they reported being born and/or raised outside of Mexico. \Sexpr{part_removal_sum["dominance-English", "n"] + part_removal_sum["dominance-Spanish", "n"]} particiants were removed because they were outliers in terms of language dominance scores calculated by the BLP. Lastly, using the scores from both the LexTALE and LexTALE-Esp, \Sexpr{part_removal_sum["vocabulary-Spanish", "n"]} native Spanish speakers were removed because their scores indicated a larger L2 English vocabulary size than their L1 Spanish vocabulary size.
+In total, there were \Sexpr{lab_stat_compare["English", "n"] + lab_stat_compare["Spanish", "n"]} participants that completed the study. Using responses to the BLP, \Sexpr{lab_part_removal_sum["fluency-English", "n"] + lab_part_removal_sum["location-Spanish", "n"] + lab_part_removal_sum["dominance-English", "n"] + lab_part_removal_sum["dominance-Spanish", "n"]} were removed because they did not accurately represent the groups for which they had been recruited. \Sexpr{lab_part_removal_sum["fluency-English", "n"]} native English speaker was removed because they reported fluency in languages other than Spanish and English. \Sexpr{lab_part_removal_sum["location-Spanish", "n"]} native Spanish speakers were removed because they reported being born and/or raised outside of Mexico. \Sexpr{lab_part_removal_sum["dominance-English", "n"] + lab_part_removal_sum["dominance-Spanish", "n"]} particiants were removed because they were outliers in terms of language dominance scores calculated by the BLP. Lastly, using the scores from both the LexTALE and LexTALE-Esp, \Sexpr{lab_part_removal_sum["vocabulary-Spanish", "n"]} native Spanish speakers were removed because their scores indicated a larger L2 English vocabulary size than their L1 Spanish vocabulary size.
 
-Once the demographic removals had been completed, an accuracy response rate for the experiment was conducted on the remaining \Sexpr{lab_completed_eligible_sum["English", "n"] + lab_completed_eligible_sum["Spanish", "n"]} participants. A predetermined accuracy rate of 90 percent was used as the cut-off and any participant responding incorrectly to filler or critical trials more than 10 percent of the time was removed from the analysis. All participants correctly responded to filler trials above the cut-off point; however, \Sexpr{length(error_removal$partNum)} participant was removed for committing errors at rate greater than 10 percent to critical trials. After the removal of participants, \Sexpr{lab_stat_compare["English", "n"] - lab_analyzed_sum["English", "n"]} participants from the LS group and \Sexpr{lab_stat_compare["Spanish", "n"] - lab_analyzed_sum["Spanish", "n"]} participants from the LE group were removed. This left a total of \Sexpr{lab_analyzed_sum["English", "n"] + lab_analyzed_sum["Spanish", "n"]} participants---\Sexpr{lab_analyzed_sum["English", "n"]} native English speakers and \Sexpr{lab_analyzed_sum["Spanish", "n"]} native Spanish speakers, that had data submitted to the analysis and only these participants are included in reported statistics and figures below. Table \ref{tab-lab-demo-part} gives age related data about participants, Table \ref{tab-lab-vocab-part} give data related to participant vocabulary sizes and Table \ref{tab-lab-lang-blp-part} shows language scores collected through the BLP.
+Once the demographic removals had been completed, an accuracy response rate for the experiment was conducted on the remaining \Sexpr{lab_completed_eligible_sum["English", "n"] + lab_completed_eligible_sum["Spanish", "n"]} participants. A predetermined accuracy rate of 90 percent was used as the cut-off and any participant responding incorrectly to filler or critical trials more than 10 percent of the time was removed from the analysis. All participants correctly responded to filler trials above the cut-off point; however, \Sexpr{length(lab_error_removal$partNum)} participant was removed for committing errors at rate greater than 10 percent to critical trials. After the removal of participants, \Sexpr{lab_stat_compare["English", "n"] - lab_analyzed_sum["English", "n"]} participants from the LS group and \Sexpr{lab_stat_compare["Spanish", "n"] - lab_analyzed_sum["Spanish", "n"]} participants from the LE group were removed. This left a total of \Sexpr{lab_analyzed_sum["English", "n"] + lab_analyzed_sum["Spanish", "n"]} participants---\Sexpr{lab_analyzed_sum["English", "n"]} native English speakers and \Sexpr{lab_analyzed_sum["Spanish", "n"]} native Spanish speakers, that had data submitted to the analysis and only these participants are included in reported statistics and figures below. Table \ref{tab-lab-demo-part} gives age related data about participants, Table \ref{tab-lab-vocab-part} give data related to participant vocabulary sizes and Table \ref{tab-lab-lang-blp-part} shows language scores collected through the BLP.
 
 \begin{table}
 \centering
@@ -216,43 +216,213 @@ Spanish
 \label{tab-lab-lang-blp-part}
 \end{table}
 
-Before the data could be submitted for analysis, some data preparation was still required. The first step in preparing the data for analysis was to remove all the filler trials from the dataset. This left 2160 data points for critical trials by participant. Due to a typo in one of the stimuli, \emph{permiso} 'permission' was typed as \emph{permsio}. This created a nonword critical item inside of a real word block of filler items. As a result, this item was removed from the analysis resulting in the removal of 10 critical items. Since incorrect responses to critical items were a non-response by the participant, the \Sexpr{length(lab_critical_incorrect$word)} missed items were removed. The last pass removed any individual participant responses under 200 milliseconds---\Sexpr{length(lab_under_200$word)} items---following the lower criteria range used by \textcite{Bradley1993-qq}. The upper cut-off limit was set at 1500 milliseconds, which removed an additional \Sexpr{length(lab_over_1500$word)} items. In total, \Sexpr{length(lab_critical_incorrect$word) + length(lab_under_200$word) + length(lab_over_1500$word) + 10} trials, or \Sexpr{round((length(lab_critical_incorrect$word) + length(lab_under_200$word) + length(lab_over_1500$word))/length(lab_critical$word)*100,2)}\% of the data, were removed leaving \Sexpr{length(my_lab_data$word)} critical data points to be submitted for analysis.
+Before the data could be submitted for analysis, some data preparation was still required. The first step in preparing the data for analysis was to remove all the filler trials from the dataset. This left 2160 data points for critical trials by participant. Due to a typo in one of the stimuli, \emph{permiso} 'permission' was typed as \emph{permsio}. This created a nonword critical item inside of a real word block of filler items. As a result, this item was removed from the analysis resulting in the removal of 10 critical items. Since incorrect responses to critical items were a non-response by the participant, the \Sexpr{length(lab_critical_incorrect$word)} missed items were removed. The last pass removed any individual participant responses under 200 milliseconds---\Sexpr{length(lab_under_200$word)} items---following the lower criteria range used by \textcite{Bradley1993-qq}. The upper cut-off limit was set at 1500 milliseconds, which removed an additional \Sexpr{length(lab_over_1500$word)} items. In total, \Sexpr{length(lab_critical_incorrect$word) + length(lab_under_200$word) + length(lab_over_1500$word) + 10} trials, or \Sexpr{round((length(lab_critical_incorrect$word) + length(lab_under_200$word) + length(lab_over_1500$word))/length(lab_critical$word)*100,2)}\% of the data, were removed leaving \Sexpr{length(lab_my_data$word)} critical data points to be submitted for analysis.
 
-
-The data ananlyzed 
-
-
-
-
+The reaction time data was recorded in milliseconds during the experiment. However, to account for individual difference between participants in terms of reaction times, the reaction time data was logit transformed. This accounts for the fact that some participants are generally faster or slower than other participants in general regardless of experimental conditions. The median for these logit tranformed reactions times were then calculated for each experimental condition by participant. This was done to prevent large skewing of the mean in cases where participants repsonded may have responded correctly but slower than usual when compared to their own responses. Using the median also allowed for the retention of all data points submitted within the range of 200--1500ms. 
+Finally, the data was subset into two separate datasets. One dataset was for the control group containing all data points by native Spanish speakers and the other was for the target group containing all points given by native English speakers. This allowed each dataset to be analyzed individually by group allowing for the comparison of reaction times to experimental condiditions between native Spanish and native English speakers. Both datasets were submitted to a (3) x (2) three-way repeated measures ANOVA where target syllable structure, matching condition and word status were within subjects variables. The target syllable structure had two levels, CV and CVC. The matching condition had levels of matching or mismatching. The matching condition represented the target syllable structure and the word initial syllable structure of the carrier item matched while this was not true for the mismatching level. Lastly, the word status factor had two levels of word and nonword.
 
 \section{Results}
 \ttodo[inline]{interpret the results of the analysis describe above. Make sure to explain that we will not be looking for a crossover effect as found in previous studies but rather a parallel structure due to the way it was analyzed. matching versus mismatching condition by target. It is a simple concept but needs explanation}
 
-Columns needed:
-\begin{enumerate}
-\item{participant}
-\item{reaction time}
-\item{match/mismatch}
-\item{target-carrier}
-\item{group}
-\end{enumerate}
+\begin{table}
+\centering
+% Word Table
+\begin{tabular}{l c l l l c c c c}
+\toprule
+& & & & & \multicolumn{2}{c}{RT ms} & \multicolumn{2}{c}{RT log}\\
+\cmidrule(lr){6-7}\cmidrule(lr){8-9}
+L1 & n & Target & Carrier & Matching & Median & SD & Median & SD\\
+\midrule
+\multirow{4}{*}{English}
+% CV Target CV Carrier Condition
+& \Sexpr{lab_grp_sum["English-CV-CV-word","n"]}
+& \Sexpr{lab_grp_sum["English-CV-CV-word","target_syl_structure"]}
+& \Sexpr{lab_grp_sum["English-CV-CV-word","word_initial_syl"]} 
+& \Sexpr{lab_grp_sum["English-CV-CV-word","matching"]}
+& \Sexpr{lab_grp_sum["English-CV-CV-word","segRespRTmsec_Median"]}
+& \Sexpr{lab_grp_sum["English-CV-CV-word","segRespRTmsec_SD"]}
+& \Sexpr{lab_grp_sum["English-CV-CV-word","log_RT_Median"]}
+& \Sexpr{lab_grp_sum["English-CV-CV-word","log_RT_SD"]}\\
+% CV Target CVC Carrier Condition
+& \Sexpr{lab_grp_sum["English-CV-CVC-word","n"]}
+& \Sexpr{lab_grp_sum["English-CV-CVC-word","target_syl_structure"]} 
+& \Sexpr{lab_grp_sum["English-CV-CVC-word","word_initial_syl"]} 
+& \Sexpr{lab_grp_sum["English-CV-CVC-word","matching"]}
+& \Sexpr{lab_grp_sum["English-CV-CVC-word","segRespRTmsec_Median"]}
+& \Sexpr{lab_grp_sum["English-CV-CVC-word","segRespRTmsec_SD"]}
+& \Sexpr{lab_grp_sum["English-CV-CVC-word","log_RT_Median"]}
+& \Sexpr{lab_grp_sum["English-CV-CVC-word","log_RT_SD"]}\\
+% CVC Target CV Carrier Condition
+& \Sexpr{lab_grp_sum["English-CVC-CV-word","n"]}
+& \Sexpr{lab_grp_sum["English-CVC-CV-word","target_syl_structure"]} 
+& \Sexpr{lab_grp_sum["English-CVC-CV-word","word_initial_syl"]} 
+& \Sexpr{lab_grp_sum["English-CVC-CV-word","matching"]}
+& \Sexpr{lab_grp_sum["English-CVC-CV-word","segRespRTmsec_Median"]}
+& \Sexpr{lab_grp_sum["English-CVC-CV-word","segRespRTmsec_SD"]}
+& \Sexpr{lab_grp_sum["English-CVC-CV-word","log_RT_Median"]}
+& \Sexpr{lab_grp_sum["English-CVC-CV-word","log_RT_SD"]}\\
+% CVC Target CVC Carrier Condition
+& \Sexpr{lab_grp_sum["English-CVC-CVC-word","n"]}
+& \Sexpr{lab_grp_sum["English-CVC-CVC-word","target_syl_structure"]} 
+& \Sexpr{lab_grp_sum["English-CVC-CVC-word","word_initial_syl"]} 
+& \Sexpr{lab_grp_sum["English-CVC-CVC-word","matching"]}
+& \Sexpr{lab_grp_sum["English-CVC-CVC-word","segRespRTmsec_Median"]}
+& \Sexpr{lab_grp_sum["English-CVC-CVC-word","segRespRTmsec_SD"]}
+& \Sexpr{lab_grp_sum["English-CVC-CVC-word","log_RT_Median"]}
+& \Sexpr{lab_grp_sum["English-CVC-CVC-word","log_RT_SD"]}\\
+\midrule
+\multirow{4}{*}{Spanish}
+% CV Target CV Carrier Condition
+& \Sexpr{lab_grp_sum["Spanish-CV-CV-word","n"]}
+& \Sexpr{lab_grp_sum["Spanish-CV-CV-word","target_syl_structure"]} 
+& \Sexpr{lab_grp_sum["Spanish-CV-CV-word","word_initial_syl"]} 
+& \Sexpr{lab_grp_sum["Spanish-CV-CV-word","matching"]}
+& \Sexpr{lab_grp_sum["Spanish-CV-CV-word","segRespRTmsec_Median"]}
+& \Sexpr{lab_grp_sum["Spanish-CV-CV-word","segRespRTmsec_SD"]}
+& \Sexpr{lab_grp_sum["Spanish-CV-CV-word","log_RT_Median"]}
+& \Sexpr{lab_grp_sum["Spanish-CV-CV-word","log_RT_SD"]}\\
+% CV Target CVC Carrier Condition
+& \Sexpr{lab_grp_sum["Spanish-CV-CVC-word","n"]}
+& \Sexpr{lab_grp_sum["Spanish-CV-CVC-word","target_syl_structure"]} 
+& \Sexpr{lab_grp_sum["Spanish-CV-CVC-word","word_initial_syl"]} 
+& \Sexpr{lab_grp_sum["Spanish-CV-CVC-word","matching"]}
+& \Sexpr{lab_grp_sum["Spanish-CV-CVC-word","segRespRTmsec_Median"]}
+& \Sexpr{lab_grp_sum["Spanish-CV-CVC-word","segRespRTmsec_SD"]}
+& \Sexpr{lab_grp_sum["Spanish-CV-CVC-word","log_RT_Median"]}
+& \Sexpr{lab_grp_sum["Spanish-CV-CVC-word","log_RT_SD"]}\\
+% CVC Target CV Carrier Condition
+& \Sexpr{lab_grp_sum["Spanish-CVC-CV-word","n"]}
+& \Sexpr{lab_grp_sum["Spanish-CVC-CV-word","target_syl_structure"]} 
+& \Sexpr{lab_grp_sum["Spanish-CVC-CV-word","word_initial_syl"]} 
+& \Sexpr{lab_grp_sum["Spanish-CVC-CV-word","matching"]}
+& \Sexpr{lab_grp_sum["Spanish-CVC-CV-word","segRespRTmsec_Median"]}
+& \Sexpr{lab_grp_sum["Spanish-CVC-CV-word","segRespRTmsec_SD"]}
+& \Sexpr{lab_grp_sum["Spanish-CVC-CV-word","log_RT_Median"]}
+& \Sexpr{lab_grp_sum["Spanish-CVC-CV-word","log_RT_SD"]}\\
+% CVC Target CVC Carrier Condition
+& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-word","n"]}
+& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-word","target_syl_structure"]} 
+& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-word","word_initial_syl"]} 
+& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-word","matching"]}
+& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-word","segRespRTmsec_Median"]}
+& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-word","segRespRTmsec_SD"]}
+& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-word","log_RT_Median"]}
+& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-word","log_RT_SD"]}\\
+\bottomrule
+\multicolumn{6}{l}{Total data points: n = \Sexpr{
+lab_grp_sum["English-CV-CV-word","n"] +
+lab_grp_sum["English-CV-CVC-word","n"] +
+lab_grp_sum["English-CVC-CV-word","n"] +
+lab_grp_sum["English-CVC-CVC-word","n"] +
+lab_grp_sum["Spanish-CV-CV-word","n"] +
+lab_grp_sum["Spanish-CV-CVC-word","n"] +
+lab_grp_sum["Spanish-CVC-CV-word","n"] +
+lab_grp_sum["Spanish-CVC-CVC-word","n"]}}\\
+\end{tabular}
+\caption{Reaction times to words for each condition given in millseconds and logit transformed values.}
+\label{tab-lab-grp-rt-wd}
 
-%linear regression/ANOVA
-%Accuracy
-% reaction time
-%AorB logistic regression
+\vspace{.4in}
 
-		CV	   |	CVC	
-			
------------------------------------------
+% Nonword Table
+\begin{tabular}{l c l l l c c c c}
+\toprule
+& & & & & \multicolumn{2}{c}{RT ms} & \multicolumn{2}{c}{RT log}\\ 
+\cmidrule(lr){6-7}\cmidrule(lr){8-9}
+L1 & n & Target & Carrier & Matching & Median & SD & Median & SD\\
+\midrule
+\multirow{4}{*}{English}
+% CV Target CV Carrier Condition
+& \Sexpr{lab_grp_sum["English-CV-CV-nonword","n"]}
+& \Sexpr{lab_grp_sum["English-CV-CV-nonword","target_syl_structure"]} 
+& \Sexpr{lab_grp_sum["English-CV-CV-nonword","word_initial_syl"]} 
+& \Sexpr{lab_grp_sum["English-CV-CV-nonword","matching"]}
+& \Sexpr{lab_grp_sum["English-CV-CV-nonword","segRespRTmsec_Median"]}
+& \Sexpr{lab_grp_sum["English-CV-CV-nonword","segRespRTmsec_SD"]}
+& \Sexpr{lab_grp_sum["English-CV-CV-nonword","log_RT_Median"]}
+& \Sexpr{lab_grp_sum["English-CV-CV-nonword","log_RT_SD"]}\\
+% CV Target CVC Carrier Condition
+& \Sexpr{lab_grp_sum["English-CV-CVC-nonword","n"]}
+& \Sexpr{lab_grp_sum["English-CV-CVC-nonword","target_syl_structure"]} 
+& \Sexpr{lab_grp_sum["English-CV-CVC-nonword","word_initial_syl"]} 
+& \Sexpr{lab_grp_sum["English-CV-CVC-nonword","matching"]}
+& \Sexpr{lab_grp_sum["English-CV-CVC-nonword","segRespRTmsec_Median"]}
+& \Sexpr{lab_grp_sum["English-CV-CVC-nonword","segRespRTmsec_SD"]}
+& \Sexpr{lab_grp_sum["English-CV-CVC-nonword","log_RT_Median"]}
+& \Sexpr{lab_grp_sum["English-CV-CVC-nonword","log_RT_SD"]}\\
+% CVC Target CV Carrier Condition
+& \Sexpr{lab_grp_sum["English-CVC-CV-nonword","n"]}
+& \Sexpr{lab_grp_sum["English-CVC-CV-nonword","target_syl_structure"]} 
+& \Sexpr{lab_grp_sum["English-CVC-CV-nonword","word_initial_syl"]} 
+& \Sexpr{lab_grp_sum["English-CVC-CV-nonword","matching"]}
+& \Sexpr{lab_grp_sum["English-CVC-CV-nonword","segRespRTmsec_Median"]}
+& \Sexpr{lab_grp_sum["English-CVC-CV-nonword","segRespRTmsec_SD"]}
+& \Sexpr{lab_grp_sum["English-CVC-CV-nonword","log_RT_Median"]}
+& \Sexpr{lab_grp_sum["English-CVC-CV-nonword","log_RT_SD"]}\\
+% CVC Target CVC Carrier Condition
+& \Sexpr{lab_grp_sum["English-CVC-CVC-nonword","n"]}
+& \Sexpr{lab_grp_sum["English-CVC-CVC-nonword","target_syl_structure"]} 
+& \Sexpr{lab_grp_sum["English-CVC-CVC-nonword","word_initial_syl"]} 
+& \Sexpr{lab_grp_sum["English-CVC-CVC-nonword","matching"]}
+& \Sexpr{lab_grp_sum["English-CVC-CVC-nonword","segRespRTmsec_Median"]}
+& \Sexpr{lab_grp_sum["English-CVC-CVC-nonword","segRespRTmsec_SD"]}
+& \Sexpr{lab_grp_sum["English-CVC-CVC-nonword","log_RT_Median"]}
+& \Sexpr{lab_grp_sum["English-CVC-CVC-nonword","log_RT_SD"]}\\
+\midrule
+\multirow{4}{*}{Spanish}
+% CV Target CV Carrier Condition
+& \Sexpr{lab_grp_sum["Spanish-CV-CV-nonword","n"]}
+& \Sexpr{lab_grp_sum["Spanish-CV-CV-nonword","target_syl_structure"]} 
+& \Sexpr{lab_grp_sum["Spanish-CV-CV-nonword","word_initial_syl"]} 
+& \Sexpr{lab_grp_sum["Spanish-CV-CV-nonword","matching"]}
+& \Sexpr{lab_grp_sum["Spanish-CV-CV-nonword","segRespRTmsec_Median"]}
+& \Sexpr{lab_grp_sum["Spanish-CV-CV-nonword","segRespRTmsec_SD"]}
+& \Sexpr{lab_grp_sum["Spanish-CV-CV-nonword","log_RT_Median"]}
+& \Sexpr{lab_grp_sum["Spanish-CV-CV-nonword","log_RT_SD"]}\\
+% CV Target CVC Carrier Condition
+& \Sexpr{lab_grp_sum["Spanish-CV-CVC-nonword","n"]}
+& \Sexpr{lab_grp_sum["Spanish-CV-CVC-nonword","target_syl_structure"]} 
+& \Sexpr{lab_grp_sum["Spanish-CV-CVC-nonword","word_initial_syl"]} 
+& \Sexpr{lab_grp_sum["Spanish-CV-CVC-nonword","matching"]}
+& \Sexpr{lab_grp_sum["Spanish-CV-CVC-nonword","segRespRTmsec_Median"]}
+& \Sexpr{lab_grp_sum["Spanish-CV-CVC-nonword","segRespRTmsec_SD"]}
+& \Sexpr{lab_grp_sum["Spanish-CV-CVC-nonword","log_RT_Median"]}
+& \Sexpr{lab_grp_sum["Spanish-CV-CVC-nonword","log_RT_SD"]}\\
+% CVC Target CV Carrier Condition
+& \Sexpr{lab_grp_sum["Spanish-CVC-CV-nonword","n"]}
+& \Sexpr{lab_grp_sum["Spanish-CVC-CV-nonword","target_syl_structure"]} 
+& \Sexpr{lab_grp_sum["Spanish-CVC-CV-nonword","word_initial_syl"]} 
+& \Sexpr{lab_grp_sum["Spanish-CVC-CV-nonword","matching"]}
+& \Sexpr{lab_grp_sum["Spanish-CVC-CV-nonword","segRespRTmsec_Median"]}
+& \Sexpr{lab_grp_sum["Spanish-CVC-CV-nonword","segRespRTmsec_SD"]}
+& \Sexpr{lab_grp_sum["Spanish-CVC-CV-nonword","log_RT_Median"]}
+& \Sexpr{lab_grp_sum["Spanish-CVC-CV-nonword","log_RT_SD"]}\\
+% CVC Target CVC Carrier Condition
+& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-nonword","n"]}
+& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-nonword","target_syl_structure"]} 
+& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-nonword","word_initial_syl"]} 
+& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-nonword","matching"]}
+& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-nonword","segRespRTmsec_Median"]}
+& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-nonword","segRespRTmsec_SD"]}
+& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-nonword","log_RT_Median"]}
+& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-nonword","log_RT_SD"]}\\
+\bottomrule
+\multicolumn{6}{l}{Total data points: n = \Sexpr{
+lab_grp_sum["English-CV-CV-nonword","n"] +
+lab_grp_sum["English-CV-CVC-nonword","n"] +
+lab_grp_sum["English-CVC-CV-nonword","n"] +
+lab_grp_sum["English-CVC-CVC-nonword","n"] +
+lab_grp_sum["Spanish-CV-CV-nonword","n"] +
+lab_grp_sum["Spanish-CV-CVC-nonword","n"] +
+lab_grp_sum["Spanish-CVC-CV-nonword","n"] +
+lab_grp_sum["Spanish-CVC-CVC-nonword","n"]}}\\
+\end{tabular}
+\caption{Reaction times to nonwords for each condition given in millseconds and logit transformed values.}
+\label{tab-lab-grp-rt-nonwd}
+\end{table}
 
-CV	|     match	   |  mismatch |
 
------------------------------------------
 
-CVC |  mismatch |     match    |
-
------------------------------------------
 
 
 %\textbf{DELETE ME describe the analyses the researcher has done, but do not overload. Instead of creating a laundry list of statistics, create the story you want to tell using only the statistics that are related to addressing your problem. For each task, review the hypothesis, give the statistics and say what the result of the test means. Do not discuss the findings until you reach the discussion session. This is where tables and figures can help keep the paper looking clean and crisp instead of cluttered unorganized statistical test lists that are hard to follow. Figures show patterns while tables give details.}
