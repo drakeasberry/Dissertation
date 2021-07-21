@@ -29,16 +29,21 @@ source('../../Scripts_Dissertation/analysis_functions.R')
 
 <<lab_participants, echo = FALSE>>=
 # Read in group to participant mapping
-group_map <- read_csv('../../Scripts_Dissertation/participant_group_map.csv')
+group_map <- read_csv(
+  '../../Scripts_Dissertation/participant_group_map.csv')
 
-lab_files <- list.files(path='../../Dissertation_Experiments/segmentation/data/original_data/part_files/', pattern = '*.csv', full.names = TRUE)  
+lab_files <- list.files(
+  path = '../../Dissertation_Experiments/segmentation/data/original_data/part_files/', 
+  pattern = '*.csv', 
+  full.names = TRUE)  
 
 # read in all the files into one data frame
 lab_completed <- ldply(lab_files, read_csv) %>% 
   mutate(partNum = `01_Participante (Participant):`,
          age = `05_Edad (Age):`) %>% 
   left_join(., group_map) %>% 
-  subset(., group != 'Childhood') %>% #removes 21 heritage
+  #removes 21 heritage
+  subset(., group != 'Childhood') %>% 
   select(partNum, group, age) %>% 
   unique() %>%
   convert_as_factor(group)
@@ -54,83 +59,96 @@ lab_stat_compare <- lab_completed %>%
   column_to_rownames(., var = "group")
 
 # create removal table with reason
-remove_part <- tibble(partNum = c("part007", 
-                                  "part031",
-                                  "part058",
-                                  "part016",
-                                  "part033",
-                                  "part059",
-                                  "part027",
-                                  "part047",
-                                  "part052",
-                                  "part044",
-                                  "part020"), 
-                      reason = c("dominance", 
-                                 "dominance", 
-                                 "dominance",
-                                 "vocabulary",
-                                 "vocabulary",
-                                 "vocabulary",
-                                 "location",
-                                 "location",
-                                 "location",
-                                 "fluency",
-                                 "error"),
-                      long_reason = c(
-                        "L1 English with dominance score below 50",
-                        "L1 Spanish with dominance score above 0",
-                        "L1 Spanish with dominance score above 0",
-                        "L1 Spanish lower than L2 English vocabulary",
-                        "L1 Spanish lower than L2 English vocabulary",
-                        "L1 Spanish lower than L2 English vocabulary",
-                        "L1 Spanish born in US",
-                        "L1 Spanish born and raised outside Sonora MX",
-                        "L1 Spanish born in US",
-                        "Fluency in Japanese, Catalan and Italian",
-                        "More than 10% error rate to critical trials")) %>%
+lab_remove_part <- tibble(
+  partNum = c("part007", 
+              "part031",
+              "part058",
+              "part016",
+              "part033",
+              "part059",
+              "part027",
+              "part047",
+              "part052",
+              "part044",
+              "part020"), 
+  reason = c("dominance", 
+             "dominance", 
+             "dominance",
+             "vocabulary",
+             "vocabulary",
+             "vocabulary",
+             "location",
+             "location",
+             "location",
+             "fluency",
+             "error"),
+  long_reason = c("L1 English with dominance score below 50",
+                  "L1 Spanish with dominance score above 0",
+                  "L1 Spanish with dominance score above 0",
+                  "L1 Spanish lower than L2 English vocabulary",
+                  "L1 Spanish lower than L2 English vocabulary",
+                  "L1 Spanish lower than L2 English vocabulary",
+                  "L1 Spanish born in US",
+                  "L1 Spanish born and raised outside Sonora MX",
+                  "L1 Spanish born in US",
+                  "Fluency in Japanese, Catalan and Italian",
+                  "More than 10% error rate to critical trials")) %>%
   arrange(partNum)
 
 # create reference table for report  
-part_removal <- left_join(remove_part, 
+lab_part_removal <- left_join(lab_remove_part, 
                           lab_completed, 
                           by = "partNum") %>% 
   mutate(number = str_sub(partNum, start = -3L, end = -1L)) %>% 
   column_to_rownames(., var = "number")
 
-part_removal_sum <- part_removal %>% 
+lab_part_removal_sum <- lab_part_removal %>% 
   group_by(group, reason) %>% 
   summarise(n = n()) %>% 
   mutate(index = paste0(reason,"-",group)) %>%
   select(n, everything()) %>% 
   column_to_rownames(., var = "index")
 
-demo_removal <- part_removal %>% 
+lab_demo_removal <- lab_part_removal %>% 
   subset(., reason != "error")
 
 lab_completed_eligible <- lab_completed %>% 
-  subset(., partNum %ni% demo_removal$partNum)
+  subset(., partNum %ni% lab_demo_removal$partNum)
 
 lab_completed_eligible_sum <- lab_completed_eligible %>% 
   group_by(group) %>% 
   summarise(n = n()) %>% 
   column_to_rownames(., var = "group")
 
-error_removal <- part_removal %>% 
+lab_error_removal <- lab_part_removal %>% 
   subset(., reason == "error")
 
 lab_analyzed <- lab_completed_eligible %>% 
-  subset(., partNum %ni% error_removal$partNum)
+  subset(., partNum %ni% lab_error_removal$partNum)
 
 lab_analyzed_sum <- lab_analyzed %>% 
   group_by(group) %>% 
   summarise(n = n()) %>% 
-  column_to_rownames(., var = "group")  
+  column_to_rownames(., var = "group")
+
+rm(lab_files,
+   lab_completed,
+   lab_completed_eligible,
+   lab_completed_eligible_sum,
+   lab_analyzed,
+   lab_demo_removal,
+   lab_error_removal,
+   lab_remove_part,
+   lab_part_removal,
+   group_map)
 @
 
 <<lab_data, echo = FALSE>>=
 # Read in data that was output from r-script
-my_data_check <- read_csv('analyze_data/output/45_lab_segmentation.csv')
-lab_critical <- read_csv('analyze_data/output/45_raw_lab_segmentation.csv')
+my_data_check <- read_csv(
+  'analyze_data/output/45_lab_segmentation.csv')
+lab_critical <- read_csv(
+  'analyze_data/output/45_raw_lab_segmentation.csv')
 
 # incorrect responses
 lab_critical_incorrect <- lab_critical %>% 
@@ -138,7 +156,8 @@ lab_critical_incorrect <- lab_critical %>%
 
 # correct responses
 lab_critical_correct <- lab_critical %>% 
-  subset(., segResp == 1) # remove all missed critical
+  # remove all missed critical
+  subset(., segResp == 1) 
 
 # responses under 200 milliseconds
 lab_under_200 <- lab_critical_correct %>% 
@@ -148,52 +167,54 @@ lab_under_200 <- lab_critical_correct %>%
 lab_over_1500 <- lab_critical_correct %>% 
   subset(., segRespRTmsec > 1500)
 
-my_lab_data <- lab_critical %>% 
+lab_my_data <- lab_critical %>% 
   subset(., segResp == 1) %>% 
   subset(., segRespRTmsec >= 200) %>% 
   subset(., segRespRTmsec <= 1500) %>% 
   select(-c(segResp, exp_word_type))
 
-# Transform data in long form with 1 row per participant per condition
+# Transform data in long form with 
+# 1 row per participant per condition
 # List columns to group by
-grouping <- c("partNum", "group", "word_status", "word_initial_syl", 
-              "target_syl_structure", "matching")
+lab_grouping <- c("partNum", 
+              "group", 
+              "word_status", 
+              "word_initial_syl", 
+              "target_syl_structure", 
+              "matching")
 
-# Aggregaates and transforms data into long form
-# Adds columns for median of RT in msec and log
-# Replaced by my_stats() function for more consistency
-#my_lab_data_long <- trans_long(my_lab_data, grouping) 
 
-# Get summary stats for reporting (my_stats function used for dissertation consistency)
+# Get summary stats for reporting 
+# (my_stats function used for dissertation consistency)
 # Columns that I want summary stats for
-stat_col <- c("segRespRTmsec",
+lab_stat_col <- c("segRespRTmsec",
               "log_RT")
 
 # Stats I want to run
-summary_stats <- quote(list(Median = median,
+lab_summary_stats <- quote(list(Median = median,
                             Mean = mean, 
                             Min = min, 
                             Max = max, 
                             SD = sd))
 
 # Grouping by group and condition
-cond_grp <- c("group",
+lab_cond_grp <- c("group",
               "target_syl_structure",
               "word_initial_syl",
               "matching", 
               "word_status")
 
 # grouped by participant and condition
-lab_ind_sum <- my_stats(my_lab_data, 
-              grp_col = grouping, 
-              sum_col = stat_col,
-              stats = summary_stats)
+lab_ind_sum <- my_stats(lab_my_data, 
+              grp_col = lab_grouping, 
+              sum_col = lab_stat_col,
+              stats = lab_summary_stats)
 
 # grouped by group and condition
-lab_grp_sum <- my_stats(my_lab_data, 
-              grp_col = cond_grp, 
-              sum_col = stat_col,
-              stats = summary_stats) %>%
+lab_grp_sum <- my_stats(lab_my_data, 
+              grp_col = lab_cond_grp, 
+              sum_col = lab_stat_col,
+              stats = lab_summary_stats) %>%
   mutate(index = paste(group,
                        target_syl_structure,
                        word_initial_syl,
@@ -201,333 +222,405 @@ lab_grp_sum <- my_stats(my_lab_data,
   column_to_rownames(., var = "index")
 
 # Create subgroups for Spanish learners and native speakers
-#learners <- part_group(my_lab_data_long, 'English')
-#natives <- part_group(my_lab_data_long, 'Spanish')
-learners <- part_group(lab_ind_sum, 'English')
-natives <- part_group(lab_ind_sum, 'Spanish')
+lab_learners <- part_group(lab_ind_sum, 'English')
+lab_natives <- part_group(lab_ind_sum, 'Spanish')
 
-# Group data by target syllable structure, matching condition, and word status, 
-grouping_stats <- c("target_syl_structure", "matching", "word_status")
-
-## Summary statistics for reaction time
-## Reaction time in miliseconds
-#learners %>% 
-#  summary_stats(., grouping_stats, "median_RTmsec", "mean_sd")
-#
-#natives %>% 
-#  summary_stats(., grouping_stats, "median_RTmsec", "mean_sd")
-#
-## Reaction time after log transformation
-#learners %>% 
-#  summary_stats(., grouping_stats, "median_RTlog", "mean_sd")
-#
-#natives %>% 
-#  summary_stats(., grouping_stats, "median_RTlog", "mean_sd")
+# Group data by target syllable structure, 
+# matching condition, and word status, 
+lab_grouping_stats <- c("target_syl_structure", 
+                    "matching", 
+                    "word_status")
 
 
 # Visualize Descriptive Data
 # Learners
-bxp_learners <- learners %>% 
-  mutate(wd_new = factor(word_status, levels = c("word", "nonword"),
+lab_bxp_learners <- lab_learners %>% 
+  mutate(wd_new = factor(word_status, 
+                         levels = c("word", "nonword"),
                          labels = c("Word", "Nonword")),
-         mat_new = factor(matching, levels = c("matching", "mismatching"),
+         mat_new = factor(matching, 
+                          levels = c("matching", "mismatching"),
                           labels = c("Matching", "Mismatching"))) %>% 
   ggplot(aes(x = target_syl_structure,
-             y = segRespRTmsec_Median,  #median_RTmsec,
+             y = segRespRTmsec_Median,
              color = mat_new)) +
-  geom_boxplot(fill = NA, position = position_dodge(1)) +
-  geom_violin(fill = NA, position = position_dodge(1)) +
+  geom_boxplot(fill = NA, 
+               position = position_dodge(1)) +
+  geom_violin(fill = NA, 
+              position = position_dodge(1)) +
   facet_wrap(. ~ wd_new) +
   labs(title = "L2 Spanish by Target Syllable",
        x = "Target Syllable Structure",
        y = "Reaction Time (msec)") +
-  scale_color_manual(name = "Condition", values = c('darkorchid4', 'goldenrod4'))
-bxp_learners
+  scale_color_manual(name = "Condition", 
+                     values = plt_color_2)
+lab_bxp_learners
 
 # Natives
-bxp_natives <- natives %>% 
-  mutate(wd_new = factor(word_status, levels = c("word", "nonword"),
+lab_bxp_natives <- lab_natives %>% 
+  mutate(wd_new = factor(word_status, 
+                         levels = c("word", "nonword"),
                          labels = c("Word", "Nonword")),
-         mat_new = factor(matching, levels = c("matching", "mismatching"),
+         mat_new = factor(matching, 
+                          levels = c("matching", "mismatching"),
                           labels = c("Matching", "Mismatching"))) %>% 
   ggplot(aes(x = target_syl_structure,
-             y = segRespRTmsec_Median,  #median_RTmsec,
+             y = segRespRTmsec_Median,
              color = mat_new)) +
-  geom_boxplot(fill = NA, position = position_dodge(1)) +
-  geom_violin(fill = NA, position = position_dodge(1)) +
+  geom_boxplot(fill = NA, 
+               position = position_dodge(1)) +
+  geom_violin(fill = NA, 
+              position = position_dodge(1)) +
   facet_grid(. ~ wd_new) +
   labs(title = "L1 Spanish by Target Syllable",
        x = "Target Syllable Structure",
        y = "Reaction Time (msec)") +
-  scale_color_manual(name = "Condition", values = c('darkorchid4', 'goldenrod4'))
-bxp_natives 
+  scale_color_manual(name = "Condition", 
+                     values = plt_color_2)
+lab_bxp_natives 
 
 
 # Check for outliers
 # Check pooled data
-#outlier_data <- my_lab_data_long %>% 
-#  outlier_chk(., grouping_stats, "median_RTmsec")
-outlier_data <- lab_ind_sum %>% 
-  outlier_chk(., grouping_stats, "segRespRTmsec_Median")
+lab_outlier_data <- lab_ind_sum %>% 
+  outlier_chk(., lab_grouping_stats, "segRespRTmsec_Median")
 ## part008 only extreme outlier in all 45 participants
 
 # check in learner group
-outlier_learner <- learners %>% 
-  outlier_chk(., grouping_stats, "segRespRTmsec_Median")
+lab_outlier_learner <- lab_learners %>% 
+  outlier_chk(., lab_grouping_stats, "segRespRTmsec_Median")
 ## part008 is only extreme outlier 
 
 # outliers after log transformation
-outlier_learner_log <- learners %>% 
-  outlier_chk(., grouping_stats, "log_RT_Median")
+lab_outlier_learner_log <- lab_learners %>% 
+  outlier_chk(., lab_grouping_stats, "log_RT_Median")
 ## part008 is not outlier in log transformed data
 
 # check in native group
-outlier_native <- natives %>% 
-  outlier_chk(., grouping_stats, "segRespRTmsec_Median")
+lab_outlier_native <- lab_natives %>% 
+  outlier_chk(., lab_grouping_stats, "segRespRTmsec_Median")
 ## no outliers
 
 # outliers after log transformation
-outlier_native_log <- natives %>% 
-  outlier_chk(., grouping_stats, "log_RT_Median")
+lab_outlier_native_log <- lab_natives %>% 
+  outlier_chk(., lab_grouping_stats, "log_RT_Median")
 ## no outliers
 
 # Check for normality
-normality_learner <- learners %>% 
-  normality_chk(., grouping_stats, "segRespRTmsec_Median")
+lab_normality_learner <- lab_learners %>% 
+  normality_chk(., lab_grouping_stats, "segRespRTmsec_Median")
 
-normality_native <- natives %>% 
-  normality_chk(., grouping_stats, "segRespRTmsec_Median")
+lab_normality_native <- lab_natives %>% 
+  normality_chk(., lab_grouping_stats, "segRespRTmsec_Median")
 
 
 # Create QQ plots
 # Learners by milliseconds
-ggqqplot(learners, "segRespRTmsec_Median", ggtheme = theme_bw(), 
-         title = "QQ Plot by Target Syllable in Milliseconds by L2 Spanish Speakers") +
-  facet_grid(target_syl_structure + matching ~ word_status, labeller = "label_both") 
+ggqqplot(
+  lab_learners, 
+  "segRespRTmsec_Median", 
+  ggtheme = theme_bw(), 
+  title = "QQ Plot by Target Syllable in Milliseconds by L2 Spanish Speakers") +
+  facet_grid(target_syl_structure + matching ~ word_status, 
+             labeller = "label_both") 
 
 # Learners by log values
-ggqqplot(learners, "log_RT_Median", ggtheme = theme_bw(),
-         title = "QQ Plot by Target Syllable in log by L2 Spanish Speakers") +
-  facet_grid(target_syl_structure + matching ~ word_status, labeller = "label_both")
+ggqqplot(
+  lab_learners, 
+  "log_RT_Median", 
+  ggtheme = theme_bw(),
+  title = "QQ Plot by Target Syllable in log by L2 Spanish Speakers") +
+  facet_grid(target_syl_structure + matching ~ word_status, 
+             labeller = "label_both")
 
 
 # Natives by milliseconds
-ggqqplot(natives, "segRespRTmsec_Median", ggtheme = theme_bw(), 
-         title = "QQ Plot by Target Syllable in Milliseconds by L1 Spanish Speakers") +
-  facet_grid(target_syl_structure + matching ~ word_status, labeller = "label_both") 
+ggqqplot(
+  lab_natives, 
+  "segRespRTmsec_Median", 
+  ggtheme = theme_bw(), 
+  title = "QQ Plot by Target Syllable in Milliseconds by L1 Spanish Speakers") +
+  facet_grid(target_syl_structure + matching ~ word_status, 
+             labeller = "label_both") 
 
 # Natives by log values
-ggqqplot(natives, "log_RT_Median", ggtheme = theme_bw(),
-                             title = "QQ Plot by Target Syllable in log by L1 Spanish Speakers") +
-  facet_grid(target_syl_structure + matching ~ word_status, labeller = "label_both")
+ggqqplot(
+  lab_natives, 
+  "log_RT_Median", 
+  ggtheme = theme_bw(),
+  title = "QQ Plot by Target Syllable in log by L1 Spanish Speakers") +
+  facet_grid(target_syl_structure + matching ~ word_status, 
+             labeller = "label_both")
 
 
 # Run inferential statistics Learner group
 # Run 3 way repeated measures anova
-aov_learners <- aov_ez("partNum", "log_RT_Median", learners, within = c(grouping_stats))
-aov_learners
+lab_aov_learners <- aov_ez(
+  "partNum", 
+  "log_RT_Median", 
+  lab_learners, 
+  within = c(lab_grouping_stats))
+lab_aov_learners
 ## main effect of target syllable structure
 ## two way interaction between matching and word status
 
-# Regroup to run paired t-test for target syllable over all other conditions 
-grouping_tarsyl <- grouping[! grouping %in% c("word_status", "word_initial_syl",
-                                              "matching", "group")]
-#data_tarsyl_ag <- my_lab_data %>% 
-#  subset(., group == "English") %>% 
-#  trans_long(., grouping_tarsyl)
+# Regroup to run paired t-test for 
+# target syllable over all other conditions 
+lab_grouping_tarsyl <- 
+  lab_grouping[! lab_grouping %in% c("word_status", 
+                             "word_initial_syl",
+                             "matching", 
+                             "group")]
+
 
 # grouped by participant and target syllable
-data_tarsyl_ag <- my_lab_data %>% 
+lab_data_tarsyl_ag <- lab_my_data %>% 
   subset(., group == "English") %>% 
-  my_stats(., grp_col = grouping_tarsyl, 
-           sum_col = stat_col,
-           stats = summary_stats)
+  my_stats(., grp_col = lab_grouping_tarsyl, 
+           sum_col = lab_stat_col,
+           stats = lab_summary_stats)
 
 # Significant Main Effect Exploration
 # Learners t.test for target syllable structure
-t.test(data_tarsyl_ag$log_RT_Median ~ data_tarsyl_ag$target_syl_structure, paired = TRUE) 
+t_lab_tar_syl_main <- t.test(
+  lab_data_tarsyl_ag$log_RT_Median ~ 
+    lab_data_tarsyl_ag$target_syl_structure,
+  paired = TRUE)
+t_lab_tar_syl_main
 ## is signficant t = 2.4503, df = 26, p-value = 0.02132
 
 # Descriptives to check direction of effect
-with(data_tarsyl_ag, tapply(log_RT_Median, target_syl_structure, FUN = mean)) 
+with(lab_data_tarsyl_ag, 
+     tapply(log_RT_Median, 
+            target_syl_structure, 
+            FUN = mean)) 
 ## CVC faster than CV
 
-cohen.d(data_tarsyl_ag$log_RT_Median, data_tarsyl_ag$target_syl_structure, na.rm = TRUE, paired = TRUE)
+# Get the size of the effect
+cohen.d(lab_data_tarsyl_ag$log_RT_Median, 
+        lab_data_tarsyl_ag$target_syl_structure, 
+        na.rm = TRUE, 
+        paired = TRUE)
 ## small effect size
 
 
 # Interaction breakdown
-# Regroup to run paired t-test for matching/mismatching over all other conditions
-grouping_mat <- grouping[! grouping %in% c("word_status", "word_initial_syl",
-                                           "target_syl_structure", "group")]
+# Regroup to run paired t-test for 
+# matching/mismatching over all other conditions
+lab_grouping_mat <- 
+  lab_grouping[! lab_grouping %in% c("word_status", 
+                             "word_initial_syl",
+                             "target_syl_structure", 
+                             "group")]
 
-# Create subsets to explore interaction between matching and word status for Learners
+# Create subsets to explore interaction between 
+# matching and word status for Learners
 # Nonword subset
-#nonwords_learners <- my_lab_data %>%
-#  subset(., word_status == "nonword" & group == "English") %>% 
-#  trans_long(., grouping_mat)
-nonwords_learners <- my_lab_data %>% 
+lab_nonwords_learners <- lab_my_data %>% 
   subset(., word_status == "nonword" & group == "English") %>% 
-  my_stats(., grp_col = grouping_mat, 
-           sum_col = stat_col,
-           stats = summary_stats)
+  my_stats(., grp_col = lab_grouping_mat, 
+           sum_col = lab_stat_col,
+           stats = lab_summary_stats)
+
 
 # Create real word subset
-#words_learners <- my_lab_data %>%
-#  subset(., word_status == "word" & group == "English") %>% 
-#  trans_long(., grouping_mat)
-
-words_learners <- my_lab_data %>% 
+lab_words_learners <- lab_my_data %>% 
   subset(., word_status == "word" & group == "English") %>% 
-  my_stats(., grp_col = grouping_mat, 
-           sum_col = stat_col,
-           stats = summary_stats)
+  my_stats(., grp_col = lab_grouping_mat, 
+           sum_col = lab_stat_col,
+           stats = lab_summary_stats)
 
 # Nonwords t.test one-tailed for matching
-t.test(nonwords_learners$log_RT_Median ~ nonwords_learners$matching, paired = TRUE, 
-       alternative = "less") 
-## is not significant t = -1.8042, df = 26, p-value = 0.0414 (uncorrected for 2 tests)
+t_lab_l2_nonwd_mat_int <- 
+  t.test(lab_nonwords_learners$log_RT_Median ~ 
+           lab_nonwords_learners$matching,
+         paired = TRUE, 
+         alternative = "less") 
+t_lab_l2_nonwd_mat_int
+## is not significant 
+## t = -1.8042, df = 26, p-value = 0.0414 (uncorrected for 2 tests)
 ## alpha = 0.025
 
 # Descriptives to check direction of effect
-with(nonwords_learners, tapply(log_RT_Median, matching, FUN = mean))
-## nonwords in matching condition are responded to faster than mismatching, but not significnatly
+with(lab_nonwords_learners, 
+     tapply(log_RT_Median, 
+            matching, 
+            FUN = mean))
+## nonwords in matching condition are responded to 
+## faster than mismatching, but not significnatly
 
 # Real words t.test ont-tailed for matching
-t.test(words_learners$log_RT_Median ~ words_learners$matching, paired = TRUE,
-       alternative = "less")
-## not significant in hypothesized direction t = 2.1855, df = 26, p-value = 0.981
+t_lab_l2_wd_mat_int <-
+  t.test(lab_words_learners$log_RT_Median ~ lab_words_learners$matching, 
+         paired = TRUE,
+         alternative = "less")
+t_lab_l2_wd_mat_int
+## not significant in hypothesized direction 
+## t = 2.1855, df = 26, p-value = 0.981
 
-
-#t.test(words_learners$median_RTlog ~ words_learners$matching, paired = TRUE,
-#       alternative = "greater")
-## One-tailed t-test 'greater' results
-## t = 2.1855, df = 26, p-value = 0.01903 (uncorrected for 2 tests) 
-## alpha = 0.025
 
 # Descriptives to check direction of effect
-with(words_learners, tapply(log_RT_Median, matching, FUN = mean)) 
-## Words in the mismatching condition repsonded to significantly faster than matching 
+with(lab_words_learners, 
+     tapply(log_RT_Median, 
+            matching, 
+            FUN = mean)) 
+## Words in the mismatching condition repsonded to 
+## significantly faster than matching 
 
-cohen.d(words_learners$log_RT_Median, words_learners$matching, na.rm = TRUE, paired = TRUE)
-
-# Miquel and I testing
-#cohen.d(words_learners$median_RTlog, words_learners$matching, na.rm = TRUE, paired = TRUE, conf.level = 0.9)
-## small effect size, but effect is in opposite direction
+# Get effect size
+cohen.d(lab_words_learners$log_RT_Median, 
+        lab_words_learners$matching, 
+        na.rm = TRUE, 
+        paired = TRUE)
 
 
 # Learner plots 
 # Main effect of target syllable structure
-l2_tar_syl_main <- afex_plot(aov_learners, 
-                             x = "target_syl_structure", 
-                             error = "within",
-                             data_plot = FALSE,
-                             mapping = c("color", "shape")) +
+lab_l2_tar_syl_main <- afex_plot(
+  lab_aov_learners, 
+  x = "target_syl_structure", 
+  error = "within",
+  data_plot = FALSE,
+  mapping = c("color", "shape")) +
   labs(title = "Estimated Marginal Means L2 Spanish",
        x = "Target Syllable Structure",
        y = "Reaction Time (log)") +
-  scale_color_manual(values = c('darkorchid4', 'goldenrod4')) +
+  scale_color_manual(values = plt_color_2) +
   theme(legend.position = "none")
-l2_tar_syl_main
+lab_l2_tar_syl_main
 
 
-# Interaction between matching condition and lexicality with matching condition on x-axis
-l2_mat_lex_int <- afex_plot(aov_learners, 
-          x = "matching", 
-          trace = "word_status",
-          error = "within",
-          mapping = c("shape", "color", "linetype"),
-          factor_levels = list(word_status = c(word = "Word", nonword = "Noword"),
-                               matching = c("Matching", "Mismatching")),
-          legend_title = "Lexicality",
-          data_plot = FALSE) +
+# Interaction between matching condition and lexicality 
+# with matching condition on x-axis
+lab_l2_mat_lex_int <- afex_plot(
+  lab_aov_learners, 
+  x = "matching", 
+  trace = "word_status",
+  error = "within",
+  mapping = c("shape", "color", "linetype"),
+  factor_levels = list(
+    word_status = c(word = "Word", nonword = "Noword"),
+    matching = c("Matching", "Mismatching")),
+  legend_title = "Lexicality",
+  data_plot = FALSE) +
   labs(title = "Estimated Marginal Means L2 Spanish",
        x = "Matching Condition",
        y = "Reaction Time (log)") +
-  scale_color_manual(values = c('darkorchid4', 'goldenrod4'))
-l2_mat_lex_int
+  scale_color_manual(values = plt_color_2)
+lab_l2_mat_lex_int
 
 
-# Interaction between matching condition and lexicality with lexicality conditions on x-axis
-l2_lex_mat_int <- afex_plot(aov_learners, 
-                        x = "word_status", 
-                        trace = "matching",
-                        error = "within",
-                        mapping = c("shape", "color", "linetype"),
-                        factor_levels = list(word_status = c(word = "Word", nonword = "Noword"),
-                                             matching = c("Matching", "Mismatching")),
-                        legend_title = "Condition",
-                        data_plot = FALSE) +
+# Interaction between matching condition and lexicality 
+# with lexicality conditions on x-axis
+lab_l2_lex_mat_int <- afex_plot(
+  lab_aov_learners, 
+  x = "word_status", 
+  trace = "matching",
+  error = "within",
+  mapping = c("shape", "color", "linetype"),
+  factor_levels = list(
+    word_status = c(word = "Word", nonword = "Noword"),
+    matching = c("Matching", "Mismatching")),
+  legend_title = "Condition",
+  data_plot = FALSE) +
   labs(title = "Estimated Marginal Means L2 Spanish",
        x = "Lexicality",
        y = "Reaction Time (log)") +
-  scale_color_manual(values = c('darkorchid4', 'goldenrod4'))
-l2_lex_mat_int
+  scale_color_manual(values = plt_color_2)
+lab_l2_lex_mat_int
 
 
 # Plot side by side to determine which one is easier to understand data
-plot_grid(l2_mat_lex_int, l2_lex_mat_int)
+plot_grid(lab_l2_mat_lex_int, lab_l2_lex_mat_int)
 
 
 # Run inferential statistics Native group
 # Run 3 way repeated measures anova
-aov_natives <- aov_ez("partNum", "log_RT_Median", natives, within = c(grouping_stats))
-aov_natives
+lab_aov_natives <- aov_ez(
+  "partNum", 
+  "log_RT_Median", 
+  lab_natives, 
+  within = c(lab_grouping_stats))
+lab_aov_natives
 ## no significant main effects, but word status trending 
 ## no signficant interactions
 
 # Regroup to run paired t-test for word status over all other conditions 
-grouping_lex <- grouping[! grouping %in% c("target_syl_structure", "word_initial_syl",
-                                              "matching", "group")]
-#data_lex_ag <- my_lab_data %>% 
-#  subset(., group == "Spanish") %>% 
-#  trans_long(., grouping_lex)
+lab_grouping_lex <- 
+  lab_grouping[! lab_grouping %in% c("target_syl_structure", 
+                             "word_initial_syl",
+                             "matching", 
+                             "group")]
+
 
 # grouped by participant and word status
-data_lex_ag <- my_lab_data %>% 
+lab_data_lex_ag <- lab_my_data %>% 
   subset(., group == "Spanish") %>% 
-  my_stats(., grp_col = grouping_lex, 
-           sum_col = stat_col,
-           stats = summary_stats)
+  my_stats(., grp_col = lab_grouping_lex, 
+           sum_col = lab_stat_col,
+           stats = lab_summary_stats)
 
 # Trending Main Effect Exploration
 # Natives t.test for word status
-t.test(data_lex_ag$log_RT_Median ~ data_lex_ag$word_status, paired = TRUE)
+t_lab_l1_wd_main <- t.test(
+  lab_data_lex_ag$log_RT_Median ~ lab_data_lex_ag$word_status, 
+  paired = TRUE)
+t_lab_l1_wd_main
 ## is significant t = 2.2105, df = 17, p-value = 0.04106
 
 # Descriptives to check direction of effect
-with(data_lex_ag, tapply(log_RT_Median, word_status, FUN = mean))
+with(lab_data_lex_ag, 
+     tapply(log_RT_Median, 
+            word_status, 
+            FUN = mean))
 ## words responded to faster than nonwords
 
-cohen.d(data_lex_ag$log_RT_Median, data_lex_ag$word_status, na.rm = TRUE, paired = TRUE)
-## small effect size. Mention trends, but be careful not to say significant
+# Get size of effect
+cohen.d(lab_data_lex_ag$log_RT_Median, 
+        lab_data_lex_ag$word_status, 
+        na.rm = TRUE, 
+        paired = TRUE)
+## small effect size. Mention trends, 
+##but be careful not to say significant
 
 
 # Native plots
 # Main effect of lexicality
-l1_lex_main <- afex_plot(aov_natives, 
-                                x = "word_status", 
-                                error = "within",
-                                factor_levels = list(word_status = c(word = "Word", 
-                                                                     nonword = "Noword")),
-                                data_plot = FALSE,
-                                mapping = c("color", "shape")) +
+lab_l1_lex_main <- afex_plot(
+  lab_aov_natives, 
+  x = "word_status", 
+  error = "within",
+  factor_levels = list(word_status = c(word = "Word", 
+                                       nonword = "Noword")),
+  data_plot = FALSE,
+  mapping = c("color", "shape")) +
   labs(title = "Estimated Marginal Means L1 Spanish",
        x = "Lexicality",
        y = "Reaction Time (log)") +
-  scale_color_manual(values = c('darkorchid4', 'goldenrod4')) +
+  scale_color_manual(values = plt_color_2) +
   theme(legend.position = "none")
-l1_lex_main
+lab_l1_lex_main
 
 
 # Remove temporary data variables in environment
 # Remove dataframes following analysis
-rm(my_lab_data_long, learners, natives, words_learners, nonwords_learners,
-   data_lex_ag, data_tarsyl_ag)
+rm(lab_learners, 
+   lab_natives, 
+   lab_words_learners, 
+   lab_nonwords_learners,
+   lab_data_lex_ag, 
+   lab_data_tarsyl_ag,
+   my_data_check,)
 
 # Remove checks and unused plots
-rm(l2_mat_lex_int, normality_learner, normality_native, outlier_learner, outlier_native,
-   outlier_data, outlier_learner_log)
+rm(lab_l2_mat_lex_int, 
+   lab_normality_learner,
+   lab_normality_native, 
+   lab_outlier_learner, 
+   lab_outlier_native,
+   lab_outlier_data, 
+   lab_outlier_learner_log,
+   lab_outlier_native_log)
 
 
 # Save all analyses
