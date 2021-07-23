@@ -375,6 +375,7 @@ lab_aov_learners
 ## main effect of target syllable structure
 ## two way interaction between matching and word status
 
+
 # Regroup to run paired t-test for 
 # target syllable over all other conditions 
 lab_grouping_tarsyl <- 
@@ -556,6 +557,16 @@ lab_aov_natives
 ## no significant main effects, but word status trending 
 ## no signficant interactions
 
+# Used in manuscript
+#lab_aov_natives$anova_table["word_status", "num Df"]
+#lab_aov_natives$anova_table["word_status", "den Df"]
+#lab_aov_natives$anova_table["word_status", "MSE"]
+#round(lab_aov_natives$anova_table["word_status", "F"],2)
+#lab_aov_natives$anova_table["word_status", "ges"]
+#round(lab_aov_natives$anova_table["word_status", "Pr(>F)"],4)
+
+
+
 # Regroup to run paired t-test for word status over all other conditions 
 lab_grouping_lex <- 
   lab_grouping[! lab_grouping %in% c("target_syl_structure", 
@@ -615,9 +626,7 @@ lab_l1_lex_main
 
 # Remove temporary data variables in environment
 # Remove dataframes following analysis
-rm(lab_learners, 
-   lab_natives, 
-   lab_words_learners, 
+rm(lab_words_learners, 
    lab_nonwords_learners,
    lab_data_lex_ag, 
    lab_data_tarsyl_ag,
