@@ -398,8 +398,27 @@ n_{Nonword} & = \text{number of yes responses to nonwords}\\[-2ex]
 \end{align*}
 \vspace{-0.5in} % modified manually because equation fell at end of section causing too much whitespace
 
-In total, there were \Sexpr{eligible_desc[1, "n"]} unique participants that were used in the analysis of this dissertation. Of these \Sexpr{eligible_desc[1, "n"]} participants, \Sexpr{eligible_grp_desc["Spanish", "n"] + eligible_grp_desc["Monolingual Spanish", "n"]} were Spanish native speakers and \Sexpr{eligible_grp_desc["English", "n"] + eligible_grp_desc["L2 Learner", "n"]} were native English speakers. For the Spanish control group, the average Izura score, M=\Sexpr{round(lang_stat_compare["L1 Spanish", "Mean"],2)}, SD=\Sexpr{round(lang_stat_compare["L1 Spanish", "SD"],2)} at 95\% CI [\Sexpr{round(t_eligible_esp$conf.int[1],3)}, \Sexpr{round(t_eligible_esp$conf.int[2],3)}], was larger than the English speaking experimental group, M=\Sexpr{round(lang_stat_compare["L1 English", "Mean"],2)}, SD=\Sexpr{round(lang_stat_compare["L1 English", "SD"],2)} [\Sexpr{round(t_eligible_eng$conf.int[1],3)}, \Sexpr{round(t_eligible_eng$conf.int[2],3)}]. The mean difference, M=\Sexpr{round(lang_stat_compare["L1 Spanish", "Mean"] - lang_stat_compare["L1 English", "Mean"],2)}, is a statistically significant difference between the two groups' Spanish vocabulary size, \emph{t}(\Sexpr{round(lang_compare$parameter,2)})= \Sexpr{round(lang_compare$statistic,4)}, p < 0.001 %\Sexpr{round(lang_compare$p.value,4)}
-[\Sexpr{round(lang_compare$conf.int[1],3)}, \Sexpr{round(lang_compare$conf.int[2],3)}]. In terms of Spanish vocabulary size, the bimodal distribution reflected by the Izura scores reveals the two distinct groups targeted for recruitment were obtained. Figure \ref{plt-hist-eligible-part} shows the distribution of Spanish vocabulary size based on the native language of the participants.
+In total, there were \Sexpr{eligible_desc[1, "n"]} unique participants that were used in the analysis of this dissertation. Of these \Sexpr{eligible_desc[1, "n"]} participants, \Sexpr{eligible_grp_desc["Spanish", "n"] + eligible_grp_desc["Monolingual Spanish", "n"]} were Spanish native speakers and \Sexpr{eligible_grp_desc["English", "n"] + eligible_grp_desc["L2 Learner", "n"]} were native English speakers. For the Spanish control group, the average Izura score, 
+M= \Sexpr{round(lang_stat_compare["L1 Spanish", "Mean"],2)}, 
+SD= \Sexpr{round(lang_stat_compare["L1 Spanish", "SD"],2)} 
+at 95\% CI 
+[\Sexpr{round(lang_stat_compare["L1 Spanish", "LL"],3)}, 
+\Sexpr{round(lang_stat_compare["L1 Spanish", "UL"],3)}], 
+was larger than the English speaking experimental group, 
+M= \Sexpr{round(lang_stat_compare["L1 English", "Mean"],2)}, 
+SD= \Sexpr{round(lang_stat_compare["L1 English", "SD"],2)} 
+[\Sexpr{round(lang_stat_compare["L1 English", "LL"],3)}, 
+\Sexpr{round(lang_stat_compare["L1 English", "UL"],3)}]. 
+The mean difference, 
+M= \Sexpr{round(lang_stat_compare["L1 Spanish", "Mean"] - 
+lang_stat_compare["L1 English", "Mean"],2)}, 
+is a statistically significant difference between the two groups' Spanish vocabulary size, 
+\emph{t}(\Sexpr{round(lang_compare$parameter,2)})= 
+\Sexpr{round(lang_compare$statistic,4)}, 
+p < 0.0001 %\Sexpr{round(lang_compare$p.value,4)}
+[\Sexpr{round(lang_compare$conf.int[1],3)}, 
+\Sexpr{round(lang_compare$conf.int[2],3)}]. 
+In terms of Spanish vocabulary size, the bimodal distribution reflected by the Izura scores reveals the two distinct groups targeted for recruitment were obtained. Figure \ref{plt-hist-eligible-part} shows the distribution of Spanish vocabulary size based on the native language of the participants.
 
 \begin{figure}[h]
 \begin{center}
@@ -411,7 +430,27 @@ hist_eligible_grouped
 \end{center}
 \end{figure}
 
-When the groups are broken down individually according to native language, it is possible to look at differences in Spanish vocabulary size between groups who participated online and those who participants in person. For the native Spanish speaking groups---monolinguals and the L2 learners of English---Figure \ref{plt-hist-eligible-esp-part} shows that no statistical difference was found using the Izura score as the measure of Spanish vocabulary size. The monolingual Spanish group recruited online had average Izura score, M=\Sexpr{round(esp_stat_compare["Online", "Mean"],2)}, SD=\Sexpr{round(esp_stat_compare["Online", "SD"],2)} 95\% CI [\Sexpr{round(t_esp_online$conf.int[1],3)}, \Sexpr{round(t_esp_online$conf.int[2],3)}], while the L2 English group recruited in-person averaged, M=\Sexpr{round(esp_stat_compare["In-person", "Mean"],2)}, SD=\Sexpr{round(esp_stat_compare["In-person", "SD"],2)} [\Sexpr{round(t_esp_inperson$conf.int[1],3)}, \Sexpr{round(t_esp_inperson$conf.int[2],3)}]. The mean difference in Spanish vocabulary size, M=\Sexpr{round(abs(esp_stat_compare["Online", "Mean"] - esp_stat_compare["In-person", "Mean"]),2)}, was not significant, \emph{t}(\Sexpr{round(esp_compare$parameter,2)})= \Sexpr{round(esp_compare$statistic,4)}, p < \Sexpr{round(esp_compare$p.value,4)} [\Sexpr{round(esp_compare$conf.int[1],3)}, \Sexpr{round(esp_compare$conf.int[2],3)}]. This is not surprising given that both recruitment groups were native Spanish speakers. It would not be expected that learning a second language, English in this case, would cause a decrease in the L1 vocabulary size.
+When the groups are broken down individually according to native language, it is possible to look at differences in Spanish vocabulary size between groups who participated online and those who participants in person. For the native Spanish speaking groups---monolinguals and the L2 learners of English---Figure \ref{plt-hist-eligible-esp-part} shows that no statistical difference was found using the Izura score as the measure of Spanish vocabulary size. The monolingual Spanish group recruited online had average Izura score, 
+M= \Sexpr{round(esp_stat_compare["Online", "Mean"],2)}, 
+SD= \Sexpr{round(esp_stat_compare["Online", "SD"],2)} 
+at 95\% CI 
+[\Sexpr{round(esp_stat_compare["Online","LL"],3)}, 
+\Sexpr{round(esp_stat_compare["Online","UL"],3)}], 
+while the L2 English group recruited in-person averaged, 
+M= \Sexpr{round(esp_stat_compare["In-person", "Mean"],2)}, 
+SD= \Sexpr{round(esp_stat_compare["In-person", "SD"],2)} 
+[\Sexpr{round(esp_stat_compare["In-person","LL"],3)}, 
+\Sexpr{round(esp_stat_compare["In-person","UL"],3)}]. 
+The mean difference in Spanish vocabulary size, 
+M= \Sexpr{round(abs(esp_stat_compare["Online", "Mean"] - 
+esp_stat_compare["In-person", "Mean"]),2)}, 
+was not significant, 
+\emph{t}(\Sexpr{round(esp_compare$parameter,2)})= 
+\Sexpr{round(esp_compare$statistic,4)}, 
+p < \Sexpr{round(esp_compare$p.value,4)} 
+[\Sexpr{round(esp_compare$conf.int[1],3)}, 
+\Sexpr{round(esp_compare$conf.int[2],3)}]. 
+This is not surprising given that both recruitment groups were native Spanish speakers. It would not be expected that learning a second language, English in this case, would cause a decrease in the L1 vocabulary size.
 
 \begin{figure}[h]
 \begin{center}
@@ -423,12 +462,88 @@ hist_eligible_esp_grouped
 \end{center}
 \end{figure}
 
-For the English native speakers, Figure \ref{plt-hist-eligible-ls-part} shows the overlap between the two distribution, which differ from one another in Spanish vocabulary size. The L2 Spanish group recruited online had larger Spanish vocabulary size, M=\Sexpr{round(eng_stat_compare["Online", "Mean"],2)}, SD=\Sexpr{round(eng_stat_compare["Online", "SD"],2)} at 95\% CI [\Sexpr{round(t_eng_online$conf.int[1],3)}, \Sexpr{round(t_eng_online$conf.int[2],3)}], than the L2 Spanish group recruited in-person M=\Sexpr{round(eng_stat_compare["In-person", "Mean"],2)}, SD=\Sexpr{round(eng_stat_compare["In-person", "SD"],2)} [\Sexpr{round(t_eng_inperson$conf.int[1],3)}, \Sexpr{round(t_eng_inperson$conf.int[2],3)}]. The mean difference, M=\Sexpr{round(abs(eng_stat_compare["Online", "Mean"] - eng_stat_compare["In-person", "Mean"]),2)}, reveals a statistical difference in Spanish vocabulary size between the native groups by recruitment method, \emph{t}(\Sexpr{round(eng_compare$parameter,2)})= \Sexpr{round(eng_compare$statistic,4)}, p < 0.001 %\Sexpr{round(eng_compare$p.value,4)}
-[\Sexpr{round(eng_compare$conf.int[1],3)}, \Sexpr{round(eng_compare$conf.int[2],3)}]. While this may seem surprising initially, it is important to note that the in-person recruitment took place on the University of Arizona campus while the online recruitment was not held to the same restriction. As a result, age differences, which also likely plays a role in the average length of time since the onset of Spanish acquisition may be responsible for the larger vocabulary size in the participants recruited online. Indeed, the average age was higher in the online group, M=\Sexpr{round(eng_stat_compare["Online", "Mean_age"],2)}, SD=\Sexpr{round(eng_stat_compare["Online", "SD_age"],2)} at 95\% CI [\Sexpr{round(t_eng_online_age$conf.int[1],3)}, \Sexpr{round(t_eng_online_age$conf.int[2],3)}], than the L2 Spanish group recruited in-person, M=\Sexpr{round(eng_stat_compare["In-person", "Mean_age"],2)}, SD=\Sexpr{round(eng_stat_compare["In-person", "SD_age"],2)} [\Sexpr{round(t_eng_inperson_age$conf.int[1],3)}, \Sexpr{round(t_eng_inperson_age$conf.int[2],3)}]. The mean difference, M=\Sexpr{round(abs(eng_stat_compare["Online", "Mean_age"] - eng_stat_compare["In-person", "Mean_age"]),2)}, revealed a statistical difference in age between the native English groups by recruitment method, \emph{t}(\Sexpr{round(eng_age_compare$parameter,2)})= \Sexpr{round(eng_age_compare$statistic,4)}, p < 0.001 %\Sexpr{round(eng_compare$p.value,4)}
-[\Sexpr{round(eng_age_compare$conf.int[1],3)}, \Sexpr{round(eng_age_compare$conf.int[2],3)}]. Given the difference in average age, it is not surprising that the average length of time from the onset of Spanish acquisition was also higher in the online group, M=\Sexpr{round(eng_stat_compare["Online", "Mean_len_acq"],2)}, SD=\Sexpr{round(eng_stat_compare["Online", "SD_len_acq"],2)} at 95\% CI [\Sexpr{round(t_eng_online_len_acq$conf.int[1],3)}, \Sexpr{round(t_eng_online_len_acq$conf.int[2],3)}], than the L2 Spanish group recruited in-person, M=\Sexpr{round(eng_stat_compare["In-person", "Mean_len_acq"],2)}, SD=\Sexpr{round(eng_stat_compare["In-person", "SD_len_acq"],2)} [\Sexpr{round(t_eng_inperson_len_acq$conf.int[1],3)}, \Sexpr{round(t_eng_inperson_len_acq$conf.int[2],3)}]. The mean difference, M=\Sexpr{round(abs(eng_stat_compare["Online", "Mean_len_acq"] - eng_stat_compare["In-person", "Mean_len_acq"]),2)}, revealed the differences in length of time since Spanish acquisition age began to be significant, \emph{t}(\Sexpr{round(eng_len_acq_compare$parameter,2)})= \Sexpr{round(eng_len_acq_compare$statistic,4)}, p < 0.001 %\Sexpr{round(eng_compare$p.value,4)}
-[\Sexpr{round(eng_len_acq_compare$conf.int[1],3)}, \Sexpr{round(eng_len_acq_compare$conf.int[2],3)}]. These data seem quite plausible in that the participants recruited for the study likely continued to use Spanish to some degree in their lives, which would make learning or being exposed to new vocabulary over time a common experience. 
+For the English native speakers, Figure \ref{plt-hist-eligible-ls-part} shows the overlap between the two distribution, which differ from one another in Spanish vocabulary size. The L2 Spanish group recruited online had larger Spanish vocabulary size, 
+M= \Sexpr{round(eng_stat_compare["Online", "Mean"],2)}, 
+SD= \Sexpr{round(eng_stat_compare["Online", "SD"],2)} 
+at 95\% CI 
+[\Sexpr{round(eng_stat_compare["Online", "LL"],3)}, 
+\Sexpr{round(eng_stat_compare["Online", "UL"],3)}], 
+than the L2 Spanish group recruited in-person 
+M= \Sexpr{round(eng_stat_compare["In-person", "Mean"],2)}, 
+SD= \Sexpr{round(eng_stat_compare["In-person", "SD"],2)} 
+[\Sexpr{round(eng_stat_compare["In-person", "LL"],3)}, 
+\Sexpr{round(eng_stat_compare["In-person", "UL"],3)}]. 
+The mean difference, 
+M= \Sexpr{round(abs(eng_stat_compare["Online", "Mean"] - 
+eng_stat_compare["In-person", "Mean"]),2)}, 
+reveals a statistical difference in Spanish vocabulary size between the native groups by recruitment method, 
+\emph{t}(\Sexpr{round(eng_compare$parameter,2)})= 
+\Sexpr{round(eng_compare$statistic,4)}, 
+p < 0.0001 %\Sexpr{round(eng_compare$p.value,4)}
+[\Sexpr{round(eng_compare$conf.int[1],3)}, 
+\Sexpr{round(eng_compare$conf.int[2],3)}]. 
+While this may seem surprising initially, it is important to note that the in-person recruitment took place on the University of Arizona campus while the online recruitment was not held to the same restriction. As a result, age differences, which also likely plays a role in the average length of time since the onset of Spanish acquisition may be responsible for the larger vocabulary size in the participants recruited online. Indeed, the average age was higher in the online group, 
+M= \Sexpr{round(eng_stat_compare["Online", "Mean_age"],2)}, 
+SD= \Sexpr{round(eng_stat_compare["Online", "SD_age"],2)} 
+at 95\% CI 
+[\Sexpr{round(eng_stat_compare["Online", "LL_age"],3)}, 
+\Sexpr{round(eng_stat_compare["Online", "UL_age"],3)}], 
+than the L2 Spanish group recruited in-person, 
+M= \Sexpr{round(eng_stat_compare["In-person", "Mean_age"],2)}, 
+SD= \Sexpr{round(eng_stat_compare["In-person", "SD_age"],2)} 
+[\Sexpr{round(eng_stat_compare["In-person", "LL_age"],3)}, 
+\Sexpr{round(eng_stat_compare["In-person", "UL_age"],3)}]. 
+The mean difference, 
+M= \Sexpr{round(abs(eng_stat_compare["Online", "Mean_age"] - 
+eng_stat_compare["In-person", "Mean_age"]),2)}, 
+revealed a statistical difference in age between the native English groups by recruitment method, 
+\emph{t}(\Sexpr{round(eng_age_compare$parameter,2)})= 
+\Sexpr{round(eng_age_compare$statistic,4)}, 
+p < 0.0001 %\Sexpr{round(eng_compare$p.value,4)}
+[\Sexpr{round(eng_age_compare$conf.int[1],3)}, 
+\Sexpr{round(eng_age_compare$conf.int[2],3)}]. 
+Given the difference in average age, it is not surprising that the average length of time from the onset of Spanish acquisition was also higher in the online group, 
+M= \Sexpr{round(eng_stat_compare["Online", "Mean_len_acq"],2)}, 
+SD= \Sexpr{round(eng_stat_compare["Online", "SD_len_acq"],2)} 
+at 95\% CI 
+[\Sexpr{round(eng_stat_compare["Online", "LL_len_acq"],3)}, 
+\Sexpr{round(eng_stat_compare["Online", "UL_len_acq"],3)}], 
+than the L2 Spanish group recruited in-person, 
+M= \Sexpr{round(eng_stat_compare["In-person", "Mean_len_acq"],2)}, 
+SD= \Sexpr{round(eng_stat_compare["In-person", "SD_len_acq"],2)} 
+[\Sexpr{round(eng_stat_compare["In-person", "LL_len_acq"],3)}, 
+\Sexpr{round(eng_stat_compare["In-person", "UL_len_acq"],3)}]. 
+The mean difference, 
+M= \Sexpr{round(abs(eng_stat_compare["Online", "Mean_len_acq"] - 
+eng_stat_compare["In-person", "Mean_len_acq"]),2)}, 
+revealed the differences in length of time since Spanish acquisition age began to be significant, 
+\emph{t}(\Sexpr{round(eng_len_acq_compare$parameter,2)})= 
+\Sexpr{round(eng_len_acq_compare$statistic,4)}, 
+p < 0.0001 %\Sexpr{round(eng_compare$p.value,4)}
+[\Sexpr{round(eng_len_acq_compare$conf.int[1],3)}, 
+\Sexpr{round(eng_len_acq_compare$conf.int[2],3)}]. 
+These data seem quite plausible in that the participants recruited for the study likely continued to use Spanish to some degree in their lives, which would make learning or being exposed to new vocabulary over time a common experience. 
 
-However, language acquisition age would be a much more likely variable to influence the results of this study as it revolves around phonological acquisition processes rather than acquiring new lexical items. As such, a Welch two-sample t-test was used to look at the difference in average age of acquisition for Spanish. The age of Spanish acquisition in the online group, M=\Sexpr{round(eng_stat_compare["Online", "Mean_esp_age"],2)}, SD=\Sexpr{round(eng_stat_compare["Online", "SD_esp_age"],2)} at 95\% CI [\Sexpr{round(t_eng_online_esp_age$conf.int[1],3)}, \Sexpr{round(t_eng_online_esp_age$conf.int[2],3)}], was not significantly different than the L2 Spanish group recruited in-person, M=\Sexpr{round(eng_stat_compare["In-person", "Mean_esp_age"],2)}, SD=\Sexpr{round(eng_stat_compare["In-person", "SD_esp_age"],2)} [\Sexpr{round(t_eng_inperson_esp_age$conf.int[1],3)}, \Sexpr{round(t_eng_inperson_esp_age$conf.int[2],3)}]. The mean difference, M=\Sexpr{round(abs(eng_stat_compare["Online", "Mean_esp_age"] - eng_stat_compare["In-person", "Mean_esp_age"]),2)}, revealed the differences in age of Spanish acquisition between groups failed to reach significance, \emph{t}(\Sexpr{round(eng_esp_age_compare$parameter,2)})= \Sexpr{round(eng_esp_age_compare$statistic,4)}, p < \Sexpr{round(eng_esp_age_compare$p.value,4)} [\Sexpr{round(eng_esp_age_compare$conf.int[1],3)}, \Sexpr{round(eng_esp_age_compare$conf.int[2],3)}].
+However, language acquisition age would be a much more likely variable to influence the results of this study as it revolves around phonological acquisition processes rather than acquiring new lexical items. As such, a Welch two-sample t-test was used to look at the difference in average age of acquisition for Spanish. The age of Spanish acquisition in the online group, 
+M= \Sexpr{round(eng_stat_compare["Online", "Mean_esp_age"],2)}, 
+SD= \Sexpr{round(eng_stat_compare["Online", "SD_esp_age"],2)} 
+at 95\% CI 
+[\Sexpr{round(eng_stat_compare["Online", "LL_esp_age"],3)}, 
+\Sexpr{round(eng_stat_compare["Online", "UL_esp_age"],3)}], 
+was not significantly different than the L2 Spanish group recruited in-person,
+M= \Sexpr{round(eng_stat_compare["In-person", "Mean_esp_age"],2)}, 
+SD= \Sexpr{round(eng_stat_compare["In-person", "SD_esp_age"],2)} 
+[\Sexpr{round(eng_stat_compare["In-person", "LL_esp_age"],3)}, 
+\Sexpr{round(eng_stat_compare["In-person", "UL_esp_age"],3)}]. 
+The mean difference, 
+M= \Sexpr{round(abs(eng_stat_compare["Online", "Mean_esp_age"] - 
+eng_stat_compare["In-person", "Mean_esp_age"]),2)}, 
+revealed the differences in age of Spanish acquisition between groups failed to reach significance, 
+\emph{t}(\Sexpr{round(eng_esp_age_compare$parameter,2)})= 
+\Sexpr{round(eng_esp_age_compare$statistic,4)}, 
+p < \Sexpr{round(eng_esp_age_compare$p.value,4)} 
+[\Sexpr{round(eng_esp_age_compare$conf.int[1],3)}, 
+\Sexpr{round(eng_esp_age_compare$conf.int[2],3)}].
 
 
 \begin{figure}[h]
