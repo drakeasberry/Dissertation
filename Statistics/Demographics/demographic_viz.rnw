@@ -78,20 +78,25 @@ hist_eligible_grouped
 lang_stat_compare <- lang_eligible_izura_score %>% 
   group_by(group) %>% 
   summarise(Mean = mean(izura_score),
-            SD = sd(izura_score)) %>% 
+            SD = sd(izura_score),
+            N = n(),
+            MOE_95 = qnorm(0.975)*SD/sqrt(N-1),
+            LL = Mean - MOE_95,
+            UL = Mean + MOE_95,) %>% 
   column_to_rownames(., var = "group")
+lang_stat_compare
 
 # Create subgroup dataframes
-eligible_esp <- lang_eligible_izura_score %>% 
-  subset(., group == 'L1 Spanish')
-eligible_eng <- lang_eligible_izura_score %>% 
-  subset(., group == 'L1 English')
+#eligible_esp <- lang_eligible_izura_score %>% 
+#  subset(., group == 'L1 Spanish')
+#eligible_eng <- lang_eligible_izura_score %>% 
+#  subset(., group == 'L1 English')
 
 # One sample t-test for CIs, Means
-t_eligible_esp <- t.test(eligible_esp$izura_score)
-t_eligible_esp
-t_eligible_eng <- t.test(eligible_eng$izura_score)
-t_eligible_eng
+#t_eligible_esp <- t.test(eligible_esp$izura_score)
+#t_eligible_esp
+#t_eligible_eng <- t.test(eligible_eng$izura_score)
+#t_eligible_eng
 
 # Two sample t-test comparing groups by native language
 lang_compare <- t.test(lang_eligible_izura_score$izura_score ~ lang_eligible_izura_score$group)
@@ -107,45 +112,59 @@ eng_stat_compare <- eligible_eng_grouped %>%
   group_by(group) %>% 
   summarise(Mean = mean(izura_score),
             SD = sd(izura_score),
+            N = n(),
+            MOE_95 = qnorm(0.975)*SD/sqrt(N-1),
+            LL = Mean - MOE_95,
+            UL = Mean + MOE_95,
             Mean_age = mean(age, na.rm = TRUE),
             SD_age = sd(age, na.rm = TRUE),
+            MOE_95_age = qnorm(0.975)*SD_age/sqrt(N-1),
+            LL_age = Mean_age - MOE_95_age,
+            UL_age = Mean_age + MOE_95_age,
             Mean_esp_age = mean(span_acq_age, na.rm = TRUE),
             SD_esp_age = sd(span_acq_age, na.rm = TRUE),
+            MOE_95_esp_age = qnorm(0.975)*SD_esp_age/sqrt(N-1),
+            LL_esp_age = Mean_esp_age - MOE_95_esp_age,
+            UL_esp_age = Mean_esp_age + MOE_95_esp_age,
             Mean_len_acq = mean(len_acq, na.rm = TRUE),
-            SD_len_acq = sd(len_acq, na.rm = TRUE)) %>% 
+            SD_len_acq = sd(len_acq, na.rm = TRUE),
+            MOE_95_len_acq = qnorm(0.975)*SD_len_acq/sqrt(N-1),
+            LL_len_acq = Mean_len_acq - MOE_95_len_acq,
+            UL_len_acq = Mean_len_acq + MOE_95_len_acq) %>% 
   column_to_rownames(., var = "group")
+eng_stat_compare
 
-eng_online <- eligible_eng_grouped %>% 
-  subset(., group == 'Online')
-eng_inperson <- eligible_eng_grouped %>% 
-  subset(., group != 'Online')
-
-t_eng_online <- t.test(eng_online$izura_score)
-t_eng_inperson <- t.test(eng_inperson$izura_score)
+#eng_online <- eligible_eng_grouped %>% 
+#  subset(., group == 'Online')
+#eng_inperson <- eligible_eng_grouped %>% 
+#  subset(., group != 'Online')
+#
+#t_eng_online <- t.test(eng_online$izura_score)
+#t_eng_inperson <- t.test(eng_inperson$izura_score)
 
 eng_compare <- t.test(eligible_eng_grouped$izura_score ~ eligible_eng_grouped$group)
 
 # Explore age as variable for vocabulary size difference
-t_eng_online_age <- t.test(eng_online$age)
-t_eng_online_age
-t_eng_inperson_age <- t.test(eng_inperson$age)
-t_eng_inperson_age
+#t_eng_online_age <- t.test(eng_online$age)
+#t_eng_online_age
+#t_eng_inperson_age <- t.test(eng_inperson$age)
+#t_eng_inperson_age
 eng_age_compare <- t.test(eligible_eng_grouped$age ~ eligible_eng_grouped$group)
 eng_age_compare
 
 # Explore age of acquisition as variable for vocabulary size difference
-t_eng_online_esp_age <- t.test(eng_online$span_acq_age)
-t_eng_online_esp_age
-t_eng_inperson_esp_age <- t.test(eng_inperson$span_acq_age)
-t_eng_inperson_esp_age
+#t_eng_online_esp_age <- t.test(eng_online$span_acq_age)
+#t_eng_online_esp_age
+#t_eng_inperson_esp_age <- t.test(eng_inperson$span_acq_age)
+#t_eng_inperson_esp_age
 eng_esp_age_compare <- t.test(eligible_eng_grouped$span_acq_age ~ eligible_eng_grouped$group)
 eng_esp_age_compare
 
 # Explore length of acquisition as variable for vocabulary size difference
-t_eng_online_len_acq <- t.test(eng_online$len_acq)
-t_eng_online_len_acq
-t_eng_inperson_len_acq <- t.test(eng_inperson$len_acq)
-t_eng_inperson_len_acq
+#t_eng_online_len_acq <- t.test(eng_online$len_acq)
+#t_eng_online_len_acq
+#t_eng_inperson_len_acq <- t.test(eng_inperson$len_acq)
+#t_eng_inperson_len_acq
 eng_len_acq_compare <- t.test(eligible_eng_grouped$len_acq ~ eligible_eng_grouped$group)
 eng_len_acq_compare
 
@@ -160,13 +179,13 @@ eligible_esp_grouped <- eligible_izura_score %>%
   subset(., group == 'Spanish' | group == 'Monolingual Spanish') %>%
   mutate(group = ifelse(group == 'Spanish', "In-person", "Online"))
 
-esp_stat_compare <- eligible_esp_grouped %>% 
-  group_by(group) %>% 
-  summarise(Mean = mean(izura_score),
-            SD = sd(izura_score)) %>% 
-  column_to_rownames(., var = "group")
+#esp_stat_compare <- eligible_esp_grouped %>% 
+#  group_by(group) %>% 
+#  summarise(Mean = mean(izura_score),
+#            SD = sd(izura_score)) %>% 
+#  column_to_rownames(., var = "group")
 
-eligible_esp_grouped %>% 
+esp_stat_compare <- eligible_esp_grouped %>% 
   group_by(group) %>% 
   summarise(Mean = mean(izura_score),
             SD = sd(izura_score),
@@ -174,47 +193,47 @@ eligible_esp_grouped %>%
             MOE_95 = qnorm(0.975)*SD/sqrt(N-1),
             LL = Mean - MOE_95,
             UL = Mean + MOE_95) %>% 
-  view()
-
-esp_online <- eligible_esp_grouped %>% 
-  subset(., group == 'Online')
-esp_inperson <- eligible_esp_grouped %>% 
-  subset(., group != 'Online')
-
-t_esp_online <- t.test(esp_online$izura_score)
-t_esp_inperson <- t.test(esp_inperson$izura_score)
-
-esp_stat_compare["In-person", "Mean"]
-esp_stat_compare["In-person", "SD"]
-esp_stat_compare["Online", "Mean"]
-esp_stat_compare["Online", "SD"]
-
+  column_to_rownames(., var = "group")
+esp_stat_compare
+#esp_online <- eligible_esp_grouped %>% 
+#  subset(., group == 'Online')
+#esp_inperson <- eligible_esp_grouped %>% 
+#  subset(., group != 'Online')
+#
+#t_esp_online <- t.test(esp_online$izura_score)
+#t_esp_inperson <- t.test(esp_inperson$izura_score)
+#
+#esp_stat_compare["In-person", "Mean"]
+#esp_stat_compare["In-person", "SD"]
+#esp_stat_compare["Online", "Mean"]
+#esp_stat_compare["Online", "SD"]
+#
 # Compare group means on izura score for Spanish vocabulary size
 esp_compare <- t.test(eligible_esp_grouped$izura_score ~ eligible_esp_grouped$group)
 esp_compare
 # Access t-statistic
-esp_compare[["statistic"]]
-esp_compare$statistic
+#esp_compare[["statistic"]]
+#esp_compare$statistic
 # Access df
-esp_compare[["parameter"]]
-esp_compare$parameter
+#esp_compare[["parameter"]]
+#esp_compare$parameter
 # Access P-value
-esp_compare[["p.value"]]
-esp_compare$p.value
+#esp_compare[["p.value"]]
+#esp_compare$p.value
 # Access CIs
-esp_compare[["conf.int"]][1]
-esp_compare$conf.int[1]
-esp_compare[["conf.int"]][2]
-esp_compare$conf.int[2]
+#esp_compare[["conf.int"]][1]
+#esp_compare$conf.int[1]
+#esp_compare[["conf.int"]][2]
+#esp_compare$conf.int[2]
 # Access Percent CI
 #attr(esp_compare["conf.int"],esp_compare["conf.level"])
 #esp_compare$conf.int[[attr("conf.int","conf.level")]]
 #esp_compare$conf.int
 # Access Means
-esp_compare[["estimate"]][1]
-esp_compare$estimate[1]
-esp_compare[["estimate"]][2]
-esp_compare$estimate[2]
+#esp_compare[["estimate"]][1]
+#esp_compare$estimate[1]
+#esp_compare[["estimate"]][2]
+#esp_compare$estimate[2]
 
 hist_eligible_esp_grouped <- eligible_esp_grouped %>%   
   histo(., 'izura_score', 'group') +

@@ -405,11 +405,22 @@ t_lab_tar_syl_main
 with(lab_data_tarsyl_ag, 
      tapply(log_RT_Median, 
             target_syl_structure, 
-            FUN = mean)) 
+            FUN = mean))
 ## CVC faster than CV
 
+# Create a table for referencing statistics with CIs
+lab_tar_compare <- lab_data_tarsyl_ag %>% 
+  group_by(target_syl_structure) %>% 
+  summarise(Mean = mean(log_RT_Median),
+            SD = sd(log_RT_Median),
+            N = n(),
+            MOE_95 = qnorm(0.975)*SD/sqrt(N-1),
+            LL = Mean - MOE_95,
+            UL = Mean + MOE_95) %>% 
+  column_to_rownames(., var = "target_syl_structure")
+
 # Get the size of the effect
-cohen.d(lab_data_tarsyl_ag$log_RT_Median, 
+lab_tar_efsize <- cohen.d(lab_data_tarsyl_ag$log_RT_Median, 
         lab_data_tarsyl_ag$target_syl_structure, 
         na.rm = TRUE, 
         paired = TRUE)
@@ -424,6 +435,25 @@ lab_grouping_mat <-
                              "word_initial_syl",
                              "target_syl_structure", 
                              "group")]
+
+lab_mat_lex_learners <- lab_my_data %>% 
+  subset(., group == "English") %>% 
+  my_stats(., grp_col = c("partNum", "word_status", "matching"), 
+           sum_col = lab_stat_col,
+           stats = lab_summary_stats)
+lab_mat_lex_learners
+
+# Create a table for referencing statistics with CIs
+lab_mat_lex_compare <- lab_mat_lex_learners %>% 
+  group_by(word_status, matching) %>% 
+  summarise(Mean = mean(log_RT_Median),
+            SD = sd(log_RT_Median),
+            N = n(),
+            MOE_95 = qnorm(0.975)*SD/sqrt(N-1),
+            LL = Mean - MOE_95,
+            UL = Mean + MOE_95) %>%
+  mutate(index = paste(word_status,matching,sep = '-')) %>% 
+  column_to_rownames(., var = "index")
 
 # Create subsets to explore interaction between 
 # matching and word status for Learners
@@ -442,6 +472,7 @@ lab_words_learners <- lab_my_data %>%
            sum_col = lab_stat_col,
            stats = lab_summary_stats)
 
+
 # Nonwords t.test one-tailed for matching
 t_lab_l2_nonwd_mat_int <- 
   t.test(lab_nonwords_learners$log_RT_Median ~ 
@@ -452,6 +483,7 @@ t_lab_l2_nonwd_mat_int
 ## is not significant 
 ## t = -1.8042, df = 26, p-value = 0.0414 (uncorrected for 2 tests)
 ## alpha = 0.025
+
 
 # Descriptives to check direction of effect
 with(lab_nonwords_learners, 
@@ -528,6 +560,7 @@ lab_l2_lex_mat_int <- afex_plot(
   lab_aov_learners, 
   x = "word_status", 
   trace = "matching",
+  #panel = "target_syl_structure",
   error = "within",
   mapping = c("shape", "color", "linetype"),
   factor_levels = list(
@@ -540,6 +573,26 @@ lab_l2_lex_mat_int <- afex_plot(
        y = "Reaction Time (log)") +
   scale_color_manual(values = plt_color_2)
 lab_l2_lex_mat_int
+
+# NS Interaction between target and matching condition
+# with lexicality in two panels
+lab_l2_tar_mat_int <- afex_plot(
+  lab_aov_learners, 
+  x = "target_syl_structure", 
+  trace = "matching",
+  panel = "word_status",
+  error = "within",
+  mapping = c("shape", "color", "linetype"),
+  factor_levels = list(
+    word_status = c(word = "Word", nonword = "Noword"),
+    matching = c("Matching", "Mismatching")),
+  legend_title = "Condition",
+  data_plot = FALSE) +
+  labs(title = "Estimated Marginal Means L2 Spanish",
+       x = "Target Syllable Structure",
+       y = "Reaction Time (log)") +
+  scale_color_manual(values = plt_color_2)
+lab_l2_tar_mat_int
 
 
 # Plot side by side to determine which one is easier to understand data
@@ -564,7 +617,6 @@ lab_aov_natives
 #round(lab_aov_natives$anova_table["word_status", "F"],2)
 #lab_aov_natives$anova_table["word_status", "ges"]
 #round(lab_aov_natives$anova_table["word_status", "Pr(>F)"],4)
-
 
 
 # Regroup to run paired t-test for word status over all other conditions 
@@ -623,14 +675,30 @@ lab_l1_lex_main <- afex_plot(
   theme(legend.position = "none")
 lab_l1_lex_main
 
+# NS Interaction between target and matching condition
+# with lexicality in two panels
+lab_l1_tar_mat_int <- afex_plot(
+  lab_aov_natives, 
+  x = "target_syl_structure", 
+  trace = "matching",
+  panel = "word_status",
+  error = "within",
+  mapping = c("shape", "color", "linetype"),
+  factor_levels = list(
+    word_status = c(word = "Word", nonword = "Noword"),
+    matching = c("Matching", "Mismatching")),
+  legend_title = "Condition",
+  data_plot = FALSE) +
+  labs(title = "Estimated Marginal Means L1 Spanish",
+       x = "Target Syllable Structure",
+       y = "Reaction Time (log)") +
+  scale_color_manual(values = plt_color_2)
+lab_l1_tar_mat_int
+
 
 # Remove temporary data variables in environment
 # Remove dataframes following analysis
-rm(lab_words_learners, 
-   lab_nonwords_learners,
-   lab_data_lex_ag, 
-   lab_data_tarsyl_ag,
-   my_data_check)
+rm(my_data_check)
 
 # Remove checks and unused plots
 rm(lab_l2_mat_lex_int, 
@@ -644,7 +712,7 @@ rm(lab_l2_mat_lex_int,
 
 
 # Save all analyses
-out_dir = 'analyze_data/output/figures/by_target/'
+#out_dir = 'analyze_data/output/figures/by_target/'
 #ggsave('learners_descriptive_data.png', bxp_learners, 'png', out_dir)
 #ggsave('natives_descriptive_data.png', bxp_natives, 'png', out_dir)
 #ggsave('learners_tarsyl_main.png', l2_tar_syl_main, 'png', out_dir)
