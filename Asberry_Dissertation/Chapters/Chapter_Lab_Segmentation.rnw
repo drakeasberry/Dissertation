@@ -457,8 +457,17 @@ lab_bxp_natives
 \end{center}
 \end{figure}
 
-Figure \ttodo{feel like I should add a figure for crossover}
+Figure \ref{plt-lab-l1-tar-mat-ns-int} shows the data plotted by lexicality with each panel showing the interaction between target syllable structure and matching condition. Note that the parallel lines shown in the word panel of the plot reveals the type of pattern expected to be seen given the way the data was analyzed. The difference between our analysis and previous literature is capturing the same difference but displayed in a different manner. The previous literature showed the crossover effect because they analyzed their data over target syllable structure and carrier syllable structure. Our parallel pattern tells the same story but simply analyzed over target syllable structure and matching condition. In both cases the conditions analyzed included CV target--CV carrier and CVC target--CVC carrier (matching condition), CV target--CVC carrier and CVC target--CV carrier (mismatching condition).
 
+\begin{figure}
+\begin{center}
+<<lab_l1_tar_mat_ns_int, fig.width= 5, fig.height= 3>>=
+lab_l1_tar_mat_int
+@      
+\caption[Estimated Marginal Means: Lab Experiment Control Group]{Log transformed reaction times reported given as a factor of target syllable structure, matching and lexicality conditions.}
+\label{plt-lab-l1-tar-mat-ns-int}
+\end{center}
+\end{figure}
 
 \subsection{L2 Spanish Learners}
 Figure \ref{plt-lab-l2-rtms-desc} plots the general descriptive statistics for response times in milliseconds by target syllable, matching and lexicality conditions for the \Sexpr{length(unique(lab_learners$partNum))} L2 learners of Spanish. The log transformed values were submitted to a (3) x (2) repeated measures ANOVA with Lexicality, Target and Matching as factors. The ANOVA revealed statistically significant main effects of Target, \emph{F}(\Sexpr{lab_aov_learners$anova_table["target_syl_structure", "num Df"]},\Sexpr{lab_aov_learners$anova_table["target_syl_structure", "den Df"]}) = \Sexpr{round(lab_aov_learners$anova_table["target_syl_structure", "F"],2)}, p < .05 [\Sexpr{round(lab_aov_learners$anova_table["target_syl_structure", "Pr(>F)"],4)}] and a statistically significant interaction between Matching and Lexicality, \emph{F}(\Sexpr{lab_aov_learners$anova_table["matching:word_status", "num Df"]},\Sexpr{lab_aov_learners$anova_table["matching:word_status", "den Df"]}) = \Sexpr{round(lab_aov_learners$anova_table["matching:word_status", "F"],2)}, p < .05 [\Sexpr{round(lab_aov_learners$anova_table["matching:word_status", "Pr(>F)"],4)}]. 
@@ -473,11 +482,100 @@ lab_bxp_learners
 \end{center}
 \end{figure}
 
-Figure \ttodo{feel like I should add a figure for crossover}
- 
-In order to look at main effect of target syllable...
+In order to look at main effect of target syllable, post-hoc analyses were conducted. The dataset was regrouped so that each participant's reaction times were computed based on whether the target syllable they were monitoring for was CV or CVC. The dataset consisted of 
+\Sexpr{nrow(lab_data_tarsyl_ag)} 
+observations---
+\Sexpr{length(unique(lab_learners$target_syl_structure))} 
+\emph{target} conditions x 
+\Sexpr{length(unique(lab_learners$partNum))}.
+This dataset was then submitted to a t-test, which revealed that the L2 Spanish group generally detected CVC syllables, 
+M= \Sexpr{round(lab_tar_compare["CVC", "Mean"],2)}, 
+SD= \Sexpr{round(lab_tar_compare["CVC", "SD"],2)} 
+at 95\% CI 
+[\Sexpr{round(lab_tar_compare["CVC", "LL"],3)}, 
+\Sexpr{round(lab_tar_compare["CVC", "UL"],3)}], 
+faster than CV syllables, 
+M= \Sexpr{round(lab_tar_compare["CV", "Mean"],2)}, 
+SD= \Sexpr{round(lab_tar_compare["CV", "SD"],2)} 
+[\Sexpr{round(lab_tar_compare["CV", "LL"],3)}, 
+\Sexpr{round(lab_tar_compare["CV", "UL"],3)}]. 
+The mean difference, 
+M= \Sexpr{round(abs(lab_tar_compare["CVC", "Mean"] - 
+lab_tar_compare["CV", "Mean"]),2)}, 
+reveals a statistical difference in Spanish vocabulary size between the native groups by recruitment method, 
+\emph{t}(\Sexpr{round(t_lab_tar_syl_main$parameter,2)}) = 
+\Sexpr{round(t_lab_tar_syl_main$statistic,4)}, 
+p < \Sexpr{round(t_lab_tar_syl_main$p.value,4)}.
 
-In order to break down the interaction between Matching and Lexicality factors, a post-hoc analysis was run...
+
+The main effect of target syllable was of a small magnitude. This can be seen in the output of Cohen's \emph{d} for Target \emph{d} = 0.22, 95\% CI [0.03793455, 0.40560025].\ttodo{make sure to include the Cohen.d scores as r variable pull.}
+
+In order to break down the interaction between Matching and Lexicality factors, a post-hoc analysis was run. The L2 Spanish dataset was was further subset into two dataframes: one for real words and one for nonwords. Each dataset consisted of 
+\Sexpr{nrow(lab_nonwords_learners)} 
+observations---
+\Sexpr{length(unique(lab_nonwords_learners$matching))} 
+\emph{Matching} conditions x 
+\Sexpr{length(unique(lab_nonwords_learners$partNum))}
+participants. Both datasets, words and nonwords, were then individually submitted to a one-tailed t-test. This revealed that the L2 Spanish group did not detect syllables faster in nonword for the matching condition, 
+M= \Sexpr{round(lab_mat_lex_compare["nonword-matching", "Mean"],2)}, 
+SD= \Sexpr{round(lab_mat_lex_compare["nonword-matching", "SD"],2)} 
+at 95\% CI 
+[\Sexpr{round(lab_mat_lex_compare["nonword-matching", "LL"],3)}, 
+\Sexpr{round(lab_mat_lex_compare["nonword-matching", "UL"],3)}], 
+than syllables detected in the mismatching condition, 
+M= \Sexpr{round(lab_mat_lex_compare["nonword-mismatching", "Mean"],2)}, 
+SD= \Sexpr{round(lab_mat_lex_compare["nonword-mismatching", "SD"],2)} 
+[\Sexpr{round(lab_mat_lex_compare["nonword-mismatching", "LL"],3)}, 
+\Sexpr{round(lab_mat_lex_compare["nonword-mismatching", "UL"],3)}]. 
+The mean difference, 
+M= \Sexpr{round(abs(lab_mat_lex_compare["nonword-matching", "Mean"] - 
+lab_mat_lex_compare["nonword-mismatching", "Mean"]),2)}, 
+reveals no statistical difference with regards to the target syllable matching the word initial syllable of the carrier item for nonword, 
+\emph{t}(\Sexpr{round(t_lab_l2_nonwd_mat_int$parameter,2)}) = 
+\Sexpr{round(t_lab_l2_nonwd_mat_int$statistic,4)}, 
+p < \Sexpr{round(t_lab_l2_nonwd_mat_int$p.value,4)}
+In the real word dataset, it surprisingly revealed that the L2 Spanish group detected syllables signigicantly slower for the matching condition, 
+M= \Sexpr{round(lab_mat_lex_compare["word-matching", "Mean"],2)}, 
+SD= \Sexpr{round(lab_mat_lex_compare["word-matching", "SD"],2)} 
+at 95\% CI 
+[\Sexpr{round(lab_mat_lex_compare["word-matching", "LL"],3)}, 
+\Sexpr{round(lab_mat_lex_compare["word-matching", "UL"],3)}], 
+than syllables detected in the mismatching condition, 
+M= \Sexpr{round(lab_mat_lex_compare["word-mismatching", "Mean"],2)}, 
+SD= \Sexpr{round(lab_mat_lex_compare["word-mismatching", "SD"],2)} 
+[\Sexpr{round(lab_mat_lex_compare["word-mismatching", "LL"],3)}, 
+\Sexpr{round(lab_mat_lex_compare["word-mismatching", "UL"],3)}]. 
+The mean difference, 
+M= \Sexpr{round(abs(lab_mat_lex_compare["word-matching", "Mean"] - 
+lab_mat_lex_compare["word-mismatching", "Mean"]),2)}, 
+reveals a statistical difference with regards to the target syllable matching the word initial syllable of the carrier item for words, but opposite of the hypothesized direction, 
+\emph{t}(\Sexpr{round(t_lab_l2_wd_mat_int$parameter,2)}) = 
+\Sexpr{round(t_lab_l2_wd_mat_int$statistic,4)}, 
+p < \Sexpr{round(t_lab_l2_wd_mat_int$p.value,4)}.
+The effect size of matching condition in the word dataset was also small in magnitude, \emph{d} = 0.2510107, 95\% CI [0.01694338, 0.48507792].\ttodo{make sure to include the Cohen.d scores as r variable pull.} Figure \ref{plt-lab_l2_mat_lex_s_int} plots the estimated marginal means for the interaction between \emph{Matching} and \emph{Lexicality} for L2 learners of Spanish.
+
+\begin{figure}
+\begin{center}
+<<lab_l2_mat_lex_s_int, fig.width= 5, fig.height= 3>>=
+lab_l2_lex_mat_int
+@      
+\caption[Estimated Marginal Means: Lab Experiment Target Group]{Log transformed reaction times reported given as a factor of matching and lexicality conditions.}
+\label{plt-lab_l2_mat_lex_s_int}
+\end{center}
+\end{figure}
+
+Figure \ref{plt-lab-l2-tar-mat-ns-int} again shows that the interaction between target syllable structure and the structure word initial syllable of carrier word was not signficant. Although not significant, the patterns that emerged in the native speaker controls also emerged in the L2 learners of Spanish. That is the real word dataset reveals parallel lines which implies the same meaning as the crossover effect found in previous studies.
+
+\begin{figure}
+\begin{center}
+<<lab_l2_tar_mat_ns_int, fig.width= 5, fig.height= 3>>=
+lab_l2_tar_mat_int
+@      
+\caption[Estimated Marginal Means: Lab Experiment Control Group]{Log transformed reaction times reported given as a factor of target syllable structure, matching and lexicality conditions.}
+\label{plt-lab-l2-tar-mat-ns-int}
+\end{center}
+\end{figure}
+
 %\textbf{DELETE ME describe the analyses the researcher has done, but do not overload. Instead of creating a laundry list of statistics, create the story you want to tell using only the statistics that are related to addressing your problem. For each task, review the hypothesis, give the statistics and say what the result of the test means. Do not discuss the findings until you reach the discussion session. This is where tables and figures can help keep the paper looking clean and crisp instead of cluttered unorganized statistical test lists that are hard to follow. Figures show patterns while tables give details.}
 
 \section{Discussion}
