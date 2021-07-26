@@ -15,18 +15,18 @@ set_parent(here('Asberry_Dissertation/Dissertation.Rnw'))
 
 %----------------------------------------------------------------------------------------
 % Load statistics in memory from separate file
-<<contentLab, child=here('Statistics/Segmentation/target_syl_seg_viz.rnw'), include=FALSE>>=
-@
+%contentLab, child=here('Statistics/Segmentation/target_syl_seg_viz.rnw'), include=FALSE>>=
+%@
 
-<<contentPilot, child=here('Statistics/Pilot/Pilot.rnw'), include=FALSE>>=
-@
+%contentPilot, child=here('Statistics/Pilot/Pilot.rnw'), include=FALSE>>=
+%@
 
-<<contentLabDeom, child=here('Statistics/Demographics/lab_demo_viz.rnw'), include=FALSE>>=
-@
+%contentLabDeom, child=here('Statistics/Demographics/lab_demo_viz.rnw'), include=FALSE>>=
+%@
 %----------------------------------------------------------------------------------------
 
 \chapter{Visual Word Segmentation} % Main chapter title
-\label{ch-seg-lab} % for referencing this chapter elsewhere, use \ref{labseg}
+\label{ch-seg-lab} % for referencing this chapter elsewhere, use \ref{ch-seg-lab}
 
 %\section{Abstract}
 %Give Segmentation abstract here
@@ -121,7 +121,7 @@ The syllable monitoring experiment was conducted at the same time as other exper
 
 All participants began the experimental session with the Spanish vocabulary task---LexTALE-Esp. Starting with this Spanish vocabulary test was an intentional design measure that ensured participants were in Spanish mode by the time they reached experimental tasks where reaction times were being collected. Immediately following the completion of the LexTALE-Esp, participants were given instructions for the practice portion of the visual word segmentation experiment---the syllable monitoring task. Following the practice portion, participants were given a new screen with instructions that indicated they had completed the practice portion, reminded about the controls needed to complete the section, and were allowed to ask any remaining question about the process. When the participant was ready to begin the actual experiment, they pressed the white button on the response box to begin. Once the participants had finished the entire syllable monitoring task, they were presented with instructions for the practice trials of the syllabic intuition experiment, which was reported in Chapter \ref{ch-intuition} of this dissertation. Similar to the visual word segmentation experiment, a new set of instructions came on the screen indicating that the practice trials were finished and that they were about to start the actual experiment. Following the syllable intuition experiment, participants completed the LexTALE-Eng task. Once they had completed the English vocabulary test, the Bilingual Language Profile (BLP) was also administered in PyschoPy. For the BLP survey, participants were given access to the keyboard and mouse for easier input of information during survey responses.
 
-\subsection{Analysis Process}
+\subsection{Analysis}
 Due to the method used in data collection several pre-analysis steps were conducted to ensure that participants actually represented the intended group for which they were recruited. This was completed by using the additional data collected through the LexTALE, LexTALE-Esp and the Bilingual Language Profile (BLP) tasks that were completed during the same visit as the syllable monitoring experiment. Since these tasks were completed at the same time as the syllable monitoring experiment, it was not always possible to determine whether or not all participants were representative of the group until after all information had been collected and additional linguistic measures and background were thoroughly reviewed.
 
 In total, there were \Sexpr{lab_stat_compare["English", "n"] + lab_stat_compare["Spanish", "n"]} participants that completed the study. Using responses to the BLP, \Sexpr{lab_part_removal_sum["fluency-English", "n"] + lab_part_removal_sum["location-Spanish", "n"] + lab_part_removal_sum["dominance-English", "n"] + lab_part_removal_sum["dominance-Spanish", "n"]} were removed because they did not accurately represent the groups for which they had been recruited. \Sexpr{lab_part_removal_sum["fluency-English", "n"]} native English speaker was removed because they reported fluency in languages other than Spanish and English. \Sexpr{lab_part_removal_sum["location-Spanish", "n"]} native Spanish speakers were removed because they reported being born and/or raised outside of Mexico. \Sexpr{lab_part_removal_sum["dominance-English", "n"] + lab_part_removal_sum["dominance-Spanish", "n"]} participants were removed because they were outliers in terms of language dominance scores calculated by the BLP. Lastly, using the scores from both the LexTALE and LexTALE-Esp, \Sexpr{lab_part_removal_sum["vocabulary-Spanish", "n"]} native Spanish speakers were removed because their scores indicated a larger L2 English vocabulary size than their L1 Spanish vocabulary size.

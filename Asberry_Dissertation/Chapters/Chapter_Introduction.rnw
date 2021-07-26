@@ -17,10 +17,28 @@ set_parent(here('Asberry_Dissertation/Dissertation.Rnw'))
 % Load statistics in memory from separate file
 <<contentIntro, child=here('Statistics/Demographics/demographic_viz.rnw'), cache=FALSE, include=FALSE>>=
 @
+
+<<contentIntuition, child=here('Statistics/Intuition/intuition_viz.rnw'), include=FALSE>>=
+@
+
+<<contentLab, child=here('Statistics/Segmentation/target_syl_seg_viz.rnw'), include=FALSE>>=
+@
+
+<<contentPilot, child=here('Statistics/Pilot/Pilot.rnw'), include=FALSE>>=
+@
+
+<<contentLabDeom, child=here('Statistics/Demographics/lab_demo_viz.rnw'), include=FALSE>>=
+@
+
+%contentOnlinesegMono, child='Statistics/Monolingual_lemma/target_syl_mono_viz.rnw'), include=FALSE>>=
+%@
+
+%contentOnlinesegL2, child='Statistics/L2_lemma/target_syl_l2_viz.rnw'), include=FALSE>>=
+
 %----------------------------------------------------------------------------------------
 
 \chapter{Introduction} % Main chapter title
-\label{ch-intro} % for referencing this chapter elsewhere, use \ref{intro}
+\label{ch-intro} % for referencing this chapter elsewhere, use \ref{ch-intro}
 
 This dissertation was written in order to complete the degree requirements of the Second Language Acquisition and Teaching (SLAT) program at the University of Arizona. There are many facets of language acquisition, but this project will focus on adult second language learners of Spanish. Specifically, it continues to add to the research literature on how adult language learners approach and understand their second language at a subconscious level of processing.
 

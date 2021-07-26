@@ -22,11 +22,8 @@ set_parent(here('Asberry_Dissertation/Dissertation.Rnw'))
 
 
 \chapter{Conclusion} % Main chapter title
-\label{conclusion} % for referencing this chapter elsewhere, use \ref{conclusion}
+\label{ch-conclusion} % for referencing this chapter elsewhere, use \ref{ch-conclusion}
 
-%----------------------------------------------------------------------------------------
-%	SECTION 1
-%----------------------------------------------------------------------------------------
 
 \section{Main Section 1}
 \ttodo{Revise the proposal draft to final draft}

@@ -15,76 +15,53 @@ set_parent(here('Asberry_Dissertation/Dissertation.Rnw'))
 
 %----------------------------------------------------------------------------------------
 % Load statistics in memory from separate file
-<<contentIntuition, child=here('Statistics/Intuition/intuition_viz.rnw'), include=FALSE>>=
-@
+%contentIntuition, child=here('Statistics/Intuition/intuition_viz.rnw'), include=FALSE>>=
+%@
 %----------------------------------------------------------------------------------------
 
 \chapter{Syllabic Intuition} % Main chapter title
-\label{ch-intuition} % for referencing this chapter elsewhere, use \ref{intuition}
+\label{ch-intuition} % for referencing this chapter elsewhere, use \ref{ch-intuition}
 
-%----------------------------------------------------------------------------------------
-%	SECTION 0
-%----------------------------------------------------------------------------------------
 
 %\section{Abstract}
-
 %Give Syllabification abstract here
-
 %eywords: (list all words necessary)
 
-%----------------------------------------------------------------------------------------
-%	SECTION 1
-%----------------------------------------------------------------------------------------
 
 \section{Background}
+\ttodo{DELETE ME Write my introduction to the syllabification article here (Will write the introduction LAST) The section of your article most likely to be read, not skimmed or skipped. The first paragraph or two is the overview of the article: describe the problem, question or theory motivating the research. In the second part, describe relevant theories, review past research and give more details on the current research question. Do not forget about signposting, which headings and subheadings can naturally create for the reader.}
+
 \ttodo{Talk about syllabificationdifferences in syllabification between spanish and english}
+
 The syllable intuition experiment is an important step in the process because how the two groups of participants syllabify the words will have a direct effect on how fast or useful the syllable is in their segmentation strategy. It is expected that syllabic intuitions will vary based on being a native speaker of Spanish or a late learner of Spanish. These differences are likely to stem from age of acquisition and/or language dominance. This experiment will begin to build a data source of Spanish–English bilinguals syllabification of Spanish words that will help to determine whether or not age of acquisition or language dominance are sources are different syllabification patterns. 
 
 
-%\textbf{DELETE ME Write my introduction to the syllabification article here (Will write the introduction LAST) The section of your article most likely to be read, not skimmed or skipped. The first paragraph or two is the overview of the article: describe the problem, question or theory motivating the research.} 
-
-%In the second part, describe relevant theories, review past research and give more details on the current research question. Do not forget about signposting, which headings and subheadings can naturally create for the reader.
-
-%-----------------------------------
-%	SUBSECTION 1-2
-%-----------------------------------
-
 \subsection{Present Study}
-%Treiman
+\ttodo{DELETE ME The third section titled, “The Present Experiment” or “The Present Research”, follows and contains experimental descriptions and how they address the questions being asked. For most articles, keep your introduction under 10 pages}
 
-%\textbf{DELETE ME The third section titled, “The Present Experiment” or “The Present Research”, follows and contains experimental descriptions and how they address the questions being asked. For most articles, keep your introduction under 10 pages}
-
-%----------------------------------------------------------------------------------------
-%	SECTION 2
-%----------------------------------------------------------------------------------------
+\ttodo{Treiman is a great starting place}
 
 \section{Methods}
+\ttodo{Write this section FIRST is the section that describes how the research was conducted. A good one shows how well thought out the experiment design is and allows other researchers to easily replicate it. This section also follows a formula:}
+In order to address these questions and possible outcomes, a visual syllable monitoring task was conducted to analyze the word segmentation strategies used by the participants. During the syllable monitoring experiment, participants were shown a two or three letter string that represented a CV or CVC syllable. They were instructed to respond as quickly as possible when they had found the matching letter string in the individually presented words. Both the letter stings, i.e. targets, and the words were presented visually. This is the first study to my knowledge that has tested this segmentation strategy in a completely visual manner using a syllable monitoring task. Running the experiment in this manner came with one major assumption. This design assumed that participants were actually activating the phonological representation of the sounds of the target, i.e. syllable, and the word they read on the screen. For a full discussion on this topic, refer to Chapter \ref{ch-intro} Section \ref{sec-phon-activation}.
 
-%Write this section FIRST is the section that describes how the research was conducted. A good one shows how well thought out the experiment design is and allows other researchers to easily replicate it. This section also follows a formula:
-
-%-----------------------------------
-%	SUBSECTION 2-1
-%-----------------------------------
 \subsection{Participants}
+\ttodo{Give accurate descriptions of participant groups, how they were classified, number of participants, etc.}
 Two groups of participants took part in the syllabic intuition experiment---the L1 Spanish--L2 English group (NS) and the L1 English--L2 Spanish group (LS). All \ttodo{number of participants} participants completed this experiment in-person and full details of inclusion criteria and study conditions can be found in sections \ref{sec-inclusion} and \ref{sec-conditions}. The participants were placed into their appropriate group based off of the combined results of Bilingual Language Profile (BLP), the LexTALE and the LexTALE-Esp vocabulary tests, which are described in full detail in section \ref{sec-instruments}.
 
+All participants reported in this chapter were recruited for experiments that took place in an in-person laboratory setting. In this study, native Spanish speakers who were second language learners of English were used as the control group---LE group. The target group consisted of native English speakers who were second language learners of Spanish---LS group. All participants recruited continued to live in their L1 environment, or birth country, at the time of data collection. There were 
+%\Sexpr{lab_stat_compare["Spanish", "n"]} 
+participants in LE group recruited from the University of Sonora in Hermosillo, Mexico and 
+%\Sexpr{lab_stat_compare["English", "n"]} 
+participants in LS group recruited from the University of Arizona in Tucson, AZ. In total, 
+%\Sexpr{lab_stat_compare["English", "n"] + lab_stat_compare["Spanish", "n"]} 
+participants completed the experiment. For a full description of each group see Chapter \ref{ch-sampling} Section \ref{sec-participants}.
 
-%\textbf{DELETE ME Give accurate descriptions of participant groups, how they were classified, number of participants, etc.}
 
-
-%-----------------------------------
-%	SUBSECTION 2-3
-%-----------------------------------
-
-\subsection{Design}
+\subsection{Materials \& Design}
+\ttodo{DELETE ME Give an accurate idea of how the overall project was designed, what previous studies is it based off, theoretical principles, etc. DO NOT write about what participants do in this section.}
 The syllabic intuitions were elicited from participants through a forced two-choice task and were given as much time as needed to respond. Participants were shown a real word in Spanish on the screen and then were presented with two options below that represented a CV or CVC structure. There were 24 critical word pairs that were used as the stimuli in a previous experiment. Each word pair shared the first three letters, but differed in initial syllable structure. Using the example word pair \emph{balada–baldosa} to illustrate, it can easily been seen that both words begin with the letters \emph{bal}. However, the initial syllable structure of \emph{balada} is \emph{ba}, a CV structure, while the initial syllable structure of \emph{baldosa} is \emph{bal}, a CVC structure, when following standard Spanish syllabification. All other word pairs followed the same pattern where one word had a CV word-initial syllable structure and the other word began with a CVC syllable---where C represents a consonant and V represents a vowel. The order of presentation for the two syllabic options, CV or CVC, remained the same for the entire experiment for the participant, but was counterbalanced across participants. In order to counterbalance for hand dominance and visual presentation in this task, half of the participants used the left response button to indicate a CVC response and the right response button to indicate a CV response while the other half of the participants did the opposite. Since the position of response buttons aligned with screen position, half of the participants visually saw the orthographic representation of the CVC syllable to the left of screen center and the CV syllable orthographic representation on the right while the other half of the participants saw the opposite visual displays for syllable orthographic representations.
 
-%\textbf{DELETE ME Give an accurate idea of how the overall project was designed, what previous studies is it based off, theoretical principles, etc. DO NOT write about what participants do in this section.}
-
-
-%-----------------------------------
-%	SUBSECTION 2-4
-%-----------------------------------
 
 \subsection{Procedure}
 \ttodo{explain the actual task at hand, then explain the whole exxperience so that the most important informaiton is presented first and the whole experience will be understandable by the reader because they will have been introduced to all the concepts by that point.}
@@ -97,13 +74,150 @@ When the syllable intuition experiment was followed lexical decision based primi
 The participants were instructed that they would see Spanish words presented individually on the computer screen and that each word would be followed by two options for the first syllable of the presented word. There was no time constraint for the participant to select the option that they considered to be the first syllable of the presented word and the experiment would not progress until the participant had indicated a response. \ttodo{In the second experiment (Lexical Access), this was initially ran with 4 second time limit. It affected participants 062, 065-067, 069-072, 074-076 so these 11 participants should be checked for missing values.} In total, there were 10 practice trials that followed the same criteria and procedure as the 48 experimental trials presented to the participants. \ttodo{same 11 participants had timing issue in practice trials, check if possible but values may not have been stored.} For each trial, the word in lowercase letters appeared in the center of the screen for 1500 milliseconds before being replaced by the two syllable options---one a CV syllable and the other a CVC syllable---which remained on the screen, in all capital letters, until a response was entered. Following each response, the screen remained blank for 500 milliseconds before the next word appeared. \ttodo{It may be good to create a visual representation of the experiment here to illustrate what each participant saw.} For half of the participants, the CV syllable option was on the left side of the screen while the CVC syllable option was on the right. For the other half of the participants, the CVC syllable option was on the left side of the screen while the CV syllable option was on the right. Participants were given separate instruction screens for practice and experimental trials that differed only in letting the participant know whether they are about to enter a practice or experimental phase. \ttodo{Is this too repetitive? Should this be described here or in the Design section, currently it is in both} In this task it is worth noting that timing was not being measured but following the training session, most participants were trying to indicate their answer before the 1.5 second display time of the word since the syllables were always on the same side of the screen.
 
 \subsection{Analysis}
-%\textbf{DELETE ME WHEN FINISHED The first refer to mainly scope and size of research project while the procedure section is usually much more in-depth. Here, you connect your procedures to those in already published articles when possible and given detailed descriptions of classifications and scales used in procedure. Essentially ensure the reader does not suspect anything is being hidden and the researcher is honest. Do not repeat any unnecessary information in subsequent experiments of the paper.}
+\ttodo{DELETE ME WHEN FINISHED The first refer to mainly scope and size of research project while the procedure section is usually much more in-depth. Here, you connect your procedures to those in already published articles when possible and given detailed descriptions of classifications and scales used in procedure. Essentially ensure the reader does not suspect anything is being hidden and the researcher is honest. Do not repeat any unnecessary information in subsequent experiments of the paper.}
 
-%----------------------------------------------------------------------------------------
-%	SECTION 3
-%----------------------------------------------------------------------------------------
+Due to the method used in data collection several pre-analysis steps were conducted to ensure that participants actually represented the intended group for which they were recruited. This was completed by using the additional data collected through the LexTALE, LexTALE-Esp and the Bilingual Language Profile (BLP) tasks that were completed during the same visit as the syllable monitoring experiment. Since these tasks were completed at the same time as the syllable monitoring experiment, it was not always possible to determine whether or not all participants were representative of the group until after all information had been collected and additional linguistic measures and background were thoroughly reviewed.
+
+In total, there were \Sexpr{lab_stat_compare["English", "n"] + lab_stat_compare["Spanish", "n"]} participants that completed the study. Using responses to the BLP, \Sexpr{lab_part_removal_sum["fluency-English", "n"] + lab_part_removal_sum["location-Spanish", "n"] + lab_part_removal_sum["dominance-English", "n"] + lab_part_removal_sum["dominance-Spanish", "n"]} were removed because they did not accurately represent the groups for which they had been recruited. \Sexpr{lab_part_removal_sum["fluency-English", "n"]} native English speaker was removed because they reported fluency in languages other than Spanish and English. \Sexpr{lab_part_removal_sum["location-Spanish", "n"]} native Spanish speakers were removed because they reported being born and/or raised outside of Mexico. \Sexpr{lab_part_removal_sum["dominance-English", "n"] + lab_part_removal_sum["dominance-Spanish", "n"]} participants were removed because they were outliers in terms of language dominance scores calculated by the BLP. Lastly, using the scores from both the LexTALE and LexTALE-Esp, \Sexpr{lab_part_removal_sum["vocabulary-Spanish", "n"]} native Spanish speakers were removed because their scores indicated a larger L2 English vocabulary size than their L1 Spanish vocabulary size.
+
+Once the demographic removals had been completed, an accuracy response rate for the experiment was conducted on the remaining \Sexpr{lab_completed_eligible_sum["English", "n"] + lab_completed_eligible_sum["Spanish", "n"]} participants. A predetermined accuracy rate of 90 percent was used as the cut-off and any participant responding incorrectly to filler or critical trials more than 10 percent of the time was removed from the analysis. All participants correctly responded to filler trials above the cut-off point; however, \Sexpr{length(lab_error_removal$partNum)} participant was removed for committing errors at rate greater than 10 percent to critical trials. After the removal of participants, \Sexpr{lab_stat_compare["English", "n"] - lab_analyzed_sum["English", "n"]} participants from the LS group and \Sexpr{lab_stat_compare["Spanish", "n"] - lab_analyzed_sum["Spanish", "n"]} participants from the LE group were removed. This left a total of \Sexpr{lab_analyzed_sum["English", "n"] + lab_analyzed_sum["Spanish", "n"]} participants---\Sexpr{lab_analyzed_sum["English", "n"]} native English speakers and \Sexpr{lab_analyzed_sum["Spanish", "n"]} native Spanish speakers, that had data submitted to the analysis and only these participants are included in reported statistics and figures below. Table \ref{tab-lab-demo-part} gives age related data about participants, Table \ref{tab-lab-vocab-part} give data related to participant vocabulary sizes and Table \ref{tab-lab-lang-blp-part} shows language scores collected through the BLP.
+
+\begin{table}
+\centering
+\begin{tabular}{l c c c c c c c c c}
+\toprule
+& & & & & &\multicolumn{4}{c}{Age of Acquisition}\\
+\cmidrule(lr){7-10}
+& & \multicolumn{4}{c}{Age} & \multicolumn{2}{c}{Spanish} & 
+\multicolumn{2}{c}{English}\\
+\cmidrule(lr){3-6}\cmidrule(lr){7-8}\cmidrule(lr){9-10}
+& n & Min & Max & Mean & SD & Mean & SD & Mean & SD\\
+\midrule
+English
+& \Sexpr{lab_grp_desc["English","n"]}
+& \Sexpr{lab_grp_desc["English","age_Min"]} 
+& \Sexpr{lab_grp_desc["English","age_Max"]} 
+& \Sexpr{lab_grp_desc["English","age_Mean"]}
+& \Sexpr{lab_grp_desc["English","age_SD"]}
+& \Sexpr{lab_grp_desc["English","span_acq_age_Mean"]}
+& \Sexpr{lab_grp_desc["English","span_acq_age_SD"]}
+& \Sexpr{lab_grp_desc["English","eng_acq_age_Mean"]}
+& \Sexpr{lab_grp_desc["English","eng_acq_age_SD"]}\\
+Spanish
+& \Sexpr{lab_grp_desc["Spanish","n"]}
+& \Sexpr{lab_grp_desc["Spanish","age_Min"]} 
+& \Sexpr{lab_grp_desc["Spanish","age_Max"]} 
+& \Sexpr{lab_grp_desc["Spanish","age_Mean"]} 
+& \Sexpr{lab_grp_desc["Spanish","age_SD"]}
+& \Sexpr{lab_grp_desc["Spanish","span_acq_age_Mean"]}
+& \Sexpr{lab_grp_desc["Spanish","span_acq_age_SD"]}
+& \Sexpr{lab_grp_desc["Spanish","eng_acq_age_Mean"]}
+& \Sexpr{lab_grp_desc["Spanish","eng_acq_age_SD"]}\\
+\bottomrule
+\multicolumn{6}{l}{Total participants: n = \Sexpr{lab_grp_desc["Spanish","n"] + lab_grp_desc["English","n"]}}\\
+\end{tabular}
+\caption{Attributes of all lab based segmentation participants.}
+\label{tab-lab-demo-part-intuition}
+
+\vspace{.4in}
+
+\begin{tabular}{l c c c c c c c c c}
+\toprule
+& & \multicolumn{6}{c}{Vocabulary Size \% Correct}\\
+\cmidrule(lr){3-8}
+& & \multicolumn{2}{c}{English} & \multicolumn{2}{c}{Spanish} & 
+\multicolumn{2}{c}{Difference} & \multicolumn{2}{c}{Izura Score}\\
+\cmidrule(lr){3-4}\cmidrule(lr){5-6}\cmidrule(lr){7-8}\cmidrule(lr){9-10}
+& n & Mean & SD & Mean & SD & Mean & SD & Mean & SD\\
+\midrule
+English
+& \Sexpr{lab_grp_desc["English","n"]}
+& \Sexpr{lab_grp_desc["English","lextale_eng_correct_Mean"]} 
+& \Sexpr{lab_grp_desc["English","lextale_eng_correct_SD"]} 
+& \Sexpr{lab_grp_desc["English","lextale_esp_correct_Mean"]}
+& \Sexpr{lab_grp_desc["English","lextale_esp_correct_SD"]}
+& \Sexpr{lab_grp_desc["English","vocab_diff_Mean"]}
+& \Sexpr{lab_grp_desc["English","vocab_diff_SD"]}
+& \Sexpr{lab_grp_desc["English","izura_score_Mean"]}
+& \Sexpr{lab_grp_desc["English","izura_score_SD"]}\\
+Spanish
+& \Sexpr{lab_grp_desc["Spanish","n"]}
+& \Sexpr{lab_grp_desc["Spanish","lextale_eng_correct_Mean"]} 
+& \Sexpr{lab_grp_desc["Spanish","lextale_eng_correct_SD"]} 
+& \Sexpr{lab_grp_desc["Spanish","lextale_esp_correct_Mean"]} 
+& \Sexpr{lab_grp_desc["Spanish","lextale_esp_correct_SD"]}
+& \Sexpr{lab_grp_desc["Spanish","vocab_diff_Mean"]}
+& \Sexpr{lab_grp_desc["Spanish","vocab_diff_SD"]}
+& \Sexpr{lab_grp_desc["Spanish","izura_score_Mean"]}
+& \Sexpr{lab_grp_desc["Spanish","izura_score_SD"]}\\
+\bottomrule
+\multicolumn{6}{l}{Total participants: n = \Sexpr{lab_grp_desc["Spanish","n"] + lab_grp_desc["English","n"]}}\\
+\end{tabular}
+\caption{Vocabulary scores for participants in English and Spanish calculated as a percent correct score along with the differences in means. Spanish vocabulary size as calculated by \textcite{Izura2014-yw}.}
+\label{tab-lab-vocab-part-intuition}
+
+\vspace{.4in}
+
+\begin{tabular}{l c c c c c c c}
+\toprule
+& & \multicolumn{4}{c}{Global Language Scores}\\
+\cmidrule(lr){3-6}
+& & \multicolumn{2}{c}{English} & \multicolumn{2}{c}{Spanish} & 
+\multicolumn{2}{c}{Language Dominance}\\
+\cmidrule(lr){3-4}\cmidrule(lr){5-6}\cmidrule(lr){7-8}
+& n & Mean & SD & Mean & SD & Mean & SD\\
+\midrule
+English
+& \Sexpr{lab_grp_desc["English","n"]}
+& \Sexpr{lab_grp_desc["English","global_eng_score_Mean"]} 
+& \Sexpr{lab_grp_desc["English","global_eng_score_SD"]} 
+& \Sexpr{lab_grp_desc["English","global_esp_score_Mean"]}
+& \Sexpr{lab_grp_desc["English","global_esp_score_SD"]}
+& \Sexpr{lab_grp_desc["English","lang_dominance_Mean"]}
+& \Sexpr{lab_grp_desc["English","lang_dominance_SD"]}\\
+Spanish
+& \Sexpr{lab_grp_desc["Spanish","n"]}
+& \Sexpr{lab_grp_desc["Spanish","global_eng_score_Mean"]} 
+& \Sexpr{lab_grp_desc["Spanish","global_eng_score_SD"]} 
+& \Sexpr{lab_grp_desc["Spanish","global_esp_score_Mean"]} 
+& \Sexpr{lab_grp_desc["Spanish","global_esp_score_SD"]}
+& \Sexpr{lab_grp_desc["Spanish","lang_dominance_Mean"]}
+& \Sexpr{lab_grp_desc["Spanish","lang_dominance_SD"]}\\
+\bottomrule
+\multicolumn{6}{l}{Total participants: n = \Sexpr{lab_grp_desc["Spanish","n"] + lab_grp_desc["English","n"]}}\\
+\end{tabular}
+\caption{Individual language based values and language dominance scores for participants. All values were calculated according to creators of the Basic Language Profile.}
+\label{tab-lab-lang-blp-part-intuition}
+\end{table}
+
+Before the data could be submitted for analysis, some data preparation was still required. The first step in preparing the data for analysis was to remove all the filler trials from the dataset. This left 2160 data points for critical trials by participant. Due to a typo in one of the stimuli, \emph{permiso} 'permission' was typed as \emph{permsio}. This created a nonword critical item inside of a real word block of filler items. As a result, this item was removed from the analysis resulting in the removal of 10 critical items. Since incorrect responses to critical items were a non-response by the participant, the \Sexpr{length(lab_critical_incorrect$word)} missed items were removed. The last pass removed any individual participant responses under 200 milliseconds---\Sexpr{length(lab_under_200$word)} items---following the lower criteria range used by \textcite{Bradley1993-qq}. The upper cut-off limit was set at 1500 milliseconds, which removed an additional \Sexpr{length(lab_over_1500$word)} items. In total, \Sexpr{length(lab_critical_incorrect$word) + length(lab_under_200$word) + length(lab_over_1500$word) + 10} trials, or \Sexpr{round((length(lab_critical_incorrect$word) + length(lab_under_200$word) + length(lab_over_1500$word))/length(lab_critical$word)*100,2)}\% of the data, were removed leaving \Sexpr{length(lab_my_data$word)} critical data points to be submitted for analysis.
+
+The reaction time data was recorded in milliseconds during the experiment. However, to account for individual difference between participants in terms of reaction times, the reaction time data was log transformed. This accounts for the fact that some participants are generally faster or slower than other participants in general regardless of experimental conditions. The median for these log transformed reactions times were then calculated for each experimental condition by participant. This was done to prevent large skewing of the mean in cases where participants responded may have responded correctly but slower than usual when compared to their own responses. Using the median also allowed for the retention of all data points submitted within the range of 200--1500ms. 
+
+Finally, the data was subset into two separate datasets. One dataset was for the control group containing all data points by native Spanish speakers and the other was for the target group containing all points given by native English speakers. This allowed each dataset to be analyzed individually by group allowing for the comparison of reaction times to experimental conditions between native Spanish and native English speakers. The datasets were comprised of reaction times by-participant as a function of three experimental conditions: \emph{Target} (CV or CVC syllable structure), \emph{Matching} ("matching" target and word initial syllable matched, "mismatching" target and word initial syllable did not match) and \emph{Lexicality} ("word" a real word in Spanish, "nonword" a nonce word that followed Spanish orthographic rules). The control group dataset of L1 Spanish speakers consisted of 
+\Sexpr{nrow(lab_natives)} 
+observations---
+\Sexpr{length(unique(lab_natives$target_syl_structure))} 
+\emph{Target} conditions x 
+\Sexpr{length(unique(lab_natives$matching))} 
+\emph{Matching} conditions x 
+\Sexpr{length(unique(lab_natives$word_status))} 
+\emph{Lexicality} conditions x 
+\Sexpr{length(unique(lab_natives$partNum))} 
+participants, while the target group dataset of L2 Spanish speakers consisted of 
+\Sexpr{nrow(lab_learners)} 
+observations---
+\Sexpr{length(unique(lab_learners$target_syl_structure))} 
+\emph{Target} conditions x 
+\Sexpr{length(unique(lab_learners$matching))} 
+\emph{Matching} conditions x 
+\Sexpr{length(unique(lab_learners$word_status))} 
+\emph{Lexicality} conditions x 
+\Sexpr{length(unique(lab_learners$partNum))} 
+participants. Reaction times that were recorded in milliseconds have been used in the descriptive statistics, but they underwent the log transformation prior to running inferential statistics. However, both millisecond and log transformed values were computed by-participant per each condition and were retained in the datasets.
 
 \section{Results}
+\ttodo{DELETE ME describe the analyses the researcher has done, but do not overload. Instead of creating a laundry list of statistics, create the story you want to tell using only the statistics that are related to addressing your problem. For each task, review the hypothesis, give the statistics and say what the result of the test means. Do not discuss the findings until you reach the discussion session. This is where tables and figures can help keep the paper looking clean and crisp instead of cluttered unorganized statistical test lists that are hard to follow. Figures show patterns while tables give details.}
 The practice trials for syllabification were not recorded and therefore are not represented in the reported data below. Participants syllabification patterns are first analyzed by group and then are compared across groups. 
 
 \ttodo{Discuss the deviation by group from the standard Spanish syllabification pattern. (Error rates)}
@@ -139,12 +253,374 @@ grp_main
 \end{center}
 \end{figure}
 
-%\textbf{DELETE ME describe the analyses the researcher has done, but do not overload. Instead of creating a laundry list of statistics, create the story you want to tell using only the statistics that are related to addressing your problem. For each task, review the hypothesis, give the statistics and say what the result of the test means. Do not discuss the findings until you reach the discussion session. This is where tables and figures can help keep the paper looking clean and crisp instead of cluttered unorganized statistical test lists that are hard to follow. Figures show patterns while tables give details.}
 
-%----------------------------------------------------------------------------------------
-%	SECTION 4
-%----------------------------------------------------------------------------------------
+Table \ref{tab-lab-grp-rt-wd} reports the reaction time data for real words and Table \ref{tab-lab-grp-rt-nonwd} reports the reaction time data for nonwords. In both tables the reaction times are reported as a function of group---native Spanish controls and L2 learners of Spanish---and the four experimental conditions: CV target--matching, CV target--mismatching, CVC target--matching and CVC target--mismatching. Reaction times in these table are reported in both terms of raw milliseconds recorded during the experiment and log transformed times. 
+
+\begin{table}
+\centering
+% Word Table
+\begin{tabular}{l c l l l c c c c}
+\toprule
+& & & & & \multicolumn{2}{c}{RT ms} & \multicolumn{2}{c}{RT log}\\
+\cmidrule(lr){6-7}\cmidrule(lr){8-9}
+L1 & n & Target & Carrier & Matching & Median & SD & Median & SD\\
+\midrule
+\multirow{4}{*}{English}
+% CV Target CV Carrier Condition
+& \Sexpr{lab_grp_sum["English-CV-CV-word","n"]}
+& \Sexpr{lab_grp_sum["English-CV-CV-word","target_syl_structure"]}
+& \Sexpr{lab_grp_sum["English-CV-CV-word","word_initial_syl"]} 
+& \Sexpr{lab_grp_sum["English-CV-CV-word","matching"]}
+& \Sexpr{lab_grp_sum["English-CV-CV-word","segRespRTmsec_Median"]}
+& \Sexpr{lab_grp_sum["English-CV-CV-word","segRespRTmsec_SD"]}
+& \Sexpr{lab_grp_sum["English-CV-CV-word","log_RT_Median"]}
+& \Sexpr{lab_grp_sum["English-CV-CV-word","log_RT_SD"]}\\
+% CV Target CVC Carrier Condition
+& \Sexpr{lab_grp_sum["English-CV-CVC-word","n"]}
+& \Sexpr{lab_grp_sum["English-CV-CVC-word","target_syl_structure"]} 
+& \Sexpr{lab_grp_sum["English-CV-CVC-word","word_initial_syl"]} 
+& \Sexpr{lab_grp_sum["English-CV-CVC-word","matching"]}
+& \Sexpr{lab_grp_sum["English-CV-CVC-word","segRespRTmsec_Median"]}
+& \Sexpr{lab_grp_sum["English-CV-CVC-word","segRespRTmsec_SD"]}
+& \Sexpr{lab_grp_sum["English-CV-CVC-word","log_RT_Median"]}
+& \Sexpr{lab_grp_sum["English-CV-CVC-word","log_RT_SD"]}\\
+% CVC Target CV Carrier Condition
+& \Sexpr{lab_grp_sum["English-CVC-CV-word","n"]}
+& \Sexpr{lab_grp_sum["English-CVC-CV-word","target_syl_structure"]} 
+& \Sexpr{lab_grp_sum["English-CVC-CV-word","word_initial_syl"]} 
+& \Sexpr{lab_grp_sum["English-CVC-CV-word","matching"]}
+& \Sexpr{lab_grp_sum["English-CVC-CV-word","segRespRTmsec_Median"]}
+& \Sexpr{lab_grp_sum["English-CVC-CV-word","segRespRTmsec_SD"]}
+& \Sexpr{lab_grp_sum["English-CVC-CV-word","log_RT_Median"]}
+& \Sexpr{lab_grp_sum["English-CVC-CV-word","log_RT_SD"]}\\
+% CVC Target CVC Carrier Condition
+& \Sexpr{lab_grp_sum["English-CVC-CVC-word","n"]}
+& \Sexpr{lab_grp_sum["English-CVC-CVC-word","target_syl_structure"]} 
+& \Sexpr{lab_grp_sum["English-CVC-CVC-word","word_initial_syl"]} 
+& \Sexpr{lab_grp_sum["English-CVC-CVC-word","matching"]}
+& \Sexpr{lab_grp_sum["English-CVC-CVC-word","segRespRTmsec_Median"]}
+& \Sexpr{lab_grp_sum["English-CVC-CVC-word","segRespRTmsec_SD"]}
+& \Sexpr{lab_grp_sum["English-CVC-CVC-word","log_RT_Median"]}
+& \Sexpr{lab_grp_sum["English-CVC-CVC-word","log_RT_SD"]}\\
+\midrule
+\multirow{4}{*}{Spanish}
+% CV Target CV Carrier Condition
+& \Sexpr{lab_grp_sum["Spanish-CV-CV-word","n"]}
+& \Sexpr{lab_grp_sum["Spanish-CV-CV-word","target_syl_structure"]} 
+& \Sexpr{lab_grp_sum["Spanish-CV-CV-word","word_initial_syl"]} 
+& \Sexpr{lab_grp_sum["Spanish-CV-CV-word","matching"]}
+& \Sexpr{lab_grp_sum["Spanish-CV-CV-word","segRespRTmsec_Median"]}
+& \Sexpr{lab_grp_sum["Spanish-CV-CV-word","segRespRTmsec_SD"]}
+& \Sexpr{lab_grp_sum["Spanish-CV-CV-word","log_RT_Median"]}
+& \Sexpr{lab_grp_sum["Spanish-CV-CV-word","log_RT_SD"]}\\
+% CV Target CVC Carrier Condition
+& \Sexpr{lab_grp_sum["Spanish-CV-CVC-word","n"]}
+& \Sexpr{lab_grp_sum["Spanish-CV-CVC-word","target_syl_structure"]} 
+& \Sexpr{lab_grp_sum["Spanish-CV-CVC-word","word_initial_syl"]} 
+& \Sexpr{lab_grp_sum["Spanish-CV-CVC-word","matching"]}
+& \Sexpr{lab_grp_sum["Spanish-CV-CVC-word","segRespRTmsec_Median"]}
+& \Sexpr{lab_grp_sum["Spanish-CV-CVC-word","segRespRTmsec_SD"]}
+& \Sexpr{lab_grp_sum["Spanish-CV-CVC-word","log_RT_Median"]}
+& \Sexpr{lab_grp_sum["Spanish-CV-CVC-word","log_RT_SD"]}\\
+% CVC Target CV Carrier Condition
+& \Sexpr{lab_grp_sum["Spanish-CVC-CV-word","n"]}
+& \Sexpr{lab_grp_sum["Spanish-CVC-CV-word","target_syl_structure"]} 
+& \Sexpr{lab_grp_sum["Spanish-CVC-CV-word","word_initial_syl"]} 
+& \Sexpr{lab_grp_sum["Spanish-CVC-CV-word","matching"]}
+& \Sexpr{lab_grp_sum["Spanish-CVC-CV-word","segRespRTmsec_Median"]}
+& \Sexpr{lab_grp_sum["Spanish-CVC-CV-word","segRespRTmsec_SD"]}
+& \Sexpr{lab_grp_sum["Spanish-CVC-CV-word","log_RT_Median"]}
+& \Sexpr{lab_grp_sum["Spanish-CVC-CV-word","log_RT_SD"]}\\
+% CVC Target CVC Carrier Condition
+& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-word","n"]}
+& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-word","target_syl_structure"]} 
+& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-word","word_initial_syl"]} 
+& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-word","matching"]}
+& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-word","segRespRTmsec_Median"]}
+& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-word","segRespRTmsec_SD"]}
+& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-word","log_RT_Median"]}
+& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-word","log_RT_SD"]}\\
+\bottomrule
+\multicolumn{6}{l}{Total data points: n = \Sexpr{
+lab_grp_sum["English-CV-CV-word","n"] +
+lab_grp_sum["English-CV-CVC-word","n"] +
+lab_grp_sum["English-CVC-CV-word","n"] +
+lab_grp_sum["English-CVC-CVC-word","n"] +
+lab_grp_sum["Spanish-CV-CV-word","n"] +
+lab_grp_sum["Spanish-CV-CVC-word","n"] +
+lab_grp_sum["Spanish-CVC-CV-word","n"] +
+lab_grp_sum["Spanish-CVC-CVC-word","n"]}}\\
+\end{tabular}
+\caption{Reaction times to words for each condition given in milliseconds and log transformed values.}
+\label{tab-lab-grp-rt-wd-intuition}
+
+\vspace{.4in}
+
+% Nonword Table
+\begin{tabular}{l c l l l c c c c}
+\toprule
+& & & & & \multicolumn{2}{c}{RT ms} & \multicolumn{2}{c}{RT log}\\ 
+\cmidrule(lr){6-7}\cmidrule(lr){8-9}
+L1 & n & Target & Carrier & Matching & Median & SD & Median & SD\\
+\midrule
+\multirow{4}{*}{English}
+% CV Target CV Carrier Condition
+& \Sexpr{lab_grp_sum["English-CV-CV-nonword","n"]}
+& \Sexpr{lab_grp_sum["English-CV-CV-nonword","target_syl_structure"]} 
+& \Sexpr{lab_grp_sum["English-CV-CV-nonword","word_initial_syl"]} 
+& \Sexpr{lab_grp_sum["English-CV-CV-nonword","matching"]}
+& \Sexpr{lab_grp_sum["English-CV-CV-nonword","segRespRTmsec_Median"]}
+& \Sexpr{lab_grp_sum["English-CV-CV-nonword","segRespRTmsec_SD"]}
+& \Sexpr{lab_grp_sum["English-CV-CV-nonword","log_RT_Median"]}
+& \Sexpr{lab_grp_sum["English-CV-CV-nonword","log_RT_SD"]}\\
+% CV Target CVC Carrier Condition
+& \Sexpr{lab_grp_sum["English-CV-CVC-nonword","n"]}
+& \Sexpr{lab_grp_sum["English-CV-CVC-nonword","target_syl_structure"]} 
+& \Sexpr{lab_grp_sum["English-CV-CVC-nonword","word_initial_syl"]} 
+& \Sexpr{lab_grp_sum["English-CV-CVC-nonword","matching"]}
+& \Sexpr{lab_grp_sum["English-CV-CVC-nonword","segRespRTmsec_Median"]}
+& \Sexpr{lab_grp_sum["English-CV-CVC-nonword","segRespRTmsec_SD"]}
+& \Sexpr{lab_grp_sum["English-CV-CVC-nonword","log_RT_Median"]}
+& \Sexpr{lab_grp_sum["English-CV-CVC-nonword","log_RT_SD"]}\\
+% CVC Target CV Carrier Condition
+& \Sexpr{lab_grp_sum["English-CVC-CV-nonword","n"]}
+& \Sexpr{lab_grp_sum["English-CVC-CV-nonword","target_syl_structure"]} 
+& \Sexpr{lab_grp_sum["English-CVC-CV-nonword","word_initial_syl"]} 
+& \Sexpr{lab_grp_sum["English-CVC-CV-nonword","matching"]}
+& \Sexpr{lab_grp_sum["English-CVC-CV-nonword","segRespRTmsec_Median"]}
+& \Sexpr{lab_grp_sum["English-CVC-CV-nonword","segRespRTmsec_SD"]}
+& \Sexpr{lab_grp_sum["English-CVC-CV-nonword","log_RT_Median"]}
+& \Sexpr{lab_grp_sum["English-CVC-CV-nonword","log_RT_SD"]}\\
+% CVC Target CVC Carrier Condition
+& \Sexpr{lab_grp_sum["English-CVC-CVC-nonword","n"]}
+& \Sexpr{lab_grp_sum["English-CVC-CVC-nonword","target_syl_structure"]} 
+& \Sexpr{lab_grp_sum["English-CVC-CVC-nonword","word_initial_syl"]} 
+& \Sexpr{lab_grp_sum["English-CVC-CVC-nonword","matching"]}
+& \Sexpr{lab_grp_sum["English-CVC-CVC-nonword","segRespRTmsec_Median"]}
+& \Sexpr{lab_grp_sum["English-CVC-CVC-nonword","segRespRTmsec_SD"]}
+& \Sexpr{lab_grp_sum["English-CVC-CVC-nonword","log_RT_Median"]}
+& \Sexpr{lab_grp_sum["English-CVC-CVC-nonword","log_RT_SD"]}\\
+\midrule
+\multirow{4}{*}{Spanish}
+% CV Target CV Carrier Condition
+& \Sexpr{lab_grp_sum["Spanish-CV-CV-nonword","n"]}
+& \Sexpr{lab_grp_sum["Spanish-CV-CV-nonword","target_syl_structure"]} 
+& \Sexpr{lab_grp_sum["Spanish-CV-CV-nonword","word_initial_syl"]} 
+& \Sexpr{lab_grp_sum["Spanish-CV-CV-nonword","matching"]}
+& \Sexpr{lab_grp_sum["Spanish-CV-CV-nonword","segRespRTmsec_Median"]}
+& \Sexpr{lab_grp_sum["Spanish-CV-CV-nonword","segRespRTmsec_SD"]}
+& \Sexpr{lab_grp_sum["Spanish-CV-CV-nonword","log_RT_Median"]}
+& \Sexpr{lab_grp_sum["Spanish-CV-CV-nonword","log_RT_SD"]}\\
+% CV Target CVC Carrier Condition
+& \Sexpr{lab_grp_sum["Spanish-CV-CVC-nonword","n"]}
+& \Sexpr{lab_grp_sum["Spanish-CV-CVC-nonword","target_syl_structure"]} 
+& \Sexpr{lab_grp_sum["Spanish-CV-CVC-nonword","word_initial_syl"]} 
+& \Sexpr{lab_grp_sum["Spanish-CV-CVC-nonword","matching"]}
+& \Sexpr{lab_grp_sum["Spanish-CV-CVC-nonword","segRespRTmsec_Median"]}
+& \Sexpr{lab_grp_sum["Spanish-CV-CVC-nonword","segRespRTmsec_SD"]}
+& \Sexpr{lab_grp_sum["Spanish-CV-CVC-nonword","log_RT_Median"]}
+& \Sexpr{lab_grp_sum["Spanish-CV-CVC-nonword","log_RT_SD"]}\\
+% CVC Target CV Carrier Condition
+& \Sexpr{lab_grp_sum["Spanish-CVC-CV-nonword","n"]}
+& \Sexpr{lab_grp_sum["Spanish-CVC-CV-nonword","target_syl_structure"]} 
+& \Sexpr{lab_grp_sum["Spanish-CVC-CV-nonword","word_initial_syl"]} 
+& \Sexpr{lab_grp_sum["Spanish-CVC-CV-nonword","matching"]}
+& \Sexpr{lab_grp_sum["Spanish-CVC-CV-nonword","segRespRTmsec_Median"]}
+& \Sexpr{lab_grp_sum["Spanish-CVC-CV-nonword","segRespRTmsec_SD"]}
+& \Sexpr{lab_grp_sum["Spanish-CVC-CV-nonword","log_RT_Median"]}
+& \Sexpr{lab_grp_sum["Spanish-CVC-CV-nonword","log_RT_SD"]}\\
+% CVC Target CVC Carrier Condition
+& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-nonword","n"]}
+& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-nonword","target_syl_structure"]} 
+& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-nonword","word_initial_syl"]} 
+& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-nonword","matching"]}
+& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-nonword","segRespRTmsec_Median"]}
+& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-nonword","segRespRTmsec_SD"]}
+& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-nonword","log_RT_Median"]}
+& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-nonword","log_RT_SD"]}\\
+\bottomrule
+\multicolumn{6}{l}{Total data points: n = \Sexpr{
+lab_grp_sum["English-CV-CV-nonword","n"] +
+lab_grp_sum["English-CV-CVC-nonword","n"] +
+lab_grp_sum["English-CVC-CV-nonword","n"] +
+lab_grp_sum["English-CVC-CVC-nonword","n"] +
+lab_grp_sum["Spanish-CV-CV-nonword","n"] +
+lab_grp_sum["Spanish-CV-CVC-nonword","n"] +
+lab_grp_sum["Spanish-CVC-CV-nonword","n"] +
+lab_grp_sum["Spanish-CVC-CVC-nonword","n"]}}\\
+\end{tabular}
+\caption{Reaction times to nonwords for each condition given in milliseconds and log transformed values.}
+\label{tab-lab-grp-rt-nonwd-intuition}
+\end{table}
+
+\subsection{Native Spanish Controls}
+Figure \ref{plt-lab-l1-rtms-desc} plots the general tendencies, or descriptive statistics, for response times in milliseconds by target syllable, matching and lexicality conditions for the \Sexpr{length(unique(lab_natives$partNum))} native controls. The log transformed values were submitted to a (3) x (2) repeated measures ANOVA with \emph{Lexicality, Target} and \emph{Matching} as factors. The ANOVA revealed no statistically significant main effects or interactions, in all cases p > 0.05. There was a possible trend in main effect of \emph{Lexicality}, but it failed to reach significance 
+\emph{F}(
+\Sexpr{lab_aov_natives$anova_table["word_status", "num Df"]},
+\Sexpr{lab_aov_natives$anova_table["word_status", "den Df"]}) = 
+\Sexpr{round(lab_aov_natives$anova_table["word_status", "F"],2)}, 
+p > .05 
+[\Sexpr{round(lab_aov_natives$anova_table["word_status", "Pr(>F)"],4)}]. 
+
+\begin{figure}
+\begin{center}
+<<intuition_desc_l1_rtms, fig.width= 6, fig.height= 3>>=
+lab_bxp_natives
+@      
+\caption[Descriptive RTs: Lab Experiment Control Group]{Reaction times reported in milliseconds given as a factor of target syllable structure, matching and lexicality conditions.}
+\label{plt-lab-l1-rtms-desc-intuition}
+\end{center}
+\end{figure}
+
+Figure \ref{plt-lab-l1-tar-mat-ns-int} shows the data plotted by lexicality with each panel showing the interaction between target syllable structure and matching condition. Note that the parallel lines shown in the word panel of the plot reveals the type of pattern expected to be seen given the way the data was analyzed. The difference between our analysis and previous literature is capturing the same difference but displayed in a different manner. The previous literature showed the crossover effect because they analyzed their data over target syllable structure and carrier syllable structure. Our parallel pattern tells the same story but simply analyzed over target syllable structure and matching condition. In both cases the conditions analyzed included CV target--CV carrier and CVC target--CVC carrier (matching conditions), CV target--CVC carrier and CVC target--CV carrier (mismatching conditions).
+
+\begin{figure}
+\begin{center}
+<<intuition_l1_tar_mat_ns_int, fig.width= 6, fig.height= 3>>=
+lab_l1_tar_mat_int
+@      
+\caption[Estimated Marginal Means: Lab Experiment Control Group]{Log transformed reaction times reported given as a factor of target syllable structure, matching and lexicality conditions.}
+\label{plt-lab-l1-tar-mat-ns-int-intuition}
+\end{center}
+\end{figure}
+
+\subsection{L2 Spanish Learners}
+Figure \ref{plt-lab-l2-rtms-desc} plots the general descriptive statistics for response times in milliseconds by target syllable, matching and lexicality conditions for the \Sexpr{length(unique(lab_learners$partNum))} L2 learners of Spanish. The log transformed values were submitted to a (3) x (2) repeated measures ANOVA with \emph{Lexicality, Target} and \emph{Matching} as factors. The ANOVA revealed statistically significant main effects of \emph{Target}, 
+\emph{F}(
+\Sexpr{lab_aov_learners$anova_table["target_syl_structure", "num Df"]},
+\Sexpr{lab_aov_learners$anova_table["target_syl_structure", "den Df"]}) =
+\Sexpr{round(lab_aov_learners$anova_table["target_syl_structure", "F"],2)}, 
+p < .05 
+[\Sexpr{round(lab_aov_learners$anova_table["target_syl_structure", "Pr(>F)"],4)}] 
+and a statistically significant interaction between \emph{Matching} and \emph{Lexicality}, 
+\emph{F}(
+\Sexpr{lab_aov_learners$anova_table["matching:word_status", "num Df"]},
+\Sexpr{lab_aov_learners$anova_table["matching:word_status", "den Df"]}) =
+\Sexpr{round(lab_aov_learners$anova_table["matching:word_status", "F"],2)}, 
+p < .05 
+[\Sexpr{round(lab_aov_learners$anova_table["matching:word_status", "Pr(>F)"],4)}]. 
+
+\begin{figure}
+\begin{center}
+<<intuition_desc_l2_rtms, fig.width= 6, fig.height= 3>>=
+lab_bxp_learners
+@      
+\caption[Descriptive RTs: Lab Experiment Target Group]{Reaction times reported in milliseconds given as a factor of target syllable structure, matching and lexicality conditions.}
+\label{plt-lab-l2-rtms-desc-intuition}
+\end{center}
+\end{figure}
+
+In order to look at main effect of target syllable, post-hoc analyses were conducted. The dataset was regrouped so that each participant's reaction times were computed based on whether the target syllable they were monitoring for was CV or CVC. The dataset consisted of 
+\Sexpr{nrow(lab_data_tarsyl_ag)} 
+observations---
+\Sexpr{length(unique(lab_learners$target_syl_structure))} 
+\emph{Target} conditions x 
+\Sexpr{length(unique(lab_learners$partNum))}.
+This dataset was then submitted to a t-test, which revealed that the L2 Spanish group generally detected CVC syllables, 
+M= \Sexpr{round(lab_tar_compare["CVC", "Mean"],2)}, 
+SD= \Sexpr{round(lab_tar_compare["CVC", "SD"],2)} 
+at 95\% CI 
+[\Sexpr{round(lab_tar_compare["CVC", "LL"],3)}, 
+\Sexpr{round(lab_tar_compare["CVC", "UL"],3)}], 
+faster than CV syllables, 
+M= \Sexpr{round(lab_tar_compare["CV", "Mean"],2)}, 
+SD= \Sexpr{round(lab_tar_compare["CV", "SD"],2)} 
+[\Sexpr{round(lab_tar_compare["CV", "LL"],3)}, 
+\Sexpr{round(lab_tar_compare["CV", "UL"],3)}]. 
+The mean difference, 
+M= \Sexpr{round(abs(lab_tar_compare["CVC", "Mean"] - 
+lab_tar_compare["CV", "Mean"]),2)}, 
+reveals a statistical difference in detection times between the two target syllable structures, 
+\emph{t}(\Sexpr{round(t_lab_tar_syl_main$parameter,2)}) = 
+\Sexpr{round(t_lab_tar_syl_main$statistic,4)}, 
+p < \Sexpr{round(t_lab_tar_syl_main$p.value,4)}.
+The main effect of target syllable was of a 
+\Sexpr{lab_tar_efsize$magnitude} 
+magnitude. This can be seen in the output of Cohen's \emph{d} for \emph{Target} \emph{d}= 
+\Sexpr{round(lab_tar_efsize$estimate,2)}, 
+\Sexpr{lab_tar_efsize$conf.level*100}\% CI 
+[\Sexpr{round(lab_tar_efsize$conf.int[1],2)},
+\Sexpr{round(lab_tar_efsize$conf.int[2],2)}].
+
+In order to break down the interaction between \emph{Matching} and \emph{Lexicality} factors, a post-hoc analysis was run. The L2 Spanish dataset was was further subset into two dataframes: one for real words and one for nonwords. Each dataset consisted of 
+\Sexpr{nrow(lab_nonwords_learners)} 
+observations---
+\Sexpr{length(unique(lab_nonwords_learners$matching))} 
+\emph{Matching} conditions x 
+\Sexpr{length(unique(lab_nonwords_learners$partNum))}
+participants. Both datasets, words and nonwords, were then individually submitted to a one-tailed t-test. This revealed that the L2 Spanish group did not detect syllables faster in nonword for the matching condition, 
+M= \Sexpr{round(lab_mat_lex_compare["nonword-matching", "Mean"],2)}, 
+SD= \Sexpr{round(lab_mat_lex_compare["nonword-matching", "SD"],2)} 
+at 95\% CI 
+[\Sexpr{round(lab_mat_lex_compare["nonword-matching", "LL"],3)}, 
+\Sexpr{round(lab_mat_lex_compare["nonword-matching", "UL"],3)}], 
+than syllables detected in the mismatching condition, 
+M= \Sexpr{round(lab_mat_lex_compare["nonword-mismatching", "Mean"],2)}, 
+SD= \Sexpr{round(lab_mat_lex_compare["nonword-mismatching", "SD"],2)} 
+[\Sexpr{round(lab_mat_lex_compare["nonword-mismatching", "LL"],3)}, 
+\Sexpr{round(lab_mat_lex_compare["nonword-mismatching", "UL"],3)}]. 
+The mean difference, 
+M= \Sexpr{round(abs(lab_mat_lex_compare["nonword-matching", "Mean"] - 
+lab_mat_lex_compare["nonword-mismatching", "Mean"]),2)}, 
+reveals no statistical difference with regards to the target syllable matching the word initial syllable of the carrier item for nonword, 
+\emph{t}(\Sexpr{round(t_lab_l2_nonwd_mat_int$parameter,2)}) = 
+\Sexpr{round(t_lab_l2_nonwd_mat_int$statistic,4)}, 
+p < \Sexpr{round(t_lab_l2_nonwd_mat_int$p.value,4)}.
+In the real word dataset, it surprisingly revealed that the L2 Spanish group detected syllables significantly slower for the matching condition, 
+M= \Sexpr{round(lab_mat_lex_compare["word-matching", "Mean"],2)}, 
+SD= \Sexpr{round(lab_mat_lex_compare["word-matching", "SD"],2)} 
+at 95\% CI 
+[\Sexpr{round(lab_mat_lex_compare["word-matching", "LL"],3)}, 
+\Sexpr{round(lab_mat_lex_compare["word-matching", "UL"],3)}], 
+than syllables detected in the mismatching condition, 
+M= \Sexpr{round(lab_mat_lex_compare["word-mismatching", "Mean"],2)}, 
+SD= \Sexpr{round(lab_mat_lex_compare["word-mismatching", "SD"],2)} 
+[\Sexpr{round(lab_mat_lex_compare["word-mismatching", "LL"],3)}, 
+\Sexpr{round(lab_mat_lex_compare["word-mismatching", "UL"],3)}]. 
+The mean difference, 
+M= \Sexpr{round(abs(lab_mat_lex_compare["word-matching", "Mean"] - 
+lab_mat_lex_compare["word-mismatching", "Mean"]),2)}, 
+reveals a statistically significant difference with regards to the target syllable matching the word initial syllable of the carrier item for words, but opposite of the hypothesized direction, 
+\emph{t}(\Sexpr{round(t_lab_l2_wd_mat_int$parameter,2)}) = 
+\Sexpr{round(t_lab_l2_wd_mat_int$statistic,4)}, 
+p < \Sexpr{round(t_lab_l2_wd_mat_int$p.value,4)}.
+The effect size of matching condition in the word dataset was also 
+\Sexpr{lab_l2_mat_efsize$magnitude} 
+in magnitude, \emph{d}= 
+\Sexpr{round(lab_l2_mat_efsize$estimate,2)}, 
+\Sexpr{lab_l2_mat_efsize$conf.level*100}\% CI 
+[\Sexpr{round(lab_l2_mat_efsize$conf.int[1],2)}, 
+\Sexpr{round(lab_l2_mat_efsize$conf.int[2],2)}].
+Figure \ref{plt-lab_l2_mat_lex_s_int} plots the estimated marginal means for the interaction between \emph{Matching} and \emph{Lexicality} for L2 learners of Spanish.
+\ttodo{Checkthe Cohen.d scores as r variable pull.} 
+
+\begin{figure}
+\begin{center}
+<<intuition_l2_mat_lex_s_int, fig.width= 5, fig.height= 3>>=
+lab_l2_lex_mat_int
+@      
+\caption[Estimated Marginal Means: Lab Experiment Target Group]{Log transformed reaction times reported given as a factor of matching and lexicality conditions.}
+\label{plt-lab_l2_mat_lex_s_int-intuition}
+\end{center}
+\end{figure}
+
+Lastly, Figure \ref{plt-lab-l2-tar-mat-ns-int} again shows that the interaction between target syllable structure and the structure word initial syllable of carrier word was not significant. Although not significant, the patterns that emerged in the native speaker controls also emerged in the L2 learners of Spanish. That is the real word dataset reveals parallel lines which implies the same meaning as the crossover effect found in previous studies.
+
+\begin{figure}
+\begin{center}
+<<intuition_l2_tar_mat_ns_int, fig.width= 6, fig.height= 3>>=
+lab_l2_tar_mat_int
+@      
+\caption[Estimated Marginal Means: Lab Experiment Control Group]{Log transformed reaction times reported given as a factor of target syllable structure, matching and lexicality conditions.}
+\label{plt-lab-l2-tar-mat-ns-int-intuition}
+\end{center}
+\end{figure}
 
 \section{Discussion}
+\ttodo{split into several small sections following each individual experiment’s results sections where applicable. The General Discussion steps back and begins with an overview of the problem and then the findings. A general rule of thumb is to keep this section shorter than the introduction. Only give limitation directly related to the current study, not the general limitation of the research or the field as a whole and be sure to give a good reason for why these limitations are not as bad as they sound on the surface.}
 
-%\textbf{split into several small sections following each individual experiment’s results sections where applicable. The General Discussion steps back and begins with an overview of the problem and then the findings. A general rule of thumb is to keep this section shorter than the introduction. Only give limitation directly related to the current study, not the general limitation of the research or the field as a whole and be sure to give a good reason for why these limitations are not as bad as they sound on the surface.}
+This chapter reported on the \Sexpr{length(unique(lab_my_data$partNum))} participants who completed a visual Spanish syllable monitoring experiment. Crucially, the experiment run in this chapter attempted to replicate the findings of previous research in terms of Spanish syllable monitoring as an indicator of the use of a syllabic segmentation strategy with its \Sexpr{length(unique(lab_natives$partNum))} native Spanish speaker controls. It sought to extend the use of the syllable monitoring experimental design to address the questions of whether or not the \Sexpr{length(unique(lab_learners$partNum))} native English speakers participants who were L2 learners of Spanish could utilize a syllabic segmentation strategy when processing Spanish. 
+
+Another avenue to investigate would be the syllabic intuitions of participants, which could be a factor given that English and Spanish differ in ways similar to English and French participants of previous research studies. 
+
+It may be that the two groups do not agree on the syllabic structures of the speech they are segmenting as a result of L1 backgrounds. Syllabic intuitions from both groups were collected in a syllabic intuition experiment that was conducted and results are discussed in Chapter \ref{ch-intuition} of the current project.
