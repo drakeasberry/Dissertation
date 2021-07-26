@@ -512,7 +512,7 @@ with(lab_words_learners,
 ## significantly faster than matching 
 
 # Get effect size
-cohen.d(lab_words_learners$log_RT_Median, 
+lab_l2_mat_efsize <- cohen.d(lab_words_learners$log_RT_Median, 
         lab_words_learners$matching, 
         na.rm = TRUE, 
         paired = TRUE)
