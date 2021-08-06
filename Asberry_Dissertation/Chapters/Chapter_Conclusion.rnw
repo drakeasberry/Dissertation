@@ -36,3 +36,6 @@ No results have been report as part of this proposal since no data has been coll
 
 \section{Random thoughts while writing}
 In future studies founded on phonology or phonological processes. it is essential to understand the implications of experimental design decisions. Both auditory and visual based designs offer insights to phonological processes. However, the research questions may point researchers towards one of the two designs to offers a more comprehensive and effective understanding of what affects phonological processes under investigation.
+
+
+If orthographic segmentation was at play over there should be a difference between real words and nonwords.
