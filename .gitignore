@@ -51,6 +51,7 @@ rstudio-sorted.txt
 rstudio.txt
 Syllable_Segmentation.nb.html
 .idea/
+*.DS_Store
 
 #Ignore misc files that will be deleted from directory at end of project
 /Statistics/Demographics/scrap_work.r
