@@ -121,7 +121,7 @@ exp_search_directory = 'Dissertation_Experiments/segmentation/data/processed_dat
 analyze_dir = 'Statistics/Segmentation/analyze_data'
 
 # get join files containing word frequency data
-excel_wb = 'Dissertation_Experiments/segmentation/Segmentation_Experimental_Item_Setup.xlsx'
+excel_wb = 'Dissertation_Experiments/segmentation/Segmentation_Experimental_Item_Setup.xls'
 sheet_names = ['Critical_Items', 'RW_Filler_Items','PW_Filler_Items']
 
 for sheet in sheet_names:

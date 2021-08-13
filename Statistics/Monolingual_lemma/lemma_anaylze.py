@@ -85,7 +85,7 @@ valid_df.remove('part251_lemma_segmentation_2020-07-13_23h14.18.450.csv')
 valid_df.remove('part252_lemma_segmentation_2020-07-14_00h50.17.446.csv')
 
 REMOVELIST = len(invalid_df) + len(empty_df)
-FILECOUNTAFTERREMOVAL = STARTFILECOUNT - REMOVELIST - 5
+FILECOUNTAFTERREMOVAL = STARTFILECOUNT - REMOVELIST - 6
 assert len(valid_df) == FILECOUNTAFTERREMOVAL
 
 # change the headers of csv files
@@ -132,7 +132,7 @@ exp_search_directory = 'Dissertation_Experiments/lemma_version/data/processed_da
 analyze_dir = 'Statistics/Monolingual_lemma/analyze_data'
 
 # get join files containing word frequency data
-excel_wb = 'Dissertation_Experiments/lemma_version/Online_Segmentation_Experimental_Item_Setup.xlsx'
+excel_wb = 'Dissertation_Experiments/lemma_version/Online_Segmentation_Experimental_Item_Setup.xls'
 sheet_names = ['Critical_Items', 'RW_Filler_Items','PW_Filler_Items']
 
 for sheet in sheet_names:
