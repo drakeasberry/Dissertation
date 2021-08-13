@@ -14,11 +14,17 @@ export PYTHONPATH=.
 pipenv run python Statistics/Segmentation/seg_analyze.py
 
 # Run lexical access analysis
-#pipenv run python Statistics/Lexical_Access/lexical_analyze.py
+pipenv run python Statistics/Lexical_Access/lexical_analyze.py
+
+# Run online study learners analysis
+pipenv run python Statistics/L2_lemma/sec_lang_lemma_anaylze.py
+
+# Run online study natives analysis
+pipenv run python Statistics/Monolingual_lemma/lemma_anaylze.py
 
 # Run R analysis
-cd Statistics/Segmentation/
-Rscript segmentation_stats.r
+#cd Statistics/Segmentation/
+#Rscript segmentation_stats.r
 #cd ../Lexical_Access/
 #Rscript lexical_access_stats.r
 #cd ../Intuition/
@@ -26,7 +32,7 @@ Rscript segmentation_stats.r
 #cd ../Demographics/
 #Rscript demographic_stats.r
 
-# Run clean up to remove unecessary files
+# Run clean up to remove unnecessary files
 #cd ../..
 #sh Scripts_Dissertation/clean_up.sh # comment this line out if you would like to view all intermediate temporary files
 

@@ -15,6 +15,14 @@ mkdir -p Dissertation_Experiments/lexicalAccess/data/original_data/exp_files
 mkdir -p Dissertation_Experiments/lexicalAccess/data/original_data/part_files
 mkdir -p Dissertation_Experiments/lexicalAccess/data/processed_data/exp_files
 mkdir -p Dissertation_Experiments/lexicalAccess/data/processed_data/part_files
+mkdir -p Dissertation_Experiments/lemma_version/data/temp_data
+mkdir -p Dissertation_Experiments/lemma_version/data/original_data/part_files
+mkdir -p Dissertation_Experiments/lemma_version/data/original_data/exp_files
+mkdir -p Dissertation_Experiments/lemma_version/data/processed_data/exp_files
+mkdir -p Dissertation_Experiments/sec_lang_lemma/data/temp_data
+mkdir -p Dissertation_Experiments/sec_lang_lemma/data/original_data/part_files
+mkdir -p Dissertation_Experiments/sec_lang_lemma/data/original_data/exp_files
+mkdir -p Dissertation_Experiments/sec_lang_lemma/data/processed_data/exp_files
 
 # Statistics Directory
 mkdir -p Statistics/Demographics/analyze_data/blp_cols
