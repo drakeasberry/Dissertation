@@ -15,8 +15,6 @@ set_parent(here('Asberry_Dissertation/Dissertation.Rnw'))
 <<lab_demo_lib, echo = FALSE>>=
 # Load Libraries
 library(tidyverse)
-library(kableExtra)
-library(qwraps2)
 
 source('../../Scripts_Dissertation/diss_dataviz_script.R')
 source('../../Scripts_Dissertation/analysis_functions.R')
@@ -133,29 +131,33 @@ lab_grp_desc <- my_stats(eligible_demo_data,
 @
 
 <<lab_demo_tabled, echo=FALSE>>=
-# Build summary table
-dominance_summary <-
-  list("Language Dominance" = 
-         list("mean (sd)" = ~ qwraps2::mean_sd(lang_dominance)),
-       "English Vocabulary Size" =
-         list("mean (sd)" = ~ qwraps2::mean_sd(lextale_eng_correct)),
-       "Spanish Vocabulary Size" =
-         list("mean (sd)" = ~ qwraps2::mean_sd(lextale_esp_correct)),
-       "Spanish Izura Score" = 
-         list("mean (sd)" = ~ qwraps2::mean_sd(izura_score))
-  )              
-
-# Create latex formattable table
-by_lang <- summary_table(dplyr::group_by(eligible_demo_data, group),dominance_summary)
-print(by_lang)
-
-# Create image of tabled results
-by_lang %>% 
-  kbl(caption = "Descriptives") %>%
-  kable_styling() %>% 
-  pack_rows("Language Dominance", 1, 1) %>% 
-  pack_rows("English Vocabulary Size", 2, 2) %>%
-  pack_rows("Spanish Vocabulary Size", 3, 3) %>%
-  pack_rows("Spanish Izura Score", 4, 4) %>%
-  kable_classic(full_width = F, html_font = "Cambria")
+#library(kableExtra)
+#library(qwraps2)
+#
+#
+## Build summary table
+#dominance_summary <-
+#  list("Language Dominance" = 
+#         list("mean (sd)" = ~ qwraps2::mean_sd(lang_dominance)),
+#       "English Vocabulary Size" =
+#         list("mean (sd)" = ~ qwraps2::mean_sd(lextale_eng_correct)),
+#       "Spanish Vocabulary Size" =
+#         list("mean (sd)" = ~ qwraps2::mean_sd(lextale_esp_correct)),
+#       "Spanish Izura Score" = 
+#         list("mean (sd)" = ~ qwraps2::mean_sd(izura_score))
+#  )              
+#
+## Create latex formattable table
+#by_lang <- summary_table(dplyr::group_by(eligible_demo_data, group),dominance_summary)
+#print(by_lang)
+#
+## Create image of tabled results
+#by_lang %>% 
+#  kbl(caption = "Descriptives") %>%
+#  kable_styling() %>% 
+#  pack_rows("Language Dominance", 1, 1) %>% 
+#  pack_rows("English Vocabulary Size", 2, 2) %>%
+#  pack_rows("Spanish Vocabulary Size", 3, 3) %>%
+#  pack_rows("Spanish Izura Score", 4, 4) %>%
+#  kable_classic(full_width = F, html_font = "Cambria")
 @
