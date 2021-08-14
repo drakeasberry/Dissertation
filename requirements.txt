@@ -1,0 +1,31 @@
+Install Packages Needed
+Python
+pipenv
+pandas
+xlrd
+R
+R-studio 4.1
+tinytex
+knitr
+here
+tidyverse
+psych
+ggpubr
+afex
+effsize
+emmeans
+
+Use tinytex::tlmgr_install() for following
+koma-script
+babel-english
+xpatch
+setspace
+siunitx
+caption
+biblatex
+csquotes
+enumitem
+multirow
+todonotes
+palatino
+mathpazo
