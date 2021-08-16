@@ -1,9 +1,17 @@
 % Intuition Visualization Code
 
-<<intuition_lib, echo = FALSE>>=
-#!/bin/bash
-#!/usr/bin/Rscript
+<<global_opts_intuition, echo=TRUE, cache=FALSE>>=
+library(knitr)
+library(here)
 
+knitr::opts_chunk$set(
+  echo = FALSE
+)
+here::here()
+set_parent(here('Asberry_Dissertation/Dissertation.Rnw'))
+@
+
+<<intuition_lib, echo = FALSE>>=
 # Load Libraries
 library(tidyverse)
 library(ggplot2)
@@ -11,38 +19,64 @@ library(effsize)
 
 
 # Source Scripts containing functions
+source('../../Scripts_Dissertation/diss_dataviz_script.R')
 source("../../Scripts_Dissertation/analysis_functions.R")
 @
 
-<<>>=
-# read in the data
-my_data_long <- read_csv('analyze_data/output/data_long.csv')
+<<intuition_participants, echo = FALSE>>=
+# Read in file from demographics project
+intuition_desc <- read_csv(
+  'analyze_data/demographics/67_lab_intuition.csv')
 
-my_data_long <- my_data_long %>% 
+# Create table for comparison of demographics
+intuition_stat_compare <- intuition_desc %>%
+  group_by(group) %>% 
+  summarise(n = n(),
+            Mean_age = mean(age, na.rm = TRUE),
+            SD_age = sd(age, na.rm = TRUE)) %>% 
+  column_to_rownames(., var = "group")
+@
+
+<<intuition_data, echo = FALSE>>=
+# read in the data
+my_data_long <- 
+  read_csv('analyze_data/output/data_long.csv') %>% 
+  rename(prop_corr = correct,
+         logit_corr = logit) %>% 
   convert_as_factor(partNum, group, syl_structure)
 
 
 # Group data by target syllable structure, matching condition, and word status, 
 grouping_stats <- c("syl_structure", "group")
 
-# Summary statistics for reaction time
-# Proportion Correct
-my_data_long %>% 
-  summary_stats(., grouping_stats, "correct", "mean_sd")
+# Summary statistics for correct responses
+# Stats I want to run
+intuition_summary_stats <- quote(list(Median = median,
+                            Mean = mean, 
+                            Min = min, 
+                            Max = max, 
+                            SD = sd))
 
-# Logit
-my_data_long %>% 
-  summary_stats(., grouping_stats, "logit", "mean_sd")
+intuition_score_compare <-  
+  my_stats(my_data_long, 
+           grp_col = grouping_stats, 
+           sum_col = c("prop_corr","logit_corr"),
+           stats = intuition_summary_stats) %>% 
+  mutate(index = paste(group,syl_structure,sep = '-')) %>% 
+  column_to_rownames(., var = "index")
 
 
 # Visualize Descriptive Data
 # Proportion data
-my_data_long %>% 
-  summary_stats(., grouping_stats, "correct", "mean_sd") %>% 
+plt_corr_per <- my_data_long %>% 
+  summary_stats(., grouping_stats, 
+                "prop_corr", 
+                "mean_sd") %>% 
   ggplot(aes(x = group,
              y = mean,
              fill = syl_structure)) +
-  geom_bar(stat = "identity", position = 'dodge') +
+  geom_bar(stat = "identity", 
+           position = 'dodge') +
   geom_errorbar(aes(ymin = mean - sd, 
                     ymax = mean + sd), 
                 width = 0.2, 
@@ -51,13 +85,16 @@ my_data_long %>%
   labs(title = "Percent Correct",
        x = "Language Group",
        y = "") +
-  scale_fill_manual(name = "Syllable Structure", values = c('darkorchid4', 'goldenrod4')) +
+  scale_fill_manual(name = "Syllable Structure", 
+                    values = plt_color_2) +
   theme_minimal()
-
+plt_corr_per
 
 # Logit data of correct responses
-my_data_long %>% 
-  summary_stats(., grouping_stats, "logit", "mean_sd") %>% 
+plt_corr_logit <- my_data_long %>% 
+  summary_stats(., grouping_stats, 
+                "logit_corr", 
+                "mean_sd") %>% 
   ggplot(aes(x = group,
              y = mean,
              fill = syl_structure)) +
@@ -70,95 +107,174 @@ my_data_long %>%
   labs(title = "Correct Responses (logit)",
        x = "Language Group",
        y = "") +
-  scale_fill_manual(name = "Syllable Structure", values = c('darkorchid4', 'goldenrod4')) +
+  scale_fill_manual(name = "Syllable Structure", 
+                    values = plt_color_2) +
   theme_light()
-
+plt_corr_logit
  
 # Check for outliers
 # Check pooled data
 outlier_data <- my_data_long %>% 
-  outlier_chk(., grouping_stats, "logit")
+  outlier_chk(., grouping_stats, "logit_corr")
 
 # Plot data 
-boxplot(my_data_long$correct)
-boxplot(my_data_long$logit)
+boxplot(my_data_long$prop_corr)
+boxplot(my_data_long$logit_corr)
 ## no outliers visible
 
 
 # Check for normality
 normality_all <- my_data_long %>% 
-  normality_chk(., grouping_stats, "correct")
-
+  normality_chk(., grouping_stats, "prop_corr")
+normality_all <- my_data_long %>% 
+  normality_chk(., grouping_stats, "logit_corr")
 
 # Run inferential statistics Learner group
 # Run repeated measures anova
-aov <- aov_ez("partNum", "logit", my_data_long, within = 'syl_structure', between = 'group')
-aov
+aov_intuition <- 
+  aov_ez("partNum", 
+         "logit_corr", 
+         my_data_long, 
+         within = 'syl_structure', 
+         between = 'group')
+aov_intuition
 ## Main effects of group and syllable structure
+## No significant interaction 
 
+# Create aggregated set with one row per participant
+intuition_ag <- my_data_long %>% 
+  group_by(partNum, group) %>% 
+  summarise(logit_corr = mean(logit_corr))
 
 # Significant Main Effect Exploration
 # Group main effect
-# t.test for group main effect
-t.test(my_data_long$logit ~ my_data_long$group, paired = FALSE)
-
-cohen.d(my_data_long$logit, my_data_long$group, na.rm = TRUE, paired = FALSE)
-## Large effect size
-
-# Syllable structure main effect
-# t.test for syllable structure main effect
-t.test(my_data_long$logit ~ my_data_long$syl_structure, paired = TRUE)
+# Welch 2 sample t.test for group main effect
+t_intuition_grp_main <-
+  t.test(
+    my_data_long$logit_corr ~ my_data_long$group, 
+    paired = FALSE)
+t_intuition_grp_main
+## is signficant t = -5.5641, df = 126.77, p-value = 1.497e-07
+## 95% CI [-4.479941, -2.129370]
 
 # Descriptives to check direction of effect
-with(my_data_long, tapply(logit, syl_structure, FUN = mean))
-# CV are less accurate than CVC syllable
+with(my_data_long, 
+     tapply(logit_corr, 
+            group, 
+            FUN = mean))
+## L1 English worse than L1 Spanish
+## 3.184587 6.489242
 
-cohen.d(my_data_long$logit, my_data_long$syl_structure, na.rm = TRUE, paired = TRUE)
+
+# Create a table for referencing statistics with CIs
+intuition_lang_compare <- intuition_ag %>%
+  group_by(group) %>% 
+  summarise(Mean = mean(logit_corr),
+            SD = sd(logit_corr),
+            N = n(),
+            MOE_95 = qnorm(0.975)*SD/sqrt(N-1),
+            LL = Mean - MOE_95,
+            UL = Mean + MOE_95) %>% 
+  column_to_rownames(., var = "group")
+
+# Get the size of the effect
+intuition_lang_efsize <- cohen.d(intuition_ag$logit_corr, 
+        intuition_ag$group, 
+        na.rm = TRUE, 
+        paired = FALSE)
+intuition_lang_efsize
+## Large effect size
+
+
+# Syllable structure main effect
+# Paired t.test for syllable structure main effect
+t_intuition_syl_main <- t.test(
+  my_data_long$logit_corr ~ my_data_long$syl_structure, 
+  paired = TRUE)
+t_intuition_syl_main
+## is signficant t = -2.2965, df = 66, p-value = 0.02483
+## 95% CI [-2.0316306, -0.1419406]
+## Mean of differences -1.086786
+
+# Descriptives to check direction of effect
+with(my_data_long, 
+     tapply(logit_corr, 
+            syl_structure, 
+            FUN = mean))
+# CV are less accurate than CVC syllable
+# 4.120890 5.207676
+
+# Create aggregated set with one row per participant
+intuition_syl_ag <- my_data_long %>% 
+  group_by(partNum, group, syl_structure) %>% 
+  summarise(logit_corr = mean(logit_corr))
+
+# Create a table for referencing statistics with CIs
+intuition_syl_compare <- intuition_syl_ag %>%
+  group_by(group, syl_structure) %>% 
+  summarise(Mean = mean(logit_corr),
+            SD = sd(logit_corr),
+            N = n(),
+            MOE_95 = qnorm(0.975)*SD/sqrt(N-1),
+            LL = Mean - MOE_95,
+            UL = Mean + MOE_95) %>% 
+  mutate(index = paste(group,syl_structure,sep = '-')) %>% 
+  column_to_rownames(., var = "index")
+
+intuition_syl_efsize <- cohen.d(
+  my_data_long$logit_corr, 
+  my_data_long$syl_structure, 
+  na.rm = TRUE, 
+  paired = TRUE)
+intuition_syl_efsize
 ## small effect size
 
 
 # Plots
 # Main effect of group
-grp_main <- afex_plot(aov, 
-                      x = "group", 
-                      error = "between",
-                      data_plot = FALSE,
-                      mapping = c("color", "shape")) +
+intuition_grp_main <- 
+  afex_plot(aov_intuition, 
+            x = "group", 
+            error = "between",
+            data_plot = FALSE,
+            mapping = c("color", "shape")) +
   labs(title = "Estimated Marginal Means Correct Response",
        x = "Language Group",
        y = "Response Correct (logit)") +
-  scale_color_manual(values = c('darkorchid4', 'goldenrod4')) +
+  scale_color_manual(values = plt_color_2) +
   theme_light() +
   theme(legend.position = "none")
-  
-grp_main
+intuition_grp_main
 
 
 # Main effect of syllable structure
-syl_main <- afex_plot(aov, 
-                      x = "syl_structure", 
-                      error = "within",
-                      data_plot = FALSE,
-                      mapping = c("color", "shape")) +
+intuition_syl_main <- 
+  afex_plot(aov_intuition, 
+            x = "syl_structure", 
+            error = "within",
+            data_plot = FALSE,
+            mapping = c("color", "shape")) +
   labs(title = "Estimated Marginal Means Syllable Structure",
        x = "Syllable Structure",
        y = "Response Correct (logit)") +
-  scale_color_manual(values = c('darkorchid4', 'goldenrod4')) +
+  scale_color_manual(values = plt_color_2) +
+  theme_light() +
   theme(legend.position = "none")
-syl_main
+intuition_syl_main
 
 
 # Interaction between matching condition and lexicality with lexicality conditions on x-axis
-grp_syl_int <- afex_plot(aov, 
-                            x = "syl_structure", 
-                            trace = "group",
-                            error = "between",
-                            mapping = c("shape", "color", "linetype"),
-                            legend_title = "Native Language",
-                            data_plot = FALSE) +
+intuition_grp_syl_int <- 
+  afex_plot(aov_intuition, 
+            x = "syl_structure", 
+            trace = "group",
+            error = "between",
+            mapping = c("shape", "color", "linetype"),
+            legend_title = "Native Language",
+            data_plot = TRUE) +
   labs(title = "Estimated Marginal Means L2 Spanish",
        x = "Syllable Structure",
        y = "Response Correct (logit)") +
-  scale_color_manual(values = c('darkorchid4', 'goldenrod4'))
-grp_syl_int
+  scale_color_manual(values = plt_color_2)
+intuition_grp_syl_int
 @
