@@ -1,0 +1,146 @@
+% Visualization code
+
+<<global_opts_intuition_demo, echo=TRUE, cache=FALSE>>=
+library(knitr)
+library(here)
+
+knitr::opts_chunk$set(
+  echo = FALSE
+)
+here::here()
+set_parent(here('Asberry_Dissertation/Dissertation.Rnw'))
+@
+
+
+<<intuition_demo_lib, echo = FALSE>>=
+# Load Libraries
+library(tidyverse)
+
+
+# Soruce Scripts containing functions
+source("../../Scripts_Dissertation/diss_dataviz_script.R")
+source('../../Scripts_Dissertation/analysis_functions.R')
+@
+
+<<intuition_demo_viz, echo=FALSE>>=
+# Read in data file
+intuition_vocab_size <- read_csv(
+  'analyze_data/output/intuition_vocab_sizes.csv')
+
+
+# Plot Language Vocabulary Difference in lab segmentation experiment
+intuition_vocab_diff <- vocab_diff_plt(intuition_vocab_size,
+                                 "group", 
+                                 "vocab_diff")
+intuition_vocab_diff
+
+# Demographic Information Descriptions
+# Load demographic data
+intuition_demo_data <- read_csv(
+  '../Intuition/analyze_data/demographics/67_lab_intuition.csv')
+
+
+# Plot Demogrpahics
+# Language Dominance
+intuition_lang_dom <- language_dominance(intuition_demo_data, 
+                                         "group", 
+                                         "lang_dominance")
+intuition_lang_dom
+
+# English Vocabulary Size
+intuition_eng_vocab <-
+  eng_lextale(intuition_demo_data, 
+              "group", 
+              "lextale_eng_correct")
+intuition_eng_vocab
+
+# Spanish Vocabulary Size (% Correct)
+intuition_esp_vocab <-
+  esp_lextale(intuition_demo_data, 
+              "group", 
+              "lextale_esp_correct")
+intuition_esp_vocab
+
+# Spanish Vocabulary Size (Izura Calculation)
+intuition_izura <- izura(intuition_demo_data, 
+                         "group", 
+                         "izura_score")
+intuition_izura
+
+# Get summary stats for reporting (my_stats function used for dissertation consistency)
+# Columns that I want summary stats for
+stat_col <- c("age",
+              "span_acq_age",
+              "eng_acq_age",
+              "eng_hist_score",
+              "eng_use_score", 
+              "eng_prof_score",
+              "eng_att_score",
+              "global_eng_score",
+              "esp_hist_score",
+              "esp_use_score",
+              "esp_prof_score",
+              "esp_att_score",
+              "global_esp_score",
+              "lang_dominance",
+              "lextale_eng_correct",
+              "lextale_esp_correct",
+              "vocab_diff",
+              "izura_yes_to_words",
+              "izura_yes_to_nonwords",
+              "izura_score")
+
+# Stats I want to run
+summary_stats <- quote(list(Mean = mean, 
+                            Min = min, 
+                            Max = max, 
+                            SD = sd))
+
+# grouped by gender and group (experiment here)
+intuition_grp_desc <- my_stats(intuition_demo_data, 
+              grp_col = c("group"), 
+              sum_col = stat_col,
+              stats = summary_stats) %>%
+  mutate_at(vars(ends_with("_Mean")), 
+              list(~ round(., 2))) %>% 
+  mutate_at(vars(ends_with("_SD")), 
+              list(~ round(., 2))) %>% 
+  mutate_at(vars(ends_with("_Min")), 
+              list(~ round(., 2))) %>% 
+  mutate_at(vars(ends_with("_Max")), 
+              list(~ round(., 2))) %>% 
+  column_to_rownames(., var = "group")
+@
+
+<<intuition_demo_tabled, echo=FALSE>>=
+#library(kableExtra)
+#library(qwraps2)
+
+# Build summary table
+#dominance_summary <-
+#  list("Language Dominance" = 
+#         list("mean (sd)" = ~ qwraps2::mean_sd(lang_dominance)),
+#       "English Vocabulary Size" =
+#         list("mean (sd)" = ~ qwraps2::mean_sd(lextale_eng_correct)),
+#       "Spanish Vocabulary Size" =
+#         list("mean (sd)" = ~ qwraps2::mean_sd(lextale_esp_correct)),
+#       "Spanish Izura Score" = 
+#         list("mean (sd)" = ~ qwraps2::mean_sd(izura_score))
+#  )              
+
+
+# Create latex formattable table
+#by_lang <- summary_table(dplyr::group_by(demo_data, group),dominance_summary)
+#print(by_lang)
+
+
+# Create image of tabled results
+#by_lang %>% 
+#  kbl(caption = "Descriptives") %>%
+#  kable_styling() %>% 
+#  pack_rows("Language Dominance", 1, 1) %>% 
+#  pack_rows("English Vocabulary Size", 2, 2) %>%
+#  pack_rows("Spanish Vocabulary Size", 3, 3) %>%
+#  pack_rows("Spanish Izura Score", 4, 4) %>%
+#  kable_classic(full_width = F, html_font = "Cambria")
+@
