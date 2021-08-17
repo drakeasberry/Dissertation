@@ -1,6 +1,6 @@
 % Intuition Visualization Code
 
-<<global_opts_intuition, echo=TRUE, cache=FALSE>>=
+<<global_opts_intuition_viz, echo=TRUE, cache=FALSE>>=
 library(knitr)
 library(here)
 

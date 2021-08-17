@@ -311,7 +311,7 @@ Columns needed include:
 \begin{center}
 
 <<group_intuition, fig.width= 4, fig.height= 3>>=
-grp_main
+intuition_grp_main
 @      
 \caption[Syllable Intuition]{Estimated mariginal means for correct responses}
 \label{plt-intuition-emm}
