@@ -29,7 +29,10 @@ set_parent(here('Asberry_Dissertation/Dissertation.Rnw'))
 <<contentPilot, child=here('Statistics/Pilot/Pilot.rnw'), include=FALSE>>=
 @
 
-<<contentLabDeom, child=here('Statistics/Demographics/lab_demo_viz.rnw'), include=FALSE>>=
+<<contentLabDemo, child=here('Statistics/Demographics/lab_demo_viz.rnw'), include=FALSE>>=
+@
+
+<<contentIntuitionDemo, child=here('Statistics/Demographics/intuition_demo_viz.rnw'), include=FALSE>>=
 @
 
 %contentOnlinesegMono, child='Statistics/Monolingual_lemma/target_syl_mono_viz.rnw'), include=FALSE>>=
