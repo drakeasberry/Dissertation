@@ -81,3 +81,15 @@ my_stats <- function(data, grp_col, sum_col, stats){
           select(n, everything())}
       }
 }
+
+# produce confidence intervals
+conf_int <- function(data, grp_col, value){
+  data %>%
+  group_by(!!!syms(grp_col), .drop = FALSE) %>% 
+  summarise(Mean = mean(!!!syms(value)),
+            SD = sd(!!!syms(value)),
+            N = n(),
+            MOE_95 = qnorm(0.975)*SD/sqrt(N-1),
+            LL = Mean - MOE_95,
+            UL = Mean + MOE_95)
+}
