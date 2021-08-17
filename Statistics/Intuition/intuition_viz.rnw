@@ -35,6 +35,7 @@ intuition_stat_compare <- intuition_desc %>%
             Mean_age = mean(age, na.rm = TRUE),
             SD_age = sd(age, na.rm = TRUE)) %>% 
   column_to_rownames(., var = "group")
+intuition_stat_compare
 @
 
 <<intuition_data, echo = FALSE>>=
@@ -46,7 +47,7 @@ my_data_long <-
   convert_as_factor(partNum, group, syl_structure)
 
 
-# Group data by target syllable structure, matching condition, and word status, 
+# Group data by group and syllable structure 
 grouping_stats <- c("syl_structure", "group")
 
 # Summary statistics for correct responses
@@ -57,6 +58,7 @@ intuition_summary_stats <- quote(list(Median = median,
                             Max = max, 
                             SD = sd))
 
+# Tabled results for percent correct and logit transformed values
 intuition_score_compare <-  
   my_stats(my_data_long, 
            grp_col = grouping_stats, 
@@ -64,6 +66,44 @@ intuition_score_compare <-
            stats = intuition_summary_stats) %>% 
   mutate(index = paste(group,syl_structure,sep = '-')) %>% 
   column_to_rownames(., var = "index")
+
+# Create aggregations needed for stats
+# Create aggregated set with one row per participant per syllable type
+intuition_syl_ag <- my_data_long %>% 
+  group_by(partNum, group, syl_structure) %>% 
+  summarise(prop_corr = mean(prop_corr),
+            logit_corr = mean(logit_corr))
+
+# Create aggregated set with one row per participant
+intuition_grp_ag <- my_data_long %>% 
+  group_by(partNum, group) %>% 
+  summarise(prop_corr = mean(prop_corr),
+            logit_corr = mean(logit_corr))
+
+
+# Create a table for referencing statistics with CIs
+# CIs for proportion correct responses
+intuition_syl_ci_percent <- 
+  conf_int(intuition_syl_ag,
+           grp_col =  grouping_stats,
+           value = "prop_corr") %>% 
+  mutate(index = paste(group,syl_structure,sep = '-')) %>% 
+  column_to_rownames(., var = "index")
+
+# CIs for logit transformed responses
+intuition_syl_ci_logit <-
+  conf_int(intuition_syl_ag,
+           grp_col =  grouping_stats,
+           value = "logit_corr") %>%
+  mutate(index = paste(group,syl_structure,sep = '-')) %>% 
+  column_to_rownames(., var = "index")
+
+# Create a table for referencing CIs by group
+intuition_lang_compare <-
+  conf_int(intuition_grp_ag,
+           grp_col =  "group",
+           value = "logit_corr") %>%
+  column_to_rownames(., var = "group")
 
 
 # Visualize Descriptive Data
@@ -77,12 +117,12 @@ plt_corr_per <- my_data_long %>%
              fill = syl_structure)) +
   geom_bar(stat = "identity", 
            position = 'dodge') +
-  geom_errorbar(aes(ymin = mean - sd, 
-                    ymax = mean + sd), 
+  geom_errorbar(aes(ymin = intuition_syl_ci_percent$LL, 
+                    ymax = intuition_syl_ci_percent$UL), 
                 width = 0.2, 
                 alpha = 0.9, 
                 position = position_dodge(width = 0.9)) +
-  labs(title = "Percent Correct",
+  labs(title = "Percent Correct with CIs",
        x = "Language Group",
        y = "") +
   scale_fill_manual(name = "Syllable Structure", 
@@ -99,12 +139,12 @@ plt_corr_logit <- my_data_long %>%
              y = mean,
              fill = syl_structure)) +
   geom_bar(stat = "identity", position = 'dodge') +
-  geom_errorbar(aes(ymin = mean - sd, 
-                    ymax = mean + sd), 
+  geom_errorbar(aes(ymin = intuition_syl_ci_logit$LL, 
+                    ymax = intuition_syl_ci_logit$UL), 
                 width = 0.2, 
                 alpha = 0.9, 
                 position = position_dodge(width = 0.9)) +
-  labs(title = "Correct Responses (logit)",
+  labs(title = "Correct Responses (logit) with CI",
        x = "Language Group",
        y = "") +
   scale_fill_manual(name = "Syllable Structure", 
@@ -141,10 +181,6 @@ aov_intuition
 ## Main effects of group and syllable structure
 ## No significant interaction 
 
-# Create aggregated set with one row per participant
-intuition_ag <- my_data_long %>% 
-  group_by(partNum, group) %>% 
-  summarise(logit_corr = mean(logit_corr))
 
 # Significant Main Effect Exploration
 # Group main effect
@@ -166,20 +202,9 @@ with(my_data_long,
 ## 3.184587 6.489242
 
 
-# Create a table for referencing statistics with CIs
-intuition_lang_compare <- intuition_ag %>%
-  group_by(group) %>% 
-  summarise(Mean = mean(logit_corr),
-            SD = sd(logit_corr),
-            N = n(),
-            MOE_95 = qnorm(0.975)*SD/sqrt(N-1),
-            LL = Mean - MOE_95,
-            UL = Mean + MOE_95) %>% 
-  column_to_rownames(., var = "group")
-
 # Get the size of the effect
-intuition_lang_efsize <- cohen.d(intuition_ag$logit_corr, 
-        intuition_ag$group, 
+intuition_lang_efsize <- cohen.d(intuition_grp_ag$logit_corr, 
+        intuition_grp_ag$group, 
         na.rm = TRUE, 
         paired = FALSE)
 intuition_lang_efsize
@@ -204,23 +229,7 @@ with(my_data_long,
 # CV are less accurate than CVC syllable
 # 4.120890 5.207676
 
-# Create aggregated set with one row per participant
-intuition_syl_ag <- my_data_long %>% 
-  group_by(partNum, group, syl_structure) %>% 
-  summarise(logit_corr = mean(logit_corr))
-
-# Create a table for referencing statistics with CIs
-intuition_syl_compare <- intuition_syl_ag %>%
-  group_by(group, syl_structure) %>% 
-  summarise(Mean = mean(logit_corr),
-            SD = sd(logit_corr),
-            N = n(),
-            MOE_95 = qnorm(0.975)*SD/sqrt(N-1),
-            LL = Mean - MOE_95,
-            UL = Mean + MOE_95) %>% 
-  mutate(index = paste(group,syl_structure,sep = '-')) %>% 
-  column_to_rownames(., var = "index")
-
+# Get the size of the effect
 intuition_syl_efsize <- cohen.d(
   my_data_long$logit_corr, 
   my_data_long$syl_structure, 
