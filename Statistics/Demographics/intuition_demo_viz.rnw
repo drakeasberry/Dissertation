@@ -96,7 +96,7 @@ summary_stats <- quote(list(Mean = mean,
                             Max = max, 
                             SD = sd))
 
-# grouped by gender and group (experiment here)
+# grouped by group (experiment here)
 intuition_grp_desc <- my_stats(intuition_demo_data, 
               grp_col = c("group"), 
               sum_col = stat_col,
