@@ -36,6 +36,53 @@ intuition_stat_compare <- intuition_desc %>%
             SD_age = sd(age, na.rm = TRUE)) %>% 
   column_to_rownames(., var = "group")
 intuition_stat_compare
+
+# create removal table with reason
+intuition_remove_part <- tibble(
+  partNum = c("part007", 
+              "part031",
+              "part058",
+              "part016",
+              "part033",
+              "part059",
+              "part027",
+              "part047",
+              "part052",
+              "part044"), 
+  reason = c("dominance", 
+             "dominance", 
+             "dominance",
+             "vocabulary",
+             "vocabulary",
+             "vocabulary",
+             "location",
+             "location",
+             "location",
+             "fluency"),
+  long_reason = c("L1 English with dominance score below 50",
+                  "L1 Spanish with dominance score above 0",
+                  "L1 Spanish with dominance score above 0",
+                  "L1 Spanish lower than L2 English vocabulary",
+                  "L1 Spanish lower than L2 English vocabulary",
+                  "L1 Spanish lower than L2 English vocabulary",
+                  "L1 Spanish born in US",
+                  "L1 Spanish born and raised outside Sonora MX",
+                  "L1 Spanish born in US",
+                  "Fluency in Japanese, Catalan and Italian")) %>%
+  arrange(partNum)
+
+# Read in group to participant mapping
+group_map <- read_csv(
+  '../../Scripts_Dissertation/participant_group_map.csv')
+
+# Create removal table to reference in manuscript
+intuition_part_removal_sum <- intuition_remove_part %>% 
+  left_join(., group_map) %>% 
+  group_by(group, reason) %>% 
+  summarise(n = n()) %>% 
+  mutate(index = paste0(reason,"-",group)) %>%
+  select(n, everything()) %>% 
+  column_to_rownames(., var = "index")
 @
 
 <<intuition_data, echo = FALSE>>=
