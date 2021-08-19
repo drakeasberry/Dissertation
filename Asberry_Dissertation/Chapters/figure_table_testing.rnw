@@ -15,224 +15,74 @@ set_parent(here('Asberry_Dissertation/figure_table.rnw'))
 
 %----------------------------------------------------------------------------------------
 % Load statistics in memory from separate file
-<<contentLab, child=here('Statistics/Segmentation/target_syl_seg_viz.rnw'), include=FALSE>>=
-@
+%<contentLab, child=here('Statistics/Segmentation/target_syl_seg_viz.rnw'), include=FALSE>>=
+%@
 
 %<contentPilot, child=here('Statistics/Pilot/Pilot.rnw'), include=FALSE>>=
 %@
 
-<<contentLabDemo, child=here('Statistics/Demographics/lab_demo_viz.rnw'), include=FALSE, cache.rebuild=TRUE>>=
+%<contentLabDemo, child=here('Statistics/Demographics/lab_demo_viz.rnw'), include=FALSE, cache.rebuild=TRUE>>=
+%@
+
+<<contentIntuitionDemo, child=here('Statistics/Demographics/intuition_demo_viz.rnw'), include=FALSE>>=
+@
+
+<<contentIntuition, child=here('Statistics/Intuition/intuition_viz.rnw'), include=FALSE>>=
 @
 %----------------------------------------------------------------------------------------
 
 \chapter{Testing Figures} % Main chapter title
 
-\begin{table}[h]
+\begin{table}
 \centering
-% Word Table
-\begin{tabular}{l c l l l c c c c}
+% Repsonse Correct Table
+\begin{tabular}{l c l c c c c}
 \toprule
-& & & & & \multicolumn{2}{c}{RT ms} & \multicolumn{2}{c}{RT log}\\
-\cmidrule(lr){6-7}\cmidrule(lr){8-9}
-L1 & n & Target & Carrier & Matching & Median & SD & Median & SD\\
+& & & \multicolumn{2}{c}{Proportion Correct} & \multicolumn{2}{c}{Logit Correct}\\
+\cmidrule(lr){4-5}\cmidrule(lr){6-7}
+L1 & n & Syllable Type & Mean & SD & Mean & SD\\
 \midrule
-\multirow{4}{*}{English}
-% CV Target CV Carrier Condition
-& \Sexpr{lab_grp_sum["English-CV-CV-word","n"]}
-& \Sexpr{lab_grp_sum["English-CV-CV-word","target_syl_structure"]}
-& \Sexpr{lab_grp_sum["English-CV-CV-word","word_initial_syl"]} 
-& \Sexpr{lab_grp_sum["English-CV-CV-word","matching"]}
-& \Sexpr{lab_grp_sum["English-CV-CV-word","segRespRTmsec_Median"]}
-& \Sexpr{lab_grp_sum["English-CV-CV-word","segRespRTmsec_SD"]}
-& \Sexpr{lab_grp_sum["English-CV-CV-word","log_RT_Median"]}
-& \Sexpr{lab_grp_sum["English-CV-CV-word","log_RT_SD"]}\\
-% CV Target CVC Carrier Condition
-& \Sexpr{lab_grp_sum["English-CV-CVC-word","n"]}
-& \Sexpr{lab_grp_sum["English-CV-CVC-word","target_syl_structure"]} 
-& \Sexpr{lab_grp_sum["English-CV-CVC-word","word_initial_syl"]} 
-& \Sexpr{lab_grp_sum["English-CV-CVC-word","matching"]}
-& \Sexpr{lab_grp_sum["English-CV-CVC-word","segRespRTmsec_Median"]}
-& \Sexpr{lab_grp_sum["English-CV-CVC-word","segRespRTmsec_SD"]}
-& \Sexpr{lab_grp_sum["English-CV-CVC-word","log_RT_Median"]}
-& \Sexpr{lab_grp_sum["English-CV-CVC-word","log_RT_SD"]}\\
-% CVC Target CV Carrier Condition
-& \Sexpr{lab_grp_sum["English-CVC-CV-word","n"]}
-& \Sexpr{lab_grp_sum["English-CVC-CV-word","target_syl_structure"]} 
-& \Sexpr{lab_grp_sum["English-CVC-CV-word","word_initial_syl"]} 
-& \Sexpr{lab_grp_sum["English-CVC-CV-word","matching"]}
-& \Sexpr{lab_grp_sum["English-CVC-CV-word","segRespRTmsec_Median"]}
-& \Sexpr{lab_grp_sum["English-CVC-CV-word","segRespRTmsec_SD"]}
-& \Sexpr{lab_grp_sum["English-CVC-CV-word","log_RT_Median"]}
-& \Sexpr{lab_grp_sum["English-CVC-CV-word","log_RT_SD"]}\\
-% CVC Target CVC Carrier Condition
-& \Sexpr{lab_grp_sum["English-CVC-CVC-word","n"]}
-& \Sexpr{lab_grp_sum["English-CVC-CVC-word","target_syl_structure"]} 
-& \Sexpr{lab_grp_sum["English-CVC-CVC-word","word_initial_syl"]} 
-& \Sexpr{lab_grp_sum["English-CVC-CVC-word","matching"]}
-& \Sexpr{lab_grp_sum["English-CVC-CVC-word","segRespRTmsec_Median"]}
-& \Sexpr{lab_grp_sum["English-CVC-CVC-word","segRespRTmsec_SD"]}
-& \Sexpr{lab_grp_sum["English-CVC-CVC-word","log_RT_Median"]}
-& \Sexpr{lab_grp_sum["English-CVC-CVC-word","log_RT_SD"]}\\
+\multirow{2}{*}{English}
+& \multirow{2}{*}{\Sexpr{intuition_score_compare["English-CV","n"]}}
+% CV Condition
+& \Sexpr{intuition_score_compare["English-CV","syl_structure"]}
+& \Sexpr{round(intuition_score_compare["English-CV","prop_corr_Mean"],2)}
+& \Sexpr{round(intuition_score_compare["English-CV","prop_corr_SD"],2)}
+& \Sexpr{round(intuition_score_compare["English-CV","logit_corr_Mean"],2)}
+& \Sexpr{round(intuition_score_compare["English-CV","logit_corr_SD"],2)}\\
+% CVC Condition
+&
+& \Sexpr{intuition_score_compare["English-CVC","syl_structure"]} 
+& \Sexpr{round(intuition_score_compare["English-CVC","prop_corr_Mean"],2)}
+& \Sexpr{round(intuition_score_compare["English-CVC","prop_corr_SD"],2)}
+& \Sexpr{round(intuition_score_compare["English-CVC","logit_corr_Mean"],2)}
+& \Sexpr{round(intuition_score_compare["English-CVC","logit_corr_SD"],2)}\\
 \midrule
-\multirow{4}{*}{Spanish}
+\multirow{2}{*}{Spanish} 
+& \multirow{2}{*}{\Sexpr{intuition_score_compare["Spanish-CV","n"]}}
 % CV Target CV Carrier Condition
-& \Sexpr{lab_grp_sum["Spanish-CV-CV-word","n"]}
-& \Sexpr{lab_grp_sum["Spanish-CV-CV-word","target_syl_structure"]} 
-& \Sexpr{lab_grp_sum["Spanish-CV-CV-word","word_initial_syl"]} 
-& \Sexpr{lab_grp_sum["Spanish-CV-CV-word","matching"]}
-& \Sexpr{lab_grp_sum["Spanish-CV-CV-word","segRespRTmsec_Median"]}
-& \Sexpr{lab_grp_sum["Spanish-CV-CV-word","segRespRTmsec_SD"]}
-& \Sexpr{lab_grp_sum["Spanish-CV-CV-word","log_RT_Median"]}
-& \Sexpr{lab_grp_sum["Spanish-CV-CV-word","log_RT_SD"]}\\
+& \Sexpr{intuition_score_compare["Spanish-CV","syl_structure"]} 
+& \Sexpr{round(intuition_score_compare["Spanish-CV","prop_corr_Mean"],2)}
+& \Sexpr{round(intuition_score_compare["Spanish-CV","prop_corr_SD"],2)}
+& \Sexpr{round(intuition_score_compare["Spanish-CV","logit_corr_Mean"],2)}
+& \Sexpr{round(intuition_score_compare["Spanish-CV","logit_corr_SD"],2)}\\
 % CV Target CVC Carrier Condition
-& \Sexpr{lab_grp_sum["Spanish-CV-CVC-word","n"]}
-& \Sexpr{lab_grp_sum["Spanish-CV-CVC-word","target_syl_structure"]} 
-& \Sexpr{lab_grp_sum["Spanish-CV-CVC-word","word_initial_syl"]} 
-& \Sexpr{lab_grp_sum["Spanish-CV-CVC-word","matching"]}
-& \Sexpr{lab_grp_sum["Spanish-CV-CVC-word","segRespRTmsec_Median"]}
-& \Sexpr{lab_grp_sum["Spanish-CV-CVC-word","segRespRTmsec_SD"]}
-& \Sexpr{lab_grp_sum["Spanish-CV-CVC-word","log_RT_Median"]}
-& \Sexpr{lab_grp_sum["Spanish-CV-CVC-word","log_RT_SD"]}\\
-% CVC Target CV Carrier Condition
-& \Sexpr{lab_grp_sum["Spanish-CVC-CV-word","n"]}
-& \Sexpr{lab_grp_sum["Spanish-CVC-CV-word","target_syl_structure"]} 
-& \Sexpr{lab_grp_sum["Spanish-CVC-CV-word","word_initial_syl"]} 
-& \Sexpr{lab_grp_sum["Spanish-CVC-CV-word","matching"]}
-& \Sexpr{lab_grp_sum["Spanish-CVC-CV-word","segRespRTmsec_Median"]}
-& \Sexpr{lab_grp_sum["Spanish-CVC-CV-word","segRespRTmsec_SD"]}
-& \Sexpr{lab_grp_sum["Spanish-CVC-CV-word","log_RT_Median"]}
-& \Sexpr{lab_grp_sum["Spanish-CVC-CV-word","log_RT_SD"]}\\
-% CVC Target CVC Carrier Condition
-& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-word","n"]}
-& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-word","target_syl_structure"]} 
-& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-word","word_initial_syl"]} 
-& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-word","matching"]}
-& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-word","segRespRTmsec_Median"]}
-& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-word","segRespRTmsec_SD"]}
-& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-word","log_RT_Median"]}
-& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-word","log_RT_SD"]}\\
+&
+& \Sexpr{intuition_score_compare["Spanish-CVC","syl_structure"]} 
+& \Sexpr{round(intuition_score_compare["Spanish-CVC","prop_corr_Mean"],2)}
+& \Sexpr{round(intuition_score_compare["Spanish-CVC","prop_corr_SD"],2)}
+& \Sexpr{round(intuition_score_compare["Spanish-CVC","logit_corr_Mean"],2)}
+& \Sexpr{round(intuition_score_compare["Spanish-CVC","logit_corr_SD"],2)}\\
 \bottomrule
-\multicolumn{6}{l}{Total data points: n = \Sexpr{
-lab_grp_sum["English-CV-CV-word","n"] +
-lab_grp_sum["English-CV-CVC-word","n"] +
-lab_grp_sum["English-CVC-CV-word","n"] +
-lab_grp_sum["English-CVC-CVC-word","n"] +
-lab_grp_sum["Spanish-CV-CV-word","n"] +
-lab_grp_sum["Spanish-CV-CVC-word","n"] +
-lab_grp_sum["Spanish-CVC-CV-word","n"] +
-lab_grp_sum["Spanish-CVC-CVC-word","n"]}}\\
+\multicolumn{6}{l}{Total participants: n = \Sexpr{
+intuition_score_compare["English-CV","n"] +
+intuition_score_compare["Spanish-CV","n"]}}\\
 \end{tabular}
-\caption{Reaction times to words for each condition given in millseconds and logit transformed values.}
-\label{tab-lab-grp-rt-wd}
-
-\vspace{.4in}
-
-% Nonword Table
-\begin{tabular}{l c l l l c c c c}
-\toprule
-& & & & & \multicolumn{2}{c}{RT ms} & \multicolumn{2}{c}{RT log}\\ 
-\cmidrule(lr){6-7}\cmidrule(lr){8-9}
-L1 & n & Target & Carrier & Matching & Median & SD & Median & SD\\
-\midrule
-\multirow{4}{*}{English}
-% CV Target CV Carrier Condition
-& \Sexpr{lab_grp_sum["English-CV-CV-nonword","n"]}
-& \Sexpr{lab_grp_sum["English-CV-CV-nonword","target_syl_structure"]} 
-& \Sexpr{lab_grp_sum["English-CV-CV-nonword","word_initial_syl"]} 
-& \Sexpr{lab_grp_sum["English-CV-CV-nonword","matching"]}
-& \Sexpr{lab_grp_sum["English-CV-CV-nonword","segRespRTmsec_Median"]}
-& \Sexpr{lab_grp_sum["English-CV-CV-nonword","segRespRTmsec_SD"]}
-& \Sexpr{lab_grp_sum["English-CV-CV-nonword","log_RT_Median"]}
-& \Sexpr{lab_grp_sum["English-CV-CV-nonword","log_RT_SD"]}\\
-% CV Target CVC Carrier Condition
-& \Sexpr{lab_grp_sum["English-CV-CVC-nonword","n"]}
-& \Sexpr{lab_grp_sum["English-CV-CVC-nonword","target_syl_structure"]} 
-& \Sexpr{lab_grp_sum["English-CV-CVC-nonword","word_initial_syl"]} 
-& \Sexpr{lab_grp_sum["English-CV-CVC-nonword","matching"]}
-& \Sexpr{lab_grp_sum["English-CV-CVC-nonword","segRespRTmsec_Median"]}
-& \Sexpr{lab_grp_sum["English-CV-CVC-nonword","segRespRTmsec_SD"]}
-& \Sexpr{lab_grp_sum["English-CV-CVC-nonword","log_RT_Median"]}
-& \Sexpr{lab_grp_sum["English-CV-CVC-nonword","log_RT_SD"]}\\
-% CVC Target CV Carrier Condition
-& \Sexpr{lab_grp_sum["English-CVC-CV-nonword","n"]}
-& \Sexpr{lab_grp_sum["English-CVC-CV-nonword","target_syl_structure"]} 
-& \Sexpr{lab_grp_sum["English-CVC-CV-nonword","word_initial_syl"]} 
-& \Sexpr{lab_grp_sum["English-CVC-CV-nonword","matching"]}
-& \Sexpr{lab_grp_sum["English-CVC-CV-nonword","segRespRTmsec_Median"]}
-& \Sexpr{lab_grp_sum["English-CVC-CV-nonword","segRespRTmsec_SD"]}
-& \Sexpr{lab_grp_sum["English-CVC-CV-nonword","log_RT_Median"]}
-& \Sexpr{lab_grp_sum["English-CVC-CV-nonword","log_RT_SD"]}\\
-% CVC Target CVC Carrier Condition
-& \Sexpr{lab_grp_sum["English-CVC-CVC-nonword","n"]}
-& \Sexpr{lab_grp_sum["English-CVC-CVC-nonword","target_syl_structure"]} 
-& \Sexpr{lab_grp_sum["English-CVC-CVC-nonword","word_initial_syl"]} 
-& \Sexpr{lab_grp_sum["English-CVC-CVC-nonword","matching"]}
-& \Sexpr{lab_grp_sum["English-CVC-CVC-nonword","segRespRTmsec_Median"]}
-& \Sexpr{lab_grp_sum["English-CVC-CVC-nonword","segRespRTmsec_SD"]}
-& \Sexpr{lab_grp_sum["English-CVC-CVC-nonword","log_RT_Median"]}
-& \Sexpr{lab_grp_sum["English-CVC-CVC-nonword","log_RT_SD"]}\\
-\midrule
-\multirow{4}{*}{Spanish}
-% CV Target CV Carrier Condition
-& \Sexpr{lab_grp_sum["Spanish-CV-CV-nonword","n"]}
-& \Sexpr{lab_grp_sum["Spanish-CV-CV-nonword","target_syl_structure"]} 
-& \Sexpr{lab_grp_sum["Spanish-CV-CV-nonword","word_initial_syl"]} 
-& \Sexpr{lab_grp_sum["Spanish-CV-CV-nonword","matching"]}
-& \Sexpr{lab_grp_sum["Spanish-CV-CV-nonword","segRespRTmsec_Median"]}
-& \Sexpr{lab_grp_sum["Spanish-CV-CV-nonword","segRespRTmsec_SD"]}
-& \Sexpr{lab_grp_sum["Spanish-CV-CV-nonword","log_RT_Median"]}
-& \Sexpr{lab_grp_sum["Spanish-CV-CV-nonword","log_RT_SD"]}\\
-% CV Target CVC Carrier Condition
-& \Sexpr{lab_grp_sum["Spanish-CV-CVC-nonword","n"]}
-& \Sexpr{lab_grp_sum["Spanish-CV-CVC-nonword","target_syl_structure"]} 
-& \Sexpr{lab_grp_sum["Spanish-CV-CVC-nonword","word_initial_syl"]} 
-& \Sexpr{lab_grp_sum["Spanish-CV-CVC-nonword","matching"]}
-& \Sexpr{lab_grp_sum["Spanish-CV-CVC-nonword","segRespRTmsec_Median"]}
-& \Sexpr{lab_grp_sum["Spanish-CV-CVC-nonword","segRespRTmsec_SD"]}
-& \Sexpr{lab_grp_sum["Spanish-CV-CVC-nonword","log_RT_Median"]}
-& \Sexpr{lab_grp_sum["Spanish-CV-CVC-nonword","log_RT_SD"]}\\
-% CVC Target CV Carrier Condition
-& \Sexpr{lab_grp_sum["Spanish-CVC-CV-nonword","n"]}
-& \Sexpr{lab_grp_sum["Spanish-CVC-CV-nonword","target_syl_structure"]} 
-& \Sexpr{lab_grp_sum["Spanish-CVC-CV-nonword","word_initial_syl"]} 
-& \Sexpr{lab_grp_sum["Spanish-CVC-CV-nonword","matching"]}
-& \Sexpr{lab_grp_sum["Spanish-CVC-CV-nonword","segRespRTmsec_Median"]}
-& \Sexpr{lab_grp_sum["Spanish-CVC-CV-nonword","segRespRTmsec_SD"]}
-& \Sexpr{lab_grp_sum["Spanish-CVC-CV-nonword","log_RT_Median"]}
-& \Sexpr{lab_grp_sum["Spanish-CVC-CV-nonword","log_RT_SD"]}\\
-% CVC Target CVC Carrier Condition
-& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-nonword","n"]}
-& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-nonword","target_syl_structure"]} 
-& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-nonword","word_initial_syl"]} 
-& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-nonword","matching"]}
-& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-nonword","segRespRTmsec_Median"]}
-& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-nonword","segRespRTmsec_SD"]}
-& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-nonword","log_RT_Median"]}
-& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-nonword","log_RT_SD"]}\\
-\bottomrule
-\multicolumn{6}{l}{Total data points: n = \Sexpr{
-lab_grp_sum["English-CV-CV-nonword","n"] +
-lab_grp_sum["English-CV-CVC-nonword","n"] +
-lab_grp_sum["English-CVC-CV-nonword","n"] +
-lab_grp_sum["English-CVC-CVC-nonword","n"] +
-lab_grp_sum["Spanish-CV-CV-nonword","n"] +
-lab_grp_sum["Spanish-CV-CVC-nonword","n"] +
-lab_grp_sum["Spanish-CVC-CV-nonword","n"] +
-lab_grp_sum["Spanish-CVC-CVC-nonword","n"]}}\\
-\end{tabular}
-\caption{Reaction times to nonwords for each condition given in millseconds and logit transformed values.}
-\label{tab-lab-grp-rt-nonwd}
+\caption{Correct response rates are shown by group for each syllable structure in a raw proportion correct and after a logit transformation.}
+\label{tab-lab-grp-rt-wd-intuition}
 \end{table}
 
-%\begin{figure}[h]
-%\begin{center}
-%<sample_crossover, fig.width= 5, fig.height= 3>>=
-%crossover_example
-%@      
-%\caption[Plot: Crossover Effect]{Shows an example of what the crossover effect results in previous literature. The interaction can be seen in the lines representing the initial syllable structure of the word crossing due to faster detection times from monitoring experiments when the target syllable structure and the word-initial syllable matched structure matched.}
-%\label{plt-sample-crossover}
-%\end{center}
-%\end{figure}
+
 
 
 %For the syllable monitoring task, one of the participants was removed from the analysis for having an error rate of more than 10 percent in responses to critical items. However, the data for the remaining seven participants were submitted to a (2) x (2) anova. There were no significant main effect of target or carrier type, p > 0.05, but they still showed a significant interaction between the visually presented targets and carrier items in the monitoring task. Participants responded faster when the target syllable structure matched the initial syllable structure of carrier item than when they did not coincide. This interaction was driven by the fact that CVC syllable were responded to faster when the word began with CVC syllable, M=\Sexpr{round(pilot_stat_compare["CVC_tar-CVC_car", "Mean"],0)}, SD=\Sexpr{round(pilot_stat_compare["CVC_tar-CVC_car", "SD"],0)} at 95\% CI [\Sexpr{round(t1_cvc_car$conf.int[1],0)}, \Sexpr{round(t1_cvc_car$conf.int[2],0)}] than when the word began with a CV syllable, M=\Sexpr{round(pilot_stat_compare["CVC_tar-CV_car", "Mean"],0)}, SD=\Sexpr{round(pilot_stat_compare["CVC_tar-CV_car", "SD"],0)} at 95\% CI [\Sexpr{round(t1_cv_car$conf.int[1],0)}, \Sexpr{round(t1_cv_car$conf.int[2],0)}]. The mean difference, M=\Sexpr{abs(round(pilot_stat_compare["CVC_tar-CVC_car", "Mean"] - pilot_stat_compare["CVC_tar-CV_car", "Mean"],0))}, is a statistically significant difference between the two target syllable structures, \emph{t}(\Sexpr{round(t_cvc_car$parameter,2)})= \Sexpr{round(t_cvc_car$statistic,4)}, p < \Sexpr{round(t_cvc_car$p.value,4)} [\Sexpr{round(t_cvc_car$conf.int[1],3)}, \Sexpr{round(t_cvc_car$conf.int[2],3)}]. These results indicated that it was possible to see evidence of the syllabic segmentation strategy in a L1 Spanish, L2 English bilingual group and that this effect could be captured through a completely visual word segmentation design.
