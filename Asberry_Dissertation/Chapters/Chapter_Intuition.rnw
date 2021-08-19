@@ -101,17 +101,61 @@ In order to collect intuitions on syllables of Spanish, participants were given 
 a word on the screen with two or three letter string that represented a CV or CVC syllable. They were instructed to respond as quickly as possible when they had found the matching letter string in the individually presented words. Both the letter stings, i.e. targets, and the words were presented visually. This is the first study to my knowledge that has tested this segmentation strategy in a completely visual manner using a syllable monitoring task. Running the experiment in this manner came with one major assumption. This design assumed that participants were actually activating the phonological representation of the sounds of the target, i.e. syllable, and the word they read on the screen. For a full discussion on this topic, refer to Chapter \ref{ch-intro} Section \ref{sec-phon-activation}.
 
 \subsection{Participants}
-\ttodo{Give accurate descriptions of participant groups, how they were classified, number of participants, etc.}
-Two groups of participants took part in the syllabic intuition experiment---the L1 Spanish--L2 English group (LE) and the L1 English--L2 Spanish group (LS). All \ttodo{number of participants} participants completed this experiment in-person and full details of inclusion criteria and study conditions can be found in sections \ref{sec-inclusion} and \ref{sec-conditions}. The participants were placed into their appropriate group based off of the combined results of Bilingual Language Profile (BLP), the LexTALE and the LexTALE-Esp vocabulary tests, which are described in full detail in section \ref{sec-instruments}. \ttodo{Integrate this paragraph into the boiler plate template below from chapter 4. This will give it more depth.}
-
-\subsection{boiler plate copy 1}
-All participants reported in this chapter were recruited for experiments that took place in an in-person laboratory setting. In this study, native Spanish speakers who were second language learners of English were used as the control group---LE group. The target group consisted of native English speakers who were second language learners of Spanish---LS group. All participants recruited continued to live in their L1 environment, or birth country, at the time of data collection. There were 
-%\Sexpr{lab_stat_compare["Spanish", "n"]} 
-participants in LE group recruited from the University of Sonora in Hermosillo, Mexico and 
-%\Sexpr{lab_stat_compare["English", "n"]} 
-participants in LS group recruited from the University of Arizona in Tucson, AZ. In total, 
-%\Sexpr{lab_stat_compare["English", "n"] + lab_stat_compare["Spanish", "n"]} 
+All participants reported in this chapter were recruited for experiments that took place in an in-person laboratory setting. Two groups of participants took part in the syllabic intuition experiment. Native Spanish speakers who were second language learners of English served as the control group---LE group. Native English speakers who were second language learners of Spanish---LS group---were used for thetarget group. All participants recruited resided in their L1 environment, or birth country, at the time of data collection. There were 
+\Sexpr{intuition_grp_desc["Spanish", "n"]} 
+participants in LE group recruited from the University of Sonora in Hermosillo, Mexico who had an average age of 
+\Sexpr{intuition_grp_desc["Spanish", "age_Mean"]} 
+(SD = \Sexpr{intuition_grp_desc["Spanish", "age_SD"]}).
+The LS group had
+\Sexpr{intuition_grp_desc["English", "n"]} 
+participants recruited from the University of Arizona in Tucson, AZ with an average age of 
+\Sexpr{intuition_grp_desc["English", "age_Mean"]} 
+(SD = \Sexpr{intuition_grp_desc["English", "age_SD"]}). 
+In total, 
+\Sexpr{intuition_grp_desc["English", "n"] + intuition_grp_desc["Spanish", "n"]} 
 participants completed the experiment. For a full description of each group see Chapter \ref{ch-sampling} Section \ref{sec-participants}.
+
+The participants were placed into their appropriate group based off of the combined results of Bilingual Language Profile (BLP), the LexTALE and the LexTALE-Esp vocabulary tests, which are described in full detail in Chapter \ref{ch-intro} Section \ref{sec-instruments}. Figure \ref{plt-intuition-eng-vocab} shows the distribution of vocabulary scores for English in terms of percent correct responses to the LexTALE task while Figure \ref{plt-intuition-izura-vocab} shows the vocabulary scores for Spanish calculated by the method given in \textcite{Izura2014-yw}---referred to as the Izura score throughout the remainder of this dissertation. The percentage score was also calculated for the percent correct responses to LexTALE-Esp items in order to calculate the difference between L1 and L2 vocabulary sizes. Participants analyzed in this chapter were those who had a larger L1 vocabulary than L2. Figure \ref{plt-intuition-vocab-diff} shows the difference between English and Spanish vocabulary sizes and Figure \ref{plt-intuition-lang-dom} shows the language dominance score calculated from the BLP. Both of these figures show two clearly distinct groups of participants that align with this chapters control and target groups. 
+
+\begin{figure}[h]
+\begin{center}
+<<intuition_lextale, fig.width= 4, fig.height= 3>>=
+intuition_eng_vocab
+@      
+\caption[LexTALE by Group]{Means for correct responses by each language group---English or Spanish---to LexTALE items.}
+\label{plt-intuition-eng-vocab}
+\end{center}
+\end{figure}
+
+\begin{figure}[h]
+\begin{center}
+<<intuition_lextale_izura, fig.width= 4, fig.height= 3>>=
+intuition_izura
+@      
+\caption[LexTALE-ESP by Group]{Izura score by each language group---English or Spanish---to LexTALE-Esp items.}
+\label{plt-intuition-izura-vocab}
+\end{center}
+\end{figure}
+
+\begin{figure}[h]
+\begin{center}
+<<intuition_vocab_difference, fig.width= 4, fig.height= 3>>=
+intuition_vocab_diff
+@      
+\caption[Vocabulary Size Comparision]{Using the LexTALE and LexTALE-Esp tasks, the difference in vocabulary size was calculated by substracting the Spanish vocabulary percent correct from the English vocbulary percent correct responses. There a positive number indicates a larger English vocabulary size while a negative number indicates a larger Spanish vocabulary size.}
+\label{plt-intuition-vocab-diff}
+\end{center}
+\end{figure}
+
+\begin{figure}[h]
+\begin{center}
+<<intuition_lang_dominance, fig.width= 4, fig.height= 3>>=
+intuition_lang_dom
+@      
+\caption[BLP Langauge Dominance]{Language dominance scores were calculated by following the formula given by the creators of the Bilingual Langauge Profile \parencite{Birdsong2012-wd}. In the current study, a larger number represents more dominance in English while a smaller number represents more dominance in Spanish}
+\label{plt-intuition-lang-dom}
+\end{center}
+\end{figure}
 
 
 \subsection{Materials \& Design}
@@ -290,6 +334,26 @@ The practice trials for syllabification were not recorded and therefore are not 
 
 
 \ttodo{Discuss the deviation by group from the standard Spanish syllabification pattern. (Error rates)}
+
+\begin{figure}[h]
+\begin{center}
+<<intuition_prop_correct, fig.width= 4, fig.height= 3>>=
+plt_corr_per
+@      
+\caption[Proportion Correct by Syllable Type]{The histogram shows the difference in number of correct responses by syllable type---CV or CVC---for each language group. The errors bars represent the 95\% confidence intervals.}
+\label{plt-intuition-corr-prop}
+\end{center}
+\end{figure}
+
+\begin{figure}[h]
+\begin{center}
+<<intuition_logit_correct, fig.width= 4, fig.height= 3>>=
+plt_corr_logit
+@      
+\caption[Logit Correct Response by Syllable Type]{The histogram shows the difference in number of correct responses by syllable type---CV or CVC---for each language group. The errors bars represent the 95\% confidence intervals.}
+\label{plt-intuition-logit-prop}
+\end{center}
+\end{figure}
 
 \ttodo{Discuss whether significant differences between groups are found. (anova between subjects)}
 The figure that estimated marginal means with logit transformed error rates for both language groups by syllable structure is interesting. While neither group responded more accurately to one syllable type over another, the trend was to in the direction of CVC syllables for both groups. The Spanish group was more accurate for both syllable types when compared to English group. The Spanish CV syllable type had the lower average correct response, but it was significantly better than the CVC syllable type for English, which was their higher average correct response. In other words, the worst case scenario for the Spanish group outpreformed the best case scenario for English group.
