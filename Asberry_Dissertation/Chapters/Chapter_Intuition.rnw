@@ -294,7 +294,7 @@ intuition_grp_desc["English","n"]}}\\
 \label{tab-intuition-lang-blp-part}
 \end{table}
 
-Before the data could be submitted for analysis, some data preparation was still required. First, the raw correct score was calculated for each participant as the proportion of correct responses. Each participant received two individual scores, one average for CV syllables and a second for the average of CVC syllables. The proportion correct response data underwent a logit transformation. Proportion correct responses have been used in the descriptive statistics while the logit transformed scores were utilized for inferential statistics. The dataset contained raw proportion correct and logit transformed correct response rates for both native Spanish speakers and native English speakers. This allowed the data to be contained a factor of \emph{Group} with two levels---native Spanish and native English speakers. The second factor, \emph{Structure}, also included two levels---CV and CVC syllable structure. The complete dataset consisted of 
+Before the data could be submitted for analysis, the raw correct score was calculated for each participant as the proportion of correct responses. Each participant received two individual scores, one average for CV syllables and a second for the average of CVC syllables. The proportion correct response data underwent a logit transformation. Proportion correct responses have been used in the descriptive statistics while the logit transformed scores were utilized for inferential statistics. The dataset contained raw proportion correct and logit transformed correct response rates for both native Spanish speakers and native English speakers. This allowed the data to be contained a factor of \emph{Group} with two levels---native Spanish and native English speakers. The second factor, \emph{Structure}, also included two levels---CV and CVC syllable structure. The complete dataset consisted of 
 \Sexpr{nrow(intuition_syl_ag)} 
 observations---
 \Sexpr{length(unique(intuition_syl_ag$group))} 
@@ -306,29 +306,81 @@ participants.
 
 
 \section{Results}
-\ttodo{DELETE ME describe the analyses the researcher has done, but do not overload. Instead of creating a laundry list of statistics, create the story you want to tell using only the statistics that are related to addressing your problem. For each task, review the hypothesis, give the statistics and say what the result of the test means. Do not discuss the findings until you reach the discussion session. This is where tables and figures can help keep the paper looking clean and crisp instead of cluttered unorganized statistical test lists that are hard to follow. Figures show patterns while tables give details.}
+%\ttodo{DELETE ME describe the analyses the researcher has done, but do not overload. Instead of creating a laundry list of statistics, create the story you want to tell using only the statistics that are related to addressing your problem. For each task, review the hypothesis, give the statistics and say what the result of the test means. Do not discuss the findings until you reach the discussion session. This is where tables and figures can help keep the paper looking clean and crisp instead of cluttered unorganized statistical test lists that are hard to follow. Figures show patterns while tables give details.}
 
-The practice trials for syllabification were not recorded and therefore are not represented in the reported data below. Participants syllabification patterns are first analyzed by group and then are compared across groups. 
+The main question this study sought to answer was whether or not native Spanish speakers and native English speakers differed in the accuracy in which they could syllabify words of Spanish. The syllabification patterns of the two groups were tested through a two-option forced-choice task where they had to indicate the structure of the word-initial syllable. are first analyzed by group and then are compared across groups. Table \ref{tab-intuition-grp-score} reports the mean and standard deviation of the proportions of correct responses and their corresponding logit transformed values. These averages were computed for the CV and CVC syllables separately for each group independently. 
 
 
-\ttodo{Discuss the deviation by group from the standard Spanish syllabification pattern. (Error rates)}
+\begin{table}
+\centering
+% Repsonse Correct Table
+\begin{tabular}{l c l c c c c}
+\toprule
+& & & \multicolumn{2}{c}{Proportion Correct} & \multicolumn{2}{c}{Logit Correct}\\
+\cmidrule(lr){4-5}\cmidrule(lr){6-7}
+L1 & n & Syllable Type & Mean & SD & Mean & SD\\
+\midrule
+\multirow{2}{*}{English}
+& \multirow{2}{*}{\Sexpr{intuition_score_compare["English-CV","n"]}}
+% CV Condition
+& \Sexpr{intuition_score_compare["English-CV","syl_structure"]}
+& \Sexpr{round(intuition_score_compare["English-CV","prop_corr_Mean"],2)}
+& \Sexpr{round(intuition_score_compare["English-CV","prop_corr_SD"],2)}
+& \Sexpr{round(intuition_score_compare["English-CV","logit_corr_Mean"],2)}
+& \Sexpr{round(intuition_score_compare["English-CV","logit_corr_SD"],2)}\\
+% CVC Condition
+&
+& \Sexpr{intuition_score_compare["English-CVC","syl_structure"]} 
+& \Sexpr{round(intuition_score_compare["English-CVC","prop_corr_Mean"],2)}
+& \Sexpr{round(intuition_score_compare["English-CVC","prop_corr_SD"],2)}
+& \Sexpr{round(intuition_score_compare["English-CVC","logit_corr_Mean"],2)}
+& \Sexpr{round(intuition_score_compare["English-CVC","logit_corr_SD"],2)}\\
+\midrule
+\multirow{2}{*}{Spanish} 
+& \multirow{2}{*}{\Sexpr{intuition_score_compare["Spanish-CV","n"]}}
+% CV Condition
+& \Sexpr{intuition_score_compare["Spanish-CV","syl_structure"]} 
+& \Sexpr{round(intuition_score_compare["Spanish-CV","prop_corr_Mean"],2)}
+& \Sexpr{round(intuition_score_compare["Spanish-CV","prop_corr_SD"],2)}
+& \Sexpr{round(intuition_score_compare["Spanish-CV","logit_corr_Mean"],2)}
+& \Sexpr{round(intuition_score_compare["Spanish-CV","logit_corr_SD"],2)}\\
+% CVC Condition
+&
+& \Sexpr{intuition_score_compare["Spanish-CVC","syl_structure"]} 
+& \Sexpr{round(intuition_score_compare["Spanish-CVC","prop_corr_Mean"],2)}
+& \Sexpr{round(intuition_score_compare["Spanish-CVC","prop_corr_SD"],2)}
+& \Sexpr{round(intuition_score_compare["Spanish-CVC","logit_corr_Mean"],2)}
+& \Sexpr{round(intuition_score_compare["Spanish-CVC","logit_corr_SD"],2)}\\
+\bottomrule
+\multicolumn{6}{l}{Total participants: n = \Sexpr{
+intuition_score_compare["English-CV","n"] +
+intuition_score_compare["Spanish-CV","n"]}}\\
+\end{tabular}
+\caption{Correct response rates are shown by group for each syllable structure in a raw proportion correct and after a logit transformation.}
+\label{tab-intuition-grp-score}
+\end{table}
+
+As can be seen in Table \ref{tab-intuition-grp-score}, neither group performed at the ceiling rate of 100 percent accuracy for either syllable type. The native Spanish control group had an average accuracy rate of 95 percent for CV and and 97 percent CVC syllable structures while native English target group scored 73 and 90 percent for the same corresponding syllable structures. Figure \ref{plt-intuition-corr-prop} illustrates these findings as well as the trend of both groups to respond more accurately to CVC syllables than CV syllables.
 
 \begin{figure}[h]
 \begin{center}
 <<intuition_prop_correct, fig.width= 4, fig.height= 3>>=
 plt_corr_per
 @      
-\caption[Proportion Correct by Syllable Type]{The histogram shows the difference in number of correct responses by syllable type---CV or CVC---for each language group. The errors bars represent the 95\% confidence intervals.}
+\caption[Proportion Correct by Syllable Type]{The bar plot shows the difference in number of correct responses by syllable type---CV or CVC---for each language group. The errors bars represent the 95\% confidence intervals.}
 \label{plt-intuition-corr-prop}
 \end{center}
 \end{figure}
+
+\ttodo{Discuss the deviation by group from the standard Spanish syllabification pattern. (Error rates)}
+Since there were participants in both groups that did perform at or near ceiling, a logit tranformation was performed on the proportion data to get a more linear fit for comparision purposes.
 
 \begin{figure}[h]
 \begin{center}
 <<intuition_logit_correct, fig.width= 4, fig.height= 3>>=
 plt_corr_logit
 @      
-\caption[Logit Correct Response by Syllable Type]{The histogram shows the difference in number of correct responses by syllable type---CV or CVC---for each language group. The errors bars represent the 95\% confidence intervals.}
+\caption[Logit Correct Response by Syllable Type]{The plot shows the difference in number of correct responses by syllable type---CV or CVC---for each language group. The errors bars represent the 95\% confidence intervals.}
 \label{plt-intuition-logit-prop}
 \end{center}
 \end{figure}
@@ -345,6 +397,7 @@ intuition_grp_main
 \label{plt-intuition-grp-emm}
 \end{center}
 \end{figure}
+
 
 \todo{Are there patterns related to syllable structure CV or CVC.}
 \begin{figure}[h]
@@ -386,57 +439,6 @@ intuition_grp_syl_int
 \end{figure}
 
 \subsection{boiler plate copy 3}
-Table \ref{tab-intuition-grp-score} reports the reaction time data for real words and Table \ref{tab-lab-grp-rt-nonwd} reports the reaction time data for nonwords. In both tables the reaction times are reported as a function of group---native Spanish controls and L2 learners of Spanish---and the four experimental conditions: CV target--matching, CV target--mismatching, CVC target--matching and CVC target--mismatching. Reaction times in these table are reported in both terms of raw milliseconds recorded during the experiment and log transformed times. 
-
-\begin{table}
-\centering
-% Repsonse Correct Table
-\begin{tabular}{l c l c c c c}
-\toprule
-& & & \multicolumn{2}{c}{Proportion Correct} & \multicolumn{2}{c}{Logit Correct}\\
-\cmidrule(lr){4-5}\cmidrule(lr){6-7}
-L1 & n & Syllable Type & Mean & SD & Mean & SD\\
-\midrule
-\multirow{2}{*}{English}
-& \multirow{2}{*}{\Sexpr{intuition_score_compare["English-CV","n"]}}
-% CV Condition
-& \Sexpr{intuition_score_compare["English-CV","syl_structure"]}
-& \Sexpr{round(intuition_score_compare["English-CV","prop_corr_Mean"],2)}
-& \Sexpr{round(intuition_score_compare["English-CV","prop_corr_SD"],2)}
-& \Sexpr{round(intuition_score_compare["English-CV","logit_corr_Mean"],2)}
-& \Sexpr{round(intuition_score_compare["English-CV","logit_corr_SD"],2)}\\
-% CVC Condition
-&
-& \Sexpr{intuition_score_compare["English-CVC","syl_structure"]} 
-& \Sexpr{round(intuition_score_compare["English-CVC","prop_corr_Mean"],2)}
-& \Sexpr{round(intuition_score_compare["English-CVC","prop_corr_SD"],2)}
-& \Sexpr{round(intuition_score_compare["English-CVC","logit_corr_Mean"],2)}
-& \Sexpr{round(intuition_score_compare["English-CVC","logit_corr_SD"],2)}\\
-\midrule
-\multirow{2}{*}{Spanish} 
-& \multirow{2}{*}{\Sexpr{intuition_score_compare["Spanish-CV","n"]}}
-% CV Target CV Carrier Condition
-& \Sexpr{intuition_score_compare["Spanish-CV","syl_structure"]} 
-& \Sexpr{round(intuition_score_compare["Spanish-CV","prop_corr_Mean"],2)}
-& \Sexpr{round(intuition_score_compare["Spanish-CV","prop_corr_SD"],2)}
-& \Sexpr{round(intuition_score_compare["Spanish-CV","logit_corr_Mean"],2)}
-& \Sexpr{round(intuition_score_compare["Spanish-CV","logit_corr_SD"],2)}\\
-% CV Target CVC Carrier Condition
-&
-& \Sexpr{intuition_score_compare["Spanish-CVC","syl_structure"]} 
-& \Sexpr{round(intuition_score_compare["Spanish-CVC","prop_corr_Mean"],2)}
-& \Sexpr{round(intuition_score_compare["Spanish-CVC","prop_corr_SD"],2)}
-& \Sexpr{round(intuition_score_compare["Spanish-CVC","logit_corr_Mean"],2)}
-& \Sexpr{round(intuition_score_compare["Spanish-CVC","logit_corr_SD"],2)}\\
-\bottomrule
-\multicolumn{6}{l}{Total participants: n = \Sexpr{
-intuition_score_compare["English-CV","n"] +
-intuition_score_compare["Spanish-CV","n"]}}\\
-\end{tabular}
-\caption{Correct response rates are shown by group for each syllable structure in a raw proportion correct and after a logit transformation.}
-\label{tab-intuition-grp-score}
-\end{table}
-
 \subsection{Native Spanish Controls}
 \subsubsection{boiler plate copy 4}
 Figure \ref{plt-lab-l1-rtms-desc} plots the general tendencies, or descriptive statistics, for response times in milliseconds by target syllable, matching and lexicality conditions for the \Sexpr{length(unique(lab_natives$partNum))} native controls. The log transformed values were submitted to a (3) x (2) repeated measures ANOVA with \emph{Lexicality, Target} and \emph{Matching} as factors. The ANOVA revealed no statistically significant main effects or interactions, in all cases p > 0.05. There was a possible trend in main effect of \emph{Lexicality}, but it failed to reach significance 
