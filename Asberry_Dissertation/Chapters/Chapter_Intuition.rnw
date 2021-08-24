@@ -371,9 +371,9 @@ plt_corr_per
 \label{plt-intuition-corr-prop}
 \end{center}
 \end{figure}
+\ttodo[inline]{change title of graph in stat file}
 
-\ttodo{Discuss the deviation by group from the standard Spanish syllabification pattern. (Error rates)}
-Since there were participants in both groups that did perform at or near ceiling, a logit tranformation was performed on the proportion data to get a more linear fit for comparision purposes.
+Since there were participants in both groups that did perform at or near ceiling, a logit tranformation was performed on the proportion data to get a more linear fit for comparision purposes by cutting out the extreme end points. Figure \ref{plt-intuition-logit-prop} again shows the comparision of correct responses between the target and control groups split by syllable structure type. The deviation by group from the standard Spanish syllabification pattern captured as error rates clearly shows that the native Spanish control group responded more accurately to both syllable types than the target native English group.
 
 \begin{figure}[h]
 \begin{center}
@@ -384,9 +384,49 @@ plt_corr_logit
 \label{plt-intuition-logit-prop}
 \end{center}
 \end{figure}
+\ttodo[inline]{change title of graph in stat file, add y axis label}
 
-\ttodo{Discuss whether significant differences between groups are found. (anova between subjects)}
-The figure that estimated marginal means with logit transformed error rates for both language groups by syllable structure is interesting. While neither group responded more accurately to one syllable type over another, the trend was to in the direction of CVC syllables for both groups. The Spanish group was more accurate for both syllable types when compared to English group. The Spanish CV syllable type had the lower average correct response, but it was significantly better than the CVC syllable type for English, which was their higher average correct response. In other words, the worst case scenario for the Spanish group outpreformed the best case scenario for English group.
+In order to test check the signficance of these relationship, the data was submitted to an analysis of variance. The 2 x (2) mixed-effects anova contained one between subjects factor \emph{Group} with two levels of native Spanish and native English and one within subjects factor \emph{Structure} that also contained two levels of CV and CVC. The logit transformed values were submitted to the ANOVA, which revealed statistically significant main effects for \emph{Group}  
+\emph{F}(
+\Sexpr{aov_intuition$anova_table["group", "num Df"]},
+\Sexpr{aov_intuition$anova_table["group", "den Df"]}) = 
+\Sexpr{round(aov_intuition$anova_table["group", "F"],2)}, 
+p < 0.001
+%[\Sexpr{round(aov_intuition$anova_table["group", "Pr(>F)"],4)}]. 
+and for \emph{Structure}, 
+\emph{F}(
+\Sexpr{aov_intuition$anova_table["syl_structure", "num Df"]},
+\Sexpr{aov_intuition$anova_table["syl_structure", "den Df"]}) = 
+\Sexpr{round(aov_intuition$anova_table["syl_structure", "F"],2)}, 
+p < 0.05
+[\Sexpr{round(aov_intuition$anova_table["syl_structure", "Pr(>F)"],4)}].
+However, the interaction between \emph{Group} and \emph{Structure} did not reach significance, p > 0.05. 
+
+Figure \ref{plt-intuition-grp-emm} shows the estimated marginal means with logit transformed rates for correct responses for both language groups. In order to see what was driving the effect of group, the data was then submitted to a Welch two sample t-test, which revealed that the native Spanish control group responded more accurately, 
+M= \Sexpr{round(intuition_lang_compare["Spanish", "Mean"],2)}, 
+SD= \Sexpr{round(intuition_lang_compare["Spanish", "SD"],2)} 
+at 95\% CI 
+[\Sexpr{round(intuition_lang_compare["Spanish", "LL"],3)}, 
+\Sexpr{round(intuition_lang_compare["Spanish", "UL"],3)}], 
+than native English target group, 
+M= \Sexpr{round(intuition_lang_compare["English", "Mean"],2)}, 
+SD= \Sexpr{round(intuition_lang_compare["English", "SD"],2)} 
+[\Sexpr{round(intuition_lang_compare["English", "LL"],3)}, 
+\Sexpr{round(intuition_lang_compare["English", "UL"],3)}]. 
+The mean difference, 
+M= \Sexpr{round(abs(intuition_lang_compare["Spanish", "Mean"] - 
+intuition_lang_compare["English", "Mean"]),2)}, 
+reveals a statistical difference in accuracy rates for word initial syllabification between the two groups of participants, 
+\emph{t}(\Sexpr{round(t_intuition_grp_main$parameter,2)}) = 
+\Sexpr{round(t_intuition_grp_main$statistic,4)}, 
+p < 0.0001. %\Sexpr{round(t_intuition_grp_main$p.value,4)}.
+The main effect of \emph{Group} was of a 
+\Sexpr{intuition_lang_efsize$magnitude} 
+magnitude. This can be seen in the output of Cohen's \emph{d} for \emph{Group} \emph{d}= 
+\Sexpr{round(intuition_lang_efsize$estimate,2)}, 
+\Sexpr{intuition_lang_efsize$conf.level*100}\% CI 
+[\Sexpr{round(intuition_lang_efsize$conf.int[1],2)},
+\Sexpr{round(intuition_lang_efsize$conf.int[2],2)}].
 
 \begin{figure}[h]
 \begin{center}
@@ -398,6 +438,33 @@ intuition_grp_main
 \end{center}
 \end{figure}
 
+Figure \ref{plt-intuition-syl-emm} shows the estimated marginal means with logit transformed rates for correct responses by syllable type. The data was then submitted to a t-test to look at the difference in accuracy rates according to syllable type. It revealed that CV syllables were responded to less accurately,
+M= \Sexpr{round(intuition_syl_compare["CV", "Mean"],2)}, 
+SD= \Sexpr{round(intuition_syl_compare["CV", "SD"],2)} 
+at 95\% CI 
+[\Sexpr{round(intuition_syl_compare["CV", "LL"],3)}, 
+\Sexpr{round(intuition_syl_compare["CV", "UL"],3)}], 
+than CVC syllables, 
+M= \Sexpr{round(intuition_syl_compare["CVC", "Mean"],2)}, 
+SD= \Sexpr{round(intuition_syl_compare["CVC", "SD"],2)} 
+[\Sexpr{round(intuition_syl_compare["CVC", "LL"],3)}, 
+\Sexpr{round(intuition_syl_compare["CVC", "UL"],3)}]. 
+The mean difference, 
+M= \Sexpr{round(abs(intuition_syl_compare["CV", "Mean"] - 
+intuition_syl_compare["CVC", "Mean"]),2)}, 
+reveals a statistical difference in accuracy rates for word initial syllabification as a factor of syllable structure type, 
+\emph{t}(\Sexpr{round(t_intuition_syl_main$parameter,2)}) = 
+\Sexpr{round(t_intuition_syl_main$statistic,4)}, 
+p < \Sexpr{round(t_intuition_syl_main$p.value,4)}.
+The main effect of \emph{Group} was of a 
+\Sexpr{intuition_syl_efsize$magnitude} 
+magnitude. This can be seen in the output of Cohen's \emph{d} for \emph{Structure} \emph{d}= 
+\Sexpr{round(intuition_syl_efsize$estimate,2)}, 
+\Sexpr{intuition_syl_efsize$conf.level*100}\% CI 
+[\Sexpr{round(intuition_syl_efsize$conf.int[1],2)},
+\Sexpr{round(intuition_syl_efsize$conf.int[2],2)}].
+
+While neither group responded more accurately to one syllable type over another, the trend was to in the direction of CVC syllables for both groups. The Spanish group was more accurate for both syllable types when compared to English group. The Spanish CV syllable type had the lower average correct response, but it was significantly better than the CVC syllable type for English, which was their higher average correct response. In other words, the worst case scenario for the Spanish group outpreformed the best case scenario for English group.
 
 \todo{Are there patterns related to syllable structure CV or CVC.}
 \begin{figure}[h]
@@ -410,23 +477,9 @@ intuition_syl_main
 \end{center}
 \end{figure}
 
-\todo{stats from Miquel: 
-2 choice forced decision task (A or B), log Anova (logit)}
 
-Columns needed include:
-\begin{enumerate}
-\item{participant}
-\item{correct syllable}
-\item{correct answer}
-\ttodo[inline]{Left key, right key and conditions are not needed for tabled results, but I should check to ensure there were no differences between groups and report that somewhere.}
-\item{left key}
-\item{right key}
-\item{condition}
-\item{response}
-\item{correct response}
-\ttodo[inline]{RT not reliable. People answered very quickly once they realized that the answer choices were not changing. So much so that they were anticipating the answer screen to appear so they could answer.}
-\item{response time}
-\end{enumerate}
+
+
 
 \begin{figure}[h]
 \begin{center}
@@ -618,6 +671,9 @@ The syllable structure in native speakers and the speakers of the second languag
 
 I wonder if it would be of interest to allow participants to make the syllable decision as soon as they were ready. Would reaction time be reliable in these conditions, could they be informative about syllable type preference CV or CVC? Would these results change with added variation CCV, VC or VCC? 
 
+RT not reliable. People answered very quickly once they realized that the answer choices were not changing. So much so that they were anticipating the answer screen to appear so they could answer.
+
+Left key, right key and conditions are not needed for tabled results, but I should check to ensure there were no differences between groups and report that somewhere.
 
 \subsection{boiler plate copy 6}
 This chapter reported on the \Sexpr{length(unique(lab_my_data$partNum))} participants who completed a visual Spanish syllable monitoring experiment. Crucially, the experiment run in this chapter attempted to replicate the findings of previous research in terms of Spanish syllable monitoring as an indicator of the use of a syllabic segmentation strategy with its \Sexpr{length(unique(lab_natives$partNum))} native Spanish speaker controls. It sought to extend the use of the syllable monitoring experimental design to address the questions of whether or not the \Sexpr{length(unique(lab_learners$partNum))} native English speakers participants who were L2 learners of Spanish could utilize a syllabic segmentation strategy when processing Spanish. 
