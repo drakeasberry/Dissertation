@@ -152,6 +152,12 @@ intuition_lang_compare <-
            value = "logit_corr") %>%
   column_to_rownames(., var = "group")
 
+# Create a table for referencing CIs by group
+intuition_syl_compare <-
+  conf_int(intuition_syl_ag,
+           grp_col =  "syl_structure",
+           value = "logit_corr") %>%
+  column_to_rownames(., var = "syl_structure")
 
 # Visualize Descriptive Data
 # Proportion data
@@ -169,7 +175,7 @@ plt_corr_per <- my_data_long %>%
                 width = 0.2, 
                 alpha = 0.9, 
                 position = position_dodge(width = 0.9)) +
-  labs(title = "Percent Correct with CIs",
+  labs(title = "Proportion Correct Repsonse",
        x = "Language Group",
        y = "") +
   scale_fill_manual(name = "Syllable Structure", 
@@ -191,14 +197,37 @@ plt_corr_logit <- my_data_long %>%
                 width = 0.2, 
                 alpha = 0.9, 
                 position = position_dodge(width = 0.9)) +
-  labs(title = "Correct Responses (logit) with CI",
+  labs(title = "Correct Responses",
        x = "Language Group",
-       y = "") +
+       y = "Logit") +
   scale_fill_manual(name = "Syllable Structure", 
                     values = plt_color_2) +
   theme_light()
 plt_corr_logit
  
+
+plt_corr_logit_sylX <- my_data_long %>% 
+  summary_stats(., grouping_stats, 
+                "logit_corr", 
+                "mean_sd") %>% 
+  ggplot(aes(x = syl_structure,
+             y = mean,
+             fill = group)) +
+  geom_bar(stat = "identity", position = 'dodge') +
+  geom_errorbar(aes(ymin = intuition_syl_ci_logit$LL, 
+                    ymax = intuition_syl_ci_logit$UL), 
+                width = 0.2, 
+                alpha = 0.9, 
+                position = position_dodge(width = 0.9)) +
+  labs(title = "Correct Responses",
+       x = "Syllable Structure",
+       y = "Logit") +
+  scale_fill_manual(name = "Group", 
+                    values = plt_color_2) +
+  theme_light()
+plt_corr_logit_sylX
+
+
 # Check for outliers
 # Check pooled data
 outlier_data <- my_data_long %>% 
@@ -250,10 +279,11 @@ with(my_data_long,
 
 
 # Get the size of the effect
-intuition_lang_efsize <- cohen.d(intuition_grp_ag$logit_corr, 
-        intuition_grp_ag$group, 
-        na.rm = TRUE, 
-        paired = FALSE)
+intuition_lang_efsize <- cohen.d(
+  intuition_grp_ag$logit_corr, 
+  intuition_grp_ag$group, 
+  na.rm = TRUE, 
+  paired = FALSE)
 intuition_lang_efsize
 ## Large effect size
 

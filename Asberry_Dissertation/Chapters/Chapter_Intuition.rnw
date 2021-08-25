@@ -360,7 +360,7 @@ intuition_score_compare["Spanish-CV","n"]}}\\
 \label{tab-intuition-grp-score}
 \end{table}
 
-As can be seen in Table \ref{tab-intuition-grp-score}, neither group performed at the ceiling rate of 100 percent accuracy for either syllable type. The native Spanish control group had an average accuracy rate of 95 percent for CV and and 97 percent CVC syllable structures while native English target group scored 73 and 90 percent for the same corresponding syllable structures. Figure \ref{plt-intuition-corr-prop} illustrates these findings as well as the trend of both groups to respond more accurately to CVC syllables than CV syllables.
+As can be seen in Table \ref{tab-intuition-grp-score}, neither group performed at the ceiling rate of 100 percent accuracy for either syllable type. The native Spanish control group had an average accuracy rate of 95 percent for CV and and 97 percent CVC syllable structures while native English target group scored 73 and 90 percent for the same corresponding syllable structures. When looking at the raw percentages, is shows that the correct response rate to CV syllables by native Spanish controls, their worst condition, was better than the correct response rate to CVC syllables by native English target group, which was their best condition. In other words, the worst case scenario for the Spanish group outpreformed the best case scenario for English group. Figure \ref{plt-intuition-corr-prop} illustrates these findings as well as the trend of both groups to respond more accurately to CVC syllables than CV syllables.
 
 \begin{figure}[h]
 \begin{center}
@@ -371,22 +371,8 @@ plt_corr_per
 \label{plt-intuition-corr-prop}
 \end{center}
 \end{figure}
-\ttodo[inline]{change title of graph in stat file}
 
-Since there were participants in both groups that did perform at or near ceiling, a logit tranformation was performed on the proportion data to get a more linear fit for comparision purposes by cutting out the extreme end points. Figure \ref{plt-intuition-logit-prop} again shows the comparision of correct responses between the target and control groups split by syllable structure type. The deviation by group from the standard Spanish syllabification pattern captured as error rates clearly shows that the native Spanish control group responded more accurately to both syllable types than the target native English group.
-
-\begin{figure}[h]
-\begin{center}
-<<intuition_logit_correct, fig.width= 4, fig.height= 3>>=
-plt_corr_logit
-@      
-\caption[Logit Correct Response by Syllable Type]{The plot shows the difference in number of correct responses by syllable type---CV or CVC---for each language group. The errors bars represent the 95\% confidence intervals.}
-\label{plt-intuition-logit-prop}
-\end{center}
-\end{figure}
-\ttodo[inline]{change title of graph in stat file, add y axis label}
-
-In order to test check the signficance of these relationship, the data was submitted to an analysis of variance. The 2 x (2) mixed-effects anova contained one between subjects factor \emph{Group} with two levels of native Spanish and native English and one within subjects factor \emph{Structure} that also contained two levels of CV and CVC. The logit transformed values were submitted to the ANOVA, which revealed statistically significant main effects for \emph{Group}  
+Since there were participants in both groups that did perform at or near ceiling, a logit tranformation was performed on the proportion data to get a more linear fit for comparision purposes by cutting out the extreme end points. In order to check the signficance of these relationships, the logit transformed data was submitted to an analysis of variance. The 2 x (2) mixed-effects anova contained one between subjects factor \emph{Group} with two levels of native Spanish and native English and one within subjects factor \emph{Structure} that also contained two levels of CV and CVC. The logit transformed values were submitted to the ANOVA, which revealed statistically significant main effects for \emph{Group},
 \emph{F}(
 \Sexpr{aov_intuition$anova_table["group", "num Df"]},
 \Sexpr{aov_intuition$anova_table["group", "den Df"]}) = 
@@ -422,19 +408,33 @@ reveals a statistical difference in accuracy rates for word initial syllabificat
 p < 0.0001. %\Sexpr{round(t_intuition_grp_main$p.value,4)}.
 The main effect of \emph{Group} was of a 
 \Sexpr{intuition_lang_efsize$magnitude} 
-magnitude. This can be seen in the output of Cohen's \emph{d} for \emph{Group} \emph{d}= 
+magnitude. This can be seen in the output of Cohen's \emph{d} for \emph{Group}, \emph{d}= 
 \Sexpr{round(intuition_lang_efsize$estimate,2)}, 
 \Sexpr{intuition_lang_efsize$conf.level*100}\% CI 
 [\Sexpr{round(intuition_lang_efsize$conf.int[1],2)},
 \Sexpr{round(intuition_lang_efsize$conf.int[2],2)}].
 
-\begin{figure}[h]
+\begin{figure}
 \begin{center}
-<<group_intuition, fig.width= 4, fig.height= 3>>=
+<<group_intuition, fig.width= 5, fig.height= 2.5>>=
 intuition_grp_main
 @      
 \caption[Syllable Intuition by Group]{Estimated mariginal means for correct responses by each language group---English or Spanish.}
 \label{plt-intuition-grp-emm}
+
+\vspace{.4in}
+
+<<syl_intuition, fig.width= 5, fig.height= 2.5>>=
+intuition_syl_main
+@      
+\caption[Syllable Intuition by Type]{Estimated mariginal means for correct responses by syllable structure type---CV or CVC.}
+\label{plt-intuition-syl-emm}
+
+%<<group_syl_intuition, fig.width= 5, fig.height= 3>>=
+%intuition_grp_syl_int
+%@      
+%\caption[Syllable Intuition]{Estimated mariginal means for logit transformed %correct response rate by syllable type---CV or CVC---and by native language---English or Spanish. What the fuck is this one?}
+%\label{plt-intuition-grp-syl-int-emm}
 \end{center}
 \end{figure}
 
@@ -458,204 +458,25 @@ reveals a statistical difference in accuracy rates for word initial syllabificat
 p < \Sexpr{round(t_intuition_syl_main$p.value,4)}.
 The main effect of \emph{Group} was of a 
 \Sexpr{intuition_syl_efsize$magnitude} 
-magnitude. This can be seen in the output of Cohen's \emph{d} for \emph{Structure} \emph{d}= 
+magnitude. This can be seen in the output of Cohen's \emph{d} for \emph{Structure}, \emph{d}= 
 \Sexpr{round(intuition_syl_efsize$estimate,2)}, 
 \Sexpr{intuition_syl_efsize$conf.level*100}\% CI 
 [\Sexpr{round(intuition_syl_efsize$conf.int[1],2)},
 \Sexpr{round(intuition_syl_efsize$conf.int[2],2)}].
 
-While neither group responded more accurately to one syllable type over another, the trend was to in the direction of CVC syllables for both groups. The Spanish group was more accurate for both syllable types when compared to English group. The Spanish CV syllable type had the lower average correct response, but it was significantly better than the CVC syllable type for English, which was their higher average correct response. In other words, the worst case scenario for the Spanish group outpreformed the best case scenario for English group.
-
-\todo{Are there patterns related to syllable structure CV or CVC.}
-\begin{figure}[h]
-\begin{center}
-<<syl_intuition, fig.width= 4, fig.height= 3>>=
-intuition_syl_main
-@      
-\caption[Syllable Intuition by Type]{Estimated mariginal means for correct responses by syllable structure type---CV or CVC.}
-\label{plt-intuition-syl-emm}
-\end{center}
-\end{figure}
-
-
-
-
+While neither group responded more accurately to one syllable type over another, the trend was in the direction of favoring CVC syllables for both groups. The Spanish group was more accurate for both syllable types when compared to the English group. Figure \ref{plt-intuition-logit-prop} again shows the comparision of correct responses between the target and control groups split by syllable structure type. The deviation by group from the standard Spanish syllabification pattern captured as error rates clearly shows that the native Spanish control group responded more accurately to both syllable types than the target native English group.
 
 \begin{figure}[h]
 \begin{center}
-<<group_syl_intuition, fig.width= 5, fig.height= 3>>=
-intuition_grp_syl_int
+<<intuition_logit_correct, fig.width= 4, fig.height= 3>>=
+plt_corr_logit_sylX
 @      
-\caption[Syllable Intuition]{Estimated mariginal means for logit transformed correct response rate by syllable type---CV or CVC---and by native language---English or Spanish.}
-\label{plt-intuition-grp-syl-int-emm}
+\caption[Logit Correct Response by Syllable Type]{The plot shows the difference in number of correct responses by syllable type---CV or CVC---for each language group. The errors bars represent the 95\% confidence intervals.}
+\label{plt-intuition-logit-prop}
 \end{center}
 \end{figure}
+\ttodo[inline]{change title of graph in stat file, add y axis label}
 
-\subsection{boiler plate copy 3}
-\subsection{Native Spanish Controls}
-\subsubsection{boiler plate copy 4}
-Figure \ref{plt-lab-l1-rtms-desc} plots the general tendencies, or descriptive statistics, for response times in milliseconds by target syllable, matching and lexicality conditions for the \Sexpr{length(unique(lab_natives$partNum))} native controls. The log transformed values were submitted to a (3) x (2) repeated measures ANOVA with \emph{Lexicality, Target} and \emph{Matching} as factors. The ANOVA revealed no statistically significant main effects or interactions, in all cases p > 0.05. There was a possible trend in main effect of \emph{Lexicality}, but it failed to reach significance 
-\emph{F}(
-\Sexpr{lab_aov_natives$anova_table["word_status", "num Df"]},
-\Sexpr{lab_aov_natives$anova_table["word_status", "den Df"]}) = 
-\Sexpr{round(lab_aov_natives$anova_table["word_status", "F"],2)}, 
-p > .05 
-[\Sexpr{round(lab_aov_natives$anova_table["word_status", "Pr(>F)"],4)}]. 
-
-\begin{figure}
-\begin{center}
-<<intuition_desc_l1_rtms, fig.width= 6, fig.height= 3>>=
-lab_bxp_natives
-@      
-\caption[Descriptive RTs: Lab Experiment Control Group]{Reaction times reported in milliseconds given as a factor of target syllable structure, matching and lexicality conditions.}
-\label{plt-lab-l1-rtms-desc-intuition}
-\end{center}
-\end{figure}
-
-Figure \ref{plt-lab-l1-tar-mat-ns-int} shows the data plotted by lexicality with each panel showing the interaction between target syllable structure and matching condition. Note that the parallel lines shown in the word panel of the plot reveals the type of pattern expected to be seen given the way the data was analyzed. The difference between our analysis and previous literature is capturing the same difference but displayed in a different manner. The previous literature showed the crossover effect because they analyzed their data over target syllable structure and carrier syllable structure. Our parallel pattern tells the same story but simply analyzed over target syllable structure and matching condition. In both cases the conditions analyzed included CV target--CV carrier and CVC target--CVC carrier (matching conditions), CV target--CVC carrier and CVC target--CV carrier (mismatching conditions).
-
-\begin{figure}
-\begin{center}
-<<intuition_l1_tar_mat_ns_int, fig.width= 6, fig.height= 3>>=
-lab_l1_tar_mat_int
-@      
-\caption[Estimated Marginal Means: Lab Experiment Control Group]{Log transformed reaction times reported given as a factor of target syllable structure, matching and lexicality conditions.}
-\label{plt-lab-l1-tar-mat-ns-int-intuition}
-\end{center}
-\end{figure}
-
-\subsection{L2 Spanish Learners}
-\subsubsection{boiler plate copy 5}
-Figure \ref{plt-lab-l2-rtms-desc} plots the general descriptive statistics for response times in milliseconds by target syllable, matching and lexicality conditions for the \Sexpr{length(unique(lab_learners$partNum))} L2 learners of Spanish. The log transformed values were submitted to a (3) x (2) repeated measures ANOVA with \emph{Lexicality, Target} and \emph{Matching} as factors. The ANOVA revealed statistically significant main effects of \emph{Target}, 
-\emph{F}(
-\Sexpr{lab_aov_learners$anova_table["target_syl_structure", "num Df"]},
-\Sexpr{lab_aov_learners$anova_table["target_syl_structure", "den Df"]}) =
-\Sexpr{round(lab_aov_learners$anova_table["target_syl_structure", "F"],2)}, 
-p < .05 
-[\Sexpr{round(lab_aov_learners$anova_table["target_syl_structure", "Pr(>F)"],4)}] 
-and a statistically significant interaction between \emph{Matching} and \emph{Lexicality}, 
-\emph{F}(
-\Sexpr{lab_aov_learners$anova_table["matching:word_status", "num Df"]},
-\Sexpr{lab_aov_learners$anova_table["matching:word_status", "den Df"]}) =
-\Sexpr{round(lab_aov_learners$anova_table["matching:word_status", "F"],2)}, 
-p < .05 
-[\Sexpr{round(lab_aov_learners$anova_table["matching:word_status", "Pr(>F)"],4)}]. 
-
-\begin{figure}
-\begin{center}
-<<intuition_desc_l2_rtms, fig.width= 6, fig.height= 3>>=
-lab_bxp_learners
-@      
-\caption[Descriptive RTs: Lab Experiment Target Group]{Reaction times reported in milliseconds given as a factor of target syllable structure, matching and lexicality conditions.}
-\label{plt-lab-l2-rtms-desc-intuition}
-\end{center}
-\end{figure}
-
-In order to look at main effect of target syllable, post-hoc analyses were conducted. The dataset was regrouped so that each participant's reaction times were computed based on whether the target syllable they were monitoring for was CV or CVC. The dataset consisted of 
-\Sexpr{nrow(lab_data_tarsyl_ag)} 
-observations---
-\Sexpr{length(unique(lab_learners$target_syl_structure))} 
-\emph{Target} conditions x 
-\Sexpr{length(unique(lab_learners$partNum))}.
-This dataset was then submitted to a t-test, which revealed that the L2 Spanish group generally detected CVC syllables, 
-M= \Sexpr{round(lab_tar_compare["CVC", "Mean"],2)}, 
-SD= \Sexpr{round(lab_tar_compare["CVC", "SD"],2)} 
-at 95\% CI 
-[\Sexpr{round(lab_tar_compare["CVC", "LL"],3)}, 
-\Sexpr{round(lab_tar_compare["CVC", "UL"],3)}], 
-faster than CV syllables, 
-M= \Sexpr{round(lab_tar_compare["CV", "Mean"],2)}, 
-SD= \Sexpr{round(lab_tar_compare["CV", "SD"],2)} 
-[\Sexpr{round(lab_tar_compare["CV", "LL"],3)}, 
-\Sexpr{round(lab_tar_compare["CV", "UL"],3)}]. 
-The mean difference, 
-M= \Sexpr{round(abs(lab_tar_compare["CVC", "Mean"] - 
-lab_tar_compare["CV", "Mean"]),2)}, 
-reveals a statistical difference in detection times between the two target syllable structures, 
-\emph{t}(\Sexpr{round(t_lab_tar_syl_main$parameter,2)}) = 
-\Sexpr{round(t_lab_tar_syl_main$statistic,4)}, 
-p < \Sexpr{round(t_lab_tar_syl_main$p.value,4)}.
-The main effect of target syllable was of a 
-\Sexpr{lab_tar_efsize$magnitude} 
-magnitude. This can be seen in the output of Cohen's \emph{d} for \emph{Target} \emph{d}= 
-\Sexpr{round(lab_tar_efsize$estimate,2)}, 
-\Sexpr{lab_tar_efsize$conf.level*100}\% CI 
-[\Sexpr{round(lab_tar_efsize$conf.int[1],2)},
-\Sexpr{round(lab_tar_efsize$conf.int[2],2)}].
-
-In order to break down the interaction between \emph{Matching} and \emph{Lexicality} factors, a post-hoc analysis was run. The L2 Spanish dataset was was further subset into two dataframes: one for real words and one for nonwords. Each dataset consisted of 
-\Sexpr{nrow(lab_nonwords_learners)} 
-observations---
-\Sexpr{length(unique(lab_nonwords_learners$matching))} 
-\emph{Matching} conditions x 
-\Sexpr{length(unique(lab_nonwords_learners$partNum))}
-participants. Both datasets, words and nonwords, were then individually submitted to a one-tailed t-test. This revealed that the L2 Spanish group did not detect syllables faster in nonword for the matching condition, 
-M= \Sexpr{round(lab_mat_lex_compare["nonword-matching", "Mean"],2)}, 
-SD= \Sexpr{round(lab_mat_lex_compare["nonword-matching", "SD"],2)} 
-at 95\% CI 
-[\Sexpr{round(lab_mat_lex_compare["nonword-matching", "LL"],3)}, 
-\Sexpr{round(lab_mat_lex_compare["nonword-matching", "UL"],3)}], 
-than syllables detected in the mismatching condition, 
-M= \Sexpr{round(lab_mat_lex_compare["nonword-mismatching", "Mean"],2)}, 
-SD= \Sexpr{round(lab_mat_lex_compare["nonword-mismatching", "SD"],2)} 
-[\Sexpr{round(lab_mat_lex_compare["nonword-mismatching", "LL"],3)}, 
-\Sexpr{round(lab_mat_lex_compare["nonword-mismatching", "UL"],3)}]. 
-The mean difference, 
-M= \Sexpr{round(abs(lab_mat_lex_compare["nonword-matching", "Mean"] - 
-lab_mat_lex_compare["nonword-mismatching", "Mean"]),2)}, 
-reveals no statistical difference with regards to the target syllable matching the word initial syllable of the carrier item for nonword, 
-\emph{t}(\Sexpr{round(t_lab_l2_nonwd_mat_int$parameter,2)}) = 
-\Sexpr{round(t_lab_l2_nonwd_mat_int$statistic,4)}, 
-p < \Sexpr{round(t_lab_l2_nonwd_mat_int$p.value,4)}.
-In the real word dataset, it surprisingly revealed that the L2 Spanish group detected syllables significantly slower for the matching condition, 
-M= \Sexpr{round(lab_mat_lex_compare["word-matching", "Mean"],2)}, 
-SD= \Sexpr{round(lab_mat_lex_compare["word-matching", "SD"],2)} 
-at 95\% CI 
-[\Sexpr{round(lab_mat_lex_compare["word-matching", "LL"],3)}, 
-\Sexpr{round(lab_mat_lex_compare["word-matching", "UL"],3)}], 
-than syllables detected in the mismatching condition, 
-M= \Sexpr{round(lab_mat_lex_compare["word-mismatching", "Mean"],2)}, 
-SD= \Sexpr{round(lab_mat_lex_compare["word-mismatching", "SD"],2)} 
-[\Sexpr{round(lab_mat_lex_compare["word-mismatching", "LL"],3)}, 
-\Sexpr{round(lab_mat_lex_compare["word-mismatching", "UL"],3)}]. 
-The mean difference, 
-M= \Sexpr{round(abs(lab_mat_lex_compare["word-matching", "Mean"] - 
-lab_mat_lex_compare["word-mismatching", "Mean"]),2)}, 
-reveals a statistically significant difference with regards to the target syllable matching the word initial syllable of the carrier item for words, but opposite of the hypothesized direction, 
-\emph{t}(\Sexpr{round(t_lab_l2_wd_mat_int$parameter,2)}) = 
-\Sexpr{round(t_lab_l2_wd_mat_int$statistic,4)}, 
-p < \Sexpr{round(t_lab_l2_wd_mat_int$p.value,4)}.
-The effect size of matching condition in the word dataset was also 
-\Sexpr{lab_l2_mat_efsize$magnitude} 
-in magnitude, \emph{d}= 
-\Sexpr{round(lab_l2_mat_efsize$estimate,2)}, 
-\Sexpr{lab_l2_mat_efsize$conf.level*100}\% CI 
-[\Sexpr{round(lab_l2_mat_efsize$conf.int[1],2)}, 
-\Sexpr{round(lab_l2_mat_efsize$conf.int[2],2)}].
-Figure \ref{plt-lab_l2_mat_lex_s_int} plots the estimated marginal means for the interaction between \emph{Matching} and \emph{Lexicality} for L2 learners of Spanish.
-\ttodo{Checkthe Cohen.d scores as r variable pull.} 
-
-\begin{figure}
-\begin{center}
-<<intuition_l2_mat_lex_s_int, fig.width= 5, fig.height= 3>>=
-lab_l2_lex_mat_int
-@      
-\caption[Estimated Marginal Means: Lab Experiment Target Group]{Log transformed reaction times reported given as a factor of matching and lexicality conditions.}
-\label{plt-lab_l2_mat_lex_s_int-intuition}
-\end{center}
-\end{figure}
-
-Lastly, Figure \ref{plt-lab-l2-tar-mat-ns-int} again shows that the interaction between target syllable structure and the structure word initial syllable of carrier word was not significant. Although not significant, the patterns that emerged in the native speaker controls also emerged in the L2 learners of Spanish. That is the real word dataset reveals parallel lines which implies the same meaning as the crossover effect found in previous studies.
-
-\begin{figure}
-\begin{center}
-<<intuition_l2_tar_mat_ns_int, fig.width= 6, fig.height= 3>>=
-lab_l2_tar_mat_int
-@      
-\caption[Estimated Marginal Means: Lab Experiment Control Group]{Log transformed reaction times reported given as a factor of target syllable structure, matching and lexicality conditions.}
-\label{plt-lab-l2-tar-mat-ns-int-intuition}
-\end{center}
-\end{figure}
 
 \section{Discussion}
 \ttodo{split into several small sections following each individual experiment’s results sections where applicable. The General Discussion steps back and begins with an overview of the problem and then the findings. A general rule of thumb is to keep this section shorter than the introduction. Only give limitation directly related to the current study, not the general limitation of the research or the field as a whole and be sure to give a good reason for why these limitations are not as bad as they sound on the surface.}
