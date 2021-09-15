@@ -1,18 +1,6 @@
-% Monolingual Online Segmentation Visualization code
+#!/bin/bash
+#!/usr/bin/Rscript
 
-<<global_opts_mono, echo=TRUE, cache=FALSE>>=
-library(knitr)
-library(here)
-
-knitr::opts_chunk$set(
-  echo = FALSE
-)
-here::here()
-set_parent(here('Asberry_Dissertation/Dissertation.Rnw'))
-@
-
-
-<<gen_mono_lib, echo = FALSE>>=
 # Load Libraries
 library(tidyverse)
 library(ggplot2)
@@ -20,16 +8,12 @@ library(cowplot)
 library(effsize)
 
 # Soruce Scripts containing functions
-source('../../Scripts_Dissertation/diss_dataviz_script.R')
-source('../../Scripts_Dissertation/analysis_functions.R')
-@
+source("../../Scripts_Dissertation/analysis_functions.R")
 
-<<mono_participants, echo = FALSE>>=
+
 # Read in data file
 my_data <- read_csv('analyze_data/output/44_online_natives_segmentation.csv')
-@
 
-<<mono_data, echo = FALSE>>=
 
 # Transform data in long form with 1 row per participant per condition
 # List columns to group by
@@ -201,4 +185,3 @@ out_dir = 'analyze_data/output/figures/by_target/'
 # Save plots
 ggsave('natives_descriptive_data.png', bxp_natives, 'png', out_dir)
 ggsave('natives_mat_main.png', l1_mat_main, 'png', out_dir)
-@

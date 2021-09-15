@@ -35,10 +35,14 @@ set_parent(here('Asberry_Dissertation/Dissertation.Rnw'))
 <<contentIntuitionDemo, child=here('Statistics/Demographics/intuition_demo_viz.rnw'), include=FALSE>>=
 @
 
-%contentOnlinesegMono, child='Statistics/Monolingual_lemma/target_syl_mono_viz.rnw'), include=FALSE>>=
-%@
+<<contentOnlineDemo, child=here('Statistics/Demographics/online_demo_viz.rnw'), include=FALSE>>=
+@
 
-%contentOnlinesegL2, child='Statistics/L2_lemma/target_syl_l2_viz.rnw'), include=FALSE>>=
+<<contentOnlinesegMono, child=here('Statistics/Monolingual_lemma/target_syl_mono_viz.rnw'), include=FALSE>>=
+@
+
+<<contentOnlinesegL2, child=here('Statistics/L2_lemma/target_syl_l2_viz.rnw'), include=FALSE>>=
+@
 
 %----------------------------------------------------------------------------------------
 

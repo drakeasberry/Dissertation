@@ -1,18 +1,6 @@
-% L2 Online Segmentation Visualization code
+#!/bin/bash
+#!/usr/bin/Rscript
 
-<<global_opts_l2, echo=TRUE, cache=FALSE>>=
-library(knitr)
-library(here)
-
-knitr::opts_chunk$set(
-  echo = FALSE
-)
-here::here()
-set_parent(here('Asberry_Dissertation/Dissertation.Rnw'))
-@
-
-
-<<gen_l2_lib, echo = FALSE>>=
 # Load Libraries
 library(tidyverse)
 library(ggplot2)
@@ -20,16 +8,12 @@ library(cowplot)
 library(effsize)
 
 # Soruce Scripts containing functions
-source('../../Scripts_Dissertation/diss_dataviz_script.R')
-source('../../Scripts_Dissertation/analysis_functions.R')
-@
+source("../../Scripts_Dissertation/analysis_functions.R")
 
-<<l2_participants, echo = FALSE>>=
+
 # Read in data file
 my_data <- read_csv('analyze_data/output/55_online_learners_segmentation.csv')
-@
 
-<<l2_data, echo = FALSE>>=
 
 # Transform data in long form with 1 row per participant per condition
 # List columns to group by
@@ -420,4 +404,3 @@ out_dir = 'analyze_data/output/figures/by_target/'
 ggsave('learners_descriptive_data.png', bxp_learners, 'png', out_dir)
 ggsave('learners_mat_tarsyl_int.png', l2_mat_tarsyl_int, 'png', out_dir)
 ggsave('learners_tarsyl_lex_int.png', l2_tarsyl_lex_int, 'png', out_dir)
-@
