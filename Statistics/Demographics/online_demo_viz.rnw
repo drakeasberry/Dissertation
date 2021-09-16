@@ -30,7 +30,8 @@ demo_data <- read_csv('analyze_data/output/online_demo_data.csv')
 # Counts by participant group
 online_completed <- demo_data %>% 
   group_by(group) %>% 
-  count()
+  count() %>% 
+  column_to_rownames(., var = "group")
 
 
 # Dropped for error rates in experiment
@@ -50,12 +51,18 @@ online_drop <- rbind(mono_error_user, learner_error_user) # n=20,(5 mono & 15 L2
 eligible_demo_data <- demo_data %>% 
   subset(., partNum %in% online_drop$partNum)
 
+online_eligible <- eligible_demo_data %>% 
+  group_by(group) %>% 
+  count() %>% 
+  column_to_rownames(., var = "group")
+
 ineligible_demo_data <- demo_data %>% 
   subset(., partNum %ni% online_drop$partNum)
 
 online_stat_dropped <- ineligible_demo_data %>% 
   group_by(group) %>% 
-  count()
+  count() %>% 
+  column_to_rownames(., var = "group")
 
 # Plot Demographics
 # Spanish Vocabulary Size (Percent Correct)
