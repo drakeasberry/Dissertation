@@ -16,7 +16,7 @@ set_parent(here('Asberry_Dissertation/Dissertation.Rnw'))
 library(tidyverse)
 library(ggplot2)
 library(effsize)
-
+library(xtable)
 
 # Source Scripts containing functions
 source('../../Scripts_Dissertation/diss_dataviz_script.R')
@@ -219,7 +219,7 @@ plt_corr_logit_sylX <- my_data_long %>%
                 width = 0.2, 
                 alpha = 0.9, 
                 position = position_dodge(width = 0.9)) +
-  labs(title = "Correct Responses",
+  labs(title = "Correct Syllabification",
        x = "Syllable Structure",
        y = "Logit") +
   scale_fill_manual(name = "Group", 

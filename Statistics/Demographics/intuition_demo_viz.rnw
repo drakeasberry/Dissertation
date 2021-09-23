@@ -23,6 +23,16 @@ source('../../Scripts_Dissertation/analysis_functions.R')
 @
 
 <<intuition_demo_viz, echo=FALSE>>=
+# Read in all participants
+all_participants <- read.csv(
+  '../Demographics/analyze_data/output/all_participant_demo.csv')
+
+intuition_exp_origin <- all_participants %>% 
+  subset(., expName != "lemma_segmentation") %>% 
+  group_by(expName) %>% 
+  count() %>% 
+  column_to_rownames(., var = "expName")
+
 # Read in data file
 intuition_vocab_size <- read_csv(
   'analyze_data/output/intuition_vocab_sizes.csv')
