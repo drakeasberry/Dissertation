@@ -175,9 +175,9 @@ plt_corr_per <- my_data_long %>%
                 width = 0.2, 
                 alpha = 0.9, 
                 position = position_dodge(width = 0.9)) +
-  labs(title = "Proportion Correct Repsonse",
+  labs(title = "Correct Syllabification",
        x = "Language Group",
-       y = "") +
+       y = "Proportion Correct") +
   scale_fill_manual(name = "Syllable Structure", 
                     values = plt_color_2) +
   theme_minimal()
@@ -197,9 +197,9 @@ plt_corr_logit <- my_data_long %>%
                 width = 0.2, 
                 alpha = 0.9, 
                 position = position_dodge(width = 0.9)) +
-  labs(title = "Correct Responses",
+  labs(title = "Correct Syllabification",
        x = "Language Group",
-       y = "Logit") +
+       y = "Response Correct (logit)") +
   scale_fill_manual(name = "Syllable Structure", 
                     values = plt_color_2) +
   theme_light()
@@ -221,7 +221,7 @@ plt_corr_logit_sylX <- my_data_long %>%
                 position = position_dodge(width = 0.9)) +
   labs(title = "Correct Syllabification",
        x = "Syllable Structure",
-       y = "Logit") +
+       y = "Response Correct (logit)") +
   scale_fill_manual(name = "Group", 
                     values = plt_color_2) +
   theme_light()
