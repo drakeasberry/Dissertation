@@ -70,45 +70,36 @@ With ample evidence in support of onsets and rimes, other variables began to be 
 
 \subsection{Syllables for Reading Ability}
 %\ttodo[inline]{Treiman or somebody I read talks about literate vs illiterate and breaking down at syllable or phoneme level} 
-In order to study phonological processes through visual experiments rather than auditory experiments, it is important to understand that reading interfaces with the phonological system. The implications and roles of phonological activation can also be traced in discussions encompassing the prediction of later outcomes in reading \parencite{Treiman1985-zc} and spelling \parencite{Treiman1988-kt,Treiman1990-fw}. \textcite{Goswami1991-fu} questioned the connection between the structure of syllables and the ability of children learning to read and spell. They tested this connection through a training task with word games where the experimenter emphasized the consonant cluster. In the game, participants were given a clue word such as \emph{trim} and asked to read it for the experimenter during the testing phase. They had three separate conditions in which they tested during which the clue word remained visible to the participant. They were asked to read new experimental words using the information they had just learned from the clue word. The first was a phonological condition algning with onset using words \emph{trot, trap} and \emph{tred}. In this condition the consonant cluster contained the same two phonemes and shared the same syllable structure. The second, a common unit condition that reatined the same syllable structure, but both onset phonemes differed. Test words for the common unit condition included \emph{blot, snap} and \emph{sled}. The third condition changed the syllable structure, but shared the first phoneme as in words \emph{tint, tart} and \emph{torn}. A similar setup was done for codas explemified here \emph{limp} for words \emph{camp, dump} and \emph{romp} in the phonological condition algning with coda. Words \emph{caps, duct} and \emph{rods} were used in the common unit condition with shared coda structure, but contained differing phonemes. The third condition used words \emph{grip, slop} and \emph{clap} for the shared last phoneme conditio that was constructed with a different syllable structure. See Table %\ref{tab-reading-conditions}
+In order to study phonological processes through visual experiments rather than auditory experiments, it is important to understand that reading interfaces with the phonological system. The implications and roles of phonological activation can also be traced in discussions encompassing the prediction of later outcomes in reading \parencite{Treiman1985-zc} and spelling \parencite{Treiman1988-kt,Treiman1990-fw}. \textcite{Goswami1991-fu} questioned the connection between the structure of syllables and the ability of children learning to read and spell. They tested this connection through a training task with word games where the experimenter emphasized the consonant cluster. In the game, participants were given a clue word such as \emph{trim} and asked to read it for the experimenter during the testing phase. They had three separate conditions in which they tested during which the clue word remained visible to the participant. They were asked to read new experimental words using the information they had just learned from the clue word. The first was a phonological condition algning with onset using words \emph{trot, trap} and \emph{tred}. In this condition the consonant cluster contained the same two phonemes and shared the same syllable structure. The second, a common unit condition that reatined the same syllable structure, but both onset phonemes differed. Test words for the common unit condition included \emph{blot, snap} and \emph{sled}. The third condition changed the syllable structure, but shared the first phoneme as in words \emph{tint, tart} and \emph{torn}. A similar setup was done for codas explemified here \emph{limp} for words \emph{camp, dump} and \emph{romp} in the phonological condition algning with coda. Words \emph{caps, duct} and \emph{rods} were used in the common unit condition with shared coda structure, but contained differing phonemes. The third condition used words \emph{grip, slop} and \emph{clap} for the shared last phoneme conditio that was constructed with a different syllable structure. See Table \ref{tab-goswami-examples}.
 
-%\begin{table}
-%\centering
-%\begin{tabular}{l c c c c c c c c c}
-%\toprule
-%& & & & & &\multicolumn{4}{c}{Age of Acquisition}\\
-%\cmidrule(lr){7-10}
-%& & \multicolumn{4}{c}{Age} & \multicolumn{2}{c}{Spanish} & 
-%\multicolumn{2}{c}{English}\\
-%\cmidrule(lr){3-6}\cmidrule(lr){7-8}\cmidrule(lr){9-10}
-%& n & Min & Max & Mean & SD & Mean & SD & Mean & SD\\
-%\midrule
-%English
-%& \Sexpr{intuition_grp_desc["English","n"]}
-%& \Sexpr{intuition_grp_desc["English","age_Min"]} 
-%& \Sexpr{intuition_grp_desc["English","age_Max"]} 
-%& \Sexpr{intuition_grp_desc["English","age_Mean"]}
-%& \Sexpr{intuition_grp_desc["English","age_SD"]}
-%& \Sexpr{intuition_grp_desc["English","span_acq_age_Mean"]}
-%& \Sexpr{intuition_grp_desc["English","span_acq_age_SD"]}
-%& \Sexpr{intuition_grp_desc["English","eng_acq_age_Mean"]}
-%& \Sexpr{intuition_grp_desc["English","eng_acq_age_SD"]}\\
-%Spanish
-%& \Sexpr{intuition_grp_desc["Spanish","n"]}
-%& \Sexpr{intuition_grp_desc["English","age_Min"]} 
-%& \Sexpr{intuition_grp_desc["English","age_Max"]} 
-%& \Sexpr{intuition_grp_desc["English","age_Mean"]}
-%& \Sexpr{intuition_grp_desc["English","age_SD"]}
-%& \Sexpr{intuition_grp_desc["English","span_acq_age_Mean"]}
-%& \Sexpr{intuition_grp_desc["English","span_acq_age_SD"]}
-%& \Sexpr{intuition_grp_desc["English","eng_acq_age_Mean"]}
-%& \Sexpr{intuition_grp_desc["English","eng_acq_age_SD"]}\\
-%\bottomrule
-%\multicolumn{6}{l}{Total participants: n = 
-%\Sexpr{intuition_grp_desc["Spanish","n"] + intuition_grp_desc["English","n"]}}\\
-%\end{tabular}
-%\caption{Attributes of all participants in Spanish syllable intuition experiment.}
-%\label{tab-reading-conditions}
+\begin{table}
+\centering
+% Repsonse Correct Table
+\begin{tabular}{l l l l l l}
+\toprule
+& & & \multicolumn{3}{c}{Experimental Condition}\\
+\cmidrule(lr){4-6}
+Syllable & Syllable & Clue & Phonological & Syllable & Shared\\
+Position & Type & Word & Structure & Structure & Phoneme\\
+\midrule
+% Onset Line 1
+Onset & CCVC & trim & trot & blot & tint\\
+% Onset Line 2
+& & & trap & snap & tart\\
+% Onset Line 3
+& & & tred & sled & torn\\
+\midrule
+% Coda Line 1
+Coda & CVCC & limp & camp & caps & grip\\
+% Coda Line 2
+& & & dump & duct & slop\\
+% Coda Line 3
+& & & romp & rods & clap\\
+\bottomrule
+\end{tabular}
+\caption{Experimental item examples from \textcite{Goswami1991-fu} are shown in order to better visualize the word structures and properties that participants were required to read during the task.}
+\label{tab-goswami-examples}
+\end{table}
 
 The results showed that phonological condition was significantly better than other conditions. However, this was only true for onsets as the coda did not produce the same effect \parencite{Goswami1991-fu}. In other words, children were able to use their knowledge to read a new word with the same onset conditions with a shared syllable structure better than when only internal structure remained intact or a single shared phoneme was present. This was taken to suggest that phonology does play a role in learning to read and spell instead of being solely an orthographic process. The role of phonology comes out because in this process because the effect is tied to only one subsyllabic unit---the onset. If learning had been a simple process of letter recognition, then the same effect should have been found in the coda position as well, but was not the case. This also adds to the evidence that of the onset as a cohesive unit but not the coda. Many previous studies showed that the rime was the second cohesive unit of the internal syllable structure without making strong claims about the internal structure of the rime, a nucleus and coda. \textcite{Goswami1991-fu} conducted a second experiment aimed t invesitgating the rime as a cohesive unit by adding a vowel to clue words. This resulted in a condition where the complete rime was shared between the clue word and phonological condition aligning with the rime, which produced significant results between pre and post tests compared to the other two conditions. Again this supported the existence of the rime as a cohesive unit. It provided evidence that children could productively utilize the rime in the process of learning to read and spell.
 
@@ -118,8 +109,6 @@ The conflicting results of \textcite{Treiman2002-im} where orthography did affec
 
 
 \subsection{Spanish and English Syllable Structure}
-\ttodo[inline]{Talk about syllabification differences in syllabification between spanish and english.}
-
 %The study of \textcite{Treiman1983-jr} on ability to learn these rules explicitly were done in four separate sessions in the syllable game. After the fourth session, participants were given the four rules and asked to rank them for naturalness and easiness of learning. \ttodo{did this pattern with the data results from above} Up to this everything studied under the phoneme and syllable blending had been done with nonsense syllables. \textcite{Treiman1986-nh} replicated the novel word games using nonwords in \textcite{Treiman1983-jr} with real word stimuli in a syllable blending task. The findings again gave evidence in support of the onset and rime (Experiments 1 and 2. \textcite{Treiman1986-nh} tested sonority levels \ttodo{sonority principle has not been defined yet} as a factor that could potentially affect how speakers view subsyllabic units. The results again revealed that regardless of the composition of the onset consonant cluster, it was more difficult to split it up than keep it intact (Ex 3). While this finding was interesting in its own right, it is more interesting because participants were asked whether the difference between two syllables were more due to the vowel or consonant in syllable pairs such as /spa/ and /sa/. \ttodo[inline]{This difference is unclear and needs further explanation} There scores indicated that glides such as /w/ was more vowel like than other consonant types like stops, nasals or liquids. Nonetheless the participants still preferred to keep the syllable onset intact when glides were the second consonant of onset for CCV syllables.
 %\textcite{Harris1983-vu} claims that Spanish syllables can have maximally five segments. However, not all five segment syllables are well-formed in Spanish. Consider the well-formed word claustro [kláws.tro] and the ill-formed word *[mwers.to]. Notice the initial syllable of both words has five segments. The difference in well-formedness results from the rhyme of claustro only having three segments because the [kl] cluster makes up the onset of the syllable. In the ill-formed word only the [m] is part of the coda, leaving the remaining four segments to be part of the rhyme. By removing the /s/ from the ill-formed word the real Spanish word muerto [mwer.to] is revealed, which is now well-formed because only 3 segment remain in the rhyme—the maximal amount of units allowed in Spanish rhymes. According to \textcite{Hualde1991-sk}, glides can become part of the onset in words such as mayo ´May’ and hielo ‘ice’, [ma.jo] and [je.lo] respectively. However, according to \textcite{Harris1983-vu} onsets can only have up to two segments and the consonants that can fill onset slots are highly restricted in Spanish. In a complex onset, the first segment must be an obstruent and the second segment can only be a liquid while in a single segment onset, any consonant will suffice. Therefore, the semiconsonant [j] can legally fill the onset position of hielo, but [mw] is not an acceptable complex onset of Spanish making mwersto a phonotactically illegal word in Spanish.
 
@@ -134,7 +123,8 @@ There are many similarities and differences in syllable properties between Spani
 %\parencite{Kessler1997-oj} analyzed 2001 English CVC words to see if probabilistic patterns also existed. The results revealed a relationship between the consonant and the preceding vowel, but not for the the consonant preceding the vowel. Several rime combinations ocurred much more often than expected. Therefore, additional support for English CVC syllables being made up of an onset and rime was given. \ttodo[inline]{This study should be reveiwed to understand it better}
 
 
-Research into syllable factors have also been undertaken with bilingual groups as well. \textcite{Keffala2018-ta} investigated Spanish--English bilingual children for effects of language specific syllable type, frequency and complexity may have in the syllable structure acquisition of English and Spanish. Utilizing monolingual controls for both English and Spanish, they compared the productions of onset consonant clusters and single phoneme codas by bilingual children with a picture naming task. Several interesting results were found. For the codas, the bilinguals outpreformed their Spanish monolinguals counterparts while showing no delay when compared to English monolinguals. In addition, the bilinguals outpreformed both control groups in their onset acquisition of consonant clusters. \ttodo[inline]{This should be mentioned in background but example remain here.} The current study hopes to continue adding to the knowledge base of syllabic knowledge of Spanish--English bilinguals and extending this to its connection with word segmentation abilities.
+Research into syllable factors have also been undertaken with bilingual groups as well. \textcite{Keffala2018-ta} investigated Spanish--English bilingual children for effects of language specific syllable type, frequency and complexity may have in the syllable structure acquisition of English and Spanish. Utilizing monolingual controls for both English and Spanish, they compared the productions of onset consonant clusters and single phoneme codas by bilingual children with a picture naming task. Several interesting results were found. For the codas, the bilinguals outpreformed their Spanish monolinguals counterparts while showing no delay when compared to English monolinguals. In addition, the bilinguals outpreformed both control groups in their onset acquisition of consonant clusters. %\ttodo[inline]{This should be mentioned in background but example remain here.} 
+The current study hopes to continue adding to the knowledge base of syllabic knowledge of Spanish--English bilinguals and extending this to its connection with word segmentation abilities.
 
 
 \section{Present Study}
@@ -322,11 +312,12 @@ The order of presentation for the two syllabic options, CV or CVC, remained the 
 
 
 \subsection{Procedure}
-Participants were seated in front of a laptop computer connected to a USB button box in order to complete the experiment in PsychoPy \parencite{Peirce2019-dm}. At the beginning of the experiment, participants entered in demographic information as asked in the Basic Language Profile (BLP). Once they had entered the demographic information, the participants were instructed that they would see Spanish words presented individually on the computer screen and that each word would be followed by two options for the first syllable of the presented word. There was no time constraint for the participant to select the option that they considered to be the first syllable of the presented word and the experiment would not progress until the participant had indicated a response. \ttodo[inline]{In the second experiment (Lexical Access), this was initially ran with 4 second time limit. It affected participants 062, 065-067, 069-072, 074-076 so these 11 participants should be checked for missing values. This should probably be a footnote to show missing values.} In total, there were 10 practice trials that followed the same criteria and procedure as the 48 experimental trials presented to the participants. For each trial, the word in lowercase letters appeared in the center of the screen for 1500 milliseconds before being replaced by the two syllable options---one a CV syllable and the other a CVC syllable---which remained on the screen, in all capital letters, until a response was entered. Following each response, the screen remained blank for 500 milliseconds before the next word appeared. \ttodo[inline]{It may be good to create a visual representation of the experiment here to illustrate what each participant saw.} 
+Participants were seated in front of a laptop computer connected to a USB button box in order to complete the experiment in PsychoPy \parencite{Peirce2019-dm}. At the beginning of the experiment, participants entered in demographic information as asked in the Basic Language Profile (BLP). Once they had entered the demographic information, the participants were instructed that they would see Spanish words presented individually on the computer screen and that each word would be followed by two options for the first syllable of the presented word. There was no time constraint for the participant to select the option that they considered to be the first syllable of the presented word and the experiment would not progress until the participant had indicated a response. %\ttodo[inline]{In the second experiment (Lexical Access), this was initially ran with 4 second time limit. It affected participants 062, 065-067, 069-072, 074-076 so these 11 participants should be checked for missing values. This should probably be a footnote to show missing values. No missing values occurred as a result.} 
+In total, there were 10 practice trials that followed the same criteria and procedure as the 48 experimental trials presented to the participants. For each trial, the word in lowercase letters appeared in the center of the screen for 1500 milliseconds before being replaced by the two syllable options---one a CV syllable and the other a CVC syllable---which remained on the screen, in all capital letters, until a response was entered. Following each response, the screen remained blank for 500 milliseconds before the next word appeared. %\ttodo[inline]{It may be good to create a visual representation of the experiment here to illustrate what each participant saw.} 
 
 %For half of the participants, the CV syllable option was on the left side of the screen while the CVC syllable option was on the right. For the other half of the participants, the CVC syllable option was on the left side of the screen while the CV syllable option was on the right. Participants were given separate instruction screens for practice and experimental trials that differed only in letting the participant know whether they are about to enter a practice or experimental phase.
 
-All participants recruited for this study completed the current experiment as an additional task of two additional ongoing experiments. \ttodo[inline]{INSERT NUMBER OF PARTICIPANTS} participants completed this syllable intuition experiment following a visual word segmentation experiment while \ttodo[inline]{INSERT NUMBER OF PARTICIPANTS} completed it following a lexical decision experiment. Depending on the prior experiment completed during the same lab session, the overall procedural order of tasks in the lab changed. 
+All participants recruited for this study completed the current experiment as an additional task of two additional ongoing experiments. \Sexpr{intuition_exp_origin["Segmentation","n"]} participants completed this syllable intuition experiment following a visual word segmentation experiment while \Sexpr{intuition_exp_origin["Lexical_Access","n"]} completed it following a lexical access experiment. Depending on the prior experiment completed during the same lab session, the overall procedural order of tasks in the lab changed. 
 
 When the syllable intuition experiment followed the visual segmentation experiment, participants began the experimental session with the Spanish vocabulary task---LexTALE-Esp. Immediately upon the completion of the LexTALE-Esp, participants were given instructions for the practice portion of the visual segmentation experiment. Following the practice portion, participants were given an instruction screen that indicated they had completed the practice portion, reminded about the controls needed for the experiment, allowed to ask any remaining question about the process. When the participant was ready to begin the actual experiment, they pressed the white button on the response box to begin. Once the participants had finished the entire visual segmentation experiment, they were presented with instructions for the practice trials of the syllable intuition experiment. Once they completed the practice trials, they were given a second instruction screen indicating they had completed the practice portion and were about to begin the real experiment. Once participants had completed the syllabic intuition experiment, they completed the LexTALE-Eng followed by the BLP. 
 
@@ -424,7 +415,14 @@ and for \emph{Structure},
 \Sexpr{round(aov_intuition$anova_table["syl_structure", "F"],2)}, 
 p < 0.05
 [\Sexpr{round(aov_intuition$anova_table["syl_structure", "Pr(>F)"],4)}].
-However, the interaction between \emph{Group} and \emph{Structure} did not reach significance, p > 0.05. 
+However, the interaction between \emph{Group} and \emph{Structure} did not reach significance, p > 0.05. See Table \ref{tab-anova-intuition} for complete ANOVA results.
+
+<<table_anova_intuition, results='asis', include=TRUE>>=
+xtable(aov_intuition$anova_table, 
+       type = "latex", 
+       caption = "This table shows the results of the 2 x (2) mixed-effects anova for one between subjects factor \\textit{Group}, \\textit{group} in table. The \\textit{group} factor had two levels---native Spanish and native English. The within subjects factor \\textit{Structure}, \\textit{syl\\_structure} in table also contained two levels---CV and CVC. The logit transformed values of correct syllabification responses was the indepedent variable.",
+       label = "tab-anova-intuition")
+@
 
 Figure \ref{plt-intuition-grp-emm} shows the estimated marginal means with logit transformed rates for correct responses for both language groups. In order to see what was driving the effect of group, the data was then submitted to a Welch two sample t-test, which revealed that the native Spanish control group responded more accurately, 
 M= \Sexpr{round(intuition_lang_compare["Spanish", "Mean"],2)}, 
@@ -468,7 +466,7 @@ intuition_syl_main
 \caption[Syllable Intuition by Type]{Estimated mariginal means for correct responses by syllable structure type---CV or CVC.}
 \label{plt-intuition-syl-emm}
 
-\ttodo[inline]{Why do CI error bars overlap in syllable structure plot. It is averaging over groups which makes sense they would get close together but not overlapping with a signficiant main effect?}
+%\ttodo[inline]{Why do CI error bars overlap in syllable structure plot. It is averaging over groups which makes sense they would get close together but not overlapping with a signficiant main effect?}
 %<<group_syl_intuition, fig.width= 5, fig.height= 3>>=
 %intuition_grp_syl_int
 %@      
@@ -514,13 +512,12 @@ plt_corr_logit_sylX
 \label{plt-intuition-logit-prop}
 \end{center}
 \end{figure}
-\ttodo[inline]{change title of graph in stat file, add y axis label}
 
 
 \section{Discussion}
 This chapter reported on the \Sexpr{nrow(intuition_desc)} bilingual Spanish--English participants who completed a Spanish syllabification experiment. Crucially, the experiment ran in this chapter investigated whether or not the two groups agreed on the syllabic structures of Spanish they are segmenting as a result of L1 background. The results indicated that the two groups differed in their abilities to correctly syllabify Spanish syllables. The native Spanish speakers were much better than the native English speakers at this task. 
 
-While this result may seem obvious on the surface, the effects it may have on other language processing skills is likely to be substantial. Since this difference was found when asking the participants to identify the first syllable of the word, it is possible that differences could be found in lexical access. Much research has been done on the word initial syllable being a key to accessing the mental lexicon \ttodo[inline]{add references}. It may also affect word segementation abilities in that breaking down words into syllables will be different. For a full discussion on Spanish word segmentation, see Chapters \ref{ch-seg-lab} and \ref{ch-seg-online} of this dissertation. Chapter \ref{ch-seg-lab} reports on the same participants discussed in the current chapter who completed the in-person visual segmentation experiment less the participants who completed the lexical access experiment, which was not reported in this project due to insufficient data collection at the time that COVID-19 broke out.
+While this result may seem obvious on the surface, the effects it may have on other language processing skills is likely to be substantial. Since this difference was found when asking the participants to identify the first syllable of the word, it is possible that differences could be found in lexical access. Much research has been done on the word initial syllable being a key to accessing the mental lexicon \parencite{Cooper2002-rx,Cutler1988-kg,Tabossi2000-xn,Tagliapietra2009-uc}. It may also affect word segementation abilities in that breaking down words into syllables will be different. For a full discussion on Spanish word segmentation, see Chapters \ref{ch-seg-lab} and \ref{ch-seg-online} of this dissertation. Chapter \ref{ch-seg-lab} reports on the same participants discussed in the current chapter who completed the in-person visual segmentation experiment less the participants who completed the lexical access experiment, which was not reported in this project due to insufficient data collection at the time that COVID-19 broke out.
 
 One limitation in this study is that it only reports on error rates. While reaction times were collected during the course of this experiment, they were not reliable due to experimental design constraints. The design of the experiment displayed the word for 1500 ms before the answer choices were visible to participants and responses were not accepted until the 1500 ms had passed. Most participants began to answer very quickly once they realized that the answer choices, CV or CVC, were not changing. In other words a participant always used the same response button to indicate a CV syllable and the same response button to indicate a CVC syllable throughout the entire experiment. Many participants began anticipating the answer screen to appear so they could respond. This made it impossible to detect stuck keys from a person inadvertently holding the button or excluding responses based on previously reported response time cutoffs, i.e. 100 or 200 ms. A future study could take advantage of reaction as an independent variable of interest by allowing participants to respond as soon as they had made their decision rather than forcing them to wait. It would also be possible to switch answer response buttons, although this may unnecessarily compicate the task and served as the reason for not doing this in the current study. Nonetheless, utilizing reaction time data to syllabification may make predictions possible in tasks that are interested in langauge processing where segmentation, lexical access, vocabulary size are concerned. Visual and auditory monitoring, word-naming, lexical decision task or expirments utilizing priming could be much more informative with syllabic intuitions guiding experimental item selection. The last possible limitation was the two-alternative forced choice task of CV and CVC. Future studies may benefit increasing the number of syllable types. Including other syllable types such as CCV, VC or VCC in the list would increase the complexity of the task, but would resemble more real-life language tasks encountered by language learners.
 
