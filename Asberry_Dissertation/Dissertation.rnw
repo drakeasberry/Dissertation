@@ -130,7 +130,7 @@ openany, % eliminates all extra blank pages from entire document
 
 \facultyD{5th Committee Member Name} % Your first faculty member's name and URL(can be added between green curly brackets before the member's name. This may optionally be added to the committee approval page when number of committee members requires it, print it elsewhere with \facnameD
 
-\defense{April 15, 2020} % This should have the long date format of your scheduled defense, print it elsewhere with \defensedate
+\defense{December 09, 2021} % This should have the long date format of your scheduled defense, print it elsewhere with \defensedate
 
 \AtBeginDocument{
 \hypersetup{pdftitle=\ttitle} % Set the PDF's title to your title
@@ -242,17 +242,17 @@ GRADUATE COLLEGE
 
 \vspace*{0.3in}
 
-\noindent\underline{\makebox[4.0in][r]{}} \hspace{0.4in} Date: \defensedate \\
+\noindent\underline{\makebox[4.0in][r]{}} \hspace{0.15in} Date: \defensedate \\
 {\bfseries\chairname}\\
 \emph{(Chair)}
 \vspace*{0.3in}
 
-\noindent\underline{\makebox[4.0in][r]{}} \hspace{0.4in} Date: \defensedate \\
+\noindent\underline{\makebox[4.0in][r]{}} \hspace{0.15in} Date: \defensedate \\
 {\bfseries\facnameA}\\
 \emph{(Member)}
 \vspace*{0.3in}
 
-\noindent\underline{\makebox[4.0in][r]{}} \hspace{0.4in} Date: \defensedate \\
+\noindent\underline{\makebox[4.0in][r]{}} \hspace{0.15in} Date: \defensedate \\
 {\bfseries\facnameB}\\
 \emph{(Member)}
 \vspace*{0.5in}
