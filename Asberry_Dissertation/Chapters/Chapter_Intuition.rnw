@@ -420,7 +420,7 @@ However, the interaction between \emph{Group} and \emph{Structure} did not reach
 <<table_anova_intuition, results='asis', include=TRUE>>=
 xtable(aov_intuition$anova_table, 
        type = "latex", 
-       caption = "This table shows the results of the 2 x (2) mixed-effects anova for one between subjects factor \\textit{Group}, \\textit{group} in table. The \\textit{group} factor had two levels---native Spanish and native English. The within subjects factor \\textit{Structure}, \\textit{syl\\_structure} in table also contained two levels---CV and CVC. The logit transformed values of correct syllabification responses was the independent variable.",
+       caption = "This table shows the results of the 2 x (2) mixed-effects anova for one between subjects factor \\textit{Group}, \\textit{group} in table. The \\textit{group} factor had two levels---native Spanish and native English. The within subjects factor \\textit{Structure}, \\textit{syl\\_structure} in table also contained two levels---CV and CVC. The logit transformed values of correct syllabification responses was the dependent variable.",
        label = "tab-anova-intuition")
 @
 
@@ -515,6 +515,7 @@ plt_corr_logit_sylX
 
 
 \section{Discussion}
+\ttodo{Needs to be expanded}
 This chapter reported on the \Sexpr{nrow(intuition_desc)} bilingual Spanish--English participants who completed a Spanish syllabification experiment. Crucially, the experiment ran in this chapter investigated whether or not the two groups agreed on the syllabic structures of Spanish they are segmenting as a result of L1 background. The results indicated that the two groups differed in their abilities to correctly syllabify Spanish syllables. The native Spanish speakers were much better than the native English speakers at this task. 
 
 While this result may seem obvious on the surface, the effects it may have on other language processing skills is likely to be substantial. Since this difference was found when asking the participants to identify the first syllable of the word, it is possible that differences could be found in lexical access. Much research has been done on the word initial syllable being a key to accessing the mental lexicon \parencite{Cooper2002-rx,Cutler1988-kg,Tabossi2000-xn,Tagliapietra2009-uc}. It may also affect word segmentation abilities in that breaking down words into syllables will be different. For a full discussion on Spanish word segmentation, see Chapters \ref{ch-seg-lab} and \ref{ch-seg-online} of this dissertation. Chapter \ref{ch-seg-lab} reports on the same participants discussed in the current chapter who completed the in-person visual segmentation experiment less the participants who completed the lexical access experiment, which was not reported in this project due to insufficient data collection at the time that COVID-19 broke out.
