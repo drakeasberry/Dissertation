@@ -22,6 +22,7 @@ library(cowplot)
 library(effsize)
 library(plyr)
 library(dplyr)
+library(xtable)
 
 source('../../Scripts_Dissertation/diss_dataviz_script.R')
 source('../../Scripts_Dissertation/analysis_functions.R')
