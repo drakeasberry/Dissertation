@@ -192,3 +192,34 @@ syl_data <- syl_data %>%
   
 tapply(syl_data$Resp_Corr, syl_data$participant, mean)
 @
+
+<<pilot_data_matched, echo = FALSE>>=
+my_match_data <- my_data %>% 
+  mutate(., Matching = ifelse(Target == Carrier, "Matching", "Mismatching"))
+
+# Run anova   
+aov_pilot_matched <- aov_ez("participant", "RTmsec", my_match_data, within = c("Target", "Matching"))
+aov_pilot_matched
+
+ag_matched <- aggregate(RTmsec ~ Target + Matching, data = my_match_data, FUN = mean)
+
+#Parallel plots
+parallel_example <- ggplot(data=ag_matched,
+       aes(x=Target, y=RTmsec, group=Matching, color=Matching)) +
+  geom_line(aes(linetype=Matching)) + 
+  geom_point(aes(shape=Matching)) + 
+  geom_text(aes(label=paste("(",round(RTmsec,0),")"), 
+                hjust=-.2, 
+                vjust=0),
+            size = 3,
+            colour = "black",
+            show.legend=FALSE) +
+  labs(title="Example Parallel Effects Plot",
+       x="Target Structure",
+       y= "Reaction Time (ms)",
+       fill= "x") +
+  ylim(660, 760) +
+  theme_light() +
+  scale_color_manual(values = c('darkorchid4', 'goldenrod4'))
+parallel_example
+@
