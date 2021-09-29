@@ -1,0 +1,16 @@
+% Appendix Template with LaTeX code only
+
+%----------------------------------------------------------------------------------------
+%Change ParentTemplate to something unique and meaningful to your project
+<<parentSegmentation, echo=FALSE, cache=FALSE>>=
+rm(list=ls())
+library(knitr)
+set_parent('../Dissertation.rnw')
+@
+%----------------------------------------------------------------------------------------
+
+
+\chapter{Visual Segmentation Stimuli} % Main appendix title
+\label{segmentation-stimuli} % Change Label; for referencing this appendix elsewhere, use \ref{segmentation-stimuli}
+
+Write your content here.
