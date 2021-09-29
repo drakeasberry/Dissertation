@@ -272,7 +272,7 @@ GRADUATE COLLEGE
 \noindent I hereby certify that I have read this dissertation prepared under my direction and recommend that it be accepted as fulfilling the dissertation requirement.
 \vspace*{0.5in}
 
-\noindent\underline{\makebox[4.0in][r]{}} \hspace{0.4in} Date: \defensedate \\
+\noindent\underline{\makebox[4.0in][r]{}} \hspace{0.15in} Date: \defensedate \\
 Dissertation Director: \chairname \\
 %{\bfseries \emph{Instructor \\ Hispanic Linguistics}} % Update hard-coded to job title and department
 \vfill
