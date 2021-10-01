@@ -376,6 +376,18 @@ lab_aov_learners
 ## main effect of target syllable structure
 ## two way interaction between matching and word status
 
+# Create Manuscript Version
+lab_grouping_pretty <- c("Target", "Matching", "Lexicality")
+lab_aov_learners_prt <- lab_learners %>% 
+  rename(., c(Target = target_syl_structure,
+              Matching = matching,
+              Lexicality = word_status)) %>% 
+  aov_ez("partNum", 
+         "log_RT_Median", 
+         ., 
+         within = c(lab_grouping_pretty))
+lab_aov_learners_prt
+
 
 # Regroup to run paired t-test for 
 # target syllable over all other conditions 
@@ -503,7 +515,15 @@ t_lab_l2_wd_mat_int
 ## not significant in hypothesized direction 
 ## t = 2.1855, df = 26, p-value = 0.981
 
+# Real words t.test ont-tailed for matching
+t_lab_l2_wd_mat_int_great <-
+  t.test(lab_words_learners$log_RT_Median ~ lab_words_learners$matching, 
+         paired = TRUE,
+         alternative = "greater")
+t_lab_l2_wd_mat_int_great
 
+## not significant in hypothesized direction 
+## t = 2.1855, df = 26, p-value = 0.981
 # Descriptives to check direction of effect
 with(lab_words_learners, 
      tapply(log_RT_Median, 
@@ -517,7 +537,7 @@ lab_l2_mat_efsize <- cohen.d(lab_words_learners$log_RT_Median,
         lab_words_learners$matching, 
         na.rm = TRUE, 
         paired = TRUE)
-
+lab_l2_mat_efsize
 
 # Learner plots 
 # Main effect of target syllable structure
@@ -611,6 +631,16 @@ lab_aov_natives
 ## no significant main effects, but word status trending 
 ## no signficant interactions
 
+# Create Manuscript Version
+lab_aov_natives_prt <- lab_natives %>% 
+  rename(., c(Target = target_syl_structure,
+              Matching = matching,
+              Lexicality = word_status)) %>% 
+  aov_ez("partNum", 
+         "log_RT_Median", 
+         ., 
+         within = c(lab_grouping_pretty))
+lab_aov_natives_prt
 # Used in manuscript
 #lab_aov_natives$anova_table["word_status", "num Df"]
 #lab_aov_natives$anova_table["word_status", "den Df"]

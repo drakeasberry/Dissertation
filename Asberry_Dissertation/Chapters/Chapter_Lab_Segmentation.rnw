@@ -309,7 +309,7 @@ parallel_example
 \end{figure}
 
 The crossover effect was considered the result of favorable conditions that produced faster reaction times for matching conditions. For example, if a syllabic segmentation strategy is being used, then monitoring for a CV sequence should be detected faster when the presented word has a CV word-initial syllable when compared to a presented word that has a CVC word-initial syllable. Likewise, monitoring for a CVC sequence should be found faster when the word containing the target begins with a CVC word-initial syllable rather than a CV one. In other words, monitoring for a sound or letter sequence that matches the initial syllable structure of the word containing it makes it an easier task. The easier task is marked by the faster reaction times needed to indicate the syllable had been detected. The results of statistical analysis indicated the crossover effect was present with a significant interaction between the search target structure and the initial syllable structure of the presented word containing the target as seen in Figure \ref{plt-crossover-comp}. The current project shows signficance through the paralell lines as explemified in Figure \ref{plt-parallel-comp}. The data in the current study analyzed data by looking target syllable compared to a matching or mismatching condition resulting in parallel lines. In other words, the CV matching and CVC matching conditions are connected by the line representing matching condition and the same holds true for the mismatching condition---CV mismatching is connected to CVC mismatching. If the study finds similar results to previous word segmentation experiments, then it is expected that the mismatching condition will result in longer reaction times than the matching condition for both types of syllables. Therefore, the same analysis is simply being visualized in two different manners. %It is imperative that the reader understand this point because if familiar with the previous research looks at the plots in the manuscript, they may mistakenly assume the results are null or insignificant
-
+\ttodo[inline]{Include references to software packages used in analysis. One to two sentences.}
 
 \section{Results}
 Table \ref{tab-lab-grp-rt-wd} reports the reaction time data for real words and Table \ref{tab-lab-grp-rt-nonwd} reports the reaction time data for nonwords. In both tables the reaction times are reported as a function of group---native Spanish controls and L2 learners of Spanish---and the four experimental conditions: CV target--matching, CV target--mismatching, CVC target--matching and CVC target--mismatching. Reaction times in these table are reported in both terms of raw milliseconds recorded during the experiment and log transformed times. 
@@ -529,9 +529,9 @@ lab_grp_sum["Spanish-CVC-CVC-nonword","n"]}}\\
 %\label{plt-lab-l2-rtms-desc}
 %\end{center}
 %\end{figure}
-\ttodo[inline]{Update ANOVA table Size and Caption}
+\ttodo[inline]{Update ANOVA table Caption}
 <<table_anova_lab_natives, results='asis', include=TRUE>>=
-xtable(lab_aov_natives$anova_table, 
+xtable(lab_aov_natives_prt$anova_table, 
        type = "latex",
        table.placement = "hbt",
        caption = "This table shows the results of the 2 x (2) mixed-effects anova for one between subjects factor \\textit{Group}, \\textit{group} in table. The \\textit{group} factor had two levels---native Spanish and native English. The within subjects factor \\textit{Structure}, \\textit{syl\\_structure} in table also contained two levels---CV and CVC. The logit transformed values of correct syllabification responses was the dependent variable.",
@@ -558,9 +558,19 @@ lab_l1_tar_mat_int
 \end{center}
 \end{figure}
 
-Figure \ref{plt-lab-l1-tar-mat-ns-int} shows the data plotted by lexicality with each panel showing the interaction between target syllable structure and matching condition. Note that the parallel lines shown in the word panel of the plot reveals the type of pattern expected to be seen given the way the data was analyzed. The difference between our analysis and previous literature is capturing the same difference but displayed in a different manner. 
-\ttodo[inline]{the next paragraph of text should be part of the paragraph above. This helps further explain the the graphical display differences between current study and previous research results.}
-The previous literature showed the crossover effect because they analyzed their data over target syllable structure and carrier syllable structure. Our parallel pattern tells the same story \ttodo{the same story is too colloquial. It is also misleading because previous research DID find an effect with the exception of Bradley et. al. However, I DID NOT find an effect in this current chapter and this description is not clearly stated in its current format.} but simply analyzed over target syllable structure and matching condition. In both cases the conditions analyzed included CV target--CV carrier and CVC target--CVC carrier (matching conditions), CV target--CVC carrier and CVC target--CV carrier (mismatching conditions).
+Figure \ref{plt-lab-l1-tar-mat-ns-int} shows the data plotted by lexicality with each panel showing the interaction between target syllable structure and matching condition. Note that the parallel lines shown in the word panel of the plot revealed the type of pattern expected to be seen given the way the data was analyzed in the current study. However, the results did not support native Spanish speaking controls using a syllabic segmentation strategy. There was no significant main effect of \emph{Matching}
+\emph{F}(
+\Sexpr{lab_aov_natives$anova_table["matching", "num Df"]},
+\Sexpr{lab_aov_natives$anova_table["matching", "den Df"]}) = 
+\Sexpr{round(lab_aov_natives$anova_table["matching", "F"],2)}, 
+p > .05 
+[\Sexpr{round(lab_aov_natives$anova_table["matching", "Pr(>F)"],4)}]. Nor was there a statistically significant interaction between \emph{Matching} and \emph{Lexicality}, 
+\emph{F}(
+\Sexpr{lab_aov_natives$anova_table["matching:word_status", "num Df"]},
+\Sexpr{lab_aov_natives$anova_table["matching:word_status", "den Df"]}) =
+\Sexpr{round(lab_aov_natives$anova_table["matching:word_status", "F"],2)}, 
+p < .05 
+[\Sexpr{round(lab_aov_natives$anova_table["matching:word_status", "Pr(>F)"],4)}].
 
 
 \subsection{L2 Spanish Learners}
@@ -580,13 +590,23 @@ and a statistically significant interaction between \emph{Matching} and \emph{Le
 p < .05 
 [\Sexpr{round(lab_aov_learners$anova_table["matching:word_status", "Pr(>F)"],4)}]. 
 
-\ttodo[inline]{Update ANOVA table Size and Caption}
+\ttodo[inline]{Update ANOVA table Caption}
 <<table_anova_lab_learners, results='asis', include=TRUE>>=
-xtable(lab_aov_learners$anova_table, 
+xtable(lab_aov_learners_prt$anova_table, 
        type = "latex", 
        caption = "This table shows the results of the 2 x (2) mixed-effects anova for one between subjects factor \\textit{Group}, \\textit{group} in table. The \\textit{group} factor had two levels---native Spanish and native English. The within subjects factor \\textit{Structure}, \\textit{syl\\_structure} in table also contained two levels---CV and CVC. The logit transformed values of correct syllabification responses was the dependent variable.",
        label = "tab-anova-lab-learners")
 @
+
+\begin{figure}[ht]
+\begin{center}
+<<lab_l2_syl_main, fig.width= 5, fig.height= 3>>=
+lab_l2_tar_syl_main
+@      
+\caption[Estimated Marginal Means: Lab Experiment Target Group]{Log transformed reaction times reported given as a factor of syllable structure. The plot shows the fact that participants responded significantly faster to CVC syllables. The error bars represent the 95\% confidence intervals. The overlapping CIs still represent a significant effect because the factor is a within subjects factor.}
+\label{plt-lab_l2_mat_lex_s_int}
+\end{center}
+\end{figure}
 
 
 In order to look at main effect of target syllable, post-hoc analyses were conducted. The dataset was regrouped so that each participant's reaction times were computed based on whether the target sequence they were monitoring for was CV or CVC. The dataset consisted of 
@@ -620,6 +640,24 @@ magnitude. This can be seen in the output of Cohen's \emph{d} for \emph{Target} 
 \Sexpr{lab_tar_efsize$conf.level*100}\% CI 
 [\Sexpr{round(lab_tar_efsize$conf.int[1],2)},
 \Sexpr{round(lab_tar_efsize$conf.int[2],2)}].
+
+\begin{figure}
+\begin{center}
+<<lab_l2_mat_lex_s_int, fig.width= 5, fig.height= 3>>=
+lab_l2_lex_mat_int
+@      
+\caption[Estimated Marginal Means: Lab Experiment Target Group]{Log transformed reaction times reported given as a factor of matching and lexicality conditions.}
+\label{plt-lab_l2_mat_lex_s_int}
+
+\vspace{.4in}
+
+<<lab_l2_tar_mat_ns_int, fig.width= 6, fig.height= 3>>=
+lab_l2_tar_mat_int
+@      
+\caption[Estimated Marginal Means: Lab Experiment Control Group]{Log transformed reaction times reported given as a factor of target syllable structure, matching and lexicality conditions.}
+\label{plt-lab-l2-tar-mat-ns-int}
+\end{center}
+\end{figure}
 
 In order to break down the interaction between \emph{Matching} and \emph{Lexicality} factors, a post-hoc analysis was run. The L2 Spanish dataset was was further subset into two dataframes: one for real words and one for nonwords. Each dataset consisted of 
 \Sexpr{nrow(lab_nonwords_learners)} 
@@ -670,34 +708,13 @@ in magnitude, \emph{d}=
 \Sexpr{lab_l2_mat_efsize$conf.level*100}\% CI 
 [\Sexpr{round(lab_l2_mat_efsize$conf.int[1],2)}, 
 \Sexpr{round(lab_l2_mat_efsize$conf.int[2],2)}].
-Figure \ref{plt-lab_l2_mat_lex_s_int} plots the estimated marginal means for the interaction between \emph{Matching} and \emph{Lexicality} for L2 learners of Spanish.
-
-\begin{figure}
-\begin{center}
-<<lab_l2_mat_lex_s_int, fig.width= 5, fig.height= 3>>=
-lab_l2_lex_mat_int
-@      
-\caption[Estimated Marginal Means: Lab Experiment Target Group]{Log transformed reaction times reported given as a factor of matching and lexicality conditions.}
-\label{plt-lab_l2_mat_lex_s_int}
-\end{center}
-\end{figure}
-
-\ttodo[inline]{The NULL effect needs to be acknowledged here}
-Lastly, Figure \ref{plt-lab-l2-tar-mat-ns-int} again shows that the interaction between target syllable structure and the structure word initial syllable of carrier word was not significant. 
-
-\ttodo[inline]{the discussion about it needs to be deleted. Do not discuss Null findings---acknowledge and move on.}
-Although not significant, the patterns that emerged in the native speaker controls also emerged in the L2 learners of Spanish. That is the real word dataset reveals parallel lines which implies the same meaning as the crossover effect found in previous studies.
-
-\ttodo[inline]{Why do I want this plot? What is it adding?}
-\begin{figure}
-\begin{center}
-<<lab_l2_tar_mat_ns_int, fig.width= 6, fig.height= 3>>=
-lab_l2_tar_mat_int
-@      
-\caption[Estimated Marginal Means: Lab Experiment Control Group]{Log transformed reaction times reported given as a factor of target syllable structure, matching and lexicality conditions.}
-\label{plt-lab-l2-tar-mat-ns-int}
-\end{center}
-\end{figure}
+Figure \ref{plt-lab_l2_mat_lex_s_int} plots the estimated marginal means for the interaction between \emph{Matching} and \emph{Lexicality} for L2 learners of Spanish. It shows that the signficant interaction was due to the fact that participants responded signficantly to the the mismatching condition than the matching condition, but only for real words. Lastly, the data reveals that the interaction between target syllable structure and the structure word initial syllable of carrier word was not significant as can be seen in Figure \ref{plt-lab-l2-tar-mat-ns-int}. There was no significant main effect of \emph{Matching}
+\emph{F}(
+\Sexpr{lab_aov_learners$anova_table["matching", "num Df"]},
+\Sexpr{lab_aov_learners$anova_table["matching", "den Df"]}) = 
+\Sexpr{round(lab_aov_learners$anova_table["matching", "F"],2)}, 
+p > .05 
+[\Sexpr{round(lab_aov_learners$anova_table["matching", "Pr(>F)"],4)}].
 
 
 \section{Discussion}
@@ -724,6 +741,9 @@ Word/Nonword
 Previous studies did not mix words and nonword in same experimental session. Maybe differences in processing of words and nonwords causes the effect to wash out.
 
 The results of direct elicitation of initial syllable structure showed a consistent syllabification pattern between participants. \ttodo{this is a good sentence}
+
+
+The previous literature showed the crossover effect because they analyzed their data over target syllable structure and carrier syllable structure. Our parallel pattern tells the same story \ttodo{the same story is too colloquial. It is also misleading because previous research DID find an effect with the exception of Bradley et. al. However, I DID NOT find an effect in this current chapter and this description is not clearly stated in its current format.} but simply analyzed over target syllable structure and matching condition. In both cases the conditions analyzed included CV target--CV carrier and CVC target--CVC carrier (matching conditions), CV target--CVC carrier and CVC target--CV carrier (mismatching conditions).
 %Another avenue to investigate would be the syllabic intuitions of participants, which could be a factor given that English and Spanish differ in ways similar to English and French participants of previous research studies. 
 
 %It may be that the two groups do not agree on the syllabic structures of the speech they are segmenting as a result of L1 backgrounds. Syllabic intuitions from both groups were collected in a syllabic intuition experiment that was conducted and results are discussed in Chapter \ref{ch-intuition} of the current project.
