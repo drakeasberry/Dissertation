@@ -529,12 +529,12 @@ lab_grp_sum["Spanish-CVC-CVC-nonword","n"]}}\\
 %\label{plt-lab-l2-rtms-desc}
 %\end{center}
 %\end{figure}
-\ttodo[inline]{Update ANOVA table Caption}
+
 <<table_anova_lab_natives, results='asis', include=TRUE>>=
 xtable(lab_aov_natives_prt$anova_table, 
        type = "latex",
        table.placement = "hbt",
-       caption = "This table shows the results of the 2 x (2) mixed-effects anova for one between subjects factor \\textit{Group}, \\textit{group} in table. The \\textit{group} factor had two levels---native Spanish and native English. The within subjects factor \\textit{Structure}, \\textit{syl\\_structure} in table also contained two levels---CV and CVC. The logit transformed values of correct syllabification responses was the dependent variable.",
+       caption = "This table shows the results of the (3) x (2) repeated measures ANOVA for three within subjects factors \\textit{Target}, \\textit{Matching} and \\textit{Lexicality} for native Spanish speakers. The \\textit{Target} factor contained two levels---CV and CVC syllable structure. The \\textit{Matching} factor had two levels---Matching and Mismatching syllable structure. The \\textit{Lexicality} factor also included two levels---words and nonwords. The log transformed reaction time values was the dependent variable.",
        label = "tab-anova-lab-natives")
 @
 \clearpage
@@ -590,11 +590,11 @@ and a statistically significant interaction between \emph{Matching} and \emph{Le
 p < .05 
 [\Sexpr{round(lab_aov_learners$anova_table["matching:word_status", "Pr(>F)"],4)}]. 
 
-\ttodo[inline]{Update ANOVA table Caption}
+
 <<table_anova_lab_learners, results='asis', include=TRUE>>=
 xtable(lab_aov_learners_prt$anova_table, 
        type = "latex", 
-       caption = "This table shows the results of the 2 x (2) mixed-effects anova for one between subjects factor \\textit{Group}, \\textit{group} in table. The \\textit{group} factor had two levels---native Spanish and native English. The within subjects factor \\textit{Structure}, \\textit{syl\\_structure} in table also contained two levels---CV and CVC. The logit transformed values of correct syllabification responses was the dependent variable.",
+       caption = "This table shows the results of the (3) x (2) repeated measures ANOVA for three within subjects factors \\textit{Target}, \\textit{Matching} and \\textit{Lexicality} for native English speakers. The \\textit{Target} factor contained two levels---CV and CVC syllable structure. The \\textit{Matching} factor had two levels---Matching and Mismatching syllable structure. The \\textit{Lexicality} factor also included two levels---words and nonwords. The log transformed reaction time values was the dependent variable.",
        label = "tab-anova-lab-learners")
 @
 
