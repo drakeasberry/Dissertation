@@ -13,4 +13,30 @@ set_parent('../Dissertation.rnw')
 \chapter{Visual Segmentation Stimuli} % Main appendix title
 \label{segmentation-stimuli} % Change Label; for referencing this appendix elsewhere, use \ref{segmentation-stimuli}
 
-Write your content here.
+Chapter 4
+
+Chapter 5
+Practic Items
+garaje--garganta
+garele--garventa
+joroba--jornada
+joruma--jorteda
+
+
+Experimental Items
+balada--baldosa
+balega--balbusa
+linaje--linterna
+linele--linlirna
+peseta--pestaña
+pesipa--pesdeña
+rosario--rosquilla
+rosepio--rosvailla
+camisa--campana
+camofa--cambena
+culebra--culpable
+culitra--culseble
+moneda--montaña
+moniga--monseña
+paloma--palmera
+palura--palbira
