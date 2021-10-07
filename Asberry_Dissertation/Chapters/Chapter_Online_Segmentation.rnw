@@ -54,19 +54,16 @@ In addition to running a replication of \textcite{Bradley1993-qq}, the main goal
 \section{Methods}
 In order to address these questions and possible outcomes, an online visual letter sequence monitoring task was conducted to analyze the word segmentation strategies used by the participants. During the online visual monitoring experiment, a two or three letter string that represented a CV or CVC syllable appeared on the participants computer screen. Once the target presentation occurred the words or nonwords were individually presented on to the participants. The instructions asked participants to respond as quickly as possible once they identified the matching letter string. Both the letter stings, i.e. targets, and the words were presented visually. Since this dissertation is the first study to my knowledge that has tested a syllable segmentation strategy in a completely visual manner, the assumption of reading language actually activates the phonology in the mind of the participant. As with chapter \ref{ch-seg-lab}, the online experimental design assumed that participants were actually activating the phonological representation of the sounds of the target, i.e. syllable, and the word they read on the screen. For a full discussion on this topic, refer to Chapter \ref{ch-intro} Section \ref{sec-phon-activation}. 
 
-Running an online study also introduced another factor to be considered when preparing to collect data. In chapter \ref{ch-seg-lab}, all participants completed the experiments on the same computer where hardware and software configurations were consistent across all participants. All participant responses were collected with a usb button response box. However, the experiment in the current chapter was built using PsychoPy3 version 2020.1.2 and hosted online using Pavlovia \ttodo{citations pyschopy and pavlovia}. This resulted in the lack of control for hardware configurations, browser selection and input devices. Participants were recruited from Prolific, which did allow for restricting user devices to a laptop or desktop computer. Participants were not allowed to participate from mobile devices or tablets \ttodo{cite prolific}. However, several studies were published around the same time as the data being collected for the experiment in this chapter that showed online reaction time studies were viable options \ttodo{cite all three articles}. Visual studies conducted online were actually found to be comparable to laboratory based experiments in terms of reaction time collection and accuracy while auditory studies continued to lag behind in-person studies \ttodo{cite the one study that showed this}. Thus, continuing to use a visual paradigm to study word segmentation strategies in Spanish was a logical choice.
+Running an online study also introduced another factor to be considered when preparing to collect data. In chapter \ref{ch-seg-lab}, all participants completed the experiments on the same computer where hardware and software configurations were consistent across all participants. All participant responses were collected with a usb button response box. However, the experiment in the current chapter was built using PsychoPy3 version 2020.1.2 and hosted online using Pavlovia \parencite{Bridges2020-el}. This resulted in the lack of control for hardware configurations, browser selection and input devices. Participants were recruited from Prolific, which did allow for restricting user devices to a laptop or desktop computer. Participants were not allowed to participate from mobile devices or tablets \parencite{noauthor_2020-xx}. However, several studies were published around the same time as the data being collected for the experiment in this chapter that showed online reaction time studies were viable options \parencite{Bridges2020-el,Pronk2020-qg}. Visual studies conducted online were actually found to be comparable to laboratory based experiments in terms of reaction time collection being only slighty more variable while auditory studies continued to lag behind in-person studies \parencite{Bridges2020-el,Plant2016-nv}. Thus, continuing to use a visual paradigm to study word segmentation strategies in Spanish was a logical choice.
 
 
 \subsection{Participants}
-\ttodo{Give accurate descriptions of participant groups, how they were classified, number of participants, etc. Data references have been updated, but not surrounding text} All participants reported in this chapter were recruited for experiments that took place in an in-person laboratory setting. In this study, native Spanish speakers who were second language learners of English were used as the control group---LE group. The target group consisted of native English speakers who were second language learners of Spanish---LS group. All participants recruited continued to live in their L1 environment, or birth country, at the time of data collection. There were \Sexpr{online_completed["Monolingual Spanish", "n"]} participants in LE group recruited from the University of Sonora in Hermosillo, Mexico and \Sexpr{online_completed["L2 Learner", "n"]} participants in LS group recruited from the University of Arizona in Tucson, AZ. In total, \Sexpr{online_completed["L2 Learner", "n"] + online_completed["Monolingual Spanish", "n"]} participants completed the experiment. For a full description of each group see Chapter \ref{ch-sampling} Section \ref{sec-participants}.
+All participants reported in this chapter were recruited for experiments that were conducted online. In this study, native monolingual Spanish speakers were used as the control group---MS group. The target group consisted of native English speakers who were second language learners of Spanish---LS group. No participant from the LS group in this chapter took part in any previous study reported on in chapters \ref{ch-intuition} or \ref{ch-seg-lab}. All MS and LS participants recruited for the online visual letter sequence monitoring experiment continued to live in their L1 environment, or birth country, at the time of data collection. There were \Sexpr{online_completed["Monolingual Spanish", "n"]} participants in MS group recruited from Mexico and \Sexpr{online_completed["L2 Learner", "n"]} participants in LS group recruited from United States. In total, \Sexpr{online_completed["L2 Learner", "n"] + online_completed["Monolingual Spanish", "n"]} participants completed the experiment. For a full description of each group see Chapter \ref{ch-sampling} Section \ref{sec-participants}.
 
-%This section was removed because it was done with filters in Prolific. Those were double checked and people with inconsistent data were asked to update profiles, their data was deleted and did not receive compensation. 
-%In total, there were \Sexpr{lab_stat_compare["English", "n"] + lab_stat_compare["Spanish", "n"]} participants that completed the study. Using responses to the BLP, \Sexpr{lab_part_removal_sum["fluency-English", "n"] + lab_part_removal_sum["location-Spanish", "n"] + lab_part_removal_sum["dominance-English", "n"] + lab_part_removal_sum["dominance-Spanish", "n"]} were removed because they did not accurately represent the groups for which they had been recruited. \Sexpr{lab_part_removal_sum["fluency-English", "n"]} native English speaker was removed because they reported fluency in languages other than Spanish and English. \Sexpr{lab_part_removal_sum["location-Spanish", "n"]} native Spanish speakers were removed because they reported being born and/or raised outside of Mexico. \Sexpr{lab_part_removal_sum["dominance-English", "n"] + lab_part_removal_sum["dominance-Spanish", "n"]} participants were removed because they were outliers in terms of language dominance scores calculated by the BLP. Lastly, using the scores from both the LexTALE and LexTALE-Esp, \Sexpr{lab_part_removal_sum["vocabulary-Spanish", "n"]} native Spanish speakers were removed because their scores indicated a larger L2 English vocabulary size than their L1 Spanish vocabulary size.
+Language knowledge and participant background data was collected through the LexTALE-Esp and a subset of questions from the Bilingual Language Profile (BLP), which were completed during the same session as the letter sequence monitoring experiment. Additional demographic and linguistic history data was provided by Prolific. The LexTALE-Esp provided vocabulary knowledge of Spanish for all participants. The full BLP could not be implemented for the participants of this study because it was not designed for the monolinguals as it teases apart the use of two or more lanugages a participant speaks. Since monolinguals only have one language, the output of questionnaire would not produce data that was informative. Unlike the process in chapter \ref{ch-seg-lab} where participants had to have demographic data checked to ensure they met the criteria for the group they had been recruited, the Prolific filters took care of this before a participant was given the opportunity to participate. Nonetheless, the subset of BLP questions that appeared at the start of the experiment served to cross-check the data input by the participant on Prolific's website. Following guidelines set forth by Prolific, inconsistencies between BLP questions and Prolific profile data resulted in communication with participants through the Prolific website. Participants that were found to have descrepencies were asked to update profiles, their data was deleted and they did not receive compensation. 
 
-Additional data collected through the LexTALE, LexTALE-Esp and the Bilingual Language Profile (BLP) \ttodo{done with filters in Prolific. Those were double checked and people with inconsistent data were asked to update profiles, their data was deleted and did not receive compensation.} tasks completed during the same session as the letter sequence monitoring task were used to ensure that participants actually represented the intended group for which they were recruited. Using responses to the BLP, \Sexpr{lab_part_removal_sum["fluency-English", "n"] + lab_part_removal_sum["location-Spanish", "n"] + lab_part_removal_sum["dominance-English", "n"] + lab_part_removal_sum["dominance-Spanish", "n"]} were removed because they did not accurately represent the groups for which they had been recruited. \Sexpr{lab_part_removal_sum["fluency-English", "n"]} native English speaker was removed because they reported fluency in languages other than Spanish and English. \Sexpr{lab_part_removal_sum["location-Spanish", "n"]} native Spanish speakers were removed because they reported being born and/or raised outside of Mexico. \Sexpr{lab_part_removal_sum["dominance-English", "n"] + lab_part_removal_sum["dominance-Spanish", "n"]} participants were removed because they were outliers in terms of language dominance scores calculated by the BLP. Lastly, using the scores from both the LexTALE and LexTALE-Esp, \Sexpr{lab_part_removal_sum["vocabulary-Spanish", "n"]} native Spanish speakers were removed because their scores indicated a larger L2 English vocabulary size than their L1 Spanish vocabulary size.
-
-Once the demographic removals had been completed, an accuracy response rate for the experiment was conducted on the remaining \Sexpr{nrow(online_completed)} participants. A predetermined accuracy rate of 90 percent was used as the cut-off and any participant responding incorrectly to filler or critical trials more than 10 percent of the time was removed from the analysis. All participants correctly responded to filler trials above the cut-off point; however, \Sexpr{online_stat_dropped["L2 Learner", "n"] + online_stat_dropped["Monolingual Spanish", "n"]} participants were removed for committing errors at rate greater than 10 percent to critical trials. After the removal of participants, \Sexpr{online_stat_dropped["L2 Learner", "n"]} participants from the LS group and \Sexpr{online_stat_dropped["Monolingual Spanish", "n"]} participants from the LE group were removed. This left a total of \Sexpr{online_eligible["L2 Learner", "n"] + online_eligible["Monolingual Spanish", "n"]} participants---\Sexpr{online_eligible["L2 Learner", "n"]} native English speakers and \Sexpr{online_eligible["Monolingual Spanish", "n"]} native Spanish speakers, that had data submitted to the analysis and only these participants are included in reported statistics and figures below. Table \ref{tab-lab-demo-part} gives age related data about participants, Table \ref{tab-lab-vocab-part} give data related to participant vocabulary sizes and Table \ref{tab-lab-lang-blp-part} shows language scores collected through the BLP.
-
+An accuracy response rate for the experiment was conducted for participants following the demographic cross-validations. As in chapter \ref{ch-seg-lab}, a predetermined accuracy rate of 90 percent was used as the cut-off and any participant responding incorrectly to filler or critical trials more than 10 percent of the time was removed from the analysis. All participants correctly responded to filler trials above the cut-off point; however, \Sexpr{online_stat_dropped["L2 Learner", "n"] + online_stat_dropped["Monolingual Spanish", "n"]} participants were removed for committing errors at rate greater than 10 percent to critical trials. \Sexpr{online_stat_dropped["L2 Learner", "n"]} participants from the LS group and \Sexpr{online_stat_dropped["Monolingual Spanish", "n"]} participants from the LE group were removed. This left a total of \Sexpr{online_eligible["L2 Learner", "n"] + online_eligible["Monolingual Spanish", "n"]} participants---\Sexpr{online_eligible["L2 Learner", "n"]} native English speakers and \Sexpr{online_eligible["Monolingual Spanish", "n"]} native Spanish speakers, that had data submitted to the analysis and only these participants are included in reported statistics and figures below. Table \ref{tab-lab-demo-part-online} gives age related data about participants, Table \ref{tab-lab-vocab-part-online} give data related to participant vocabulary sizes.
+\ttodo[inline]{Fix second table below for online data}
 \begin{table}
 \centering
 \begin{tabular}{l c c c c c c c c c}
@@ -79,29 +76,29 @@ Once the demographic removals had been completed, an accuracy response rate for 
 & n & Min & Max & Mean & SD & Mean & SD & Mean & SD\\
 \midrule
 English
-& \Sexpr{lab_grp_desc["English","n"]}
-& \Sexpr{lab_grp_desc["English","age_Min"]} 
-& \Sexpr{lab_grp_desc["English","age_Max"]} 
-& \Sexpr{lab_grp_desc["English","age_Mean"]}
-& \Sexpr{lab_grp_desc["English","age_SD"]}
-& \Sexpr{lab_grp_desc["English","span_acq_age_Mean"]}
-& \Sexpr{lab_grp_desc["English","span_acq_age_SD"]}
-& \Sexpr{lab_grp_desc["English","eng_acq_age_Mean"]}
-& \Sexpr{lab_grp_desc["English","eng_acq_age_SD"]}\\
+& \Sexpr{online_grp_desc["L2 Learner","n"]}
+& \Sexpr{online_grp_desc["L2 Learner","age_Min"]} 
+& \Sexpr{online_grp_desc["L2 Learner","age_Max"]} 
+& \Sexpr{online_grp_desc["L2 Learner","age_Mean"]}
+& \Sexpr{online_grp_desc["L2 Learner","age_SD"]}
+& \Sexpr{online_grp_desc["L2 Learner","span_acq_age_Mean"]}
+& \Sexpr{online_grp_desc["L2 Learner","span_acq_age_SD"]}
+& 0
+& 0\\
 Spanish
-& \Sexpr{lab_grp_desc["Spanish","n"]}
-& \Sexpr{lab_grp_desc["Spanish","age_Min"]} 
-& \Sexpr{lab_grp_desc["Spanish","age_Max"]} 
-& \Sexpr{lab_grp_desc["Spanish","age_Mean"]} 
-& \Sexpr{lab_grp_desc["Spanish","age_SD"]}
-& \Sexpr{lab_grp_desc["Spanish","span_acq_age_Mean"]}
-& \Sexpr{lab_grp_desc["Spanish","span_acq_age_SD"]}
-& \Sexpr{lab_grp_desc["Spanish","eng_acq_age_Mean"]}
-& \Sexpr{lab_grp_desc["Spanish","eng_acq_age_SD"]}\\
+& \Sexpr{online_grp_desc["Monolingual Spanish","n"]}
+& \Sexpr{online_grp_desc["Monolingual Spanish","age_Min"]} 
+& \Sexpr{online_grp_desc["Monolingual Spanish","age_Max"]} 
+& \Sexpr{online_grp_desc["Monolingual Spanish","age_Mean"]} 
+& \Sexpr{online_grp_desc["Monolingual Spanish","age_SD"]}
+& \Sexpr{online_grp_desc["Monolingual Spanish","span_acq_age_Mean"]}
+& \Sexpr{online_grp_desc["Monolingual Spanish","span_acq_age_SD"]}
+& NA
+& NA\\
 \bottomrule
-\multicolumn{6}{l}{Total participants: n = \Sexpr{lab_grp_desc["Spanish","n"] + lab_grp_desc["English","n"]}}\\
+\multicolumn{6}{l}{Total participants: n = \Sexpr{online_grp_desc["Monolingual Spanish","n"] + online_grp_desc["L2 Learner","n"]}}\\
 \end{tabular}
-\caption{Attributes of all lab based segmentation participants.}
+\caption{Attributes of all online segmentation participants.}
 \label{tab-lab-demo-part-online}
 
 \vspace{.4in}
@@ -140,39 +137,6 @@ Spanish
 \end{tabular}
 \caption{Vocabulary scores for participants in English and Spanish calculated as a percent correct score along with the differences in means. Spanish vocabulary size as calculated by \textcite{Izura2014-yw}.}
 \label{tab-lab-vocab-part-online}
-
-\vspace{.4in}
-
-\begin{tabular}{l c c c c c c c}
-\toprule
-& & \multicolumn{4}{c}{Global Language Scores}\\
-\cmidrule(lr){3-6}
-& & \multicolumn{2}{c}{English} & \multicolumn{2}{c}{Spanish} & 
-\multicolumn{2}{c}{Language Dominance}\\
-\cmidrule(lr){3-4}\cmidrule(lr){5-6}\cmidrule(lr){7-8}
-& n & Mean & SD & Mean & SD & Mean & SD\\
-\midrule
-English
-& \Sexpr{lab_grp_desc["English","n"]}
-& \Sexpr{lab_grp_desc["English","global_eng_score_Mean"]} 
-& \Sexpr{lab_grp_desc["English","global_eng_score_SD"]} 
-& \Sexpr{lab_grp_desc["English","global_esp_score_Mean"]}
-& \Sexpr{lab_grp_desc["English","global_esp_score_SD"]}
-& \Sexpr{lab_grp_desc["English","lang_dominance_Mean"]}
-& \Sexpr{lab_grp_desc["English","lang_dominance_SD"]}\\
-Spanish
-& \Sexpr{lab_grp_desc["Spanish","n"]}
-& \Sexpr{lab_grp_desc["Spanish","global_eng_score_Mean"]} 
-& \Sexpr{lab_grp_desc["Spanish","global_eng_score_SD"]} 
-& \Sexpr{lab_grp_desc["Spanish","global_esp_score_Mean"]} 
-& \Sexpr{lab_grp_desc["Spanish","global_esp_score_SD"]}
-& \Sexpr{lab_grp_desc["Spanish","lang_dominance_Mean"]}
-& \Sexpr{lab_grp_desc["Spanish","lang_dominance_SD"]}\\
-\bottomrule
-\multicolumn{6}{l}{Total participants: n = \Sexpr{lab_grp_desc["Spanish","n"] + lab_grp_desc["English","n"]}}\\
-\end{tabular}
-\caption{Individual language based values and language dominance scores for participants. All values were calculated according to creators of the Basic Language Profile.}
-\label{tab-lab-lang-blp-part-online}
 \end{table}
 
 

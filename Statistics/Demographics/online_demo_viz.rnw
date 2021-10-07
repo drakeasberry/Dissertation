@@ -77,6 +77,50 @@ izura(eligible_demo_data, "group", "izura_score")
 
 # Clean up environment
 rm(demo_data, learner_error_user, mono_error_user, online_drop)
+
+# Get summary stats for reporting (my_stats function used for dissertation consistency)
+# Columns that I want summary stats for
+stat_col <- c("age",
+              "span_acq_age",
+              #"eng_acq_age",
+              #"eng_hist_score",
+              #"eng_use_score", 
+              #"eng_prof_score",
+              #"eng_att_score",
+              #"global_eng_score",
+              #"esp_hist_score",
+              #"esp_use_score",
+              #"esp_prof_score",
+              #"esp_att_score",
+              #"global_esp_score",
+              #"lang_dominance",
+              #"lextale_eng_correct",
+              "lextale_esp_correct",
+              #"vocab_diff",
+              "izura_yes_to_words",
+              "izura_yes_to_nonwords",
+              "izura_score")
+
+# Stats I want to run
+summary_stats <- quote(list(Mean = mean, 
+                            Min = min, 
+                            Max = max, 
+                            SD = sd))
+
+# grouped by gender and group (experiment here)
+online_grp_desc <- my_stats(eligible_demo_data, 
+              grp_col = c("group"), 
+              sum_col = stat_col,
+              stats = summary_stats) %>%
+  mutate_at(vars(ends_with("_Mean")), 
+              list(~ round(., 2))) %>% 
+  mutate_at(vars(ends_with("_SD")), 
+              list(~ round(., 2))) %>% 
+  mutate_at(vars(ends_with("_Min")), 
+              list(~ round(., 2))) %>% 
+  mutate_at(vars(ends_with("_Max")), 
+              list(~ round(., 2))) %>% 
+  column_to_rownames(., var = "group")
 @
 
 <<online_demo_tabled, echo=FALSE>>=
