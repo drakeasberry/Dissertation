@@ -15,10 +15,10 @@ set_parent(here('Asberry_Dissertation/Dissertation.Rnw'))
 
 %----------------------------------------------------------------------------------------
 % Load statistics in memory from separate file
-%contentOnlinesegMono, child='Statistics/Monolingual_lemma/target_syl_mono_viz.rnw'), include=FALSE>>=
+%<contentOnlinesegMono, child=here('Statistics/Monolingual_lemma/target_syl_mono_viz.rnw'), include=FALSE>>=
 %@
 
-%contentOnlinesegL2, child='Statistics/L2_lemma/target_syl_l2_viz.rnw'), include=FALSE>>=
+%<contentOnlinesegL2, child=here('Statistics/L2_lemma/target_syl_l2_viz.rnw'), include=FALSE>>=
 %@
 %----------------------------------------------------------------------------------------
 
@@ -62,8 +62,8 @@ All participants reported in this chapter were recruited for experiments that we
 
 Language knowledge and participant background data was collected through the LexTALE-Esp and a subset of questions from the Bilingual Language Profile (BLP), which were completed during the same session as the letter sequence monitoring experiment. Additional demographic and linguistic history data was provided by Prolific. The LexTALE-Esp provided vocabulary knowledge of Spanish for all participants. The full BLP could not be implemented for the participants of this study because it was not designed for the monolinguals as it teases apart the use of two or more lanugages a participant speaks. Since monolinguals only have one language, the output of questionnaire would not produce data that was informative. Unlike the process in chapter \ref{ch-seg-lab} where participants had to have demographic data checked to ensure they met the criteria for the group they had been recruited, the Prolific filters took care of this before a participant was given the opportunity to participate. Nonetheless, the subset of BLP questions that appeared at the start of the experiment served to cross-check the data input by the participant on Prolific's website. Following guidelines set forth by Prolific, inconsistencies between BLP questions and Prolific profile data resulted in communication with participants through the Prolific website. Participants that were found to have descrepencies were asked to update profiles, their data was deleted and they did not receive compensation. 
 
-An accuracy response rate for the experiment was conducted for participants following the demographic cross-validations. As in chapter \ref{ch-seg-lab}, a predetermined accuracy rate of 90 percent was used as the cut-off and any participant responding incorrectly to filler or critical trials more than 10 percent of the time was removed from the analysis. All participants correctly responded to filler trials above the cut-off point; however, \Sexpr{online_stat_dropped["L2 Learner", "n"] + online_stat_dropped["Monolingual Spanish", "n"]} participants were removed for committing errors at rate greater than 10 percent to critical trials. \Sexpr{online_stat_dropped["L2 Learner", "n"]} participants from the LS group and \Sexpr{online_stat_dropped["Monolingual Spanish", "n"]} participants from the LE group were removed. This left a total of \Sexpr{online_eligible["L2 Learner", "n"] + online_eligible["Monolingual Spanish", "n"]} participants---\Sexpr{online_eligible["L2 Learner", "n"]} native English speakers and \Sexpr{online_eligible["Monolingual Spanish", "n"]} native Spanish speakers, that had data submitted to the analysis and only these participants are included in reported statistics and figures below. Table \ref{tab-lab-demo-part-online} gives age related data about participants, Table \ref{tab-lab-vocab-part-online} give data related to participant vocabulary sizes.
-\ttodo[inline]{Fix second table below for online data}
+An accuracy response rate for the experiment was conducted for participants following the demographic cross-validations. As in chapter \ref{ch-seg-lab}, a predetermined accuracy rate of 90 percent was used as the cut-off and any participant responding incorrectly to filler or critical trials more than 10 percent of the time was removed from the analysis. All participants correctly responded to filler trials above the cut-off point; however, \Sexpr{online_stat_dropped["L2 Learner", "n"] + online_stat_dropped["Monolingual Spanish", "n"]} participants were removed for committing errors at rate greater than 10 percent to critical trials. \Sexpr{online_stat_dropped["L2 Learner", "n"]} participants from the LS group and \Sexpr{online_stat_dropped["Monolingual Spanish", "n"]} participants from the LE group were removed. This left a total of \Sexpr{online_eligible["L2 Learner", "n"] + online_eligible["Monolingual Spanish", "n"]} participants---\Sexpr{online_eligible["L2 Learner", "n"]} native English speakers and \Sexpr{online_eligible["Monolingual Spanish", "n"]} native Spanish speakers, that had data submitted to the analysis and only these participants are included in reported statistics and figures below. Table \ref{tab-lab-demo-part-online} gives age related data about participants, Table \ref{tab-lab-vocab-part-online} give data related to participant vocabulary size of Spanish.
+
 \begin{table}
 \centering
 \begin{tabular}{l c c c c c c c c c}
@@ -103,39 +103,30 @@ Spanish
 
 \vspace{.4in}
 
-\begin{tabular}{l c c c c c c c c c}
+\begin{tabular}{l c c c c c}
 \toprule
-& & \multicolumn{6}{c}{Vocabulary Size \% Correct}\\
-\cmidrule(lr){3-8}
-& & \multicolumn{2}{c}{English} & \multicolumn{2}{c}{Spanish} & 
-\multicolumn{2}{c}{Difference} & \multicolumn{2}{c}{Izura Score}\\
-\cmidrule(lr){3-4}\cmidrule(lr){5-6}\cmidrule(lr){7-8}\cmidrule(lr){9-10}
-& n & Mean & SD & Mean & SD & Mean & SD & Mean & SD\\
+& & \multicolumn{4}{c}{Spanish Vocabulary Size}\\
+\cmidrule(lr){3-6}
+& & \multicolumn{2}{c}{\% Correct} & \multicolumn{2}{c}{Izura Score}\\
+\cmidrule(lr){3-4}\cmidrule(lr){5-6}
+& n & Mean & SD & Mean & SD\\
 \midrule
 English
-& \Sexpr{lab_grp_desc["English","n"]}
-& \Sexpr{lab_grp_desc["English","lextale_eng_correct_Mean"]} 
-& \Sexpr{lab_grp_desc["English","lextale_eng_correct_SD"]} 
-& \Sexpr{lab_grp_desc["English","lextale_esp_correct_Mean"]}
-& \Sexpr{lab_grp_desc["English","lextale_esp_correct_SD"]}
-& \Sexpr{lab_grp_desc["English","vocab_diff_Mean"]}
-& \Sexpr{lab_grp_desc["English","vocab_diff_SD"]}
-& \Sexpr{lab_grp_desc["English","izura_score_Mean"]}
-& \Sexpr{lab_grp_desc["English","izura_score_SD"]}\\
+& \Sexpr{online_grp_desc["L2 Learner","n"]}
+& \Sexpr{online_grp_desc["L2 Learner","lextale_esp_correct_Mean"]}
+& \Sexpr{online_grp_desc["L2 Learner","lextale_esp_correct_SD"]}
+& \Sexpr{online_grp_desc["L2 Learner","izura_score_Mean"]}
+& \Sexpr{online_grp_desc["L2 Learner","izura_score_SD"]}\\
 Spanish
-& \Sexpr{lab_grp_desc["Spanish","n"]}
-& \Sexpr{lab_grp_desc["Spanish","lextale_eng_correct_Mean"]} 
-& \Sexpr{lab_grp_desc["Spanish","lextale_eng_correct_SD"]} 
-& \Sexpr{lab_grp_desc["Spanish","lextale_esp_correct_Mean"]} 
-& \Sexpr{lab_grp_desc["Spanish","lextale_esp_correct_SD"]}
-& \Sexpr{lab_grp_desc["Spanish","vocab_diff_Mean"]}
-& \Sexpr{lab_grp_desc["Spanish","vocab_diff_SD"]}
-& \Sexpr{lab_grp_desc["Spanish","izura_score_Mean"]}
-& \Sexpr{lab_grp_desc["Spanish","izura_score_SD"]}\\
+& \Sexpr{online_grp_desc["Monolingual Spanish","n"]}
+& \Sexpr{online_grp_desc["Monolingual Spanish","lextale_esp_correct_Mean"]} 
+& \Sexpr{online_grp_desc["Monolingual Spanish","lextale_esp_correct_SD"]}
+& \Sexpr{online_grp_desc["Monolingual Spanish","izura_score_Mean"]}
+& \Sexpr{online_grp_desc["Monolingual Spanish","izura_score_SD"]}\\
 \bottomrule
-\multicolumn{6}{l}{Total participants: n = \Sexpr{lab_grp_desc["Spanish","n"] + lab_grp_desc["English","n"]}}\\
+\multicolumn{6}{l}{Total participants: n = \Sexpr{online_grp_desc["Monolingual Spanish","n"] + online_grp_desc["L2 Learner","n"]}}\\
 \end{tabular}
-\caption{Vocabulary scores for participants in English and Spanish calculated as a percent correct score along with the differences in means. Spanish vocabulary size as calculated by \textcite{Izura2014-yw}.}
+\caption{Vocabulary scores for participants in Spanish calculated as a percent correct score and vocabulary size as calculated by \textcite{Izura2014-yw}.}
 \label{tab-lab-vocab-part-online}
 \end{table}
 
