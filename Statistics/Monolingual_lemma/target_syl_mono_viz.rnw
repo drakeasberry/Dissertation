@@ -26,7 +26,30 @@ source('../../Scripts_Dissertation/analysis_functions.R')
 
 <<mono_participants, echo = FALSE>>=
 # Read in data file
-my_data <- read_csv('analyze_data/output/44_online_natives_segmentation.csv')
+my_L1_data <- 
+  read_csv('analyze_data/output/44_online_natives_segmentation.csv')
+
+# Read in raw file of all segmentation data
+my_online_L1_raw_data <- 
+  read_csv('analyze_data/output/online_L1_seg_data.csv') %>% 
+  subset(., partNum %in% my_L1_data$partNum)
+
+# Delete practice trial rows
+online_L1_exper_trials <- drop_na(my_online_L1_raw_data, 
+                                  any_of("corrAns"))
+# Critical trials 
+my_online_L1_critical_data <- 
+  read_csv('analyze_data/output/online_L1_critical_data.csv') %>% 
+  subset(., partNum %in% my_L1_data$partNum)
+
+my_online_L1_critical_correct <- my_online_L1_critical_data %>% 
+  subset(., segResp == 'b')
+
+my_online_L1_under_200 <- my_online_L1_critical_correct %>% 
+  subset(., segRespRTmsec > 200)
+
+my_online_L1_over_1500 <- my_online_L1_under_200 %>% 
+  subset(., segRespRTmsec < 1500)
 @
 
 <<mono_data, echo = FALSE>>=
@@ -38,11 +61,11 @@ grouping <- c("partNum", "group", "word_status", "word_initial_syl",
 
 # Aggregaates and transforms data into long form
 # Adds columns for median of RT in msec and log
-my_data_long <- trans_long(my_data, grouping) 
+my_L1_data_long <- trans_long(my_L1_data, grouping) 
 
 
 # Create subgroups for Spanish learners and native speakers
-natives <- my_data_long
+natives <- my_L1_data_long
 
 # Group data by target syllable structure, matching condition, and word status, 
 grouping_stats <- c("target_syl_structure", "matching", "word_status")
@@ -110,7 +133,7 @@ grouping_mat <- grouping[! grouping %in% c("word_status", "word_initial_syl",
                                            "target_syl_structure", "group")]
 
 # Aggregate data by matching condition
-data_mat_ag <- trans_long(my_data, grouping_mat)
+data_mat_ag <- trans_long(my_L1_data, grouping_mat)
 
 
 # Significant Main Effect Exploration
@@ -133,7 +156,7 @@ grouping_lex <- grouping[! grouping %in% c("target_syl_structure", "word_initial
                                            "matching", "group")]
 
 # Aggregate data on word status
-data_lex_ag <- my_data %>% 
+data_lex_ag <- my_L1_data %>% 
   trans_long(., grouping_lex)
 
 # Natives t.test for word status (trending)
@@ -185,7 +208,7 @@ l1_lex_main
 
 # Remove temporary data variables in environment
 # Remove dataframes following analysis
-rm(my_data, my_data_long, learners, natives, words_learners, nonwords_learners,
+rm(my_L1_data, my_L1_data_long, learners, natives, words_learners, nonwords_learners,
    data_lex_ag, data_mat_ag)
 
 # Remove checks and unused plots

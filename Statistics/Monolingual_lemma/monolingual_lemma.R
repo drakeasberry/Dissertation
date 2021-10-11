@@ -25,6 +25,7 @@ seg_files <- list.files(path='analyze_data/raw/', pattern = '*.csv', full.names 
 # import multiple csv code modified from code posted at this link below:
 #https://datascienceplus.com/how-to-import-multiple-csv-files-simultaneously-in-r-and-create-a-data-frame/
 df_raw_seg <- ldply(seg_files, read_csv)
+write_csv(df_raw_seg, "analyze_data/output/online_L1_raw_data.csv")
 
 # Delete practice trial rows
 exper_trials <- drop_na(df_raw_seg, any_of("corrAns"))
@@ -59,6 +60,7 @@ rm(df_raw_seg, exper_trials, group_map, seg_files)
 # Create subset of all critical items
 seg_critical <- segmentation_data %>% 
   subset(., exp_word_type == 'critical') 
+write_csv(seg_critical, 'analyze_data/output/online_L1_critical_data.csv')
 
 # Prints tibble showing all responses and frequency of response to critical items
 print('Counts of responses to critical items')
