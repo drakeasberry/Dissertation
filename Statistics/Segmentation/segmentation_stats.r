@@ -382,9 +382,10 @@ segmentation_data <- seg_data_join %>%
   left_join(group_map, by = 'partNum') %>%
   # create millisecond RT and log RT columns
   mutate(segRespRTmsec = round(segRespRT * 1000),
-         log_RT = log(segRespRTmsec)) %>% 
+         log_RT = log(segRespRTmsec),
+         segRespRTsec = segRespRT) %>% 
   # rename to label seconds in original RT column
-  rename(segRespRTsec = segRespRT) %>% 
+  #rename(., segRespRTsec = segRespRT) %>% 
   # rearrange and keep only necessary columns for analysis
   select(c("partNum", 
            "group", 
