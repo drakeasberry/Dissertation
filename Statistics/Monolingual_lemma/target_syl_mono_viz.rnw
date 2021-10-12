@@ -18,6 +18,7 @@ library(tidyverse)
 library(ggplot2)
 library(cowplot)
 library(effsize)
+library(xtable)
 
 # Soruce Scripts containing functions
 source('../../Scripts_Dissertation/diss_dataviz_script.R')
@@ -31,7 +32,7 @@ my_L1_data <-
 
 # Read in raw file of all segmentation data
 my_online_L1_raw_data <- 
-  read_csv('analyze_data/output/online_L1_seg_data.csv') %>% 
+  read_csv('analyze_data/output/online_L1_raw_data.csv') %>% 
   subset(., partNum %in% my_L1_data$partNum)
 
 # Delete practice trial rows
@@ -53,38 +54,79 @@ my_online_L1_over_1500 <- my_online_L1_under_200 %>%
 @
 
 <<mono_data, echo = FALSE>>=
-
 # Transform data in long form with 1 row per participant per condition
 # List columns to group by
-grouping <- c("partNum", "group", "word_status", "word_initial_syl", 
-              "target_syl_structure", "matching")
+online_L1_grouping <- c("partNum", 
+                        "group", 
+                        "word_status", 
+                        "word_initial_syl", 
+                        "target_syl_structure", 
+                        "matching")
 
 # Aggregaates and transforms data into long form
 # Adds columns for median of RT in msec and log
-my_L1_data_long <- trans_long(my_L1_data, grouping) 
+online_natives <- trans_long(my_L1_data, online_L1_grouping) 
 
+# Get summary stats for reporting 
+# Columns that I want summary stats for
+online_L1_stat_col <- c("segRespRTmsec",
+                        "log_RT")
 
-# Create subgroups for Spanish learners and native speakers
-natives <- my_L1_data_long
+# Stats I want to run
+online_L1_summary_stats <- quote(list(Median = median,
+                            Mean = mean, 
+                            Min = min, 
+                            Max = max, 
+                            SD = sd))
 
-# Group data by target syllable structure, matching condition, and word status, 
-grouping_stats <- c("target_syl_structure", "matching", "word_status")
+# Grouping by group and condition
+online_L1_cond_grp <- c("group",
+              "target_syl_structure",
+              "word_initial_syl",
+              "matching", 
+              "word_status")
+
+# grouped by participant and condition
+online_L1_ind_sum <- my_stats(my_L1_data, 
+              grp_col = online_L1_grouping, 
+              sum_col = online_L1_stat_col,
+              stats = online_L1_summary_stats)
+
+# grouped by group and condition
+online_L1_grp_sum <- my_stats(my_L1_data, 
+              grp_col = online_L1_cond_grp, 
+              sum_col = online_L1_stat_col,
+              stats = online_L1_summary_stats) %>% 
+  mutate(index = paste(group,
+                       target_syl_structure,
+                       word_initial_syl,
+                       word_status, sep = "-")) %>%
+  mutate_at(vars(ends_with("_Mean")), 
+              list(~ round(., 2))) %>% 
+  mutate_at(vars(ends_with("_SD")), 
+              list(~ round(., 2))) %>% 
+  mutate_at(vars(ends_with("_Median")), 
+              list(~ round(., 2))) %>%
+  mutate_at(vars(ends_with("_Min")), 
+              list(~ round(., 2))) %>% 
+  mutate_at(vars(ends_with("_Max")), 
+              list(~ round(., 2))) %>% 
+  column_to_rownames(., var = "index")
+
 
 # Summary statistics for reaction time
-# Reaction time in miliseconds
-natives %>% 
-  summary_stats(., grouping_stats, "median_RTmsec", "mean_sd")
+# Group data by target syllable structure, matching condition, and word status, 
+online_L1_grouping_stats <- c("target_syl_structure", 
+                              "matching", 
+                              "word_status")
 
-# Reaction time after log transformation
-natives %>% 
-  summary_stats(., grouping_stats, "median_RTlog", "mean_sd")
-
-
-# Natives
-bxp_natives <- natives %>% 
-  mutate(wd_new = factor(word_status, levels = c("word", "nonword"),
+# Online Natives
+bxp_online_natives <- online_natives %>% 
+  mutate(wd_new = factor(word_status, 
+                         levels = c("word", "nonword"),
                          labels = c("Word", "Nonword")),
-         mat_new = factor(matching, levels = c("match", "mismatch"),
+         mat_new = factor(matching, 
+                          levels = c("match", "mismatch"),
                           labels = c("Matching", "Mismatching"))) %>% 
   ggplot(aes(x = target_syl_structure,
              y = median_RTmsec,
@@ -95,133 +137,239 @@ bxp_natives <- natives %>%
   labs(title = "L1 Spanish by Target Syllable",
        x = "Target Syllable Structure",
        y = "Reaction Time (msec)") +
-  scale_color_manual(name = "Condition", values = c('darkorchid4', 'goldenrod4'))
-bxp_natives 
+  scale_color_manual(name = "Condition", values = plt_color_2)
+bxp_online_natives 
 
 
 # Check for outliers
-outlier_native <- natives %>% 
-  outlier_chk(., grouping_stats, "median_RTmsec")
+outlier_native <- online_natives %>% 
+  outlier_chk(., online_L1_grouping_stats, "median_RTmsec")
 
 # Check for normality
-normality_native <- natives %>% 
-  normality_chk(., grouping_stats, "median_RTmsec")
+normality_native <- online_natives %>% 
+  normality_chk(., online_L1_grouping_stats, "median_RTmsec")
 
 
 # Create QQ plots
 # Natives by milliseconds
-ggqqplot(natives, "median_RTmsec", ggtheme = theme_bw(), 
-         title = "QQ Plot by Target Syllable in Milliseconds by L1 Spanish Speakers") +
-  facet_grid(target_syl_structure + matching ~ word_status, labeller = "label_both") 
+ggqqplot(
+  online_natives, 
+  "median_RTmsec", 
+  ggtheme = theme_bw(), 
+  title = "QQ Plot by Target Syllable in Milliseconds by L1 Spanish Speakers") +
+  facet_grid(target_syl_structure + matching ~ word_status, 
+             labeller = "label_both") 
 
 # Natives by log values
-ggqqplot(natives, "median_RTlog", ggtheme = theme_bw(),
-         title = "QQ Plot by Target Syllable in log by L1 Spanish Speakers") +
-  facet_grid(target_syl_structure + matching ~ word_status, labeller = "label_both")
+ggqqplot(
+  online_natives, 
+  "median_RTlog",
+  ggtheme = theme_bw(),
+  title = "QQ Plot by Target Syllable in log by L1 Spanish Speakers") +
+  facet_grid(target_syl_structure + matching ~ word_status, 
+             labeller = "label_both")
 
 
 # Run inferential statistics Native group
 # Run 3 way repeated measures anova
-aov_natives <- aov_ez("partNum", "median_RTlog", natives, within = c(grouping_stats))
-aov_natives
+aov_online_natives <- aov_ez("partNum", 
+                             "median_RTlog", 
+                             online_natives, 
+                             within = c(online_L1_grouping_stats))
+aov_online_natives
 ## main effect of matching condition 
 ## main effect trending for word status
 ## no signficant interactions
 
+# Create Manuscript Version
+online_grouping_pretty <- c("Target", "Matching", "Lexicality")
+online_aov_natives_prt <- online_natives %>% 
+  rename(., c(Target = target_syl_structure,
+              Matching = matching,
+              Lexicality = word_status)) %>% 
+  aov_ez("partNum", 
+         "median_RTlog", 
+         ., 
+         within = c(online_grouping_pretty))
+online_aov_natives_prt
+
 # Regroup to run paired t-test for matching/mismatching over all other conditions
-grouping_mat <- grouping[! grouping %in% c("word_status", "word_initial_syl",
-                                           "target_syl_structure", "group")]
+online_L1_grouping_mat <- 
+  online_L1_grouping[! online_L1_grouping %in% c("word_status", 
+                                                 "word_initial_syl",
+                                                 "target_syl_structure", 
+                                                 "group")]
 
 # Aggregate data by matching condition
-data_mat_ag <- trans_long(my_L1_data, grouping_mat)
+online_L1_mat_ag <- my_L1_data %>% 
+  my_stats(., grp_col = online_L1_grouping_mat,
+           sum_col = online_L1_stat_col,
+           stats = online_L1_summary_stats)
 
 
 # Significant Main Effect Exploration
 # Natives t.test for matching condition
-t.test(data_mat_ag$median_RTlog ~ data_mat_ag$matching, paired = TRUE, 
-       alternative = "less")
-## is significant
+t_online_L1_mat_main <- t.test(
+  online_L1_mat_ag$log_RT_Median ~ 
+    online_L1_mat_ag$matching, 
+  paired = TRUE, 
+  alternative = "less")
+t_online_L1_mat_main
+## is significant t = -2.929, df = 43, p-value = 0.002711
 
 # Descriptives to check direction of effect
-with(data_mat_ag, tapply(median_RTlog, matching, FUN = mean))
+with(online_L1_mat_ag, 
+     tapply(log_RT_Median, 
+            matching, 
+            FUN = mean))
 ## matching condition responded to faster than mismatching condition
 
-# Calculate Cohen's D to estimate effect size
-cohen.d(data_mat_ag$median_RTlog, data_mat_ag$matching, na.rm = TRUE, paired = TRUE)
+# Create a table for referencing statistics with CIs
+online_L1_mat_compare <- online_L1_mat_ag  %>% 
+  group_by(matching) %>% 
+  summarise(Mean = mean(log_RT_Median),
+            SD = sd(log_RT_Median),
+            N = n(),
+            MOE_95 = qnorm(0.975)*SD/sqrt(N-1),
+            LL = Mean - MOE_95,
+            UL = Mean + MOE_95) %>% 
+  column_to_rownames(., var = "matching")
 
+# Calculate Cohen's D to estimate effect size
+online_L1_mat_efsize <- 
+  cohen.d(online_L1_mat_ag$log_RT_Median, 
+          online_L1_mat_ag$matching, 
+          na.rm = TRUE, 
+          paired = TRUE)
+online_L1_mat_efsize
+# d estimate: -0.2008373 (small)
 
 # Significant Main Effect Trending Exploration
 # Regroup to run paired t-test for word status over all other conditions 
-grouping_lex <- grouping[! grouping %in% c("target_syl_structure", "word_initial_syl",
-                                           "matching", "group")]
+online_L1_grouping_lex <- 
+  online_L1_grouping[! online_L1_grouping %in% c("target_syl_structure", 
+                                                 "word_initial_syl",
+                                                 "matching", 
+                                                 "group")]
 
 # Aggregate data on word status
-data_lex_ag <- my_L1_data %>% 
-  trans_long(., grouping_lex)
+#data_lex_ag <- my_L1_data %>% 
+#  trans_long(., online_L1_grouping_lex)
+online_L1_lex_ag <- my_L1_data %>% 
+  my_stats(., grp_col = online_L1_grouping_lex,
+           sum_col = online_L1_stat_col,
+           stats = online_L1_summary_stats)
 
 # Natives t.test for word status (trending)
-t.test(data_lex_ag$median_RTlog ~ data_lex_ag$word_status, paired = TRUE)
-## is not significant
+t_online_L1_lex_main <- t.test(
+  online_L1_lex_ag$log_RT_Median ~ 
+    online_L1_lex_ag$word_status, 
+  paired = TRUE)
+t_online_L1_lex_main
+## is not significant t = 1.3885, df = 43, p-value = 0.172
 
 # Descriptives to check direction of effect
-with(data_lex_ag, tapply(median_RTlog, word_status, FUN = mean))
+with(online_L1_lex_ag, 
+     tapply(log_RT_Median, 
+            word_status, 
+            FUN = mean))
 ## words responded to faster than nonwords, but not significantly so
 
-cohen.d(data_lex_ag$median_RTlog, data_lex_ag$word_status, na.rm = TRUE, paired = TRUE)
+# Create a table for referencing statistics with CIs
+online_L1_lex_compare <- online_L1_lex_ag %>% 
+  group_by(word_status) %>% 
+  summarise(Mean = mean(log_RT_Median),
+            SD = sd(log_RT_Median),
+            N = n(),
+            MOE_95 = qnorm(0.975)*SD/sqrt(N-1),
+            LL = Mean - MOE_95,
+            UL = Mean + MOE_95) %>% 
+  column_to_rownames(., var = "word_status")
 
+# Get the size of the effect
+online_L1_lex_efsize <- 
+  cohen.d(online_L1_lex_ag$log_RT_Median, 
+          online_L1_lex_ag$word_status, 
+          na.rm = TRUE, 
+          paired = TRUE)
+online_L1_lex_efsize
+# d estimate: 0.1158181 (negligible) crosses 0 
 
 # Native plots
 # Main effect of matching condition
-l1_mat_main <- afex_plot(aov_natives, 
-                         x = "matching", 
-                         error = "within",
-                         factor_levels = list(matching = c(match = "Matching", 
-                                                           mismatch = "Mismatching")),
-                         data_plot = FALSE,
-                         mapping = c("color", "shape")) +
+online_l1_mat_main <- afex_plot(
+  aov_online_natives, 
+  x = "matching", 
+  error = "within",
+  factor_levels = list(
+    matching = c(match = "Matching", 
+                 mismatch = "Mismatching")),
+  data_plot = FALSE,
+  mapping = c("color", "shape")) +
   labs(title = "Estimated Marginal Means L1 Spanish",
        x = "Matching Condition",
        y = "Reaction Time (log)") +
-  scale_color_manual(values = c('darkorchid4', 'goldenrod4')) +
+  scale_color_manual(values = plt_color_2) +
   theme(legend.position = "none")
-l1_mat_main
+online_l1_mat_main
 
 # Main effect of lexicality
-l1_lex_main <- afex_plot(aov_natives, 
-                         x = "word_status", 
-                         error = "within",
-                         factor_levels = list(word_status = c(word = "Word", 
-                                                              nonword = "Noword")),
-                         data_plot = FALSE,
-                         mapping = c("color", "shape")) +
+online_l1_lex_main <- afex_plot(
+  aov_online_natives, 
+  x = "word_status", 
+  error = "within",
+  factor_levels = list(
+    word_status = c(word = "Word", 
+                    nonword = "Noword")),
+  data_plot = FALSE,
+  mapping = c("color", "shape")) +
   labs(title = "Estimated Marginal Means L1 Spanish",
        x = "Lexicality",
        y = "Reaction Time (log)") +
-  scale_color_manual(values = c('darkorchid4', 'goldenrod4')) +
+  scale_color_manual(values = plt_color_2) +
   theme(legend.position = "none")
-l1_lex_main
-
+online_l1_lex_main
 
 # Interaction breakdown
 ## No significant interactions to explore
-
+# NS Interaction between target and matching condition
+# with lexicality in two panels
+online_L1_tar_mat_int <- afex_plot(
+  aov_online_natives, 
+  x = "target_syl_structure", 
+  trace = "matching",
+  panel = "word_status",
+  error = "within",
+  mapping = c("shape", "color", "linetype"),
+  factor_levels = list(
+    word_status = c(word = "Word", nonword = "Noword"),
+    matching = c("Matching", "Mismatching")),
+  legend_title = "Condition",
+  data_plot = FALSE) +
+  labs(title = "Estimated Marginal Means L1 Spanish",
+       x = "Target Syllable Structure",
+       y = "Reaction Time (log)") +
+  scale_color_manual(values = plt_color_2)
+online_L1_tar_mat_int
 
 # Remove temporary data variables in environment
 # Remove dataframes following analysis
-rm(my_L1_data, my_L1_data_long, learners, natives, words_learners, nonwords_learners,
-   data_lex_ag, data_mat_ag)
+rm(online_natives,
+   online_L1_lex_ag, 
+   online_L1_mat_ag)
 
 # Remove checks and unused plots
-rm(l2_mat_lex_int, normality_learner, normality_native, outlier_learner, outlier_native)
+rm(normality_native,
+   outlier_native)
 
 
 # Save all analyses
-out_dir = 'analyze_data/output/figures/by_target/'
+#out_dir = 'analyze_data/output/figures/by_target/'
 
 # Save tabled data
 # https://tex.stackexchange.com/questions/481802/reporting-r-results-in-latex
 
 # Save plots
-ggsave('natives_descriptive_data.png', bxp_natives, 'png', out_dir)
-ggsave('natives_mat_main.png', l1_mat_main, 'png', out_dir)
+#ggsave('online_natives_descriptive_data.png', bxp_online_natives, 'png', out_dir)
+#ggsave('online_natives_mat_main.png', l1_mat_main, 'png', out_dir)
 @
