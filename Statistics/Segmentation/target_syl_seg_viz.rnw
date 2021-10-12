@@ -506,7 +506,7 @@ with(lab_nonwords_learners,
 ## nonwords in matching condition are responded to 
 ## faster than mismatching, but not significnatly
 
-# Real words t.test ont-tailed for matching
+# Real words t.test one-tailed for matching
 t_lab_l2_wd_mat_int <-
   t.test(lab_words_learners$log_RT_Median ~ lab_words_learners$matching, 
          paired = TRUE,
@@ -515,7 +515,7 @@ t_lab_l2_wd_mat_int
 ## not significant in hypothesized direction 
 ## t = 2.1855, df = 26, p-value = 0.981
 
-# Real words t.test ont-tailed for matching
+# Real words t.test one-tailed for matching
 t_lab_l2_wd_mat_int_great <-
   t.test(lab_words_learners$log_RT_Median ~ lab_words_learners$matching, 
          paired = TRUE,
