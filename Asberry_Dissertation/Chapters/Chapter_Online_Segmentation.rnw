@@ -157,51 +157,29 @@ The MS group dataset contained \Sexpr{nrow(my_online_l1_raw_data)} recorded tria
 The same process used in preparing the MS group data was followed for the LS group. The LS group dataset contained \Sexpr{nrow(my_online_l2_raw_data)} recorded trials---784 rows for each of the \Sexpr{length(unique(online_l2_exper_trials$partNum))} participants. All \Sexpr{nrow(my_online_l2_raw_data) - nrow(online_l2_exper_trials)} practice trials were removed leaving \Sexpr{nrow(online_l2_exper_trials)} experimental trials. \Sexpr{nrow(my_online_l2_critical_data)} experimental trials remained after all filler trials had been removed from the dataset. Then \Sexpr{nrow(my_online_l2_critical_data) - nrow(my_online_l2_critical_correct)} critical items, which received no participant response were removed. Lastly, \Sexpr{nrow(my_online_l2_critical_correct) - nrow(my_online_l2_under_200)} response under 200 milliseconds and \Sexpr{nrow(my_online_l2_under_200) - nrow(my_online_l2_over_1500)} responses over 1500 milliseconds were removed. In total, \Sexpr{nrow(my_online_l2_critical_data) - nrow(my_online_l2_critical_correct) + nrow(my_online_l2_critical_correct) - nrow(my_online_l2_under_200) + nrow(my_online_l2_under_200) - nrow(my_online_l2_over_1500)} trials or \Sexpr{round((nrow(my_online_l2_critical_data) - nrow(my_l2_data)) / nrow(my_online_l2_critical_data)*100,2)}\% of the data were removed leaving \Sexpr{nrow(my_l2_data)} LS critical data points to be submitted for analysis.
 
 Each dataset was constructed in the same manner, but analyzed separately. The control group dataset contained all native monolingual Spanish speakers and the target group dataset contained all data for native English--L2 Spanish speakers. Both datasets were comprised of reaction times by-participant as a function of three experimental conditions: \emph{Target} (CV or CVC syllable structure), \emph{Matching} (matching: target and word initial syllable matched or mismatching: target and word initial syllable did not match) and \emph{Lexicality} (word: a real word in Spanish or nonword: a nonce word that followed Spanish orthographic rules). The control group dataset of L1 Spanish speakers consisted of 
-\Sexpr{nrow(lab_natives)} 
+\Sexpr{nrow(online_natives)} 
 observations---
-\Sexpr{length(unique(lab_natives$target_syl_structure))} 
+\Sexpr{length(unique(online_natives$target_syl_structure))} 
 \emph{Target} conditions x 
-\Sexpr{length(unique(lab_natives$matching))} 
+\Sexpr{length(unique(online_natives$matching))} 
 \emph{Matching} conditions x 
-\Sexpr{length(unique(lab_natives$word_status))} 
+\Sexpr{length(unique(online_natives$word_status))} 
 \emph{Lexicality} conditions x 
-\Sexpr{length(unique(lab_natives$partNum))} 
+\Sexpr{length(unique(online_natives$partNum))} 
 participants, while the target group dataset of L2 Spanish speakers consisted of 
-\Sexpr{nrow(lab_learners)} 
+\Sexpr{nrow(online_learners)} 
 observations---
-\Sexpr{length(unique(lab_learners$target_syl_structure))} 
+\Sexpr{length(unique(online_learners$target_syl_structure))} 
 \emph{Target} conditions x 
-\Sexpr{length(unique(lab_learners$matching))} 
+\Sexpr{length(unique(online_learners$matching))} 
 \emph{Matching} conditions x 
-\Sexpr{length(unique(lab_learners$word_status))} 
+\Sexpr{length(unique(online_learners$word_status))} 
 \emph{Lexicality} conditions x 
-\Sexpr{length(unique(lab_learners$partNum))} 
-participants. Reaction times that were recorded in milliseconds have been used in the descriptive statistics, but they underwent the log transformation prior to running inferential statistics. However, both millisecond and log transformed values were computed by-participant per each condition and were retained in the datasets. All data manipulation and analysis were conducted through the use of R and python scripts available at the project's \href{https://github.com/drakeasberry/Dissertation}{GitHub repository} \parencite{R_Core_Team2020-ib,Python2020-xy}.
-\ttodo{update ANOVA notation (2) x (2) x (2)}
-The second addition will not use Latin-Square design, where participants only see a subset of the items, but will have all participants see all experimental items.
+\Sexpr{length(unique(online_learners$partNum))} 
+participants. Reaction times were log transformed before running inferential statistics, but raw millisecond reaction times were used for descriptive statistics. As a result, both dataset contained the millisecond and log transformed values were computed by-participant per each condition. There is only one major difference between the data collected in chapter \ref{ch-seg-lab} and the experiment for teh current chapter. In chapter \ref{ch-seg-lab}, participants saw a subset of experimental items because a Latin square design was used. However, the Latin square experimental design was not used in the current. Therefore, participants saw and responded to all experimental items---\emph{BA} in \emph{balada, baldosa, balega, balbusa} and \emph{BAL} in \emph{balada, baldosa, balega, balbusa}. All data manipulation and analysis were conducted through the use of R and python scripts available at the project's \href{https://github.com/drakeasberry/Dissertation}{GitHub repository} \parencite{R_Core_Team2020-ib,Python2020-xy}.
 
-It is important to note the differences found in the process and interpretation of analysis results between previous studies and the current one. In previous literature, researchers analyzed the data according to (2) x (2) anova where the target syllable structure, the syllable for which participants monitored, was the first factor and contained two levels---CV and CVC. The second factor was the word-initial syllable of the presented word where the participant could find the target for which they were monitoring. Similarly, the second factor---word-initial syllable---had two levels which were also CV and CVC structures. In the current project, data was submitted to a (3) x (2) repeated measures ANOVA because an additional factor of lexical status was added to account for word versus nonword stimuli. More importantly, the factor for target syllable structure contained two levels, CV and CVC, as before. However, the current study does not use the factor for CV and CVC word-initial syllable structure. Instead, the current study uses factor with two levels of matching or mismatching. Both of these analyses result in the reporting of the same information, but the visualization of these results looks quite different as shown in Figures \ref{plt-crossover-comp} and \ref{plt-parallel-comp}.
+It is imperative to understand the analysis process used in the current experiment because the interpretation of the data must be read differently than results reported in previous studies. In previous literature, data was analyzed through a (2) x (2) ANOVA. The first factor, target syllable structure, contained two levels---CV and CVC. The word-initial syllable structure of the presented word was the second factor and also had two levels of CV and CVC structures. Data in the current experiment was submitted to a (2) x (2) x (2) repeated measures ANOVA because an additional factor of lexical status, which accounted for words versus nonwords. Consistent with previous literature, the factor for target syllable structure contained two levels, CV and CVC. However, the current study utilized a second factor with two levels of matching or mismatching rather than the factor containing CV and CVC word-initial syllable structures. Both of these analyses report the same information. Nonetheless, the visualization of these results look quite different as shown in Figures \ref{plt-crossover-comp} and \ref{plt-parallel-comp}, which show a single simulated dataset analyzed in both manners. Previous literature reported results in terms of a crossover effect which occured when matching conditions facilitated faster detection times of the target. The visualization of the effect was shown as intersecting lines eventhough the lines were not required to actually cross over each other in order to find a significant interaction between target syllable structure and word-initial syllable structure. Due to the fact that the current study looked at target syllable structure across matching versus mismatching conditions, an intersecting lines visualization was not expected. Rather the visualization for a significant effect in the current analysis would be parallel lines---one representing matching condition and one representing mismatching condition---where the matching condition resulted in faster detection times than mismatching one. For a more in-depth discussion of the crossover effect versus the current analysis and comparison plots showing both types of analysis, refer to chapter \ref{ch-seg-lab} section \ref{lab-seg-analysis}.
 
-\ttodo{this should be able to be deleted from this chapter, maybe create an anchor and reference point to this discussion in Chapter 4}
-\begin{figure}
-\begin{center}
-<<sample_cross_parallel_1A, fig.width= 5, fig.height= 3>>=
-crossover_example
-@      
-\caption[Plot: Crossover Effect]{Shows an example of what the crossover effect results in previous literature using a simulated fictitious dataset. The interaction can be seen in the lines representing the initial syllable structure of the word crossing due to faster detection times from monitoring experiments when the target syllable structure and the word-initial syllable matched structure matched.}
-\label{plt-crossover-comp-A}
-
-\vspace{.4in}
-
-<<sample_cross_parallel_2A, fig.width= 5, fig.height= 3>>=
-parallel_example
-@      
-\caption[Plot: Parallel Effect]{Shows an example of what the significant effect results in the current study look like using the same simulated fictitious dataset as Figure \ref{plt-crossover-comp}. The effect can be seen in the parallel lines representing the matching status and target syllable type rather than an interaction between the two factors.}
-\label{plt-parallel-comp-A}
-\end{center}
-\end{figure}
-
-The crossover effect was considered the result of favorable conditions that produced faster reaction times for matching conditions. For example, if a syllabic segmentation strategy is being used, then monitoring for a CV sequence should be detected faster when the presented word has a CV word-initial syllable when compared to a presented word that has a CVC word-initial syllable. Likewise, monitoring for a CVC sequence should be found faster when the word containing the target begins with a CVC word-initial syllable rather than a CV one. In other words, monitoring for a sound or letter sequence that matches the initial syllable structure of the word containing it makes it an easier task. The easier task is marked by the faster reaction times needed to indicate the syllable had been detected. The results of statistical analysis indicated the crossover effect was present with a significant interaction between the search target structure and the initial syllable structure of the presented word containing the target as seen in Figure \ref{plt-crossover-comp}. The current project shows significance through the parallel lines as exemplified in Figure \ref{plt-parallel-comp}. The data in the current study analyzed data by looking target syllable compared to a matching or mismatching condition resulting in parallel lines. In other words, the CV matching and CVC matching conditions are connected by the line representing matching condition and the same holds true for the mismatching condition---CV mismatching is connected to CVC mismatching. If the study finds similar results to previous word segmentation experiments, then it is expected that the mismatching condition will result in longer reaction times than the matching condition for both types of syllables. Therefore, the same analysis is simply being visualized in two different manners. %It is imperative that the reader understand this point because if familiar with the previous research looks at the plots in the manuscript, they may mistakenly assume the results are null or insignificant
 
 \ttodo{update table for online participants}
 \begin{table}%[hbt]
