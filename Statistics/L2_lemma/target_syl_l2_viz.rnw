@@ -661,8 +661,7 @@ plot_grid(online_l2_mat_lex_int, online_l2_lex_mat_int)
 
 # Remove temporary data variables in environment
 # Remove dataframes following analysis
-rm(online_learners, 
-   online_words_learners, 
+rm(online_words_learners, 
    online_nonwords_learners,
    online_cv_learners, 
    online_cvc_learners, 
