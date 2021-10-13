@@ -97,7 +97,7 @@ online_l2_grp_sum <- my_stats(my_l2_data,
               grp_col = online_l2_cond_grp, 
               sum_col = online_l2_stat_col,
               stats = online_l2_summary_stats) %>% 
-  mutate(index = paste(group,
+  mutate(index = paste("English",
                        target_syl_structure,
                        word_initial_syl,
                        word_status, sep = "-")) %>%
