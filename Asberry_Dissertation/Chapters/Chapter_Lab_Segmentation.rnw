@@ -574,7 +574,7 @@ p > .05
 \Sexpr{lab_aov_natives$anova_table["matching:word_status", "num Df"]},
 \Sexpr{lab_aov_natives$anova_table["matching:word_status", "den Df"]}) =
 \Sexpr{round(lab_aov_natives$anova_table["matching:word_status", "F"],2)}, 
-p < .05 
+p > .05 
 [\Sexpr{round(lab_aov_natives$anova_table["matching:word_status", "Pr(>F)"],4)}].
 
 
