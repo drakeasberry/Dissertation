@@ -410,6 +410,58 @@ p < .05
 p > .05 
 [\Sexpr{round(aov_online_natives$anova_table["word_status", "Pr(>F)"],4)}]. 
 
+
+In order to look at main effect of \emph{Matching}, post-hoc analyses were conducted. The dataset was regrouped so that each participant's reaction times were computed based on whether the target sequence they were monitoring for matched or mismatched the word-initial syllable of the word in which they detected the target. The dataset consisted of 
+\Sexpr{nrow(online_l1_mat_ag)} 
+observations---
+\Sexpr{length(unique(online_natives$matching))} 
+\emph{Matching} conditions x 
+\Sexpr{length(unique(online_natives$partNum))} 
+participants. This dataset was then submitted to a t-test, which revealed that the L1 Spanish group generally detected targets in the matching condition, 
+M= \Sexpr{round(online_l1_mat_compare["match", "Mean"],2)}, 
+SD= \Sexpr{round(online_l1_mat_compare["match", "SD"],2)} 
+at 95\% CI 
+[\Sexpr{round(online_l1_mat_compare["match", "LL"],3)}, 
+\Sexpr{round(online_l1_mat_compare["match", "UL"],3)}], 
+faster than targets in the mismatching condition, 
+M= \Sexpr{round(online_l1_mat_compare["mismatch", "Mean"],2)}, 
+SD= \Sexpr{round(online_l1_mat_compare["mismatch", "SD"],2)} 
+[\Sexpr{round(online_l1_mat_compare["mismatch", "LL"],3)}, 
+\Sexpr{round(online_l1_mat_compare["mismatch", "UL"],3)}]. 
+The mean difference, 
+M= \Sexpr{round(abs(online_l1_mat_compare["match", "Mean"] - 
+online_l1_mat_compare["mismatch", "Mean"]),2)}, 
+reveals a statistical difference in detection times between the two matching conditions, 
+\emph{t}(\Sexpr{round(t_online_l1_mat_main$parameter,2)}) = 
+\Sexpr{round(t_online_l1_mat_main$statistic,4)}, 
+p < \Sexpr{round(t_online_l1_mat_main$p.value,4)}.
+The main effect of the matching condition was of a 
+\Sexpr{online_l1_mat_efsize$magnitude} 
+magnitude. This can be seen in the output of Cohen's \emph{d} for \emph{Matching} \emph{d}= 
+\Sexpr{round(online_l1_mat_efsize$estimate,2)}, 
+\Sexpr{online_l1_mat_efsize$conf.level*100}\% CI 
+[\Sexpr{round(online_l1_mat_efsize$conf.int[1],2)},
+\Sexpr{round(online_l1_mat_efsize$conf.int[2],2)}]. Figure \ref{plt-online-l1-mat-main} plots the main effects of matching conditions for the L1 Spanish speakers.
+
+\begin{figure}[hbt]
+\begin{center}
+<<online_l1_mat, fig.width= 6, fig.height= 3>>=
+online_l1_mat_main
+@      
+\caption[Estimated Marginal Means: Lab Experiment Control Group]{L1 Spanish Log transformed reaction times reported as a factor of \emph{Matching} condition.}
+\label{plt-online-l1-mat-main}
+\end{center}
+\end{figure}
+
+
+Figure \ref{plt-online-l1-tar-mat-ns-int} shows the data plotted by lexicality with each panel showing the interaction between target syllable structure and matching condition. Note that the parallel lines shown in the word panel of the plot revealed the type of pattern expected to be seen given the way the data was analyzed in the current study. However, the results did not support native Spanish speaking controls using a syllabic segmentation strategy. While there was a significant main effect of \emph{Matching} the interaction between \emph{Target} and \emph{Matching} failed to reach significance, 
+\emph{F}(
+\Sexpr{aov_online_natives$anova_table["target_syl_structure:matching", "num Df"]},
+\Sexpr{aov_online_natives$anova_table["target_syl_structure:matching", "den Df"]}) =
+\Sexpr{round(aov_online_natives$anova_table["target_syl_structure:matching", "F"],2)}, 
+p > .05 
+[\Sexpr{round(aov_online_natives$anova_table["target_syl_structure:matching", "Pr(>F)"],4)}].
+
 \begin{figure}[hbt]
 \begin{center}
 <<online_l1_tar_mat_ns_int, fig.width= 6, fig.height= 3>>=
@@ -420,39 +472,36 @@ online_l1_tar_mat_int
 \end{center}
 \end{figure}
 
-\ttodo[inline]{update to current experiment results START HERE}
-
-Figure \ref{plt-online-l1-tar-mat-ns-int} shows the data plotted by lexicality with each panel showing the interaction between target syllable structure and matching condition. Note that the parallel lines shown in the word panel of the plot revealed the type of pattern expected to be seen given the way the data was analyzed in the current study. However, the results did not support native Spanish speaking controls using a syllabic segmentation strategy. There was no significant main effect of \emph{Matching}
-\emph{F}(
-\Sexpr{lab_aov_natives$anova_table["matching", "num Df"]},
-\Sexpr{lab_aov_natives$anova_table["matching", "den Df"]}) = 
-\Sexpr{round(lab_aov_natives$anova_table["matching", "F"],2)}, 
-p > .05 
-[\Sexpr{round(lab_aov_natives$anova_table["matching", "Pr(>F)"],4)}]. Nor was there a statistically significant interaction between \emph{Matching} and \emph{Lexicality}, 
-\emph{F}(
-\Sexpr{lab_aov_natives$anova_table["matching:word_status", "num Df"]},
-\Sexpr{lab_aov_natives$anova_table["matching:word_status", "den Df"]}) =
-\Sexpr{round(lab_aov_natives$anova_table["matching:word_status", "F"],2)}, 
-p < .05 
-[\Sexpr{round(lab_aov_natives$anova_table["matching:word_status", "Pr(>F)"],4)}].
-
 
 \subsection{L2 Spanish Learners}
-%Figure \ref{plt-lab-l2-rtms-desc} plots the general descriptive statistics for response times in milliseconds by target syllable, matching and lexicality conditions for the \Sexpr{length(unique(lab_learners$partNum))} L2 learners of Spanish. 
-For the \Sexpr{length(unique(lab_learners$partNum))} L2 learners of Spanish, the log transformed reaction times were submitted to a (3) x (2) repeated measures ANOVA with \emph{Lexicality, Target} and \emph{Matching} as factors. The ANOVA revealed statistically significant main effects of \emph{Target}, 
+For the \Sexpr{length(unique(online_learners$partNum))} L2 learners of Spanish, the log transformed reaction times were submitted to a (2) x (2) x (2) repeated measures ANOVA with \emph{Target, Matching} and \emph{Lexicality} as factors. The ANOVA revealed no statistically significant main effects, but did reveal a trending main effect of \emph{Matching}, 
 \emph{F}(
-\Sexpr{lab_aov_learners$anova_table["target_syl_structure", "num Df"]},
-\Sexpr{lab_aov_learners$anova_table["target_syl_structure", "den Df"]}) =
-\Sexpr{round(lab_aov_learners$anova_table["target_syl_structure", "F"],2)}, 
-p < .05 
-[\Sexpr{round(lab_aov_learners$anova_table["target_syl_structure", "Pr(>F)"],4)}] 
-and a statistically significant interaction between \emph{Matching} and \emph{Lexicality}, 
+\Sexpr{aov_online_learners$anova_table["matching", "num Df"]},
+\Sexpr{aov_online_learners$anova_table["matching", "den Df"]}) =
+\Sexpr{round(aov_online_learners$anova_table["matching", "F"],2)}, 
+p > .05 
+[\Sexpr{round(aov_online_learners$anova_table["matching", "Pr(>F)"],4)}].
+There were two two-way significant interactions for the L2 Spanish group. The first was a statistically significant interaction between \emph{Target} and \emph{Matching},
 \emph{F}(
-\Sexpr{lab_aov_learners$anova_table["matching:word_status", "num Df"]},
-\Sexpr{lab_aov_learners$anova_table["matching:word_status", "den Df"]}) =
-\Sexpr{round(lab_aov_learners$anova_table["matching:word_status", "F"],2)}, 
+\Sexpr{aov_online_learners$anova_table["target_syl_structure:matching", "num Df"]},
+\Sexpr{aov_online_learners$anova_table["target_syl_structure:matching", "den Df"]}) =
+\Sexpr{round(aov_online_learners$anova_table["target_syl_structure:matching", "F"],2)}, 
+p < .05 [0.0000].
+%[\Sexpr{round(aov_online_learners$anova_table["target_syl_structure:matching", "Pr(>F)"],4)}] 
+and the second was between \emph{Target} and \emph{Lexicality},
+\emph{F}(
+\Sexpr{aov_online_learners$anova_table["target_syl_structure:word_status", "num Df"]},
+\Sexpr{aov_online_learners$anova_table["target_syl_structure:word_status", "den Df"]}) =
+\Sexpr{round(aov_online_learners$anova_table["target_syl_structure:word_status", "F"],2)}, 
 p < .05 
-[\Sexpr{round(lab_aov_learners$anova_table["matching:word_status", "Pr(>F)"],4)}]. 
+[\Sexpr{round(aov_online_learners$anova_table["target_syl_structure:word_status", "Pr(>F)"],4)}]. 
+In addition, there was trending interaction between \emph{Matching} and \emph{Lexicality} that failed to reach signficance,
+\emph{F}(
+\Sexpr{aov_online_learners$anova_table["matching:word_status", "num Df"]},
+\Sexpr{aov_online_learners$anova_table["matching:word_status", "den Df"]}) =
+\Sexpr{round(aov_online_learners$anova_table["matching:word_status", "F"],2)}, 
+p > .05 
+[\Sexpr{round(aov_online_learners$anova_table["matching:word_status", "Pr(>F)"],4)}]. The full ANOVA model can be viewed in Table \ref{tab-anova-online-learners}.
 
 
 <<table_anova_online_learners, results='asis', include=TRUE>>=
@@ -462,123 +511,316 @@ xtable(online_aov_learners_prt$anova_table,
        label = "tab-anova-online-learners")
 @
 
-\begin{figure}[ht]
+As done with L1 Spanish controls, post-hoc analyses were conducted to further explore the trending main effect of \emph{Matching}. The dataset was regrouped so that each participant's reaction times were computed based on whether the target sequence they were monitoring for matched or mismatched the word-initial syllable of the word in which they detected the target. The dataset consisted of 
+\Sexpr{nrow(online_l2_mat_ag)} 
+observations---
+\Sexpr{length(unique(online_learners$matching))} 
+\emph{Matching} conditions x 
+\Sexpr{length(unique(online_learners$partNum))} 
+participants. This dataset was then submitted to a t-test, which revealed that the L2 Spanish group had a tendency to detect targets in the matching condition, 
+M= \Sexpr{round(online_l2_mat_compare["match", "Mean"],2)}, 
+SD= \Sexpr{round(online_l2_mat_compare["match", "SD"],2)} 
+at 95\% CI 
+[\Sexpr{round(online_l2_mat_compare["match", "LL"],3)}, 
+\Sexpr{round(online_l2_mat_compare["match", "UL"],3)}], 
+faster than targets in the mismatching condition, 
+M= \Sexpr{round(online_l2_mat_compare["mismatch", "Mean"],2)}, 
+SD= \Sexpr{round(online_l2_mat_compare["mismatch", "SD"],2)} 
+[\Sexpr{round(online_l2_mat_compare["mismatch", "LL"],3)}, 
+\Sexpr{round(online_l2_mat_compare["mismatch", "UL"],3)}]. 
+However, the mean difference, 
+M= \Sexpr{round(abs(online_l2_mat_compare["match", "Mean"] - 
+online_l2_mat_compare["mismatch", "Mean"]),2)}, 
+failed to reveal a statistical difference in detection times between the two matching conditions, 
+\emph{t}(\Sexpr{round(t_online_l2_mat_main$parameter,2)}) = 
+\Sexpr{round(t_online_l2_mat_main$statistic,4)}, 
+p < \Sexpr{round(t_online_l2_mat_main$p.value,4)}.
+The main effect of main effect of matching conditions was of a 
+\Sexpr{online_l2_mat_efsize$magnitude} 
+magnitude. This can be seen in the output of Cohen's \emph{d} for \emph{Matching} \emph{d}= 
+\Sexpr{round(online_l2_mat_efsize$estimate,2)}, 
+\Sexpr{online_l2_mat_efsize$conf.level*100}\% CI 
+[\Sexpr{round(online_l2_mat_efsize$conf.int[1],2)},
+\Sexpr{round(online_l2_mat_efsize$conf.int[2],2)}]. Figure \ref{plt-online-l1-mat-main} plots the main effects of matching conditions for the L2 Spanish speakers.
+
+\begin{figure}[hbt]
 \begin{center}
-<<online_l2_syl_main, fig.width= 5, fig.height= 3>>=
-lab_l2_tar_syl_main
+<<online_l2_mat, fig.width= 6, fig.height= 3>>=
+online_l2_mat_main
 @      
-\caption[Estimated Marginal Means: Lab Experiment Target Group]{Log transformed reaction times reported given as a factor of syllable structure. The plot shows the fact that participants responded significantly faster to CVC syllables. The error bars represent the 95\% confidence intervals. The overlapping CIs still represent a significant effect because the factor is a within subjects factor.}
-\label{plt-online_l2_mat_lex_s_int}
+\caption[Estimated Marginal Means: Lab Experiment Control Group]{L2 Spanish Log transformed reaction times reported as a factor of \emph{Matching} condition.}
+\label{plt-online-l2-mat-main}
 \end{center}
 \end{figure}
 
-
-In order to look at main effect of target syllable, post-hoc analyses were conducted. The dataset was regrouped so that each participant's reaction times were computed based on whether the target sequence they were monitoring for was CV or CVC. The dataset consisted of 
-\Sexpr{nrow(lab_data_tarsyl_ag)} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In order to break down the first significant interaction between \emph{Target} and \emph{Matching} factors, a post-hoc analysis was run. The L2 Spanish dataset was was further subset into two dataframes: one contained all responses to CV targets and the other contained all responses to CVC targets. Each dataset consisted of 
+\Sexpr{nrow(online_cv_learners)} 
 observations---
-\Sexpr{length(unique(lab_learners$target_syl_structure))} 
-\emph{Target} conditions x 
-\Sexpr{length(unique(lab_learners$partNum))}.
-This dataset was then submitted to a t-test, which revealed that the L2 Spanish group generally detected CVC syllables, 
-M= \Sexpr{round(lab_tar_compare["CVC", "Mean"],2)}, 
-SD= \Sexpr{round(lab_tar_compare["CVC", "SD"],2)} 
+\Sexpr{length(unique(online_cv_learners$matching))} 
+\emph{Matching} conditions x 
+\Sexpr{length(unique(online_cv_learners$partNum))}
+participants. Both CV and CVC target datasets were then each submitted to a one-tailed t-test. 
+
+
+This revealed that the L2 Spanish group detected CV syllables faster in the matching condition, 
+M= \Sexpr{round(online_tar_mat_compare["CV-match", "Mean"],2)}, 
+SD= \Sexpr{round(online_tar_mat_compare["CV-match", "SD"],2)} 
 at 95\% CI 
-[\Sexpr{round(lab_tar_compare["CVC", "LL"],3)}, 
-\Sexpr{round(lab_tar_compare["CVC", "UL"],3)}], 
-faster than CV syllables, 
-M= \Sexpr{round(lab_tar_compare["CV", "Mean"],2)}, 
-SD= \Sexpr{round(lab_tar_compare["CV", "SD"],2)} 
-[\Sexpr{round(lab_tar_compare["CV", "LL"],3)}, 
-\Sexpr{round(lab_tar_compare["CV", "UL"],3)}]. 
+[\Sexpr{round(online_tar_mat_compare["CV-match", "LL"],3)}, 
+\Sexpr{round(online_tar_mat_compare["CV-match", "UL"],3)}], 
+than CV syllables detected in the mismatching condition, 
+M= \Sexpr{round(online_tar_mat_compare["CV-mismatch", "Mean"],2)}, 
+SD= \Sexpr{round(online_tar_mat_compare["CV-mismatch", "SD"],2)} 
+[\Sexpr{round(online_tar_mat_compare["CV-mismatch", "LL"],3)}, 
+\Sexpr{round(online_tar_mat_compare["CV-mismatch", "UL"],3)}]. 
+
+
 The mean difference, 
-M= \Sexpr{round(abs(lab_tar_compare["CVC", "Mean"] - 
-lab_tar_compare["CV", "Mean"]),2)}, 
-reveals a statistical difference in detection times between the two target syllable structures, 
-\emph{t}(\Sexpr{round(t_lab_tar_syl_main$parameter,2)}) = 
-\Sexpr{round(t_lab_tar_syl_main$statistic,4)}, 
-p < \Sexpr{round(t_lab_tar_syl_main$p.value,4)}.
-The main effect of target syllable was of a 
-\Sexpr{lab_tar_efsize$magnitude} 
-magnitude. This can be seen in the output of Cohen's \emph{d} for \emph{Target} \emph{d}= 
-\Sexpr{round(lab_tar_efsize$estimate,2)}, 
-\Sexpr{lab_tar_efsize$conf.level*100}\% CI 
-[\Sexpr{round(lab_tar_efsize$conf.int[1],2)},
-\Sexpr{round(lab_tar_efsize$conf.int[2],2)}].
+M= \Sexpr{round(abs(online_tar_mat_compare["CV-match", "Mean"] - 
+online_tar_mat_compare["CV-mismatch", "Mean"]),2)}, 
+revealed a statistically significant difference with regards to the target syllable matching the word initial syllable of the carrier item for CV targets, 
+\emph{t}(\Sexpr{round(t_online_l2_cv_mat_int$parameter,2)}) = 
+\Sexpr{round(t_online_l2_cv_mat_int$statistic,4)}, 
+p < \Sexpr{round(t_online_l2_cv_mat_int$p.value,4)}.
+
+
+The effect size of matching condition in the CV target dataset was 
+\Sexpr{online_l2_cv_mat_efsize$magnitude} 
+in magnitude, \emph{d}= 
+\Sexpr{round(online_l2_cv_mat_efsize$estimate,2)}, 
+\Sexpr{online_l2_cv_mat_efsize$conf.level*100}\% CI 
+[\Sexpr{round(online_l2_cv_mat_efsize$conf.int[1],2)}, 
+\Sexpr{round(online_l2_cv_mat_efsize$conf.int[2],2)}].
+
+
+In the CVC target dataset, it surprisingly revealed that the L2 Spanish group detected CVC syllables significantly slower for the matching condition, 
+M= \Sexpr{round(online_tar_mat_compare["CVC-match", "Mean"],2)}, 
+SD= \Sexpr{round(online_tar_mat_compare["CVC-match", "SD"],2)} 
+at 95\% CI 
+[\Sexpr{round(online_tar_mat_compare["CVC-match", "LL"],3)}, 
+\Sexpr{round(online_tar_mat_compare["CVC-match", "UL"],3)}], 
+than syllables detected in the mismatching condition, 
+M= \Sexpr{round(online_tar_mat_compare["CVC-mismatch", "Mean"],2)}, 
+SD= \Sexpr{round(online_tar_mat_compare["CVC-mismatch", "SD"],2)} 
+[\Sexpr{round(online_tar_mat_compare["CVC-mismatch", "LL"],3)}, 
+\Sexpr{round(online_tar_mat_compare["CVC-mismatch", "UL"],3)}]. 
+
+
+The mean difference, 
+M= \Sexpr{round(abs(online_tar_mat_compare["CVC-match", "Mean"] - 
+online_tar_mat_compare["CVC-mismatch", "Mean"]),2)}, 
+revealed a statistical difference with regards to the target syllable matching the word initial syllable of the carrier item for CVC target, but in the opposite direction of the expectation, 
+\emph{t}(\Sexpr{round(t_online_l2_cvc_mat_int$parameter,2)}) = 
+\Sexpr{round(t_online_l2_cvc_mat_int$statistic,4)}, 
+p < \Sexpr{round(t_online_l2_cvc_mat_int$p.value,4)}.
+
+
+The effect size of matching condition in the word dataset was also 
+\Sexpr{online_l2_cvc_mat_efsize$magnitude} 
+in magnitude, \emph{d}= 
+\Sexpr{round(online_l2_cvc_mat_efsize$estimate,2)}, 
+\Sexpr{online_l2_cvc_mat_efsize$conf.level*100}\% CI 
+[\Sexpr{round(online_l2_cvc_mat_efsize$conf.int[1],2)}, 
+\Sexpr{round(online_l2_cvc_mat_efsize$conf.int[2],2)}].
+
+Figure \ref{plt-online-l2-tar-mat-s-int} plots the estimated marginal means for the interaction between \emph{Target} and \emph{Matching} for L2 learners of Spanish. It shows that this interaction was driven by the fact that participants responded significantly faster to the CV targets in the matching condition and CVC target in the mismatching condition.
+
 
 \begin{figure}
 \begin{center}
-<<online_l2_mat_lex_s_int, fig.width= 5, fig.height= 3>>=
-lab_l2_lex_mat_int
-@      
-\caption[Estimated Marginal Means: Lab Experiment Target Group]{Log transformed reaction times reported given as a factor of matching and lexicality conditions.}
-\label{plt-online_l2_mat_lex_s_int}
-
-\vspace{.4in}
-
-<<online_l2_tar_mat_ns_int, fig.width= 6, fig.height= 3>>=
-lab_l2_tar_mat_int
+<<online_l2_tar_mat_s_int, fig.width= 6, fig.height= 3>>=
+online_l2_tarsyl_mat_int
 @      
 \caption[Estimated Marginal Means: Lab Experiment Control Group]{Log transformed reaction times reported given as a factor of target syllable structure, matching and lexicality conditions.}
-\label{plt-online-l2-tar-mat-ns-int}
+\label{plt-online-l2-tar-mat-s-int}
 \end{center}
 \end{figure}
 
-In order to break down the interaction between \emph{Matching} and \emph{Lexicality} factors, a post-hoc analysis was run. The L2 Spanish dataset was was further subset into two dataframes: one for real words and one for nonwords. Each dataset consisted of 
-\Sexpr{nrow(lab_nonwords_learners)} 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+In order to break down the interaction between \emph{Target} and \emph{Lexicality} factors, another post-hoc analysis was run. The L2 Spanish dataset was was further subset into two dataframes: one for real words and one for nonwords. Each dataset consisted of 
+\Sexpr{nrow(online_nonwords_learners)} 
 observations---
-\Sexpr{length(unique(lab_nonwords_learners$matching))} 
+\Sexpr{length(unique(online_nonwords_learners$target_syl_structure))} 
 \emph{Matching} conditions x 
-\Sexpr{length(unique(lab_nonwords_learners$partNum))}
-participants. Both datasets, words and nonwords, were then individually submitted to a one-tailed t-test. This revealed that the L2 Spanish group did not detect syllables faster in nonword for the matching condition, 
-M= \Sexpr{round(lab_mat_lex_compare["nonword-matching", "Mean"],2)}, 
-SD= \Sexpr{round(lab_mat_lex_compare["nonword-matching", "SD"],2)} 
+\Sexpr{length(unique(online_nonwords_learners$partNum))}
+participants. Both datasets, words and nonwords, were then individually submitted to a one-tailed t-test. 
+
+
+This revealed that the L2 Spanish group did not detect CV syllables faster in nonwords, 
+M= \Sexpr{round(online_tar_lex_compare["CV-nonword", "Mean"],2)}, 
+SD= \Sexpr{round(online_tar_lex_compare["CV-nonword", "SD"],2)} 
 at 95\% CI 
-[\Sexpr{round(lab_mat_lex_compare["nonword-matching", "LL"],3)}, 
-\Sexpr{round(lab_mat_lex_compare["nonword-matching", "UL"],3)}], 
-than syllables detected in the mismatching condition, 
-M= \Sexpr{round(lab_mat_lex_compare["nonword-mismatching", "Mean"],2)}, 
-SD= \Sexpr{round(lab_mat_lex_compare["nonword-mismatching", "SD"],2)} 
-[\Sexpr{round(lab_mat_lex_compare["nonword-mismatching", "LL"],3)}, 
-\Sexpr{round(lab_mat_lex_compare["nonword-mismatching", "UL"],3)}]. 
+[\Sexpr{round(online_tar_lex_compare["CV-nonword", "LL"],3)}, 
+\Sexpr{round(online_tar_lex_compare["CV-nonword", "UL"],3)}], 
+than CVC syllables detected in nonwords, 
+M= \Sexpr{round(online_tar_lex_compare["CVC-nonword", "Mean"],2)}, 
+SD= \Sexpr{round(online_tar_lex_compare["CVC-nonword", "SD"],2)} 
+[\Sexpr{round(online_tar_lex_compare["CVC-nonword", "LL"],3)}, 
+\Sexpr{round(online_tar_lex_compare["CVC-nonword", "UL"],3)}]. 
+
+
 The mean difference, 
-M= \Sexpr{round(abs(lab_mat_lex_compare["nonword-matching", "Mean"] - 
-lab_mat_lex_compare["nonword-mismatching", "Mean"]),2)}, 
-reveals no statistical difference with regards to the target syllable matching the word initial syllable of the carrier item for nonword, 
-\emph{t}(\Sexpr{round(t_lab_l2_nonwd_mat_int$parameter,2)}) = 
-\Sexpr{round(t_lab_l2_nonwd_mat_int$statistic,4)}, 
-p < \Sexpr{round(t_lab_l2_nonwd_mat_int$p.value,4)}.
-In the real word dataset, it surprisingly revealed that the L2 Spanish group detected syllables significantly slower for the matching condition, 
-M= \Sexpr{round(lab_mat_lex_compare["word-matching", "Mean"],2)}, 
-SD= \Sexpr{round(lab_mat_lex_compare["word-matching", "SD"],2)} 
-at 95\% CI 
-[\Sexpr{round(lab_mat_lex_compare["word-matching", "LL"],3)}, 
-\Sexpr{round(lab_mat_lex_compare["word-matching", "UL"],3)}], 
-than syllables detected in the mismatching condition, 
-M= \Sexpr{round(lab_mat_lex_compare["word-mismatching", "Mean"],2)}, 
-SD= \Sexpr{round(lab_mat_lex_compare["word-mismatching", "SD"],2)} 
-[\Sexpr{round(lab_mat_lex_compare["word-mismatching", "LL"],3)}, 
-\Sexpr{round(lab_mat_lex_compare["word-mismatching", "UL"],3)}]. 
-The mean difference, 
-M= \Sexpr{round(abs(lab_mat_lex_compare["word-matching", "Mean"] - 
-lab_mat_lex_compare["word-mismatching", "Mean"]),2)}, 
-reveals a statistically significant difference with regards to the target syllable matching the word initial syllable of the carrier item for words, but opposite of the hypothesized direction, 
-\emph{t}(\Sexpr{round(t_lab_l2_wd_mat_int$parameter,2)}) = 
-\Sexpr{round(t_lab_l2_wd_mat_int$statistic,4)}, 
-p < \Sexpr{round(t_lab_l2_wd_mat_int$p.value,4)}.
-The effect size of matching condition in the word dataset was also 
-\Sexpr{lab_l2_mat_efsize$magnitude} 
+M= \Sexpr{round(abs(online_tar_lex_compare["CV-nonword", "Mean"] - 
+online_tar_lex_compare["CVC-nonword", "Mean"]),2)}, 
+revealed a nonstatistically significant difference with regards to the target syllable structure in nonwords, 
+\emph{t}(\Sexpr{round(t_online_l2_nonwd_tarsyl_int$parameter,2)}) = 
+\Sexpr{round(t_online_l2_nonwd_tarsyl_int$statistic,4)}, 
+p < \Sexpr{round(t_online_l2_nonwd_tarsyl_int$p.value,4)}.
+
+
+The effect size of target syllable structure condition in the nonword dataset was  
+\Sexpr{online_l2_nonwd_tarsyl_efsize$magnitude} 
 in magnitude, \emph{d}= 
-\Sexpr{round(lab_l2_mat_efsize$estimate,2)}, 
-\Sexpr{lab_l2_mat_efsize$conf.level*100}\% CI 
-[\Sexpr{round(lab_l2_mat_efsize$conf.int[1],2)}, 
-\Sexpr{round(lab_l2_mat_efsize$conf.int[2],2)}].
-Figure \ref{plt-lab_l2_mat_lex_s_int} plots the estimated marginal means for the interaction between \emph{Matching} and \emph{Lexicality} for L2 learners of Spanish. It shows that the significant interaction was due to the fact that participants responded significantly to the the mismatching condition than the matching condition, but only for real words. Lastly, the data reveals that the interaction between target syllable structure and the structure word initial syllable of carrier word was not significant as can be seen in Figure \ref{plt-lab-l2-tar-mat-ns-int}. There was no significant main effect of \emph{Matching}
-\emph{F}(
-\Sexpr{lab_aov_learners$anova_table["matching", "num Df"]},
-\Sexpr{lab_aov_learners$anova_table["matching", "den Df"]}) = 
-\Sexpr{round(lab_aov_learners$anova_table["matching", "F"],2)}, 
-p > .05 
-[\Sexpr{round(lab_aov_learners$anova_table["matching", "Pr(>F)"],4)}].
+\Sexpr{round(online_l2_nonwd_tarsyl_efsize$estimate,2)}, 
+\Sexpr{online_l2_nonwd_tarsyl_efsize$conf.level*100}\% CI 
+[\Sexpr{round(online_l2_nonwd_tarsyl_efsize$conf.int[1],2)}, 
+\Sexpr{round(online_l2_nonwd_tarsyl_efsize$conf.int[2],2)}].
+
+
+In the real word dataset, it also revealed that the L2 Spanish group did not detect CV syllables significantly faster in nonwords, 
+M= \Sexpr{round(online_tar_lex_compare["CV-word", "Mean"],2)}, 
+SD= \Sexpr{round(online_tar_lex_compare["CV-word", "SD"],2)} 
+at 95\% CI 
+[\Sexpr{round(online_tar_lex_compare["CV-word", "LL"],3)}, 
+\Sexpr{round(online_tar_lex_compare["CV-word", "UL"],3)}], 
+than CVC syllables detected in nonwords, 
+M= \Sexpr{round(online_tar_lex_compare["CVC-word", "Mean"],2)}, 
+SD= \Sexpr{round(online_tar_lex_compare["CVC-word", "SD"],2)} 
+[\Sexpr{round(online_tar_lex_compare["CVC-word", "LL"],3)}, 
+\Sexpr{round(online_tar_lex_compare["CVC-word", "UL"],3)}]. 
+
+
+The mean difference, 
+M= \Sexpr{round(abs(online_tar_lex_compare["CV-word", "Mean"] - 
+online_tar_lex_compare["CVC-word", "Mean"]),2)}, 
+revealed no statistical difference with regards to the target syllable structure for words, 
+\emph{t}(\Sexpr{round(t_online_l2_wd_tarsyl_int$parameter,2)}) = 
+\Sexpr{round(t_online_l2_wd_tarsyl_int$statistic,4)}, 
+p < \Sexpr{round(t_online_l2_wd_tarsyl_int$p.value,4)}.
+
+
+The effect size of target syllable structure condition in the word dataset was also 
+\Sexpr{online_l2_wd_tarsyl_efsize$magnitude} 
+in magnitude, \emph{d}= 
+\Sexpr{round(online_l2_wd_tarsyl_efsize$estimate,2)}, 
+\Sexpr{online_l2_wd_tarsyl_efsize$conf.level*100}\% CI 
+[\Sexpr{round(online_l2_wd_tarsyl_efsize$conf.int[1],2)}, 
+\Sexpr{round(online_l2_wd_tarsyl_efsize$conf.int[2],2)}].
+
+Figure \ref{plt-online-l2-tar-lex-s-int} plots the estimated marginal means for the interaction between \emph{Target} and \emph{Lexicality} for L2 learners of Spanish. It shows that the interaction was due to the fact that participants responded significantly faster to the matching condition than the mismatching condition, but only for nonwords.
+
+
+\begin{figure}
+\begin{center}
+<<online_l2_tar_lex_s_int, fig.width= 6, fig.height= 3>>=
+online_l2_tarsyl_lex_int
+@      
+\caption[Estimated Marginal Means: Lab Experiment Control Group]{Log transformed reaction times reported given as a factor of target syllable structure, matching and lexicality conditions.}
+\label{plt-online-l2-tar-lex-s-int}
+\end{center}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In order to break down the final trending interaction between \emph{Matching} and \emph{Lexicality} factors, a post-hoc analysis was run. The L2 Spanish dataset was was further subset into two dataframes: one for real words and one for nonwords. Each dataset consisted of 
+\Sexpr{nrow(online_nonwd_learners_mat)} 
+observations---
+\Sexpr{length(unique(online_nonwd_learners_mat$matching))} 
+\emph{Matching} conditions x 
+\Sexpr{length(unique(online_nonwd_learners_mat$partNum))}
+participants. Both datasets, words and nonwords, were then individually submitted to a one-tailed t-test. 
+
+
+This revealed that the L2 Spanish group did not detect syllables faster in nonwords for the matching condition, 
+M= \Sexpr{round(online_mat_lex_compare["nonword-match", "Mean"],2)}, 
+SD= \Sexpr{round(online_mat_lex_compare["nonword-match", "SD"],2)} 
+at 95\% CI 
+[\Sexpr{round(online_mat_lex_compare["nonword-match", "LL"],3)}, 
+\Sexpr{round(online_mat_lex_compare["nonword-match", "UL"],3)}], 
+than syllables detected in the mismatching condition, 
+M= \Sexpr{round(online_mat_lex_compare["nonword-mismatch", "Mean"],2)}, 
+SD= \Sexpr{round(online_mat_lex_compare["nonword-mismatch", "SD"],2)} 
+[\Sexpr{round(online_mat_lex_compare["nonword-mismatch", "LL"],3)}, 
+\Sexpr{round(online_mat_lex_compare["nonword-mismatch", "UL"],3)}]. 
+
+
+The mean difference, 
+M= \Sexpr{round(abs(online_mat_lex_compare["nonword-match", "Mean"] - 
+online_mat_lex_compare["nonword-mismatch", "Mean"]),2)}, 
+revealed a statistically significant difference with regards to the target syllable matching the word initial syllable of the carrier item for nonwords, 
+\emph{t}(\Sexpr{round(t_online_l2_nonwd_mat_int$parameter,2)}) = 
+\Sexpr{round(t_online_l2_nonwd_mat_int$statistic,4)}, 
+p < \Sexpr{round(t_online_l2_nonwd_mat_int$p.value,4)}.
+
+
+The effect size of matching condition in the word dataset was also 
+\Sexpr{online_l2_wd_mat_efsize$magnitude} 
+in magnitude, \emph{d}= 
+\Sexpr{round(online_l2_nonwd_mat_efsize$estimate,2)}, 
+\Sexpr{online_l2_nonwd_mat_efsize$conf.level*100}\% CI 
+[\Sexpr{round(online_l2_nonwd_mat_efsize$conf.int[1],2)}, 
+\Sexpr{round(online_l2_nonwd_mat_efsize$conf.int[2],2)}].
+
+
+In the real word dataset, it surprisingly revealed that the L2 Spanish group detected syllables significantly slower for the matching condition, 
+M= \Sexpr{round(online_mat_lex_compare["word-match", "Mean"],2)}, 
+SD= \Sexpr{round(online_mat_lex_compare["word-match", "SD"],2)} 
+at 95\% CI 
+[\Sexpr{round(online_mat_lex_compare["word-match", "LL"],3)}, 
+\Sexpr{round(online_mat_lex_compare["word-match", "UL"],3)}], 
+than syllables detected in the mismatching condition, 
+M= \Sexpr{round(online_mat_lex_compare["word-mismatch", "Mean"],2)}, 
+SD= \Sexpr{round(online_mat_lex_compare["word-mismatch", "SD"],2)} 
+[\Sexpr{round(online_mat_lex_compare["word-mismatch", "LL"],3)}, 
+\Sexpr{round(online_mat_lex_compare["word-mismatch", "UL"],3)}]. 
+
+
+The mean difference, 
+M= \Sexpr{round(abs(online_mat_lex_compare["word-match", "Mean"] - 
+online_mat_lex_compare["word-mismatch", "Mean"]),2)}, 
+revealed no statistical difference with regards to the target syllable matching the word initial syllable of the carrier item for words, 
+\emph{t}(\Sexpr{round(t_online_l2_wd_mat_int$parameter,2)}) = 
+\Sexpr{round(t_online_l2_wd_mat_int$statistic,4)}, 
+p < \Sexpr{round(t_online_l2_wd_mat_int$p.value,4)}.
+
+
+The effect size of matching condition in the word dataset was also 
+\Sexpr{online_l2_wd_mat_efsize$magnitude} 
+in magnitude, \emph{d}= 
+\Sexpr{round(online_l2_wd_mat_efsize$estimate,2)}, 
+\Sexpr{online_l2_wd_mat_efsize$conf.level*100}\% CI 
+[\Sexpr{round(online_l2_wd_mat_efsize$conf.int[1],2)}, 
+\Sexpr{round(online_l2_wd_mat_efsize$conf.int[2],2)}].
+
+Figure \ref{plt-online-l2-mat-lex-ns-int} plots the estimated marginal means for the interaction between \emph{Matching} and \emph{Lexicality} for L2 learners of Spanish. It shows that the trending of this interaction was due to the fact that participants responded significantly faster to the matching condition than the mismatching condition, but only for nonwords. 
+
+\begin{figure}
+\begin{center}
+<<online_l2_mat_lex_ns_int, fig.width= 5, fig.height= 3>>=
+online_l2_lex_mat_int
+@      
+\caption[Estimated Marginal Means: Lab Experiment Target Group]{Log transformed reaction times reported given as a factor of matching and lexicality conditions.}
+\label{plt-online-l2-mat-lex-ns-int}
+\end{center}
+\end{figure}
+
+
+%Lastly, the data reveals that the interaction between target syllable %structure and the structure word initial syllable of carrier word was not %significant as can be seen in Figure \ref{plt-online-l2-tar-mat-s-int}. %There was no significant main effect of \emph{Matching}
+%\emph{F}(
+%\Sexpr{aov_online_learners$anova_table["matching", "num Df"]},
+%\Sexpr{aov_online_learners$anova_table["matching", "den Df"]}) = 
+%\Sexpr{round(aov_online_learners$anova_table["matching", "F"],2)}, 
+%p > .05 
+%[\Sexpr{round(aov_online_learners$anova_table["matching", "Pr(>F)"],4)}].
+
+
+%\vspace{.4in}
+
+
+
+
+
 
 
 \section{Discussion}

@@ -354,8 +354,7 @@ online_l1_tar_mat_int
 
 # Remove temporary data variables in environment
 # Remove dataframes following analysis
-rm(online_l1_lex_ag, 
-   online_l1_mat_ag)
+rm(online_l1_lex_ag)
 
 # Remove checks and unused plots
 rm(normality_native,

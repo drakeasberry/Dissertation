@@ -268,15 +268,33 @@ online_l2_mat_main
 
 
 # Interaction breakdown
-# Create subsets to explore interaction between target syllable and matching
-# CV subset
+# Regroup for target syllable and matching 
+online_tar_mat_learners <- my_l2_data %>% 
+  my_stats(., grp_col = c("partNum", "target_syl_structure", "matching"), 
+           sum_col = online_l2_stat_col,
+           stats = online_l2_summary_stats)
+online_tar_mat_learners
+
+# Create a table for referencing statistics with CIs
+online_tar_mat_compare <- online_tar_mat_learners %>% 
+  group_by(target_syl_structure, matching) %>% 
+  summarise(Mean = mean(log_RT_Median),
+            SD = sd(log_RT_Median),
+            N = n(),
+            MOE_95 = qnorm(0.975)*SD/sqrt(N-1),
+            LL = Mean - MOE_95,
+            UL = Mean + MOE_95) %>%
+  mutate(index = paste(target_syl_structure,matching,sep = '-')) %>% 
+  column_to_rownames(., var = "index")
+
+# Create CV subset
 online_cv_learners <- my_l2_data %>% 
   subset(., target_syl_structure == "CV") %>% 
   my_stats(., grp_col = online_l2_grouping_mat, 
            sum_col = online_l2_stat_col,
            stats = online_l2_summary_stats)
 
-# CVC subset
+# Create CVC subset
 online_cvc_learners <- my_l2_data %>% 
   subset(., target_syl_structure == "CVC") %>% 
   my_stats(., grp_col = online_l2_grouping_mat, 
@@ -343,6 +361,25 @@ online_l2_grouping_tarsyl <-
                          "word_initial_syl",
                          "matching", 
                          "group")]
+
+# Regroup for target syllable and matching 
+online_tar_lex_learners <- my_l2_data %>% 
+  my_stats(., grp_col = c("partNum", "target_syl_structure", "word_status"), 
+           sum_col = online_l2_stat_col,
+           stats = online_l2_summary_stats)
+online_tar_lex_learners
+
+# Create a table for referencing statistics with CIs
+online_tar_lex_compare <- online_tar_lex_learners %>% 
+  group_by(target_syl_structure, word_status) %>% 
+  summarise(Mean = mean(log_RT_Median),
+            SD = sd(log_RT_Median),
+            N = n(),
+            MOE_95 = qnorm(0.975)*SD/sqrt(N-1),
+            LL = Mean - MOE_95,
+            UL = Mean + MOE_95) %>%
+  mutate(index = paste(target_syl_structure,word_status,sep = '-')) %>% 
+  column_to_rownames(., var = "index")
 
 # Nonword subset
 online_nonwords_learners <- my_l2_data %>% 
@@ -479,6 +516,24 @@ online_l2_cvc_lex_efsize
 
 
 # Create subsets to explore interaction between matching and word status (trending)
+online_mat_lex_learners <- my_l2_data %>% 
+  my_stats(., grp_col = c("partNum", "word_status", "matching"), 
+           sum_col = online_l2_stat_col,
+           stats = online_l2_summary_stats)
+online_mat_lex_learners
+
+# Create a table for referencing statistics with CIs
+online_mat_lex_compare <- online_mat_lex_learners %>% 
+  group_by(word_status, matching) %>% 
+  summarise(Mean = mean(log_RT_Median),
+            SD = sd(log_RT_Median),
+            N = n(),
+            MOE_95 = qnorm(0.975)*SD/sqrt(N-1),
+            LL = Mean - MOE_95,
+            UL = Mean + MOE_95) %>%
+  mutate(index = paste(word_status,matching,sep = '-')) %>% 
+  column_to_rownames(., var = "index")
+
 # Nonword subset
 online_nonwd_learners_mat <- my_l2_data %>% 
   subset(., word_status == "nonword") %>% 
@@ -661,17 +716,11 @@ plot_grid(online_l2_mat_lex_int, online_l2_lex_mat_int)
 
 # Remove temporary data variables in environment
 # Remove dataframes following analysis
-rm(online_words_learners, 
-   online_nonwords_learners,
-   online_cv_learners, 
-   online_cvc_learners, 
-   online_cv_learners_lex, 
+rm(online_cv_learners_lex, 
    online_cvc_learners_lex)
 
 # Remove checks and unused plots
-rm(online_l2_tarsyl_mat_int, 
-   online_l2_lex_tarsyl_int, 
-   normality_learner, 
+rm(normality_learner, 
    outlier_learner)
 
 

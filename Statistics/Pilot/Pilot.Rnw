@@ -18,6 +18,7 @@ library(tidyverse)
 library(ggplot2)
 library(dplyr)
 library(effsize)
+library(cowplot)
 
 source('../../Scripts_Dissertation/diss_dataviz_script.R')
 source('../../Scripts_Dissertation/analysis_functions.R')
@@ -28,79 +29,109 @@ my_data <- read_csv('data/pilot_seg_data.csv')
 syl_data <- read_csv('data/pilot_syl_data.csv')
 
 # Columns that I care about
-grouping <- c("participant", "Target", "Carrier")
+grouping <- c("participant", 
+              "Target", 
+              "Carrier")
   
 # Get summary stats for reporting (my_stats function used for dissertation consistency)
 # Columns that I want summary stats for
 stat_col <- c("RTmsec")
 
 # Stats I want to run
-summary_stats <- quote(list(Mean = mean, Min = min, Max = max, SD = sd))
+summary_stats <- quote(list(
+  Mean = mean, 
+  Min = min, 
+  Max = max, 
+  SD = sd))
 
 # grouped by target and carrier syllable structure (pilot experiment)
-my_data_summarized <- my_stats(my_data, 
-              grp_col = grouping, 
-              sum_col = stat_col,
-              stats = summary_stats) 
+my_data_summarized <- my_stats(
+  my_data, 
+  grp_col = grouping, 
+  sum_col = stat_col,
+  stats = summary_stats) 
   
 # Run anova   
-aov_pilot <- aov_ez("participant", "RTmsec", my_data, within = c("Target", "Carrier"))
+aov_pilot <- aov_ez(
+  "participant", 
+  "RTmsec", 
+  my_data, 
+  within = c("Target", "Carrier"))
 aov_pilot
 
-#test <- aov(RTmsec ~ Target*Carrier + Error(participant/(Target*Carrier)), data = my_data)
-#summary(test)
+
 # Interaction breakdown
 # Create subsets to explore interaction between target syllable and carrier syllable
 # CV Target subset
 cv_targets <- my_data %>% 
   subset(., Target == "CV") 
   
-cv_tar_sum <- my_stats(cv_targets, 
-                       grp_col = grouping, 
-                       sum_col = stat_col,
-                       stats = summary_stats)
+cv_tar_sum <- my_stats(
+  cv_targets, 
+  grp_col = grouping, 
+  sum_col = stat_col,
+  stats = summary_stats)
 
 # CVC subset
 cvc_targets <- my_data %>% 
   subset(., Target == "CVC") 
   
-cvc_tar_sum <- my_stats(cvc_targets, 
-                       grp_col = grouping, 
-                       sum_col = stat_col,
-                       stats = summary_stats)
+cvc_tar_sum <- my_stats(
+  cvc_targets, 
+  grp_col = grouping, 
+  sum_col = stat_col,
+  stats = summary_stats)
 
 # CV sylable t.test
-t.test(cv_tar_sum$RTmsec_Mean ~ cv_tar_sum$Carrier, paired = TRUE)#, alternative = "less")
+t.test(cv_tar_sum$RTmsec_Mean ~ 
+         cv_tar_sum$Carrier, 
+       paired = TRUE)#, alternative = "less")
 
 # Descriptives to check direction of effect
-with(cv_targets, tapply(RTmsec, Carrier, FUN = mean))
+with(cv_targets, 
+     tapply(RTmsec, 
+            Carrier, 
+            FUN = mean))
 
 # Effect Size
-cohen.d(cv_tar_sum$RTmsec_Mean, cv_tar_sum$Carrier, na.rm = TRUE, paired = TRUE)
+cohen.d(cv_tar_sum$RTmsec_Mean, 
+        cv_tar_sum$Carrier, 
+        na.rm = TRUE, 
+        paired = TRUE)
 
 # CVC sylable t.test
-t.test(cvc_tar_sum$RTmsec_Mean ~ cvc_tar_sum$Carrier, paired = TRUE)#, alternative = "less")
+t.test(cvc_tar_sum$RTmsec_Mean ~ 
+         cvc_tar_sum$Carrier, 
+       paired = TRUE)#, alternative = "less")
 
 # Descriptives to check direction of effect
-with(cvc_targets, tapply(RTmsec, Carrier, FUN = mean))
+with(cvc_targets, 
+     tapply(RTmsec, 
+            Carrier, 
+            FUN = mean))
 
 # Effect Size
-cohen.d(cvc_tar_sum$RTmsec_Mean, cvc_tar_sum$Carrier, na.rm = TRUE, paired = TRUE)
+cohen.d(cvc_tar_sum$RTmsec_Mean, 
+        cvc_tar_sum$Carrier, 
+        na.rm = TRUE, 
+        paired = TRUE)
 
 # plot example crossover interaction
-int_tar_car_pilot <- afex_plot(aov_pilot, 
-                        x = "Target", 
-                        trace = "Carrier",
-                        error = "within",
-                        mapping = c("shape", "color", "linetype"),
-                        factor_levels = list(Target = c(CV = "CV", CVC = "CVC"),
-                                             Carrier = c(CV = "CV", CVC = "CVC")),
-                        legend_title = "Word",
-                        data_plot = FALSE) +
+int_tar_car_pilot <- afex_plot(
+  aov_pilot, 
+  x = "Target", 
+  trace = "Carrier",
+  error = "within",
+  mapping = c("shape", "color", "linetype"),
+  factor_levels = list(
+    Target = c(CV = "CV", CVC = "CVC"),
+    Carrier = c(CV = "CV", CVC = "CVC")),
+  legend_title = "Word",
+  data_plot = FALSE) +
   labs(title = "Crossover Effect Example",
        x = "Target",
        y = "Reaction Time (ms)") +
-  scale_color_manual(values = c('darkorchid4', 'goldenrod4'))
+  scale_color_manual(values = plt_color_2)
 int_tar_car_pilot
 
 # Interaction breakdown
@@ -109,10 +140,11 @@ int_tar_car_pilot
 cv_carrier <- my_data %>% 
   subset(., Carrier == "CV") 
   
-cv_car_sum <- my_stats(cv_carrier, 
-                       grp_col = grouping, 
-                       sum_col = stat_col,
-                       stats = summary_stats)
+cv_car_sum <- my_stats(
+  cv_carrier, 
+  grp_col = grouping, 
+  sum_col = stat_col,
+  stats = summary_stats)
 
 # CIs and Means one sample t-test
 t1_cv_car <- t.test(cv_carrier$RTmsec)
@@ -122,49 +154,81 @@ t1_cv_car
 cvc_carrier <- my_data %>% 
   subset(., Carrier == "CVC") 
   
-cvc_car_sum <- my_stats(cvc_carrier, 
-                       grp_col = grouping, 
-                       sum_col = stat_col,
-                       stats = summary_stats)
+cvc_car_sum <- my_stats(
+  cvc_carrier, 
+  grp_col = grouping, 
+  sum_col = stat_col,
+  stats = summary_stats)
 
 # CIs and Means one sample t-test
 t1_cvc_car <- t.test(cvc_carrier$RTmsec)
 t1_cvc_car
 
 # CV sylable t.test
-t_cv_car <- t.test(cv_car_sum$RTmsec_Mean ~ cv_car_sum$Target, paired = TRUE)#, alternative = "less")
+t_cv_car <- t.test(
+  cv_car_sum$RTmsec_Mean ~ 
+    cv_car_sum$Target, 
+  paired = TRUE)#, alternative = "less")
 
 # Descriptives to check direction of effect
-with(cv_carrier, tapply(RTmsec, Target, FUN = mean))
+with(cv_carrier, 
+     tapply(RTmsec, 
+            Target, 
+            FUN = mean))
 
 # Effect Size
-cohen.d(cv_car_sum$RTmsec_Mean, cv_car_sum$Target, na.rm = TRUE, paired = TRUE)
+cohen.d(cv_car_sum$RTmsec_Mean, 
+        cv_car_sum$Target, 
+        na.rm = TRUE, 
+        paired = TRUE)
 
 # CVC sylable t.test
-t_cvc_car <- t.test(cvc_car_sum$RTmsec_Mean ~ cvc_car_sum$Target, paired = TRUE)#, alternative = "less")
+t_cvc_car <- t.test(
+  cvc_car_sum$RTmsec_Mean ~ 
+    cvc_car_sum$Target, 
+  paired = TRUE)#, alternative = "less")
 
 # Descriptives to check direction of effect
-with(cvc_carrier, tapply(RTmsec, Target, FUN = mean))
+with(cvc_carrier, 
+     tapply(RTmsec, 
+            Target, 
+            FUN = mean))
 
 # Effect Size
-cohen.d(cvc_car_sum$RTmsec_Mean, cvc_car_sum$Target, na.rm = TRUE, paired = TRUE)
+cohen.d(cvc_car_sum$RTmsec_Mean, 
+        cvc_car_sum$Target, 
+        na.rm = TRUE, 
+        paired = TRUE)
 
-tapply(my_data$RTmsec, list(my_data$participant, my_data$Carrier), mean)
-ag <- aggregate(RTmsec ~ Target + Carrier, data = my_data, FUN = mean)
+tapply(my_data$RTmsec, 
+       list(my_data$participant, 
+            my_data$Carrier), 
+       mean)
+
+ag <- aggregate(RTmsec ~ Target + Carrier, 
+                data = my_data, 
+                FUN = mean)
+
 ###################################
 pilot_stat_compare <- my_data %>% 
   group_by(Target, Carrier) %>% 
   summarise(Mean = mean(RTmsec),
             SD = sd(RTmsec)) %>% 
-  mutate(index = paste0(Target, "_tar-",Carrier,"_car")) %>% 
+  mutate(index = paste0(Target, "_tar-",
+                        Carrier,"_car")) %>% 
   column_to_rownames(., var = "index")
+
 ###################################
 t.test(my_data$RTmsec ~ my_data$Target)
 t.test(my_data$RTmsec ~ my_data$Carrier)
 
 #Crossover plots
-crossover_example <- ggplot(data=ag,
-       aes(x=Target, y=RTmsec, group=Carrier, color=Carrier)) +
+crossover_example <- ggplot(
+  data=ag,
+  aes(x=Target, 
+      y=RTmsec, 
+      group=Carrier, 
+      color=Carrier)) +
   geom_line(aes(linetype=Carrier)) + 
   geom_point(aes(shape=Carrier)) + 
   geom_text(aes(label=paste("(",round(RTmsec,0),")"), 
@@ -179,33 +243,49 @@ crossover_example <- ggplot(data=ag,
        fill= "x") +
   ylim(660, 760) +
   theme_light() +
-  scale_color_manual(values = c('darkorchid4', 'goldenrod4'))
+  scale_color_manual(values = plt_color_2)
 crossover_example
 
-syl_data_summarized <- my_stats(syl_data, 
-              grp_col = "participant", 
-              sum_col = "Resp_Corr",
-              stats = summary_stats)
+syl_data_summarized <- my_stats(
+  syl_data, 
+  grp_col = "participant", 
+  sum_col = "Resp_Corr",
+  stats = summary_stats)
 
 syl_data <- syl_data %>% 
   mutate(Resp_Corr = ifelse(Resp_Corr == 'Yes', 1, 0))
   
-tapply(syl_data$Resp_Corr, syl_data$participant, mean)
+tapply(syl_data$Resp_Corr, 
+       syl_data$participant, 
+       mean)
 @
 
 <<pilot_data_matched, echo = FALSE>>=
 my_match_data <- my_data %>% 
-  mutate(., Matching = ifelse(Target == Carrier, "Matching", "Mismatching"))
+  mutate(., Matching = ifelse(Target == Carrier, 
+                              "Matching", 
+                              "Mismatching"))
 
 # Run anova   
-aov_pilot_matched <- aov_ez("participant", "RTmsec", my_match_data, within = c("Target", "Matching"))
+aov_pilot_matched <- aov_ez(
+  "participant", 
+  "RTmsec", 
+  my_match_data, 
+  within = c("Target", "Matching"))
 aov_pilot_matched
 
-ag_matched <- aggregate(RTmsec ~ Target + Matching, data = my_match_data, FUN = mean)
+ag_matched <- aggregate(
+  RTmsec ~ Target + Matching, 
+  data = my_match_data,
+  FUN = mean)
 
 #Parallel plots
-parallel_example <- ggplot(data=ag_matched,
-       aes(x=Target, y=RTmsec, group=Matching, color=Matching)) +
+parallel_example <- ggplot(
+  data=ag_matched,
+  aes(x=Target, 
+      y=RTmsec, 
+      group=Matching, 
+      color=Matching)) +
   geom_line(aes(linetype=Matching)) + 
   geom_point(aes(shape=Matching)) + 
   geom_text(aes(label=paste("(",round(RTmsec,0),")"), 
@@ -220,6 +300,25 @@ parallel_example <- ggplot(data=ag_matched,
        fill= "x") +
   ylim(660, 760) +
   theme_light() +
-  scale_color_manual(values = c('darkorchid4', 'goldenrod4'))
+  scale_color_manual(values = plt_color_2)
 parallel_example
+
+plot_grid(crossover_example, parallel_example)
+
+# Interaction between matching condition and target syllable with matching condition on x-axis
+pilot_tarsyl_mat_int <- afex_plot(
+  aov_pilot_matched, 
+  x = "Matching", 
+  trace = "Target",
+  error = "within",
+  mapping = c("shape", "color", "linetype"),
+  factor_levels = list(
+    Matching = c("Matching", "Mismatching")),
+  legend_title = "Target Syllable",
+  data_plot = FALSE) +
+  labs(title = "Estimated Marginal Means L2 Spanish",
+       x = "Matching Condition",
+       y = "Reaction Time (log)") +
+  scale_color_manual(values = plt_color_2)
+pilot_tarsyl_mat_int
 @
