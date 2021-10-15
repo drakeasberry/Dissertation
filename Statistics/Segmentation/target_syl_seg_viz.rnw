@@ -20,10 +20,10 @@ library(lattice)
 library(ggplot2)
 library(cowplot)
 library(effsize)
-library(plyr)
 library(dplyr)
 library(xtable)
 
+# Source Scripts containing functions
 source('../../Scripts_Dissertation/diss_dataviz_script.R')
 source('../../Scripts_Dissertation/analysis_functions.R')
 @
@@ -33,24 +33,35 @@ source('../../Scripts_Dissertation/analysis_functions.R')
 group_map <- read_csv(
   '../../Scripts_Dissertation/participant_group_map.csv')
 
+# Get list of files for analysis
 lab_files <- list.files(
   path = '../../Dissertation_Experiments/segmentation/data/original_data/part_files/', 
   pattern = '*.csv', 
   full.names = TRUE)  
 
-# read in all the files into one data frame
-lab_completed <- ldply(lab_files, read_csv) %>% 
-  mutate(partNum = `01_Participante (Participant):`,
-         age = `05_Edad (Age):`) %>% 
-  left_join(., group_map) %>% 
-  #removes 21 heritage
-  subset(., group != 'Childhood') %>% 
-  select(partNum, group, age) %>% 
-  unique() %>%
-  convert_as_factor(group)
+## Run this commented code only when raw data has changed
+## Load plyr library
+#library(plyr)
+## read in all the files into one data frame
+#lab_completed <- ldply(lab_files, read_csv) %>% 
+#  mutate(partNum = `01_Participante (Participant):`,
+#         age = `05_Edad (Age):`) %>% 
+#  left_join(., group_map) %>% 
+#  #removes 21 heritage
+#  subset(., group != 'Childhood') %>% 
+#  select(partNum, group, age) %>% 
+#  unique() %>%
+#  convert_as_factor(group)
+## have to detach to prevent conflicts with dplyr group_by()
+#detach(package:plyr)
+## Write out file for quick load time in analysis
+#write_csv(lab_completed, 'analyze_data/output/lab_completed.csv')
 
-# have to detach to prevent conflicts with dplyr group_by()
-detach(package:plyr)
+
+# Run this code when no raw data has changed (saves compile time)
+lab_completed <- 
+  read_csv('analyze_data/output/lab_completed.csv')
+
 
 lab_stat_compare <- lab_completed %>%
   group_by(group) %>% 
