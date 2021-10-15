@@ -24,25 +24,100 @@ set_parent(here('Asberry_Dissertation/figure_table.rnw'))
 %<contentLabDemo, child=here('Statistics/Demographics/lab_demo_viz.rnw'), include=FALSE, cache.rebuild=TRUE>>=
 %@
 
-<<contentIntuitionDemo, child=here('Statistics/Demographics/intuition_demo_viz.rnw'), include=FALSE>>=
-@
+%<contentIntuitionDemo, child=here('Statistics/Demographics/intuition_demo_viz.rnw'), include=FALSE>>=
+%@
 
-<<contentIntuition, child=here('Statistics/Intuition/intuition_viz.rnw'), include=FALSE>>=
+%<contentIntuition, child=here('Statistics/Intuition/intuition_viz.rnw'), include=FALSE>>=
+%@
+
+%<contentOnlinesegMono, child=here('Statistics/Monolingual_lemma/target_syl_mono_viz.rnw'), include=FALSE>>=
+%@
+
+%<contentOnlinesegL2, child=here('Statistics/L2_lemma/target_syl_l2_viz.rnw'), include=FALSE>>=
+%@
+
+<<contentOnlineDemo, child=here('Statistics/Demographics/online_demo_viz.rnw'), include=FALSE, cache.rebuild=TRUE>>=
 @
 %----------------------------------------------------------------------------------------
 
 \chapter{Testing Figures} % Main chapter title
 
-See Table \ref{tab-anova-intuition}
+See Table \ref{tab-lab-vocab-part-online} and \ref{tab-lab-demo-part-online}
 
-<<test_table, results='asis', include=TRUE>>=
-xtable(aov_intuition$anova_table, 
-       type = "latex", 
-       caption = "This table shows the results of the 2 x (2) mixed-effects anova for one between subjects factor \\textit{Group}, \\textit{group} in table. The \\textit{group} factor had two levels---native Spanish and native English. The within subjects factor \\textit{Structure}, \\textit{syl\\_structure} in table also contained two levels---CV and CVC. The logit transformed values of correct syllabification responses was the indepedent variable.", 
-       label = "tab-anova-intuition")
-@
+\begin{table}
+\centering
+\begin{tabular}{l c c c c c c c c c}
+\toprule
+& & & & & &\multicolumn{4}{c}{Age of Acquisition}\\
+\cmidrule(lr){7-10}
+& & \multicolumn{4}{c}{Age} & \multicolumn{2}{c}{Spanish} & 
+\multicolumn{2}{c}{English}\\
+\cmidrule(lr){3-6}\cmidrule(lr){7-8}\cmidrule(lr){9-10}
+& n & Min & Max & Mean & SD & Mean & SD & Mean & SD\\
+\midrule
+English
+& \Sexpr{online_grp_desc["L2 Learner","n"]}
+& \Sexpr{online_grp_desc["L2 Learner","age_Min"]} 
+& \Sexpr{online_grp_desc["L2 Learner","age_Max"]} 
+& \Sexpr{online_grp_desc["L2 Learner","age_Mean"]}
+& \Sexpr{online_grp_desc["L2 Learner","age_SD"]}
+& \Sexpr{online_grp_desc["L2 Learner","span_acq_age_Mean"]}
+& \Sexpr{online_grp_desc["L2 Learner","span_acq_age_SD"]}
+& 0
+& 0\\
+Spanish
+& \Sexpr{online_grp_desc["Monolingual Spanish","n"]}
+& \Sexpr{online_grp_desc["Monolingual Spanish","age_Min"]} 
+& \Sexpr{online_grp_desc["Monolingual Spanish","age_Max"]} 
+& \Sexpr{online_grp_desc["Monolingual Spanish","age_Mean"]} 
+& \Sexpr{online_grp_desc["Monolingual Spanish","age_SD"]}
+& \Sexpr{online_grp_desc["Monolingual Spanish","span_acq_age_Mean"]}
+& \Sexpr{online_grp_desc["Monolingual Spanish","span_acq_age_SD"]}
+& NA
+& NA\\
+\bottomrule
+\multicolumn{6}{l}{Total participants: n = \Sexpr{online_grp_desc["Monolingual Spanish","n"] + online_grp_desc["L2 Learner","n"]}}\\
+\end{tabular}
+\caption{Attributes of all online segmentation participants.}
+\label{tab-lab-demo-part-online}
+
+\vspace{.4in}
+
+\begin{tabular}{l c c c c c}
+\toprule
+& & \multicolumn{4}{c}{Spanish Vocabulary Size}\\
+\cmidrule(lr){3-6}
+& & \multicolumn{2}{c}{\% Correct} & \multicolumn{2}{c}{Izura Score}\\
+\cmidrule(lr){3-4}\cmidrule(lr){5-6}
+& n & Mean & SD & Mean & SD\\
+\midrule
+English
+& \Sexpr{online_grp_desc["L2 Learner","n"]}
+& \Sexpr{online_grp_desc["L2 Learner","lextale_esp_correct_Mean"]}
+& \Sexpr{online_grp_desc["L2 Learner","lextale_esp_correct_SD"]}
+& \Sexpr{online_grp_desc["L2 Learner","izura_score_Mean"]}
+& \Sexpr{online_grp_desc["L2 Learner","izura_score_SD"]}\\
+Spanish
+& \Sexpr{online_grp_desc["Monolingual Spanish","n"]}
+& \Sexpr{online_grp_desc["Monolingual Spanish","lextale_esp_correct_Mean"]} 
+& \Sexpr{online_grp_desc["Monolingual Spanish","lextale_esp_correct_SD"]}
+& \Sexpr{online_grp_desc["Monolingual Spanish","izura_score_Mean"]}
+& \Sexpr{online_grp_desc["Monolingual Spanish","izura_score_SD"]}\\
+\bottomrule
+\multicolumn{6}{l}{Total participants: n = \Sexpr{online_grp_desc["Monolingual Spanish","n"] + online_grp_desc["L2 Learner","n"]}}\\
+\end{tabular}
+\caption{Vocabulary scores for participants in Spanish calculated as a percent correct score and vocabulary size as calculated by \textcite{Izura2014-yw}.}
+\label{tab-lab-vocab-part-online}
+\end{table}
 
 
+
+%<table_anova_lab_learners, results='asis', include=TRUE>>=
+%xtable(lab_aov_learners_2$anova_table, 
+%       type = "latex", 
+%       caption = "This table shows the results of the 2 x (2) mixed-effects anova for one between subjects factor %\\textit{Group}, \\textit{group} in table. The \\textit{group} factor had two levels---native Spanish and native English. %The within subjects factor \\textit{Structure}, \\textit{syl\\_structure} in table also contained two levels---CV and CVC. %The logit transformed values of correct syllabification responses was the dependent variable.",
+%       label = "tab-anova-lab-learners")
+%@
 
 
 %\begin{table}
