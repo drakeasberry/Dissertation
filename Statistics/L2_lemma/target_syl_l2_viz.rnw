@@ -20,7 +20,7 @@ library(cowplot)
 library(effsize)
 library(xtable)
 
-# Soruce Scripts containing functions
+# Source Scripts containing functions
 source('../../Scripts_Dissertation/diss_dataviz_script.R')
 source('../../Scripts_Dissertation/analysis_functions.R')
 @
@@ -142,11 +142,11 @@ bxp_online_learners
 
 
 # Check for outliers
-outlier_learner <- online_learners %>% 
+online_outlier_learner <- online_learners %>% 
   outlier_chk(., online_l2_grouping_stats, "median_RTmsec")
 
 # Check for normality
-normality_learner <- online_learners %>% 
+online_normality_learner <- online_learners %>% 
   normality_chk(., online_l2_grouping_stats, "median_RTmsec")
 
 
@@ -720,8 +720,8 @@ rm(online_cv_learners_lex,
    online_cvc_learners_lex)
 
 # Remove checks and unused plots
-rm(normality_learner, 
-   outlier_learner)
+rm(online_normality_learner, 
+   online_outlier_learner)
 
 
 # Save all analyses
