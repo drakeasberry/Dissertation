@@ -723,12 +723,76 @@ rm(online_cv_learners_lex,
 rm(online_normality_learner, 
    online_outlier_learner)
 
+# Run stats per previous study analysis
+# Interaction breakdown Words and Nonwords
+historic_grouping_pretty <- c("Target", "Carrier", "Lexicality")
+historic_aov_learners_prt <- online_learners %>% 
+  rename(., c(Target = target_syl_structure,
+              Carrier = word_initial_syl,
+              Lexicality = word_status)) %>% 
+  aov_ez("partNum", 
+         "median_RTlog", 
+         ., 
+         within = c(historic_grouping_pretty))
+historic_aov_learners_prt
 
-# Save all analyses
-#out_dir = 'analyze_data/output/figures/by_target/'
+# plot words and nonwords interaction
+# comment panel arg for combined plot
+# uncomment panel arg for separate Word/Nonword panels 
+historic_l2_tar_car_int <- afex_plot(
+  historic_aov_learners_prt, 
+  x = "Target", 
+  trace = "Carrier",
+  panel = "Lexicality",
+  error = "within",
+  mapping = c("shape", "color", "linetype"),
+  factor_levels = list(
+    Lexicality = c(word = "Word", nonword = "Noword"),
+    Carrier = c("CV", "CVC")),
+  legend_title = "Carrier Syllable Structure",
+  data_plot = FALSE) +
+  labs(title = "Estimated Marginal Means L2 Spanish",
+       x = "Target Syllable Structure",
+       y = "Reaction Time (log)") +
+  scale_color_manual(values = plt_color_2)
+historic_l2_tar_car_int
+
+# Interaction breakdown Words only
+online_learners_wd <- online_learners %>% 
+  subset(., word_status == "word")
+historic_grouping_pretty_wd <- c("Target", "Carrier")
+historic_aov_natives_prt_wd <- online_learners_wd %>% 
+  rename(., c(Target = target_syl_structure,
+              Carrier = word_initial_syl)) %>% 
+  aov_ez("partNum", 
+         "median_RTlog", 
+         ., 
+         within = c(historic_grouping_pretty_wd))
+historic_aov_natives_prt_wd
+
+# plot the word data interaction
+historic_l2_tar_car_int_wd <- afex_plot(
+  historic_aov_natives_prt_wd, 
+  x = "Target", 
+  trace = "Carrier",
+  error = "within",
+  mapping = c("shape", "color", "linetype"),
+  factor_levels = list(
+    Carrier = c("CV", "CVC")),
+  legend_title = "Carrier Syllable Structure",
+  data_plot = FALSE) +
+  labs(title = "Estimated Marginal Means L2 Spanish",
+       x = "Target Syllable Structure",
+       y = "Reaction Time (log)") +
+  scale_color_manual(values = plt_color_2)
+historic_l2_tar_car_int_wd
+
 
 # Save tabled data
 # https://tex.stackexchange.com/questions/481802/reporting-r-results-in-latex
+
+# Save all analyses
+#out_dir = 'analyze_data/output/figures/by_target/'
 
 # Save plots
 #ggsave('learners_descriptive_data.png', bxp_learners, 'png', out_dir)
