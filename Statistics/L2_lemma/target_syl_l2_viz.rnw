@@ -113,6 +113,18 @@ online_l2_grp_sum <- my_stats(my_l2_data,
               list(~ round(., 2))) %>% 
   column_to_rownames(., var = "index")
 
+# Get some average RTs
+online_l2_grp_sum %>% 
+  select(., c(word_status, segRespRTmsec_Mean)) %>% 
+  View()
+
+online_l2_wd_av <- online_l2_grp_sum %>% 
+  subset(., word_status == "word") %>% 
+  select(., c(word_status, segRespRTmsec_Mean))
+
+online_l2_nonwd_av <- online_l2_grp_sum %>% 
+  subset(., word_status != "word") %>% 
+  select(., c(word_status, segRespRTmsec_Mean))
 
 # Summary statistics for reaction time
 # Group data by target syllable structure, matching condition, and word status, 
@@ -364,7 +376,9 @@ online_l2_grouping_tarsyl <-
 
 # Regroup for target syllable and matching 
 online_tar_lex_learners <- my_l2_data %>% 
-  my_stats(., grp_col = c("partNum", "target_syl_structure", "word_status"), 
+  my_stats(., grp_col = c("partNum", 
+                          "target_syl_structure", 
+                          "word_status"), 
            sum_col = online_l2_stat_col,
            stats = online_l2_summary_stats)
 online_tar_lex_learners

@@ -244,6 +244,27 @@ lab_grp_sum <- my_stats(lab_my_data,
               list(~ round(., 2))) %>% 
   column_to_rownames(., var = "index")
 
+# Get some average RTs
+lab_grp_sum %>% 
+  select(., c(word_status, segRespRTmsec_Mean)) %>% 
+  View()
+
+lab_l1_wd_av <- lab_grp_sum %>% 
+  subset(., word_status == "word" & group == "Spanish") %>% 
+  select(., c(word_status, segRespRTmsec_Mean))
+
+lab_l1_nonwd_av <- lab_grp_sum %>% 
+  subset(., word_status != "word" & group == "Spanish") %>% 
+  select(., c(word_status, segRespRTmsec_Mean))
+
+lab_l2_wd_av <- lab_grp_sum %>% 
+  subset(., word_status == "word" & group == "English") %>% 
+  select(., c(word_status, segRespRTmsec_Mean))
+
+lab_l2_nonwd_av <- lab_grp_sum %>% 
+  subset(., word_status != "word" & group == "English") %>% 
+  select(., c(word_status, segRespRTmsec_Mean))
+
 # Create subgroups for Spanish learners and native speakers
 lab_learners <- part_group(lab_ind_sum, 'English')
 lab_natives <- part_group(lab_ind_sum, 'Spanish')

@@ -113,6 +113,18 @@ online_l1_grp_sum <- my_stats(my_l1_data,
               list(~ round(., 2))) %>% 
   column_to_rownames(., var = "index")
 
+# Get some average RTs
+online_l1_grp_sum %>% 
+  select(., c(word_status, segRespRTmsec_Mean)) %>% 
+  View()
+
+online_l1_wd_av <- online_l1_grp_sum %>% 
+  subset(., word_status == "word") %>% 
+  select(., c(word_status, segRespRTmsec_Mean))
+
+online_l1_nonwd_av <- online_l1_grp_sum %>% 
+  subset(., word_status != "word") %>% 
+  select(., c(word_status, segRespRTmsec_Mean))
 
 # Summary statistics for reaction time
 # Group data by target syllable structure, matching condition, and word status, 
@@ -360,6 +372,14 @@ rm(online_l1_lex_ag)
 rm(online_normality_native,
    online_outlier_native)
 
+unique(my_l1_data$segRespCorr)
+word_resp <- my_l1_data %>% 
+  subset(., word_status == 'word')
+mean(word_resp$segRespRTmsec)
+
+nonword_resp <- my_l1_data %>% 
+  subset(., word_status != 'word')
+mean(nonword_resp$segRespRTmsec)
 
 # Run stats per previous study analysis
 # Interaction breakdown Words and Nonwords
