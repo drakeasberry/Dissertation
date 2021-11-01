@@ -176,7 +176,7 @@ plt_corr_per <- my_data_long %>%
                 alpha = 0.9, 
                 position = position_dodge(width = 0.9)) +
   labs(title = "Syllabification Intuitions",
-       x = "Language Group",
+       x = "L1 Language Group",
        y = "Proportion Correct") +
   scale_fill_manual(name = "Syllable Structure", 
                     values = plt_color_2) +
@@ -198,7 +198,7 @@ plt_corr_logit <- my_data_long %>%
                 alpha = 0.9, 
                 position = position_dodge(width = 0.9)) +
   labs(title = "Syllabification Intuitions",
-       x = "Language Group",
+       x = "L1 Language Group",
        y = "Response Correct (logit)") +
   scale_fill_manual(name = "Syllable Structure", 
                     values = plt_color_2) +
@@ -257,6 +257,17 @@ aov_intuition
 ## Main effects of group and syllable structure
 ## No significant interaction 
 
+# Create Manuscript Version
+#intuition_grouping_pretty <- c("Group", "Syllable Structure")
+aov_intuition_prt <- my_data_long %>% 
+  rename(., c(Group = group,
+              Structure = syl_structure)) %>% 
+  aov_ez("partNum", 
+         "logit_corr", 
+         ., 
+         within = "Structure", 
+         between = "Group")
+aov_intuition_prt
 
 # Significant Main Effect Exploration
 # Group main effect
@@ -325,7 +336,7 @@ intuition_grp_main <-
             data_plot = FALSE,
             mapping = c("color", "shape")) +
   labs(title = "Estimated Marginal Means Correct Response",
-       x = "Language Group",
+       x = "L1 Language Group",
        y = "Response Correct (logit)") +
   scale_color_manual(values = plt_color_2) +
   theme_light() +
