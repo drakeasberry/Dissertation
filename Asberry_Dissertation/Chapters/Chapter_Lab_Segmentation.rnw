@@ -24,10 +24,11 @@ set_parent(here('Asberry_Dissertation/Dissertation.Rnw'))
 %contentLabDeom, child=here('Statistics/Demographics/lab_demo_viz.rnw'), include=FALSE>>=
 %@
 %----------------------------------------------------------------------------------------
-\ttodo[inline]{looks good, big things: 1: 2x2x2, not 3x2 2. Don't motivate the study by saying that it hasn't been done yet. Say what the positive theoretical contribution is. 3. is the orthographic task "off-line"? Maybe say something more about how much longer it takes and off-line-yness. I'm thinking it might be worth looking at responses as a function of overall subject RT.}
+
 \chapter{Visual Word Segmentation} % Main chapter title
 \label{ch-seg-lab} % for referencing this chapter elsewhere, use \ref{ch-seg-lab}
 
+\ttodo[inline]{looks good, big things: 1: 2x2x2, not 3x2 2. Don't motivate the study by saying that it hasn't been done yet. Say what the positive theoretical contribution is. 3. is the orthographic task "off-line"? Maybe say something more about how much longer it takes and off-line-yness. I'm thinking it might be worth looking at responses as a function of overall subject RT.}
 %\section{Abstract}
 %Give Segmentation abstract here
 %Keywords: (list all words necessary)
