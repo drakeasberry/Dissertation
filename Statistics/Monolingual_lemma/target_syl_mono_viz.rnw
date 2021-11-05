@@ -67,6 +67,16 @@ online_l1_grouping <- c("partNum",
 # Adds columns for median of RT in msec and log
 online_natives <- trans_long(my_l1_data, online_l1_grouping) 
 
+online_example_cond <- online_natives %>% 
+  subset(., partNum == 'part200') %>% 
+  rename(Participant = partNum,
+         Target = target_syl_structure,
+         Matching = matching,
+         Lexicality = word_status,
+         RT_log_median = median_RTlog) %>% 
+  ungroup() %>% 
+  select(Participant, Target, Matching, Lexicality, RT_log_median)
+
 # Get summary stats for reporting 
 # Columns that I want summary stats for
 online_l1_stat_col <- c("segRespRTmsec",
