@@ -46,68 +46,20 @@ See Table \ref{tab-lab-vocab-part-online} and \ref{tab-lab-demo-part-online}
 
 \begin{table}
 \centering
-\begin{tabular}{l c c c c c c c c c}
+\begin{tabular}{lll}
 \toprule
-& & & & & &\multicolumn{4}{c}{Age of Acquisition}\\
-\cmidrule(lr){7-10}
-& & \multicolumn{4}{c}{Age} & \multicolumn{2}{c}{Spanish} & 
-\multicolumn{2}{c}{English}\\
-\cmidrule(lr){3-6}\cmidrule(lr){7-8}\cmidrule(lr){9-10}
-& n & Min & Max & Mean & SD & Mean & SD & Mean & SD\\
+& In-Person & Online\\
+Group & Syllable Intuition & Segmentation\\ 
+& \& Segmentation & \\
 \midrule
-English
-& \Sexpr{online_grp_desc["L2 Learner","n"]}
-& \Sexpr{online_grp_desc["L2 Learner","age_Min"]} 
-& \Sexpr{online_grp_desc["L2 Learner","age_Max"]} 
-& \Sexpr{online_grp_desc["L2 Learner","age_Mean"]}
-& \Sexpr{online_grp_desc["L2 Learner","age_SD"]}
-& \Sexpr{online_grp_desc["L2 Learner","span_acq_age_Mean"]}
-& \Sexpr{online_grp_desc["L2 Learner","span_acq_age_SD"]}
-& 0
-& 0\\
-Spanish
-& \Sexpr{online_grp_desc["Monolingual Spanish","n"]}
-& \Sexpr{online_grp_desc["Monolingual Spanish","age_Min"]} 
-& \Sexpr{online_grp_desc["Monolingual Spanish","age_Max"]} 
-& \Sexpr{online_grp_desc["Monolingual Spanish","age_Mean"]} 
-& \Sexpr{online_grp_desc["Monolingual Spanish","age_SD"]}
-& \Sexpr{online_grp_desc["Monolingual Spanish","span_acq_age_Mean"]}
-& \Sexpr{online_grp_desc["Monolingual Spanish","span_acq_age_SD"]}
-& NA
-& NA\\
+L1 Spanish--L2 English & Included & Not Recruited\\
+L1 English--L2 Spanish & Included & Included\\
+L1 Spanish Monolinguals & Not Recruited & Included\\
+Early Bilinguals & Dropped & Not Recruited\\
 \bottomrule
-\multicolumn{6}{l}{Total participants: n = \Sexpr{online_grp_desc["Monolingual Spanish","n"] + online_grp_desc["L2 Learner","n"]}}\\
 \end{tabular}
-\caption{Attributes of all online segmentation participants.}
-\label{tab-lab-demo-part-online}
-
-\vspace{.4in}
-
-\begin{tabular}{l c c c c c}
-\toprule
-& & \multicolumn{4}{c}{Spanish Vocabulary Size}\\
-\cmidrule(lr){3-6}
-& & \multicolumn{2}{c}{\% Correct} & \multicolumn{2}{c}{Izura Score}\\
-\cmidrule(lr){3-4}\cmidrule(lr){5-6}
-& n & Mean & SD & Mean & SD\\
-\midrule
-English
-& \Sexpr{online_grp_desc["L2 Learner","n"]}
-& \Sexpr{online_grp_desc["L2 Learner","lextale_esp_correct_Mean"]}
-& \Sexpr{online_grp_desc["L2 Learner","lextale_esp_correct_SD"]}
-& \Sexpr{online_grp_desc["L2 Learner","izura_score_Mean"]}
-& \Sexpr{online_grp_desc["L2 Learner","izura_score_SD"]}\\
-Spanish
-& \Sexpr{online_grp_desc["Monolingual Spanish","n"]}
-& \Sexpr{online_grp_desc["Monolingual Spanish","lextale_esp_correct_Mean"]} 
-& \Sexpr{online_grp_desc["Monolingual Spanish","lextale_esp_correct_SD"]}
-& \Sexpr{online_grp_desc["Monolingual Spanish","izura_score_Mean"]}
-& \Sexpr{online_grp_desc["Monolingual Spanish","izura_score_SD"]}\\
-\bottomrule
-\multicolumn{6}{l}{Total participants: n = \Sexpr{online_grp_desc["Monolingual Spanish","n"] + online_grp_desc["L2 Learner","n"]}}\\
-\end{tabular}
-\caption{Vocabulary scores for participants in Spanish calculated as a percent correct score and vocabulary size as calculated by \textcite{Izura2014-yw}.}
-\label{tab-lab-vocab-part-online}
+\caption{Table lists the types of participants that participated in each of the three experiments in different modalities---In-person or Online.}
+\label{tab-part-groups-exp}
 \end{table}
 
 
