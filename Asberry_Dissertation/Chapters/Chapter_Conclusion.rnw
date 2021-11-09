@@ -42,7 +42,7 @@ For the the first question, a Spanish syllabic intuition experiment explicitly a
 
 
 \section{Syllabic Intuition Discussion}
-
+Spanish syllabic intuitions intuitions were collected for L1 Spanish--L2 English and L1 English--L2 Spanish bilinguals. L1 Spanish speakers were expected to be in strong agreements with standard Spanish syllabifications while L1 English speakers were expected to have more variability based on L1 to L2 transfer of syllabic properties. These expected differences in syllable intuitions would exist between these two groups based on syllabic differences in the L1 language. The biggest difference between these two groups occurs in terms of what can legally make up a syllable and ambisyllabicity.    
 
 RT not reliable in intuition experiment. People answered very quickly once they realized that the answer choices were not changing. So much so that they were anticipating the answer screen to appear so they could answer.
 
