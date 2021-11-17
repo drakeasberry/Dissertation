@@ -13,895 +13,951 @@ set_parent('../Dissertation.rnw')
 \chapter{Visual Segmentation Stimuli} % Main appendix title
 \label{segmentation-stimuli} % Change Label; for referencing this appendix elsewhere, use \ref{segmentation-stimuli}
 
-\section{Chapter 4}
+\section*{Chapter 4}
 
-%\subsection{Practice Items}
-delirio	deltoides	de-del	RealPairP01	Word
-silicio	silbido	si-sil	RealPairP02	Word
-venado	vendimia	ve-ven	RealPairP03	Word
-cosigna	costumbre	co-cos	RealPairP04	Word
-deletio	delbides	de-del	PseudoPairP01	Nonword
-siledio	sildedo	si-sil	PseudoPairP02	Nonword
-venuro	ventemia	ve-ven	PseudoPairP03	Nonword
-coserna	cosdombre	co-cos	PseudoPairP04	Nonword
+\begin{table}[h]
+\centering
+\begin{tabular}{llll}
+\toprule
+CV Stimuli & CVC Stimuli & Targets & Lexicality\\
+\midrule
+delirio	& deltoides	& de-del	& Word\\
+silicio	& silbido	  & si-sil	& Word\\
+venado	& vendimia	& ve-ven	& Word\\
+cosigna	& costumbre	& co-cos	& Word\\
+deletio	& delbides	& de-del	& Nonword\\
+siledio	& sildedo	  & si-sil	& Nonword\\
+venuro	& ventemia	& ve-ven	& Nonword\\
+coserna	& cosdombre	& co-cos	& Nonword\\
+\bottomrule
+\end{tabular}
+\caption{The table lists the real-word and nonword practice stimuli used in Chapter \ref{ch-seg-lab}}
+\label{tab-prac-lab-seg}
+\end{table}
 
-%\subsection{Experimental Items}
-balada	baldosa	ba-bal	RealPair01	Word
-bolero	bolsillo	bo-bol	RealPair02	Word
-camisa	campana	ca-cam	RealPair03	Word
-casilla	castillo	ca-cas	RealPair04	Word
-ceniza	centavo	ce-cen	RealPair05	Word
-cereza	cerveza	ce-cer	RealPair06	Word
-coraje	corbata	co-cor	RealPair07	Word
-corona	corteza	co-cor	RealPair08	Word
-cosecha	costilla	co-cos	RealPair09	Word
-culebra	culpable	cu-cul	RealPair10	Word
-ganancia	ganchillo	ga-gan	RealPair11	Word
-garaje	garganta	ga-gan	RealPair12	Word
-joroba	jornada	jo-jor	RealPair13	Word
-limosna	limpieza	li-lim	RealPair14	Word
-linaje	linterna	li-lin	RealPair15	Word
-moneda	montaña	mo-mon	RealPair16	Word
-morera	morcillo	mo-mor	RealPair17	Word
-muralla	murmullo	mu-mur	RealPair18	Word
-paloma	palmera	pa-pal	RealPair19	Word
-pasaje	pastilla	pa-pas	RealPair20	Word
-pereza	permiso	pe-per	RealPair21	Word
-peseta	pestaña	pe-pes	RealPair22	Word
-rosario	rosquilla	ro-ros	RealPair23	Word
-volante	voltaje	vo-vol	RealPair24	Word
-balega	balbusa	ba-bal	PseudoPair01	Nonword
-bolipo	bolfollo	bo-bol	PseudoPair02	Nonword
-camofa	cambena	ca-cam	PseudoPair03	Nonword
-casozla	casgollo	ca-cas	PseudoPair04	Nonword
-cenoca	cendevo	ce-cen	PseudoPair05	Nonword
-cerida	cerliza	ce-cer	PseudoPair06	Nonword
-corede	corteta	co-cor	PseudoPair07	Nonword
-corura	cormiza	co-cor	PseudoPair08	Nonword
-cosiba	coslolla	co-cos	PseudoPair09	Nonword
-culitra	culseble	cu-cul	PseudoPair10	Nonword
-ganercia	ganquillo	ga-gan	PseudoPair11	Nonword
-garele	garventa	ga-gar	PseudoPair12	Nonword
-joruma	jorteda	jo-jor	PseudoPair13	Nonword
-limucna	limboza	li-lim	PseudoPair14	Nonword
-linele	linlirna	li-lin	PseudoPair15	Nonword
-moniga	monseña	mo-mon	PseudoPair16	Nonword
-moripa	morbollo	mo-mor	PseudoPair17	Nonword
-murepla	murdallo	mu-mur	PseudoPair18	Nonword
-palura	palbira	pa-pal	PseudoPair19	Nonword
-paseñe	paslolla	pa-pas	PseudoPair20	Nonword
-periga	pergoso	pe-per	PseudoPair21	Nonword
-pesipa	pesdeña	pe-pes	PseudoPair22	Nonword
-rosepio	rosvailla	ro-ros	PseudoPair23	Nonword
-voleste	volpeje	vo-vol	PseudoPair24	Nonword
+\begin{table}[h]
+\centering
+\begin{tabular}{llll}
+\toprule
+CV Stimuli & CVC Stimuli & Targets & Lexicality\\
+\midrule
+balada	  & baldosa	  & ba-bal	&	Word\\
+bolero	  & bolsillo	& bo-bol	&	Word\\
+camisa	  & campana	  & ca-cam	&	Word\\
+casilla	  & castillo	& ca-cas	&	Word\\
+ceniza	  & centavo	  & ce-cen	&	Word\\
+cereza	  & cerveza	  & ce-cer	&	Word\\
+coraje	  & corbata	  & co-cor	&	Word\\
+corona	  & corteza	  & co-cor	&	Word\\
+cosecha	  & costilla	& co-cos	&	Word\\
+culebra	  & culpable	& cu-cul	&	Word\\
+ganancia	& ganchillo	& ga-gan	&	Word\\
+garaje	  & garganta	& ga-gan	&	Word\\
+joroba	  & jornada	  & jo-jor	&	Word\\
+limosna	  & limpieza	& li-lim	&	Word\\
+linaje	  & linterna	& li-lin	&	Word\\
+moneda	  & montaña	  & mo-mon	&	Word\\
+morera	  & morcillo	& mo-mor	&	Word\\
+muralla	  & murmullo	& mu-mur	&	Word\\
+paloma	  & palmera	  & pa-pal	&	Word\\
+pasaje	  & pastilla	& pa-pas	&	Word\\
+pereza	  & permiso	  & pe-per	&	Word\\
+peseta	  & pestaña	  & pe-pes	&	Word\\
+rosario	  & rosquilla	& ro-ros	&	Word\\
+volante	  & voltaje	  & vo-vol	&	Word\\
+\bottomrule
+\end{tabular}
+\caption{The table lists the real-word experimental stimuli used in Chapter \ref{ch-seg-lab}}
+\label{tab-exp-wd-lab-seg}
+\end{table}
 
+\begin{table}[h]
+\centering
+\begin{tabular}{llll}
+\toprule
+CV Stimuli & CVC Stimuli & Targets & Lexicality\\
+\midrule
+balega	  & balbusa	  & ba-bal	&	Nonword\\
+bolipo	  & bolfollo	& bo-bol	&	Nonword\\
+camofa	  & cambena	  & ca-cam	&	Nonword\\
+casozla	  & casgollo	& ca-cas	&	Nonword\\
+cenoca	  & cendevo	  & ce-cen	&	Nonword\\
+cerida	  & cerliza	  & ce-cer	&	Nonword\\
+corede	  & corteta	  & co-cor	&	Nonword\\
+corura	  & cormiza	  & co-cor	&	Nonword\\
+cosiba	  & coslolla	& co-cos	&	Nonword\\
+culitra	  & culseble	& cu-cul	&	Nonword\\
+ganercia	& ganquillo	& ga-gan	&	Nonword\\
+garele	  & garventa	& ga-gar	&	Nonword\\
+joruma	  & jorteda	  & jo-jor	&	Nonword\\
+limucna	  & limboza	  & li-lim	&	Nonword\\
+linele	  & linlirna	& li-lin	&	Nonword\\
+moniga	  & monseña	  & mo-mon	&	Nonword\\
+moripa	  & morbollo	& mo-mor	&	Nonword\\
+murepla	  & murdallo	& mu-mur	&	Nonword\\
+palura	  & palbira	  & pa-pal	&	Nonword\\
+paseñe	  & paslolla	& pa-pas	&	Nonword\\
+periga	  & pergoso	  & pe-per	&	Nonword\\
+pesipa	  & pesdeña	  & pe-pes	&	Nonword\\
+rosepio	  & rosvailla	& ro-ros	&	Nonword\\
+voleste	  & volpeje	  & vo-vol	&	Nonword\\
+\bottomrule
+\end{tabular}
+\caption{The table lists the nonword experimental stimuli used in Chapter \ref{ch-seg-lab}}
+\label{tab-exp-nonwd-lab-seg}
+\end{table}
 
-%\section{Chapter 5}
+\clearpage
+\section*{Chapter 5}
 %\subsection{Practic Items}
-garaje--garganta
-garele--garventa
-joroba--jornada
-joruma--jorteda
+\begin{table}[h]
+\centering
+\begin{tabular}{llll}
+\toprule
+CV Stimuli & CVC Stimuli & Targets & Lexicality\\
+\midrule
+garaje & garganta & ga-gar & Word\\
+garele & garventa & ga-gar & Nonword\\
+joroba & jornada & jo-jor & Word\\
+joruma & jorteda & jo-jor & Nonword\\
+\bottomrule
+\end{tabular}
+\caption{The table lists the real-word and nonword practice stimuli used in Chapter \ref{ch-seg-online}}
+\label{tab-prac-online-seg}
+\end{table}
 
 %block	word	wd_int_syl_str	tar_syl_str	tar_syl	wd_status	matching	lemma	first_3	item_type
-block01	garaje	CV	CV	ga	word	match	gar	gar	critical
-block01	lumbrera	CVC	CV	ga	word	mismatch	gar	lum	filler01
-block01	polvillo	CVC	CV	ga	word	mismatch	gar	pol	filler02
-block01	solera	CV	CV	ga	word	match	gar	sol	filler03
-block01	pinchazo	CVC	CV	ga	word	mismatch	gar	pin	filler04
-block01	mensaje	CVC	CV	ga	word	mismatch	gar	men	filler05
-block01	tendencia	CVC	CV	ga	word	mismatch	gar	ten	filler06
-block01	cimiento	CV	CV	ga	word	match	gar	cim	filler07
-block01	sopapo	CV	CV	ga	word	match	gar	sop	filler08
-block01	tiniebla	CV	CV	ga	word	match	gar	tin	filler09
-block02	joroba	CV	CV	jo	word	match	jor	jor	critical
-block02	zancada	CVC	CV	jo	word	mismatch	jor	zan	filler01
-block02	tumulto	CV	CV	jo	word	match	jor	tum	filler02
-block02	ventaja	CVC	CV	jo	word	mismatch	jor	ven	filler03
-block02	cintura	CVC	CV	jo	word	mismatch	jor	cin	filler04
-block02	tintero	CVC	CV	jo	word	mismatch	jor	tin	filler05
-block02	piscina	CVC	CV	jo	word	mismatch	jor	pis	filler06
-block02	vigilia	CV	CV	jo	word	match	jor	vig	filler07
-block02	pupitre	CV	CV	jo	word	match	jor	pup	filler08
-block02	bigote	CV	CV	jo	word	match	jor	big	filler09
-block03	garganta	CVC	CV	ga	word	mismatch	gar	gar	critical
-block03	lumbrera	CVC	CV	ga	word	mismatch	gar	lum	filler01
-block03	polvillo	CVC	CV	ga	word	mismatch	gar	pol	filler02
-block03	solera	CV	CV	ga	word	match	gar	sol	filler03
-block03	pujanza	CV	CV	ga	word	match	gar	puj	filler04
-block03	mensaje	CVC	CV	ga	word	mismatch	gar	men	filler05
-block03	tendencia	CVC	CV	ga	word	mismatch	gar	ten	filler06
-block03	cimiento	CV	CV	ga	word	match	gar	cim	filler07
-block03	sopapo	CV	CV	ga	word	match	gar	sop	filler08
-block03	tiniebla	CV	CV	ga	word	match	gar	tin	filler09
-block04	jornada	CVC	CV	jo	word	mismatch	jor	jor	critical
-block04	zancada	CVC	CV	jo	word	mismatch	jor	zan	filler01
-block04	tumulto	CV	CV	jo	word	match	jor	tum	filler02
-block04	ventaja	CVC	CV	jo	word	mismatch	jor	ven	filler03
-block04	bufanda	CV	CV	jo	word	match	jor	buf	filler04
-block04	tintero	CVC	CV	jo	word	mismatch	jor	tin	filler05
-block04	piscina	CVC	CV	jo	word	mismatch	jor	pis	filler06
-block04	vigilia	CV	CV	jo	word	match	jor	vig	filler07
-block04	pupitre	CV	CV	jo	word	match	jor	pup	filler08
-block04	bigote	CV	CV	jo	word	match	jor	big	filler09
-block05	garaje	CV	CVC	gar	word	mismatch	gar	gar	critical
-block05	tejado	CV	CVC	gar	word	mismatch	gar	tej	filler01
-block05	zumbido	CVC	CVC	gar	word	match	gar	zum	filler02
-block05	postigo	CVC	CVC	gar	word	match	gar	pos	filler03
-block05	fundillo	CVC	CVC	gar	word	match	gar	fun	filler04
-block05	pestillo	CVC	CVC	gar	word	match	gar	pes	filler05
-block05	filete	CV	CVC	gar	word	mismatch	gar	fil	filler06
-block05	velero	CV	CVC	gar	word	mismatch	gar	vel	filler07
-block05	semblanza	CVC	CVC	gar	word	match	gar	sem	filler08
-block05	tetilla	CV	CVC	gar	word	mismatch	gar	tet	filler09
-block06	joroba	CV	CVC	jor	word	mismatch	jor	jor	critical
-block06	zapato	CV	CVC	jor	word	mismatch	jor	zap	filler01
-block06	venganza	CVC	CVC	jor	word	match	jor	ven	filler02
-block06	fastidio	CVC	CVC	jor	word	match	jor	fas	filler03
-block06	piltrafa	CVC	CVC	jor	word	match	jor	pil	filler04
-block06	pulgada	CVC	CVC	jor	word	match	jor	pul	filler05
-block06	vistazo	CVC	CVC	jor	word	match	jor	vis	filler06
-block06	taquilla	CV	CVC	jor	word	mismatch	jor	taq	filler07
-block06	cizalla	CV	CVC	jor	word	mismatch	jor	ciz	filler08
-block06	cilindro	CV	CVC	jor	word	mismatch	jor	cil	filler09
-block07	garganta	CVC	CVC	gar	word	match	gar	gar	critical
-block07	tejado	CV	CVC	gar	word	mismatch	gar	tej	filler01
-block07	zumbido	CVC	CVC	gar	word	match	gar	zum	filler02
-block07	postigo	CVC	CVC	gar	word	match	gar	pos	filler03
-block07	fundillo	CVC	CVC	gar	word	match	gar	fun	filler04
-block07	pestillo	CVC	CVC	gar	word	match	gar	pes	filler05
-block07	filete	CV	CVC	gar	word	mismatch	gar	fil	filler06
-block07	velero	CV	CVC	gar	word	mismatch	gar	vel	filler07
-block07	tufillo	CV	CVC	gar	word	mismatch	gar	tuf	filler08
-block07	tetilla	CV	CVC	gar	word	mismatch	gar	tet	filler09
-block08	jornada	CVC	CVC	jor	word	match	jor	jor	critical
-block08	zapato	CV	CVC	jor	word	mismatch	jor	zap	filler01
-block08	venganza	CVC	CVC	jor	word	match	jor	ven	filler02
-block08	fastidio	CVC	CVC	jor	word	match	jor	fas	filler03
-block08	secuela	CV	CVC	jor	word	mismatch	jor	sec	filler04
-block08	pulgada	CVC	CVC	jor	word	match	jor	pul	filler05
-block08	vistazo	CVC	CVC	jor	word	match	jor	vis	filler06
-block08	taquilla	CV	CVC	jor	word	mismatch	jor	taq	filler07
-block08	cizalla	CV	CVC	jor	word	mismatch	jor	ciz	filler08
-block08	cilindro	CV	CVC	jor	word	mismatch	jor	cil	filler09
-block09	garele	CV	CV	ga	nonword	match	gar	gar	critical
-block09	tulvano	CVC	CV	ga	nonword	mismatch	gar	tul	filler01
-block09	cicauco	CV	CV	ga	nonword	match	gar	cic	filler02
-block09	dusnuente	CVC	CV	ga	nonword	mismatch	gar	dus	filler03
-block09	numete	CV	CV	ga	nonword	match	gar	num	filler04
-block09	tildona	CVC	CV	ga	nonword	mismatch	gar	til	filler05
-block09	mufenza	CV	CV	ga	nonword	match	gar	muf	filler06
-block09	cuntela	CVC	CV	ga	nonword	mismatch	gar	cun	filler07
-block09	pembanse	CVC	CV	ga	nonword	mismatch	gar	pem	filler08
-block09	sufiasa	CV	CV	ga	nonword	match	gar	suf	filler09
-block10	joruma	CV	CV	jo	nonword	match	jor	jor	critical
-block10	biluesa	CV	CV	jo	nonword	match	jor	bil	filler01
-block10	cividra	CV	CV	jo	nonword	match	jor	civ	filler02
-block10	gantarna	CVC	CV	jo	nonword	mismatch	jor	gan	filler03
-block10	banzalla	CVC	CV	jo	nonword	mismatch	jor	ban	filler04
-block10	piglillo	CVC	CV	jo	nonword	mismatch	jor	pig	filler05
-block10	tinneza	CVC	CV	jo	nonword	mismatch	jor	tin	filler06
-block10	fuzallo	CV	CV	jo	nonword	match	jor	fuz	filler07
-block10	vendagio	CVC	CV	jo	nonword	mismatch	jor	ven	filler08
-block10	bimina	CV	CV	jo	nonword	match	jor	bim	filler09
-block11	garventa	CVC	CV	ga	nonword	mismatch	gar	gar	critical
-block11	tulvano	CVC	CV	ga	nonword	mismatch	gar	tul	filler01
-block11	cicauco	CV	CV	ga	nonword	match	gar	cic	filler02
-block11	nulese	CV	CV	ga	nonword	match	gar	nul	filler03
-block11	numete	CV	CV	ga	nonword	match	gar	num	filler04
-block11	tildona	CVC	CV	ga	nonword	mismatch	gar	til	filler05
-block11	mufenza	CV	CV	ga	nonword	match	gar	muf	filler06
-block11	cuntela	CVC	CV	ga	nonword	mismatch	gar	cun	filler07
-block11	pembanse	CVC	CV	ga	nonword	mismatch	gar	pem	filler08
-block11	sufiasa	CV	CV	ga	nonword	match	gar	suf	filler09
-block12	jorteda	CVC	CV	jo	nonword	mismatch	jor	jor	critical
-block12	biluesa	CV	CV	jo	nonword	match	jor	bil	filler01
-block12	cividra	CV	CV	jo	nonword	match	jor	civ	filler02
-block12	gantarna	CVC	CV	jo	nonword	mismatch	jor	gan	filler03
-block12	bidena	CV	CV	jo	nonword	match	jor	bid	filler04
-block12	piglillo	CVC	CV	jo	nonword	mismatch	jor	pig	filler05
-block12	tinneza	CVC	CV	jo	nonword	mismatch	jor	tin	filler06
-block12	fuzallo	CV	CV	jo	nonword	match	jor	fuz	filler07
-block12	vendagio	CVC	CV	jo	nonword	mismatch	jor	ven	filler08
-block12	bimina	CV	CV	jo	nonword	match	jor	bim	filler09
-block13	garele	CV	CVC	gar	nonword	mismatch	gar	gar	critical
-block13	dezida	CV	CVC	gar	nonword	mismatch	gar	dez	filler01
-block13	dinona	CV	CVC	gar	nonword	mismatch	gar	din	filler02
-block13	sentirro	CVC	CVC	gar	nonword	match	gar	sen	filler03
-block13	puscalla	CVC	CVC	gar	nonword	match	gar	pus	filler04
-block13	cicisa	CV	CVC	gar	nonword	mismatch	gar	cic	filler05
-block13	binima	CV	CVC	gar	nonword	mismatch	gar	bin	filler06
-block13	fensuale	CVC	CVC	gar	nonword	match	gar	fen	filler07
-block13	suñuela	CV	CVC	gar	nonword	mismatch	gar	suñ	filler08
-block13	punfullo	CVC	CVC	gar	nonword	match	gar	pun	filler09
-block14	joruma	CV	CVC	jor	nonword	mismatch	jor	jor	critical
-block14	balzalla	CVC	CVC	jor	nonword	match	jor	bal	filler01
-block14	fimegra	CV	CVC	jor	nonword	mismatch	jor	fim	filler02
-block14	dulcura	CVC	CVC	jor	nonword	match	jor	dul	filler03
-block14	zuscura	CVC	CVC	jor	nonword	match	jor	zus	filler04
-block14	nafiaca	CV	CVC	jor	nonword	mismatch	jor	naf	filler05
-block14	binero	CV	CVC	jor	nonword	mismatch	jor	bin	filler06
-block14	puljida	CVC	CVC	jor	nonword	match	jor	pul	filler07
-block14	vastimo	CVC	CVC	jor	nonword	match	jor	vas	filler08
-block14	vuzarda	CV	CVC	jor	nonword	mismatch	jor	vuz	filler09
-block15	garventa	CVC	CVC	gar	nonword	match	gar	gar	critical
-block15	dezida	CV	CVC	gar	nonword	mismatch	gar	dez	filler01
-block15	dinona	CV	CVC	gar	nonword	mismatch	gar	din	filler02
-block15	sucema	CV	CVC	gar	nonword	mismatch	gar	suc	filler03
-block15	puscalla	CVC	CVC	gar	nonword	match	gar	pus	filler04
-block15	cicisa	CV	CVC	gar	nonword	mismatch	gar	cic	filler05
-block15	binima	CV	CVC	gar	nonword	mismatch	gar	bin	filler06
-block15	fensuale	CVC	CVC	gar	nonword	match	gar	fen	filler07
-block15	suñuela	CV	CVC	gar	nonword	mismatch	gar	suñ	filler08
-block15	punfullo	CVC	CVC	gar	nonword	match	gar	pun	filler09
-block16	jorteda	CVC	CVC	jor	nonword	match	jor	jor	critical
-block16	balzalla	CVC	CVC	jor	nonword	match	jor	bal	filler01
-block16	fimegra	CV	CVC	jor	nonword	mismatch	jor	fim	filler02
-block16	dulcura	CVC	CVC	jor	nonword	match	jor	dul	filler03
-block16	zuscura	CVC	CVC	jor	nonword	match	jor	zus	filler04
-block16	nafiaca	CV	CVC	jor	nonword	mismatch	jor	naf	filler05
-block16	binero	CV	CVC	jor	nonword	mismatch	jor	bin	filler06
-block16	puljida	CVC	CVC	jor	nonword	match	jor	pul	filler07
-block16	tanera	CV	CVC	jor	nonword	mismatch	jor	tan	filler08
-block16	vuzarda	CV	CVC	jor	nonword	mismatch	jor	vuz	filler09
+%block01	garaje	CV	CV	ga	word	match	gar	gar	critical
+%block01	lumbrera	CVC	CV	ga	word	mismatch	gar	lum	filler01
+%block01	polvillo	CVC	CV	ga	word	mismatch	gar	pol	filler02
+%block01	solera	CV	CV	ga	word	match	gar	sol	filler03
+%block01	pinchazo	CVC	CV	ga	word	mismatch	gar	pin	filler04
+%block01	mensaje	CVC	CV	ga	word	mismatch	gar	men	filler05
+%block01	tendencia	CVC	CV	ga	word	mismatch	gar	ten	filler06
+%block01	cimiento	CV	CV	ga	word	match	gar	cim	filler07
+%block01	sopapo	CV	CV	ga	word	match	gar	sop	filler08
+%block01	tiniebla	CV	CV	ga	word	match	gar	tin	filler09
+%block02	joroba	CV	CV	jo	word	match	jor	jor	critical
+%block02	zancada	CVC	CV	jo	word	mismatch	jor	zan	filler01
+%block02	tumulto	CV	CV	jo	word	match	jor	tum	filler02
+%block02	ventaja	CVC	CV	jo	word	mismatch	jor	ven	filler03
+%block02	cintura	CVC	CV	jo	word	mismatch	jor	cin	filler04
+%block02	tintero	CVC	CV	jo	word	mismatch	jor	tin	filler05
+%block02	piscina	CVC	CV	jo	word	mismatch	jor	pis	filler06
+%block02	vigilia	CV	CV	jo	word	match	jor	vig	filler07
+%block02	pupitre	CV	CV	jo	word	match	jor	pup	filler08
+%block02	bigote	CV	CV	jo	word	match	jor	big	filler09
+%block03	garganta	CVC	CV	ga	word	mismatch	gar	gar	critical
+%block03	lumbrera	CVC	CV	ga	word	mismatch	gar	lum	filler01
+%block03	polvillo	CVC	CV	ga	word	mismatch	gar	pol	filler02
+%block03	solera	CV	CV	ga	word	match	gar	sol	filler03
+%block03	pujanza	CV	CV	ga	word	match	gar	puj	filler04
+%block03	mensaje	CVC	CV	ga	word	mismatch	gar	men	filler05
+%block03	tendencia	CVC	CV	ga	word	mismatch	gar	ten	filler06
+%block03	cimiento	CV	CV	ga	word	match	gar	cim	filler07
+%block03	sopapo	CV	CV	ga	word	match	gar	sop	filler08
+%block03	tiniebla	CV	CV	ga	word	match	gar	tin	filler09
+%block04	jornada	CVC	CV	jo	word	mismatch	jor	jor	critical
+%block04	zancada	CVC	CV	jo	word	mismatch	jor	zan	filler01
+%block04	tumulto	CV	CV	jo	word	match	jor	tum	filler02
+%block04	ventaja	CVC	CV	jo	word	mismatch	jor	ven	filler03
+%block04	bufanda	CV	CV	jo	word	match	jor	buf	filler04
+%block04	tintero	CVC	CV	jo	word	mismatch	jor	tin	filler05
+%block04	piscina	CVC	CV	jo	word	mismatch	jor	pis	filler06
+%block04	vigilia	CV	CV	jo	word	match	jor	vig	filler07
+%block04	pupitre	CV	CV	jo	word	match	jor	pup	filler08
+%block04	bigote	CV	CV	jo	word	match	jor	big	filler09
+%block05	garaje	CV	CVC	gar	word	mismatch	gar	gar	critical
+%block05	tejado	CV	CVC	gar	word	mismatch	gar	tej	filler01
+%block05	zumbido	CVC	CVC	gar	word	match	gar	zum	filler02
+%block05	postigo	CVC	CVC	gar	word	match	gar	pos	filler03
+%block05	fundillo	CVC	CVC	gar	word	match	gar	fun	filler04
+%block05	pestillo	CVC	CVC	gar	word	match	gar	pes	filler05
+%block05	filete	CV	CVC	gar	word	mismatch	gar	fil	filler06
+%block05	velero	CV	CVC	gar	word	mismatch	gar	vel	filler07
+%block05	semblanza	CVC	CVC	gar	word	match	gar	sem	filler08
+%block05	tetilla	CV	CVC	gar	word	mismatch	gar	tet	filler09
+%block06	joroba	CV	CVC	jor	word	mismatch	jor	jor	critical
+%block06	zapato	CV	CVC	jor	word	mismatch	jor	zap	filler01
+%block06	venganza	CVC	CVC	jor	word	match	jor	ven	filler02
+%block06	fastidio	CVC	CVC	jor	word	match	jor	fas	filler03
+%block06	piltrafa	CVC	CVC	jor	word	match	jor	pil	filler04
+%block06	pulgada	CVC	CVC	jor	word	match	jor	pul	filler05
+%block06	vistazo	CVC	CVC	jor	word	match	jor	vis	filler06
+%block06	taquilla	CV	CVC	jor	word	mismatch	jor	taq	filler07
+%block06	cizalla	CV	CVC	jor	word	mismatch	jor	ciz	filler08
+%block06	cilindro	CV	CVC	jor	word	mismatch	jor	cil	filler09
+%block07	garganta	CVC	CVC	gar	word	match	gar	gar	critical
+%block07	tejado	CV	CVC	gar	word	mismatch	gar	tej	filler01
+%block07	zumbido	CVC	CVC	gar	word	match	gar	zum	filler02
+%block07	postigo	CVC	CVC	gar	word	match	gar	pos	filler03
+%block07	fundillo	CVC	CVC	gar	word	match	gar	fun	filler04
+%block07	pestillo	CVC	CVC	gar	word	match	gar	pes	filler05
+%block07	filete	CV	CVC	gar	word	mismatch	gar	fil	filler06
+%block07	velero	CV	CVC	gar	word	mismatch	gar	vel	filler07
+%block07	tufillo	CV	CVC	gar	word	mismatch	gar	tuf	filler08
+%block07	tetilla	CV	CVC	gar	word	mismatch	gar	tet	filler09
+%block08	jornada	CVC	CVC	jor	word	match	jor	jor	critical
+%block08	zapato	CV	CVC	jor	word	mismatch	jor	zap	filler01
+%block08	venganza	CVC	CVC	jor	word	match	jor	ven	filler02
+%block08	fastidio	CVC	CVC	jor	word	match	jor	fas	filler03
+%block08	secuela	CV	CVC	jor	word	mismatch	jor	sec	filler04
+%block08	pulgada	CVC	CVC	jor	word	match	jor	pul	filler05
+%block08	vistazo	CVC	CVC	jor	word	match	jor	vis	filler06
+%block08	taquilla	CV	CVC	jor	word	mismatch	jor	taq	filler07
+%block08	cizalla	CV	CVC	jor	word	mismatch	jor	ciz	filler08
+%block08	cilindro	CV	CVC	jor	word	mismatch	jor	cil	filler09
+%block09	garele	CV	CV	ga	nonword	match	gar	gar	critical
+%block09	tulvano	CVC	CV	ga	nonword	mismatch	gar	tul	filler01
+%block09	cicauco	CV	CV	ga	nonword	match	gar	cic	filler02
+%block09	dusnuente	CVC	CV	ga	nonword	mismatch	gar	dus	filler03
+%block09	numete	CV	CV	ga	nonword	match	gar	num	filler04
+%block09	tildona	CVC	CV	ga	nonword	mismatch	gar	til	filler05
+%block09	mufenza	CV	CV	ga	nonword	match	gar	muf	filler06
+%block09	cuntela	CVC	CV	ga	nonword	mismatch	gar	cun	filler07
+%block09	pembanse	CVC	CV	ga	nonword	mismatch	gar	pem	filler08
+%block09	sufiasa	CV	CV	ga	nonword	match	gar	suf	filler09
+%block10	joruma	CV	CV	jo	nonword	match	jor	jor	critical
+%block10	biluesa	CV	CV	jo	nonword	match	jor	bil	filler01
+%block10	cividra	CV	CV	jo	nonword	match	jor	civ	filler02
+%block10	gantarna	CVC	CV	jo	nonword	mismatch	jor	gan	filler03
+%block10	banzalla	CVC	CV	jo	nonword	mismatch	jor	ban	filler04
+%block10	piglillo	CVC	CV	jo	nonword	mismatch	jor	pig	filler05
+%block10	tinneza	CVC	CV	jo	nonword	mismatch	jor	tin	filler06
+%block10	fuzallo	CV	CV	jo	nonword	match	jor	fuz	filler07
+%block10	vendagio	CVC	CV	jo	nonword	mismatch	jor	ven	filler08
+%block10	bimina	CV	CV	jo	nonword	match	jor	bim	filler09
+%block11	garventa	CVC	CV	ga	nonword	mismatch	gar	gar	critical
+%block11	tulvano	CVC	CV	ga	nonword	mismatch	gar	tul	filler01
+%block11	cicauco	CV	CV	ga	nonword	match	gar	cic	filler02
+%block11	nulese	CV	CV	ga	nonword	match	gar	nul	filler03
+%block11	numete	CV	CV	ga	nonword	match	gar	num	filler04
+%block11	tildona	CVC	CV	ga	nonword	mismatch	gar	til	filler05
+%block11	mufenza	CV	CV	ga	nonword	match	gar	muf	filler06
+%block11	cuntela	CVC	CV	ga	nonword	mismatch	gar	cun	filler07
+%block11	pembanse	CVC	CV	ga	nonword	mismatch	gar	pem	filler08
+%block11	sufiasa	CV	CV	ga	nonword	match	gar	suf	filler09
+%block12	jorteda	CVC	CV	jo	nonword	mismatch	jor	jor	critical
+%block12	biluesa	CV	CV	jo	nonword	match	jor	bil	filler01
+%block12	cividra	CV	CV	jo	nonword	match	jor	civ	filler02
+%block12	gantarna	CVC	CV	jo	nonword	mismatch	jor	gan	filler03
+%block12	bidena	CV	CV	jo	nonword	match	jor	bid	filler04
+%block12	piglillo	CVC	CV	jo	nonword	mismatch	jor	pig	filler05
+%block12	tinneza	CVC	CV	jo	nonword	mismatch	jor	tin	filler06
+%block12	fuzallo	CV	CV	jo	nonword	match	jor	fuz	filler07
+%block12	vendagio	CVC	CV	jo	nonword	mismatch	jor	ven	filler08
+%block12	bimina	CV	CV	jo	nonword	match	jor	bim	filler09
+%block13	garele	CV	CVC	gar	nonword	mismatch	gar	gar	critical
+%block13	dezida	CV	CVC	gar	nonword	mismatch	gar	dez	filler01
+%block13	dinona	CV	CVC	gar	nonword	mismatch	gar	din	filler02
+%block13	sentirro	CVC	CVC	gar	nonword	match	gar	sen	filler03
+%block13	puscalla	CVC	CVC	gar	nonword	match	gar	pus	filler04
+%block13	cicisa	CV	CVC	gar	nonword	mismatch	gar	cic	filler05
+%block13	binima	CV	CVC	gar	nonword	mismatch	gar	bin	filler06
+%block13	fensuale	CVC	CVC	gar	nonword	match	gar	fen	filler07
+%block13	suñuela	CV	CVC	gar	nonword	mismatch	gar	suñ	filler08
+%block13	punfullo	CVC	CVC	gar	nonword	match	gar	pun	filler09
+%block14	joruma	CV	CVC	jor	nonword	mismatch	jor	jor	critical
+%block14	balzalla	CVC	CVC	jor	nonword	match	jor	bal	filler01
+%block14	fimegra	CV	CVC	jor	nonword	mismatch	jor	fim	filler02
+%block14	dulcura	CVC	CVC	jor	nonword	match	jor	dul	filler03
+%block14	zuscura	CVC	CVC	jor	nonword	match	jor	zus	filler04
+%block14	nafiaca	CV	CVC	jor	nonword	mismatch	jor	naf	filler05
+%block14	binero	CV	CVC	jor	nonword	mismatch	jor	bin	filler06
+%block14	puljida	CVC	CVC	jor	nonword	match	jor	pul	filler07
+%block14	vastimo	CVC	CVC	jor	nonword	match	jor	vas	filler08
+%block14	vuzarda	CV	CVC	jor	nonword	mismatch	jor	vuz	filler09
+%block15	garventa	CVC	CVC	gar	nonword	match	gar	gar	critical
+%block15	dezida	CV	CVC	gar	nonword	mismatch	gar	dez	filler01
+%block15	dinona	CV	CVC	gar	nonword	mismatch	gar	din	filler02
+%block15	sucema	CV	CVC	gar	nonword	mismatch	gar	suc	filler03
+%block15	puscalla	CVC	CVC	gar	nonword	match	gar	pus	filler04
+%block15	cicisa	CV	CVC	gar	nonword	mismatch	gar	cic	filler05
+%block15	binima	CV	CVC	gar	nonword	mismatch	gar	bin	filler06
+%block15	fensuale	CVC	CVC	gar	nonword	match	gar	fen	filler07
+%block15	suñuela	CV	CVC	gar	nonword	mismatch	gar	suñ	filler08
+%block15	punfullo	CVC	CVC	gar	nonword	match	gar	pun	filler09
+%block16	jorteda	CVC	CVC	jor	nonword	match	jor	jor	critical
+%block16	balzalla	CVC	CVC	jor	nonword	match	jor	bal	filler01
+%block16	fimegra	CV	CVC	jor	nonword	mismatch	jor	fim	filler02
+%block16	dulcura	CVC	CVC	jor	nonword	match	jor	dul	filler03
+%block16	zuscura	CVC	CVC	jor	nonword	match	jor	zus	filler04
+%block16	nafiaca	CV	CVC	jor	nonword	mismatch	jor	naf	filler05
+%block16	binero	CV	CVC	jor	nonword	mismatch	jor	bin	filler06
+%block16	puljida	CVC	CVC	jor	nonword	match	jor	pul	filler07
+%block16	tanera	CV	CVC	jor	nonword	mismatch	jor	tan	filler08
+%block16	vuzarda	CV	CVC	jor	nonword	mismatch	jor	vuz	filler09
 
 %\subsection{Experimental Items}
-balada--baldosa
-balega--balbusa
-linaje--linterna
-linele--linlirna
-peseta--pestaña
-pesipa--pesdeña
-rosario--rosquilla
-rosepio--rosvailla
-camisa--campana
-camofa--cambena
-culebra--culpable
-culitra--culseble
-moneda--montaña
-moniga--monseña
-paloma--palmera
-palura--palbira
+
+
+\begin{table}[h]
+\centering
+\begin{tabular}{llll}
+\toprule
+CV Stimuli & CVC Stimuli & Targets & Lexicality\\
+\midrule
+balada  & baldosa   & ba-bal  & Word\\
+balega  & balbusa   & ba-bal  & Nonword\\
+linaje  & linterna  & li-lin  & Word\\
+linele  & linlirna  & li-lin  & Nonword\\
+peseta  & pestaña   & pe-pes  & Word\\
+pesipa  & pesdeña   & pe-pes  & Nonword\\
+rosario & rosquilla & ro-ros  & Word\\
+rosepio & rosvailla & ro-ros  & Nonword\\
+camisa  & campana   & ca-cam  & Word\\
+camofa  & cambena   & ca-cam  & Nonword\\
+culebra & culpable  & cu-cul  & Word\\
+culitra & culseble  & cu-cul  & Nonword\\
+moneda  & montaña   & mo-mon  & Word\\
+moniga  & monseña   & mo-mon  & Nonword\\
+paloma  & palmera   & pa-pal  & Word\\
+palura  & palbira   & pa-pal  & Nonword\\
+\bottomrule
+\end{tabular}
+\caption{The table lists the real-word and nonword experimental stimuli used in Chapter \ref{ch-seg-online}}
+\label{tab-exp-wd-online-seg}
+\end{table}
 
 
 %block	word	wd_int_syl_str	tar_syl_str	tar_syl	wd_status	matching	lemma	first_3	item_type
-block01	balada	CV	CV	ba	word	match	bal	bal	critical
-block01	rendija	CVC	CV	ba	word	mismatch	bal	ren	filler01
-block01	tortuga	CVC	CV	ba	word	mismatch	bal	tor	filler02
-block01	semilla	CV	CV	ba	word	match	bal	sem	filler03
-block01	torpeza	CVC	CV	ba	word	mismatch	bal	tor	filler04
-block01	sortija	CVC	CV	ba	word	mismatch	bal	sor	filler05
-block01	tersura	CVC	CV	ba	word	mismatch	bal	ter	filler06
-block01	picota	CV	CV	ba	word	match	bal	pic	filler07
-block01	sotana	CV	CV	ba	word	match	bal	sot	filler08
-block01	sonido	CV	CV	ba	word	match	bal	son	filler09
-block02	baldosa	CVC	CV	ba	word	mismatch	bal	bal	critical
-block02	renombre	CV	CV	ba	word	match	bal	ren	filler01
-block02	tortuga	CVC	CV	ba	word	mismatch	bal	tor	filler02
-block02	semilla	CV	CV	ba	word	match	bal	sem	filler03
-block02	torpeza	CVC	CV	ba	word	mismatch	bal	tor	filler04
-block02	sortija	CVC	CV	ba	word	mismatch	bal	sor	filler05
-block02	tersura	CVC	CV	ba	word	mismatch	bal	ter	filler06
-block02	picota	CV	CV	ba	word	match	bal	pic	filler07
-block02	sotana	CV	CV	ba	word	match	bal	sot	filler08
-block02	sonido	CV	CV	ba	word	match	bal	son	filler09
-block03	balada	CV	CVC	bal	word	mismatch	bal	bal	critical
-block03	punzada	CVC	CVC	bal	word	match	bal	pun	filler01
-block03	mortaja	CVC	CVC	bal	word	match	bal	mor	filler02
-block03	puntilla	CVC	CVC	bal	word	match	bal	pun	filler03
-block03	vergüenza	CVC	CVC	bal	word	match	bal	ver	filler04
-block03	vendaje	CVC	CVC	bal	word	match	bal	ven	filler05
-block03	remanso	CV	CVC	bal	word	mismatch	bal	rem	filler06
-block03	recodo	CV	CVC	bal	word	mismatch	bal	rec	filler07
-block03	rimero	CV	CVC	bal	word	mismatch	bal	rim	filler08
-block03	fineza	CV	CVC	bal	word	mismatch	bal	fin	filler09
-block04	baldosa	CVC	CVC	bal	word	match	bal	bal	critical
-block04	punzada	CVC	CVC	bal	word	match	bal	pun	filler01
-block04	mortaja	CVC	CVC	bal	word	match	bal	mor	filler02
-block04	puntilla	CVC	CVC	bal	word	match	bal	pun	filler03
-block04	vergüenza	CVC	CVC	bal	word	match	bal	ver	filler04
-block04	vendaje	CVC	CVC	bal	word	match	bal	ven	filler05
-block04	remanso	CV	CVC	bal	word	mismatch	bal	rem	filler06
-block04	recodo	CV	CVC	bal	word	mismatch	bal	rec	filler07
-block04	rimero	CV	CVC	bal	word	mismatch	bal	rim	filler08
-block04	fineza	CV	CVC	bal	word	mismatch	bal	fin	filler09
-block05	balega	CV	CV	ba	nonword	match	bal	bal	critical
-block05	soponso	CV	CV	ba	nonword	match	bal	sop	filler01
-block05	zictencia	CVC	CV	ba	nonword	mismatch	bal	zic	filler02
-block05	turjuma	CVC	CV	ba	nonword	mismatch	bal	tur	filler03
-block05	cuntefa	CVC	CV	ba	nonword	mismatch	bal	cun	filler04
-block05	cicaigo	CV	CV	ba	nonword	match	bal	cic	filler05
-block05	soreto	CV	CV	ba	nonword	match	bal	sor	filler06
-block05	dosbiente	CVC	CV	ba	nonword	mismatch	bal	dos	filler07
-block05	fontama	CVC	CV	ba	nonword	mismatch	bal	fon	filler08
-block05	decibio	CV	CV	ba	nonword	match	bal	dec	filler09
-block06	balbusa	CVC	CV	ba	nonword	mismatch	bal	bal	critical
-block06	soponso	CV	CV	ba	nonword	match	bal	sop	filler01
-block06	zictencia	CVC	CV	ba	nonword	mismatch	bal	zic	filler02
-block06	ruñansa	CV	CV	ba	nonword	match	bal	ruñ	filler03
-block06	cuntefa	CVC	CV	ba	nonword	mismatch	bal	cun	filler04
-block06	cicaigo	CV	CV	ba	nonword	match	bal	cic	filler05
-block06	soreto	CV	CV	ba	nonword	match	bal	sor	filler06
-block06	dosbiente	CVC	CV	ba	nonword	mismatch	bal	dos	filler07
-block06	fontama	CVC	CV	ba	nonword	mismatch	bal	fon	filler08
-block06	decibio	CV	CV	ba	nonword	match	bal	dec	filler09
-block07	balega	CV	CVC	bal	nonword	mismatch	bal	bal	critical
-block07	denciña	CVC	CVC	bal	nonword	match	bal	den	filler01
-block07	cecaja	CV	CVC	bal	nonword	mismatch	bal	cec	filler02
-block07	vestolcio	CVC	CVC	bal	nonword	match	bal	ves	filler03
-block07	cicora	CV	CVC	bal	nonword	mismatch	bal	cic	filler04
-block07	sinvera	CVC	CVC	bal	nonword	match	bal	sin	filler05
-block07	simedo	CV	CVC	bal	nonword	mismatch	bal	sim	filler06
-block07	donania	CV	CVC	bal	nonword	mismatch	bal	don	filler07
-block07	vinterca	CVC	CVC	bal	nonword	match	bal	vin	filler08
-block07	cencera	CVC	CVC	bal	nonword	match	bal	cen	filler09
-block08	balbusa	CVC	CVC	bal	nonword	match	bal	bal	critical
-block08	denciña	CVC	CVC	bal	nonword	match	bal	den	filler01
-block08	cecaja	CV	CVC	bal	nonword	mismatch	bal	cec	filler02
-block08	vestolcio	CVC	CVC	bal	nonword	match	bal	ves	filler03
-block08	cicora	CV	CVC	bal	nonword	mismatch	bal	cic	filler04
-block08	sinvera	CVC	CVC	bal	nonword	match	bal	sin	filler05
-block08	simedo	CV	CVC	bal	nonword	mismatch	bal	sim	filler06
-block08	donania	CV	CVC	bal	nonword	mismatch	bal	don	filler07
-block08	vobita	CV	CVC	bal	nonword	mismatch	bal	vob	filler08
-block08	cencera	CVC	CVC	bal	nonword	match	bal	cen	filler09
-block09	linaje	CV	CV	li	word	match	lin	lin	critical
-block09	tartana	CVC	CV	li	word	mismatch	lin	tar	filler01
-block09	portazo	CVC	CV	li	word	mismatch	lin	por	filler02
-block09	vereda	CV	CV	li	word	match	lin	ver	filler03
-block09	zarpazo	CVC	CV	li	word	mismatch	lin	zar	filler04
-block09	jasmina	CVC	CV	li	word	mismatch	lin	jas	filler05
-block09	captura	CVC	CV	li	word	mismatch	lin	cap	filler06
-block09	recurso	CV	CV	li	word	match	lin	rec	filler07
-block09	tocino	CV	CV	li	word	match	lin	toc	filler08
-block09	dureza	CV	CV	li	word	match	lin	dur	filler09
-block10	linterna	CVC	CV	li	word	mismatch	lin	lin	critical
-block10	tartana	CVC	CV	li	word	mismatch	lin	tar	filler01
-block10	portazo	CVC	CV	li	word	mismatch	lin	por	filler02
-block10	vereda	CV	CV	li	word	match	lin	ver	filler03
-block10	zarpazo	CVC	CV	li	word	mismatch	lin	zar	filler04
-block10	jasmina	CVC	CV	li	word	mismatch	lin	jas	filler05
-block10	regazo	CV	CV	li	word	match	lin	reg	filler06
-block10	recurso	CV	CV	li	word	match	lin	rec	filler07
-block10	tocino	CV	CV	li	word	match	lin	toc	filler08
-block10	dureza	CV	CV	li	word	match	lin	dur	filler09
-block11	linaje	CV	CVC	lin	word	mismatch	lin	lin	critical
-block11	portillo	CVC	CVC	lin	word	match	lin	por	filler01
-block11	sobaco	CV	CVC	lin	word	mismatch	lin	sob	filler02
-block11	respuesta	CVC	CVC	lin	word	match	lin	res	filler03
-block11	garbanzo	CVC	CVC	lin	word	match	lin	gar	filler04
-block11	corneta	CVC	CVC	lin	word	match	lin	cor	filler05
-block11	pozuelo	CV	CVC	lin	word	mismatch	lin	poz	filler06
-block11	barcaza	CVC	CVC	lin	word	match	lin	bar	filler07
-block11	sureste	CV	CVC	lin	word	mismatch	lin	sur	filler08
-block11	torija	CV	CVC	lin	word	mismatch	lin	tor	filler09
-block12	linterna	CVC	CVC	lin	word	match	lin	lin	critical
-block12	portillo	CVC	CVC	lin	word	match	lin	por	filler01
-block12	sobaco	CV	CVC	lin	word	mismatch	lin	sob	filler02
-block12	respuesta	CVC	CVC	lin	word	match	lin	res	filler03
-block12	garbanzo	CVC	CVC	lin	word	match	lin	gar	filler04
-block12	soborno	CV	CVC	lin	word	mismatch	lin	sob	filler05
-block12	pozuelo	CV	CVC	lin	word	mismatch	lin	poz	filler06
-block12	barcaza	CVC	CVC	lin	word	match	lin	bar	filler07
-block12	sureste	CV	CVC	lin	word	mismatch	lin	sur	filler08
-block12	torija	CV	CVC	lin	word	mismatch	lin	tor	filler09
-block13	linele	CV	CV	li	nonword	match	lin	lin	critical
-block13	parvida	CVC	CV	li	nonword	mismatch	lin	par	filler01
-block13	sociare	CV	CV	li	nonword	match	lin	soc	filler02
-block13	decanro	CV	CV	li	nonword	match	lin	dec	filler03
-block13	taviño	CV	CV	li	nonword	match	lin	tav	filler04
-block13	pospana	CVC	CV	li	nonword	mismatch	lin	pos	filler05
-block13	poscallo	CVC	CV	li	nonword	mismatch	lin	pos	filler06
-block13	tornanga	CVC	CV	li	nonword	mismatch	lin	tor	filler07
-block13	tusorto	CV	CV	li	nonword	match	lin	tus	filler08
-block13	tercega	CVC	CV	li	nonword	mismatch	lin	ter	filler09
-block14	linlirna	CVC	CV	li	nonword	mismatch	lin	lin	critical
-block14	parvida	CVC	CV	li	nonword	mismatch	lin	par	filler01
-block14	sociare	CV	CV	li	nonword	match	lin	soc	filler02
-block14	decanro	CV	CV	li	nonword	match	lin	dec	filler03
-block14	taviño	CV	CV	li	nonword	match	lin	tav	filler04
-block14	pospana	CVC	CV	li	nonword	mismatch	lin	pos	filler05
-block14	poscallo	CVC	CV	li	nonword	mismatch	lin	pos	filler06
-block14	gerotio	CV	CV	li	nonword	match	lin	ger	filler07
-block14	tusorto	CV	CV	li	nonword	match	lin	tus	filler08
-block14	tercega	CVC	CV	li	nonword	mismatch	lin	ter	filler09
-block15	linele	CV	CVC	lin	nonword	mismatch	lin	lin	critical
-block15	jagito	CV	CVC	lin	nonword	mismatch	lin	jag	filler01
-block15	parsida	CVC	CVC	lin	nonword	match	lin	par	filler02
-block15	ducoste	CV	CVC	lin	nonword	mismatch	lin	duc	filler03
-block15	cortupto	CVC	CVC	lin	nonword	match	lin	cor	filler04
-block15	tosaba	CV	CVC	lin	nonword	mismatch	lin	tos	filler05
-block15	suseña	CV	CVC	lin	nonword	mismatch	lin	sus	filler06
-block15	meptrona	CVC	CVC	lin	nonword	match	lin	mep	filler07
-block15	deroda	CV	CVC	lin	nonword	mismatch	lin	der	filler08
-block15	sutnido	CVC	CVC	lin	nonword	match	lin	sut	filler09
-block16	linlirna	CVC	CVC	lin	nonword	match	lin	lin	critical
-block16	jagito	CV	CVC	lin	nonword	mismatch	lin	jag	filler01
-block16	parsida	CVC	CVC	lin	nonword	match	lin	par	filler02
-block16	ducoste	CV	CVC	lin	nonword	mismatch	lin	duc	filler03
-block16	cortupto	CVC	CVC	lin	nonword	match	lin	cor	filler04
-block16	tosaba	CV	CVC	lin	nonword	mismatch	lin	tos	filler05
-block16	suseña	CV	CVC	lin	nonword	mismatch	lin	sus	filler06
-block16	meptrona	CVC	CVC	lin	nonword	match	lin	mep	filler07
-block16	deroda	CV	CVC	lin	nonword	mismatch	lin	der	filler08
-block16	sutnido	CVC	CVC	lin	nonword	match	lin	sut	filler09
-block17	peseta	CV	CV	pe	word	match	pes	pes	critical
-block17	langosta	CVC	CV	pe	word	mismatch	pes	lan	filler01
-block17	jilguero	CVC	CV	pe	word	mismatch	pes	jil	filler02
-block17	gordura	CVC	CV	pe	word	mismatch	pes	gor	filler03
-block17	doncella	CVC	CV	pe	word	mismatch	pes	don	filler04
-block17	fantoche	CVC	CV	pe	word	mismatch	pes	fan	filler05
-block17	laguna	CV	CV	pe	word	match	pes	lag	filler06
-block17	jacinto	CV	CV	pe	word	match	pes	jac	filler07
-block17	duquesa	CV	CV	pe	word	match	pes	duq	filler08
-block17	dominio	CV	CV	pe	word	match	pes	dom	filler09
-block18	pestaña	CVC	CV	pe	word	mismatch	pes	pes	critical
-block18	langosta	CVC	CV	pe	word	mismatch	pes	lan	filler01
-block18	jilguero	CVC	CV	pe	word	mismatch	pes	jil	filler02
-block18	gordura	CVC	CV	pe	word	mismatch	pes	gor	filler03
-block18	cigarro	CV	CV	pe	word	match	pes	cig	filler04
-block18	fantoche	CVC	CV	pe	word	mismatch	pes	fan	filler05
-block18	laguna	CV	CV	pe	word	match	pes	lag	filler06
-block18	jacinto	CV	CV	pe	word	match	pes	jac	filler07
-block18	duquesa	CV	CV	pe	word	match	pes	duq	filler08
-block18	dominio	CV	CV	pe	word	match	pes	dom	filler09
-block19	peseta	CV	CVC	pes	word	mismatch	pes	pes	critical
-block19	tardanza	CVC	CVC	pes	word	match	pes	tar	filler01
-block19	tornillo	CVC	CVC	pes	word	match	pes	tor	filler02
-block19	ruptura	CVC	CVC	pes	word	match	pes	rup	filler03
-block19	durmiente	CVC	CVC	pes	word	match	pes	dur	filler04
-block19	burbuja	CVC	CVC	pes	word	match	pes	bur	filler05
-block19	viruela	CV	CVC	pes	word	mismatch	pes	vir	filler06
-block19	lavabo	CV	CVC	pes	word	mismatch	pes	lav	filler07
-block19	butaca	CV	CVC	pes	word	mismatch	pes	but	filler08
-block19	ribera	CV	CVC	pes	word	mismatch	pes	rib	filler09
-block20	pestaña	CVC	CVC	pes	word	match	pes	pes	critical
-block20	talante	CV	CVC	pes	word	mismatch	pes	tal	filler01
-block20	tornillo	CVC	CVC	pes	word	match	pes	tor	filler02
-block20	ruptura	CVC	CVC	pes	word	match	pes	rup	filler03
-block20	durmiente	CVC	CVC	pes	word	match	pes	dur	filler04
-block20	burbuja	CVC	CVC	pes	word	match	pes	bur	filler05
-block20	viruela	CV	CVC	pes	word	mismatch	pes	vir	filler06
-block20	lavabo	CV	CVC	pes	word	mismatch	pes	lav	filler07
-block20	butaca	CV	CVC	pes	word	mismatch	pes	but	filler08
-block20	ribera	CV	CVC	pes	word	mismatch	pes	rib	filler09
-block21	pesipa	CV	CV	pe	nonword	match	pes	pes	critical
-block21	docado	CV	CV	pe	nonword	match	pes	doc	filler01
-block21	normaso	CVC	CV	pe	nonword	mismatch	pes	nor	filler02
-block21	borpanza	CVC	CV	pe	nonword	mismatch	pes	bor	filler03
-block21	daviba	CV	CV	pe	nonword	match	pes	dav	filler04
-block21	cabsero	CVC	CV	pe	nonword	mismatch	pes	cab	filler05
-block21	tutmuja	CVC	CV	pe	nonword	mismatch	pes	tut	filler06
-block21	talaja	CV	CV	pe	nonword	match	pes	tal	filler07
-block21	gorente	CV	CV	pe	nonword	match	pes	gor	filler08
-block21	lultame	CVC	CV	pe	nonword	mismatch	pes	lul	filler09
-block22	pesdeña	CVC	CV	pe	nonword	mismatch	pes	pes	critical
-block22	docado	CV	CV	pe	nonword	match	pes	doc	filler01
-block22	normaso	CVC	CV	pe	nonword	mismatch	pes	nor	filler02
-block22	bicera	CV	CV	pe	nonword	match	pes	bic	filler03
-block22	daviba	CV	CV	pe	nonword	match	pes	dav	filler04
-block22	cabsero	CVC	CV	pe	nonword	mismatch	pes	cab	filler05
-block22	tutmuja	CVC	CV	pe	nonword	mismatch	pes	tut	filler06
-block22	talaja	CV	CV	pe	nonword	match	pes	tal	filler07
-block22	gorente	CV	CV	pe	nonword	match	pes	gor	filler08
-block22	lultame	CVC	CV	pe	nonword	mismatch	pes	lul	filler09
-block23	pesipa	CV	CVC	pes	nonword	mismatch	pes	pes	critical
-block23	tomida	CV	CVC	pes	nonword	mismatch	pes	tom	filler01
-block23	farime	CV	CVC	pes	nonword	mismatch	pes	far	filler02
-block23	civillo	CV	CVC	pes	nonword	mismatch	pes	civ	filler03
-block23	cunceza	CVC	CVC	pes	nonword	match	pes	cun	filler04
-block23	runrullo	CVC	CVC	pes	nonword	match	pes	run	filler05
-block23	mingrago	CVC	CVC	pes	nonword	match	pes	min	filler06
-block23	rizgura	CVC	CVC	pes	nonword	match	pes	riz	filler07
-block23	duliste	CV	CVC	pes	nonword	mismatch	pes	dul	filler08
-block23	cubteha	CVC	CVC	pes	nonword	match	pes	cub	filler09
-block24	pesdeña	CVC	CVC	pes	nonword	match	pes	pes	critical
-block24	tomida	CV	CVC	pes	nonword	mismatch	pes	tom	filler01
-block24	farime	CV	CVC	pes	nonword	mismatch	pes	far	filler02
-block24	civillo	CV	CVC	pes	nonword	mismatch	pes	civ	filler03
-block24	cunceza	CVC	CVC	pes	nonword	match	pes	cun	filler04
-block24	tecido	CV	CVC	pes	nonword	mismatch	pes	tec	filler05
-block24	mingrago	CVC	CVC	pes	nonword	match	pes	min	filler06
-block24	rizgura	CVC	CVC	pes	nonword	match	pes	riz	filler07
-block24	duliste	CV	CVC	pes	nonword	mismatch	pes	dul	filler08
-block24	cubteha	CVC	CVC	pes	nonword	match	pes	cub	filler09
-block25	rosario	CV	CV	ro	word	match	ros	ros	critical
-block25	pantalla	CVC	CV	ro	word	mismatch	ros	pan	filler01
-block25	lenguaje	CVC	CV	ro	word	mismatch	ros	len	filler02
-block25	cambiazo	CVC	CV	ro	word	mismatch	ros	cam	filler03
-block25	campiña	CVC	CV	ro	word	mismatch	ros	cam	filler04
-block25	putada	CV	CV	ro	word	match	ros	put	filler05
-block25	pileta	CV	CV	ro	word	match	ros	pil	filler06
-block25	legajo	CV	CV	ro	word	match	ros	leg	filler07
-block25	veleta	CV	CV	ro	word	match	ros	vel	filler08
-block25	balbina	CVC	CV	ro	word	mismatch	ros	bal	filler09
-block26	rosquilla	CVC	CV	ro	word	mismatch	ros	ros	critical
-block26	pantalla	CVC	CV	ro	word	mismatch	ros	pan	filler01
-block26	lenguaje	CVC	CV	ro	word	mismatch	ros	len	filler02
-block26	cambiazo	CVC	CV	ro	word	mismatch	ros	cam	filler03
-block26	campiña	CVC	CV	ro	word	mismatch	ros	cam	filler04
-block26	putada	CV	CV	ro	word	match	ros	put	filler05
-block26	pileta	CV	CV	ro	word	match	ros	pil	filler06
-block26	legajo	CV	CV	ro	word	match	ros	leg	filler07
-block26	veleta	CV	CV	ro	word	match	ros	vel	filler08
-block26	pitillo	CV	CV	ro	word	match	ros	pit	filler09
-block27	rosario	CV	CVC	ros	word	mismatch	ros	ros	critical
-block27	bengala	CVC	CVC	ros	word	match	ros	ben	filler01
-block27	lanzazo	CVC	CVC	ros	word	match	ros	lan	filler02
-block27	ventisca	CVC	CVC	ros	word	match	ros	ven	filler03
-block27	vigencia	CV	CVC	ros	word	mismatch	ros	vig	filler04
-block27	pulsera	CVC	CVC	ros	word	match	ros	pul	filler05
-block27	bacteria	CVC	CVC	ros	word	match	ros	bac	filler06
-block27	bufido	CV	CVC	ros	word	mismatch	ros	buf	filler07
-block27	cigoto	CV	CVC	ros	word	mismatch	ros	cig	filler08
-block27	vinilo	CV	CVC	ros	word	mismatch	ros	vin	filler09
-block28	rosquilla	CVC	CVC	ros	word	match	ros	ros	critical
-block28	bengala	CVC	CVC	ros	word	match	ros	ben	filler01
-block28	lanzazo	CVC	CVC	ros	word	match	ros	lan	filler02
-block28	pimiento	CV	CVC	ros	word	mismatch	ros	pim	filler03
-block28	vigencia	CV	CVC	ros	word	mismatch	ros	vig	filler04
-block28	pulsera	CVC	CVC	ros	word	match	ros	pul	filler05
-block28	bacteria	CVC	CVC	ros	word	match	ros	bac	filler06
-block28	bufido	CV	CVC	ros	word	mismatch	ros	buf	filler07
-block28	cigoto	CV	CVC	ros	word	mismatch	ros	cig	filler08
-block28	vinilo	CV	CVC	ros	word	mismatch	ros	vin	filler09
-block29	rosepio	CV	CV	ro	nonword	match	ros	ros	critical
-block29	tidioma	CV	CV	ro	nonword	match	ros	tid	filler01
-block29	cinsecho	CVC	CV	ro	nonword	mismatch	ros	cin	filler02
-block29	bimena	CV	CV	ro	nonword	match	ros	bim	filler03
-block29	lectorio	CVC	CV	ro	nonword	mismatch	ros	lec	filler04
-block29	denfiña	CVC	CV	ro	nonword	mismatch	ros	den	filler05
-block29	fimallo	CV	CV	ro	nonword	match	ros	fim	filler06
-block29	canreza	CVC	CV	ro	nonword	mismatch	ros	can	filler07
-block29	talfrado	CVC	CV	ro	nonword	mismatch	ros	tal	filler08
-block29	demonto	CV	CV	ro	nonword	match	ros	dem	filler09
-block30	rosvailla	CVC	CV	ro	nonword	mismatch	ros	ros	critical
-block30	tidioma	CV	CV	ro	nonword	match	ros	tid	filler01
-block30	cinsecho	CVC	CV	ro	nonword	mismatch	ros	cin	filler02
-block30	bimena	CV	CV	ro	nonword	match	ros	bim	filler03
-block30	lectorio	CVC	CV	ro	nonword	mismatch	ros	lec	filler04
-block30	denfiña	CVC	CV	ro	nonword	mismatch	ros	den	filler05
-block30	fimallo	CV	CV	ro	nonword	match	ros	fim	filler06
-block30	canreza	CVC	CV	ro	nonword	mismatch	ros	can	filler07
-block30	naduta	CV	CV	ro	nonword	match	ros	nad	filler08
-block30	demonto	CV	CV	ro	nonword	match	ros	dem	filler09
-block31	rosepio	CV	CVC	ros	nonword	mismatch	ros	ros	critical
-block31	divona	CV	CVC	ros	nonword	mismatch	ros	div	filler01
-block31	mipcura	CVC	CVC	ros	nonword	match	ros	mip	filler02
-block31	fivalia	CV	CVC	ros	nonword	mismatch	ros	fiv	filler03
-block31	baldeblo	CVC	CVC	ros	nonword	match	ros	bal	filler04
-block31	venetlo	CV	CVC	ros	nonword	mismatch	ros	ven	filler05
-block31	funclera	CVC	CVC	ros	nonword	match	ros	fun	filler06
-block31	mifena	CV	CVC	ros	nonword	mismatch	ros	mif	filler07
-block31	ventoble	CVC	CVC	ros	nonword	match	ros	ven	filler08
-block31	tenvila	CVC	CVC	ros	nonword	match	ros	ten	filler09
-block32	rosvailla	CVC	CVC	ros	nonword	match	ros	ros	critical
-block32	divona	CV	CVC	ros	nonword	mismatch	ros	div	filler01
-block32	mipcura	CVC	CVC	ros	nonword	match	ros	mip	filler02
-block32	fivalia	CV	CVC	ros	nonword	mismatch	ros	fiv	filler03
-block32	baldeblo	CVC	CVC	ros	nonword	match	ros	bal	filler04
-block32	venetlo	CV	CVC	ros	nonword	mismatch	ros	ven	filler05
-block32	bitiala	CV	CVC	ros	nonword	mismatch	ros	bit	filler06
-block32	mifena	CV	CVC	ros	nonword	mismatch	ros	mif	filler07
-block32	ventoble	CVC	CVC	ros	nonword	match	ros	ven	filler08
-block32	tenvila	CVC	CVC	ros	nonword	match	ros	ten	filler09
-block33	camisa	CV	CV	ca	word	match	cam	cam	critical
-block33	porfía	CVC	CV	ca	word	mismatch	cam	por	filler01
-block33	rendija	CVC	CV	ca	word	mismatch	cam	ren	filler02
-block33	soborno	CV	CV	ca	word	match	cam	sob	filler03
-block33	fondillo	CVC	CV	ca	word	mismatch	cam	fon	filler04
-block33	felpudo	CVC	CV	ca	word	mismatch	cam	fel	filler05
-block33	suspenso	CVC	CV	ca	word	mismatch	cam	sus	filler06
-block33	topacio	CV	CV	ca	word	match	cam	top	filler07
-block33	ribazo	CV	CV	ca	word	match	cam	rib	filler08
-block33	pitillo	CV	CV	ca	word	match	cam	pit	filler09
-block34	camisa	CV	CVC	cam	word	mismatch	cam	cam	critical
-block34	ponencia	CV	CVC	cam	word	mismatch	cam	pon	filler01
-block34	sordera	CVC	CVC	cam	word	match	cam	sor	filler02
-block34	doncella	CVC	CVC	cam	word	match	cam	don	filler03
-block34	nevera	CV	CVC	cam	word	mismatch	cam	nev	filler04
-block34	ventisca	CVC	CVC	cam	word	match	cam	ven	filler05
-block34	pintura	CVC	CVC	cam	word	match	cam	pin	filler06
-block34	perfidia	CVC	CVC	cam	word	match	cam	per	filler07
-block34	tijera	CV	CVC	cam	word	mismatch	cam	tij	filler08
-block34	fogata	CV	CVC	cam	word	mismatch	cam	fog	filler09
-block35	campana	CVC	CV	ca	word	mismatch	cam	cam	critical
-block35	porfía	CVC	CV	ca	word	mismatch	cam	por	filler01
-block35	ternera	CVC	CV	ca	word	mismatch	cam	ter	filler02
-block35	poniente	CV	CV	ca	word	match	cam	pon	filler03
-block35	ponencia	CV	CV	ca	word	match	cam	pon	filler04
-block35	felpudo	CVC	CV	ca	word	mismatch	cam	fel	filler05
-block35	suspenso	CVC	CV	ca	word	mismatch	cam	sus	filler06
-block35	topacio	CV	CV	ca	word	match	cam	top	filler07
-block35	ribazo	CV	CV	ca	word	match	cam	rib	filler08
-block35	noviazgo	CV	CV	ca	word	match	cam	nov	filler09
-block36	campana	CVC	CVC	cam	word	match	cam	cam	critical
-block36	fondillo	CVC	CVC	cam	word	match	cam	fon	filler01
-block36	sordera	CVC	CVC	cam	word	match	cam	sor	filler02
-block36	percance	CVC	CVC	cam	word	match	cam	per	filler03
-block36	rivera	CV	CVC	cam	word	mismatch	cam	riv	filler04
-block36	pinchazo	CVC	CVC	cam	word	match	cam	pin	filler05
-block36	renombre	CV	CVC	cam	word	mismatch	cam	ren	filler06
-block36	regazo	CV	CVC	cam	word	mismatch	cam	reg	filler07
-block36	regato	CV	CVC	cam	word	mismatch	cam	reg	filler08
-block36	pureza	CV	CVC	cam	word	mismatch	cam	pur	filler09
-block37	camofa	CV	CV	ca	nonword	match	cam	cam	critical
-block37	depite	CV	CV	ca	nonword	match	cam	dep	filler01
-block37	neteno	CV	CV	ca	nonword	match	cam	net	filler02
-block37	nenedo	CV	CV	ca	nonword	match	cam	nen	filler03
-block37	dedioro	CV	CV	ca	nonword	match	cam	ded	filler04
-block37	sobvondo	CVC	CV	ca	nonword	mismatch	cam	sob	filler05
-block37	tunruja	CVC	CV	ca	nonword	mismatch	cam	tun	filler06
-block37	sunsanso	CVC	CV	ca	nonword	mismatch	cam	sun	filler07
-block37	sutmido	CVC	CV	ca	nonword	mismatch	cam	sut	filler08
-block37	fuztancia	CVC	CV	ca	nonword	mismatch	cam	fuz	filler09
-block38	camofa	CV	CVC	cam	nonword	mismatch	cam	cam	critical
-block38	devillo	CV	CVC	cam	nonword	mismatch	cam	dev	filler01
-block38	nencida	CVC	CVC	cam	nonword	match	cam	nen	filler02
-block38	pirijuo	CV	CVC	cam	nonword	mismatch	cam	pir	filler03
-block38	bercillo	CVC	CVC	cam	nonword	match	cam	ber	filler04
-block38	penvalla	CVC	CVC	cam	nonword	match	cam	pen	filler05
-block38	voltura	CVC	CVC	cam	nonword	match	cam	vol	filler06
-block38	foscillo	CVC	CVC	cam	nonword	match	cam	fos	filler07
-block38	febago	CV	CVC	cam	nonword	mismatch	cam	feb	filler08
-block38	lercuente	CVC	CVC	cam	nonword	match	cam	ler	filler09
-block39	cambena	CVC	CV	ca	nonword	mismatch	cam	cam	critical
-block39	depite	CV	CV	ca	nonword	match	cam	dep	filler01
-block39	neteno	CV	CV	ca	nonword	match	cam	net	filler02
-block39	nenedo	CV	CV	ca	nonword	match	cam	nen	filler03
-block39	dedioro	CV	CV	ca	nonword	match	cam	ded	filler04
-block39	sobvondo	CVC	CV	ca	nonword	mismatch	cam	sob	filler05
-block39	tunruja	CVC	CV	ca	nonword	mismatch	cam	tun	filler06
-block39	sunsanso	CVC	CV	ca	nonword	mismatch	cam	sun	filler07
-block39	sutmido	CVC	CV	ca	nonword	mismatch	cam	sut	filler08
-block39	tituila	CV	CV	ca	nonword	match	cam	tit	filler09
-block40	cambena	CVC	CVC	cam	nonword	match	cam	cam	critical
-block40	devillo	CV	CVC	cam	nonword	mismatch	cam	dev	filler01
-block40	nencida	CVC	CVC	cam	nonword	match	cam	nen	filler02
-block40	pirijuo	CV	CVC	cam	nonword	mismatch	cam	pir	filler03
-block40	bercillo	CVC	CVC	cam	nonword	match	cam	ber	filler04
-block40	penvalla	CVC	CVC	cam	nonword	match	cam	pen	filler05
-block40	voltura	CVC	CVC	cam	nonword	match	cam	vol	filler06
-block40	dilisia	CV	CVC	cam	nonword	mismatch	cam	dil	filler07
-block40	febago	CV	CVC	cam	nonword	mismatch	cam	feb	filler08
-block40	lercuente	CVC	CVC	cam	nonword	match	cam	ler	filler09
-block41	culebra	CV	CV	cu	word	match	cul	cul	critical
-block41	pintura	CVC	CV	cu	word	mismatch	cul	pin	filler01
-block41	sarmiento	CVC	CV	cu	word	mismatch	cul	sar	filler02
-block41	verdura	CVC	CV	cu	word	mismatch	cul	ver	filler03
-block41	tobillo	CV	CV	cu	word	match	cul	tob	filler04
-block41	vertiente	CVC	CV	cu	word	mismatch	cul	ver	filler05
-block41	tarjeta	CVC	CV	cu	word	mismatch	cul	tar	filler06
-block41	fijeza	CV	CV	cu	word	match	cul	fij	filler07
-block41	tesoro	CV	CV	cu	word	match	cul	tes	filler08
-block41	teniente	CV	CV	cu	word	match	cul	ten	filler09
-block42	culebra	CV	CVC	cul	word	mismatch	cul	cul	critical
-block42	zarzuela	CVC	CVC	cul	word	match	cul	zar	filler01
-block42	perchero	CVC	CVC	cul	word	match	cul	per	filler02
-block42	perfidia	CVC	CVC	cul	word	match	cul	per	filler03
-block42	persiana	CVC	CVC	cul	word	match	cul	per	filler04
-block42	barbilla	CVC	CVC	cul	word	match	cul	bar	filler05
-block42	viraje	CV	CVC	cul	word	mismatch	cul	vir	filler06
-block42	redada	CV	CVC	cul	word	mismatch	cul	red	filler07
-block42	naranjo	CV	CVC	cul	word	mismatch	cul	nar	filler08
-block42	navaja	CV	CVC	cul	word	mismatch	cul	nav	filler09
-block43	culpable	CVC	CV	cu	word	mismatch	cul	cul	critical
-block43	pimiento	CV	CV	cu	word	match	cul	pim	filler01
-block43	sarmiento	CVC	CV	cu	word	mismatch	cul	sar	filler02
-block43	verdura	CVC	CV	cu	word	mismatch	cul	ver	filler03
-block43	tobillo	CV	CV	cu	word	match	cul	tob	filler04
-block43	vertiente	CVC	CV	cu	word	mismatch	cul	ver	filler05
-block43	tarjeta	CVC	CV	cu	word	mismatch	cul	tar	filler06
-block43	fijeza	CV	CV	cu	word	match	cul	fij	filler07
-block43	tesoro	CV	CV	cu	word	match	cul	tes	filler08
-block43	teniente	CV	CV	cu	word	match	cul	ten	filler09
-block44	culpable	CVC	CVC	cul	word	match	cul	cul	critical
-block44	zarzuela	CVC	CVC	cul	word	match	cul	zar	filler01
-block44	perchero	CVC	CVC	cul	word	match	cul	per	filler02
-block44	nevera	CV	CVC	cul	word	mismatch	cul	nev	filler03
-block44	persiana	CVC	CVC	cul	word	match	cul	per	filler04
-block44	barbilla	CVC	CVC	cul	word	match	cul	bar	filler05
-block44	viraje	CV	CVC	cul	word	mismatch	cul	vir	filler06
-block44	redada	CV	CVC	cul	word	mismatch	cul	red	filler07
-block44	naranjo	CV	CVC	cul	word	mismatch	cul	nar	filler08
-block44	navaja	CV	CVC	cul	word	mismatch	cul	nav	filler09
-block45	culitra	CV	CV	cu	nonword	match	cul	cul	critical
-block45	nesedo	CV	CV	cu	nonword	match	cul	nes	filler01
-block45	dosgiente	CVC	CV	cu	nonword	mismatch	cul	dos	filler02
-block45	varime	CV	CV	cu	nonword	match	cul	var	filler03
-block45	fantarna	CVC	CV	cu	nonword	mismatch	cul	fan	filler04
-block45	norita	CV	CV	cu	nonword	match	cul	nor	filler05
-block45	permaza	CVC	CV	cu	nonword	mismatch	cul	per	filler06
-block45	dipona	CV	CV	cu	nonword	match	cul	dip	filler07
-block45	fangurdo	CVC	CV	cu	nonword	mismatch	cul	fan	filler08
-block45	manvera	CVC	CV	cu	nonword	mismatch	cul	man	filler09
-block46	culseble	CVC	CVC	cul	nonword	match	cul	cul	critical
-block46	nesedo	CV	CVC	cul	nonword	mismatch	cul	nes	filler01
-block46	deñalla	CV	CVC	cul	nonword	mismatch	cul	deñ	filler02
-block46	varime	CV	CVC	cul	nonword	mismatch	cul	var	filler03
-block46	fantarna	CVC	CVC	cul	nonword	match	cul	fan	filler04
-block46	norita	CV	CVC	cul	nonword	mismatch	cul	nor	filler05
-block46	permaza	CVC	CVC	cul	nonword	match	cul	per	filler06
-block46	dipona	CV	CVC	cul	nonword	mismatch	cul	dip	filler07
-block46	fangurdo	CVC	CVC	cul	nonword	match	cul	fan	filler08
-block46	manvera	CVC	CVC	cul	nonword	match	cul	man	filler09
-block47	culitra	CV	CV	cu	nonword	match	cul	cul	critical
-block47	deñalla	CV	CV	cu	nonword	match	cul	deñ	filler01
-block47	tidencio	CV	CV	cu	nonword	match	cul	tid	filler02
-block47	banfalla	CVC	CV	cu	nonword	mismatch	cul	ban	filler03
-block47	sitena	CV	CV	cu	nonword	match	cul	sit	filler04
-block47	senrera	CVC	CV	cu	nonword	mismatch	cul	sen	filler05
-block47	bitena	CV	CV	cu	nonword	match	cul	bit	filler06
-block47	torsenza	CVC	CV	cu	nonword	mismatch	cul	tor	filler07
-block47	tarbenga	CVC	CV	cu	nonword	mismatch	cul	tar	filler08
-block47	nastallo	CVC	CV	cu	nonword	mismatch	cul	nas	filler09
-block48	culseble	CVC	CVC	cul	nonword	match	cul	cul	critical
-block48	dosgiente	CVC	CVC	cul	nonword	match	cul	dos	filler01
-block48	tidencio	CV	CVC	cul	nonword	mismatch	cul	tid	filler02
-block48	banfalla	CVC	CVC	cul	nonword	match	cul	ban	filler03
-block48	sitena	CV	CVC	cul	nonword	mismatch	cul	sit	filler04
-block48	senrera	CVC	CVC	cul	nonword	match	cul	sen	filler05
-block48	bitena	CV	CVC	cul	nonword	mismatch	cul	bit	filler06
-block48	torsenza	CVC	CVC	cul	nonword	match	cul	tor	filler07
-block48	midena	CV	CVC	cul	nonword	mismatch	cul	mid	filler08
-block48	gifema	CV	CVC	cul	nonword	mismatch	cul	gif	filler09
-block49	moneda	CV	CV	mo	word	match	mon	mon	critical
-block49	submundo	CVC	CV	mo	word	mismatch	mon	sub	filler01
-block49	laxante	CV	CV	mo	word	match	mon	lax	filler02
-block49	vislumbre	CVC	CV	mo	word	mismatch	mon	vis	filler03
-block49	salchicha	CVC	CV	mo	word	mismatch	mon	sal	filler04
-block49	lectura	CVC	CV	mo	word	mismatch	mon	lec	filler05
-block49	cigarro	CV	CV	mo	word	match	mon	cig	filler06
-block49	resabio	CV	CV	mo	word	match	mon	res	filler07
-block49	rapiña	CV	CV	mo	word	match	mon	rap	filler08
-block49	barbecho	CVC	CV	mo	word	mismatch	mon	bar	filler09
-block50	moneda	CV	CVC	mon	word	mismatch	mon	mon	critical
-block50	tesina	CV	CVC	mon	word	mismatch	mon	tes	filler01
-block50	bufete	CV	CVC	mon	word	mismatch	mon	buf	filler02
-block50	deltoides	CVC	CVC	mon	word	match	mon	del	filler03
-block50	talante	CV	CVC	mon	word	mismatch	mon	tal	filler04
-block50	rabillo	CV	CVC	mon	word	mismatch	mon	rab	filler05
-block50	farsante	CVC	CVC	mon	word	match	mon	far	filler06
-block50	cordura	CVC	CVC	mon	word	match	mon	cor	filler07
-block50	captura	CVC	CVC	mon	word	match	mon	cap	filler08
-block50	tardanza	CVC	CVC	mon	word	match	mon	tar	filler09
-block51	montaña	CVC	CV	mo	word	mismatch	mon	mon	critical
-block51	submundo	CVC	CV	mo	word	mismatch	mon	sub	filler01
-block51	laxante	CV	CV	mo	word	match	mon	lax	filler02
-block51	vislumbre	CVC	CV	mo	word	mismatch	mon	vis	filler03
-block51	salchicha	CVC	CV	mo	word	mismatch	mon	sal	filler04
-block51	lectura	CVC	CV	mo	word	mismatch	mon	lec	filler05
-block51	tufillo	CV	CV	mo	word	match	mon	tuf	filler06
-block51	resabio	CV	CV	mo	word	match	mon	res	filler07
-block51	rapiña	CV	CV	mo	word	match	mon	rap	filler08
-block51	tesina	CV	CV	mo	word	match	mon	tes	filler09
-block52	montaña	CVC	CVC	mon	word	match	mon	mon	critical
-block52	barbecho	CVC	CVC	mon	word	match	mon	bar	filler01
-block52	bufete	CV	CVC	mon	word	mismatch	mon	buf	filler02
-block52	deltoides	CVC	CVC	mon	word	match	mon	del	filler03
-block52	batuta	CV	CVC	mon	word	mismatch	mon	bat	filler04
-block52	rabillo	CV	CVC	mon	word	mismatch	mon	rab	filler05
-block52	vaquilla	CV	CVC	mon	word	mismatch	mon	vaq	filler06
-block52	piropo	CV	CVC	mon	word	mismatch	mon	pir	filler07
-block52	gorjeo	CVC	CVC	mon	word	match	mon	gor	filler08
-block52	balbina	CVC	CVC	mon	word	match	mon	bal	filler09
-block53	moniga	CV	CV	mo	nonword	match	mon	mon	critical
-block53	hicuila	CV	CV	mo	nonword	match	mon	hic	filler01
-block53	lisnombre	CVC	CV	mo	nonword	mismatch	mon	lis	filler02
-block53	tecillo	CV	CV	mo	nonword	match	mon	tec	filler03
-block53	pargaza	CVC	CV	mo	nonword	mismatch	mon	par	filler04
-block53	tipallo	CV	CV	mo	nonword	match	mon	tip	filler05
-block53	fernuera	CVC	CV	mo	nonword	mismatch	mon	fer	filler06
-block53	rucilla	CV	CV	mo	nonword	match	mon	ruc	filler07
-block53	viltancia	CVC	CV	mo	nonword	mismatch	mon	vil	filler08
-block53	zuccancia	CVC	CV	mo	nonword	mismatch	mon	zuc	filler09
-block54	moniga	CV	CVC	mon	nonword	mismatch	mon	mon	critical
-block54	parvaza	CVC	CVC	mon	nonword	match	mon	par	filler01
-block54	bascana	CVC	CVC	mon	nonword	match	mon	bas	filler02
-block54	ternura	CVC	CVC	mon	nonword	match	mon	ter	filler03
-block54	tarsallo	CVC	CVC	mon	nonword	match	mon	tar	filler04
-block54	serpiente	CVC	CVC	mon	nonword	match	mon	ser	filler05
-block54	reducto	CV	CVC	mon	nonword	mismatch	mon	red	filler06
-block54	tarima	CV	CVC	mon	nonword	mismatch	mon	tar	filler07
-block54	recado	CV	CVC	mon	nonword	mismatch	mon	rec	filler08
-block54	sepulcro	CV	CVC	mon	nonword	mismatch	mon	sep	filler09
-block55	monseña	CVC	CV	mo	nonword	mismatch	mon	mon	critical
-block55	hicuila	CV	CV	mo	nonword	match	mon	hic	filler01
-block55	lisnombre	CVC	CV	mo	nonword	mismatch	mon	lis	filler02
-block55	tecillo	CV	CV	mo	nonword	match	mon	tec	filler03
-block55	pargaza	CVC	CV	mo	nonword	mismatch	mon	par	filler04
-block55	tipallo	CV	CV	mo	nonword	match	mon	tip	filler05
-block55	fernuera	CVC	CV	mo	nonword	mismatch	mon	fer	filler06
-block55	rucilla	CV	CV	mo	nonword	match	mon	ruc	filler07
-block55	viltancia	CVC	CV	mo	nonword	mismatch	mon	vil	filler08
-block55	sabiba	CV	CV	mo	nonword	match	mon	sab	filler09
-block56	monseña	CVC	CVC	mon	nonword	match	mon	mon	critical
-block56	parvaza	CVC	CVC	mon	nonword	match	mon	par	filler01
-block56	recinto	CV	CVC	mon	nonword	mismatch	mon	rec	filler02
-block56	ternura	CVC	CVC	mon	nonword	match	mon	ter	filler03
-block56	tarsallo	CVC	CVC	mon	nonword	match	mon	tar	filler04
-block56	serpiente	CVC	CVC	mon	nonword	match	mon	ser	filler05
-block56	reducto	CV	CVC	mon	nonword	mismatch	mon	red	filler06
-block56	tarima	CV	CVC	mon	nonword	mismatch	mon	tar	filler07
-block56	recado	CV	CVC	mon	nonword	mismatch	mon	rec	filler08
-block56	sepulcro	CV	CVC	mon	nonword	mismatch	mon	sep	filler09
-block57	paloma	CV	CV	pa	word	match	pal	pal	critical
-block57	gorguera	CVC	CV	pa	word	mismatch	pal	gor	filler01
-block57	gorjeo	CVC	CV	pa	word	mismatch	pal	gor	filler02
-block57	conducta	CVC	CV	pa	word	mismatch	pal	con	filler03
-block57	vivero	CV	CV	pa	word	match	pal	viv	filler04
-block57	fortuna	CVC	CV	pa	word	mismatch	pal	for	filler05
-block57	cornada	CVC	CV	pa	word	mismatch	pal	cor	filler06
-block57	regata	CV	CV	pa	word	match	pal	reg	filler07
-block57	cigarra	CV	CV	pa	word	match	pal	cig	filler08
-block57	giralda	CV	CV	pa	word	match	pal	gir	filler09
-block58	paloma	CV	CVC	pal	word	mismatch	pal	pal	critical
-block58	certeza	CVC	CVC	pal	word	match	pal	cer	filler01
-block58	cordero	CVC	CVC	pal	word	match	pal	cor	filler02
-block58	cordura	CVC	CVC	pal	word	match	pal	cor	filler03
-block58	mordaza	CVC	CVC	pal	word	match	pal	mor	filler04
-block58	mordisco	CVC	CVC	pal	word	match	pal	mor	filler05
-block58	reguero	CV	CVC	pal	word	mismatch	pal	reg	filler06
-block58	rudeza	CV	CVC	pal	word	mismatch	pal	rud	filler07
-block58	gomina	CV	CVC	pal	word	mismatch	pal	gom	filler08
-block58	ciruelo	CV	CVC	pal	word	mismatch	pal	cir	filler09
-block59	palmera	CVC	CV	pa	word	mismatch	pal	pal	critical
-block59	gorguera	CVC	CV	pa	word	mismatch	pal	gor	filler01
-block59	tijera	CV	CV	pa	word	match	pal	tij	filler02
-block59	conducta	CVC	CV	pa	word	mismatch	pal	con	filler03
-block59	vivero	CV	CV	pa	word	match	pal	viv	filler04
-block59	fortuna	CVC	CV	pa	word	mismatch	pal	for	filler05
-block59	cornada	CVC	CV	pa	word	mismatch	pal	cor	filler06
-block59	regata	CV	CV	pa	word	match	pal	reg	filler07
-block59	cigarra	CV	CV	pa	word	match	pal	cig	filler08
-block59	giralda	CV	CV	pa	word	match	pal	gir	filler09
-block60	palmera	CVC	CVC	pal	word	match	pal	pal	critical
-block60	certeza	CVC	CVC	pal	word	match	pal	cer	filler01
-block60	cordero	CVC	CVC	pal	word	match	pal	cor	filler02
-block60	fogata	CV	CVC	pal	word	mismatch	pal	fog	filler03
-block60	mordaza	CVC	CVC	pal	word	match	pal	mor	filler04
-block60	mordisco	CVC	CVC	pal	word	match	pal	mor	filler05
-block60	reguero	CV	CVC	pal	word	mismatch	pal	reg	filler06
-block60	rudeza	CV	CVC	pal	word	mismatch	pal	rud	filler07
-block60	gomina	CV	CVC	pal	word	mismatch	pal	gom	filler08
-block60	ciruelo	CV	CVC	pal	word	mismatch	pal	cir	filler09
-block61	palura	CV	CV	pa	nonword	match	pal	pal	critical
-block61	ricofo	CV	CV	pa	nonword	match	pal	ric	filler01
-block61	rartanto	CVC	CV	pa	nonword	mismatch	pal	rar	filler02
-block61	vifema	CV	CV	pa	nonword	match	pal	vif	filler03
-block61	nundero	CVC	CV	pa	nonword	mismatch	pal	nun	filler04
-block61	recoltre	CV	CV	pa	nonword	match	pal	rec	filler05
-block61	tecterio	CVC	CV	pa	nonword	mismatch	pal	tec	filler06
-block61	canfleco	CVC	CV	pa	nonword	mismatch	pal	can	filler07
-block61	nidero	CV	CV	pa	nonword	match	pal	nid	filler08
-block61	vinsenza	CVC	CV	pa	nonword	mismatch	pal	vin	filler09
-block62	palbira	CVC	CVC	pal	nonword	match	pal	pal	critical
-block62	ricofo	CV	CVC	pal	nonword	mismatch	pal	ric	filler01
-block62	rartanto	CVC	CVC	pal	nonword	match	pal	rar	filler02
-block62	vifema	CV	CVC	pal	nonword	mismatch	pal	vif	filler03
-block62	nundero	CVC	CVC	pal	nonword	match	pal	nun	filler04
-block62	recoltre	CV	CVC	pal	nonword	mismatch	pal	rec	filler05
-block62	tecterio	CVC	CVC	pal	nonword	match	pal	tec	filler06
-block62	canfleco	CVC	CVC	pal	nonword	match	pal	can	filler07
-block62	nidero	CV	CVC	pal	nonword	mismatch	pal	nid	filler08
-block62	bitero	CV	CVC	pal	nonword	mismatch	pal	bit	filler09
-block63	palbira	CVC	CV	pa	nonword	mismatch	pal	pal	critical
-block63	vinsenza	CVC	CV	pa	nonword	mismatch	pal	vin	filler01
-block63	tudala	CV	CV	pa	nonword	match	pal	tud	filler02
-block63	fivancia	CV	CV	pa	nonword	match	pal	fiv	filler03
-block63	turquma	CVC	CV	pa	nonword	mismatch	pal	tur	filler04
-block63	ruspina	CVC	CV	pa	nonword	mismatch	pal	rus	filler05
-block63	detnana	CVC	CV	pa	nonword	mismatch	pal	det	filler06
-block63	tifencio	CV	CV	pa	nonword	match	pal	tif	filler07
-block63	ciroca	CV	CV	pa	nonword	match	pal	cir	filler08
-block63	tocensia	CV	CV	pa	nonword	match	pal	toc	filler09
-block64	palura	CV	CVC	pal	nonword	mismatch	pal	pal	critical
-block64	bitero	CV	CVC	pal	nonword	mismatch	pal	bit	filler01
-block64	tudala	CV	CVC	pal	nonword	mismatch	pal	tud	filler02
-block64	fivancia	CV	CVC	pal	nonword	mismatch	pal	fiv	filler03
-block64	turquma	CVC	CVC	pal	nonword	match	pal	tur	filler04
-block64	ruspina	CVC	CVC	pal	nonword	match	pal	rus	filler05
-block64	detnana	CVC	CVC	pal	nonword	match	pal	det	filler06
-block64	tifencio	CV	CVC	pal	nonword	mismatch	pal	tif	filler07
-block64	zurdado	CVC	CVC	pal	nonword	match	pal	zur	filler08
-block64	sisluño	CVC	CVC	pal	nonword	match	pal	sis	filler09
+%block01	balada	CV	CV	ba	word	match	bal	bal	critical
+%block01	rendija	CVC	CV	ba	word	mismatch	bal	ren	filler01
+%block01	tortuga	CVC	CV	ba	word	mismatch	bal	tor	filler02
+%block01	semilla	CV	CV	ba	word	match	bal	sem	filler03
+%block01	torpeza	CVC	CV	ba	word	mismatch	bal	tor	filler04
+%block01	sortija	CVC	CV	ba	word	mismatch	bal	sor	filler05
+%block01	tersura	CVC	CV	ba	word	mismatch	bal	ter	filler06
+%block01	picota	CV	CV	ba	word	match	bal	pic	filler07
+%block01	sotana	CV	CV	ba	word	match	bal	sot	filler08
+%block01	sonido	CV	CV	ba	word	match	bal	son	filler09
+%block02	baldosa	CVC	CV	ba	word	mismatch	bal	bal	critical
+%block02	renombre	CV	CV	ba	word	match	bal	ren	filler01
+%block02	tortuga	CVC	CV	ba	word	mismatch	bal	tor	filler02
+%block02	semilla	CV	CV	ba	word	match	bal	sem	filler03
+%block02	torpeza	CVC	CV	ba	word	mismatch	bal	tor	filler04
+%block02	sortija	CVC	CV	ba	word	mismatch	bal	sor	filler05
+%block02	tersura	CVC	CV	ba	word	mismatch	bal	ter	filler06
+%block02	picota	CV	CV	ba	word	match	bal	pic	filler07
+%block02	sotana	CV	CV	ba	word	match	bal	sot	filler08
+%block02	sonido	CV	CV	ba	word	match	bal	son	filler09
+%block03	balada	CV	CVC	bal	word	mismatch	bal	bal	critical
+%block03	punzada	CVC	CVC	bal	word	match	bal	pun	filler01
+%block03	mortaja	CVC	CVC	bal	word	match	bal	mor	filler02
+%block03	puntilla	CVC	CVC	bal	word	match	bal	pun	filler03
+%block03	vergüenza	CVC	CVC	bal	word	match	bal	ver	filler04
+%block03	vendaje	CVC	CVC	bal	word	match	bal	ven	filler05
+%block03	remanso	CV	CVC	bal	word	mismatch	bal	rem	filler06
+%block03	recodo	CV	CVC	bal	word	mismatch	bal	rec	filler07
+%block03	rimero	CV	CVC	bal	word	mismatch	bal	rim	filler08
+%block03	fineza	CV	CVC	bal	word	mismatch	bal	fin	filler09
+%block04	baldosa	CVC	CVC	bal	word	match	bal	bal	critical
+%block04	punzada	CVC	CVC	bal	word	match	bal	pun	filler01
+%block04	mortaja	CVC	CVC	bal	word	match	bal	mor	filler02
+%block04	puntilla	CVC	CVC	bal	word	match	bal	pun	filler03
+%block04	vergüenza	CVC	CVC	bal	word	match	bal	ver	filler04
+%block04	vendaje	CVC	CVC	bal	word	match	bal	ven	filler05
+%block04	remanso	CV	CVC	bal	word	mismatch	bal	rem	filler06
+%block04	recodo	CV	CVC	bal	word	mismatch	bal	rec	filler07
+%block04	rimero	CV	CVC	bal	word	mismatch	bal	rim	filler08
+%block04	fineza	CV	CVC	bal	word	mismatch	bal	fin	filler09
+%block05	balega	CV	CV	ba	nonword	match	bal	bal	critical
+%block05	soponso	CV	CV	ba	nonword	match	bal	sop	filler01
+%block05	zictencia	CVC	CV	ba	nonword	mismatch	bal	zic	filler02
+%block05	turjuma	CVC	CV	ba	nonword	mismatch	bal	tur	filler03
+%block05	cuntefa	CVC	CV	ba	nonword	mismatch	bal	cun	filler04
+%block05	cicaigo	CV	CV	ba	nonword	match	bal	cic	filler05
+%block05	soreto	CV	CV	ba	nonword	match	bal	sor	filler06
+%block05	dosbiente	CVC	CV	ba	nonword	mismatch	bal	dos	filler07
+%block05	fontama	CVC	CV	ba	nonword	mismatch	bal	fon	filler08
+%block05	decibio	CV	CV	ba	nonword	match	bal	dec	filler09
+%block06	balbusa	CVC	CV	ba	nonword	mismatch	bal	bal	critical
+%block06	soponso	CV	CV	ba	nonword	match	bal	sop	filler01
+%block06	zictencia	CVC	CV	ba	nonword	mismatch	bal	zic	filler02
+%block06	ruñansa	CV	CV	ba	nonword	match	bal	ruñ	filler03
+%block06	cuntefa	CVC	CV	ba	nonword	mismatch	bal	cun	filler04
+%block06	cicaigo	CV	CV	ba	nonword	match	bal	cic	filler05
+%block06	soreto	CV	CV	ba	nonword	match	bal	sor	filler06
+%block06	dosbiente	CVC	CV	ba	nonword	mismatch	bal	dos	filler07
+%block06	fontama	CVC	CV	ba	nonword	mismatch	bal	fon	filler08
+%block06	decibio	CV	CV	ba	nonword	match	bal	dec	filler09
+%block07	balega	CV	CVC	bal	nonword	mismatch	bal	bal	critical
+%block07	denciña	CVC	CVC	bal	nonword	match	bal	den	filler01
+%block07	cecaja	CV	CVC	bal	nonword	mismatch	bal	cec	filler02
+%block07	vestolcio	CVC	CVC	bal	nonword	match	bal	ves	filler03
+%block07	cicora	CV	CVC	bal	nonword	mismatch	bal	cic	filler04
+%block07	sinvera	CVC	CVC	bal	nonword	match	bal	sin	filler05
+%block07	simedo	CV	CVC	bal	nonword	mismatch	bal	sim	filler06
+%block07	donania	CV	CVC	bal	nonword	mismatch	bal	don	filler07
+%block07	vinterca	CVC	CVC	bal	nonword	match	bal	vin	filler08
+%block07	cencera	CVC	CVC	bal	nonword	match	bal	cen	filler09
+%block08	balbusa	CVC	CVC	bal	nonword	match	bal	bal	critical
+%block08	denciña	CVC	CVC	bal	nonword	match	bal	den	filler01
+%block08	cecaja	CV	CVC	bal	nonword	mismatch	bal	cec	filler02
+%block08	vestolcio	CVC	CVC	bal	nonword	match	bal	ves	filler03
+%block08	cicora	CV	CVC	bal	nonword	mismatch	bal	cic	filler04
+%block08	sinvera	CVC	CVC	bal	nonword	match	bal	sin	filler05
+%block08	simedo	CV	CVC	bal	nonword	mismatch	bal	sim	filler06
+%block08	donania	CV	CVC	bal	nonword	mismatch	bal	don	filler07
+%block08	vobita	CV	CVC	bal	nonword	mismatch	bal	vob	filler08
+%block08	cencera	CVC	CVC	bal	nonword	match	bal	cen	filler09
+%block09	linaje	CV	CV	li	word	match	lin	lin	critical
+%block09	tartana	CVC	CV	li	word	mismatch	lin	tar	filler01
+%block09	portazo	CVC	CV	li	word	mismatch	lin	por	filler02
+%block09	vereda	CV	CV	li	word	match	lin	ver	filler03
+%block09	zarpazo	CVC	CV	li	word	mismatch	lin	zar	filler04
+%block09	jasmina	CVC	CV	li	word	mismatch	lin	jas	filler05
+%block09	captura	CVC	CV	li	word	mismatch	lin	cap	filler06
+%block09	recurso	CV	CV	li	word	match	lin	rec	filler07
+%block09	tocino	CV	CV	li	word	match	lin	toc	filler08
+%block09	dureza	CV	CV	li	word	match	lin	dur	filler09
+%block10	linterna	CVC	CV	li	word	mismatch	lin	lin	critical
+%block10	tartana	CVC	CV	li	word	mismatch	lin	tar	filler01
+%block10	portazo	CVC	CV	li	word	mismatch	lin	por	filler02
+%block10	vereda	CV	CV	li	word	match	lin	ver	filler03
+%block10	zarpazo	CVC	CV	li	word	mismatch	lin	zar	filler04
+%block10	jasmina	CVC	CV	li	word	mismatch	lin	jas	filler05
+%block10	regazo	CV	CV	li	word	match	lin	reg	filler06
+%block10	recurso	CV	CV	li	word	match	lin	rec	filler07
+%block10	tocino	CV	CV	li	word	match	lin	toc	filler08
+%block10	dureza	CV	CV	li	word	match	lin	dur	filler09
+%block11	linaje	CV	CVC	lin	word	mismatch	lin	lin	critical
+%block11	portillo	CVC	CVC	lin	word	match	lin	por	filler01
+%block11	sobaco	CV	CVC	lin	word	mismatch	lin	sob	filler02
+%block11	respuesta	CVC	CVC	lin	word	match	lin	res	filler03
+%block11	garbanzo	CVC	CVC	lin	word	match	lin	gar	filler04
+%block11	corneta	CVC	CVC	lin	word	match	lin	cor	filler05
+%block11	pozuelo	CV	CVC	lin	word	mismatch	lin	poz	filler06
+%block11	barcaza	CVC	CVC	lin	word	match	lin	bar	filler07
+%block11	sureste	CV	CVC	lin	word	mismatch	lin	sur	filler08
+%block11	torija	CV	CVC	lin	word	mismatch	lin	tor	filler09
+%block12	linterna	CVC	CVC	lin	word	match	lin	lin	critical
+%block12	portillo	CVC	CVC	lin	word	match	lin	por	filler01
+%block12	sobaco	CV	CVC	lin	word	mismatch	lin	sob	filler02
+%block12	respuesta	CVC	CVC	lin	word	match	lin	res	filler03
+%block12	garbanzo	CVC	CVC	lin	word	match	lin	gar	filler04
+%block12	soborno	CV	CVC	lin	word	mismatch	lin	sob	filler05
+%block12	pozuelo	CV	CVC	lin	word	mismatch	lin	poz	filler06
+%block12	barcaza	CVC	CVC	lin	word	match	lin	bar	filler07
+%block12	sureste	CV	CVC	lin	word	mismatch	lin	sur	filler08
+%block12	torija	CV	CVC	lin	word	mismatch	lin	tor	filler09
+%block13	linele	CV	CV	li	nonword	match	lin	lin	critical
+%block13	parvida	CVC	CV	li	nonword	mismatch	lin	par	filler01
+%block13	sociare	CV	CV	li	nonword	match	lin	soc	filler02
+%block13	decanro	CV	CV	li	nonword	match	lin	dec	filler03
+%block13	taviño	CV	CV	li	nonword	match	lin	tav	filler04
+%block13	pospana	CVC	CV	li	nonword	mismatch	lin	pos	filler05
+%block13	poscallo	CVC	CV	li	nonword	mismatch	lin	pos	filler06
+%block13	tornanga	CVC	CV	li	nonword	mismatch	lin	tor	filler07
+%block13	tusorto	CV	CV	li	nonword	match	lin	tus	filler08
+%block13	tercega	CVC	CV	li	nonword	mismatch	lin	ter	filler09
+%block14	linlirna	CVC	CV	li	nonword	mismatch	lin	lin	critical
+%block14	parvida	CVC	CV	li	nonword	mismatch	lin	par	filler01
+%block14	sociare	CV	CV	li	nonword	match	lin	soc	filler02
+%block14	decanro	CV	CV	li	nonword	match	lin	dec	filler03
+%block14	taviño	CV	CV	li	nonword	match	lin	tav	filler04
+%block14	pospana	CVC	CV	li	nonword	mismatch	lin	pos	filler05
+%block14	poscallo	CVC	CV	li	nonword	mismatch	lin	pos	filler06
+%block14	gerotio	CV	CV	li	nonword	match	lin	ger	filler07
+%block14	tusorto	CV	CV	li	nonword	match	lin	tus	filler08
+%block14	tercega	CVC	CV	li	nonword	mismatch	lin	ter	filler09
+%block15	linele	CV	CVC	lin	nonword	mismatch	lin	lin	critical
+%block15	jagito	CV	CVC	lin	nonword	mismatch	lin	jag	filler01
+%block15	parsida	CVC	CVC	lin	nonword	match	lin	par	filler02
+%block15	ducoste	CV	CVC	lin	nonword	mismatch	lin	duc	filler03
+%block15	cortupto	CVC	CVC	lin	nonword	match	lin	cor	filler04
+%block15	tosaba	CV	CVC	lin	nonword	mismatch	lin	tos	filler05
+%block15	suseña	CV	CVC	lin	nonword	mismatch	lin	sus	filler06
+%block15	meptrona	CVC	CVC	lin	nonword	match	lin	mep	filler07
+%block15	deroda	CV	CVC	lin	nonword	mismatch	lin	der	filler08
+%block15	sutnido	CVC	CVC	lin	nonword	match	lin	sut	filler09
+%block16	linlirna	CVC	CVC	lin	nonword	match	lin	lin	critical
+%block16	jagito	CV	CVC	lin	nonword	mismatch	lin	jag	filler01
+%block16	parsida	CVC	CVC	lin	nonword	match	lin	par	filler02
+%block16	ducoste	CV	CVC	lin	nonword	mismatch	lin	duc	filler03
+%block16	cortupto	CVC	CVC	lin	nonword	match	lin	cor	filler04
+%block16	tosaba	CV	CVC	lin	nonword	mismatch	lin	tos	filler05
+%block16	suseña	CV	CVC	lin	nonword	mismatch	lin	sus	filler06
+%block16	meptrona	CVC	CVC	lin	nonword	match	lin	mep	filler07
+%block16	deroda	CV	CVC	lin	nonword	mismatch	lin	der	filler08
+%block16	sutnido	CVC	CVC	lin	nonword	match	lin	sut	filler09
+%block17	peseta	CV	CV	pe	word	match	pes	pes	critical
+%block17	langosta	CVC	CV	pe	word	mismatch	pes	lan	filler01
+%block17	jilguero	CVC	CV	pe	word	mismatch	pes	jil	filler02
+%block17	gordura	CVC	CV	pe	word	mismatch	pes	gor	filler03
+%block17	doncella	CVC	CV	pe	word	mismatch	pes	don	filler04
+%block17	fantoche	CVC	CV	pe	word	mismatch	pes	fan	filler05
+%block17	laguna	CV	CV	pe	word	match	pes	lag	filler06
+%block17	jacinto	CV	CV	pe	word	match	pes	jac	filler07
+%block17	duquesa	CV	CV	pe	word	match	pes	duq	filler08
+%block17	dominio	CV	CV	pe	word	match	pes	dom	filler09
+%block18	pestaña	CVC	CV	pe	word	mismatch	pes	pes	critical
+%block18	langosta	CVC	CV	pe	word	mismatch	pes	lan	filler01
+%block18	jilguero	CVC	CV	pe	word	mismatch	pes	jil	filler02
+%block18	gordura	CVC	CV	pe	word	mismatch	pes	gor	filler03
+%block18	cigarro	CV	CV	pe	word	match	pes	cig	filler04
+%block18	fantoche	CVC	CV	pe	word	mismatch	pes	fan	filler05
+%block18	laguna	CV	CV	pe	word	match	pes	lag	filler06
+%block18	jacinto	CV	CV	pe	word	match	pes	jac	filler07
+%block18	duquesa	CV	CV	pe	word	match	pes	duq	filler08
+%block18	dominio	CV	CV	pe	word	match	pes	dom	filler09
+%block19	peseta	CV	CVC	pes	word	mismatch	pes	pes	critical
+%block19	tardanza	CVC	CVC	pes	word	match	pes	tar	filler01
+%block19	tornillo	CVC	CVC	pes	word	match	pes	tor	filler02
+%block19	ruptura	CVC	CVC	pes	word	match	pes	rup	filler03
+%block19	durmiente	CVC	CVC	pes	word	match	pes	dur	filler04
+%block19	burbuja	CVC	CVC	pes	word	match	pes	bur	filler05
+%block19	viruela	CV	CVC	pes	word	mismatch	pes	vir	filler06
+%block19	lavabo	CV	CVC	pes	word	mismatch	pes	lav	filler07
+%block19	butaca	CV	CVC	pes	word	mismatch	pes	but	filler08
+%block19	ribera	CV	CVC	pes	word	mismatch	pes	rib	filler09
+%block20	pestaña	CVC	CVC	pes	word	match	pes	pes	critical
+%block20	talante	CV	CVC	pes	word	mismatch	pes	tal	filler01
+%block20	tornillo	CVC	CVC	pes	word	match	pes	tor	filler02
+%block20	ruptura	CVC	CVC	pes	word	match	pes	rup	filler03
+%block20	durmiente	CVC	CVC	pes	word	match	pes	dur	filler04
+%block20	burbuja	CVC	CVC	pes	word	match	pes	bur	filler05
+%block20	viruela	CV	CVC	pes	word	mismatch	pes	vir	filler06
+%block20	lavabo	CV	CVC	pes	word	mismatch	pes	lav	filler07
+%block20	butaca	CV	CVC	pes	word	mismatch	pes	but	filler08
+%block20	ribera	CV	CVC	pes	word	mismatch	pes	rib	filler09
+%block21	pesipa	CV	CV	pe	nonword	match	pes	pes	critical
+%block21	docado	CV	CV	pe	nonword	match	pes	doc	filler01
+%block21	normaso	CVC	CV	pe	nonword	mismatch	pes	nor	filler02
+%block21	borpanza	CVC	CV	pe	nonword	mismatch	pes	bor	filler03
+%block21	daviba	CV	CV	pe	nonword	match	pes	dav	filler04
+%block21	cabsero	CVC	CV	pe	nonword	mismatch	pes	cab	filler05
+%block21	tutmuja	CVC	CV	pe	nonword	mismatch	pes	tut	filler06
+%block21	talaja	CV	CV	pe	nonword	match	pes	tal	filler07
+%block21	gorente	CV	CV	pe	nonword	match	pes	gor	filler08
+%block21	lultame	CVC	CV	pe	nonword	mismatch	pes	lul	filler09
+%block22	pesdeña	CVC	CV	pe	nonword	mismatch	pes	pes	critical
+%block22	docado	CV	CV	pe	nonword	match	pes	doc	filler01
+%block22	normaso	CVC	CV	pe	nonword	mismatch	pes	nor	filler02
+%block22	bicera	CV	CV	pe	nonword	match	pes	bic	filler03
+%block22	daviba	CV	CV	pe	nonword	match	pes	dav	filler04
+%block22	cabsero	CVC	CV	pe	nonword	mismatch	pes	cab	filler05
+%block22	tutmuja	CVC	CV	pe	nonword	mismatch	pes	tut	filler06
+%block22	talaja	CV	CV	pe	nonword	match	pes	tal	filler07
+%block22	gorente	CV	CV	pe	nonword	match	pes	gor	filler08
+%block22	lultame	CVC	CV	pe	nonword	mismatch	pes	lul	filler09
+%block23	pesipa	CV	CVC	pes	nonword	mismatch	pes	pes	critical
+%block23	tomida	CV	CVC	pes	nonword	mismatch	pes	tom	filler01
+%block23	farime	CV	CVC	pes	nonword	mismatch	pes	far	filler02
+%block23	civillo	CV	CVC	pes	nonword	mismatch	pes	civ	filler03
+%block23	cunceza	CVC	CVC	pes	nonword	match	pes	cun	filler04
+%block23	runrullo	CVC	CVC	pes	nonword	match	pes	run	filler05
+%block23	mingrago	CVC	CVC	pes	nonword	match	pes	min	filler06
+%block23	rizgura	CVC	CVC	pes	nonword	match	pes	riz	filler07
+%block23	duliste	CV	CVC	pes	nonword	mismatch	pes	dul	filler08
+%block23	cubteha	CVC	CVC	pes	nonword	match	pes	cub	filler09
+%block24	pesdeña	CVC	CVC	pes	nonword	match	pes	pes	critical
+%block24	tomida	CV	CVC	pes	nonword	mismatch	pes	tom	filler01
+%block24	farime	CV	CVC	pes	nonword	mismatch	pes	far	filler02
+%block24	civillo	CV	CVC	pes	nonword	mismatch	pes	civ	filler03
+%block24	cunceza	CVC	CVC	pes	nonword	match	pes	cun	filler04
+%block24	tecido	CV	CVC	pes	nonword	mismatch	pes	tec	filler05
+%block24	mingrago	CVC	CVC	pes	nonword	match	pes	min	filler06
+%block24	rizgura	CVC	CVC	pes	nonword	match	pes	riz	filler07
+%block24	duliste	CV	CVC	pes	nonword	mismatch	pes	dul	filler08
+%block24	cubteha	CVC	CVC	pes	nonword	match	pes	cub	filler09
+%block25	rosario	CV	CV	ro	word	match	ros	ros	critical
+%block25	pantalla	CVC	CV	ro	word	mismatch	ros	pan	filler01
+%block25	lenguaje	CVC	CV	ro	word	mismatch	ros	len	filler02
+%block25	cambiazo	CVC	CV	ro	word	mismatch	ros	cam	filler03
+%block25	campiña	CVC	CV	ro	word	mismatch	ros	cam	filler04
+%block25	putada	CV	CV	ro	word	match	ros	put	filler05
+%block25	pileta	CV	CV	ro	word	match	ros	pil	filler06
+%block25	legajo	CV	CV	ro	word	match	ros	leg	filler07
+%block25	veleta	CV	CV	ro	word	match	ros	vel	filler08
+%block25	balbina	CVC	CV	ro	word	mismatch	ros	bal	filler09
+%block26	rosquilla	CVC	CV	ro	word	mismatch	ros	ros	critical
+%block26	pantalla	CVC	CV	ro	word	mismatch	ros	pan	filler01
+%block26	lenguaje	CVC	CV	ro	word	mismatch	ros	len	filler02
+%block26	cambiazo	CVC	CV	ro	word	mismatch	ros	cam	filler03
+%block26	campiña	CVC	CV	ro	word	mismatch	ros	cam	filler04
+%block26	putada	CV	CV	ro	word	match	ros	put	filler05
+%block26	pileta	CV	CV	ro	word	match	ros	pil	filler06
+%block26	legajo	CV	CV	ro	word	match	ros	leg	filler07
+%block26	veleta	CV	CV	ro	word	match	ros	vel	filler08
+%block26	pitillo	CV	CV	ro	word	match	ros	pit	filler09
+%block27	rosario	CV	CVC	ros	word	mismatch	ros	ros	critical
+%block27	bengala	CVC	CVC	ros	word	match	ros	ben	filler01
+%block27	lanzazo	CVC	CVC	ros	word	match	ros	lan	filler02
+%block27	ventisca	CVC	CVC	ros	word	match	ros	ven	filler03
+%block27	vigencia	CV	CVC	ros	word	mismatch	ros	vig	filler04
+%block27	pulsera	CVC	CVC	ros	word	match	ros	pul	filler05
+%block27	bacteria	CVC	CVC	ros	word	match	ros	bac	filler06
+%block27	bufido	CV	CVC	ros	word	mismatch	ros	buf	filler07
+%block27	cigoto	CV	CVC	ros	word	mismatch	ros	cig	filler08
+%block27	vinilo	CV	CVC	ros	word	mismatch	ros	vin	filler09
+%block28	rosquilla	CVC	CVC	ros	word	match	ros	ros	critical
+%block28	bengala	CVC	CVC	ros	word	match	ros	ben	filler01
+%block28	lanzazo	CVC	CVC	ros	word	match	ros	lan	filler02
+%block28	pimiento	CV	CVC	ros	word	mismatch	ros	pim	filler03
+%block28	vigencia	CV	CVC	ros	word	mismatch	ros	vig	filler04
+%block28	pulsera	CVC	CVC	ros	word	match	ros	pul	filler05
+%block28	bacteria	CVC	CVC	ros	word	match	ros	bac	filler06
+%block28	bufido	CV	CVC	ros	word	mismatch	ros	buf	filler07
+%block28	cigoto	CV	CVC	ros	word	mismatch	ros	cig	filler08
+%block28	vinilo	CV	CVC	ros	word	mismatch	ros	vin	filler09
+%block29	rosepio	CV	CV	ro	nonword	match	ros	ros	critical
+%block29	tidioma	CV	CV	ro	nonword	match	ros	tid	filler01
+%block29	cinsecho	CVC	CV	ro	nonword	mismatch	ros	cin	filler02
+%block29	bimena	CV	CV	ro	nonword	match	ros	bim	filler03
+%block29	lectorio	CVC	CV	ro	nonword	mismatch	ros	lec	filler04
+%block29	denfiña	CVC	CV	ro	nonword	mismatch	ros	den	filler05
+%block29	fimallo	CV	CV	ro	nonword	match	ros	fim	filler06
+%block29	canreza	CVC	CV	ro	nonword	mismatch	ros	can	filler07
+%block29	talfrado	CVC	CV	ro	nonword	mismatch	ros	tal	filler08
+%block29	demonto	CV	CV	ro	nonword	match	ros	dem	filler09
+%block30	rosvailla	CVC	CV	ro	nonword	mismatch	ros	ros	critical
+%block30	tidioma	CV	CV	ro	nonword	match	ros	tid	filler01
+%block30	cinsecho	CVC	CV	ro	nonword	mismatch	ros	cin	filler02
+%block30	bimena	CV	CV	ro	nonword	match	ros	bim	filler03
+%block30	lectorio	CVC	CV	ro	nonword	mismatch	ros	lec	filler04
+%block30	denfiña	CVC	CV	ro	nonword	mismatch	ros	den	filler05
+%block30	fimallo	CV	CV	ro	nonword	match	ros	fim	filler06
+%block30	canreza	CVC	CV	ro	nonword	mismatch	ros	can	filler07
+%block30	naduta	CV	CV	ro	nonword	match	ros	nad	filler08
+%block30	demonto	CV	CV	ro	nonword	match	ros	dem	filler09
+%block31	rosepio	CV	CVC	ros	nonword	mismatch	ros	ros	critical
+%block31	divona	CV	CVC	ros	nonword	mismatch	ros	div	filler01
+%block31	mipcura	CVC	CVC	ros	nonword	match	ros	mip	filler02
+%block31	fivalia	CV	CVC	ros	nonword	mismatch	ros	fiv	filler03
+%block31	baldeblo	CVC	CVC	ros	nonword	match	ros	bal	filler04
+%block31	venetlo	CV	CVC	ros	nonword	mismatch	ros	ven	filler05
+%block31	funclera	CVC	CVC	ros	nonword	match	ros	fun	filler06
+%block31	mifena	CV	CVC	ros	nonword	mismatch	ros	mif	filler07
+%block31	ventoble	CVC	CVC	ros	nonword	match	ros	ven	filler08
+%block31	tenvila	CVC	CVC	ros	nonword	match	ros	ten	filler09
+%block32	rosvailla	CVC	CVC	ros	nonword	match	ros	ros	critical
+%block32	divona	CV	CVC	ros	nonword	mismatch	ros	div	filler01
+%block32	mipcura	CVC	CVC	ros	nonword	match	ros	mip	filler02
+%block32	fivalia	CV	CVC	ros	nonword	mismatch	ros	fiv	filler03
+%block32	baldeblo	CVC	CVC	ros	nonword	match	ros	bal	filler04
+%block32	venetlo	CV	CVC	ros	nonword	mismatch	ros	ven	filler05
+%block32	bitiala	CV	CVC	ros	nonword	mismatch	ros	bit	filler06
+%block32	mifena	CV	CVC	ros	nonword	mismatch	ros	mif	filler07
+%block32	ventoble	CVC	CVC	ros	nonword	match	ros	ven	filler08
+%block32	tenvila	CVC	CVC	ros	nonword	match	ros	ten	filler09
+%block33	camisa	CV	CV	ca	word	match	cam	cam	critical
+%block33	porfía	CVC	CV	ca	word	mismatch	cam	por	filler01
+%block33	rendija	CVC	CV	ca	word	mismatch	cam	ren	filler02
+%block33	soborno	CV	CV	ca	word	match	cam	sob	filler03
+%block33	fondillo	CVC	CV	ca	word	mismatch	cam	fon	filler04
+%block33	felpudo	CVC	CV	ca	word	mismatch	cam	fel	filler05
+%block33	suspenso	CVC	CV	ca	word	mismatch	cam	sus	filler06
+%block33	topacio	CV	CV	ca	word	match	cam	top	filler07
+%block33	ribazo	CV	CV	ca	word	match	cam	rib	filler08
+%block33	pitillo	CV	CV	ca	word	match	cam	pit	filler09
+%block34	camisa	CV	CVC	cam	word	mismatch	cam	cam	critical
+%block34	ponencia	CV	CVC	cam	word	mismatch	cam	pon	filler01
+%block34	sordera	CVC	CVC	cam	word	match	cam	sor	filler02
+%block34	doncella	CVC	CVC	cam	word	match	cam	don	filler03
+%block34	nevera	CV	CVC	cam	word	mismatch	cam	nev	filler04
+%block34	ventisca	CVC	CVC	cam	word	match	cam	ven	filler05
+%block34	pintura	CVC	CVC	cam	word	match	cam	pin	filler06
+%block34	perfidia	CVC	CVC	cam	word	match	cam	per	filler07
+%block34	tijera	CV	CVC	cam	word	mismatch	cam	tij	filler08
+%block34	fogata	CV	CVC	cam	word	mismatch	cam	fog	filler09
+%block35	campana	CVC	CV	ca	word	mismatch	cam	cam	critical
+%block35	porfía	CVC	CV	ca	word	mismatch	cam	por	filler01
+%block35	ternera	CVC	CV	ca	word	mismatch	cam	ter	filler02
+%block35	poniente	CV	CV	ca	word	match	cam	pon	filler03
+%block35	ponencia	CV	CV	ca	word	match	cam	pon	filler04
+%block35	felpudo	CVC	CV	ca	word	mismatch	cam	fel	filler05
+%block35	suspenso	CVC	CV	ca	word	mismatch	cam	sus	filler06
+%block35	topacio	CV	CV	ca	word	match	cam	top	filler07
+%block35	ribazo	CV	CV	ca	word	match	cam	rib	filler08
+%block35	noviazgo	CV	CV	ca	word	match	cam	nov	filler09
+%block36	campana	CVC	CVC	cam	word	match	cam	cam	critical
+%block36	fondillo	CVC	CVC	cam	word	match	cam	fon	filler01
+%block36	sordera	CVC	CVC	cam	word	match	cam	sor	filler02
+%block36	percance	CVC	CVC	cam	word	match	cam	per	filler03
+%block36	rivera	CV	CVC	cam	word	mismatch	cam	riv	filler04
+%block36	pinchazo	CVC	CVC	cam	word	match	cam	pin	filler05
+%block36	renombre	CV	CVC	cam	word	mismatch	cam	ren	filler06
+%block36	regazo	CV	CVC	cam	word	mismatch	cam	reg	filler07
+%block36	regato	CV	CVC	cam	word	mismatch	cam	reg	filler08
+%block36	pureza	CV	CVC	cam	word	mismatch	cam	pur	filler09
+%block37	camofa	CV	CV	ca	nonword	match	cam	cam	critical
+%block37	depite	CV	CV	ca	nonword	match	cam	dep	filler01
+%block37	neteno	CV	CV	ca	nonword	match	cam	net	filler02
+%block37	nenedo	CV	CV	ca	nonword	match	cam	nen	filler03
+%block37	dedioro	CV	CV	ca	nonword	match	cam	ded	filler04
+%block37	sobvondo	CVC	CV	ca	nonword	mismatch	cam	sob	filler05
+%block37	tunruja	CVC	CV	ca	nonword	mismatch	cam	tun	filler06
+%block37	sunsanso	CVC	CV	ca	nonword	mismatch	cam	sun	filler07
+%block37	sutmido	CVC	CV	ca	nonword	mismatch	cam	sut	filler08
+%block37	fuztancia	CVC	CV	ca	nonword	mismatch	cam	fuz	filler09
+%block38	camofa	CV	CVC	cam	nonword	mismatch	cam	cam	critical
+%block38	devillo	CV	CVC	cam	nonword	mismatch	cam	dev	filler01
+%block38	nencida	CVC	CVC	cam	nonword	match	cam	nen	filler02
+%block38	pirijuo	CV	CVC	cam	nonword	mismatch	cam	pir	filler03
+%block38	bercillo	CVC	CVC	cam	nonword	match	cam	ber	filler04
+%block38	penvalla	CVC	CVC	cam	nonword	match	cam	pen	filler05
+%block38	voltura	CVC	CVC	cam	nonword	match	cam	vol	filler06
+%block38	foscillo	CVC	CVC	cam	nonword	match	cam	fos	filler07
+%block38	febago	CV	CVC	cam	nonword	mismatch	cam	feb	filler08
+%block38	lercuente	CVC	CVC	cam	nonword	match	cam	ler	filler09
+%block39	cambena	CVC	CV	ca	nonword	mismatch	cam	cam	critical
+%block39	depite	CV	CV	ca	nonword	match	cam	dep	filler01
+%block39	neteno	CV	CV	ca	nonword	match	cam	net	filler02
+%block39	nenedo	CV	CV	ca	nonword	match	cam	nen	filler03
+%block39	dedioro	CV	CV	ca	nonword	match	cam	ded	filler04
+%block39	sobvondo	CVC	CV	ca	nonword	mismatch	cam	sob	filler05
+%block39	tunruja	CVC	CV	ca	nonword	mismatch	cam	tun	filler06
+%block39	sunsanso	CVC	CV	ca	nonword	mismatch	cam	sun	filler07
+%block39	sutmido	CVC	CV	ca	nonword	mismatch	cam	sut	filler08
+%block39	tituila	CV	CV	ca	nonword	match	cam	tit	filler09
+%block40	cambena	CVC	CVC	cam	nonword	match	cam	cam	critical
+%block40	devillo	CV	CVC	cam	nonword	mismatch	cam	dev	filler01
+%block40	nencida	CVC	CVC	cam	nonword	match	cam	nen	filler02
+%block40	pirijuo	CV	CVC	cam	nonword	mismatch	cam	pir	filler03
+%block40	bercillo	CVC	CVC	cam	nonword	match	cam	ber	filler04
+%block40	penvalla	CVC	CVC	cam	nonword	match	cam	pen	filler05
+%block40	voltura	CVC	CVC	cam	nonword	match	cam	vol	filler06
+%block40	dilisia	CV	CVC	cam	nonword	mismatch	cam	dil	filler07
+%block40	febago	CV	CVC	cam	nonword	mismatch	cam	feb	filler08
+%block40	lercuente	CVC	CVC	cam	nonword	match	cam	ler	filler09
+%block41	culebra	CV	CV	cu	word	match	cul	cul	critical
+%block41	pintura	CVC	CV	cu	word	mismatch	cul	pin	filler01
+%block41	sarmiento	CVC	CV	cu	word	mismatch	cul	sar	filler02
+%block41	verdura	CVC	CV	cu	word	mismatch	cul	ver	filler03
+%block41	tobillo	CV	CV	cu	word	match	cul	tob	filler04
+%block41	vertiente	CVC	CV	cu	word	mismatch	cul	ver	filler05
+%block41	tarjeta	CVC	CV	cu	word	mismatch	cul	tar	filler06
+%block41	fijeza	CV	CV	cu	word	match	cul	fij	filler07
+%block41	tesoro	CV	CV	cu	word	match	cul	tes	filler08
+%block41	teniente	CV	CV	cu	word	match	cul	ten	filler09
+%block42	culebra	CV	CVC	cul	word	mismatch	cul	cul	critical
+%block42	zarzuela	CVC	CVC	cul	word	match	cul	zar	filler01
+%block42	perchero	CVC	CVC	cul	word	match	cul	per	filler02
+%block42	perfidia	CVC	CVC	cul	word	match	cul	per	filler03
+%block42	persiana	CVC	CVC	cul	word	match	cul	per	filler04
+%block42	barbilla	CVC	CVC	cul	word	match	cul	bar	filler05
+%block42	viraje	CV	CVC	cul	word	mismatch	cul	vir	filler06
+%block42	redada	CV	CVC	cul	word	mismatch	cul	red	filler07
+%block42	naranjo	CV	CVC	cul	word	mismatch	cul	nar	filler08
+%block42	navaja	CV	CVC	cul	word	mismatch	cul	nav	filler09
+%block43	culpable	CVC	CV	cu	word	mismatch	cul	cul	critical
+%block43	pimiento	CV	CV	cu	word	match	cul	pim	filler01
+%block43	sarmiento	CVC	CV	cu	word	mismatch	cul	sar	filler02
+%block43	verdura	CVC	CV	cu	word	mismatch	cul	ver	filler03
+%block43	tobillo	CV	CV	cu	word	match	cul	tob	filler04
+%block43	vertiente	CVC	CV	cu	word	mismatch	cul	ver	filler05
+%block43	tarjeta	CVC	CV	cu	word	mismatch	cul	tar	filler06
+%block43	fijeza	CV	CV	cu	word	match	cul	fij	filler07
+%block43	tesoro	CV	CV	cu	word	match	cul	tes	filler08
+%block43	teniente	CV	CV	cu	word	match	cul	ten	filler09
+%block44	culpable	CVC	CVC	cul	word	match	cul	cul	critical
+%block44	zarzuela	CVC	CVC	cul	word	match	cul	zar	filler01
+%block44	perchero	CVC	CVC	cul	word	match	cul	per	filler02
+%block44	nevera	CV	CVC	cul	word	mismatch	cul	nev	filler03
+%block44	persiana	CVC	CVC	cul	word	match	cul	per	filler04
+%block44	barbilla	CVC	CVC	cul	word	match	cul	bar	filler05
+%block44	viraje	CV	CVC	cul	word	mismatch	cul	vir	filler06
+%block44	redada	CV	CVC	cul	word	mismatch	cul	red	filler07
+%block44	naranjo	CV	CVC	cul	word	mismatch	cul	nar	filler08
+%block44	navaja	CV	CVC	cul	word	mismatch	cul	nav	filler09
+%block45	culitra	CV	CV	cu	nonword	match	cul	cul	critical
+%block45	nesedo	CV	CV	cu	nonword	match	cul	nes	filler01
+%block45	dosgiente	CVC	CV	cu	nonword	mismatch	cul	dos	filler02
+%block45	varime	CV	CV	cu	nonword	match	cul	var	filler03
+%block45	fantarna	CVC	CV	cu	nonword	mismatch	cul	fan	filler04
+%block45	norita	CV	CV	cu	nonword	match	cul	nor	filler05
+%block45	permaza	CVC	CV	cu	nonword	mismatch	cul	per	filler06
+%block45	dipona	CV	CV	cu	nonword	match	cul	dip	filler07
+%block45	fangurdo	CVC	CV	cu	nonword	mismatch	cul	fan	filler08
+%block45	manvera	CVC	CV	cu	nonword	mismatch	cul	man	filler09
+%block46	culseble	CVC	CVC	cul	nonword	match	cul	cul	critical
+%block46	nesedo	CV	CVC	cul	nonword	mismatch	cul	nes	filler01
+%block46	deñalla	CV	CVC	cul	nonword	mismatch	cul	deñ	filler02
+%block46	varime	CV	CVC	cul	nonword	mismatch	cul	var	filler03
+%block46	fantarna	CVC	CVC	cul	nonword	match	cul	fan	filler04
+%block46	norita	CV	CVC	cul	nonword	mismatch	cul	nor	filler05
+%block46	permaza	CVC	CVC	cul	nonword	match	cul	per	filler06
+%block46	dipona	CV	CVC	cul	nonword	mismatch	cul	dip	filler07
+%block46	fangurdo	CVC	CVC	cul	nonword	match	cul	fan	filler08
+%block46	manvera	CVC	CVC	cul	nonword	match	cul	man	filler09
+%block47	culitra	CV	CV	cu	nonword	match	cul	cul	critical
+%block47	deñalla	CV	CV	cu	nonword	match	cul	deñ	filler01
+%block47	tidencio	CV	CV	cu	nonword	match	cul	tid	filler02
+%block47	banfalla	CVC	CV	cu	nonword	mismatch	cul	ban	filler03
+%block47	sitena	CV	CV	cu	nonword	match	cul	sit	filler04
+%block47	senrera	CVC	CV	cu	nonword	mismatch	cul	sen	filler05
+%block47	bitena	CV	CV	cu	nonword	match	cul	bit	filler06
+%block47	torsenza	CVC	CV	cu	nonword	mismatch	cul	tor	filler07
+%block47	tarbenga	CVC	CV	cu	nonword	mismatch	cul	tar	filler08
+%block47	nastallo	CVC	CV	cu	nonword	mismatch	cul	nas	filler09
+%block48	culseble	CVC	CVC	cul	nonword	match	cul	cul	critical
+%block48	dosgiente	CVC	CVC	cul	nonword	match	cul	dos	filler01
+%block48	tidencio	CV	CVC	cul	nonword	mismatch	cul	tid	filler02
+%block48	banfalla	CVC	CVC	cul	nonword	match	cul	ban	filler03
+%block48	sitena	CV	CVC	cul	nonword	mismatch	cul	sit	filler04
+%block48	senrera	CVC	CVC	cul	nonword	match	cul	sen	filler05
+%block48	bitena	CV	CVC	cul	nonword	mismatch	cul	bit	filler06
+%block48	torsenza	CVC	CVC	cul	nonword	match	cul	tor	filler07
+%block48	midena	CV	CVC	cul	nonword	mismatch	cul	mid	filler08
+%block48	gifema	CV	CVC	cul	nonword	mismatch	cul	gif	filler09
+%block49	moneda	CV	CV	mo	word	match	mon	mon	critical
+%block49	submundo	CVC	CV	mo	word	mismatch	mon	sub	filler01
+%block49	laxante	CV	CV	mo	word	match	mon	lax	filler02
+%block49	vislumbre	CVC	CV	mo	word	mismatch	mon	vis	filler03
+%block49	salchicha	CVC	CV	mo	word	mismatch	mon	sal	filler04
+%block49	lectura	CVC	CV	mo	word	mismatch	mon	lec	filler05
+%block49	cigarro	CV	CV	mo	word	match	mon	cig	filler06
+%block49	resabio	CV	CV	mo	word	match	mon	res	filler07
+%block49	rapiña	CV	CV	mo	word	match	mon	rap	filler08
+%block49	barbecho	CVC	CV	mo	word	mismatch	mon	bar	filler09
+%block50	moneda	CV	CVC	mon	word	mismatch	mon	mon	critical
+%block50	tesina	CV	CVC	mon	word	mismatch	mon	tes	filler01
+%block50	bufete	CV	CVC	mon	word	mismatch	mon	buf	filler02
+%block50	deltoides	CVC	CVC	mon	word	match	mon	del	filler03
+%block50	talante	CV	CVC	mon	word	mismatch	mon	tal	filler04
+%block50	rabillo	CV	CVC	mon	word	mismatch	mon	rab	filler05
+%block50	farsante	CVC	CVC	mon	word	match	mon	far	filler06
+%block50	cordura	CVC	CVC	mon	word	match	mon	cor	filler07
+%block50	captura	CVC	CVC	mon	word	match	mon	cap	filler08
+%block50	tardanza	CVC	CVC	mon	word	match	mon	tar	filler09
+%block51	montaña	CVC	CV	mo	word	mismatch	mon	mon	critical
+%block51	submundo	CVC	CV	mo	word	mismatch	mon	sub	filler01
+%block51	laxante	CV	CV	mo	word	match	mon	lax	filler02
+%block51	vislumbre	CVC	CV	mo	word	mismatch	mon	vis	filler03
+%block51	salchicha	CVC	CV	mo	word	mismatch	mon	sal	filler04
+%block51	lectura	CVC	CV	mo	word	mismatch	mon	lec	filler05
+%block51	tufillo	CV	CV	mo	word	match	mon	tuf	filler06
+%block51	resabio	CV	CV	mo	word	match	mon	res	filler07
+%block51	rapiña	CV	CV	mo	word	match	mon	rap	filler08
+%block51	tesina	CV	CV	mo	word	match	mon	tes	filler09
+%block52	montaña	CVC	CVC	mon	word	match	mon	mon	critical
+%block52	barbecho	CVC	CVC	mon	word	match	mon	bar	filler01
+%block52	bufete	CV	CVC	mon	word	mismatch	mon	buf	filler02
+%block52	deltoides	CVC	CVC	mon	word	match	mon	del	filler03
+%block52	batuta	CV	CVC	mon	word	mismatch	mon	bat	filler04
+%block52	rabillo	CV	CVC	mon	word	mismatch	mon	rab	filler05
+%block52	vaquilla	CV	CVC	mon	word	mismatch	mon	vaq	filler06
+%block52	piropo	CV	CVC	mon	word	mismatch	mon	pir	filler07
+%block52	gorjeo	CVC	CVC	mon	word	match	mon	gor	filler08
+%block52	balbina	CVC	CVC	mon	word	match	mon	bal	filler09
+%block53	moniga	CV	CV	mo	nonword	match	mon	mon	critical
+%block53	hicuila	CV	CV	mo	nonword	match	mon	hic	filler01
+%block53	lisnombre	CVC	CV	mo	nonword	mismatch	mon	lis	filler02
+%block53	tecillo	CV	CV	mo	nonword	match	mon	tec	filler03
+%block53	pargaza	CVC	CV	mo	nonword	mismatch	mon	par	filler04
+%block53	tipallo	CV	CV	mo	nonword	match	mon	tip	filler05
+%block53	fernuera	CVC	CV	mo	nonword	mismatch	mon	fer	filler06
+%block53	rucilla	CV	CV	mo	nonword	match	mon	ruc	filler07
+%block53	viltancia	CVC	CV	mo	nonword	mismatch	mon	vil	filler08
+%block53	zuccancia	CVC	CV	mo	nonword	mismatch	mon	zuc	filler09
+%block54	moniga	CV	CVC	mon	nonword	mismatch	mon	mon	critical
+%block54	parvaza	CVC	CVC	mon	nonword	match	mon	par	filler01
+%block54	bascana	CVC	CVC	mon	nonword	match	mon	bas	filler02
+%block54	ternura	CVC	CVC	mon	nonword	match	mon	ter	filler03
+%block54	tarsallo	CVC	CVC	mon	nonword	match	mon	tar	filler04
+%block54	serpiente	CVC	CVC	mon	nonword	match	mon	ser	filler05
+%block54	reducto	CV	CVC	mon	nonword	mismatch	mon	red	filler06
+%block54	tarima	CV	CVC	mon	nonword	mismatch	mon	tar	filler07
+%block54	recado	CV	CVC	mon	nonword	mismatch	mon	rec	filler08
+%block54	sepulcro	CV	CVC	mon	nonword	mismatch	mon	sep	filler09
+%block55	monseña	CVC	CV	mo	nonword	mismatch	mon	mon	critical
+%block55	hicuila	CV	CV	mo	nonword	match	mon	hic	filler01
+%block55	lisnombre	CVC	CV	mo	nonword	mismatch	mon	lis	filler02
+%block55	tecillo	CV	CV	mo	nonword	match	mon	tec	filler03
+%block55	pargaza	CVC	CV	mo	nonword	mismatch	mon	par	filler04
+%block55	tipallo	CV	CV	mo	nonword	match	mon	tip	filler05
+%block55	fernuera	CVC	CV	mo	nonword	mismatch	mon	fer	filler06
+%block55	rucilla	CV	CV	mo	nonword	match	mon	ruc	filler07
+%block55	viltancia	CVC	CV	mo	nonword	mismatch	mon	vil	filler08
+%block55	sabiba	CV	CV	mo	nonword	match	mon	sab	filler09
+%block56	monseña	CVC	CVC	mon	nonword	match	mon	mon	critical
+%block56	parvaza	CVC	CVC	mon	nonword	match	mon	par	filler01
+%block56	recinto	CV	CVC	mon	nonword	mismatch	mon	rec	filler02
+%block56	ternura	CVC	CVC	mon	nonword	match	mon	ter	filler03
+%block56	tarsallo	CVC	CVC	mon	nonword	match	mon	tar	filler04
+%block56	serpiente	CVC	CVC	mon	nonword	match	mon	ser	filler05
+%block56	reducto	CV	CVC	mon	nonword	mismatch	mon	red	filler06
+%block56	tarima	CV	CVC	mon	nonword	mismatch	mon	tar	filler07
+%block56	recado	CV	CVC	mon	nonword	mismatch	mon	rec	filler08
+%block56	sepulcro	CV	CVC	mon	nonword	mismatch	mon	sep	filler09
+%block57	paloma	CV	CV	pa	word	match	pal	pal	critical
+%block57	gorguera	CVC	CV	pa	word	mismatch	pal	gor	filler01
+%block57	gorjeo	CVC	CV	pa	word	mismatch	pal	gor	filler02
+%block57	conducta	CVC	CV	pa	word	mismatch	pal	con	filler03
+%block57	vivero	CV	CV	pa	word	match	pal	viv	filler04
+%block57	fortuna	CVC	CV	pa	word	mismatch	pal	for	filler05
+%block57	cornada	CVC	CV	pa	word	mismatch	pal	cor	filler06
+%block57	regata	CV	CV	pa	word	match	pal	reg	filler07
+%block57	cigarra	CV	CV	pa	word	match	pal	cig	filler08
+%block57	giralda	CV	CV	pa	word	match	pal	gir	filler09
+%block58	paloma	CV	CVC	pal	word	mismatch	pal	pal	critical
+%block58	certeza	CVC	CVC	pal	word	match	pal	cer	filler01
+%block58	cordero	CVC	CVC	pal	word	match	pal	cor	filler02
+%block58	cordura	CVC	CVC	pal	word	match	pal	cor	filler03
+%block58	mordaza	CVC	CVC	pal	word	match	pal	mor	filler04
+%block58	mordisco	CVC	CVC	pal	word	match	pal	mor	filler05
+%block58	reguero	CV	CVC	pal	word	mismatch	pal	reg	filler06
+%block58	rudeza	CV	CVC	pal	word	mismatch	pal	rud	filler07
+%block58	gomina	CV	CVC	pal	word	mismatch	pal	gom	filler08
+%block58	ciruelo	CV	CVC	pal	word	mismatch	pal	cir	filler09
+%block59	palmera	CVC	CV	pa	word	mismatch	pal	pal	critical
+%block59	gorguera	CVC	CV	pa	word	mismatch	pal	gor	filler01
+%block59	tijera	CV	CV	pa	word	match	pal	tij	filler02
+%block59	conducta	CVC	CV	pa	word	mismatch	pal	con	filler03
+%block59	vivero	CV	CV	pa	word	match	pal	viv	filler04
+%block59	fortuna	CVC	CV	pa	word	mismatch	pal	for	filler05
+%block59	cornada	CVC	CV	pa	word	mismatch	pal	cor	filler06
+%block59	regata	CV	CV	pa	word	match	pal	reg	filler07
+%block59	cigarra	CV	CV	pa	word	match	pal	cig	filler08
+%block59	giralda	CV	CV	pa	word	match	pal	gir	filler09
+%block60	palmera	CVC	CVC	pal	word	match	pal	pal	critical
+%block60	certeza	CVC	CVC	pal	word	match	pal	cer	filler01
+%block60	cordero	CVC	CVC	pal	word	match	pal	cor	filler02
+%block60	fogata	CV	CVC	pal	word	mismatch	pal	fog	filler03
+%block60	mordaza	CVC	CVC	pal	word	match	pal	mor	filler04
+%block60	mordisco	CVC	CVC	pal	word	match	pal	mor	filler05
+%block60	reguero	CV	CVC	pal	word	mismatch	pal	reg	filler06
+%block60	rudeza	CV	CVC	pal	word	mismatch	pal	rud	filler07
+%block60	gomina	CV	CVC	pal	word	mismatch	pal	gom	filler08
+%block60	ciruelo	CV	CVC	pal	word	mismatch	pal	cir	filler09
+%block61	palura	CV	CV	pa	nonword	match	pal	pal	critical
+%block61	ricofo	CV	CV	pa	nonword	match	pal	ric	filler01
+%block61	rartanto	CVC	CV	pa	nonword	mismatch	pal	rar	filler02
+%block61	vifema	CV	CV	pa	nonword	match	pal	vif	filler03
+%block61	nundero	CVC	CV	pa	nonword	mismatch	pal	nun	filler04
+%block61	recoltre	CV	CV	pa	nonword	match	pal	rec	filler05
+%block61	tecterio	CVC	CV	pa	nonword	mismatch	pal	tec	filler06
+%block61	canfleco	CVC	CV	pa	nonword	mismatch	pal	can	filler07
+%block61	nidero	CV	CV	pa	nonword	match	pal	nid	filler08
+%block61	vinsenza	CVC	CV	pa	nonword	mismatch	pal	vin	filler09
+%block62	palbira	CVC	CVC	pal	nonword	match	pal	pal	critical
+%block62	ricofo	CV	CVC	pal	nonword	mismatch	pal	ric	filler01
+%block62	rartanto	CVC	CVC	pal	nonword	match	pal	rar	filler02
+%block62	vifema	CV	CVC	pal	nonword	mismatch	pal	vif	filler03
+%block62	nundero	CVC	CVC	pal	nonword	match	pal	nun	filler04
+%block62	recoltre	CV	CVC	pal	nonword	mismatch	pal	rec	filler05
+%block62	tecterio	CVC	CVC	pal	nonword	match	pal	tec	filler06
+%block62	canfleco	CVC	CVC	pal	nonword	match	pal	can	filler07
+%block62	nidero	CV	CVC	pal	nonword	mismatch	pal	nid	filler08
+%block62	bitero	CV	CVC	pal	nonword	mismatch	pal	bit	filler09
+%block63	palbira	CVC	CV	pa	nonword	mismatch	pal	pal	critical
+%block63	vinsenza	CVC	CV	pa	nonword	mismatch	pal	vin	filler01
+%block63	tudala	CV	CV	pa	nonword	match	pal	tud	filler02
+%block63	fivancia	CV	CV	pa	nonword	match	pal	fiv	filler03
+%block63	turquma	CVC	CV	pa	nonword	mismatch	pal	tur	filler04
+%block63	ruspina	CVC	CV	pa	nonword	mismatch	pal	rus	filler05
+%block63	detnana	CVC	CV	pa	nonword	mismatch	pal	det	filler06
+%block63	tifencio	CV	CV	pa	nonword	match	pal	tif	filler07
+%block63	ciroca	CV	CV	pa	nonword	match	pal	cir	filler08
+%block63	tocensia	CV	CV	pa	nonword	match	pal	toc	filler09
+%block64	palura	CV	CVC	pal	nonword	mismatch	pal	pal	critical
+%block64	bitero	CV	CVC	pal	nonword	mismatch	pal	bit	filler01
+%block64	tudala	CV	CVC	pal	nonword	mismatch	pal	tud	filler02
+%block64	fivancia	CV	CVC	pal	nonword	mismatch	pal	fiv	filler03
+%block64	turquma	CVC	CVC	pal	nonword	match	pal	tur	filler04
+%block64	ruspina	CVC	CVC	pal	nonword	match	pal	rus	filler05
+%block64	detnana	CVC	CVC	pal	nonword	match	pal	det	filler06
+%block64	tifencio	CV	CVC	pal	nonword	mismatch	pal	tif	filler07
+%block64	zurdado	CVC	CVC	pal	nonword	match	pal	zur	filler08
+%block64	sisluño	CVC	CVC	pal	nonword	match	pal	sis	filler09
