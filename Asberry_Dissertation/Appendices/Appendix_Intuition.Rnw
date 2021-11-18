@@ -2,7 +2,7 @@
 
 %----------------------------------------------------------------------------------------
 %Change ParentTemplate to something unique and meaningful to your project
-<<parentTemplate, echo=FALSE, cache=FALSE>>=
+<<parentIntuition, echo=FALSE, cache=FALSE>>=
 rm(list=ls())
 library(knitr)
 set_parent('../Dissertation.rnw')
@@ -13,67 +13,60 @@ set_parent('../Dissertation.rnw')
 \chapter{Syllable Intuition Stimuli} % Main appendix title
 \label{app-intuition} % Change Label; for referencing this appendix elsewhere, use \ref{AppendixLabel}
 
-Practice Items
+\begin{table}[ht]
+\centering
+\begin{tabular}{ll}
+\toprule
+Word & Initial Syllable\\
+\midrule
+caldera	  & CAL\\
+cantera	  & CAN\\
+ciruela	  & CI\\
+culata	  & CU\\
+gustazo	  & GUS\\
+latencia  & LA\\
+pericia	  & PE\\
+pupila	  & PU\\
+sendero	  & SEN\\
+sordina	  & SOR\\
+\bottomrule
+\end{tabular}
+\caption{The table lists the practice stimuli used in Chapter \ref{ch-intuition}}
+\label{tab-prac-intuition}
+\end{table}
 
-syllabification	corrSyl
-caldera	CAL
-cantera	CAN
-ciruela	CI
-culata	CU
-gustazo	GUS
-latencia	LA
-pericia	PE
-pupila	PU
-sendero	SEN
-sordina	SOR
-
-Experimental Items
-syllabification	corrSyl
-balada	BA
-baldosa	BAL
-bolero	BO
-bolsillo	BOL
-camisa	CA
-campana	CAM
-casilla	CA
-castillo	CAS
-ceniza	CE
-centavo	CEN
-cereza	CE
-cerveza	CER
-coraje	CO
-corbata	COR
-corona	CO
-corteza	COR
-cosecha	CO
-costilla	COS
-culebra	CU
-culpable	CUL
-ganancia	GA
-ganchillo	GAN
-garaje	GA
-garganta	GAR
-jornada	JOR
-joroba	JO
-limosna	LI
-limpieza	LIM
-linaje	LI
-linterna	LIN
-moneda	MO
-montaña	MON
-morcillo	MOR
-morera	MO
-muralla	MU
-murmullo	MUR
-palmera	PAL
-paloma	PA
-pasaje	PA
-pastilla	PAS
-pereza	PE
-permiso	PER
-peseta	PE
-pestaña	PES
-rosario	RO
-rosquilla	ROS
-volante	VO
-voltaje	VOL
+\begin{table}[htb]
+\centering
+\begin{tabular}{llll}
+\toprule
+Word & Initial Syllable & Word & Initial Syllable\\
+\midrule
+balada	  & BA    &  jornada	  & JOR\\
+baldosa	  & BAL   &  joroba	    & JO\\
+bolero	  & BO    &  limosna	  & LI\\
+bolsillo  & BOL   &  limpieza   & LIM\\
+camisa	  & CA    &  linaje	    & LI\\
+campana	  & CAM   &  linterna   & LIN\\
+casilla	  & CA    &  moneda	    & MO\\
+castillo  & CAS   &  montaña	  & MON\\
+ceniza	  & CE    &  morcillo   & MOR\\
+centavo	  & CEN   &  morera	    & MO\\
+cereza	  & CE    &  muralla	  & MU\\
+cerveza	  & CER   &  murmullo   & MUR\\
+coraje	  & CO    &  palmera	  & PAL\\
+corbata	  & COR   &  paloma	    & PA\\
+corona	  & CO    &  pasaje	    & PA\\
+corteza	  & COR   &  pastilla   & PAS\\
+cosecha	  & CO    &  pereza	    & PE\\
+costilla  & COS   &  permiso	  & PER\\
+culebra	  & CU    &  peseta	    & PE\\
+culpable  & CUL   &  pestaña	  & PES\\
+ganancia  & GA    &  rosario	  & RO\\
+ganchillo	& GAN   &  rosquilla	& ROS\\
+garaje	  & GA    &  volante	  & VO\\
+garganta  & GAR   &  voltaje	  & VOL\\
+\bottomrule
+\end{tabular}
+\caption{The table lists the experimental stimuli used in Chapter \ref{ch-intuition}}
+\label{tab-exp-intuition}
+\end{table}

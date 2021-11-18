@@ -2,7 +2,7 @@
 
 %----------------------------------------------------------------------------------------
 %Change ParentTemplate to something unique and meaningful to your project
-<<parentTemplate, echo=FALSE, cache=FALSE>>=
+<<parentButtonBox, echo=FALSE, cache=FALSE>>=
 rm(list=ls())
 library(knitr)
 set_parent('../Dissertation.rnw')
