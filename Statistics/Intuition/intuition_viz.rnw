@@ -199,7 +199,7 @@ plt_corr_logit <- my_data_long %>%
                 position = position_dodge(width = 0.9)) +
   labs(title = "Syllabification Intuitions",
        x = "L1 Language Group",
-       y = "Response Correct (logit)") +
+       y = "Proportion Correct (logit)") +
   scale_fill_manual(name = "Syllable Structure", 
                     values = plt_color_2) +
   theme_light()
@@ -221,7 +221,7 @@ plt_corr_logit_sylX <- my_data_long %>%
                 position = position_dodge(width = 0.9)) +
   labs(title = "Syllabification Intuitions",
        x = "Syllable Structure",
-       y = "Response Correct (logit)") +
+       y = "Proportion Correct (logit)") +
   scale_fill_manual(name = "Group", 
                     values = plt_color_2) +
   theme_light()
@@ -337,7 +337,7 @@ intuition_grp_main <-
             mapping = c("color", "shape")) +
   labs(title = "Estimated Marginal Means Correct Response",
        x = "L1 Language Group",
-       y = "Response Correct (logit)") +
+       y = "Proportion Correct (logit)") +
   scale_color_manual(values = plt_color_2) +
   theme_light() +
   theme(legend.position = "none")
@@ -353,7 +353,7 @@ intuition_syl_main <-
             mapping = c("color", "shape")) +
   labs(title = "Estimated Marginal Means Syllable Structure",
        x = "Syllable Structure",
-       y = "Response Correct (logit)") +
+       y = "Proportion Correct (logit)") +
   scale_color_manual(values = plt_color_2) +
   theme_light() +
   theme(legend.position = "none")
@@ -371,7 +371,7 @@ intuition_grp_syl_int <-
             data_plot = TRUE) +
   labs(title = "Estimated Marginal Means L2 Spanish",
        x = "Syllable Structure",
-       y = "Response Correct (logit)") +
+       y = "Proportion Correct (logit)") +
   scale_color_manual(values = plt_color_2)
 intuition_grp_syl_int
 @
