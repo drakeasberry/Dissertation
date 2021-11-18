@@ -34,16 +34,16 @@ set_parent(here('Asberry_Dissertation/Dissertation.Rnw'))
 %Keywords: (list all words necessary)
 
 New citations:
-\parencite{Kahn1976-im}
-\textcite{Kahn1976-im}
-\parencite{Hammond1997-nk}
-\textcite{Hammond1997-nk}
-\parencite{Hammond2006-rq}
-\textcite{Hammond2006-rq}
-\parencite{Brewer2008-hf}
-\textcite{Brewer2008-hf}
-\parencite{Treiman1988-zl}
-\textcite{Treiman1988-zl}
+%\parencite{Kahn1976-im}
+%\textcite{Kahn1976-im}
+%\parencite{Hammond1997-nk}
+%\textcite{Hammond1997-nk}
+%\parencite{Hammond2006-rq}
+%\textcite{Hammond2006-rq}
+%\parencite{Brewer2008-hf}
+%\textcite{Brewer2008-hf}
+%\parencite{Treiman1988-zl}
+%\textcite{Treiman1988-zl}
 
 
 \section{Introduction}
