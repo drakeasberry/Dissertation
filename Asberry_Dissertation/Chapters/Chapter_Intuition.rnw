@@ -33,7 +33,7 @@ set_parent(here('Asberry_Dissertation/Dissertation.Rnw'))
 %Give Syllabification abstract here
 %Keywords: (list all words necessary)
 
-New citations:
+%New citations:
 %\parencite{Kahn1976-im}
 %\textcite{Kahn1976-im}
 %\parencite{Hammond1997-nk}
