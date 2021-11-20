@@ -547,7 +547,7 @@ Table \ref{tab-lab-grp-rt-wd} reports the reaction time data for real words and 
 %\end{figure}
 
 %\clearpage
-\subsection{Native Spanish Controls}
+\subsection{L1 Spanish Group}
 <<table_anova_lab_natives, results='asis', include=TRUE>>=
 xtable(lab_aov_natives_prt$anova_table, 
        type = "latex",
@@ -589,7 +589,7 @@ p > .05
 [\Sexpr{round(lab_aov_natives$anova_table["matching:word_status", "Pr(>F)"],4)}].
 
 
-\subsection{L2 Spanish Learners}
+\subsection{L1 English Group}
 %Figure \ref{plt-lab-l2-rtms-desc} plots the general descriptive statistics for response times in milliseconds by target syllable, matching and lexicality conditions for the \Sexpr{length(unique(lab_learners$partNum))} L2 learners of Spanish. 
 For the \Sexpr{length(unique(lab_learners$partNum))} L1 English speakers, the log transformed reaction times were submitted to a (2) x (2) x (2) repeated measures ANOVA with \emph{Lexicality, Target} and \emph{Matching} as factors. The ANOVA revealed statistically significant main effects of \emph{Target}, 
 \emph{F}(
