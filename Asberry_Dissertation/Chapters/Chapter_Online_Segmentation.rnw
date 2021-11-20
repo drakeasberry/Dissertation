@@ -618,7 +618,7 @@ In the CVC target dataset, it revealed that the L1 English group did not detect 
 %\Sexpr{online_l2_cvc_mat_efsize$conf.level*100}\% CI 
 %[\Sexpr{round(online_l2_cvc_mat_efsize$conf.int[1],2)}, 
 %\Sexpr{round(online_l2_cvc_mat_efsize$conf.int[2],2)}]. 
-Figure \ref{plt-online-l2-tar-mat-s-int} plots the estimated marginal means for the interaction between \emph{Target} and \emph{Matching} for L1 English speakers. It shows that this interaction was driven by the fact that participants responded significantly faster to the CV targets in the matching condition and CVC targets in the mismatching condition.
+Figure \ref{plt-online-l2-tar-mat-s-int} plots the estimated marginal means for the interaction between \emph{Target} and \emph{Matching} for L1 English speakers. It shows that this interaction was driven by the fact that participants responded significantly faster to the CV targets in the matching condition.% and CVC targets in the mismatching condition.
 
 
 \begin{figure}
