@@ -13,42 +13,42 @@ set_parent('../Dissertation.rnw')
 
 \label{app-wuggy} % for referencing this appendix elsewhere, use \ref{Appendix_Wuggy}
 
-This list of 80 critical items were entered into Wuggy.app as words and the second column gave Wuggy.app the correction Spanish syllabification of each critical word—generated from within the application. I then used the verify feature to ensure all data was correct. This resulted in one error because "malena" was not found in the Wuggy.app dictionary. Therefore, I gave the correct syllabification of "ma-le-na" where hypens represent syllable boundaries. I then re-verified the data before runnning the analysis. Once I receive no errors, I ran the following analysis to generate new nonwords.
+This list of 80 critical items were entered into Wuggy.app as words and the second column gave Wuggy.app the correction Spanish syllabification of each critical word—generated from within the application. I then used the verify feature to ensure all data was correct. This resulted in one error because "malena" was not found in the Wuggy.app dictionary. Therefore, I gave the correct syllabification of "ma-le-na" where hypens represent syllable boundaries. I then re-verified the data before running the analysis. Once I receive no errors, I ran the following analysis to generate new nonwords.
 
-Parameters:
-General Settings:
+\section*{Parameters:}
+\subsection*{General Settings:}
 
-Language module: Orthographic Spanish
-Output type: Only pseudowords
-Maximal number of candidates: 10 per word
-Maximal search time per word: 10 seconds
-Output Restrictions:
+\noindent Language module: \emph{Orthographic Spanish}\newline
+\noindent Output type: \emph{Only pseudowords}\newline
+\noindent Maximal number of candidates: \emph{10 per word}\newline
+\noindent Maximal search time per word: \emph{10 seconds}\newline
 
-Checked: Match length of subsyllabic segements
-Checked: Match letter length
-Checked: Match transition frequencies (concentric search)
-Checked: Match subsyllabic segments: "2" out of "3"
-Output Options:
+\subsection*{Output Restrictions:}
 
-Syllables chosen from dropdown box
-Checked: Lexicality
-Checked: OLD20
-Checked: Neighbors at edit distance 1
-Checked: Number of overlapping segments
-Checked: Deviation statistics
+\noindent Match length of subsyllabic segments: \emph{Checked}\newline
+\noindent Match letter length: \emph{Checked}\newline
+\noindent Match transition frequencies (concentric search): \emph{Checked}\newline
+\noindent Match subsyllabic segments: "2" out of "3": \emph{Checked}\newline
 
-Output file
+\subsection*{Output Options:}
+Syllables chosen from drop-down box:
+
+\noindent Lexicality: \emph{Checked}\newline
+\noindent OLD20: \emph{Checked}\newline
+\noindent Neighbors at edit distance 1: \emph{Checked}\newline
+\noindent Number of overlapping segments: \emph{Checked}\newline
+\noindent Deviation statistics: \emph{Checked}
+
+\section*{Output file}
 Wuggy outputs a file that contains all the raw data that was then imported into Microsoft Excel to preserve all the unicode characters contained in the data. Do not simply open this from Windows Explorer or Finder as it will replace all encoding of the file eliminating special characters.
 
 WARNING: Wuggy uses syllabification and it removes the accented vowels in Spanish. The only way to remedy this problem is to fix it once it has been imported into Excel.
 
 Once in Excel, I renamed the worksheet WuggyRawOutput. Then I duplicated this worksheet and renamed the new worksheet WuggyBuilt. I then deleted all the columns except for columns A and B ("Word" and "Match"). I then added two columns called "Nonword\_Concat" and "Rand". In the Nonword\_Concat column, I entered the following formulas:
 
-For CV-CV-CV words: \=CONCATENATE(LEFT(B2,2),MID(B2,4,2),MID(B2,7,2))
+For CV-CV-CV words: \= CONCATENATE(LEFT(B2,2),MID(B2,4,2),MID(B2,7,2))
 This formula combines the two leftmost characters, skips character 3 (the first syllable boundary marker), adds the 4th and 5th characters to the string store, skips the 6th character (the second syllable boundary marker), and finally adds the 7th and 8th characters from the left to create the six-letter nonword.
-For CVC-CVC words: \=CONCATENATE(LEFT(B403,3),RIGHT(B403,3))
+For CVC-CVC words: \= CONCATENATE(LEFT(B403,3),RIGHT(B403,3))
 This formula combines the three leftmost and three rightmost characters to create the six-letter nonword excluding the one and only syllable boundary marker.
 
 These two formulas are necessary in order to create nonwords without the syllable markers. Once these steps have been completed, the file is ready for the python code housed in the cell below.
-
-%end wuggy stuff
