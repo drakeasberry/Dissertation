@@ -12,21 +12,46 @@ set_parent('../Dissertation.rnw')
 
 \chapter{Basic Language Profile (BLP)}
 \label{app-blp}
-
 %Data files are found in segmentation/data/processed_data/exp_files
-questionNum,color,sectionEng,questionTextEng,languageEng,sectionEsp,questionTextEsp,languageEsp
-1a,purple,Language history,At what age did you start learning the following languages?,English,Historial lingüístico,¿A qué edad empezó a aprender las siguientes lenguas?,inglés
-1b,blue,Language history,At what age did you start learning the following languages?,Spanish,Historial lingüístico,¿A qué edad empezó a aprender las siguientes lenguas?,español
-2a,purple,Language history,At what age did you start to feel comfortable using the following languages?,English,Historial lingüístico,¿A qué edad empezó a sentirse cómodo usando las siguientes lenguas?,inglés
-2b,blue,Language history,At what age did you start to feel comfortable using the following languages?,Spanish,Historial lingüístico,¿A qué edad empezó a sentirse cómodo usando las siguientes lenguas?,español
-3a,purple,Language history,"How many years of classes (grammar, history, math, etc.) have you had in the following languages (primary school through university)?",English,Historial lingüístico,"Cuántos años de clases (gramática, historia, matemáticas, etc.) ha tenido en las siguientes lenguas (desde la escuela primaria a la universidad)?",inglés
-3b,blue,Language history,"How many years of classes (grammar, history, math, etc.) have you had in the following languages (primary school through university)?",Spanish,Historial lingüístico,"Cuántos años de clases (gramática, historia, matemáticas, etc.) ha tenido en las siguientes lenguas (desde la escuela primaria a la universidad)?",español
-4a,purple,Language history,How many years have you spent in a country/region where the following languages are spoken?,English,Historial lingüístico,¿Cuántos años ha pasado en un país/región donde se hablan las siguientes lenguas?,inglés
-4b,blue,Language history,How many years have you spent in a country/region where the following languages are spoken?,Spanish,Historial lingüístico,¿Cuántos años ha pasado en un país/región donde se hablan las siguientes lenguas?,español
-5a,purple,Language history,How many years have you spent in a family where the following languages are spoken?,English,Historial lingüístico,¿Cuántos años ha pasado en familia hablando las siguientes lenguas?,inglés
-5b,blue,Language history,How many years have you spent in a family where the following languages are spoken?,Spanish,Historial lingüístico,¿Cuántos años ha pasado en familia hablando las siguientes lenguas?,español
-6a,purple,Language history,How many years have you spent in a work environment where the following languages are spoken?,English,Historial lingüístico,¿Cuántos años ha pasado en un ambiente de trabajo donde se hablan las siguientes lenguas?,inglés
-6b,blue,Language history,How many years have you spent in a work environment where the following languages are spoken?,Spanish,Historial lingüístico,¿Cuántos años ha pasado en un ambiente de trabajo donde se hablan las siguientes lenguas?,español
+\section{Chapter 4: In-person}
+All experiments in Chapter \ref{ch-seg-lab} utilized the full Bilingual Language Profile as designed by the creator of the questionnaire with no modifications to question content. The only modifications made were those to present the survey within PsychoPy. Participants were shown the survey questions in their preferred language as indicated by their response at the beginning of the experimental session. Both English and Spanish versions are listed below:
+
+\subsection{Langauge History--Historial lingüístico}
+\begin{singlespacing}
+\begin{itemize}
+\item[1a:]{At what age did you start learning the following languages? English}
+\item[1a:]{¿A qué edad empezó a aprender las siguientes lenguas? inglés}\newline
+\item[1b:]{At what age did you start learning the following languages? Spanish}
+\item[1b:]{¿A qué edad empezó a aprender las siguientes lenguas? español}\newline
+
+\item[2a:]{At what age did you start to feel comfortable using the following languages? English}
+\item[2a:]{¿A qué edad empezó a sentirse cómodo usando las siguientes lenguas? inglés}\newline
+\item[2b:]{At what age did you start to feel comfortable using the following languages? Spanish}
+\item[2b:]{¿A qué edad empezó a sentirse cómodo usando las siguientes lenguas? español}\newline
+
+\item[3a:]{How many years of classes (grammar, history, math, etc.) have you had in the following languages (primary school through university)? English}
+\item[3a:]{Cuántos años de clases (gramática, historia, matemáticas, etc.) ha tenido en las siguientes lenguas (desde la escuela primaria a la universidad)? inglés}\newline
+\item[3b:]{How many years of classes (grammar, history, math, etc.) have you had in the following languages (primary school through university)? Spanish}
+\item[3b:]{Cuántos años de clases (gramática, historia, matemáticas, etc.) ha tenido en las siguientes lenguas (desde la escuela primaria a la universidad)? español}\newline
+
+\item[4a:]{How many years have you spent in a country/region where the following languages are spoken? English}
+\item[4a:]{¿Cuántos años ha pasado en un país/región donde se hablan las siguientes lenguas? inglés}\newline
+\item[4b:]{How many years have you spent in a country/region where the following languages are spoken? Spanish}
+\item[4b:]{¿Cuántos años ha pasado en un país/región donde se hablan las siguientes lenguas? español}\newline
+\item[5a:]{How many years have you spent in a family where the following languages are spoken? English}
+\item[5a:]{¿Cuántos años ha pasado en familia hablando las siguientes lenguas? inglés}\newline
+\item[5b:]{How many years have you spent in a family where the following languages are spoken? Spanish}
+\item[5b:]{¿Cuántos años ha pasado en familia hablando las siguientes lenguas? español}\newline
+\item[6a:]{How many years have you spent in a work environment where the following languages are spoken? English}
+\item[6a:]{¿Cuántos años ha pasado en un ambiente de trabajo donde se hablan las siguientes lenguas? inglés}\newline
+\item[6b:]{How many years have you spent in a work environment where the following languages are spoken? Spanish}
+\item[6b:]{¿Cuántos años ha pasado en un ambiente de trabajo donde se hablan las siguientes lenguas? español}
+\end{itemize}
+\end{singlespacing}
+
+\subsection{Language Use--Uso de lenguas}
+%\begin{singlespacing}
+%\begin{itemize}
 7a,purple,Language use,"In an average week, what percentage of the time do you use the following languages with friends?",English,Uso de lenguas,"En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas con sus amigos?",inglés
 7b,blue,Language use,"In an average week, what percentage of the time do you use the following languages with friends?",Spanish,Uso de lenguas,"En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas con sus amigos?",español
 7c,red,Language use,"In an average week, what percentage of the time do you use the following languages with friends?",Other languages,Uso de lenguas,"En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas con sus amigos?",otras lenguas
@@ -58,3 +83,5 @@ questionNum,color,sectionEng,questionTextEng,languageEng,sectionEsp,questionText
 18b,blue,Language attitudes,It is important to me to use (or eventually use) Spanish like a native speaker.,Spanish,Actitudes lingüísticas,Es importante para mí usar (o llegar a usar) las siguientes lenguas como un hablante nativo.,español
 19a,purple,Language attitudes,I want others to think I am a native speaker of English.,English,Actitudes lingüísticas,Quiero que los demás piensen que soy un hablante nativo de las siguientes lenguas.,inglés
 19b,blue,Language attitudes, I want others to think I am a native speaker of Spanish.,Spanish,Actitudes lingüísticas,Quiero que los demás piensen que soy un hablante nativo de las siguientes lenguas.,español
+%\end{itemize}
+%\end{singlespacing}
