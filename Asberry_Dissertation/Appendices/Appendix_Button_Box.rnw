@@ -12,11 +12,18 @@ set_parent('../Dissertation.rnw')
 
 \chapter{Button Box} % Main appendix title
 \label{app-button-box} % Change Label; for referencing this appendix elsewhere, use \ref{AppendixLabel}
+\begin{figure}[htb]
+\centering
+\includegraphics{Figures/Box_Final}
+\decoRule
+\caption[Button Box]{This button box was built to collect reaction time data and ran off of a Adafruit Feather 32u4 micro-controller. It connected to the computer via a micro USB cable. The white button was programmed to zero (0), the green button was one (1), the blue button was two (2), the yellow button was three (3) and the red button was four (4).}
+\label{fig:Button-box-final}
+\end{figure}
 
-Write your content here. Give all the testing criteria
-
-The 46 participants provided a total of 22070 data points of which 2198 were in response to critical items while 19872 were in response to filler items. The first step in the analysis checked to ensure the data provided by participants were valid and that no participants had error rates greater than 10 percent for their responses to critical and filler items, which had been set as the cut-off point prior to data collection. For critical trials, there were 28 errors committed by 17 unique participants. Of the 2198 critical, 2170 were responded to correctly and of those 27 were removed for being over the 1500ms cut-off and 11 were removed being under the 200ms cut-off. This left 2132 correct critical responses. However, one participant commited a higher than 10 percent error rate to critical repsonses which caused the remaining 41 correct responses by this participant to be removed leaving only 2091 critical trials to analyze.
-
-In responses to filler items, 28 of the 46 participants committed 1 or more errors resulting in a total of 332 errors. Only three participants had an error rate greater than 10 percent totaling a 175 errors between them. Of the 175 errors, 121 of the errors were produced by participants with less than a 200 ms reaction time. It is thought that the participant was not intending to respond to these stimuli, but were the result of resting a hand on the button box or responding too late to the previous stimulus trial. As a result 54 errors were committed by the three participants ranging from 13 to 27 per participant. Of the total 322 errors committed, 203 of them were below the 200 ms reaction time cut-off meaning 129 were actual errors committed by 27 unique participants. Of all responses to filler items only 0.65\% were actual errors made by participants and no participant was removed from analysis for having more than a 10 percent error rate to filler items.
-
-\ttodo[inline]{add detail about tech errors in each subgroup high and low error committing folks in lab segmentation experiment}
+\begin{figure}[htb]
+\centering
+\includegraphics{Figures/Box_Testing}
+\decoRule
+\caption[Button Box]{Before deploying the use of the button box, testing was done using a Raspberry Pi 3B+ following guidelines for building a LagBox \parencite{Bockes2018-mn}}
+\label{fig:Button-box-testing}
+\end{figure}
