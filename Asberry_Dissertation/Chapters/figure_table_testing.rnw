@@ -42,27 +42,81 @@ set_parent(here('Asberry_Dissertation/figure_table.rnw'))
 
 \chapter{Testing Figures} % Main chapter title
 
-See Table \ref{tab-lab-vocab-part-online} and \ref{tab-lab-demo-part-online}
+See Table \ref{tab-prac-lab-seg} and \ref{tab-exp-lab-seg}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{llll}
+\toprule
+CV Stimuli & CVC Stimuli & Targets & Lexicality\\
+\midrule
+garaje & garganta & ga-gar & Word\\
+garele & garventa & ga-gar & Nonword\\
+joroba & jornada & jo-jor & Word\\
+joruma & jorteda & jo-jor & Nonword\\
+\bottomrule
+\end{tabular}
+\caption{The table lists the real-word and nonword practice stimuli used in Chapter \ref{ch-seg-online}}
+\label{tab-prac-online-seg}
+\end{table}
 
 \begin{table}
 \centering
-\begin{tabular}{lll}
+\begin{tabular}{ll}
 \toprule
-& In-Person & Online\\
-Group & Syllable Intuition & Segmentation\\ 
-& \& Segmentation & \\
+Word & Initial Syllable\\
 \midrule
-L1 Spanish--L2 English & Included & Not Recruited\\
-L1 English--L2 Spanish & Included & Included\\
-L1 Spanish Monolinguals & Not Recruited & Included\\
-Early Bilinguals & Dropped & Not Recruited\\
+caldera	  & CAL\\
+cantera	  & CAN\\
+ciruela	  & CI\\
+culata	  & CU\\
+gustazo	  & GUS\\
+latencia  & LA\\
+pericia	  & PE\\
+pupila	  & PU\\
+sendero	  & SEN\\
+sordina	  & SOR\\
 \bottomrule
 \end{tabular}
-\caption{Table lists the types of participants that participated in each of the three experiments in different modalities---In-person or Online.}
-\label{tab-part-groups-exp}
+\caption{The table lists the practice stimuli used in Chapter \ref{ch-intuition}}
+\label{tab-prac-intuition}
 \end{table}
 
-
+\begin{table}
+\centering
+\begin{tabular}{llll}
+\toprule
+Word & Initial Syllable & Word & Initial Syllable\\
+\midrule
+balada	  & BA    &  jornada	  & JOR\\
+baldosa	  & BAL   &  joroba	    & JO\\
+bolero	  & BO    &  limosna	  & LI\\
+bolsillo  & BOL   &  limpieza   & LIM\\
+camisa	  & CA    &  linaje	    & LI\\
+campana	  & CAM   &  linterna   & LIN\\
+casilla	  & CA    &  moneda	    & MO\\
+castillo  & CAS   &  montaña	  & MON\\
+ceniza	  & CE    &  morcillo   & MOR\\
+centavo	  & CEN   &  morera	    & MO\\
+cereza	  & CE    &  muralla	  & MU\\
+cerveza	  & CER   &  murmullo   & MUR\\
+coraje	  & CO    &  palmera	  & PAL\\
+corbata	  & COR   &  paloma	    & PA\\
+corona	  & CO    &  pasaje	    & PA\\
+corteza	  & COR   &  pastilla   & PAS\\
+cosecha	  & CO    &  pereza	    & PE\\
+costilla  & COS   &  permiso	  & PER\\
+culebra	  & CU    &  peseta	    & PE\\
+culpable  & CUL   &  pestaña	  & PES\\
+ganancia  & GA    &  rosario	  & RO\\
+ganchillo	& GAN   &  rosquilla	& ROS\\
+garaje	  & GA    &  volante	  & VO\\
+garganta  & GAR   &  voltaje	  & VOL\\
+\bottomrule
+\end{tabular}
+\caption{The table lists the experimental stimuli used in Chapter \ref{ch-intuition}}
+\label{tab-exp-intuition}
+\end{table}
 
 %<table_anova_lab_learners, results='asis', include=TRUE>>=
 %xtable(lab_aov_learners_2$anova_table, 

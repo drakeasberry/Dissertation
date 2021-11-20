@@ -68,8 +68,8 @@ openany, % eliminates all extra blank pages from entire document
 %----------------------------------------------------------------------------------------
 % TODO PACKAGE
 %----------------------------------------------------------------------------------------
-%\usepackage[disable]{todonotes} % Hide renderable notes from pdf
-\usepackage[draft, textsize=tiny, textwidth=0.8in]{todonotes} % Make renderable notes in pdf
+\usepackage[disable]{todonotes} % Hide renderable notes from pdf
+%\usepackage[draft, textsize=tiny, textwidth=0.8in]{todonotes} % Make renderable notes in pdf
 \setlength{\marginparwidth}{0.8in}
 \newcommand{\ttodo}[2][]
 {\todo[caption={#2}, size=\tiny, #1]{\renewcommand{\baselinestretch}{0.5}\selectfont#2\par}}
@@ -309,7 +309,7 @@ Dissertation Director: \chairname \\
 %
 % Acknowledgements are not a necessary item. Comment out if not being used 
 % This calls the Acknowledgements.rnw
-\Sexpr{knit_child('FrontBackMatter/Acknowledgements.rnw')}
+%\Sexpr{knit_child('FrontBackMatter/Acknowledgements.rnw')}
 
 
 %----------------------------------------------------------------------------------------
@@ -317,7 +317,7 @@ Dissertation Director: \chairname \\
 %----------------------------------------------------------------------------------------
 %
 % Dedications are not a necessary item. Comment out to remove from document
-\dedicatory{For my family and friends. \\\bigskip Dedicated to my Granny and Pa who I lost during my time in Arizona. They have always supported me and rejoiced in my accomplishments. I only wish that they were still here today to celebrate the completion of this dissertation.} 
+%\dedicatory{For my family and friends. \\\bigskip Dedicated to my Granny and Pa who I lost during my time in Arizona. They have always supported me and rejoiced in my accomplishments. I only wish that they were still here today to celebrate the completion of this dissertation.} 
 
 
 %----------------------------------------------------------------------------------------
@@ -429,12 +429,12 @@ Dissertation Director: \chairname \\
 % Include the appendices of the thesis as separate files from the Appendices folder
 % Uncomment the lines as you write the Appendices
 
-\Sexpr{knit_child('Appendices/Appendix_Button_Box.rnw')}
 \Sexpr{knit_child('Appendices/Appendix_BLP.rnw')}
 \Sexpr{knit_child('Appendices/Appendix_LexTALE.rnw')}
 \Sexpr{knit_child('Appendices/Appendix_LexTALE-Esp.rnw')}
 \Sexpr{knit_child('Appendices/Appendix_Intuition.rnw')}
 \Sexpr{knit_child('Appendices/Appendix_Segmentation.rnw')}
+\Sexpr{knit_child('Appendices/Appendix_Button_Box.rnw')}
 \Sexpr{knit_child('Appendices/Appendix_Wuggy.rnw')}
 
 

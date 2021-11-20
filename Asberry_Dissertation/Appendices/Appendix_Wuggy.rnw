@@ -13,7 +13,7 @@ set_parent('../Dissertation.rnw')
 
 \label{app-wuggy} % for referencing this appendix elsewhere, use \ref{Appendix_Wuggy}
 
-This list of 80 critical items were entered into Wuggy.app as words and the second column gave Wuggy.app the correction Spanish syllabification of each critical word—generated from within the application. I then used the verify feature to ensure all data was correct. This resulted in one error because "malena" was not found in the Wuggy.app dictionary. Therefore, I gave the correct syllabification of "ma-le-na" where hypens represent syllable boundaries. I then re-verified the data before running the analysis. Once I receive no errors, I ran the following analysis to generate new nonwords.
+This list of 80 critical items were entered into Wuggy.app as words and the second column gave Wuggy.app the correction Spanish syllabification of each critical word—generated from within the application. I then used the verify feature to ensure all data was correct. This resulted in one error because "malena" was not found in the Wuggy.app dictionary. Therefore, I gave the correct syllabification of "ma-le-na" where hyphens represent syllable boundaries. I then re-verified the data before running the analysis. Once I receive no errors, I ran the following analysis to generate new nonwords.
 
 \section*{Parameters:}
 \subsection*{General Settings:}
@@ -46,9 +46,9 @@ WARNING: Wuggy uses syllabification and it removes the accented vowels in Spanis
 
 Once in Excel, I renamed the worksheet WuggyRawOutput. Then I duplicated this worksheet and renamed the new worksheet WuggyBuilt. I then deleted all the columns except for columns A and B ("Word" and "Match"). I then added two columns called "Nonword\_Concat" and "Rand". In the Nonword\_Concat column, I entered the following formulas:
 
-For CV-CV-CV words: \= CONCATENATE(LEFT(B2,2),MID(B2,4,2),MID(B2,7,2))
+For CV-CV-CV words: \textipa{=}CONCATENATE(LEFT(B2,2),MID(B2,4,2),MID(B2,7,2))
 This formula combines the two leftmost characters, skips character 3 (the first syllable boundary marker), adds the 4th and 5th characters to the string store, skips the 6th character (the second syllable boundary marker), and finally adds the 7th and 8th characters from the left to create the six-letter nonword.
-For CVC-CVC words: \= CONCATENATE(LEFT(B403,3),RIGHT(B403,3))
+For CVC-CVC words: \textipa{=}CONCATENATE(LEFT(B403,3),RIGHT(B403,3))
 This formula combines the three leftmost and three rightmost characters to create the six-letter nonword excluding the one and only syllable boundary marker.
 
 These two formulas are necessary in order to create nonwords without the syllable markers. Once these steps have been completed, the file is ready for the python code housed in the cell below.

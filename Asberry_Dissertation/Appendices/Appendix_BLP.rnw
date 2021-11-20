@@ -16,7 +16,7 @@ set_parent('../Dissertation.rnw')
 \section*{Chapter \ref{ch-seg-lab}: In-person}
 All experiments in Chapter \ref{ch-seg-lab} utilized the full Bilingual Language Profile as designed by the creator of the questionnaire with no modifications to question content. The only modifications made were those to present the survey within PsychoPy. Participants were shown the survey questions in their preferred language as indicated by their response at the beginning of the experimental session. Both English and Spanish versions are listed below but only the English or Spanish version was shown to the participant:
 
-\subsection*{Langauge History--Historial lingüístico}
+\subsection*{Language History--Historial lingüístico}
 \begin{singlespacing}
 \begin{itemize}
 \item[1a:]{At what age did you start learning the following languages?\newline \emph{English}}
@@ -127,9 +127,9 @@ All experiments in Chapter \ref{ch-seg-lab} utilized the full Bilingual Language
 \end{singlespacing}
 
 \section*{Chapter \ref{ch-seg-online}: Online}
-Chapter \ref{ch-seg-online} included monolingual speakers and the BLP is not built for people who only speak one language. Therefore, a modified version of the BLP demographic questions were retained and included at the experimental start up screen. Participants typed or choose from prepopulated drop-downs to respond each field prior to starting the the experiment.
+Chapter \ref{ch-seg-online} included monolingual speakers and the BLP is not built for people who only speak one language. Therefore, a modified version of the BLP demographic questions were retained and included at the experimental start up screen. Participants typed or choose from populated drop-downs to respond each field prior to starting the the experiment.
 
-\subsection*{L1 Monoligual Spanish Speakers}
+\subsection*{L1 Monolingual Spanish Speakers}
 \begin{singlespacing}
 \begin{enumerate}
 \item Edad\newline \emph{Age}
