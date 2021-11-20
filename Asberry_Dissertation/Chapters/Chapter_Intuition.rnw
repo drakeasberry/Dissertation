@@ -524,7 +524,7 @@ As can be seen in Table \ref{tab-intuition-grp-score}, neither group performed a
 <<intuition_prop_correct, fig.width= 4, fig.height= 3>>=
 plt_corr_per
 @      
-\caption[Proportion Correct by Syllable Type]{The bar plot shows the difference in number of correct responses to each syllable structure---CV or CVC---for each language group---L1 English or L1 Spanish. The errors bars represent the 95\% confidence intervals.}
+\caption[Proportion Correct by Syllable Type]{The bar plot shows the difference in number of correct responses to each syllable structure---CV or CVC---for each language group---L1 English or L1 Spanish. The error bars represent the 95\% confidence intervals.}
 \label{plt-intuition-corr-prop}
 \end{center}
 \end{figure}
@@ -639,7 +639,7 @@ Figure \ref{plt-intuition-logit-prop} again shows the comparison of correct resp
 <<intuition_logit_correct, fig.width= 4, fig.height= 3>>=
 plt_corr_logit_sylX
 @      
-\caption[Logit Correct Response by Syllable Type]{The plot shows the difference in number of correct responses by syllable type---CV or CVC---for each L1 language group. The errors bars represent the 95\% confidence intervals.}
+\caption[Logit Correct Response by Syllable Type]{The plot shows the difference in number of correct responses by syllable type---CV or CVC---for each L1 language group. The error bars represent the 95\% confidence intervals.}
 \label{plt-intuition-logit-prop}
 \end{center}
 \end{figure}
