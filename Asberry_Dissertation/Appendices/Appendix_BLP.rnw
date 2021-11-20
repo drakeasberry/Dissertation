@@ -13,75 +13,145 @@ set_parent('../Dissertation.rnw')
 \chapter{Basic Language Profile (BLP)}
 \label{app-blp}
 %Data files are found in segmentation/data/processed_data/exp_files
-\section{Chapter 4: In-person}
-All experiments in Chapter \ref{ch-seg-lab} utilized the full Bilingual Language Profile as designed by the creator of the questionnaire with no modifications to question content. The only modifications made were those to present the survey within PsychoPy. Participants were shown the survey questions in their preferred language as indicated by their response at the beginning of the experimental session. Both English and Spanish versions are listed below:
+\section*{Chapter \ref{ch-seg-lab}: In-person}
+All experiments in Chapter \ref{ch-seg-lab} utilized the full Bilingual Language Profile as designed by the creator of the questionnaire with no modifications to question content. The only modifications made were those to present the survey within PsychoPy. Participants were shown the survey questions in their preferred language as indicated by their response at the beginning of the experimental session. Both English and Spanish versions are listed below but only the English or Spanish version was shown to the participant:
 
-\subsection{Langauge History--Historial lingüístico}
+\subsection*{Langauge History--Historial lingüístico}
 \begin{singlespacing}
 \begin{itemize}
-\item[1a:]{At what age did you start learning the following languages? English}
-\item[1a:]{¿A qué edad empezó a aprender las siguientes lenguas? inglés}\newline
-\item[1b:]{At what age did you start learning the following languages? Spanish}
-\item[1b:]{¿A qué edad empezó a aprender las siguientes lenguas? español}\newline
-
-\item[2a:]{At what age did you start to feel comfortable using the following languages? English}
-\item[2a:]{¿A qué edad empezó a sentirse cómodo usando las siguientes lenguas? inglés}\newline
-\item[2b:]{At what age did you start to feel comfortable using the following languages? Spanish}
-\item[2b:]{¿A qué edad empezó a sentirse cómodo usando las siguientes lenguas? español}\newline
-
-\item[3a:]{How many years of classes (grammar, history, math, etc.) have you had in the following languages (primary school through university)? English}
-\item[3a:]{Cuántos años de clases (gramática, historia, matemáticas, etc.) ha tenido en las siguientes lenguas (desde la escuela primaria a la universidad)? inglés}\newline
-\item[3b:]{How many years of classes (grammar, history, math, etc.) have you had in the following languages (primary school through university)? Spanish}
-\item[3b:]{Cuántos años de clases (gramática, historia, matemáticas, etc.) ha tenido en las siguientes lenguas (desde la escuela primaria a la universidad)? español}\newline
-
-\item[4a:]{How many years have you spent in a country/region where the following languages are spoken? English}
-\item[4a:]{¿Cuántos años ha pasado en un país/región donde se hablan las siguientes lenguas? inglés}\newline
-\item[4b:]{How many years have you spent in a country/region where the following languages are spoken? Spanish}
-\item[4b:]{¿Cuántos años ha pasado en un país/región donde se hablan las siguientes lenguas? español}\newline
-\item[5a:]{How many years have you spent in a family where the following languages are spoken? English}
-\item[5a:]{¿Cuántos años ha pasado en familia hablando las siguientes lenguas? inglés}\newline
-\item[5b:]{How many years have you spent in a family where the following languages are spoken? Spanish}
-\item[5b:]{¿Cuántos años ha pasado en familia hablando las siguientes lenguas? español}\newline
-\item[6a:]{How many years have you spent in a work environment where the following languages are spoken? English}
-\item[6a:]{¿Cuántos años ha pasado en un ambiente de trabajo donde se hablan las siguientes lenguas? inglés}\newline
-\item[6b:]{How many years have you spent in a work environment where the following languages are spoken? Spanish}
-\item[6b:]{¿Cuántos años ha pasado en un ambiente de trabajo donde se hablan las siguientes lenguas? español}
+\item[1a:]{At what age did you start learning the following languages?\newline \emph{English}}
+\item[1a:]{¿A qué edad empezó a aprender las siguientes lenguas?\newline \emph{inglés}}\newline
+\item[1b:]{At what age did you start learning the following languages?\newline \emph{Spanish}}
+\item[1b:]{¿A qué edad empezó a aprender las siguientes lenguas?\newline \emph{español}}\newline
+\item[2a:]{At what age did you start to feel comfortable using the following languages?\newline \emph{English}}
+\item[2a:]{¿A qué edad empezó a sentirse cómodo usando las siguientes lenguas?\newline \emph{inglés}}\newline
+\item[2b:]{At what age did you start to feel comfortable using the following languages?\newline \emph{Spanish}}
+\item[2b:]{¿A qué edad empezó a sentirse cómodo usando las siguientes lenguas?\newline \emph{español}}\newline
+\item[3a:]{How many years of classes (grammar, history, math, etc.) have you had in the following languages (primary school through university)?\newline \emph{English}}
+\item[3a:]{Cuántos años de clases (gramática, historia, matemáticas, etc.) ha tenido en las siguientes lenguas (desde la escuela primaria a la universidad)?\newline \emph{inglés}}\newline
+\item[3b:]{How many years of classes (grammar, history, math, etc.) have you had in the following languages (primary school through university)?\newline \emph{Spanish}}
+\item[3b:]{Cuántos años de clases (gramática, historia, matemáticas, etc.) ha tenido en las siguientes lenguas (desde la escuela primaria a la universidad)?\newline \emph{español}}\newline
+\item[4a:]{How many years have you spent in a country/region where the following languages are spoken?\newline \emph{English}}
+\item[4a:]{¿Cuántos años ha pasado en un país/región donde se hablan las siguientes lenguas?\newline \emph{inglés}}\newline
+\item[4b:]{How many years have you spent in a country/region where the following languages are spoken?\newline \emph{Spanish}}
+\item[4b:]{¿Cuántos años ha pasado en un país/región donde se hablan las siguientes lenguas?\newline \emph{español}}\newline
+\item[5a:]{How many years have you spent in a family where the following languages are spoken?\newline \emph{English}}
+\item[5a:]{¿Cuántos años ha pasado en familia hablando las siguientes lenguas?\newline \emph{inglés}}\newline
+\item[5b:]{How many years have you spent in a family where the following languages are spoken?\newline \emph{Spanish}}
+\item[5b:]{¿Cuántos años ha pasado en familia hablando las siguientes lenguas?\newline \emph{español}}\newline
+\item[6a:]{How many years have you spent in a work environment where the following languages are spoken?\newline \emph{English}}
+\item[6a:]{¿Cuántos años ha pasado en un ambiente de trabajo donde se hablan las siguientes lenguas?\newline \emph{inglés}}\newline
+\item[6b:]{How many years have you spent in a work environment where the following languages are spoken?\newline \emph{Spanish}}
+\item[6b:]{¿Cuántos años ha pasado en un ambiente de trabajo donde se hablan las siguientes lenguas?\newline \emph{español}}
 \end{itemize}
 \end{singlespacing}
 
-\subsection{Language Use--Uso de lenguas}
-%\begin{singlespacing}
-%\begin{itemize}
-7a,purple,Language use,"In an average week, what percentage of the time do you use the following languages with friends?",English,Uso de lenguas,"En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas con sus amigos?",inglés
-7b,blue,Language use,"In an average week, what percentage of the time do you use the following languages with friends?",Spanish,Uso de lenguas,"En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas con sus amigos?",español
-7c,red,Language use,"In an average week, what percentage of the time do you use the following languages with friends?",Other languages,Uso de lenguas,"En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas con sus amigos?",otras lenguas
-8a,purple,Language use,"In an average week, what percentage of the time do you use the following languages with family?",English,Uso de lenguas,"En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas con su familia?",inglés
-8b,blue,Language use,"In an average week, what percentage of the time do you use the following languages with family?",Spanish,Uso de lenguas,"En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas con su familia?",español
-8c,red,Language use,"In an average week, what percentage of the time do you use the following languages with family?",Other languages,Uso de lenguas,"En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas con su familia?",otras lenguas
-9a,purple,Language use,"In an average week, what percentage of the time do you use the following languages at school/work?",English,Uso de lenguas,"En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas en la escuela/el trabajo?",inglés
-9b,blue,Language use,"In an average week, what percentage of the time do you use the following languages at school/work?",Spanish,Uso de lenguas,"En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas en la escuela/el trabajo?",español
-9c,red,Language use,"In an average week, what percentage of the time do you use the following languages at school/work?",Other languages,Uso de lenguas,"En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas en la escuela/el trabajo?",otras lenguas
-10a,purple,Language use,"When you talk to yourself, how often do you talk to yourself in the following languages?",English,Uso de lenguas,"Cuando se habla a usted mismo, ¿con qué frecuencia se habla a sí mismo en las siguientes lenguas?",inglés
-10b,blue,Language use,"When you talk to yourself, how often do you talk to yourself in the following languages?",Spanish,Uso de lenguas,"Cuando se habla a usted mismo, ¿con qué frecuencia se habla a sí mismo en las siguientes lenguas?",español
-10c,red,Language use,"When you talk to yourself, how often do you talk to yourself in the following languages?",Other languages,Uso de lenguas,"Cuando se habla a usted mismo, ¿con qué frecuencia se habla a sí mismo en las siguientes lenguas?",otras lenguas
-11a,purple,Language use,"When you count, how often do you count in the following languages?",English,Uso de lenguas,"Cuando hace cálculos contando, ¿con qué frecuencia cuenta en las siguientes lenguas?",inglés
-11b,blue,Language use,"When you count, how often do you count in the following languages?",Spanish,Uso de lenguas,"Cuando hace cálculos contando, ¿con qué frecuencia cuenta en las siguientes lenguas?",español
-11c,red,Language use,"When you count, how often do you count in the following languages?",Other languages,Uso de lenguas,"Cuando hace cálculos contando, ¿con qué frecuencia cuenta en las siguientes lenguas?",otras lenguas
-12a,purple,Language proficiency,How well do you speak the following languages?,English,Competencia lingüística,¿Cómo habla en las siguientes lenguas?,inglés
-12b,blue,Language proficiency,How well do you speak the following languages?,Spanish,Competencia lingüística,¿Cómo habla en las siguientes lenguas?,español
-13a,purple,Language proficiency,How well do you understand the following languages?,English,Competencia lingüística,¿Cómo entiende en las siguientes lenguas?,inglés
-13b,blue,Language proficiency,How well do you understand the following languages?,Spanish,Competencia lingüística,¿Cómo entiende en las siguientes lenguas?,español
-14a,purple,Language proficiency,How well do you read the following languages?,English,Competencia lingüística,¿Cómo lee en las siguientes lenguas?,inglés
-14b,blue,Language proficiency,How well do you read the following languages?,Spanish,Competencia lingüística,¿Cómo lee en las siguientes lenguas?,español
-15a,purple,Language proficiency,How well do you write the following languages?,English,Competencia lingüística,¿Cómo escribe en las siguientes lenguas?,inglés
-15b,blue,Language proficiency,How well do you write the following languages?,Spanish,Competencia lingüística,¿Cómo escribe en las siguientes lenguas?,español
-16a,purple,Language attitudes,I feel like myself when I speak English.,English,Actitudes lingüísticas,"Me siento ""yo mismo"" cuando hablo en las siguientes lenguas.",inglés
-16b,blue,Language attitudes,I feel like myself when I speak Spanish.,Spanish,Actitudes lingüísticas,"Me siento ""yo mismo"" cuando hablo en las siguientes lenguas.",español
-17a,purple,Language attitudes,I identify with an English-speaking culture.,English,Actitudes lingüísticas,Yo me identifico con las siguientes culturas.,inglés
-17b,blue,Language attitudes,I identify with an Spanish-speaking culture.,Spanish,Actitudes lingüísticas,Yo me identifico con las siguientes culturas.,español
-18a,purple,Language attitudes,It is important to me to use (or eventually use) English like a native speaker.,English,Actitudes lingüísticas,Es importante para mí usar (o llegar a usar) las siguientes lenguas como un hablante nativo.,inglés
-18b,blue,Language attitudes,It is important to me to use (or eventually use) Spanish like a native speaker.,Spanish,Actitudes lingüísticas,Es importante para mí usar (o llegar a usar) las siguientes lenguas como un hablante nativo.,español
-19a,purple,Language attitudes,I want others to think I am a native speaker of English.,English,Actitudes lingüísticas,Quiero que los demás piensen que soy un hablante nativo de las siguientes lenguas.,inglés
-19b,blue,Language attitudes, I want others to think I am a native speaker of Spanish.,Spanish,Actitudes lingüísticas,Quiero que los demás piensen que soy un hablante nativo de las siguientes lenguas.,español
-%\end{itemize}
-%\end{singlespacing}
+\subsection*{Language Use--Uso de lenguas}
+\begin{singlespacing}
+\begin{itemize}
+\item[7a:]{In an average week, what percentage of the time do you use the following languages with friends?\newline \emph{English}}
+\item[7a:]{En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas con sus amigos?\newline \emph{inglés}}\newline
+\item[7b:]{In an average week, what percentage of the time do you use the following languages with friends?\newline \emph{Spanish}}
+\item[7b:]{En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas con sus amigos?\newline \emph{español}}\newline
+\item[7c:]{In an average week, what percentage of the time do you use the following languages with friends?\newline \emph{Other languages}}
+\item[7c:]{En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas con sus amigos?\newline \emph{otras lenguas}}\newline
+\item[8a:]{In an average week, what percentage of the time do you use the following languages with family?\newline \emph{English}}
+\item[8a:]{En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas con su familia?\newline \emph{inglés}}\newline
+\item[8b:]{In an average week, what percentage of the time do you use the following languages with family?\newline \emph{Spanish}}
+\item[8b:]{En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas con su familia?\newline \emph{español}}\newline
+\item[8c:]{In an average week, what percentage of the time do you use the following languages with family?\newline \emph{Other languages}}
+\item[8c:]{En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas con su familia?\newline \emph{otras lenguas}}\newline
+\item[9a:]{In an average week, what percentage of the time do you use the following languages at school/work?\newline \emph{English}}
+\item[9a:]{En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas en la escuela/el trabajo?\newline \emph{inglés}}\newline
+\item[9b:]{In an average week, what percentage of the time do you use the following languages at school/work?\newline \emph{Spanish}}
+\item[9b:]{En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas en la escuela/el trabajo?\newline \emph{español}}\newline
+\item[9c:]{In an average week, what percentage of the time do you use the following languages at school/work?\newline \emph{Other languages}}
+\item[9c:]{En una semana normal, ¿qué porcentaje del tiempo usa las siguientes lenguas en la escuela/el trabajo?\newline \emph{otras lenguas}}\newline
+\item[10a:]{When you talk to yourself, how often do you talk to yourself in the following languages?\newline \emph{English}}
+\item[10a:]{Cuando se habla a usted mismo, ¿con qué frecuencia se habla a sí mismo en las siguientes lenguas?\newline \emph{inglés}}\newline
+\item[10b:]{When you talk to yourself, how often do you talk to yourself in the following languages?\newline \emph{Spanish}}
+\item[10b:]{Cuando se habla a usted mismo, ¿con qué frecuencia se habla a sí mismo en las siguientes lenguas?\newline \emph{español}}\newline
+\item[10c:]{When you talk to yourself, how often do you talk to yourself in the following languages?\newline \emph{Other languages}}
+\item[10c:]{Cuando se habla a usted mismo, ¿con qué frecuencia se habla a sí mismo en las siguientes lenguas?\newline \emph{otras lenguas}}\newline
+\item[11a:]{When you count, how often do you count in the following languages?\newline \emph{English}}
+\item[11a:]{Cuando hace cálculos contando, ¿con qué frecuencia cuenta en las siguientes lenguas?\newline \emph{inglés}}\newline
+\item[11b:]{When you count, how often do you count in the following languages?\newline \emph{Spanish}}
+\item[11b:]{Cuando hace cálculos contando, ¿con qué frecuencia cuenta en las siguientes lenguas?\newline \emph{español}}\newline
+\item[11c:]{When you count, how often do you count in the following languages?\newline \emph{Other languages}}
+\item[11c:]{Cuando hace cálculos contando, ¿con qué frecuencia cuenta en las siguientes lenguas?\newline \emph{otras lenguas}}
+\end{itemize}
+\end{singlespacing}
+
+\subsection*{Language Proficiency--Competencia lingüística}
+\begin{singlespacing}
+\begin{itemize}
+\item[12a:]{How well do you speak the following languages?\newline \emph{English}}
+\item[12a:]{¿Cómo habla en las siguientes lenguas?\newline \emph{inglés}}\newline
+\item[12b:]{How well do you speak the following languages?\newline \emph{Spanish}}
+\item[12b:]{¿Cómo habla en las siguientes lenguas?\newline \emph{español}}\newline
+\item[13a:]{How well do you understand the following languages?\newline \emph{English}}
+\item[13a:]{¿Cómo entiende en las siguientes lenguas?\newline \emph{inglés}}\newline
+\item[13b:]{How well do you understand the following languages?\newline \emph{Spanish}}
+\item[13b:]{¿Cómo entiende en las siguientes lenguas?\newline \emph{español}}\newline
+\item[14a:]{How well do you read the following languages?\newline \emph{English}}
+\item[14a:]{¿Cómo lee en las siguientes lenguas?\newline \emph{inglés}}\newline
+\item[14b:]{How well do you read the following languages?\newline \emph{Spanish}}
+\item[14b:]{¿Cómo lee en las siguientes lenguas?\newline \emph{español}}\newline
+\item[15a:]{How well do you write the following languages?\newline \emph{English}}
+\item[15a:]{¿Cómo escribe en las siguientes lenguas?\newline \emph{inglés}}\newline
+\item[15b:]{How well do you write the following languages?\newline \emph{Spanish}}
+\item[15b:]{¿Cómo escribe en las siguientes lenguas?\newline \emph{español}}
+\end{itemize}
+\end{singlespacing}
+
+\subsection*{Language Attitudes--Actitudes lingüísticas}
+\begin{singlespacing}
+\begin{itemize}
+\item[16a:]{I feel like myself when I speak English.}
+\item[16a:]{Me siento yo mismo cuando hablo en las siguientes lenguas.}\newline
+\item[16b:]{I feel like myself when I speak Spanish.}
+\item[16b:]{Me siento yo mismo cuando hablo en las siguientes lenguas.}\newline
+\item[17a:]{I identify with an English-speaking culture.}
+\item[17a:]{Yo me identifico con las siguientes culturas.}\newline
+\item[17b:]{I identify with an Spanish-speaking culture.}
+\item[17b:]{Yo me identifico con las siguientes culturas.}\newline
+\item[18a:]{It is important to me to use (or eventually use) English like a native speaker.}
+\item[18a:]{Es importante para mí usar (o llegar a usar) las siguientes lenguas como un hablante nativo.}\newline
+\item[18b:]{It is important to me to use (or eventually use) Spanish like a native speaker.}
+\item[18b:]{Es importante para mí usar (o llegar a usar) las siguientes lenguas como un hablante nativo.}\newline
+\item[19a:]{I want others to think I am a native speaker of English.}
+\item[19a:]{Quiero que los demás piensen que soy un hablante nativo de las siguientes lenguas.}\newline
+\item[19b:]{I want others to think I am a native speaker of Spanish.}
+\item[19b:]{Quiero que los demás piensen que soy un hablante nativo de las siguientes lenguas.}
+\end{itemize}
+\end{singlespacing}
+
+\section*{Chapter \ref{ch-seg-online}: Online}
+Chapter \ref{ch-seg-online} included monolingual speakers and the BLP is not built for people who only speak one language. Therefore, a modified version of the BLP demographic questions were retained and included at the experimental start up screen. Participants typed or choose from prepopulated drop-downs to respond each field prior to starting the the experiment.
+
+\subsection*{L1 Monoligual Spanish Speakers}
+\begin{singlespacing}
+\begin{enumerate}
+\item Edad\newline \emph{Age}
+\item Sexo\newline \emph{Sex}
+\item País de nacimiento\newline \emph{Country of Birth}
+\item País dónde creciste\newline \emph{Country where you grew up}
+\item Lugar de residencia\newline \emph{Place of residence}
+\item Nivel más alto de formación académica\newline \emph{Highest level of education}
+\item Idioma usado en casa\newline \emph{Language used at home}
+\item Idioma preferido\newline \emph{Preferred language}
+\end{enumerate}
+\end{singlespacing}
+
+\subsection*{L1 English Speakers}
+The L1 English speakers answered all the questions that L1 monolingual Spanish speakers did in addition to the six listed below.
+\begin{singlespacing}
+\begin{enumerate}
+\item ¿A qué edad empezó a aprender español?\newline \emph{'What age did you start learning Spanish?'}
+\item ¿Cómo habla en español?\newline \emph{'How well do you speak Spanish?'}
+\item ¿Cómo entiende en español?\newline \emph{'How well do you understand Spanish?'}
+\item ¿Cómo lee en español?\newline \emph{'How well do you read in Spanish?'}
+\item ¿Cómo escribe en español?\newline \emph{'How well do you write in Spanish?'}
+\item ¿Cuándo fue la última vez que tomó una clase de español?\newline \emph{'When was the last time you took a Spanish class?'}
+\end{enumerate}
+\end{singlespacing}
