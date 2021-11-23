@@ -1,0 +1,80 @@
+\documentclass{beamer}
+%Information to be included in the title page:
+\title{Sample title}
+\author{Anonymous}
+\institute{Overleaf}
+\date{2021}
+
+%----------------------------------------------------------------------------------------
+<<global_opts_presentation, echo=FALSE, cache=FALSE, include=FALSE>>=
+library(knitr)
+library(here)
+
+knitr::opts_chunk$set(
+  echo = FALSE
+)
+here::here()
+#set_parent(here('Asberry_Presentations/Presentation.Rnw'))
+@
+
+
+%----------------------------------------------------------------------------------------
+% Load statistics in memory from separate files
+% Loading them here prevents a changing order messing up 
+% reference calls if chapter are later rearranged
+<<contentIntro, child=here('Statistics/Demographics/demographic_viz.rnw'), cache=TRUE, include=FALSE>>=
+@
+
+<<contentIntuition, child=here('Statistics/Intuition/intuition_viz.rnw'), cache=TRUE, include=FALSE>>=
+@
+
+<<contentLab, child=here('Statistics/Segmentation/target_syl_seg_viz.rnw'), cache=TRUE, include=FALSE>>=
+@
+
+<<contentPilot, child=here('Statistics/Pilot/Pilot.rnw'), cache=TRUE, include=FALSE>>=
+@
+
+<<contentLabDemo, child=here('Statistics/Demographics/lab_demo_viz.rnw'), cache=TRUE, include=FALSE>>=
+@
+
+<<contentIntuitionDemo, child=here('Statistics/Demographics/intuition_demo_viz.rnw'), cache=TRUE, include=FALSE>>=
+@
+
+<<contentOnlineDemo, child=here('Statistics/Demographics/online_demo_viz.rnw'), cache=TRUE, include=FALSE>>=
+@
+
+<<contentOnlinesegMono, child=here('Statistics/Monolingual_lemma/target_syl_mono_viz.rnw'), cache=TRUE, include=FALSE>>=
+@
+
+<<contentOnlinesegL2, child=here('Statistics/L2_lemma/target_syl_l2_viz.rnw'), cache=TRUE, include=FALSE>>=
+@
+
+%----------------------------------------------------------------------------------------
+
+
+\begin{document}
+
+\frame{\titlepage}
+
+%----------------------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Sample frame title}
+This is some text in the first frame. This is some text in the first frame. This is some text in the first frame.
+\end{frame}
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+\begin{frame}
+\begin{figure}
+\begin{center}
+<<intuition_lextale, fig.width= 4, fig.height= 3>>=
+intuition_eng_vocab
+@      
+\caption[LexTALE by Group]{Means for correct responses by each language group---English or Spanish---to LexTALE items.}
+\label{plt-intuition-eng-vocab}
+\end{center}
+\end{figure}
+\end{frame}
+%----------------------------------------------------------------------------------------
+
+\end{document}
