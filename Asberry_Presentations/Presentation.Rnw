@@ -1,8 +1,8 @@
 \documentclass{beamer}
 %Information to be included in the title page:
-\title{Sample title}
-\author{Anonymous}
-\institute{Overleaf}
+\title{Syllabification and Visual Word Segmentation in Spanish–English Bilinguals}
+\author{Drake Asberry}
+\institute{University of Arizona}
 \date{2021}
 
 %----------------------------------------------------------------------------------------
@@ -53,16 +53,183 @@ here::here()
 
 
 \begin{document}
-
+% Title Slide
 \frame{\titlepage}
 
+% Introduction Slide
 %----------------------------------------------------------------------------------------
 \begin{frame}
-\frametitle{Sample frame title}
-This is some text in the first frame. This is some text in the first frame. This is some text in the first frame.
+\frametitle{Introduction}
+This dissertation focused on syllabic intutions and processing of Spanish by L1 Spanish and L1 English speakers.\newline
+
+\begin{itemize}
+\item{Background}
+\item{Current Study}
+  \begin{itemize}
+  \item{Syllabic Intuitions}
+  \item{Visual Word Segmentation}
+  \end{itemize}
+\item{Discussion}
+\end{itemize}
 \end{frame}
 %----------------------------------------------------------------------------------------
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Background Information 
+%----------------------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Background}
+\begin{itemize}
+\item{Phoneme – distinct sound segments of a language that can form syllables and words}
+\item{Syllable – a pronounceable linguistic unit of a given language that generally contains a highly sonorant sound as it nucleus}
+\item{Segmentation – process of dividing langauge into smaller units}
+\item{Word Recognition – process of identifying a word as a real word or nonword of the language}
+\end{itemize}
+\end{frame}
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Background}
+\begin{itemize}
+\item{Syllable made its highlight as spoken language processing unit when it was found that participants could detect syllables faster than they could detect individualphonemes (Savin \& Bever, 1970).}
+\item{Phoneme- and Syllable-monitoring (nonwords)}
+  \begin{itemize}
+  \item{Hear the syllable target with the written English spelling}
+  \item{Auditory – “The target is /baeb/.”}
+  \item{Visual – “bab” written for target /baeb/.}
+  \end{itemize}
+\item{Experiment I - /b/}
+\item{Experiment II - /s/}
+\end{itemize}
+\end{frame}
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Background}
+\begin{itemize}
+\item{Research then moves from comparing different linguistic units such as phonemes, syllables, words, etc. to an emphasis on the effect of the syllable.}
+\item{Mehler and Hayes (1981):}
+  \begin{itemize}
+  \item{The syllable as a phonological unit of the language which can efficiently explain the grammar of language }
+  \item{The syllable as a unit which aides speech perception and comprehension}
+  \end{itemize}
+\end{itemize}
+\end{frame}
+%----------------------------------------------------------------------------------------
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Current Project
+%----------------------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Research Questions}
+\begin{itemize}
+\item{Get these from the introduction chapter}
+\end{itemize}
+\end{frame}
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Instruments}
+\begin{itemize}
+\item{LexTALE – English vocabulary test used as a correlate of language proficiency (Lemhöfer \& Broersma, 2012)}
+  \begin{itemize}
+  \item{Lower Intermediate Proficiency – up to 59}% correct response rate
+  \item{Upper Intermediate Proficiency – 60–80}% correct response rate
+  \item{Advance Proficiency – 80}% or greater correct response rate
+  \end{itemize}
+\item{LexTALE-Esp – Spanish vocabulary test used as a correlate of language proficiency (Izura, Cuetos, \& Brysbaert, 2014)}
+\item{LexTALE-ESP is able discriminate different language dominances of advanced Catalan–Spanish bilinguals—highly proficient in both languages (Ferré \& Brysbaert, 2017)}
+\end{itemize}
+\end{frame}
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Instruments}
+\begin{itemize}
+\item{Bilingual Language Profile (BLP) – a tool used to collect demographic information about participants and determining language dominance. Scores range from -218 to 218 where 0 represents balanced bilingualism (Birdsong, Gertken, \& Amengual, 2012).}
+
+\item{Language History (0-20+)}
+  \begin{itemize}
+  \item{At what age did you start learning/feel comfortable using English and Spanish?}
+  \end{itemize}
+\item{Language Use (Percentages)}
+  \begin{itemize}
+  \item{In an average week, what percentage of time do you use English, Spanish or other with family/friends?}
+  \end{itemize}
+\item{Language Proficiency (0-6 Likert Scale)}
+  \begin{itemize}
+  \item{How well do you speak/understand/read/write in English and Spanish?}
+  \end{itemize}
+\item{Language Attitudes (0-6 Likert Scale)}
+  \begin{itemize}
+  \item{I feel like myself when I speak English/Spanish.}
+  \item{I identify with English/Spanish speaking culture.}
+  \end{itemize}
+\end{itemize}
+\end{frame}
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Participant Groups}
+\begin{itemize}
+\item{Control Group – native Spanish speakers who learned English after age 12 who grew up and attended school in Mexico.}
+  \begin{itemize}
+  \item{Minimum of 80}
+  \item{BLP should indicate dominance in Spanish}
+  \end{itemize}
+\item{Early Bilingual Group – speakers who learned both Spanish (Mexican Variety) and English simultaneously from infancy, but grew up and attended school in the Southwestern United States.}
+  \begin{itemize}
+  \item{Minimum of 80}
+  \item{BLP should indicate and equal dominance in Spanish and English}
+  \end{itemize}
+\item{Late Bilingual Group – native English speakers who learned Spanish after age 12 who grew up and attended school in the Southwestern United States.}
+  \begin{itemize}
+  \item{Minimum of 80}
+  \item{BLP should indicate dominance in English}
+  \end{itemize}
+\end{itemize}
+\end{frame}
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Syllabic Intuitions}
+\begin{itemize}
+\item{Syllabic intuitions for Spanish words will be elicited through a direct appeal in 2 item forced choice task.}
+\item{Syllabic intuitions for Spanish and English differ:}
+\item{Spanish has clear syllable boundaries}
+\item{English allows for ambisyllabicity}
+Split these between Spanish and English with references.
+\end{itemize}
+\end{frame}
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Syllabic Intuitions}
+\begin{itemize}
+\item{In addition to ambisyllabicity, several onsets of syllables also do not align between Spanish and English.}
+\item{Illegal Spanish onsets that are legal English onsets: /s/ + [plosive] “sp, st, sk, sc”}
+  \begin{itemize}
+  \item{Spanish speaker: 	pes-ta-ña 	eyelash, computer tab		}
+  \item{English speaker: 	pes-ta-ña      or    	pe-sta-ña}
+  \end{itemize}
+\item{Given these two differences in syllabification:}
+  \begin{itemize}
+  \item{Native Spanish speakers should be the most consistent in syllable intuitions.}
+  \item{Native English speakers and L2 should learners exhibit the most variation in syllable intuitions.}
+  \item{Spanish–English simultaneous bilinguals could pattern like the native Spanish group, the native English group or fall in between two.}
+  \end{itemize}
+\item{These differences in syllable intuitions will affect both speech segmentation and word recognition processes if the syllable is playing a role in them.}
+
+\end{itemize}
+\end{frame}
+%----------------------------------------------------------------------------------------
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Syllabic Intuitions 
 %----------------------------------------------------------------------------------------
 \begin{frame}
 \begin{figure}
@@ -77,4 +244,32 @@ intuition_eng_vocab
 \end{frame}
 %----------------------------------------------------------------------------------------
 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Templates
+% List template
+%----------------------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Title of Slide}
+\begin{itemize}
+\item{}
+\end{itemize}
+\end{frame}
+%----------------------------------------------------------------------------------------
+
+% Figure template
+%----------------------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Title of Slide}
+\begin{figure}
+\begin{center}
+<<name_this_uniquely, fig.width= 4, fig.height= 3>>=
+#intuition_eng_vocab
+@  
+\caption[Template]{Type your caption here}
+\label{plt-label}
+\end{center}
+\end{figure}
+\end{frame}
+%----------------------------------------------------------------------------------------
 \end{document}
