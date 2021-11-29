@@ -5,10 +5,16 @@
 \institute{University of Arizona}
 \date{2021}
 
+\usepackage[backend=bibtex, style=authoryear, sorting=nyt, doi=false, natbib=true]{biblatex}
+\addbibresource{references.bib}
+\usepackage{tipa} % Required for IPA symbols
+\usepackage{multirow} % Required for multirow cells in tables
+\usepackage{booktabs}
 %----------------------------------------------------------------------------------------
 <<global_opts_presentation, echo=FALSE, cache=FALSE, include=FALSE>>=
 library(knitr)
 library(here)
+library(xtable)
 
 knitr::opts_chunk$set(
   echo = FALSE
@@ -237,15 +243,194 @@ Split these between Spanish and English with references.
 <<intuition_lextale, fig.width= 4, fig.height= 3>>=
 intuition_eng_vocab
 @      
-\caption[LexTALE by Group]{Means for correct responses by each language group---English or Spanish---to LexTALE items.}
+%\caption[LexTALE by Group]{Means for correct responses by each language group---English or Spanish---to LexTALE items.}
 \label{plt-intuition-eng-vocab}
 \end{center}
 \end{figure}
 \end{frame}
 %----------------------------------------------------------------------------------------
 
+%----------------------------------------------------------------------------------------
+\begin{frame}
+\begin{figure}
+\begin{center}
+<<intuition_lextale_izura, fig.width= 4, fig.height= 3>>=
+intuition_izura
+@      
+%\caption[LexTALE-ESP by Group]{Izura score by each language group---English or Spanish---to LexTALE-Esp items.}
+\label{plt-intuition-izura-vocab}
+\end{center}
+\end{figure}
+\end{frame}
+%----------------------------------------------------------------------------------------
 
+%----------------------------------------------------------------------------------------
+\begin{frame}
+\begin{figure}
+\begin{center}
+<<intuition_vocab_difference, fig.width= 4, fig.height= 3>>=
+intuition_vocab_diff
+@      
+%\caption[Vocabulary Size Comparison]{Using the LexTALE and LexTALE-Esp tasks, the difference in vocabulary size was calculated by subtracting the Spanish vocabulary percent correct from the English vocabulary percent correct responses. Therefore, a positive number indicates a larger English vocabulary size while a negative number indicates a larger Spanish vocabulary size.}
+\label{plt-intuition-vocab-diff}
+\end{center}
+\end{figure}
+\end{frame}
+%----------------------------------------------------------------------------------------
 
+%----------------------------------------------------------------------------------------
+\begin{frame}
+\begin{figure}
+\begin{center}
+<<intuition_lang_dominance, fig.width= 4, fig.height= 3>>=
+intuition_lang_dom
+@      
+%\caption[BLP Language Dominance]{Language dominance scores were calculated by following the formula given by the creators of the Bilingual Language Profile \parencite{Birdsong2012-wd}. In the current study, a larger number represents more dominance in English while a smaller number represents more dominance in Spanish}
+\label{plt-intuition-lang-dom}
+\end{center}
+\end{figure}
+\end{frame}
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+\begin{frame}
+%\frametitle{Title of Slide}
+\begin{table}
+\centering
+\begin{tabular}{l c l c c c c}
+\toprule
+& & & \multicolumn{2}{c}{Proportion Correct} & \multicolumn{2}{c}{Logit Correct}\\
+\cmidrule(lr){4-5}\cmidrule(lr){6-7}
+L1 & n & Syllable Type & Mean & SD & Mean & SD\\
+\midrule
+\multirow{2}{*}{English}
+& \multirow{2}{*}{\Sexpr{intuition_score_compare["English-CV","n"]}}
+% CV Condition
+& \Sexpr{intuition_score_compare["English-CV","syl_structure"]}
+& \Sexpr{round(intuition_score_compare["English-CV","prop_corr_Mean"],2)}
+& \Sexpr{round(intuition_score_compare["English-CV","prop_corr_SD"],2)}
+& \Sexpr{round(intuition_score_compare["English-CV","logit_corr_Mean"],2)}
+& \Sexpr{round(intuition_score_compare["English-CV","logit_corr_SD"],2)}\\
+% CVC Condition
+&
+& \Sexpr{intuition_score_compare["English-CVC","syl_structure"]} 
+& \Sexpr{round(intuition_score_compare["English-CVC","prop_corr_Mean"],2)}
+& \Sexpr{round(intuition_score_compare["English-CVC","prop_corr_SD"],2)}
+& \Sexpr{round(intuition_score_compare["English-CVC","logit_corr_Mean"],2)}
+& \Sexpr{round(intuition_score_compare["English-CVC","logit_corr_SD"],2)}\\
+\midrule
+\multirow{2}{*}{Spanish} 
+& \multirow{2}{*}{\Sexpr{intuition_score_compare["Spanish-CV","n"]}}
+% CV Condition
+& \Sexpr{intuition_score_compare["Spanish-CV","syl_structure"]} 
+& \Sexpr{round(intuition_score_compare["Spanish-CV","prop_corr_Mean"],2)}
+& \Sexpr{round(intuition_score_compare["Spanish-CV","prop_corr_SD"],2)}
+& \Sexpr{round(intuition_score_compare["Spanish-CV","logit_corr_Mean"],2)}
+& \Sexpr{round(intuition_score_compare["Spanish-CV","logit_corr_SD"],2)}\\
+% CVC Condition
+&
+& \Sexpr{intuition_score_compare["Spanish-CVC","syl_structure"]} 
+& \Sexpr{round(intuition_score_compare["Spanish-CVC","prop_corr_Mean"],2)}
+& \Sexpr{round(intuition_score_compare["Spanish-CVC","prop_corr_SD"],2)}
+& \Sexpr{round(intuition_score_compare["Spanish-CVC","logit_corr_Mean"],2)}
+& \Sexpr{round(intuition_score_compare["Spanish-CVC","logit_corr_SD"],2)}\\
+\bottomrule
+\multicolumn{6}{l}{Total participants: n = \Sexpr{
+intuition_score_compare["English-CV","n"] +
+intuition_score_compare["Spanish-CV","n"]}}\\
+\end{tabular}
+%\caption{Correct response rates are shown by group for each syllable structure in a raw proportion correct and after a logit transformation.}
+\label{tab-intuition-grp-score}
+\end{table}
+\end{frame}
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+\begin{frame}
+%\frametitle{Title of Slide}
+\begin{figure}
+\begin{center}
+<<intuition_prop_correct, fig.width= 4, fig.height= 3>>=
+plt_corr_per
+@      
+%\caption[Proportion Correct by Syllable Type]{The bar plot shows the difference in number of correct responses to each syllable structure---CV or CVC---for each language group---L1 English or L1 Spanish. The error bars represent the 95\% confidence intervals.}
+\label{plt-intuition-corr-prop}
+\end{center}
+\end{figure}
+\end{frame}
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+\begin{frame}
+%\frametitle{Title of Slide}
+<<table_anova_intuition, results='asis', include=TRUE>>=
+xtable(aov_intuition_prt$anova_table, 
+       type = "latex", 
+       #caption = "This table shows the results of the 2 x (2) mixed-effects anova for one between-subjects factor \\textit{Group}, which had two levels---L1 Spanish and L1 English. The within-subjects factor \\textit{Structure} also contained two levels---CV and CVC. The logit transformed values of correct syllabification responses was the dependent variable.",
+       label = "tab-anova-intuition")
+@
+\end{frame}
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+\begin{frame}
+%\frametitle{Title of Slide}
+\begin{figure}
+\begin{center}
+<<group_intuition, fig.width= 5, fig.height= 2.5>>=
+intuition_grp_main
+@      
+%\caption[Syllable Intuition by Group]{Estimated marginal means for correct responses for the between-subjects factor of language group---L1 English or L1 Spanish.}
+\label{plt-intuition-grp-emm}
+\end{center}
+\end{figure}
+\end{frame}
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+\begin{frame}
+%\frametitle{Title of Slide}
+\begin{figure}
+\begin{center}
+<<syl_intuition, fig.width= 5, fig.height= 2.5>>=
+intuition_syl_main
+@      
+%\caption[Syllable Intuition by Type]{Estimated marginal means for correct responses for the within-subjects factor of syllable structure---CV or CVC.}
+\label{plt-intuition-syl-emm}
+\end{center}
+\end{figure}
+\end{frame}
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+\begin{frame}
+%\frametitle{Title of Slide}
+\begin{figure}
+\begin{center}
+<<intuition_logit_correct, fig.width= 4, fig.height= 3>>=
+plt_corr_logit_sylX
+@      
+%\caption[Logit Correct Response by Syllable Type]{The plot shows the difference in number of correct responses by syllable type---CV or CVC---for each L1 language group. The error bars represent the 95\% confidence intervals.}
+\label{plt-intuition-logit-prop}
+\end{center}
+\end{figure}
+\end{frame}
+%----------------------------------------------------------------------------------------
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Lab Segmentation 
+%----------------------------------------------------------------------------------------
+\begin{frame}
+\begin{figure}
+\begin{center}
+<<sample_crossover, fig.width= 5, fig.height= 3>>=
+crossover_example
+@      
+%\caption[Plot: Crossover Effect]{Shows an example of what the crossover effect results in previous literature using a simulated fictitious dataset. The interaction can be seen in the lines representing the initial syllable structure of the word crossing due to faster detection times from monitoring experiments when the target syllable structure and the word-initial syllable matched structure matched.}
+\label{plt-sample-crossover}
+\end{center}
+\end{figure}
+\end{frame}
+%----------------------------------------------------------------------------------------
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Templates
 % List template
 %----------------------------------------------------------------------------------------
