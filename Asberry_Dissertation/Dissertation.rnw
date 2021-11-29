@@ -68,8 +68,8 @@ openany, % eliminates all extra blank pages from entire document
 %----------------------------------------------------------------------------------------
 % TODO PACKAGE
 %----------------------------------------------------------------------------------------
-\usepackage[disable]{todonotes} % Hide renderable notes from pdf
-%\usepackage[draft, textsize=tiny, textwidth=0.8in]{todonotes} % Make renderable notes in pdf
+%\usepackage[disable]{todonotes} % Hide renderable notes from pdf
+\usepackage[draft, textsize=tiny, textwidth=0.8in]{todonotes} % Make renderable notes in pdf
 \setlength{\marginparwidth}{0.8in}
 \newcommand{\ttodo}[2][]
 {\todo[caption={#2}, size=\tiny, #1]{\renewcommand{\baselinestretch}{0.5}\selectfont#2\par}}
