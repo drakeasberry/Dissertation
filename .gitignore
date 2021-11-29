@@ -10,6 +10,7 @@ knitr.sty
 #Ignore all temporary build files created by LaTeX Compile:
 Dissertation-blx.bib
 figure_table-blx.bib
+Presentation-blx.bib
 *.aux
 *.bbl
 *.blg
@@ -25,6 +26,8 @@ figure_table-blx.bib
 *.bcf
 **/cache
 *.tdo
+*.nav
+*.snm
 
 #Ignore jupyter notebook temporary files
 *ipynb_checkpoints*
@@ -57,3 +60,6 @@ Syllable_Segmentation.nb.html
 #Ignore misc files that will be deleted from directory at end of project
 /Statistics/Demographics/scrap_work.r
 /Scripts_Dissertation/participant_map_online.json
+
+#Ignore photoshop files used to create some images
+*.psd
