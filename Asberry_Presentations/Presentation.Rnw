@@ -634,6 +634,131 @@ plt_corr_logit_sylX
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Lab Segmentation 
 %----------------------------------------------------------------------------------------
 \begin{frame}
+\frametitle{Title of Slide}
+\begin{table}
+\centering
+\begin{tabular}{l c c c c c c c c c}
+\toprule
+& & & & & &\multicolumn{4}{c}{Age of Acquisition}\\
+\cmidrule(lr){7-10}
+& & \multicolumn{4}{c}{Age} & \multicolumn{2}{c}{Spanish} & 
+\multicolumn{2}{c}{English}\\
+\cmidrule(lr){3-6}\cmidrule(lr){7-8}\cmidrule(lr){9-10}
+& n & Min & Max & Mean & SD & Mean & SD & Mean & SD\\
+\midrule
+English
+& \Sexpr{lab_grp_desc["English","n"]}
+& \Sexpr{lab_grp_desc["English","age_Min"]} 
+& \Sexpr{lab_grp_desc["English","age_Max"]} 
+& \Sexpr{lab_grp_desc["English","age_Mean"]}
+& \Sexpr{lab_grp_desc["English","age_SD"]}
+& \Sexpr{lab_grp_desc["English","span_acq_age_Mean"]}
+& \Sexpr{lab_grp_desc["English","span_acq_age_SD"]}
+& \Sexpr{lab_grp_desc["English","eng_acq_age_Mean"]}
+& \Sexpr{lab_grp_desc["English","eng_acq_age_SD"]}\\
+Spanish
+& \Sexpr{lab_grp_desc["Spanish","n"]}
+& \Sexpr{lab_grp_desc["Spanish","age_Min"]} 
+& \Sexpr{lab_grp_desc["Spanish","age_Max"]} 
+& \Sexpr{lab_grp_desc["Spanish","age_Mean"]} 
+& \Sexpr{lab_grp_desc["Spanish","age_SD"]}
+& \Sexpr{lab_grp_desc["Spanish","span_acq_age_Mean"]}
+& \Sexpr{lab_grp_desc["Spanish","span_acq_age_SD"]}
+& \Sexpr{lab_grp_desc["Spanish","eng_acq_age_Mean"]}
+& \Sexpr{lab_grp_desc["Spanish","eng_acq_age_SD"]}\\
+\bottomrule
+\multicolumn{6}{l}{Total participants: n = \Sexpr{lab_grp_desc["Spanish","n"] + lab_grp_desc["English","n"]}}\\
+\end{tabular}
+\caption{Attributes of all lab-based segmentation participants.}
+\label{tab-lab-demo-part}
+\end{table}
+\end{frame}
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Title of Slide}
+\begin{table}
+\centering
+\begin{tabular}{l c c c c c c c c c}
+\toprule
+& & \multicolumn{6}{c}{Vocabulary Size \% Correct}\\
+\cmidrule(lr){3-8}
+& & \multicolumn{2}{c}{English} & \multicolumn{2}{c}{Spanish} & 
+\multicolumn{2}{c}{Difference} & \multicolumn{2}{c}{Izura Score}\\
+\cmidrule(lr){3-4}\cmidrule(lr){5-6}\cmidrule(lr){7-8}\cmidrule(lr){9-10}
+& n & Mean & SD & Mean & SD & Mean & SD & Mean & SD\\
+\midrule
+English
+& \Sexpr{lab_grp_desc["English","n"]}
+& \Sexpr{lab_grp_desc["English","lextale_eng_correct_Mean"]} 
+& \Sexpr{lab_grp_desc["English","lextale_eng_correct_SD"]} 
+& \Sexpr{lab_grp_desc["English","lextale_esp_correct_Mean"]}
+& \Sexpr{lab_grp_desc["English","lextale_esp_correct_SD"]}
+& \Sexpr{lab_grp_desc["English","vocab_diff_Mean"]}
+& \Sexpr{lab_grp_desc["English","vocab_diff_SD"]}
+& \Sexpr{lab_grp_desc["English","izura_score_Mean"]}
+& \Sexpr{lab_grp_desc["English","izura_score_SD"]}\\
+Spanish
+& \Sexpr{lab_grp_desc["Spanish","n"]}
+& \Sexpr{lab_grp_desc["Spanish","lextale_eng_correct_Mean"]} 
+& \Sexpr{lab_grp_desc["Spanish","lextale_eng_correct_SD"]} 
+& \Sexpr{lab_grp_desc["Spanish","lextale_esp_correct_Mean"]} 
+& \Sexpr{lab_grp_desc["Spanish","lextale_esp_correct_SD"]}
+& \Sexpr{lab_grp_desc["Spanish","vocab_diff_Mean"]}
+& \Sexpr{lab_grp_desc["Spanish","vocab_diff_SD"]}
+& \Sexpr{lab_grp_desc["Spanish","izura_score_Mean"]}
+& \Sexpr{lab_grp_desc["Spanish","izura_score_SD"]}\\
+\bottomrule
+\multicolumn{6}{l}{Total participants: n = \Sexpr{lab_grp_desc["Spanish","n"] + lab_grp_desc["English","n"]}}\\
+\end{tabular}
+%\caption{Vocabulary scores for participants in English and Spanish calculated as a percent correct score along with the differences in means. Spanish vocabulary size as calculated by \textcite{Izura2014-yw}.}
+\label{tab-lab-vocab-part}
+\end{table}
+\end{frame}
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Title of Slide}
+\begin{table}
+\centering
+\begin{tabular}{l c c c c c c c}
+\toprule
+& & \multicolumn{4}{c}{Global Language Scores}\\
+\cmidrule(lr){3-6}
+& & \multicolumn{2}{c}{English} & \multicolumn{2}{c}{Spanish} & 
+\multicolumn{2}{c}{Language Dominance}\\
+\cmidrule(lr){3-4}\cmidrule(lr){5-6}\cmidrule(lr){7-8}
+& n & Mean & SD & Mean & SD & Mean & SD\\
+\midrule
+English
+& \Sexpr{lab_grp_desc["English","n"]}
+& \Sexpr{lab_grp_desc["English","global_eng_score_Mean"]} 
+& \Sexpr{lab_grp_desc["English","global_eng_score_SD"]} 
+& \Sexpr{lab_grp_desc["English","global_esp_score_Mean"]}
+& \Sexpr{lab_grp_desc["English","global_esp_score_SD"]}
+& \Sexpr{lab_grp_desc["English","lang_dominance_Mean"]}
+& \Sexpr{lab_grp_desc["English","lang_dominance_SD"]}\\
+Spanish
+& \Sexpr{lab_grp_desc["Spanish","n"]}
+& \Sexpr{lab_grp_desc["Spanish","global_eng_score_Mean"]} 
+& \Sexpr{lab_grp_desc["Spanish","global_eng_score_SD"]} 
+& \Sexpr{lab_grp_desc["Spanish","global_esp_score_Mean"]} 
+& \Sexpr{lab_grp_desc["Spanish","global_esp_score_SD"]}
+& \Sexpr{lab_grp_desc["Spanish","lang_dominance_Mean"]}
+& \Sexpr{lab_grp_desc["Spanish","lang_dominance_SD"]}\\
+\bottomrule
+\multicolumn{6}{l}{Total participants: n = \Sexpr{lab_grp_desc["Spanish","n"] + lab_grp_desc["English","n"]}}\\
+\end{tabular}
+\caption{Individual language-based values and language dominance scores for participants. All values were calculated according to creators of the Basic Language Profile.}
+\label{tab-lab-lang-blp-part}
+\end{table}
+\end{frame}
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+\begin{frame}
 \begin{figure}
 \begin{center}
 <<sample_crossover, fig.width= 5, fig.height= 3>>=
@@ -1003,6 +1128,41 @@ Spanish
 %----------------------------------------------------------------------------------------
 \begin{frame}
 %\frametitle{Title of Slide}
+\begin{table}
+\centering
+\begin{tabular}{l c c c c c}
+\toprule
+& & \multicolumn{4}{c}{Spanish Vocabulary Size}\\
+\cmidrule(lr){3-6}
+& & \multicolumn{2}{c}{\% Correct} & \multicolumn{2}{c}{Izura Score}\\
+\cmidrule(lr){3-4}\cmidrule(lr){5-6}
+L1 & n & Mean & SD & Mean & SD\\
+\midrule
+English
+& \Sexpr{online_grp_desc["L2 Learner","n"]}
+& \Sexpr{online_grp_desc["L2 Learner","lextale_esp_correct_Mean"]}
+& \Sexpr{online_grp_desc["L2 Learner","lextale_esp_correct_SD"]}
+& \Sexpr{online_grp_desc["L2 Learner","izura_score_Mean"]}
+& \Sexpr{online_grp_desc["L2 Learner","izura_score_SD"]}\\
+Spanish
+& \Sexpr{online_grp_desc["Monolingual Spanish","n"]}
+& \Sexpr{online_grp_desc["Monolingual Spanish","lextale_esp_correct_Mean"]} 
+& \Sexpr{online_grp_desc["Monolingual Spanish","lextale_esp_correct_SD"]}
+& \Sexpr{online_grp_desc["Monolingual Spanish","izura_score_Mean"]}
+& \Sexpr{online_grp_desc["Monolingual Spanish","izura_score_SD"]}\\
+\bottomrule
+\multicolumn{6}{l}{Total participants: n = \Sexpr{online_grp_desc["Monolingual Spanish","n"] + online_grp_desc["L2 Learner","n"]}}\\
+\end{tabular}
+%\caption{Vocabulary scores for participants in Spanish calculated as a percent correct score and vocabulary size as calculated by \textcite{Izura2014-yw}.}
+\label{tab-lab-vocab-part-online}
+\end{table}
+\end{frame}
+%----------------------------------------------------------------------------------------
+
+
+%----------------------------------------------------------------------------------------
+\begin{frame}
+%\frametitle{Title of Slide}
 <<table_online_part_cond, results='asis', include=TRUE>>=
 xtable(online_example_cond, 
        type = "latex",
@@ -1225,6 +1385,19 @@ online_l1_grp_sum["Spanish-CVC-CVC-nonword","n"]}}\\
 %----------------------------------------------------------------------------------------
 \begin{frame}
 \frametitle{Title of Slide}
+<<table_anova_online_natives, results='asis', include=TRUE>>=
+xtable(online_aov_natives_prt$anova_table, 
+       type = "latex",
+       #table.placement = "hbt",
+       caption = "This table shows the L1 Spanish results of the (2) x (2) x (2) repeated measures ANOVA for three within subjects factors \\textit{Target}, \\textit{Matching} and \\textit{Lexicality}. The \\textit{Target} factor contained two levels---CV and CVC syllable structure. The \\textit{Matching} factor had two levels---Matching and Mismatching syllable structure. The \\textit{Lexicality} factor also included two levels---words and nonwords. The log transformed reaction time values was the dependent variable.",
+       label = "tab-anova-online-natives")
+@
+\end{frame}
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Title of Slide}
 \begin{figure}
 \begin{center}
 <<online_l1_mat, fig.width= 6, fig.height= 3>>=
@@ -1249,6 +1422,18 @@ online_l1_tar_mat_int
 \label{plt-online-l1-tar-mat-ns-int}
 \end{center}
 \end{figure}
+\end{frame}
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Title of Slide}
+<<table_anova_online_learners, results='asis', include=TRUE>>=
+xtable(online_aov_learners_prt$anova_table, 
+       type = "latex", 
+       caption = "This table shows the L1 English results of the (2) x (2) x (2) repeated measures ANOVA for three within subjects factors \\textit{Target}, \\textit{Matching} and \\textit{Lexicality}. The \\textit{Target} factor contained two levels---CV and CVC syllable structure. The \\textit{Matching} factor had two levels---Matching and Mismatching syllable structure. The \\textit{Lexicality} factor also included two levels---words and nonwords. The log transformed reaction time values was the dependent variable.",
+       label = "tab-anova-online-learners")
+@
 \end{frame}
 %----------------------------------------------------------------------------------------
 
@@ -1294,6 +1479,45 @@ online_l2_lex_mat_int
 \label{plt-online-l2-mat-lex-ns-int}
 \end{center}
 \end{figure}
+\end{frame}
+%----------------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Title of Slide}
+\begin{table}
+\centering
+\begin{tabular}{l c c c c}
+\toprule
+& \multicolumn{2}{c}{Lab Experiments} & \multicolumn{2}{c}{Online Experiments}\\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+L1 & Word Mean & Nonword Mean & Word Mean & Nonword Mean\\
+\midrule
+English
+& \Sexpr{round(mean(lab_l2_wd_av$segRespRTmsec_Mean),0)}
+& \Sexpr{round(mean(lab_l2_nonwd_av$segRespRTmsec_Mean),0)}
+& \Sexpr{round(mean(online_l2_wd_av$segRespRTmsec_Mean),0)}
+& \Sexpr{round(mean(online_l2_nonwd_av$segRespRTmsec_Mean),0)}\\
+Spanish
+& \Sexpr{round(mean(lab_l1_wd_av$segRespRTmsec_Mean),0)}
+& \Sexpr{round(mean(lab_l1_nonwd_av$segRespRTmsec_Mean),0)}
+& \Sexpr{round(mean(online_l1_wd_av$segRespRTmsec_Mean),0)}
+& \Sexpr{round(mean(online_l1_nonwd_av$segRespRTmsec_Mean),0)}\\
+\bottomrule
+\end{tabular}
+\caption{Average reaction times reported in milliseconds for words and nonwords. It includes all participants in in-person and online segmentation experiments.}
+\label{tab-lab-online-mean-rt}
+\end{table}
+\end{frame}
+%----------------------------------------------------------------------------------------
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Conclusion
+%----------------------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Conclusions}
+\begin{itemize}
+\item{}
+\end{itemize}
 \end{frame}
 %----------------------------------------------------------------------------------------
 
