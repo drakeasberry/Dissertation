@@ -170,7 +170,7 @@ eng_len_acq_compare
 
 hist_eligible_eng_grouped <- eligible_eng_grouped %>%   
   histo(., 'izura_score', 'group') +
-  labs(title = 'Eligible LS Participants by Recruitment Type', 
+  labs(title = 'Eligible L1 English Participants by Recruitment Type', 
        x = 'Izura Score', 
        y = 'Frequency')
 hist_eligible_eng_grouped
