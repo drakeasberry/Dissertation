@@ -3,7 +3,7 @@
 \title{Syllabification and Visual Word Segmentation in Spanish–English Bilinguals}
 \author{Drake Asberry}
 \institute{University of Arizona}
-\date{2021}
+\date{09 December 2021}
 
 \usepackage[backend=bibtex, style=authoryear, sorting=nyt, doi=false, natbib=true]{biblatex}
 \addbibresource{references.bib}
@@ -67,7 +67,7 @@ here::here()
 % Introduction Slide
 %----------------------------------------------------------------------------------------
 \begin{frame}
-\frametitle{Introduction}
+\frametitle{Outline}
 This dissertation focused on syllabic intutions and processing of Spanish by L1 Spanish and L1 English speakers.\newline
 
 \begin{itemize}
@@ -82,10 +82,11 @@ This dissertation focused on syllabic intutions and processing of Spanish by L1 
 \end{frame}
 %----------------------------------------------------------------------------------------
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Background Information 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Background Information
+% Definitions
 %----------------------------------------------------------------------------------------
 \begin{frame}
-\frametitle{Background}
+\frametitle{Definitions}
 \begin{itemize}
 \item{Phoneme – distinct sound segments of a language that can form syllables and words}
 \item{Syllable – a pronounceable linguistic unit of a given language that generally contains a highly sonorant sound as it nucleus}
@@ -95,6 +96,7 @@ This dissertation focused on syllabic intutions and processing of Spanish by L1 
 \end{frame}
 %----------------------------------------------------------------------------------------
 
+% Background studies Monitoring
 %----------------------------------------------------------------------------------------
 \begin{frame}
 \frametitle{Background}
@@ -112,6 +114,7 @@ This dissertation focused on syllabic intutions and processing of Spanish by L1 
 \end{frame}
 %----------------------------------------------------------------------------------------
 
+% Background Mehler Change in Research Line
 %----------------------------------------------------------------------------------------
 \begin{frame}
 \frametitle{Background}
@@ -127,6 +130,7 @@ This dissertation focused on syllabic intutions and processing of Spanish by L1 
 %----------------------------------------------------------------------------------------
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Current Project
+% Research Questions
 %----------------------------------------------------------------------------------------
 \begin{frame}
 \frametitle{Research Questions}
@@ -138,9 +142,10 @@ This dissertation focused on syllabic intutions and processing of Spanish by L1 
 \end{frame}
 %----------------------------------------------------------------------------------------
 
+% Instruments LexTALE
 %----------------------------------------------------------------------------------------
 \begin{frame}
-\frametitle{Instruments}
+\frametitle{Vocabulary Tasks}
 \begin{itemize}
 \item{LexTALE – English vocabulary test used as a correlate of language proficiency (Lemhöfer \& Broersma, 2012)}
   \begin{itemize}
@@ -154,9 +159,42 @@ This dissertation focused on syllabic intutions and processing of Spanish by L1 
 \end{frame}
 %----------------------------------------------------------------------------------------
 
+% Vocabulary between Spanish and English
 %----------------------------------------------------------------------------------------
 \begin{frame}
-\frametitle{Instruments}
+\frametitle{Participants}
+\begin{figure}
+\begin{center}
+<<elig_part_hist, fig.width= 5, fig.height= 2>>=
+hist_eligible_grouped
+@      
+%\caption[Histogram: Eligible Participants]{Shows the Spanish vocabulary size for all participants meeting the inclusion criteria distributed by L1 language calculated through the equation provided by \parencite{Izura2014-yw}}
+\label{plt-hist-eligible-part}
+\end{center}
+\end{figure}
+\end{frame}
+%----------------------------------------------------------------------------------------
+
+% Vocabulary L1 English Speakers by In-person and Online studies
+%----------------------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Participants}
+\begin{figure}
+\begin{center}
+<<elig_ls_part_hist, fig.width= 5, fig.height= 2>>=
+hist_eligible_eng_grouped
+@      
+%\caption[Histogram: Eligible English Participants]{Shows the Spanish vocabulary size for L1 English speaker participants distributed by recruitment method calculated through the equation provided by \parencite{Izura2014-yw}.}
+\label{plt-hist-eligible-ls-part}
+\end{center}
+\end{figure}
+\end{frame}
+%----------------------------------------------------------------------------------------
+
+% Instruments Blingual Language Profile
+%----------------------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Bilingual Language Profile}
 \begin{itemize}
 \item{Bilingual Language Profile (BLP) – a tool used to collect demographic information about participants and determining language dominance. Scores range from -218 to 218 where 0 represents balanced bilingualism (Birdsong, Gertken, \& Amengual, 2012).}
 
@@ -181,6 +219,7 @@ This dissertation focused on syllabic intutions and processing of Spanish by L1 
 \end{frame}
 %----------------------------------------------------------------------------------------
 
+% Participants Group Descriptions
 %----------------------------------------------------------------------------------------
 \begin{frame}
 \frametitle{Participant Groups}
@@ -204,71 +243,45 @@ This dissertation focused on syllabic intutions and processing of Spanish by L1 
 \end{frame}
 %----------------------------------------------------------------------------------------
 
+% Participants Entire Dissertation
 %----------------------------------------------------------------------------------------
-\begin{frame}
-\frametitle{Participants}
-\begin{table}
-\centering
-\begin{tabular}{l c c c c c c}
-\toprule
-& & \multicolumn{3}{c}{Age} &  \multicolumn{2}{c}{Mean Age of Acquisition}\\
-\cmidrule(lr){3-5}\cmidrule(lr){6-7}
-& n & Min & Max & Mean & Spanish & English\\
-\midrule
-Female
-& \Sexpr{eligible_gen_desc["Female","n"]}
-& \Sexpr{eligible_gen_desc["Female","age_Min"]} 
-& \Sexpr{eligible_gen_desc["Female","age_Max"]} 
-& \Sexpr{round(eligible_gen_desc["Female","age_Mean"],2)} 
-& \Sexpr{round(eligible_gen_desc["Female","span_acq_age_Mean"],2)}
-& \Sexpr{round(eligible_gen_desc["Female","eng_acq_age_Mean"],2)}\\
-Male
-& \Sexpr{eligible_gen_desc["Male","n"]}
-& \Sexpr{eligible_gen_desc["Male","age_Min"]} 
-& \Sexpr{eligible_gen_desc["Male","age_Max"]} 
-& \Sexpr{round(eligible_gen_desc["Male","age_Mean"],2)} 
-& \Sexpr{round(eligible_gen_desc["Male","span_acq_age_Mean"],2)}
-& \Sexpr{round(eligible_gen_desc["Male","eng_acq_age_Mean"],2)}\\
-\bottomrule
-\multicolumn{6}{l}{Total participants: n = \Sexpr{eligible_gen_desc["Female","n"]+ eligible_gen_desc["Male","n"]}}\\
-\end{tabular}
-\caption{Attributes of all recruited participants.}
-\label{tab-demo-part}
-\end{table}
-\end{frame}
-%----------------------------------------------------------------------------------------
-
-%----------------------------------------------------------------------------------------
-\begin{frame}
-\frametitle{Participants}
-\begin{figure}
-\begin{center}
-<<elig_part_hist, fig.width= 5, fig.height= 2>>=
-hist_eligible_grouped
-@      
-%\caption[Histogram: Eligible Participants]{Shows the Spanish vocabulary size for all participants meeting the inclusion criteria distributed by L1 language calculated through the equation provided by \parencite{Izura2014-yw}}
-\label{plt-hist-eligible-part}
-\end{center}
-\end{figure}
-\end{frame}
+%\begin{frame}
+%\frametitle{Participants}
+%\begin{table}
+%\centering
+%\begin{tabular}{l c c c c c c}
+%\toprule
+%& & \multicolumn{3}{c}{Age} &  \multicolumn{2}{c}{Mean Age of Acquisition}\\
+%\cmidrule(lr){3-5}\cmidrule(lr){6-7}
+%& n & Min & Max & Mean & Spanish & English\\
+%\midrule
+%Female
+%& \Sexpr{eligible_gen_desc["Female","n"]}
+%& \Sexpr{eligible_gen_desc["Female","age_Min"]} 
+%& \Sexpr{eligible_gen_desc["Female","age_Max"]} 
+%& \Sexpr{round(eligible_gen_desc["Female","age_Mean"],2)} 
+%& \Sexpr{round(eligible_gen_desc["Female","span_acq_age_Mean"],2)}
+%& \Sexpr{round(eligible_gen_desc["Female","eng_acq_age_Mean"],2)}\\
+%Male
+%& \Sexpr{eligible_gen_desc["Male","n"]}
+%& \Sexpr{eligible_gen_desc["Male","age_Min"]} 
+%& \Sexpr{eligible_gen_desc["Male","age_Max"]} 
+%& \Sexpr{round(eligible_gen_desc["Male","age_Mean"],2)} 
+%& \Sexpr{round(eligible_gen_desc["Male","span_acq_age_Mean"],2)}
+%& \Sexpr{round(eligible_gen_desc["Male","eng_acq_age_Mean"],2)}\\
+%\bottomrule
+%\multicolumn{6}{l}{Total participants: n = \Sexpr{eligible_gen_desc["Female","n"]+ eligible_gen_desc["Male","n"]}}\\
+%\end{tabular}
+%\caption{Attributes of all recruited participants.}
+%\label{tab-demo-part}
+%\end{table}
+%\end{frame}
 %----------------------------------------------------------------------------------------
 
-%----------------------------------------------------------------------------------------
-\begin{frame}
-\frametitle{Participants}
-\begin{figure}
-\begin{center}
-<<elig_ls_part_hist, fig.width= 5, fig.height= 2>>=
-hist_eligible_eng_grouped
-@      
-%\caption[Histogram: Eligible English Participants]{Shows the Spanish vocabulary size for L1 English speaker participants distributed by recruitment method calculated through the equation provided by \parencite{Izura2014-yw}.}
-\label{plt-hist-eligible-ls-part}
-\end{center}
-\end{figure}
-\end{frame}
-%----------------------------------------------------------------------------------------
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Syllabic Intuitions 
+% Syllabic Intuition Background
 %----------------------------------------------------------------------------------------
 \begin{frame}
 \frametitle{Syllabic Intuitions}
@@ -282,6 +295,7 @@ Split these between Spanish and English with references.
 \end{frame}
 %----------------------------------------------------------------------------------------
 
+% Syllabic Intuition Predictions
 %----------------------------------------------------------------------------------------
 \begin{frame}
 \frametitle{Syllabic Intuitions}
@@ -304,34 +318,37 @@ Split these between Spanish and English with references.
 \end{frame}
 %----------------------------------------------------------------------------------------
 
+% Syllabic Intuition English Vocabulary Scores
 %----------------------------------------------------------------------------------------
-\begin{frame}
-\begin{figure}
-\begin{center}
-<<intuition_lextale, fig.width= 4, fig.height= 3>>=
-intuition_eng_vocab
-@      
-%\caption[LexTALE by Group]{Means for correct responses by each language group---English or Spanish---to LexTALE items.}
-\label{plt-intuition-eng-vocab}
-\end{center}
-\end{figure}
-\end{frame}
-%----------------------------------------------------------------------------------------
-
-%----------------------------------------------------------------------------------------
-\begin{frame}
-\begin{figure}
-\begin{center}
-<<intuition_lextale_izura, fig.width= 4, fig.height= 3>>=
-intuition_izura
-@      
-%\caption[LexTALE-ESP by Group]{Izura score by each language group---English or Spanish---to LexTALE-Esp items.}
-\label{plt-intuition-izura-vocab}
-\end{center}
-\end{figure}
-\end{frame}
+%\begin{frame}
+%\begin{figure}
+%\begin{center}
+%<intuition_lextale, fig.width= 4, fig.height= 3>>=
+%intuition_eng_vocab
+%@      
+%%\caption[LexTALE by Group]{Means for correct responses by each language group---English or Spanish---to LexTALE items.}
+%\label{plt-intuition-eng-vocab}
+%\end{center}
+%\end{figure}
+%\end{frame}
 %----------------------------------------------------------------------------------------
 
+% Syllabic Intuition Spanish Vocabulary Scores
+%----------------------------------------------------------------------------------------
+%\begin{frame}
+%\begin{figure}
+%\begin{center}
+%<intuition_lextale_izura, fig.width= 4, fig.height= 3>>=
+%intuition_izura
+%@      
+%%\caption[LexTALE-ESP by Group]{Izura score by each language group---English or Spanish---to LexTALE-Esp items.}
+%\label{plt-intuition-izura-vocab}
+%\end{center}
+%\end{figure}
+%\end{frame}
+%----------------------------------------------------------------------------------------
+
+% Syllabic Intuition L1 and L2 Vocabulary Differences
 %----------------------------------------------------------------------------------------
 \begin{frame}
 \begin{figure}
@@ -346,6 +363,7 @@ intuition_vocab_diff
 \end{frame}
 %----------------------------------------------------------------------------------------
 
+% Syllabic Intuition Language Dominance
 %----------------------------------------------------------------------------------------
 \begin{frame}
 \begin{figure}
@@ -360,137 +378,138 @@ intuition_lang_dom
 \end{frame}
 %----------------------------------------------------------------------------------------
 
+% Syllabic Intuition Demographics
 %----------------------------------------------------------------------------------------
-\begin{frame}
-%\frametitle{Title of Slide}
-\begin{table}
-\centering
-\begin{tabular}{l c c c c c c c c c}
-\toprule
-& & & & & &\multicolumn{4}{c}{Age of Acquisition}\\
-\cmidrule(lr){7-10}
-& & \multicolumn{4}{c}{Age} & \multicolumn{2}{c}{Spanish} & 
-\multicolumn{2}{c}{English}\\
-\cmidrule(lr){3-6}\cmidrule(lr){7-8}\cmidrule(lr){9-10}
-& n & Min & Max & Mean & SD & Mean & SD & Mean & SD\\
-\midrule
-English
-& \Sexpr{intuition_grp_desc["English","n"]}
-& \Sexpr{intuition_grp_desc["English","age_Min"]} 
-& \Sexpr{intuition_grp_desc["English","age_Max"]} 
-& \Sexpr{intuition_grp_desc["English","age_Mean"]}
-& \Sexpr{intuition_grp_desc["English","age_SD"]}
-& \Sexpr{intuition_grp_desc["English","span_acq_age_Mean"]}
-& \Sexpr{intuition_grp_desc["English","span_acq_age_SD"]}
-& \Sexpr{intuition_grp_desc["English","eng_acq_age_Mean"]}
-& \Sexpr{intuition_grp_desc["English","eng_acq_age_SD"]}\\
-Spanish
-& \Sexpr{intuition_grp_desc["Spanish","n"]}
-& \Sexpr{intuition_grp_desc["Spanish","age_Min"]} 
-& \Sexpr{intuition_grp_desc["Spanish","age_Max"]} 
-& \Sexpr{intuition_grp_desc["Spanish","age_Mean"]} 
-& \Sexpr{intuition_grp_desc["Spanish","age_SD"]}
-& \Sexpr{intuition_grp_desc["Spanish","span_acq_age_Mean"]}
-& \Sexpr{intuition_grp_desc["Spanish","span_acq_age_SD"]}
-& \Sexpr{intuition_grp_desc["Spanish","eng_acq_age_Mean"]}
-& \Sexpr{intuition_grp_desc["Spanish","eng_acq_age_SD"]}\\
-\bottomrule
-\multicolumn{6}{l}{Total participants: n = 
-\Sexpr{intuition_grp_desc["Spanish","n"] + 
-intuition_grp_desc["English","n"]}}\\
-\end{tabular}
-\caption{Attributes of all participants in Spanish syllable intuition experiment.}
-\label{tab-intuition-demo-part}
-\end{table}
-\end{frame}
-%----------------------------------------------------------------------------------------
-
-%----------------------------------------------------------------------------------------
-\begin{frame}
-%\frametitle{Title of Slide}
-\begin{table}
-\centering
-\begin{tabular}{l c c c c c c c c c}
-\toprule
-& & \multicolumn{6}{c}{Vocabulary Size \% Correct}\\
-\cmidrule(lr){3-8}
-& & \multicolumn{2}{c}{English} & \multicolumn{2}{c}{Spanish} & 
-\multicolumn{2}{c}{Difference} & \multicolumn{2}{c}{Izura Score}\\
-\cmidrule(lr){3-4}\cmidrule(lr){5-6}\cmidrule(lr){7-8}\cmidrule(lr){9-10}
-& n & Mean & SD & Mean & SD & Mean & SD & Mean & SD\\
-\midrule
-English
-& \Sexpr{intuition_grp_desc["English","n"]}
-& \Sexpr{intuition_grp_desc["English","lextale_eng_correct_Mean"]} 
-& \Sexpr{intuition_grp_desc["English","lextale_eng_correct_SD"]} 
-& \Sexpr{intuition_grp_desc["English","lextale_esp_correct_Mean"]}
-& \Sexpr{intuition_grp_desc["English","lextale_esp_correct_SD"]}
-& \Sexpr{intuition_grp_desc["English","vocab_diff_Mean"]}
-& \Sexpr{intuition_grp_desc["English","vocab_diff_SD"]}
-& \Sexpr{intuition_grp_desc["English","izura_score_Mean"]}
-& \Sexpr{intuition_grp_desc["English","izura_score_SD"]}\\
-Spanish
-& \Sexpr{intuition_grp_desc["Spanish","n"]}
-& \Sexpr{intuition_grp_desc["Spanish","lextale_eng_correct_Mean"]} 
-& \Sexpr{intuition_grp_desc["Spanish","lextale_eng_correct_SD"]} 
-& \Sexpr{intuition_grp_desc["Spanish","lextale_esp_correct_Mean"]} 
-& \Sexpr{intuition_grp_desc["Spanish","lextale_esp_correct_SD"]}
-& \Sexpr{intuition_grp_desc["Spanish","vocab_diff_Mean"]}
-& \Sexpr{intuition_grp_desc["Spanish","vocab_diff_SD"]}
-& \Sexpr{intuition_grp_desc["Spanish","izura_score_Mean"]}
-& \Sexpr{intuition_grp_desc["Spanish","izura_score_SD"]}\\
-\bottomrule
-\multicolumn{6}{l}{Total participants: n = 
-\Sexpr{intuition_grp_desc["Spanish","n"] + 
-intuition_grp_desc["English","n"]}}\\
-\end{tabular}
-%\caption{Vocabulary scores for participants in English and Spanish calculated as a percent correct score along with the differences in means. Spanish vocabulary size as calculated by \textcite{Izura2014-yw}.}
-\label{tab-intuition-vocab-part}
-\end{table}
-\end{frame}
+%\begin{frame}
+%%\frametitle{Title of Slide}
+%\begin{table}
+%\centering
+%\begin{tabular}{l c c c c c c c c c}
+%\toprule
+%& & & & & &\multicolumn{4}{c}{Age of Acquisition}\\
+%\cmidrule(lr){7-10}
+%& & \multicolumn{4}{c}{Age} & \multicolumn{2}{c}{Spanish} & 
+%\multicolumn{2}{c}{English}\\
+%\cmidrule(lr){3-6}\cmidrule(lr){7-8}\cmidrule(lr){9-10}
+%& n & Min & Max & Mean & SD & Mean & SD & Mean & SD\\
+%\midrule
+%English
+%& \Sexpr{intuition_grp_desc["English","n"]}
+%& \Sexpr{intuition_grp_desc["English","age_Min"]} 
+%& \Sexpr{intuition_grp_desc["English","age_Max"]} 
+%& \Sexpr{intuition_grp_desc["English","age_Mean"]}
+%& \Sexpr{intuition_grp_desc["English","age_SD"]}
+%& \Sexpr{intuition_grp_desc["English","span_acq_age_Mean"]}
+%& \Sexpr{intuition_grp_desc["English","span_acq_age_SD"]}
+%& \Sexpr{intuition_grp_desc["English","eng_acq_age_Mean"]}
+%& \Sexpr{intuition_grp_desc["English","eng_acq_age_SD"]}\\
+%Spanish
+%& \Sexpr{intuition_grp_desc["Spanish","n"]}
+%& \Sexpr{intuition_grp_desc["Spanish","age_Min"]} 
+%& \Sexpr{intuition_grp_desc["Spanish","age_Max"]} 
+%& \Sexpr{intuition_grp_desc["Spanish","age_Mean"]} 
+%& \Sexpr{intuition_grp_desc["Spanish","age_SD"]}
+%& \Sexpr{intuition_grp_desc["Spanish","span_acq_age_Mean"]}
+%& \Sexpr{intuition_grp_desc["Spanish","span_acq_age_SD"]}
+%& \Sexpr{intuition_grp_desc["Spanish","eng_acq_age_Mean"]}
+%& \Sexpr{intuition_grp_desc["Spanish","eng_acq_age_SD"]}\\
+%\bottomrule
+%\multicolumn{6}{l}{Total participants: n = 
+%\Sexpr{intuition_grp_desc["Spanish","n"] + intuition_grp_desc["English","n"]}}\\
+%\end{tabular}
+%\caption{Attributes of all participants in Spanish syllable intuition experiment.}
+%\label{tab-intuition-demo-part}
+%\end{table}
+%\end{frame}
 %----------------------------------------------------------------------------------------
 
+% Syllabic Intuition Vocabulary
 %----------------------------------------------------------------------------------------
-\begin{frame}
-%\frametitle{Title of Slide}
-\begin{table}
-\centering
-\begin{tabular}{l c c c c c c c}
-\toprule
-& & \multicolumn{4}{c}{Global Language Scores}\\
-\cmidrule(lr){3-6}
-& & \multicolumn{2}{c}{English} & \multicolumn{2}{c}{Spanish} & 
-\multicolumn{2}{c}{Language Dominance}\\
-\cmidrule(lr){3-4}\cmidrule(lr){5-6}\cmidrule(lr){7-8}
-& n & Mean & SD & Mean & SD & Mean & SD\\
-\midrule
-English
-& \Sexpr{intuition_grp_desc["English","n"]}
-& \Sexpr{intuition_grp_desc["English","global_eng_score_Mean"]} 
-& \Sexpr{intuition_grp_desc["English","global_eng_score_SD"]} 
-& \Sexpr{intuition_grp_desc["English","global_esp_score_Mean"]}
-& \Sexpr{intuition_grp_desc["English","global_esp_score_SD"]}
-& \Sexpr{intuition_grp_desc["English","lang_dominance_Mean"]}
-& \Sexpr{intuition_grp_desc["English","lang_dominance_SD"]}\\
-Spanish
-& \Sexpr{intuition_grp_desc["Spanish","n"]}
-& \Sexpr{intuition_grp_desc["Spanish","global_eng_score_Mean"]} 
-& \Sexpr{intuition_grp_desc["Spanish","global_eng_score_SD"]} 
-& \Sexpr{intuition_grp_desc["Spanish","global_esp_score_Mean"]} 
-& \Sexpr{intuition_grp_desc["Spanish","global_esp_score_SD"]}
-& \Sexpr{intuition_grp_desc["Spanish","lang_dominance_Mean"]}
-& \Sexpr{intuition_grp_desc["Spanish","lang_dominance_SD"]}\\
-\bottomrule
-\multicolumn{6}{l}{Total participants: n = 
-\Sexpr{intuition_grp_desc["Spanish","n"] + 
-intuition_grp_desc["English","n"]}}\\
-\end{tabular}
-\caption{Individual language-based values and language dominance scores for participants. All values were calculated according to creators of the Basic Language Profile. A larger number indicates a more English dominant participant and a smaller number indicates a more Spanish dominant participant.}
-\label{tab-intuition-lang-blp-part}
-\end{table}
-\end{frame}
+%\begin{frame}
+%%\frametitle{Title of Slide}
+%\begin{table}
+%\centering
+%\begin{tabular}{l c c c c c c c c c}
+%\toprule
+%& & \multicolumn{6}{c}{Vocabulary Size \% Correct}\\
+%\cmidrule(lr){3-8}
+%& & \multicolumn{2}{c}{English} & \multicolumn{2}{c}{Spanish} & 
+%\multicolumn{2}{c}{Difference} & \multicolumn{2}{c}{Izura Score}\\
+%\cmidrule(lr){3-4}\cmidrule(lr){5-6}\cmidrule(lr){7-8}\cmidrule(lr){9-10}
+%& n & Mean & SD & Mean & SD & Mean & SD & Mean & SD\\
+%\midrule
+%English
+%& \Sexpr{intuition_grp_desc["English","n"]}
+%& \Sexpr{intuition_grp_desc["English","lextale_eng_correct_Mean"]} 
+%& \Sexpr{intuition_grp_desc["English","lextale_eng_correct_SD"]} 
+%& \Sexpr{intuition_grp_desc["English","lextale_esp_correct_Mean"]}
+%& \Sexpr{intuition_grp_desc["English","lextale_esp_correct_SD"]}
+%& \Sexpr{intuition_grp_desc["English","vocab_diff_Mean"]}
+%& \Sexpr{intuition_grp_desc["English","vocab_diff_SD"]}
+%& \Sexpr{intuition_grp_desc["English","izura_score_Mean"]}
+%& \Sexpr{intuition_grp_desc["English","izura_score_SD"]}\\
+%Spanish
+%& \Sexpr{intuition_grp_desc["Spanish","n"]}
+%& \Sexpr{intuition_grp_desc["Spanish","lextale_eng_correct_Mean"]} 
+%& \Sexpr{intuition_grp_desc["Spanish","lextale_eng_correct_SD"]} 
+%& \Sexpr{intuition_grp_desc["Spanish","lextale_esp_correct_Mean"]} 
+%& \Sexpr{intuition_grp_desc["Spanish","lextale_esp_correct_SD"]}
+%& \Sexpr{intuition_grp_desc["Spanish","vocab_diff_Mean"]}
+%& \Sexpr{intuition_grp_desc["Spanish","vocab_diff_SD"]}
+%& \Sexpr{intuition_grp_desc["Spanish","izura_score_Mean"]}
+%& \Sexpr{intuition_grp_desc["Spanish","izura_score_SD"]}\\
+%\bottomrule
+%\multicolumn{6}{l}{Total participants: n = 
+%\Sexpr{intuition_grp_desc["Spanish","n"] + intuition_grp_desc["English","n"]}}\\
+%\end{tabular}
+%%\caption{Vocabulary scores for participants in English and Spanish calculated as a percent correct score along with the differences in means. Spanish vocabulary size %as calculated by \textcite{Izura2014-yw}.}
+%\label{tab-intuition-vocab-part}
+%\end{table}
+%\end{frame}
 %----------------------------------------------------------------------------------------
 
+% Syllabic Intuition Language Dominance
+%----------------------------------------------------------------------------------------
+%\begin{frame}
+%%\frametitle{Title of Slide}
+%\begin{table}
+%\centering
+%\begin{tabular}{l c c c c c c c}
+%\toprule
+%& & \multicolumn{4}{c}{Global Language Scores}\\
+%\cmidrule(lr){3-6}
+%& & \multicolumn{2}{c}{English} & \multicolumn{2}{c}{Spanish} & 
+%\multicolumn{2}{c}{Language Dominance}\\
+%\cmidrule(lr){3-4}\cmidrule(lr){5-6}\cmidrule(lr){7-8}
+%& n & Mean & SD & Mean & SD & Mean & SD\\
+%\midrule
+%English
+%& \Sexpr{intuition_grp_desc["English","n"]}
+%& \Sexpr{intuition_grp_desc["English","global_eng_score_Mean"]} 
+%& \Sexpr{intuition_grp_desc["English","global_eng_score_SD"]} 
+%& \Sexpr{intuition_grp_desc["English","global_esp_score_Mean"]}
+%& \Sexpr{intuition_grp_desc["English","global_esp_score_SD"]}
+%& \Sexpr{intuition_grp_desc["English","lang_dominance_Mean"]}
+%& \Sexpr{intuition_grp_desc["English","lang_dominance_SD"]}\\
+%Spanish
+%& \Sexpr{intuition_grp_desc["Spanish","n"]}
+%& \Sexpr{intuition_grp_desc["Spanish","global_eng_score_Mean"]} 
+%& \Sexpr{intuition_grp_desc["Spanish","global_eng_score_SD"]} 
+%& \Sexpr{intuition_grp_desc["Spanish","global_esp_score_Mean"]} 
+%& \Sexpr{intuition_grp_desc["Spanish","global_esp_score_SD"]}
+%& \Sexpr{intuition_grp_desc["Spanish","lang_dominance_Mean"]}
+%& \Sexpr{intuition_grp_desc["Spanish","lang_dominance_SD"]}\\
+%\bottomrule
+%\multicolumn{6}{l}{Total participants: n = 
+%\Sexpr{intuition_grp_desc["Spanish","n"] + intuition_grp_desc["English","n"]}}\\
+%\end{tabular}
+%\caption{Individual language-based values and language dominance scores for participants. All values were calculated according to creators of the Basic Language Profile. A larger number indicates a more English dominant participant and a smaller number indicates a more Spanish dominant participant.}
+%\label{tab-intuition-lang-blp-part}
+%\end{table}
+%\end{frame}
+%----------------------------------------------------------------------------------------
+
+% Syllabic Intuition Results
 %----------------------------------------------------------------------------------------
 \begin{frame}
 %\frametitle{Title of Slide}
@@ -544,6 +563,7 @@ intuition_score_compare["Spanish-CV","n"]}}\\
 \end{frame}
 %----------------------------------------------------------------------------------------
 
+% Syllabic Intuition Results Figure Proportion Correct
 %----------------------------------------------------------------------------------------
 \begin{frame}
 %\frametitle{Title of Slide}
@@ -559,33 +579,36 @@ plt_corr_per
 \end{frame}
 %----------------------------------------------------------------------------------------
 
+% Syllabic Intuition Results Figure Logit Transformed values
 %----------------------------------------------------------------------------------------
 \begin{frame}
 \frametitle{Change Plot to Logit}
 \begin{figure}
 \begin{center}
 <<intuition_prop_logit_correct, fig.width= 4, fig.height= 3>>=
-plt_corr_per
+plt_corr_logit
 @      
-\caption[Proportion Correct by Syllable Type]{go get the logit transformed plot that shows the English difference goes away when transformed}
-\label{plt-intuition-corr-prop}
+%\caption[Proportion Correct by Syllable Type]{go get the logit transformed plot that shows the English difference goes away when transformed}
+\label{plt-intuition-corr-prop-logit}
 \end{center}
 \end{figure}
 \end{frame}
 %----------------------------------------------------------------------------------------
 
+% Syllabic Intuition ANOVA
 %----------------------------------------------------------------------------------------
-\begin{frame}
-%\frametitle{Title of Slide}
-<<table_anova_intuition, results='asis', include=TRUE>>=
-xtable(aov_intuition_prt$anova_table, 
-       type = "latex", 
-       #caption = "This table shows the results of the 2 x (2) mixed-effects anova for one between-subjects factor \\textit{Group}, which had two levels---L1 Spanish and L1 English. The within-subjects factor \\textit{Structure} also contained two levels---CV and CVC. The logit transformed values of correct syllabification responses was the dependent variable.",
-       label = "tab-anova-intuition")
-@
-\end{frame}
+%\begin{frame}
+%%\frametitle{Title of Slide}
+%<table_anova_intuition, results='asis', include=TRUE>>=
+%xtable(aov_intuition_prt$anova_table, 
+%       type = "latex", 
+%       #caption = "This table shows the results of the 2 x (2) mixed-effects anova for one between-subjects factor \\textit{Group}, which had two levels---L1 Spanish and L1 English. The within-subjects factor \\textit{Structure} also contained two levels---CV and CVC. The logit transformed values of correct syllabification responses was the dependent variable.",
+%       label = "tab-anova-intuition")
+%@
+%\end{frame}
 %----------------------------------------------------------------------------------------
 
+% Syllabic Intuition Main Effect of Group Estimated Marginal Means Inferential 95% CIs
 %----------------------------------------------------------------------------------------
 \begin{frame}
 %\frametitle{Title of Slide}
@@ -601,6 +624,7 @@ intuition_grp_main
 \end{frame}
 %----------------------------------------------------------------------------------------
 
+% Syllabic Intuition Main Effect of Syllable Structure Estimated Marginal Means Inferential 95% CIs
 %----------------------------------------------------------------------------------------
 \begin{frame}
 %\frametitle{Title of Slide}
@@ -616,6 +640,7 @@ intuition_syl_main
 \end{frame}
 %----------------------------------------------------------------------------------------
 
+% Syllabic Intuition Main Effect of Syllable Structure 95% CIs
 %----------------------------------------------------------------------------------------
 \begin{frame}
 %\frametitle{Title of Slide}
@@ -631,383 +656,377 @@ plt_corr_logit_sylX
 \end{frame}
 %----------------------------------------------------------------------------------------
 
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Lab Segmentation 
+% Lab Segmentation Demographics
 %----------------------------------------------------------------------------------------
-\begin{frame}
-\frametitle{Title of Slide}
-\begin{table}
-\centering
-\begin{tabular}{l c c c c c c c c c}
-\toprule
-& & & & & &\multicolumn{4}{c}{Age of Acquisition}\\
-\cmidrule(lr){7-10}
-& & \multicolumn{4}{c}{Age} & \multicolumn{2}{c}{Spanish} & 
-\multicolumn{2}{c}{English}\\
-\cmidrule(lr){3-6}\cmidrule(lr){7-8}\cmidrule(lr){9-10}
-& n & Min & Max & Mean & SD & Mean & SD & Mean & SD\\
-\midrule
-English
-& \Sexpr{lab_grp_desc["English","n"]}
-& \Sexpr{lab_grp_desc["English","age_Min"]} 
-& \Sexpr{lab_grp_desc["English","age_Max"]} 
-& \Sexpr{lab_grp_desc["English","age_Mean"]}
-& \Sexpr{lab_grp_desc["English","age_SD"]}
-& \Sexpr{lab_grp_desc["English","span_acq_age_Mean"]}
-& \Sexpr{lab_grp_desc["English","span_acq_age_SD"]}
-& \Sexpr{lab_grp_desc["English","eng_acq_age_Mean"]}
-& \Sexpr{lab_grp_desc["English","eng_acq_age_SD"]}\\
-Spanish
-& \Sexpr{lab_grp_desc["Spanish","n"]}
-& \Sexpr{lab_grp_desc["Spanish","age_Min"]} 
-& \Sexpr{lab_grp_desc["Spanish","age_Max"]} 
-& \Sexpr{lab_grp_desc["Spanish","age_Mean"]} 
-& \Sexpr{lab_grp_desc["Spanish","age_SD"]}
-& \Sexpr{lab_grp_desc["Spanish","span_acq_age_Mean"]}
-& \Sexpr{lab_grp_desc["Spanish","span_acq_age_SD"]}
-& \Sexpr{lab_grp_desc["Spanish","eng_acq_age_Mean"]}
-& \Sexpr{lab_grp_desc["Spanish","eng_acq_age_SD"]}\\
-\bottomrule
-\multicolumn{6}{l}{Total participants: n = \Sexpr{lab_grp_desc["Spanish","n"] + lab_grp_desc["English","n"]}}\\
-\end{tabular}
-\caption{Attributes of all lab-based segmentation participants.}
-\label{tab-lab-demo-part}
-\end{table}
-\end{frame}
+%\begin{frame}
+%\frametitle{Chapter 4 Lab Segmentation}
+%\begin{table}
+%\centering
+%\begin{tabular}{l c c c c c c c c c}
+%\toprule
+%& & & & & &\multicolumn{4}{c}{Age of Acquisition}\\
+%\cmidrule(lr){7-10}
+%& & \multicolumn{4}{c}{Age} & \multicolumn{2}{c}{Spanish} & 
+%\multicolumn{2}{c}{English}\\
+%\cmidrule(lr){3-6}\cmidrule(lr){7-8}\cmidrule(lr){9-10}
+%& n & Min & Max & Mean & SD & Mean & SD & Mean & SD\\
+%\midrule
+%English
+%& \Sexpr{lab_grp_desc["English","n"]}
+%& \Sexpr{lab_grp_desc["English","age_Min"]} 
+%& \Sexpr{lab_grp_desc["English","age_Max"]} 
+%& \Sexpr{lab_grp_desc["English","age_Mean"]}
+%& \Sexpr{lab_grp_desc["English","age_SD"]}
+%& \Sexpr{lab_grp_desc["English","span_acq_age_Mean"]}
+%& \Sexpr{lab_grp_desc["English","span_acq_age_SD"]}
+%& \Sexpr{lab_grp_desc["English","eng_acq_age_Mean"]}
+%& \Sexpr{lab_grp_desc["English","eng_acq_age_SD"]}\\
+%Spanish
+%& \Sexpr{lab_grp_desc["Spanish","n"]}
+%& \Sexpr{lab_grp_desc["Spanish","age_Min"]} 
+%& \Sexpr{lab_grp_desc["Spanish","age_Max"]} 
+%& \Sexpr{lab_grp_desc["Spanish","age_Mean"]} 
+%& \Sexpr{lab_grp_desc["Spanish","age_SD"]}
+%& \Sexpr{lab_grp_desc["Spanish","span_acq_age_Mean"]}
+%& \Sexpr{lab_grp_desc["Spanish","span_acq_age_SD"]}
+%& \Sexpr{lab_grp_desc["Spanish","eng_acq_age_Mean"]}
+%& \Sexpr{lab_grp_desc["Spanish","eng_acq_age_SD"]}\\
+%\bottomrule
+%\multicolumn{6}{l}{Total participants: n = \Sexpr{lab_grp_desc["Spanish","n"] + lab_grp_desc["English","n"]}}\\
+%\end{tabular}
+%\caption{Attributes of all lab-based segmentation participants.}
+%\label{tab-lab-demo-part}
+%\end{table}
+%\end{frame}
 %----------------------------------------------------------------------------------------
 
+% Lab Segmentation Vocabulary Scores
 %----------------------------------------------------------------------------------------
-\begin{frame}
-\frametitle{Title of Slide}
-\begin{table}
-\centering
-\begin{tabular}{l c c c c c c c c c}
-\toprule
-& & \multicolumn{6}{c}{Vocabulary Size \% Correct}\\
-\cmidrule(lr){3-8}
-& & \multicolumn{2}{c}{English} & \multicolumn{2}{c}{Spanish} & 
-\multicolumn{2}{c}{Difference} & \multicolumn{2}{c}{Izura Score}\\
-\cmidrule(lr){3-4}\cmidrule(lr){5-6}\cmidrule(lr){7-8}\cmidrule(lr){9-10}
-& n & Mean & SD & Mean & SD & Mean & SD & Mean & SD\\
-\midrule
-English
-& \Sexpr{lab_grp_desc["English","n"]}
-& \Sexpr{lab_grp_desc["English","lextale_eng_correct_Mean"]} 
-& \Sexpr{lab_grp_desc["English","lextale_eng_correct_SD"]} 
-& \Sexpr{lab_grp_desc["English","lextale_esp_correct_Mean"]}
-& \Sexpr{lab_grp_desc["English","lextale_esp_correct_SD"]}
-& \Sexpr{lab_grp_desc["English","vocab_diff_Mean"]}
-& \Sexpr{lab_grp_desc["English","vocab_diff_SD"]}
-& \Sexpr{lab_grp_desc["English","izura_score_Mean"]}
-& \Sexpr{lab_grp_desc["English","izura_score_SD"]}\\
-Spanish
-& \Sexpr{lab_grp_desc["Spanish","n"]}
-& \Sexpr{lab_grp_desc["Spanish","lextale_eng_correct_Mean"]} 
-& \Sexpr{lab_grp_desc["Spanish","lextale_eng_correct_SD"]} 
-& \Sexpr{lab_grp_desc["Spanish","lextale_esp_correct_Mean"]} 
-& \Sexpr{lab_grp_desc["Spanish","lextale_esp_correct_SD"]}
-& \Sexpr{lab_grp_desc["Spanish","vocab_diff_Mean"]}
-& \Sexpr{lab_grp_desc["Spanish","vocab_diff_SD"]}
-& \Sexpr{lab_grp_desc["Spanish","izura_score_Mean"]}
-& \Sexpr{lab_grp_desc["Spanish","izura_score_SD"]}\\
-\bottomrule
-\multicolumn{6}{l}{Total participants: n = \Sexpr{lab_grp_desc["Spanish","n"] + lab_grp_desc["English","n"]}}\\
-\end{tabular}
+%\begin{frame}
+%\frametitle{Title of Slide}
+%\begin{table}
+%\centering
+%\begin{tabular}{l c c c c c c c c c}
+%\toprule
+%& & \multicolumn{6}{c}{Vocabulary Size \% Correct}\\
+%\cmidrule(lr){3-8}
+%& & \multicolumn{2}{c}{English} & \multicolumn{2}{c}{Spanish} & 
+%\multicolumn{2}{c}{Difference} & \multicolumn{2}{c}{Izura Score}\\
+%\cmidrule(lr){3-4}\cmidrule(lr){5-6}\cmidrule(lr){7-8}\cmidrule(lr){9-10}
+%& n & Mean & SD & Mean & SD & Mean & SD & Mean & SD\\
+%\midrule
+%English
+%& \Sexpr{lab_grp_desc["English","n"]}
+%& \Sexpr{lab_grp_desc["English","lextale_eng_correct_Mean"]} 
+%& \Sexpr{lab_grp_desc["English","lextale_eng_correct_SD"]} 
+%& \Sexpr{lab_grp_desc["English","lextale_esp_correct_Mean"]}
+%& \Sexpr{lab_grp_desc["English","lextale_esp_correct_SD"]}
+%& \Sexpr{lab_grp_desc["English","vocab_diff_Mean"]}
+%& \Sexpr{lab_grp_desc["English","vocab_diff_SD"]}
+%& \Sexpr{lab_grp_desc["English","izura_score_Mean"]}
+%& \Sexpr{lab_grp_desc["English","izura_score_SD"]}\\
+%Spanish
+%& \Sexpr{lab_grp_desc["Spanish","n"]}
+%& \Sexpr{lab_grp_desc["Spanish","lextale_eng_correct_Mean"]} 
+%& \Sexpr{lab_grp_desc["Spanish","lextale_eng_correct_SD"]} 
+%& \Sexpr{lab_grp_desc["Spanish","lextale_esp_correct_Mean"]} 
+%& \Sexpr{lab_grp_desc["Spanish","lextale_esp_correct_SD"]}
+%& \Sexpr{lab_grp_desc["Spanish","vocab_diff_Mean"]}
+%& \Sexpr{lab_grp_desc["Spanish","vocab_diff_SD"]}
+%& \Sexpr{lab_grp_desc["Spanish","izura_score_Mean"]}
+%& \Sexpr{lab_grp_desc["Spanish","izura_score_SD"]}\\
+%\bottomrule
+%\multicolumn{6}{l}{Total participants: n = \Sexpr{lab_grp_desc["Spanish","n"] + lab_grp_desc["English","n"]}}\\
+%\end{tabular}
 %\caption{Vocabulary scores for participants in English and Spanish calculated as a percent correct score along with the differences in means. Spanish vocabulary size as calculated by \textcite{Izura2014-yw}.}
-\label{tab-lab-vocab-part}
-\end{table}
-\end{frame}
+%\label{tab-lab-vocab-part}
+%\end{table}
+%\end{frame}
 %----------------------------------------------------------------------------------------
 
+% Lab Segmentation Language Dominance
 %----------------------------------------------------------------------------------------
-\begin{frame}
-\frametitle{Title of Slide}
-\begin{table}
-\centering
-\begin{tabular}{l c c c c c c c}
-\toprule
-& & \multicolumn{4}{c}{Global Language Scores}\\
-\cmidrule(lr){3-6}
-& & \multicolumn{2}{c}{English} & \multicolumn{2}{c}{Spanish} & 
-\multicolumn{2}{c}{Language Dominance}\\
-\cmidrule(lr){3-4}\cmidrule(lr){5-6}\cmidrule(lr){7-8}
-& n & Mean & SD & Mean & SD & Mean & SD\\
-\midrule
-English
-& \Sexpr{lab_grp_desc["English","n"]}
-& \Sexpr{lab_grp_desc["English","global_eng_score_Mean"]} 
-& \Sexpr{lab_grp_desc["English","global_eng_score_SD"]} 
-& \Sexpr{lab_grp_desc["English","global_esp_score_Mean"]}
-& \Sexpr{lab_grp_desc["English","global_esp_score_SD"]}
-& \Sexpr{lab_grp_desc["English","lang_dominance_Mean"]}
-& \Sexpr{lab_grp_desc["English","lang_dominance_SD"]}\\
-Spanish
-& \Sexpr{lab_grp_desc["Spanish","n"]}
-& \Sexpr{lab_grp_desc["Spanish","global_eng_score_Mean"]} 
-& \Sexpr{lab_grp_desc["Spanish","global_eng_score_SD"]} 
-& \Sexpr{lab_grp_desc["Spanish","global_esp_score_Mean"]} 
-& \Sexpr{lab_grp_desc["Spanish","global_esp_score_SD"]}
-& \Sexpr{lab_grp_desc["Spanish","lang_dominance_Mean"]}
-& \Sexpr{lab_grp_desc["Spanish","lang_dominance_SD"]}\\
-\bottomrule
-\multicolumn{6}{l}{Total participants: n = \Sexpr{lab_grp_desc["Spanish","n"] + lab_grp_desc["English","n"]}}\\
-\end{tabular}
-\caption{Individual language-based values and language dominance scores for participants. All values were calculated according to creators of the Basic Language Profile.}
-\label{tab-lab-lang-blp-part}
-\end{table}
-\end{frame}
-%----------------------------------------------------------------------------------------
-
-%----------------------------------------------------------------------------------------
-\begin{frame}
-\begin{figure}
-\begin{center}
-<<sample_crossover, fig.width= 5, fig.height= 3>>=
-crossover_example
-@      
-%\caption[Plot: Crossover Effect]{Shows an example of what the crossover effect results in previous literature using a simulated fictitious dataset. The interaction can be seen in the lines representing the initial syllable structure of the word crossing due to faster detection times from monitoring experiments when the target syllable structure and the word-initial syllable matched structure matched.}
-\label{plt-sample-crossover}
-\end{center}
-\end{figure}
-\end{frame}
-%----------------------------------------------------------------------------------------
-
-%----------------------------------------------------------------------------------------
-\begin{frame}
+%\begin{frame}
 %\frametitle{Title of Slide}
-\begin{figure}
-\begin{center}
-<<sample_cross_parallel_2, fig.width= 5, fig.height= 2.75>>=
-parallel_example
-@      
+%\begin{table}
+%\centering
+%\begin{tabular}{l c c c c c c c}
+%\toprule
+%& & \multicolumn{4}{c}{Global Language Scores}\\
+%\cmidrule(lr){3-6}
+%& & \multicolumn{2}{c}{English} & \multicolumn{2}{c}{Spanish} & 
+%\multicolumn{2}{c}{Language Dominance}\\
+%\cmidrule(lr){3-4}\cmidrule(lr){5-6}\cmidrule(lr){7-8}
+%& n & Mean & SD & Mean & SD & Mean & SD\\
+%\midrule
+%English
+%& \Sexpr{lab_grp_desc["English","n"]}
+%& \Sexpr{lab_grp_desc["English","global_eng_score_Mean"]} 
+%& \Sexpr{lab_grp_desc["English","global_eng_score_SD"]} 
+%& \Sexpr{lab_grp_desc["English","global_esp_score_Mean"]}
+%& \Sexpr{lab_grp_desc["English","global_esp_score_SD"]}
+%& \Sexpr{lab_grp_desc["English","lang_dominance_Mean"]}
+%& \Sexpr{lab_grp_desc["English","lang_dominance_SD"]}\\
+%Spanish
+%& \Sexpr{lab_grp_desc["Spanish","n"]}
+%& \Sexpr{lab_grp_desc["Spanish","global_eng_score_Mean"]} 
+%& \Sexpr{lab_grp_desc["Spanish","global_eng_score_SD"]} 
+%& \Sexpr{lab_grp_desc["Spanish","global_esp_score_Mean"]} 
+%& \Sexpr{lab_grp_desc["Spanish","global_esp_score_SD"]}
+%& \Sexpr{lab_grp_desc["Spanish","lang_dominance_Mean"]}
+%& \Sexpr{lab_grp_desc["Spanish","lang_dominance_SD"]}\\
+%\bottomrule
+%\multicolumn{6}{l}{Total participants: n = \Sexpr{lab_grp_desc["Spanish","n"] + lab_grp_desc["English","n"]}}\\
+%\end{tabular}
+%\caption{Individual language-based values and language dominance scores for participants. All values were calculated according to creators of the Basic Language Profile.}
+%\label{tab-lab-lang-blp-part}
+%\end{table}
+%\end{frame}
+%----------------------------------------------------------------------------------------
+
+% Lab Segmentation Crossover Plot Simulated Data
+%----------------------------------------------------------------------------------------
+%\begin{frame}
+%\begin{figure}
+%\begin{center}
+%<sample_crossover, fig.width= 5, fig.height= 3>>=
+%crossover_example
+%@      
+%%\caption[Plot: Crossover Effect]{Shows an example of what the crossover effect results in previous literature using a simulated fictitious dataset. The interaction can be seen in the lines representing the initial syllable structure of the word crossing due to faster detection times from monitoring experiments when the target syllable structure and the word-initial syllable matched structure matched.}
+%\label{plt-sample-crossover}
+%\end{center}
+%\end{figure}
+%\end{frame}
+%----------------------------------------------------------------------------------------
+
+% Lab Segmentation Main Effect of Matching Simulated Data
+%----------------------------------------------------------------------------------------
+%\begin{frame}
+%%\frametitle{Title of Slide}
+%\begin{figure}
+%\begin{center}
+%<sample_cross_parallel_2, fig.width= 5, fig.height= 2.75>>=
+%parallel_example
+%@      
 %\caption[Plot: Parallel Effect]{Shows an example of what the significant effect results in the current study look like using the same simulated fictitious dataset as Figure \ref{plt-crossover-comp}. The effect can be seen in the parallel lines representing the matching status and target syllable type rather than an interaction between the two factors.}
-\label{plt-parallel-comp}
-\end{center}
-\end{figure}
-\end{frame}
+%\label{plt-parallel-comp}
+%\end{center}
+%\end{figure}
+%\end{frame}
 %----------------------------------------------------------------------------------------
 
-
+% Lab Segmentation L1 Spanish ANOVA
 %----------------------------------------------------------------------------------------
-\begin{frame}
+%\begin{frame}
 %\frametitle{Title of Slide}
-<<table_anova_lab_natives, results='asis', include=TRUE>>=
-xtable(lab_aov_natives_prt$anova_table, 
-       type = "latex",
-       #table.placement = "hbt",
-       #caption = "This table shows the L1 Spanish results of the (2) x (2) x (2) repeated measures ANOVA for three within subjects factors \\textit{Target}, \\textit{Matching} and \\textit{Lexicality}. The \\textit{Target} factor contained two levels---CV and CVC syllable structure. The \\textit{Matching} factor had two levels---Matching and Mismatching syllable structure. The \\textit{Lexicality} factor also included two levels---words and nonwords. The log transformed reaction time values was the dependent variable.",
-       label = "tab-anova-lab-natives")
-@
-\end{frame}
+%<table_anova_lab_natives, results='asis', include=TRUE>>=
+%xtable(lab_aov_natives_prt$anova_table, 
+%       type = "latex",
+%       #table.placement = "hbt",
+%       #caption = "This table shows the L1 Spanish results of the (2) x (2) x (2) repeated measures ANOVA for three within subjects factors \\textit{Target}, \\textit{Matching} and \\textit{Lexicality}. The \\textit{Target} factor contained two levels---CV and CVC syllable structure. The \\textit{Matching} factor had two levels---Matching and Mismatching syllable structure. The \\textit{Lexicality} factor also included two levels---words and nonwords. The log transformed reaction time values was the dependent variable.",
+%       label = "tab-anova-lab-natives")
+%@
+%\end{frame}
 %----------------------------------------------------------------------------------------
 
+% Lab Segmentation Word Table Descriptives
 %----------------------------------------------------------------------------------------
-\begin{frame}
-\frametitle{Title of Slide}
-\begin{table}%[hbt]
-\centering
-% Word Table
-\begin{tabular}{l c l l l c c c c}
-\toprule
-& & & & & \multicolumn{2}{c}{RT ms} & \multicolumn{2}{c}{RT log}\\
-\cmidrule(lr){6-7}\cmidrule(lr){8-9}
-L1 & n & Target & Carrier & Matching & Median & SD & Median & SD\\
-\midrule
-\multirow{4}{*}{English}
-% CV Target CV Carrier Condition
-& \Sexpr{lab_grp_sum["English-CV-CV-word","n"]}
-& \Sexpr{lab_grp_sum["English-CV-CV-word","target_syl_structure"]}
-& \Sexpr{lab_grp_sum["English-CV-CV-word","word_initial_syl"]} 
-& \Sexpr{lab_grp_sum["English-CV-CV-word","matching"]}
-& \Sexpr{lab_grp_sum["English-CV-CV-word","segRespRTmsec_Median"]}
-& \Sexpr{lab_grp_sum["English-CV-CV-word","segRespRTmsec_SD"]}
-& \Sexpr{lab_grp_sum["English-CV-CV-word","log_RT_Median"]}
-& \Sexpr{lab_grp_sum["English-CV-CV-word","log_RT_SD"]}\\
-% CV Target CVC Carrier Condition
-& \Sexpr{lab_grp_sum["English-CV-CVC-word","n"]}
-& \Sexpr{lab_grp_sum["English-CV-CVC-word","target_syl_structure"]} 
-& \Sexpr{lab_grp_sum["English-CV-CVC-word","word_initial_syl"]} 
-& \Sexpr{lab_grp_sum["English-CV-CVC-word","matching"]}
-& \Sexpr{lab_grp_sum["English-CV-CVC-word","segRespRTmsec_Median"]}
-& \Sexpr{lab_grp_sum["English-CV-CVC-word","segRespRTmsec_SD"]}
-& \Sexpr{lab_grp_sum["English-CV-CVC-word","log_RT_Median"]}
-& \Sexpr{lab_grp_sum["English-CV-CVC-word","log_RT_SD"]}\\
-% CVC Target CV Carrier Condition
-& \Sexpr{lab_grp_sum["English-CVC-CV-word","n"]}
-& \Sexpr{lab_grp_sum["English-CVC-CV-word","target_syl_structure"]} 
-& \Sexpr{lab_grp_sum["English-CVC-CV-word","word_initial_syl"]} 
-& \Sexpr{lab_grp_sum["English-CVC-CV-word","matching"]}
-& \Sexpr{lab_grp_sum["English-CVC-CV-word","segRespRTmsec_Median"]}
-& \Sexpr{lab_grp_sum["English-CVC-CV-word","segRespRTmsec_SD"]}
-& \Sexpr{lab_grp_sum["English-CVC-CV-word","log_RT_Median"]}
-& \Sexpr{lab_grp_sum["English-CVC-CV-word","log_RT_SD"]}\\
-% CVC Target CVC Carrier Condition
-& \Sexpr{lab_grp_sum["English-CVC-CVC-word","n"]}
-& \Sexpr{lab_grp_sum["English-CVC-CVC-word","target_syl_structure"]} 
-& \Sexpr{lab_grp_sum["English-CVC-CVC-word","word_initial_syl"]} 
-& \Sexpr{lab_grp_sum["English-CVC-CVC-word","matching"]}
-& \Sexpr{lab_grp_sum["English-CVC-CVC-word","segRespRTmsec_Median"]}
-& \Sexpr{lab_grp_sum["English-CVC-CVC-word","segRespRTmsec_SD"]}
-& \Sexpr{lab_grp_sum["English-CVC-CVC-word","log_RT_Median"]}
-& \Sexpr{lab_grp_sum["English-CVC-CVC-word","log_RT_SD"]}\\
-\midrule
-\multirow{4}{*}{Spanish}
-% CV Target CV Carrier Condition
-& \Sexpr{lab_grp_sum["Spanish-CV-CV-word","n"]}
-& \Sexpr{lab_grp_sum["Spanish-CV-CV-word","target_syl_structure"]} 
-& \Sexpr{lab_grp_sum["Spanish-CV-CV-word","word_initial_syl"]} 
-& \Sexpr{lab_grp_sum["Spanish-CV-CV-word","matching"]}
-& \Sexpr{lab_grp_sum["Spanish-CV-CV-word","segRespRTmsec_Median"]}
-& \Sexpr{lab_grp_sum["Spanish-CV-CV-word","segRespRTmsec_SD"]}
-& \Sexpr{lab_grp_sum["Spanish-CV-CV-word","log_RT_Median"]}
-& \Sexpr{lab_grp_sum["Spanish-CV-CV-word","log_RT_SD"]}\\
-% CV Target CVC Carrier Condition
-& \Sexpr{lab_grp_sum["Spanish-CV-CVC-word","n"]}
-& \Sexpr{lab_grp_sum["Spanish-CV-CVC-word","target_syl_structure"]} 
-& \Sexpr{lab_grp_sum["Spanish-CV-CVC-word","word_initial_syl"]} 
-& \Sexpr{lab_grp_sum["Spanish-CV-CVC-word","matching"]}
-& \Sexpr{lab_grp_sum["Spanish-CV-CVC-word","segRespRTmsec_Median"]}
-& \Sexpr{lab_grp_sum["Spanish-CV-CVC-word","segRespRTmsec_SD"]}
-& \Sexpr{lab_grp_sum["Spanish-CV-CVC-word","log_RT_Median"]}
-& \Sexpr{lab_grp_sum["Spanish-CV-CVC-word","log_RT_SD"]}\\
-% CVC Target CV Carrier Condition
-& \Sexpr{lab_grp_sum["Spanish-CVC-CV-word","n"]}
-& \Sexpr{lab_grp_sum["Spanish-CVC-CV-word","target_syl_structure"]} 
-& \Sexpr{lab_grp_sum["Spanish-CVC-CV-word","word_initial_syl"]} 
-& \Sexpr{lab_grp_sum["Spanish-CVC-CV-word","matching"]}
-& \Sexpr{lab_grp_sum["Spanish-CVC-CV-word","segRespRTmsec_Median"]}
-& \Sexpr{lab_grp_sum["Spanish-CVC-CV-word","segRespRTmsec_SD"]}
-& \Sexpr{lab_grp_sum["Spanish-CVC-CV-word","log_RT_Median"]}
-& \Sexpr{lab_grp_sum["Spanish-CVC-CV-word","log_RT_SD"]}\\
-% CVC Target CVC Carrier Condition
-& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-word","n"]}
-& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-word","target_syl_structure"]} 
-& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-word","word_initial_syl"]} 
-& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-word","matching"]}
-& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-word","segRespRTmsec_Median"]}
-& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-word","segRespRTmsec_SD"]}
-& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-word","log_RT_Median"]}
-& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-word","log_RT_SD"]}\\
-\bottomrule
-\multicolumn{6}{l}{Total data points: n = \Sexpr{
-lab_grp_sum["English-CV-CV-word","n"] +
-lab_grp_sum["English-CV-CVC-word","n"] +
-lab_grp_sum["English-CVC-CV-word","n"] +
-lab_grp_sum["English-CVC-CVC-word","n"] +
-lab_grp_sum["Spanish-CV-CV-word","n"] +
-lab_grp_sum["Spanish-CV-CVC-word","n"] +
-lab_grp_sum["Spanish-CVC-CV-word","n"] +
-lab_grp_sum["Spanish-CVC-CVC-word","n"]}}\\
-\end{tabular}
-\caption{Reaction times to words for each condition given in milliseconds and log transformed values.}
-\label{tab-lab-grp-rt-wd}
-\end{table}
-\end{frame}
+%\begin{frame}
+%\frametitle{Title of Slide}
+%\begin{table}%[hbt]
+%\centering
+%% Word Table
+%\begin{tabular}{l c l l l c c c c}
+%\toprule
+%& & & & & \multicolumn{2}{c}{RT ms} & \multicolumn{2}{c}{RT log}\\
+%\cmidrule(lr){6-7}\cmidrule(lr){8-9}
+%L1 & n & Target & Carrier & Matching & Median & SD & Median & SD\\
+%\midrule
+%\multirow{4}{*}{English}
+%% CV Target CV Carrier Condition
+%& \Sexpr{lab_grp_sum["English-CV-CV-word","n"]}
+%& \Sexpr{lab_grp_sum["English-CV-CV-word","target_syl_structure"]}
+%& \Sexpr{lab_grp_sum["English-CV-CV-word","word_initial_syl"]} 
+%& \Sexpr{lab_grp_sum["English-CV-CV-word","matching"]}
+%& \Sexpr{lab_grp_sum["English-CV-CV-word","segRespRTmsec_Median"]}
+%& \Sexpr{lab_grp_sum["English-CV-CV-word","segRespRTmsec_SD"]}
+%& \Sexpr{lab_grp_sum["English-CV-CV-word","log_RT_Median"]}
+%& \Sexpr{lab_grp_sum["English-CV-CV-word","log_RT_SD"]}\\
+%% CV Target CVC Carrier Condition
+%& \Sexpr{lab_grp_sum["English-CV-CVC-word","n"]}
+%& \Sexpr{lab_grp_sum["English-CV-CVC-word","target_syl_structure"]} 
+%& \Sexpr{lab_grp_sum["English-CV-CVC-word","word_initial_syl"]} 
+%& \Sexpr{lab_grp_sum["English-CV-CVC-word","matching"]}
+%& \Sexpr{lab_grp_sum["English-CV-CVC-word","segRespRTmsec_Median"]}
+%& \Sexpr{lab_grp_sum["English-CV-CVC-word","segRespRTmsec_SD"]}
+%& \Sexpr{lab_grp_sum["English-CV-CVC-word","log_RT_Median"]}
+%& \Sexpr{lab_grp_sum["English-CV-CVC-word","log_RT_SD"]}\\
+%% CVC Target CV Carrier Condition
+%& \Sexpr{lab_grp_sum["English-CVC-CV-word","n"]}
+%& \Sexpr{lab_grp_sum["English-CVC-CV-word","target_syl_structure"]} 
+%& \Sexpr{lab_grp_sum["English-CVC-CV-word","word_initial_syl"]} 
+%& \Sexpr{lab_grp_sum["English-CVC-CV-word","matching"]}
+%& \Sexpr{lab_grp_sum["English-CVC-CV-word","segRespRTmsec_Median"]}
+%& \Sexpr{lab_grp_sum["English-CVC-CV-word","segRespRTmsec_SD"]}
+%& \Sexpr{lab_grp_sum["English-CVC-CV-word","log_RT_Median"]}
+%& \Sexpr{lab_grp_sum["English-CVC-CV-word","log_RT_SD"]}\\
+%% CVC Target CVC Carrier Condition
+%& \Sexpr{lab_grp_sum["English-CVC-CVC-word","n"]}
+%& \Sexpr{lab_grp_sum["English-CVC-CVC-word","target_syl_structure"]} 
+%& \Sexpr{lab_grp_sum["English-CVC-CVC-word","word_initial_syl"]} 
+%& \Sexpr{lab_grp_sum["English-CVC-CVC-word","matching"]}
+%& \Sexpr{lab_grp_sum["English-CVC-CVC-word","segRespRTmsec_Median"]}
+%& \Sexpr{lab_grp_sum["English-CVC-CVC-word","segRespRTmsec_SD"]}
+%& \Sexpr{lab_grp_sum["English-CVC-CVC-word","log_RT_Median"]}
+%& \Sexpr{lab_grp_sum["English-CVC-CVC-word","log_RT_SD"]}\\
+%\midrule
+%\multirow{4}{*}{Spanish}
+%% CV Target CV Carrier Condition
+%& \Sexpr{lab_grp_sum["Spanish-CV-CV-word","n"]}
+%& \Sexpr{lab_grp_sum["Spanish-CV-CV-word","target_syl_structure"]} 
+%& \Sexpr{lab_grp_sum["Spanish-CV-CV-word","word_initial_syl"]} 
+%& \Sexpr{lab_grp_sum["Spanish-CV-CV-word","matching"]}
+%& \Sexpr{lab_grp_sum["Spanish-CV-CV-word","segRespRTmsec_Median"]}
+%& \Sexpr{lab_grp_sum["Spanish-CV-CV-word","segRespRTmsec_SD"]}
+%& \Sexpr{lab_grp_sum["Spanish-CV-CV-word","log_RT_Median"]}
+%& \Sexpr{lab_grp_sum["Spanish-CV-CV-word","log_RT_SD"]}\\
+%% CV Target CVC Carrier Condition
+%& \Sexpr{lab_grp_sum["Spanish-CV-CVC-word","n"]}
+%& \Sexpr{lab_grp_sum["Spanish-CV-CVC-word","target_syl_structure"]} 
+%& \Sexpr{lab_grp_sum["Spanish-CV-CVC-word","word_initial_syl"]} 
+%& \Sexpr{lab_grp_sum["Spanish-CV-CVC-word","matching"]}
+%& \Sexpr{lab_grp_sum["Spanish-CV-CVC-word","segRespRTmsec_Median"]}
+%& \Sexpr{lab_grp_sum["Spanish-CV-CVC-word","segRespRTmsec_SD"]}
+%& \Sexpr{lab_grp_sum["Spanish-CV-CVC-word","log_RT_Median"]}
+%& \Sexpr{lab_grp_sum["Spanish-CV-CVC-word","log_RT_SD"]}\\
+%% CVC Target CV Carrier Condition
+%& \Sexpr{lab_grp_sum["Spanish-CVC-CV-word","n"]}
+%& \Sexpr{lab_grp_sum["Spanish-CVC-CV-word","target_syl_structure"]} 
+%& \Sexpr{lab_grp_sum["Spanish-CVC-CV-word","word_initial_syl"]} 
+%& \Sexpr{lab_grp_sum["Spanish-CVC-CV-word","matching"]}
+%& \Sexpr{lab_grp_sum["Spanish-CVC-CV-word","segRespRTmsec_Median"]}
+%& \Sexpr{lab_grp_sum["Spanish-CVC-CV-word","segRespRTmsec_SD"]}
+%& \Sexpr{lab_grp_sum["Spanish-CVC-CV-word","log_RT_Median"]}
+%& \Sexpr{lab_grp_sum["Spanish-CVC-CV-word","log_RT_SD"]}\\
+%% CVC Target CVC Carrier Condition
+%& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-word","n"]}
+%& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-word","target_syl_structure"]} 
+%& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-word","word_initial_syl"]} 
+%& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-word","matching"]}
+%& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-word","segRespRTmsec_Median"]}
+%& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-word","segRespRTmsec_SD"]}
+%& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-word","log_RT_Median"]}
+%& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-word","log_RT_SD"]}\\
+%\bottomrule
+%\multicolumn{6}{l}{Total data points: n = \Sexpr{lab_grp_sum["English-CV-CV-word","n"] + lab_grp_sum["English-CV-CVC-word","n"] + lab_grp_sum["English-CVC-CV-word","n"] + lab_grp_sum["English-CVC-CVC-word","n"] + lab_grp_sum["Spanish-CV-CV-word","n"] + lab_grp_sum["Spanish-CV-CVC-word","n"] + lab_grp_sum["Spanish-CVC-CV-word","n"] + lab_grp_sum["Spanish-CVC-CVC-word","n"]}}\\
+%\end{tabular}
+%\caption{Reaction times to words for each condition given in milliseconds and log transformed values.}
+%\label{tab-lab-grp-rt-wd}
+%\end{table}
+%\end{frame}
 %----------------------------------------------------------------------------------------
 
+% Lab Segmentation Nonword Table Descriptives
 %----------------------------------------------------------------------------------------
-\begin{frame}
-\frametitle{Title of Slide}
-\begin{table}%[hbt]
-\centering
-% Nonword Table
-\begin{tabular}{l c l l l c c c c}
-\toprule
-& & & & & \multicolumn{2}{c}{RT ms} & \multicolumn{2}{c}{RT log}\\ 
-\cmidrule(lr){6-7}\cmidrule(lr){8-9}
-L1 & n & Target & Carrier & Matching & Median & SD & Median & SD\\
-\midrule
-\multirow{4}{*}{English}
-% CV Target CV Carrier Condition
-& \Sexpr{lab_grp_sum["English-CV-CV-nonword","n"]}
-& \Sexpr{lab_grp_sum["English-CV-CV-nonword","target_syl_structure"]} 
-& \Sexpr{lab_grp_sum["English-CV-CV-nonword","word_initial_syl"]} 
-& \Sexpr{lab_grp_sum["English-CV-CV-nonword","matching"]}
-& \Sexpr{lab_grp_sum["English-CV-CV-nonword","segRespRTmsec_Median"]}
-& \Sexpr{lab_grp_sum["English-CV-CV-nonword","segRespRTmsec_SD"]}
-& \Sexpr{lab_grp_sum["English-CV-CV-nonword","log_RT_Median"]}
-& \Sexpr{lab_grp_sum["English-CV-CV-nonword","log_RT_SD"]}\\
-% CV Target CVC Carrier Condition
-& \Sexpr{lab_grp_sum["English-CV-CVC-nonword","n"]}
-& \Sexpr{lab_grp_sum["English-CV-CVC-nonword","target_syl_structure"]} 
-& \Sexpr{lab_grp_sum["English-CV-CVC-nonword","word_initial_syl"]} 
-& \Sexpr{lab_grp_sum["English-CV-CVC-nonword","matching"]}
-& \Sexpr{lab_grp_sum["English-CV-CVC-nonword","segRespRTmsec_Median"]}
-& \Sexpr{lab_grp_sum["English-CV-CVC-nonword","segRespRTmsec_SD"]}
-& \Sexpr{lab_grp_sum["English-CV-CVC-nonword","log_RT_Median"]}
-& \Sexpr{lab_grp_sum["English-CV-CVC-nonword","log_RT_SD"]}\\
-% CVC Target CV Carrier Condition
-& \Sexpr{lab_grp_sum["English-CVC-CV-nonword","n"]}
-& \Sexpr{lab_grp_sum["English-CVC-CV-nonword","target_syl_structure"]} 
-& \Sexpr{lab_grp_sum["English-CVC-CV-nonword","word_initial_syl"]} 
-& \Sexpr{lab_grp_sum["English-CVC-CV-nonword","matching"]}
-& \Sexpr{lab_grp_sum["English-CVC-CV-nonword","segRespRTmsec_Median"]}
-& \Sexpr{lab_grp_sum["English-CVC-CV-nonword","segRespRTmsec_SD"]}
-& \Sexpr{lab_grp_sum["English-CVC-CV-nonword","log_RT_Median"]}
-& \Sexpr{lab_grp_sum["English-CVC-CV-nonword","log_RT_SD"]}\\
-% CVC Target CVC Carrier Condition
-& \Sexpr{lab_grp_sum["English-CVC-CVC-nonword","n"]}
-& \Sexpr{lab_grp_sum["English-CVC-CVC-nonword","target_syl_structure"]} 
-& \Sexpr{lab_grp_sum["English-CVC-CVC-nonword","word_initial_syl"]} 
-& \Sexpr{lab_grp_sum["English-CVC-CVC-nonword","matching"]}
-& \Sexpr{lab_grp_sum["English-CVC-CVC-nonword","segRespRTmsec_Median"]}
-& \Sexpr{lab_grp_sum["English-CVC-CVC-nonword","segRespRTmsec_SD"]}
-& \Sexpr{lab_grp_sum["English-CVC-CVC-nonword","log_RT_Median"]}
-& \Sexpr{lab_grp_sum["English-CVC-CVC-nonword","log_RT_SD"]}\\
-\midrule
-\multirow{4}{*}{Spanish}
-% CV Target CV Carrier Condition
-& \Sexpr{lab_grp_sum["Spanish-CV-CV-nonword","n"]}
-& \Sexpr{lab_grp_sum["Spanish-CV-CV-nonword","target_syl_structure"]} 
-& \Sexpr{lab_grp_sum["Spanish-CV-CV-nonword","word_initial_syl"]} 
-& \Sexpr{lab_grp_sum["Spanish-CV-CV-nonword","matching"]}
-& \Sexpr{lab_grp_sum["Spanish-CV-CV-nonword","segRespRTmsec_Median"]}
-& \Sexpr{lab_grp_sum["Spanish-CV-CV-nonword","segRespRTmsec_SD"]}
-& \Sexpr{lab_grp_sum["Spanish-CV-CV-nonword","log_RT_Median"]}
-& \Sexpr{lab_grp_sum["Spanish-CV-CV-nonword","log_RT_SD"]}\\
-% CV Target CVC Carrier Condition
-& \Sexpr{lab_grp_sum["Spanish-CV-CVC-nonword","n"]}
-& \Sexpr{lab_grp_sum["Spanish-CV-CVC-nonword","target_syl_structure"]} 
-& \Sexpr{lab_grp_sum["Spanish-CV-CVC-nonword","word_initial_syl"]} 
-& \Sexpr{lab_grp_sum["Spanish-CV-CVC-nonword","matching"]}
-& \Sexpr{lab_grp_sum["Spanish-CV-CVC-nonword","segRespRTmsec_Median"]}
-& \Sexpr{lab_grp_sum["Spanish-CV-CVC-nonword","segRespRTmsec_SD"]}
-& \Sexpr{lab_grp_sum["Spanish-CV-CVC-nonword","log_RT_Median"]}
-& \Sexpr{lab_grp_sum["Spanish-CV-CVC-nonword","log_RT_SD"]}\\
-% CVC Target CV Carrier Condition
-& \Sexpr{lab_grp_sum["Spanish-CVC-CV-nonword","n"]}
-& \Sexpr{lab_grp_sum["Spanish-CVC-CV-nonword","target_syl_structure"]} 
-& \Sexpr{lab_grp_sum["Spanish-CVC-CV-nonword","word_initial_syl"]} 
-& \Sexpr{lab_grp_sum["Spanish-CVC-CV-nonword","matching"]}
-& \Sexpr{lab_grp_sum["Spanish-CVC-CV-nonword","segRespRTmsec_Median"]}
-& \Sexpr{lab_grp_sum["Spanish-CVC-CV-nonword","segRespRTmsec_SD"]}
-& \Sexpr{lab_grp_sum["Spanish-CVC-CV-nonword","log_RT_Median"]}
-& \Sexpr{lab_grp_sum["Spanish-CVC-CV-nonword","log_RT_SD"]}\\
-% CVC Target CVC Carrier Condition
-& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-nonword","n"]}
-& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-nonword","target_syl_structure"]} 
-& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-nonword","word_initial_syl"]} 
-& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-nonword","matching"]}
-& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-nonword","segRespRTmsec_Median"]}
-& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-nonword","segRespRTmsec_SD"]}
-& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-nonword","log_RT_Median"]}
-& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-nonword","log_RT_SD"]}\\
-\bottomrule
-\multicolumn{6}{l}{Total data points: n = \Sexpr{
-lab_grp_sum["English-CV-CV-nonword","n"] +
-lab_grp_sum["English-CV-CVC-nonword","n"] +
-lab_grp_sum["English-CVC-CV-nonword","n"] +
-lab_grp_sum["English-CVC-CVC-nonword","n"] +
-lab_grp_sum["Spanish-CV-CV-nonword","n"] +
-lab_grp_sum["Spanish-CV-CVC-nonword","n"] +
-lab_grp_sum["Spanish-CVC-CV-nonword","n"] +
-lab_grp_sum["Spanish-CVC-CVC-nonword","n"]}}\\
-\end{tabular}
-\caption{Reaction times to nonwords for each condition given in milliseconds and log transformed values.}
-\label{tab-lab-grp-rt-nonwd}
-\end{table}
-\end{frame}
+%\begin{frame}
+%\frametitle{Title of Slide}
+%\begin{table}%[hbt]
+%\centering
+%% Nonword Table
+%\begin{tabular}{l c l l l c c c c}
+%\toprule
+%& & & & & \multicolumn{2}{c}{RT ms} & \multicolumn{2}{c}{RT log}\\ 
+%\cmidrule(lr){6-7}\cmidrule(lr){8-9}
+%L1 & n & Target & Carrier & Matching & Median & SD & Median & SD\\
+%\midrule
+%\multirow{4}{*}{English}
+%% CV Target CV Carrier Condition
+%& \Sexpr{lab_grp_sum["English-CV-CV-nonword","n"]}
+%& \Sexpr{lab_grp_sum["English-CV-CV-nonword","target_syl_structure"]} 
+%& \Sexpr{lab_grp_sum["English-CV-CV-nonword","word_initial_syl"]} 
+%& \Sexpr{lab_grp_sum["English-CV-CV-nonword","matching"]}
+%& \Sexpr{lab_grp_sum["English-CV-CV-nonword","segRespRTmsec_Median"]}
+%& \Sexpr{lab_grp_sum["English-CV-CV-nonword","segRespRTmsec_SD"]}
+%& \Sexpr{lab_grp_sum["English-CV-CV-nonword","log_RT_Median"]}
+%& \Sexpr{lab_grp_sum["English-CV-CV-nonword","log_RT_SD"]}\\
+%% CV Target CVC Carrier Condition
+%& \Sexpr{lab_grp_sum["English-CV-CVC-nonword","n"]}
+%& \Sexpr{lab_grp_sum["English-CV-CVC-nonword","target_syl_structure"]} 
+%& \Sexpr{lab_grp_sum["English-CV-CVC-nonword","word_initial_syl"]} 
+%& \Sexpr{lab_grp_sum["English-CV-CVC-nonword","matching"]}
+%& \Sexpr{lab_grp_sum["English-CV-CVC-nonword","segRespRTmsec_Median"]}
+%& \Sexpr{lab_grp_sum["English-CV-CVC-nonword","segRespRTmsec_SD"]}
+%& \Sexpr{lab_grp_sum["English-CV-CVC-nonword","log_RT_Median"]}
+%& \Sexpr{lab_grp_sum["English-CV-CVC-nonword","log_RT_SD"]}\\
+%% CVC Target CV Carrier Condition
+%& \Sexpr{lab_grp_sum["English-CVC-CV-nonword","n"]}
+%& \Sexpr{lab_grp_sum["English-CVC-CV-nonword","target_syl_structure"]} 
+%& \Sexpr{lab_grp_sum["English-CVC-CV-nonword","word_initial_syl"]} 
+%& \Sexpr{lab_grp_sum["English-CVC-CV-nonword","matching"]}
+%& \Sexpr{lab_grp_sum["English-CVC-CV-nonword","segRespRTmsec_Median"]}
+%& \Sexpr{lab_grp_sum["English-CVC-CV-nonword","segRespRTmsec_SD"]}
+%& \Sexpr{lab_grp_sum["English-CVC-CV-nonword","log_RT_Median"]}
+%& \Sexpr{lab_grp_sum["English-CVC-CV-nonword","log_RT_SD"]}\\
+%% CVC Target CVC Carrier Condition
+%& \Sexpr{lab_grp_sum["English-CVC-CVC-nonword","n"]}
+%& \Sexpr{lab_grp_sum["English-CVC-CVC-nonword","target_syl_structure"]} 
+%& \Sexpr{lab_grp_sum["English-CVC-CVC-nonword","word_initial_syl"]} 
+%& \Sexpr{lab_grp_sum["English-CVC-CVC-nonword","matching"]}
+%& \Sexpr{lab_grp_sum["English-CVC-CVC-nonword","segRespRTmsec_Median"]}
+%& \Sexpr{lab_grp_sum["English-CVC-CVC-nonword","segRespRTmsec_SD"]}
+%& \Sexpr{lab_grp_sum["English-CVC-CVC-nonword","log_RT_Median"]}
+%& \Sexpr{lab_grp_sum["English-CVC-CVC-nonword","log_RT_SD"]}\\
+%\midrule
+%\multirow{4}{*}{Spanish}
+%% CV Target CV Carrier Condition
+%& \Sexpr{lab_grp_sum["Spanish-CV-CV-nonword","n"]}
+%& \Sexpr{lab_grp_sum["Spanish-CV-CV-nonword","target_syl_structure"]} 
+%& \Sexpr{lab_grp_sum["Spanish-CV-CV-nonword","word_initial_syl"]} 
+%& \Sexpr{lab_grp_sum["Spanish-CV-CV-nonword","matching"]}
+%& \Sexpr{lab_grp_sum["Spanish-CV-CV-nonword","segRespRTmsec_Median"]}
+%& \Sexpr{lab_grp_sum["Spanish-CV-CV-nonword","segRespRTmsec_SD"]}
+%& \Sexpr{lab_grp_sum["Spanish-CV-CV-nonword","log_RT_Median"]}
+%& \Sexpr{lab_grp_sum["Spanish-CV-CV-nonword","log_RT_SD"]}\\
+%% CV Target CVC Carrier Condition
+%& \Sexpr{lab_grp_sum["Spanish-CV-CVC-nonword","n"]}
+%& \Sexpr{lab_grp_sum["Spanish-CV-CVC-nonword","target_syl_structure"]} 
+%& \Sexpr{lab_grp_sum["Spanish-CV-CVC-nonword","word_initial_syl"]} 
+%& \Sexpr{lab_grp_sum["Spanish-CV-CVC-nonword","matching"]}
+%& \Sexpr{lab_grp_sum["Spanish-CV-CVC-nonword","segRespRTmsec_Median"]}
+%& \Sexpr{lab_grp_sum["Spanish-CV-CVC-nonword","segRespRTmsec_SD"]}
+%& \Sexpr{lab_grp_sum["Spanish-CV-CVC-nonword","log_RT_Median"]}
+%& \Sexpr{lab_grp_sum["Spanish-CV-CVC-nonword","log_RT_SD"]}\\
+%% CVC Target CV Carrier Condition
+%& \Sexpr{lab_grp_sum["Spanish-CVC-CV-nonword","n"]}
+%& \Sexpr{lab_grp_sum["Spanish-CVC-CV-nonword","target_syl_structure"]} 
+%& \Sexpr{lab_grp_sum["Spanish-CVC-CV-nonword","word_initial_syl"]} 
+%& \Sexpr{lab_grp_sum["Spanish-CVC-CV-nonword","matching"]}
+%& \Sexpr{lab_grp_sum["Spanish-CVC-CV-nonword","segRespRTmsec_Median"]}
+%& \Sexpr{lab_grp_sum["Spanish-CVC-CV-nonword","segRespRTmsec_SD"]}
+%& \Sexpr{lab_grp_sum["Spanish-CVC-CV-nonword","log_RT_Median"]}
+%& \Sexpr{lab_grp_sum["Spanish-CVC-CV-nonword","log_RT_SD"]}\\
+%% CVC Target CVC Carrier Condition
+%& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-nonword","n"]}
+%& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-nonword","target_syl_structure"]} 
+%& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-nonword","word_initial_syl"]} 
+%& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-nonword","matching"]}
+%& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-nonword","segRespRTmsec_Median"]}
+%& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-nonword","segRespRTmsec_SD"]}
+%& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-nonword","log_RT_Median"]}
+%& \Sexpr{lab_grp_sum["Spanish-CVC-CVC-nonword","log_RT_SD"]}\\
+%\bottomrule
+%\multicolumn{6}{l}{Total data points: n = \Sexpr{lab_grp_sum["English-CV-CV-nonword","n"] + lab_grp_sum["English-CV-CVC-nonword","n"] + lab_grp_sum["English-CVC-CV-nonword","n"] + lab_grp_sum["English-CVC-CVC-nonword","n"] + lab_grp_sum["Spanish-CV-CV-nonword","n"] + lab_grp_sum["Spanish-CV-CVC-nonword","n"] + lab_grp_sum["Spanish-CVC-CV-nonword","n"] + lab_grp_sum["Spanish-CVC-CVC-nonword","n"]}}\\
+%\end{tabular}
+%\caption{Reaction times to nonwords for each condition given in milliseconds and log transformed values.}
+%\label{tab-lab-grp-rt-nonwd}
+%\end{table}
+%\end{frame}
 %----------------------------------------------------------------------------------------
 
+% Lab Segmentation L1 Spanish Estimated Marginal Means
 %----------------------------------------------------------------------------------------
 \begin{frame}
 \frametitle{Title of Slide}
@@ -1023,18 +1042,20 @@ lab_l1_tar_mat_int
 \end{frame}
 %----------------------------------------------------------------------------------------
 
+% Lab Segmentation L1 English ANOVA
 %----------------------------------------------------------------------------------------
-\begin{frame}
-%\frametitle{Title of Slide}
-<<table_anova_lab_learners, results='asis', include=TRUE>>=
-xtable(lab_aov_learners_prt$anova_table, 
-       type = "latex", 
-       #caption = "This table shows the L1 English results of the (2) x (2) x (2) repeated measures ANOVA for three within subjects factors \\textit{Target}, \\textit{Matching} and \\textit{Lexicality}. The \\textit{Target} factor contained two levels---CV and CVC syllable structure. The \\textit{Matching} factor had two levels---Matching and Mismatching syllable structure. The \\textit{Lexicality} factor also included two levels---words and nonwords. The log transformed reaction time values was the dependent variable.",
-       label = "tab-anova-lab-learners")
-@
-\end{frame}
+%\begin{frame}
+%%\frametitle{Title of Slide}
+%<table_anova_lab_learners, results='asis', include=TRUE>>=
+%xtable(lab_aov_learners_prt$anova_table, 
+%       type = "latex", 
+%       #caption = "This table shows the L1 English results of the (2) x (2) x (2) repeated measures ANOVA for three within subjects factors \\textit{Target}, \\textit{Matching} and \\textit{Lexicality}. The \\textit{Target} factor contained two levels---CV and CVC syllable structure. The \\textit{Matching} factor had two levels---Matching and Mismatching syllable structure. The \\textit{Lexicality} factor also included two levels---words and nonwords. The log transformed reaction time values was the dependent variable.",
+%       label = "tab-anova-lab-learners")
+%@
+%\end{frame}
 %----------------------------------------------------------------------------------------
 
+% Lab Segmentation L1 English Main Effect of Target Syllable Structure
 %----------------------------------------------------------------------------------------
 \begin{frame}
 %\frametitle{Title of Slide}
@@ -1050,6 +1071,7 @@ lab_l2_tar_syl_main
 \end{frame}
 %----------------------------------------------------------------------------------------
 
+% Lab Segmentation L1 English interaction between Matching and Lexicality
 %----------------------------------------------------------------------------------------
 \begin{frame}
 %\frametitle{Title of Slide}
@@ -1065,6 +1087,7 @@ lab_l2_lex_mat_int
 \end{frame}
 %----------------------------------------------------------------------------------------
 
+% Lab Segmentation L1 English Estimated Marginal Means
 %----------------------------------------------------------------------------------------
 \begin{frame}
 %\frametitle{Title of Slide}
@@ -1079,6 +1102,7 @@ lab_l2_tar_mat_int
 \end{figure}
 \end{frame}
 %----------------------------------------------------------------------------------------
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Online Segmentation
