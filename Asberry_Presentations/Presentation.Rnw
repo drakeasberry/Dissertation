@@ -5,7 +5,7 @@
 \institute{University of Arizona}
 \date{09 December 2021}
 
-\usepackage[backend=bibtex, style=authoryear, sorting=nyt, doi=false, natbib=true]{biblatex}
+\usepackage[backend=bibtex, style=authoryear, sorting=nyt, doi=false, natbib=true]{biblatex} %, style=authoryear, sorting=nyt, doi=false, natbib=true
 \addbibresource{references.bib}
 
 \usepackage{tipa} % Required for IPA symbols
@@ -21,7 +21,11 @@ library(xtable)
 knitr::opts_chunk$set(
   echo = FALSE
 )
+#knitr::knit2pdf(Presentation.Rnw, bib_engine = "biber")
 here::here()
+#Sys.setenv(TEXTINPUTS=here(),
+#           BIBINPUTS=here(),
+#           BSTINPUTS=here())
 #set_parent(here('Asberry_Presentations/Presentation.Rnw'))
 @
 
@@ -68,7 +72,7 @@ here::here()
 %----------------------------------------------------------------------------------------
 \begin{frame}
 \frametitle{Outline}
-This dissertation focused on syllabic intutions and processing of Spanish by L1 Spanish and L1 English speakers.\newline
+This dissertation focused on syllabic intutions and the processing of Spanish by L1 Spanish and L1 English speakers.\newline
 
 \begin{itemize}
 \item{Background}
@@ -88,10 +92,21 @@ This dissertation focused on syllabic intutions and processing of Spanish by L1 
 \begin{frame}
 \frametitle{Definitions}
 \begin{itemize}
-\item{Phoneme – distinct sound segments of a language that can form syllables and words}
-\item{Syllable – a pronounceable linguistic unit of a given language that generally contains a highly sonorant sound as it nucleus}
-\item{Segmentation – process of dividing langauge into smaller units}
-\item{Word Recognition – process of identifying a word as a real word or nonword of the language}
+\item{Phoneme - distinct sound segments of a language that can form syllables and words}
+  \begin{itemize}
+  \item{C - represents a consonant sound}
+  \item{V - represents a vowel sound}
+  \end{itemize}
+\item{Syllable - a pronounceable linguistic unit of a given language that generally contains a highly sonorant sound as it nucleus}
+  \begin{itemize}
+  \item{CV - represents an open syllable}
+  \item{CVC - represents a closed syllable}
+  \end{itemize}
+\item{Segmentation - process of dividing langauge into smaller units}
+  \begin{itemize}
+  \item{Word Segmentation - breaking down words into smaller units such as syllables}
+  \end{itemize}
+\item{Word Recognition - process of identifying a word as a real word or nonword of the language}
 \end{itemize}
 \end{frame}
 %----------------------------------------------------------------------------------------
@@ -101,15 +116,20 @@ This dissertation focused on syllabic intutions and processing of Spanish by L1 
 \begin{frame}
 \frametitle{Background}
 \begin{itemize}
-\item{Syllable made its highlight as spoken language processing unit when it was found that participants could detect syllables faster than they could detect individualphonemes (Savin \& Bever, 1970).}
-\item{Phoneme- and Syllable-monitoring (nonwords)}
-  \begin{itemize}
-  \item{Hear the syllable target with the written English spelling}
-  \item{Auditory – “The target is /baeb/.”}
-  \item{Visual – “bab” written for target /baeb/.}
+\item{Savin and Bever (1970):}
+  \begin{itemize}  
+  \item{Syllable made its highlight as spoken language processing unit when it was found that participants could detect syllables faster than they could detect individual phonemes.}
   \end{itemize}
-\item{Experiment I - /b/}
-\item{Experiment II - /s/}
+\item{Foss and Swinney (1973):}
+  \begin{itemize}
+  \item{Syllables detected faster than phonemes.}
+  \item{Two-syllable words detected faster than individual syllables.}
+  \end{itemize}
+\item{McNeill and Lindig (1973):}
+  \begin{itemize}
+  \item{When linguistic unit sizes match, faster detection times were found.}
+  \item{This was held true for phonemes, syllables, words and sentences.}
+  \end{itemize}
 \end{itemize}
 \end{frame}
 %----------------------------------------------------------------------------------------
@@ -124,6 +144,21 @@ This dissertation focused on syllabic intutions and processing of Spanish by L1 
   \begin{itemize}
   \item{The syllable as a phonological unit of the language which can efficiently explain the grammar of language }
   \item{The syllable as a unit which aides speech perception and comprehension}
+  \end{itemize}
+\end{itemize}
+\end{frame}
+%----------------------------------------------------------------------------------------
+
+% Background Monitoring Paradigm
+%----------------------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Background}
+\begin{itemize}
+\item{Most of the early studies focusing on the syllable in language processing involved French and English monolingual speakers (Cutler et al., 1986; Mehler et al., 1981).}
+\item{Experiment Design}
+  \begin{itemize}
+  \item{Find written CV or CVC targets in auditory bisyllabic word lists.}
+  \item{Find BA in balcon (mismatch) and BAL in balcon (match).}
   \end{itemize}
 \end{itemize}
 \end{frame}
@@ -1075,7 +1110,7 @@ lab_l1_tar_mat_int
 lab_l2_tar_syl_main
 @      
 %\caption[Estimated Marginal Means: Lab Experiment Target Group]{Log transformed reaction times reported given as a factor of syllable structure. The plot shows the fact that participants responded significantly faster to CVC syllables. The error bars represent the 95\% confidence intervals. The overlapping CIs still represent a significant effect because the factor is a within subjects factor.}
-\label{plt-lab_l2_mat_lex_s_int}
+\label{plt-lab_l2_tar_syl_main}
 \end{center}
 \end{figure}
 \end{frame}
@@ -1555,6 +1590,16 @@ Spanish
 %----------------------------------------------------------------------------------------
 \begin{frame}
 \frametitle{Conclusions}
+\begin{itemize}
+\item{}
+\end{itemize}
+\end{frame}
+%----------------------------------------------------------------------------------------
+
+% References
+%----------------------------------------------------------------------------------------
+\begin{frame}[allowframebreaks,noframenumbering]
+\frametitle{Title of Slide}
 \begin{itemize}
 \item{}
 \end{itemize}
