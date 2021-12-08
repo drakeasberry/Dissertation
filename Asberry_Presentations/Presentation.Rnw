@@ -667,7 +667,7 @@ intuition_score_compare["Spanish-CV","n"]}}\\
 <<intuition_prop_correct, fig.width= 4, fig.height= 2.5>>=
 plt_corr_per
 @      
-%\caption[Proportion Correct by Syllable Type]{The bar plot shows the difference in number of correct responses to each syllable structure---CV or CVC---for each language group---L1 English or L1 Spanish. The error bars represent the 95\% confidence intervals.}
+\caption[Proportion Correct by Syllable Type]{The bar plot shows the difference in number of correct responses to each syllable structure---CV or CVC---for each language group---L1 English or L1 Spanish. The error bars represent the 95\% confidence intervals.}
 \label{plt-intuition-corr-prop}
 \end{center}
 \end{figure}
@@ -683,7 +683,7 @@ plt_corr_per
 <<intuition_prop_logit_correct, fig.width= 4, fig.height= 2.5>>=
 plt_corr_logit
 @      
-%\caption[Proportion Correct by Syllable Type]{go get the logit transformed plot that shows the English difference goes away when transformed}
+\caption[Proportion Correct by Syllable Type]{The bar plot shows the difference in number of correct responses after logit transformation for each syllable structure---CV or CVC---for each language group---L1 English or L1 Spanish. The error bars represent the 95\% confidence intervals.}
 \label{plt-intuition-corr-prop-logit}
 \end{center}
 \end{figure}
@@ -712,7 +712,7 @@ plt_corr_logit
 <<group_intuition, fig.width= 5, fig.height= 2.5>>=
 intuition_grp_main
 @      
-%\caption[Syllable Intuition by Group]{Estimated marginal means for correct responses for the between-subjects factor of language group---L1 English or L1 Spanish.}
+\caption[Syllable Intuition by Group]{Estimated marginal means for correct responses for the between-subjects factor of language group---L1 English or L1 Spanish.}
 \label{plt-intuition-grp-emm}
 \end{center}
 \end{figure}
@@ -728,28 +728,13 @@ intuition_grp_main
 <<syl_intuition, fig.width= 5, fig.height= 2.5>>=
 intuition_syl_main
 @      
-%\caption[Syllable Intuition by Type]{Estimated marginal means for correct responses for the within-subjects factor of syllable structure---CV or CVC.}
+\caption[Syllable Intuition by Type]{Estimated marginal means for correct responses for the within-subjects factor of syllable structure---CV or CVC.}
 \label{plt-intuition-syl-emm}
 \end{center}
 \end{figure}
 \end{frame}
 %----------------------------------------------------------------------------------------
 
-% Syllabic Intuition Main Effect of Syllable Structure 95% CIs
-%----------------------------------------------------------------------------------------
-\begin{frame}
-%\frametitle{Title of Slide}
-\begin{figure}
-\begin{center}
-<<intuition_logit_correct, fig.width= 4, fig.height= 3>>=
-plt_corr_logit_sylX
-@      
-%\caption[Logit Correct Response by Syllable Type]{The plot shows the difference in number of correct responses by syllable type---CV or CVC---for each L1 language group. The error bars represent the 95\% confidence intervals.}
-\label{plt-intuition-logit-prop}
-\end{center}
-\end{figure}
-\end{frame}
-%----------------------------------------------------------------------------------------
 
 
 
@@ -759,7 +744,13 @@ plt_corr_logit_sylX
 \begin{frame}
 \frametitle{Visual Word Segmentation}
 \begin{itemize}
-\item{Give Background and Study information}
+\item{Visual letter sequence monitoring task:}
+  \begin{itemize}
+  \item{Utilizing the monitoring paradigm from previous studies 24 Spanish CV and CVC word pairs were modified from Bradley et al. (1993).}
+  \item{24 Spanish CV and CVC nonword pairs were generated from the 24 real word pairs using Wuggy.app (Keuleers and Brysbaert, 2010).}
+  \item{1 word from each pair was placed in a list with 9 other filler items.}
+  \item{4 conditions were used to counterbalance study.}
+  \end{itemize}
 \end{itemize}
 \end{frame}
 %----------------------------------------------------------------------------------------
@@ -1134,13 +1125,14 @@ plt_corr_logit_sylX
 % Lab Segmentation L1 Spanish Estimated Marginal Means
 %----------------------------------------------------------------------------------------
 \begin{frame}
-\frametitle{Title of Slide}
+%\frametitle{Title of Slide}
+No significant effects were found L1 Spanish speakers.
 \begin{figure}
 \begin{center}
-<<lab_l1_tar_mat_ns_int, fig.width= 6, fig.height= 3>>=
+<<lab_l1_tar_mat_ns_int, fig.width= 6, fig.height= 2.5>>=
 lab_l1_tar_mat_int
 @      
-%\caption[Estimated Marginal Means: Lab Experiment Control Group]{Log transformed reaction times reported given as a factor of target syllable structure, matching and lexicality conditions.}
+\caption[Estimated Marginal Means: Lab Experiment Control Group]{Log transformed reaction times reported given as a factor of target syllable structure, matching and lexicality conditions.}
 \label{plt-lab-l1-tar-mat-ns-int}
 \end{center}
 \end{figure}
@@ -1164,12 +1156,20 @@ lab_l1_tar_mat_int
 %----------------------------------------------------------------------------------------
 \begin{frame}
 %\frametitle{Title of Slide}
+A main effect of \emph{Target} was found, 
+\emph{F}(
+\Sexpr{lab_aov_learners$anova_table["target_syl_structure", "num Df"]},
+\Sexpr{lab_aov_learners$anova_table["target_syl_structure", "den Df"]}) =
+\Sexpr{round(lab_aov_learners$anova_table["target_syl_structure", "F"],2)}, 
+p < .05 
+[\Sexpr{round(lab_aov_learners$anova_table["target_syl_structure", "Pr(>F)"],4)}].
+
 \begin{figure}
 \begin{center}
-<<lab_l2_syl_main, fig.width= 5, fig.height= 3>>=
+<<lab_l2_syl_main, fig.width= 5, fig.height= 2.5>>=
 lab_l2_tar_syl_main
 @      
-%\caption[Estimated Marginal Means: Lab Experiment Target Group]{Log transformed reaction times reported given as a factor of syllable structure. The plot shows the fact that participants responded significantly faster to CVC syllables. The error bars represent the 95\% confidence intervals. The overlapping CIs still represent a significant effect because the factor is a within subjects factor.}
+\caption[Estimated Marginal Means: Lab Experiment Target Group]{The plot shows the fact that participants responded significantly faster to CVC syllables. The error bars represent the 95\% confidence intervals.}
 \label{plt-lab_l2_tar_syl_main}
 \end{center}
 \end{figure}
@@ -1180,12 +1180,19 @@ lab_l2_tar_syl_main
 %----------------------------------------------------------------------------------------
 \begin{frame}
 %\frametitle{Title of Slide}
+A significant interaction between \emph{Matching} and \emph{Lexicality} was found, 
+\emph{F}(
+\Sexpr{lab_aov_learners$anova_table["matching:word_status", "num Df"]},
+\Sexpr{lab_aov_learners$anova_table["matching:word_status", "den Df"]}) =
+\Sexpr{round(lab_aov_learners$anova_table["matching:word_status", "F"],2)}, 
+p < .05 
+[\Sexpr{round(lab_aov_learners$anova_table["matching:word_status", "Pr(>F)"],4)}].
 \begin{figure}
 \begin{center}
-<<lab_l2_mat_lex_s_int, fig.width= 5, fig.height= 3>>=
+<<lab_l2_mat_lex_s_int, fig.width= 5, fig.height= 2.5>>=
 lab_l2_lex_mat_int
 @      
-%\caption[Estimated Marginal Means: Lab Experiment Target Group]{Log transformed reaction times reported given as a factor of matching and lexicality conditions.}
+\caption[Estimated Marginal Means: Lab Experiment Target Group]{Log transformed reaction times reported given as a factor of matching and lexicality conditions.}
 \label{plt-lab_l2_mat_lex_s_int}
 \end{center}
 \end{figure}
@@ -1198,10 +1205,10 @@ lab_l2_lex_mat_int
 %\frametitle{Title of Slide}
 \begin{figure}
 \begin{center}
-<<lab_l2_tar_mat_ns_int, fig.width= 6, fig.height= 3>>=
+<<lab_l2_tar_mat_ns_int, fig.width= 6, fig.height= 2.5>>=
 lab_l2_tar_mat_int
 @      
-%\caption[Estimated Marginal Means: Lab Experiment Control Group]{Log transformed reaction times reported given as a factor of target syllable structure, matching and lexicality conditions.}
+\caption[Estimated Marginal Means: Lab Experiment Control Group]{Log transformed reaction times reported given as a factor of target syllable structure, matching and lexicality conditions.}
 \label{plt-lab-l2-tar-mat-ns-int}
 \end{center}
 \end{figure}
