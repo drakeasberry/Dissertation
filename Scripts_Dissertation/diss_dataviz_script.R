@@ -52,7 +52,7 @@ language_dominance <- function(data, x_data, y_data){
     geom_text(aes(label=labels, y = !!sym(y_data) + 20)) +
     ggtitle("Language Dominance") +
     xlab("Native Language") +
-    ylab("Basic Language Profile Dominance Score")
+    ylab("Binlingual Language Profile \nDominance Score")
 }
 
 
