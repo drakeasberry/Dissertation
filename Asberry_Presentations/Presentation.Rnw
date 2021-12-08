@@ -11,6 +11,7 @@
 \usepackage{tipa} % Required for IPA symbols
 \usepackage{multirow} % Required for multirow cells in tables
 \usepackage{booktabs} % Required for top-, mid- and bottom-rule in tables
+\usepackage{tipa} % Required for IPA transcriptions
 %\usepackage{enumitem} % Required to format spacing of lists
 %----------------------------------------------------------------------------------------
 <<global_opts_presentation, echo=FALSE, cache=FALSE, include=FALSE>>=
@@ -243,7 +244,7 @@ Score_{izura} = n_{Yes To Words} - 2 * n_{Yes To Nonwords}
 <<elig_part_hist, fig.width= 5, fig.height= 2>>=
 hist_eligible_grouped
 @      
-%\caption[Histogram: Eligible Participants]{Shows the Spanish vocabulary size for all participants meeting the inclusion criteria distributed by L1 language calculated through the equation provided by \parencite{Izura2014-yw}}
+\caption[Histogram: Eligible Participants]{186 total participants (79 L1 Spanish and 107 L1 English)}
 \label{plt-hist-eligible-part}
 \end{center}
 \end{figure}
@@ -262,7 +263,7 @@ hist_eligible_grouped
 <<elig_ls_part_hist, fig.width= 5, fig.height= 2>>=
 hist_eligible_eng_grouped
 @      
-%\caption[Histogram: Eligible English Participants]{Shows the Spanish vocabulary size for L1 English speaker participants distributed by recruitment method calculated through the equation provided by \parencite{Izura2014-yw}.}
+\caption[Histogram: Eligible English Participants]{107 L1 English participants (30 in-person and 70 online)}
 \label{plt-hist-eligible-ls-part}
 \end{center}
 \end{figure}
@@ -364,11 +365,35 @@ hist_eligible_eng_grouped
 \begin{frame}
 \frametitle{Syllabic Intuitions}
 \begin{itemize}
-\item{Syllabic intuitions for Spanish words will be elicited through a direct appeal in 2 item forced choice task.}
+\item{Elicited Spanish Syllabic intuitions through a two-alternative forced choice task.}\newline
 \item{Syllabic intuitions for Spanish and English differ:}
-\item{Spanish has clear syllable boundaries}
-\item{English allows for ambisyllabicity}
-Split these between Spanish and English with references.
+  \begin{itemize}
+  \item{Spanish has restrictive set of complex syllable onsets.}
+  \item{English allows for many complex syllable onsets.}
+  \item{Spanish has clear syllable boundaries.}
+  \item{English allows for ambisyllabicity.}
+  \end{itemize}
+\end{itemize}
+\end{frame}
+%----------------------------------------------------------------------------------------
+
+% Syllabic Intuition Differences
+%----------------------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Syllabic Intuitions}
+\begin{itemize}
+\item{Illegal Spanish onsets that are legal English onsets: /s/ + [plosive] “sp, st, sk, sc” (Harris, 1983)}
+\item{\emph{pestaña} 'eyelash, computer tab':}
+  \begin{itemize}
+  \item{Spanish speaker: [p\textepsilon s.\textprimstress ta.\textltailn a]}
+  \item{English speaker: [p\textepsilon s.\textprimstress ta.\textltailn a] or [p\textepsilon .\textprimstress sta.\textltailn a]}\newline
+  \end{itemize}
+\item{Ambisyllabicity, one phoneme is shared between two adjacent syllables. (Khan, 1976)}
+\item{\emph{balada} 'ballad' and \emph{baldosa} 'tile':}
+  \begin{itemize}
+  \item{Spanish speaker: [ba.\textprimstress la.\textipa{\dh}a] and [bal.\textprimstress do.sa]}
+  \item{English speaker:\newline [ba.\textprimstress la.\textipa{\dh}a], [ba.\textprimstress la\textipa{\dh}.\textipa{\dh}a], [b\ae l.\textprimstress  la\textipa{\dh}.\textipa{\dh}a], [\textprimstress bal.la.\textipa{\dh}a], [\textprimstress b\ae l.la.\textipa{\dh}a]\newline [bal.\textprimstress do.sa]}
+  \end{itemize}
 \end{itemize}
 \end{frame}
 %----------------------------------------------------------------------------------------
@@ -378,19 +403,12 @@ Split these between Spanish and English with references.
 \begin{frame}
 \frametitle{Syllabic Intuitions}
 \begin{itemize}
-\item{In addition to ambisyllabicity, several onsets of syllables also do not align between Spanish and English.}
-\item{Illegal Spanish onsets that are legal English onsets: /s/ + [plosive] “sp, st, sk, sc”}
-  \begin{itemize}
-  \item{Spanish speaker: 	pes-ta-ña 	eyelash, computer tab		}
-  \item{English speaker: 	pes-ta-ña      or    	pe-sta-ña}
-  \end{itemize}
 \item{Given these two differences in syllabification:}
   \begin{itemize}
-  \item{Native Spanish speakers should be the most consistent in syllable intuitions.}
-  \item{Native English speakers and L2 should learners exhibit the most variation in syllable intuitions.}
-  \item{Spanish–English simultaneous bilinguals could pattern like the native Spanish group, the native English group or fall in between two.}
+  \item{L1 Spanish speakers should be the most consistent in syllabification patterns.}
+  \item{L1 English speakers should exhibit the more variation in syllabification patterns.}\newline
   \end{itemize}
-\item{These differences in syllable intuitions will affect both speech segmentation and word recognition processes if the syllable is playing a role in them.}
+\item{These differences in syllable intuitions could affect both speech segmentation and word recognition processes if the syllable plays a role.}
 \end{itemize}
 \end{frame}
 %----------------------------------------------------------------------------------------
@@ -430,7 +448,7 @@ Split these between Spanish and English with references.
 \begin{frame}
 \begin{figure}
 \begin{center}
-<<intuition_vocab_difference, fig.width= 4, fig.height= 3>>=
+<<intuition_vocab_difference, fig.width= 4, fig.height= 2.5>>=
 intuition_vocab_diff
 @      
 %\caption[Vocabulary Size Comparison]{Using the LexTALE and LexTALE-Esp tasks, the difference in vocabulary size was calculated by subtracting the Spanish vocabulary percent correct from the English vocabulary percent correct responses. Therefore, a positive number indicates a larger English vocabulary size while a negative number indicates a larger Spanish vocabulary size.}
@@ -445,7 +463,7 @@ intuition_vocab_diff
 \begin{frame}
 \begin{figure}
 \begin{center}
-<<intuition_lang_dominance, fig.width= 4, fig.height= 3>>=
+<<intuition_lang_dominance, fig.width= 4, fig.height= 2.5>>=
 intuition_lang_dom
 @      
 %\caption[BLP Language Dominance]{Language dominance scores were calculated by following the formula given by the creators of the Bilingual Language Profile \parencite{Birdsong2012-wd}. In the current study, a larger number represents more dominance in English while a smaller number represents more dominance in Spanish}
@@ -646,7 +664,7 @@ intuition_score_compare["Spanish-CV","n"]}}\\
 %\frametitle{Title of Slide}
 \begin{figure}
 \begin{center}
-<<intuition_prop_correct, fig.width= 4, fig.height= 3>>=
+<<intuition_prop_correct, fig.width= 4, fig.height= 2.5>>=
 plt_corr_per
 @      
 %\caption[Proportion Correct by Syllable Type]{The bar plot shows the difference in number of correct responses to each syllable structure---CV or CVC---for each language group---L1 English or L1 Spanish. The error bars represent the 95\% confidence intervals.}
@@ -662,7 +680,7 @@ plt_corr_per
 %\frametitle{Change Plot to Logit}
 \begin{figure}
 \begin{center}
-<<intuition_prop_logit_correct, fig.width= 4, fig.height= 3>>=
+<<intuition_prop_logit_correct, fig.width= 4, fig.height= 2.5>>=
 plt_corr_logit
 @      
 %\caption[Proportion Correct by Syllable Type]{go get the logit transformed plot that shows the English difference goes away when transformed}
