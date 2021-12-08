@@ -369,7 +369,7 @@ intuition_grp_syl_int <-
             mapping = c("shape", "color", "linetype"),
             legend_title = "Native Language",
             data_plot = TRUE) +
-  labs(title = "Estimated Marginal Means L2 Spanish",
+  labs(title = "Estimated Marginal Means L1 English",
        x = "Syllable Structure",
        y = "Proportion Correct (logit)") +
   scale_color_manual(values = plt_color_2)
