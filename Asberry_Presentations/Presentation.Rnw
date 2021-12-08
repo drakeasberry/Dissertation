@@ -95,16 +95,16 @@ This dissertation focused on syllabic intutions and the processing of Spanish by
 \item{Phoneme - distinct sound segments of a language that can form syllables and words}
   \begin{itemize}
   \item{C - represents a consonant sound}
-  \item{V - represents a vowel sound}
+  \item{V - represents a vowel sound}\newline
   \end{itemize}
 \item{Syllable - a pronounceable linguistic unit of a given language that generally contains a highly sonorant sound as it nucleus}
   \begin{itemize}
   \item{CV - represents an open syllable}
-  \item{CVC - represents a closed syllable}
+  \item{CVC - represents a closed syllable}\newline
   \end{itemize}
 \item{Segmentation - process of dividing langauge into smaller units}
   \begin{itemize}
-  \item{Word Segmentation - breaking down words into smaller units such as syllables}
+  \item{Word Segmentation - breaking down words into smaller units such as syllables}\newline
   \end{itemize}
 \item{Word Recognition - process of identifying a word as a real word or nonword of the language}
 \end{itemize}
@@ -118,12 +118,12 @@ This dissertation focused on syllabic intutions and the processing of Spanish by
 \begin{itemize}
 \item{Savin and Bever (1970):}
   \begin{itemize}  
-  \item{Syllable made its highlight as spoken language processing unit when it was found that participants could detect syllables faster than they could detect individual phonemes.}
+  \item{Syllable made its highlight as spoken language processing unit when it was found that participants could detect syllables faster than they could detect individual phonemes.}\newline
   \end{itemize}
 \item{Foss and Swinney (1973):}
   \begin{itemize}
   \item{Syllables detected faster than phonemes.}
-  \item{Two-syllable words detected faster than individual syllables.}
+  \item{Two-syllable words detected faster than individual syllables.}\newline
   \end{itemize}
 \item{McNeill and Lindig (1973):}
   \begin{itemize}
@@ -139,26 +139,62 @@ This dissertation focused on syllabic intutions and the processing of Spanish by
 \begin{frame}
 \frametitle{Background}
 \begin{itemize}
-\item{Research then moves from comparing different linguistic units such as phonemes, syllables, words, etc. to an emphasis on the effect of the syllable.}
+%\item{Research then moves from comparing different linguistic units such as phonemes, syllables, words, etc. to an emphasis on the effect of the syllable.}
 \item{Mehler and Hayes (1981):}
   \begin{itemize}
   \item{The syllable as a phonological unit of the language which can efficiently explain the grammar of language }
-  \item{The syllable as a unit which aides speech perception and comprehension}
+  \item{The syllable as a unit which aides speech perception and comprehension}\newline
+  \end{itemize}
+
+\item{Experimental Design}
+  \begin{itemize}
+  \item{Find written CV or CVC targets in auditory bisyllabic word lists.}
+  \item{Find BA in balcon (mismatch) and BAL in balcon (match).}
+  \item{Find BA in balance (match) and BAL in balance (mismatch).}
   \end{itemize}
 \end{itemize}
 \end{frame}
 %----------------------------------------------------------------------------------------
 
-% Background Monitoring Paradigm
+% Background Monitoring Paradigm French and English
 %----------------------------------------------------------------------------------------
 \begin{frame}
-\frametitle{Background}
+\frametitle{Previous Studies Results for French and English}
 \begin{itemize}
-\item{Most of the early studies focusing on the syllable in language processing involved French and English monolingual speakers (Cutler et al., 1986; Mehler et al., 1981).}
-\item{Experiment Design}
+\item{Early studies focused on the syllable in language processing involved French and English speakers.}\newline
+
+\item{Cutler et al. (1986), Mehler et al. (1981):}
   \begin{itemize}
-  \item{Find written CV or CVC targets in auditory bisyllabic word lists.}
-  \item{Find BA in balcon (mismatch) and BAL in balcon (match).}
+  \item{French monolinguals used a syllabic segmentation strategy in French and English.}
+  \item{English monolinguals did not use a syllabic segmentation strategy in French or English.}\newline
+  \end{itemize}
+  
+\item{Cutler et al. (1992):}
+  \begin{itemize}
+  \item{French dominant bilinguals used a syllabic segmentation strategy in French, but not in English.}
+  \item{English dominant bilinguals did not use a syllabic segmentation strategy in French or English.}
+  \end{itemize}
+\end{itemize}
+\end{frame}
+%----------------------------------------------------------------------------------------
+
+% Background Monitoring Paradigm Spanish and English
+%----------------------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Previous Studies Results for Spanish and English}
+\begin{itemize}
+\item{Later studies extended the syllable use in language processing Spanish speakers.}\newline
+
+\item{Sebastián-Gallés et al. (1992):}
+  \begin{itemize}
+  \item{Spanish speakers seemed to be able to process items so fast that they could skip the use of the syllable segmentation strategy.}
+  \item{When Spanish speakers were forced to slow down, evidence of the syllable segmentation strategy emerged for words with an unstressed first syllable}\newline
+  \end{itemize}
+  
+\item{Bradley et al. (1993):}
+  \begin{itemize}
+  \item{Found the syllabic effect for monolingual Spanish speakers with response times averaging between 556 and 609 milliseconds.}
+  \item{Spanish dominant bilinguals did not use a syllabic segmentation strategy in Spanish.}
   \end{itemize}
 \end{itemize}
 \end{frame}
@@ -170,8 +206,8 @@ This dissertation focused on syllabic intutions and the processing of Spanish by
 \begin{frame}
 \frametitle{Research Questions}
 \begin{enumerate}
-  \item What differences if any, exist in Spanish syllable representations or intuitions between L1 Spanish speakers and L1 English speakers?
-  \item How do the syllabic representations of Spanish syllables affect the use of syllable-based segmentation strategies for processing the Spanish language?
+  \item What differences if any, exist in Spanish syllable representations or intuitions between L1 Spanish speakers and L1 English speakers?\newline
+  \item How do the syllabic representations of Spanish syllables affect the use of syllable-based segmentation strategies for processing the Spanish language?\newline
   \item Are visual experimental methodologies appropriate to studying syllabic intuitions and word segmentation strategies?
 \end{enumerate}
 \end{frame}
@@ -182,14 +218,15 @@ This dissertation focused on syllabic intutions and the processing of Spanish by
 \begin{frame}
 \frametitle{Vocabulary Tasks}
 \begin{itemize}
-\item{LexTALE – English vocabulary test used as a correlate of language proficiency (Lemhöfer \& Broersma, 2012)}
-  \begin{itemize}
-  \item{Lower Intermediate Proficiency – up to 59}% correct response rate
-  \item{Upper Intermediate Proficiency – 60–80}% correct response rate
-  \item{Advance Proficiency – 80}% or greater correct response rate
-  \end{itemize}
-\item{LexTALE-Esp – Spanish vocabulary test used as a correlate of language proficiency (Izura, Cuetos, \& Brysbaert, 2014)}
-\item{LexTALE-ESP is able discriminate different language dominances of advanced Catalan–Spanish bilinguals—highly proficient in both languages (Ferré \& Brysbaert, 2017)}
+\item{LexTALE – English vocabulary test used as a correlate of language proficiency (Lemhöfer and Broersma, 2012)}\newline
+\item{LexTALE-Esp – Spanish vocabulary test used as a correlate of language proficiency (Izura, Cuetos, and Brysbaert, 2014)}\newline
+\item{Both LexTALE and LexTALE-Esp contained twice as many words as nonwords.}\newline
+\item{Both LexTALE and LexTALE-Esp calculated a scores based on percentage of correct answers.}\newline
+\item{LexTALE-Esp calculated a score based on task creator's weighting ranging from -60 to 60.}
+\begin{equation*}
+Score_{izura} = n_{Yes To Words} - 2 * n_{Yes To Nonwords}
+\label{eqn-lextale-esp}
+\end{equation*}
 \end{itemize}
 \end{frame}
 %----------------------------------------------------------------------------------------
@@ -198,6 +235,9 @@ This dissertation focused on syllabic intutions and the processing of Spanish by
 %----------------------------------------------------------------------------------------
 \begin{frame}
 \frametitle{Participants}
+\begin{itemize}
+\item{When participants completed both tasks, these ensured that the L1 vocabulary was more robust than L2 vocabulary.}
+\end{itemize}
 \begin{figure}
 \begin{center}
 <<elig_part_hist, fig.width= 5, fig.height= 2>>=
@@ -214,6 +254,9 @@ hist_eligible_grouped
 %----------------------------------------------------------------------------------------
 \begin{frame}
 \frametitle{Participants}
+\begin{itemize}
+\item{The LexTALE-Esp was used to compare in-person and online participants.}
+\end{itemize}
 \begin{figure}
 \begin{center}
 <<elig_ls_part_hist, fig.width= 5, fig.height= 2>>=
@@ -231,7 +274,7 @@ hist_eligible_eng_grouped
 \begin{frame}
 \frametitle{Bilingual Language Profile}
 \begin{itemize}
-\item{Bilingual Language Profile (BLP) – a tool used to collect demographic information about participants and determining language dominance. Scores range from -218 to 218 where 0 represents balanced bilingualism (Birdsong, Gertken, \& Amengual, 2012).}
+\item{Bilingual Language Profile (BLP) – a tool used to collect demographic information and determine language dominance. Scores range from -218 to 218 where 0 represents balanced bilingualism (Birdsong et al., 2012).}
 
 \item{Language History (0-20+)}
   \begin{itemize}
@@ -259,20 +302,20 @@ hist_eligible_eng_grouped
 \begin{frame}
 \frametitle{Participant Groups}
 \begin{itemize}
-\item{Control Group – native Spanish speakers who learned English after age 12 who grew up and attended school in Mexico.}
+\item{L1 Spanish–L2 English: native Spanish speakers who learned English after age 12 who grew up and attended school in Mexico.}
   \begin{itemize}
-  \item{Minimum of 80}
-  \item{BLP should indicate dominance in Spanish}
+  \item{Higher score on LexTALE-Esp than LexTALE.}
+  \item{BLP should indicate dominance in Spanish.}\newline
   \end{itemize}
-\item{Early Bilingual Group – speakers who learned both Spanish (Mexican Variety) and English simultaneously from infancy, but grew up and attended school in the Southwestern United States.}
+\item{L1 Spanish: monolingal speakers of Spanish who had no fluency or competency in any other language.}
   \begin{itemize}
-  \item{Minimum of 80}
-  \item{BLP should indicate and equal dominance in Spanish and English}
+  \item{Group recruitment was done through Prolific which filters prior to participation.}\newline
   \end{itemize}
-\item{Late Bilingual Group – native English speakers who learned Spanish after age 12 who grew up and attended school in the Southwestern United States.}
+\item{L1 English–L2 Spanish: native English speakers who learned Spanish after age 12 who grew up and attended school in the United States.}
   \begin{itemize}
-  \item{Minimum of 80}
-  \item{BLP should indicate dominance in English}
+  \item{In-person group: Higher score on LexTALE than LexTALE-Esp.}
+  \item{In-person group: BLP should indicate dominance in English}
+  \item{Online group recruitment was done through Prolific which filters prior to participation.}
   \end{itemize}
 \end{itemize}
 \end{frame}
@@ -348,7 +391,6 @@ Split these between Spanish and English with references.
   \item{Spanish–English simultaneous bilinguals could pattern like the native Spanish group, the native English group or fall in between two.}
   \end{itemize}
 \item{These differences in syllable intuitions will affect both speech segmentation and word recognition processes if the syllable is playing a role in them.}
-
 \end{itemize}
 \end{frame}
 %----------------------------------------------------------------------------------------
