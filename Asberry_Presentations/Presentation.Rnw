@@ -143,8 +143,8 @@ This dissertation focused on syllabic intuitions and the processing of Spanish b
 %\item{Research then moves from comparing different linguistic units such as phonemes, syllables, words, etc. to an emphasis on the effect of the syllable.}
 \item{Mehler and Hayes (1981):}
   \begin{itemize}
-  \item{The syllable as a phonological unit of the language which can efficiently explain the grammar of language }
-  \item{The syllable as a unit which aides speech perception and comprehension}\newline
+  \item{The syllable as a phonological unit of the language which can efficiently explain the grammar of language.}
+  \item{The syllable as a unit which aides speech perception and comprehension.}\newline
   \end{itemize}
 
 \item{Experimental Design}
@@ -154,6 +154,21 @@ This dissertation focused on syllabic intuitions and the processing of Spanish b
   \item{Find BA in balance (match) and BAL in balance (mismatch).}
   \end{itemize}
 \end{itemize}
+\end{frame}
+%----------------------------------------------------------------------------------------
+
+% Lab Segmentation Crossover Plot Simulated Data
+%----------------------------------------------------------------------------------------
+\begin{frame}
+\begin{figure}
+\begin{center}
+<<sample_crossover, fig.width= 5, fig.height= 3>>=
+crossover_example
+@      
+\caption[Plot: Crossover Effect]{Example of what the crossover effect could look like using a simulated fictitious dataset. The interaction can be seen due to faster detection times from monitoring experiments when the target syllable structure and the word-initial syllable matched structure matched.}
+\label{plt-sample-crossover}
+\end{center}
+\end{figure}
 \end{frame}
 %----------------------------------------------------------------------------------------
 
@@ -184,12 +199,12 @@ This dissertation focused on syllabic intuitions and the processing of Spanish b
 \begin{frame}
 \frametitle{Previous Studies Results for Spanish and English}
 \begin{itemize}
-\item{Later studies extended the syllable use in language processing Spanish speakers.}\newline
+\item{Later studies extended the syllable use in language processing to Spanish speakers.}\newline
 
 \item{Sebastián-Gallés et al. (1992):}
   \begin{itemize}
-  \item{Spanish speakers seemed to be able to process items so fast that they could skip the use of the syllable segmentation strategy.}
-  \item{When Spanish speakers were forced to slow down, evidence of the syllable segmentation strategy emerged for words with an unstressed first syllable}\newline
+  \item{Spanish speakers seemed to be able to process items so fast that they could skip the use of the syllable segmentation strategy. Average reaction time (RT) was 376 ms}
+  \item{When Spanish speakers were forced to slow down (average RT 614 ms), evidence of the syllable segmentation strategy emerged for words with an unstressed first syllable. No effect was found for words with initial syllable stress.}\newline
   \end{itemize}
   
 \item{Bradley et al. (1993):}
@@ -219,8 +234,8 @@ This dissertation focused on syllabic intuitions and the processing of Spanish b
 \begin{frame}
 \frametitle{Vocabulary Tasks}
 \begin{itemize}
-\item{LexTALE – English vocabulary test used as a correlate of language proficiency (Lemhöfer and Broersma, 2012)}\newline
-\item{LexTALE-Esp – Spanish vocabulary test used as a correlate of language proficiency (Izura, Cuetos, and Brysbaert, 2014)}\newline
+\item{LexTALE – English vocabulary test used as a correlate of language proficiency (Lemhöfer and Broersma, 2012).}\newline
+\item{LexTALE-Esp – Spanish vocabulary test used as a correlate of language proficiency (Izura, Cuetos, and Brysbaert, 2014).}\newline
 \item{Both LexTALE and LexTALE-Esp contained twice as many words as nonwords.}\newline
 \item{Both LexTALE and LexTALE-Esp calculated a scores based on percentage of correct answers.}\newline
 \item{LexTALE-Esp calculated a score based on task creator's weighting ranging from -60 to 60.}
@@ -303,7 +318,7 @@ hist_eligible_eng_grouped
 \begin{frame}
 \frametitle{Participant Groups}
 \begin{itemize}
-\item{L1 Spanish–L2 English: native Spanish speakers who learned English after age 12 who grew up and attended school in Mexico.}
+\item{L1 Spanish–L2 English: native Spanish speakers who learned English at school. They grew up and attended school in Mexico.}
   \begin{itemize}
   \item{Higher score on LexTALE-Esp than LexTALE.}
   \item{BLP should indicate dominance in Spanish.}\newline
@@ -312,10 +327,10 @@ hist_eligible_eng_grouped
   \begin{itemize}
   \item{Group recruitment was done through Prolific which filters prior to participation.}\newline
   \end{itemize}
-\item{L1 English–L2 Spanish: native English speakers who learned Spanish after age 12 who grew up and attended school in the United States.}
+\item{L1 English–L2 Spanish: native English speakers who learned Spanish at school. They grew up and attended school in the United States.}
   \begin{itemize}
   \item{In-person group: Higher score on LexTALE than LexTALE-Esp.}
-  \item{In-person group: BLP should indicate dominance in English}
+  \item{In-person group: BLP should indicate dominance in English.}
   \item{Online group recruitment was done through Prolific which filters prior to participation.}
   \end{itemize}
 \end{itemize}
@@ -735,8 +750,21 @@ intuition_syl_main
 \end{frame}
 %----------------------------------------------------------------------------------------
 
-
-
+% Easier visualization of structure main effect
+%----------------------------------------------------------------------------------------
+\begin{frame}
+%\frametitle{Title of Slide}
+\begin{figure}[h]
+\begin{center}
+<<intuition_logit_correct, fig.width= 4, fig.height= 3>>=
+plt_corr_logit_sylX
+@      
+\caption[Logit Correct Response by Syllable Type]{The plot shows the difference in number of correct responses by syllable type---CV or CVC---for each L1 language group. The error bars represent the 95\% confidence intervals.}
+\label{plt-intuition-logit-prop}
+\end{center}
+\end{figure}
+\end{frame}
+%----------------------------------------------------------------------------------------
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Lab Segmentation 
 % Introduce the Segmenation Experiment In-person
