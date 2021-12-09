@@ -73,7 +73,7 @@ here::here()
 %----------------------------------------------------------------------------------------
 \begin{frame}
 \frametitle{Outline}
-This dissertation focused on syllabic intutions and the processing of Spanish by L1 Spanish and L1 English speakers.\newline
+This dissertation focused on syllabic intuitions and the processing of Spanish by L1 Spanish and L1 English speakers.\newline
 
 \begin{itemize}
 \item{Background}
@@ -103,7 +103,7 @@ This dissertation focused on syllabic intutions and the processing of Spanish by
   \item{CV - represents an open syllable}
   \item{CVC - represents a closed syllable}\newline
   \end{itemize}
-\item{Segmentation - process of dividing langauge into smaller units}
+\item{Segmentation - process of dividing language into smaller units}
   \begin{itemize}
   \item{Word Segmentation - breaking down words into smaller units such as syllables}\newline
   \end{itemize}
@@ -308,7 +308,7 @@ hist_eligible_eng_grouped
   \item{Higher score on LexTALE-Esp than LexTALE.}
   \item{BLP should indicate dominance in Spanish.}\newline
   \end{itemize}
-\item{L1 Spanish: monolingal speakers of Spanish who had no fluency or competency in any other language.}
+\item{L1 Spanish: monolingual speakers of Spanish who had no fluency or competency in any other language.}
   \begin{itemize}
   \item{Group recruitment was done through Prolific which filters prior to participation.}\newline
   \end{itemize}
@@ -366,7 +366,7 @@ hist_eligible_eng_grouped
 \frametitle{Syllabic Intuitions}
 \begin{itemize}
 \item{Elicited Spanish Syllabic intuitions through a two-alternative forced choice task.}\newline
-\item{Syllabic intuitions for Spanish and English differ:}
+\item{Syllabic intuitions for Spanish and English differ (Whitley, 1986):}
   \begin{itemize}
   \item{Spanish has restrictive set of complex syllable onsets.}
   \item{English allows for many complex syllable onsets.}
@@ -388,7 +388,7 @@ hist_eligible_eng_grouped
   \item{Spanish speaker: [p\textepsilon s.\textprimstress ta.\textltailn a]}
   \item{English speaker: [p\textepsilon s.\textprimstress ta.\textltailn a] or [p\textepsilon .\textprimstress sta.\textltailn a]}\newline
   \end{itemize}
-\item{Ambisyllabicity, one phoneme is shared between two adjacent syllables. (Khan, 1976)}
+\item{Ambisyllabicity, one phoneme is shared between two adjacent syllables. (Khan, 1976; Treiman and Danis 1988)}
 \item{\emph{balada} 'ballad' and \emph{baldosa} 'tile':}
   \begin{itemize}
   \item{Spanish speaker: [ba.\textprimstress la.\textipa{\dh}a] and [bal.\textprimstress do.sa]}
@@ -750,11 +750,46 @@ intuition_syl_main
   \item{24 Spanish CV and CVC nonword pairs were generated from the 24 real word pairs using Wuggy.app (Keuleers and Brysbaert, 2010).}
   \item{1 word from each pair was placed in a list with 9 other filler items.}
   \item{4 conditions were used to counterbalance study.}
+    \begin{itemize}
+    \item{Condition 1: Find BA in balada, BAL in balega...}
+    \item{Condition 2: Find BAL in balada, BA in balega...}
+    \item{Condition 3: Find BA in baldosa, BAL in balbusa...}
+    \item{Condition 4: Find BAL in baldosa, BA in balbusa...}
+    \end{itemize}
   \end{itemize}
 \end{itemize}
 \end{frame}
 %----------------------------------------------------------------------------------------
 
+% Lab-based Segmentation L1 and L2 Vocabulary Differences
+%----------------------------------------------------------------------------------------
+\begin{frame}
+\begin{figure}
+\begin{center}
+<<lab_vocab_difference, fig.width= 4, fig.height= 2.5>>=
+lab_vocab_diff
+@      
+%\caption[Vocabulary Size Comparison]{Using the LexTALE and LexTALE-Esp tasks, the difference in vocabulary size was calculated by subtracting the Spanish vocabulary percent correct from the English vocabulary percent correct responses. Therefore, a positive number indicates a larger English vocabulary size while a negative number indicates a larger Spanish vocabulary size.}
+\label{plt-lab-vocab-diff}
+\end{center}
+\end{figure}
+\end{frame}
+%----------------------------------------------------------------------------------------
+
+% Lab-based Segmentation Language Dominance
+%----------------------------------------------------------------------------------------
+\begin{frame}
+\begin{figure}
+\begin{center}
+<<lab_lang_dominance, fig.width= 4, fig.height= 2.5>>=
+lab_lang_dom
+@      
+%\caption[BLP Language Dominance]{Language dominance scores were calculated by following the formula given by the creators of the Bilingual Language Profile \parencite{Birdsong2012-wd}. In the current study, a larger number represents more dominance in English while a smaller number represents more dominance in Spanish}
+\label{plt-lab-lang-dom}
+\end{center}
+\end{figure}
+\end{frame}
+%----------------------------------------------------------------------------------------
 % Lab Segmentation Demographics
 %----------------------------------------------------------------------------------------
 %\begin{frame}
@@ -1161,7 +1196,7 @@ A main effect of \emph{Target} was found,
 \Sexpr{lab_aov_learners$anova_table["target_syl_structure", "num Df"]},
 \Sexpr{lab_aov_learners$anova_table["target_syl_structure", "den Df"]}) =
 \Sexpr{round(lab_aov_learners$anova_table["target_syl_structure", "F"],2)}, 
-p < .05 
+p $<$ .05 
 [\Sexpr{round(lab_aov_learners$anova_table["target_syl_structure", "Pr(>F)"],4)}].
 
 \begin{figure}
@@ -1185,7 +1220,7 @@ A significant interaction between \emph{Matching} and \emph{Lexicality} was foun
 \Sexpr{lab_aov_learners$anova_table["matching:word_status", "num Df"]},
 \Sexpr{lab_aov_learners$anova_table["matching:word_status", "den Df"]}) =
 \Sexpr{round(lab_aov_learners$anova_table["matching:word_status", "F"],2)}, 
-p < .05 
+p $<$ .05 
 [\Sexpr{round(lab_aov_learners$anova_table["matching:word_status", "Pr(>F)"],4)}].
 \begin{figure}
 \begin{center}
@@ -1201,18 +1236,18 @@ lab_l2_lex_mat_int
 
 % Lab Segmentation L1 English Estimated Marginal Means
 %----------------------------------------------------------------------------------------
-\begin{frame}
-%\frametitle{Title of Slide}
-\begin{figure}
-\begin{center}
-<<lab_l2_tar_mat_ns_int, fig.width= 6, fig.height= 2.5>>=
-lab_l2_tar_mat_int
-@      
-\caption[Estimated Marginal Means: Lab Experiment Control Group]{Log transformed reaction times reported given as a factor of target syllable structure, matching and lexicality conditions.}
-\label{plt-lab-l2-tar-mat-ns-int}
-\end{center}
-\end{figure}
-\end{frame}
+%\begin{frame}
+%%\frametitle{Title of Slide}
+%\begin{figure}
+%\begin{center}
+%<lab_l2_tar_mat_ns_int, fig.width= 6, fig.height= 2.5>>=
+%lab_l2_tar_mat_int
+%@      
+%\caption[Estimated Marginal Means: Lab Experiment Control Group]{Log transformed reaction times reported given as a factor of target syllable structure, matching and lexicality conditions.}
+%\label{plt-lab-l2-tar-mat-ns-int}
+%\end{center}
+%\end{figure}
+%\end{frame}
 %----------------------------------------------------------------------------------------
 
 
@@ -1221,9 +1256,19 @@ lab_l2_tar_mat_int
 % Introduce the Segmenation Experiment Online
 %----------------------------------------------------------------------------------------
 \begin{frame}
-\frametitle{Visual Word Segmentation}
+\frametitle{Online Visual Word Segmentation}
 \begin{itemize}
-\item{Give Background and Study information online version}
+\item{Visual letter sequence monitoring task:}
+  \begin{itemize}
+  \item{8 word pairs and 8 nonword pairs from Chapter 4 were used.}
+  \item{1 critical word was placed in a list with 9 filler items.}
+  \item{All participants saw all conditions.}
+    \begin{itemize}
+    \item{Word Conditions: Find BA in balada, BAL in balada, BA in baldosa, BAL in baldosa...}
+    \item{Nonword Conditions: Find BA in balega, BAL in balega, BA in balbusa, BAL in balbusa...}
+    \end{itemize}
+  \item{55 L1 English speakers and 44 L1 Spanish speakers were analyzed.}
+  \end{itemize}
 \end{itemize}
 \end{frame}
 %----------------------------------------------------------------------------------------
@@ -1533,13 +1578,20 @@ lab_l2_tar_mat_int
 % Online Segmentation L1 Spanish Matching Main Effect Estimated Marginal Mean
 %----------------------------------------------------------------------------------------
 \begin{frame}
-\frametitle{Title of Slide}
+%\frametitle{Title of Slide}
+A significant main effect of Matching was found: 
+\emph{Matching} \emph{F}(
+\Sexpr{aov_online_natives$anova_table["matching", "num Df"]},
+\Sexpr{aov_online_natives$anova_table["matching", "den Df"]}) = 
+\Sexpr{round(aov_online_natives$anova_table["matching", "F"],2)}, 
+p $<$ .05 
+[\Sexpr{round(aov_online_natives$anova_table["matching", "Pr(>F)"],4)}].
 \begin{figure}
 \begin{center}
 <<online_l1_mat, fig.width= 6, fig.height= 3>>=
 online_l1_mat_main
 @      
-%\caption[Estimated Marginal Means: Lab Experiment Control Group]{L1 Spanish log transformed reaction times reported as a factor of the \emph{Matching} condition.}
+\caption[Estimated Marginal Means: Lab Experiment Control Group]{L1 Spanish log transformed reaction times reported as a factor of the \emph{Matching} condition.}
 \label{plt-online-l1-mat-main}
 \end{center}
 \end{figure}
@@ -1548,18 +1600,18 @@ online_l1_mat_main
 
 % Online Segmentation Target and Matching Interaction Estimated Marginal Mean
 %----------------------------------------------------------------------------------------
-\begin{frame}
-\frametitle{Title of Slide}
-\begin{figure}
-\begin{center}
-<<online_l1_tar_mat_ns_int, fig.width= 6, fig.height= 3>>=
-online_l1_tar_mat_int
-@      
+%\begin{frame}
+%%\frametitle{Title of Slide}
+%\begin{figure}
+%\begin{center}
+%<online_l1_tar_mat_ns_int, fig.width= 6, fig.height= 3>>=
+%online_l1_tar_mat_int
+%@      
 %\caption[Estimated Marginal Means: Lab Experiment Control Group]{Log transformed reaction times reported given as a factor of target syllable structure, matching and lexicality conditions.}
-\label{plt-online-l1-tar-mat-ns-int}
-\end{center}
-\end{figure}
-\end{frame}
+%\label{plt-online-l1-tar-mat-ns-int}
+%\end{center}
+%\end{figure}
+%\end{frame}
 %----------------------------------------------------------------------------------------
 
 % Online Segmentation L1 English ANOVA
@@ -1578,13 +1630,20 @@ online_l1_tar_mat_int
 % Online Segmentation L1 English Matching Main Effect Estimated Marginal Means
 %----------------------------------------------------------------------------------------
 \begin{frame}
-\frametitle{Title of Slide}
+%\frametitle{Title of Slide}
+A trend for the matching factor was also found in L1 English speakers:
+\emph{F}(
+\Sexpr{aov_online_learners$anova_table["matching", "num Df"]},
+\Sexpr{aov_online_learners$anova_table["matching", "den Df"]}) =
+\Sexpr{round(aov_online_learners$anova_table["matching", "F"],2)}, 
+p $>$ .05 
+[\Sexpr{round(aov_online_learners$anova_table["matching", "Pr(>F)"],4)}].
 \begin{figure}
 \begin{center}
 <<online_l2_mat, fig.width= 6, fig.height= 3>>=
 online_l2_mat_main
 @      
-%\caption[Estimated Marginal Means: Lab Experiment Control Group]{L1 English log transformed reaction times reported as a factor of the \emph{Matching} condition.}
+\caption[Estimated Marginal Means: Lab Experiment Control Group]{L1 English log transformed reaction times reported as a factor of the \emph{Matching} condition.}
 \label{plt-online-l2-mat-main}
 \end{center}
 \end{figure}
@@ -1594,13 +1653,19 @@ online_l2_mat_main
 % Online Segmentation L1 English Matching and Target Interaction Estimated Marginal Means
 %----------------------------------------------------------------------------------------
 \begin{frame}
-\frametitle{Title of Slide}
+%\frametitle{Title of Slide}
+A significant interaction between Target and Matching was found:
+\emph{F}(
+\Sexpr{aov_online_learners$anova_table["target_syl_structure:matching", "num Df"]},
+\Sexpr{aov_online_learners$anova_table["target_syl_structure:matching", "den Df"]}) =
+\Sexpr{round(aov_online_learners$anova_table["target_syl_structure:matching", "F"],2)}, 
+p $<$ .05 [0.0000].
 \begin{figure}
 \begin{center}
 <<online_l2_tar_mat_s_int, fig.width= 6, fig.height= 3>>=
 online_l2_mat_tarsyl_int
 @      
-%\caption[Estimated Marginal Means: Online Experiment Target Group]{L1 English log transformed reaction times reported as a factor of target syllable structure and matching conditions.}
+\caption[Estimated Marginal Means: Online Experiment Target Group]{L1 English log transformed reaction times reported as a factor of target syllable structure and matching conditions.}
 \label{plt-online-l2-tar-mat-s-int}
 \end{center}
 \end{figure}
@@ -1610,30 +1675,40 @@ online_l2_mat_tarsyl_int
 % Online Segmentation L1 English Matching and Lexicality Interaction Estimated Marginal Means
 %----------------------------------------------------------------------------------------
 \begin{frame}
-\frametitle{Title of Slide}
+%\frametitle{Title of Slide}
+A significant interaction between Target and Lexicality was found:
+\emph{F}(
+\Sexpr{aov_online_learners$anova_table["target_syl_structure:word_status", "num Df"]},
+\Sexpr{aov_online_learners$anova_table["target_syl_structure:word_status", "den Df"]}) =
+\Sexpr{round(aov_online_learners$anova_table["target_syl_structure:word_status", "F"],2)}, 
+p $<$ .05 
+[\Sexpr{round(aov_online_learners$anova_table["target_syl_structure:word_status", "Pr(>F)"],4)}]. 
 \begin{figure}
 \begin{center}
 <<online_l2_mat_lex_ns_int, fig.width= 5, fig.height= 3>>=
 online_l2_lex_mat_int
 @      
-%\caption[Estimated Marginal Means: Lab Experiment Target Group]{L1 English log transformed reaction times reported given as a factor of matching and lexicality conditions.}
+\caption[Estimated Marginal Means: Lab Experiment Target Group]{L1 English log transformed reaction times reported given as a factor of matching and lexicality conditions.}
 \label{plt-online-l2-mat-lex-ns-int}
 \end{center}
 \end{figure}
 \end{frame}
 %----------------------------------------------------------------------------------------
 
+
+
 % Online Segmentation RTs Comparisons between Lab and Online
 %----------------------------------------------------------------------------------------
 \begin{frame}
-\frametitle{Title of Slide}
+%\frametitle{Title of Slide}
 \begin{table}
 \centering
 \begin{tabular}{l c c c c}
 \toprule
 & \multicolumn{2}{c}{Lab Experiments} & \multicolumn{2}{c}{Online Experiments}\\
 \cmidrule(lr){2-3}\cmidrule(lr){4-5}
-L1 & Word Mean & Nonword Mean & Word Mean & Nonword Mean\\
+   & Word & Nonword & Word & Nonword\\
+L1 & Mean & Mean    & Mean & Mean\\
 \midrule
 English
 & \Sexpr{round(mean(lab_l2_wd_av$segRespRTmsec_Mean),0)}
@@ -1647,7 +1722,7 @@ Spanish
 & \Sexpr{round(mean(online_l1_nonwd_av$segRespRTmsec_Mean),0)}\\
 \bottomrule
 \end{tabular}
-\caption{Average reaction times reported in milliseconds for words and nonwords. It includes all participants in in-person and online segmentation experiments.}
+\caption{Average reaction times reported in milliseconds for words and nonwords. It includes all participants in in-person and online segmentation experiments. It shows that the reaction times in both the in-person and online studies were comparable or longer than the previous studies where the effect was found.}
 \label{tab-lab-online-mean-rt}
 \end{table}
 \end{frame}
@@ -1658,45 +1733,141 @@ Spanish
 \begin{frame}
 \frametitle{Conclusions}
 \begin{itemize}
-\item{}
+\item{Syllabic Intuitions:}
+  \begin{itemize}
+  \item{L1 Spanish speakers do have different syllabic intuitions than L1 English speakers.}\newline
+  \item{Future production studies with these groups could be beneficial in determining what L1 English speakers are doing with Spanish word syllabification, including stress placement and vowel quality.}\newline
+  \end{itemize}
+\item{Word Segmentation:}
+  \begin{itemize}
+  \item{L1 Spanish speakers are sensitive to the syllable during Spanish word segmentation.}\newline
+  \item{L1 English speakers seem to be sensitive to the syllable during Spanish word segmentation.}
+  \end{itemize}
+\end{itemize}
+\end{frame}
+%----------------------------------------------------------------------------------------
+
+% Conclusion slide 2
+%----------------------------------------------------------------------------------------
+\begin{frame}
+\frametitle{Conclusions}
+\begin{itemize}
+\item{Visual and/or Online Studies:}
+  \begin{itemize}
+  \item{It is possible to capture the effect of syllabic segmentation strategies through a completely visual design even in an online environment where control of hardware/software configurations are not controlled.}\newline
+  \item{Future studies may benefit from running a sufficiently powered study using the same design from Chapter 4.}
+  \end{itemize}
 \end{itemize}
 \end{frame}
 %----------------------------------------------------------------------------------------
 
 % References
 %----------------------------------------------------------------------------------------
-\begin{frame}[allowframebreaks,noframenumbering]
-\frametitle{Title of Slide}
-\begin{itemize}
-\item{}
-\end{itemize}
+\begin{frame}
+\frametitle{References}
+\tiny
+Birdsong, D, L M Gertken, and M Amengual (2012). Bilingual Language Profile: An
+Easy-to-Use Instrument to Assess Bilingualism. https://sites.la.utexas.edu/
+bilingual.\newline
+
+Bradley, Dianne C, Rosa M Sánchez-Casas, and José E García-Albea (May 1993).
+“The status of the syllable in the perception of Spanish and English”. In: Language
+and cognitive processes 8.2, pp. 197–233.\newline
+
+Bridges, David et al. (July 2020). “The timing mega-study: comparing a range of
+experiment generators, both lab-based and online”. en. In: PeerJ 8, e9414.\newline
+
+Cutler, Anne et al. (Aug. 1986). “The syllable’s differing role in the segmentation of
+French and English”. In: Journal of memory and language 25.4, pp. 385–400.\newline
+
+Cutler, Anne et al. (July 1992). “The monolingual nature of speech segmentation by bilinguals”.
+en. In: Cognitive psychology 24.3, pp. 381–410.\newline
+
+Foss, Donald J and David A Swinney (June 1973). “On the psychological reality
+of the phoneme: Perception, identification, and consciousness”. In: Journal of
+Verbal Learning and Verbal Behavior 12.3, pp. 246–257.\newline
+
+Harris, JamesWesley (Jan. 1983). Syllable Structure and Stress in Spanish: A Nonlinear
+Analysis. en. Vol. 8. Linguistic inquiry monographs. MIT Press.\newline
+
+Hualde, José Ignacio (1991). “On Spanish Syllabification”. In: Current Studies in
+Spanish Linguistics. Ed. by Héctor Campos and Fernando Martínez-Gil. Washington,
+D.C.: Georgetown University Press, pp. 475–493.\newline
+
+Izura, Cristina, Fernando Cuetos, and Marc Brysbaert (2014). “Lextale-Esp: A test
+to rapidly and efficiently assess the Spanish vocabulary size”. In: Psicológica
+35.1, pp. 49–66.\newline
+
+Kahn, Daniel (1976). “Syllable-based generalizations in English phonology”. en.
+PhD thesis. Massachusetts Institute of Technology.\newline
+
+Keuleers, Emmanuel and Marc Brysbaert (Aug. 2010). “Wuggy: a multilingual
+pseudoword generator”. en. In: Behavior research methods 42.3, pp. 627–633.\newline
 \end{frame}
 %----------------------------------------------------------------------------------------
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Templates
-% List template
+% References slide 2
 %----------------------------------------------------------------------------------------
 \begin{frame}
-\frametitle{Title of Slide}
-\begin{itemize}
-\item{}
-\end{itemize}
+\frametitle{References}
+\tiny
+Lemhöfer, Kristin and Mirjam Broersma (June 2012). “Introducing LexTALE: a
+quick and valid Lexical Test for Advanced Learners of English”. en. In: Behavior
+research methods 44.2, pp. 325–343.\newline
+
+McNeill, David and Karen Lindig (Aug. 1973). “The perceptual reality of phonemes,
+syllables, words, and sentences”. In: Journal of Verbal Learning and Verbal Behavior
+12.4, pp. 419–430.\newline
+
+Mehler, J and R W Hayes (Oct. 1981). “The Role of Syllables in Speech Processing:
+Infant and Adult Data [and Discussion]”. In: Philosophical transactions of the
+Royal Society of London. Series B, Biological sciences 295.1077, pp. 333–352.\newline
+
+Mehler, Jacques et al. (June 1981). “The syllable’s role in speech segmentation”. In:
+Journal of Verbal Learning and Verbal Behavior 20.3, pp. 298–305.\newline
+
+Savin,HB and T G Bever (June 1970). “The nonperceptual reality of the phoneme”.
+In: Journal of Verbal Learning and Verbal Behavior 9.3, pp. 295–302.\newline
+
+Sebastián-Gallés, Núria et al. (Feb. 1992). “Contrasting syllabic effects in Catalan
+and Spanish”. In: Journal of memory and language 31.1, pp. 18–32.\newline
+
+Treiman, R (Dec. 1983). “The structure of spoken syllables: evidence from novel
+word games”. en. In: Cognition 15.1-3, pp. 49–74.\newline
+
+Treiman, Rebecca and Catalina Danis (Feb. 1988). “Syllabification of intervocalic
+consonants”. In: Journal of memory and language 27.1, pp. 87–104.\newline
+
+Whitley, Melvin Stanley (1986). Spanish/English contrasts : a course in Spanish linguistics.
+American university studies. Series II, Romance languages and literature.
+Washington, D.C.: Georgetown University Press.
 \end{frame}
 %----------------------------------------------------------------------------------------
 
-% Figure template
-%----------------------------------------------------------------------------------------
-\begin{frame}
-\frametitle{Title of Slide}
-\begin{figure}
-\begin{center}
-<<name_this_uniquely, fig.width= 4, fig.height= 3>>=
-#intuition_eng_vocab
-@  
-\caption[Template]{Type your caption here}
-\label{plt-label}
-\end{center}
-\end{figure}
-\end{frame}
-%----------------------------------------------------------------------------------------
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Templates
+%% List template
+%%----------------------------------------------------------------------------------------
+%\begin{frame}
+%\frametitle{Title of Slide}
+%\begin{itemize}
+%\item{}
+%\end{itemize}
+%\end{frame}
+%%----------------------------------------------------------------------------------------
+%
+%% Figure template
+%%----------------------------------------------------------------------------------------
+%\begin{frame}
+%\frametitle{Title of Slide}
+%\begin{figure}
+%\begin{center}
+%<name_this_uniquely, fig.width= 4, fig.height= 3>>=
+%#intuition_eng_vocab
+%@  
+%\caption[Template]{Type your caption here}
+%\label{plt-label}
+%\end{center}
+%\end{figure}
+%\end{frame}
+%%----------------------------------------------------------------------------------------
 \end{document}
