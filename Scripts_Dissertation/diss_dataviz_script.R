@@ -40,7 +40,7 @@ vocab_diff_plt <- function(data, x_data, y_data){
     descriptive_plot(., x_data, y_data) +
     geom_text(aes(label=labels, y = !!sym(y_data) + 8)) +
     ggtitle("Difference in L1 and L2 Vocabulary Size") +
-    xlab("Native Language") +
+    xlab("L1 Language") +
     ylab("Vocabulary Difference \nEN-SP")
 }
 
@@ -51,7 +51,7 @@ language_dominance <- function(data, x_data, y_data){
     descriptive_plot(., x_data, y_data) +
     geom_text(aes(label=labels, y = !!sym(y_data) + 20)) +
     ggtitle("Language Dominance") +
-    xlab("Native Language") +
+    xlab("L1 Language") +
     ylab("Binlingual Language Profile \nDominance Score")
 }
 
@@ -62,7 +62,7 @@ eng_lextale <- function(data, x_data, y_data){
     descriptive_plot(., x_data, y_data) +
     geom_text(aes(label=labels, y = !!sym(y_data) + 5)) +
     ggtitle("English Vocabulary Size") +
-    xlab("Native Language") +
+    xlab("L1 Language") +
     ylab("English Vocabulary \n% correct")
 }
 
@@ -73,7 +73,7 @@ esp_lextale <- function(data, x_data, y_data){
     descriptive_plot(., x_data, y_data) +
     geom_text(aes(label=labels, y = !!sym(y_data) + 5)) +
     ggtitle("Spanish Vocabulary Size") +
-    xlab("Native Language") +
+    xlab("L1 Language") +
     ylab("Spanish Vocabulary \n% correct")
 }
 
@@ -84,7 +84,7 @@ izura <- function(data, x_data, y_data){
     descriptive_plot(., x_data, y_data) +
     geom_text(aes(label=labels, y = !!sym(y_data) + 7)) +
     ggtitle("Spanish Vocabulary Size") +
-    xlab("Native Language") +
+    xlab("L1 Language") +
     ylab("Izura Score")
 }
 
