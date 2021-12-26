@@ -24,7 +24,7 @@ set_parent(here('Asberry_Dissertation/Dissertation.Rnw'))
 \chapter{Conclusion} % Main chapter title
 \label{ch-conclusion} % for referencing this chapter elsewhere, use \ref{ch-conclusion}
 
-\ttodo[inline]{repeat the RQs the main hypotheses and results and DO NOT discuss anything that is not related to the RQs. Do not highlight the results of Chapter 4. Rather focus on how I overcame the issues with the study in Chapter 5. The story line should connect chapter 3 to chapter 5. Need to have this done by 18 NOV including the appendices.}
+\ttodo[inline]{ms: repeat the RQs the main hypotheses and results and DO NOT discuss anything that is not related to the RQs. Do not highlight the results of Chapter 4. Rather focus on how I overcame the issues with the study in Chapter 5. The story line should connect chapter 3 to chapter 5. Need to have this done by 18 NOV including the appendices.\newline da: completed before sending final draft to entire committee prior to defense}
 
 
 This dissertation has reported on Spanish syllabic intuitions and a syllable-based segmentation approach to Spanish word segmentation across three experimental chapters. Syllabic intuitions were gathered through a two-alternative forced choice task. Segmentation strategies were investigated through the use of a letter sequence monitoring task. The dissertation included three different participant groups: L1 monolingual Spanish speakers, L1 Spanish--L2 English bilingual speakers and L1 English--L2 Spanish bilingual speakers. Utilizing these two experimental designs and three speaker groups, the dissertation attempted to answer the following research questions:
