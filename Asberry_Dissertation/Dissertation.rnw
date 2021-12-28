@@ -228,55 +228,63 @@ In the Graduate College \\  % University required text
 % Date of defense is listed
 
 %\addchaptertocentry{Committee Approval Page} % Add the committee approval page to the table of contents
-\begin{singlespacing} % needed for documents set to 1.5 or 2.0 spacing, Comment out otherwise
-\begin{center}
-%\large
-
-THE \MakeUppercase{\univname} \\
-GRADUATE COLLEGE
-\end{center}
-
-\vspace*{0.3in}
-
-\noindent As members of the Dissertation Committee, we certify that we have read the dissertation prepared by \authorname \space entitled "\ttitle "\space and recommend that it be accepted as fulfilling the dissertation requirement for the Degree of \degreename.
-
-\vspace*{0.3in}
-
-\noindent\underline{\makebox[4.0in][r]{}} \hspace{0.15in} Date: \defensedate \\
-{\bfseries\chairname}\\
-\emph{(Chair)}
-\vspace*{0.3in}
-
-\noindent\underline{\makebox[4.0in][r]{}} \hspace{0.15in} Date: \defensedate \\
-{\bfseries\facnameA}\\
-\emph{(Member)}
-\vspace*{0.3in}
-
-\noindent\underline{\makebox[4.0in][r]{}} \hspace{0.15in} Date: \defensedate \\
-{\bfseries\facnameB}\\
-\emph{(Member)}
-\vspace*{0.5in}
-
-%\noindent\underline{\makebox[4.0in][r]{}} \hspace{0.4in} Date: \defensedate \\
-%{\bfseries\facnameC}\\
+%\begin{singlespacing} % needed for documents set to 1.5 or 2.0 spacing, Comment out otherwise
+%\begin{center}
+%%\large
+%
+%THE \MakeUppercase{\univname} \\
+%GRADUATE COLLEGE
+%\end{center}
+%
+%\vspace*{0.3in}
+%
+%\noindent As members of the Dissertation Committee, we certify that we have read the dissertation prepared by \authorname %\space entitled "\ttitle "\space and recommend that it be accepted as fulfilling the dissertation requirement for the Degree %of \degreename.
+%
+%\vspace*{0.3in}
+%
+%\noindent\underline{\makebox[4.0in][r]{}} \hspace{0.15in} Date: \defensedate \\
+%{\bfseries\chairname}\\
+%\emph{(Chair)}
+%\vspace*{0.3in}
+%
+%\noindent\underline{\makebox[4.0in][r]{}} \hspace{0.15in} Date: \defensedate \\
+%{\bfseries\facnameA}\\
+%\emph{(Member)}
+%\vspace*{0.3in}
+%
+%\noindent\underline{\makebox[4.0in][r]{}} \hspace{0.15in} Date: \defensedate \\
+%{\bfseries\facnameB}\\
 %\emph{(Member)}
 %\vspace*{0.5in}
+%
+%%\noindent\underline{\makebox[4.0in][r]{}} \hspace{0.4in} Date: \defensedate \\
+%%{\bfseries\facnameC}\\
+%%\emph{(Member)}
+%%\vspace*{0.5in}
+%
+%% If 4th committee member is needed, copy the preceding 4 lines, change to facnameD in copied lines
+%% You will then need to adjust vertical spacing to keep committee approval page to 1 page length
+%
+%\noindent Final approval and acceptance of this dissertation is contingent upon the candidate's submission of the final %copies of the dissertation to the Graduate College.
+%
+%\vspace*{0.2in}
+%
+%\noindent I hereby certify that I have read this dissertation prepared under my direction and recommend that it be accepted %as fulfilling the dissertation requirement.
+%\vspace*{0.5in}
+%
+%\noindent\underline{\makebox[4.0in][r]{}} \hspace{0.15in} Date: \defensedate \\
+%Dissertation Director: \chairname \\
+%%{\bfseries \emph{Instructor \\ Hispanic Linguistics}} % Update hard-coded to job title and department
+%\vfill
+%\end{singlespacing}% needed for documents set to 1.5 or 2.0 spacing, Comment out otherwise
 
-% If 4th committee member is needed, copy the preceding 4 lines, change to facnameD in copied lines
-% You will then need to adjust vertical spacing to keep committee approval page to 1 page length
-
-\noindent Final approval and acceptance of this dissertation is contingent upon the candidate's submission of the final copies of the dissertation to the Graduate College.
-
-\vspace*{0.2in}
-
-\noindent I hereby certify that I have read this dissertation prepared under my direction and recommend that it be accepted as fulfilling the dissertation requirement.
-\vspace*{0.5in}
-
-\noindent\underline{\makebox[4.0in][r]{}} \hspace{0.15in} Date: \defensedate \\
-Dissertation Director: \chairname \\
-%{\bfseries \emph{Instructor \\ Hispanic Linguistics}} % Update hard-coded to job title and department
-\vfill
-\end{singlespacing}% needed for documents set to 1.5 or 2.0 spacing, Comment out otherwise
+\begin{figure}[htb]
+\centering
+\includegraphics{Figures/Committee_Approval_Page}
+\decoRule
+%\caption[Signed Committee Approval]{Signed approval page}
+\label{fig:Approval-Form}
+\end{figure}
 \pagebreak
 
 %----------------------------------------------------------------------------------------
