@@ -1,0 +1,78 @@
+% Appendix Template with LaTeX code only
+
+%----------------------------------------------------------------------------------------
+%Change ParentTemplate to something unique and meaningful to your project
+<<parentTemplate, echo=FALSE, cache=FALSE>>=
+rm(list=ls())
+library(knitr)
+set_parent('../Dissertation.rnw')
+@
+%----------------------------------------------------------------------------------------
+
+
+\chapter{Software and Packages}
+\label{app-software} 
+
+This dissertation began with the Master/Doctoral Thesis $LaTex$ Template version 2.5 (27-08-2017). All of the software and packages used throughout the entire dissertation from experiment design to manuscript publication are listed below:
+
+\begin{singlespacing}
+\begin{itemize}
+\item{Software:}
+  \begin{itemize}
+  \item{PsychoPy 3.0.7: lab-based studies}
+  \item{PsychoJS 2020.1.2: online-based studies}
+  \item{PyCharm Professional 2021.1.1}
+  \item{Python 3.7.7}
+  \item{Rstudio 1.2.5042}
+  \item{R 4.0.3 2020-10-10, "Bunny-Wunnies Freak Out", x86\_64-apple-darwin17.0 (64-bit)}
+  \item{TexShop 4.68}
+  \item{GNU bash 3.2.57(1)-release, x86\_64-apple-darwin18}
+  \end{itemize}
+\item{Python Libraries:}
+  \begin{itemize}
+  \item{csv 1.0}
+  \item{glob}
+  \item{json 2.0.9}
+  \item{os}
+  \item{pandas 1.2.4}
+  \item{pathlib}
+  \item{shutil}
+  \item{xlrd 2.1.0}
+  \end{itemize}
+\item{R Packages:}
+  \begin{itemize}
+  \item{afex 1.0-1}
+  \item{cowplot 1.1.1}
+  \item{dplyr 1.0.7}
+  \item{effsize 0.8.1}
+  \item{ggplot2 3.3.5}
+  \item{ggpubr 0.4.0}
+  \item{here 1.0.1}
+  \item{knitr 1.36}
+  \item{lattice 0.20-45}
+  \item{plyr 1.8.6}
+  \item{psych 2.1.9}
+  \item{readr 2.1.0}
+  \item{rstatix 0.7.0}
+  \item{tidyr 1.1.4}
+  \item{tidyverse 1.3.1}
+  \item{tinytex 0.35}
+  \item{xtable 1.8-4}
+  \end{itemize}
+\item{Latex Packages:}
+  \begin{itemize}
+  \item{amsmath 2.17j}
+  \item{biblatex 3.16}
+  \item{caption}
+  \item{csquotes 5.2l}
+  \item{enumitem 3.9}
+  \item{fontenc 2.0}
+  \item{koma-script 3.33}
+  \item{mathpazo}
+  \item{multirow 2.8}
+  \item{pdfpages 0.5t}
+  \item{tipa}
+  \item{todonotes 1.1.5}
+  \end{itemize}
+\end{itemize}
+\end{singlespacing}

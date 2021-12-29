@@ -74,6 +74,7 @@ openany, % eliminates all extra blank pages from entire document
 \newcommand{\ttodo}[2][]
 {\todo[caption={#2}, size=\tiny, #1]{\renewcommand{\baselinestretch}{0.5}\selectfont#2\par}}
 
+\usepackage{pdfpages}
 
 %----------------------------------------------------------------------------------------
 %	MARGIN SETTINGS
@@ -278,13 +279,13 @@ In the Graduate College \\  % University required text
 %\vfill
 %\end{singlespacing}% needed for documents set to 1.5 or 2.0 spacing, Comment out otherwise
 
-\begin{figure}[htb]
-\centering
-\includegraphics{Figures/Committee_Approval_Page}
-\decoRule
+%\begin{figure}[htb]
+%\centering
+\includepdf{Figures/Committee_Approval_Page_reduced}
+%\decoRule
 %\caption[Signed Committee Approval]{Signed approval page}
-\label{fig:Approval-Form}
-\end{figure}
+%\label{fig:Approval-Form}
+%\end{figure}
 \pagebreak
 
 %----------------------------------------------------------------------------------------
@@ -444,7 +445,8 @@ In the Graduate College \\  % University required text
 \Sexpr{knit_child('Appendices/Appendix_Segmentation.rnw')}
 \Sexpr{knit_child('Appendices/Appendix_Button_Box.rnw')}
 \Sexpr{knit_child('Appendices/Appendix_Wuggy.rnw')}
-
+\Sexpr{knit_child('Appendices/Appendix_Software.rnw')}
+\Sexpr{knit_child('Appendices/Revision_Comments.rnw')}
 
 %----------------------------------------------------------------------------------------
 %	BIBLIOGRAPHY
