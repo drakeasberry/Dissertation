@@ -411,9 +411,10 @@ p < 0.05
 However, the interaction between \emph{Group} and \emph{Structure} did not reach significance, p > 0.05. Figure \ref{plt-intuition-corr-logit} shows that difference between initial syllable structure in Figure \ref{plt-intuition-corr-prop} for L1 English group does not hold after the logit transformation of reaction times. See Table \ref{tab-anova-intuition} for complete ANOVA results. \ttodo[inline]{mh: sure looks like it should though. \newline da: I added plot for the log transformed values as well to show the point more clearly}
 
 <<table_anova_intuition, results='asis', include=TRUE>>=
-xtable(aov_intuition_prt$anova_table, 
-       type = "latex", 
-       caption = "This table shows the results of the 2 x (2) mixed-effects anova for one between-subjects factor \\textit{Group}, which had two levels---L1 Spanish and L1 English. The within-subjects factor \\textit{Structure} also contained two levels---CV and CVC. The logit transformed values of correct syllabification responses was the dependent variable.",
+xtable(aov_intuition_manu, 
+       type = "latex",
+       align = "lrrrrrrl",
+       caption = "This table shows the results of the 2 x (2) mixed-effects anova for one between-subjects factor \\textit{Group}, which had two levels---L1 Spanish and L1 English. The within-subjects factor \\textit{Structure} also contained two levels---CV and CVC. The logit transformed values of correct syllabification responses was the dependent variable. Significance codes: '***' 0.001 , '**' 0.01, '*' 0.05",
        label = "tab-anova-intuition")
 @
 

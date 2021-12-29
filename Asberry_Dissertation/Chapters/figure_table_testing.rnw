@@ -27,8 +27,8 @@ set_parent(here('Asberry_Dissertation/figure_table.rnw'))
 %<contentIntuitionDemo, child=here('Statistics/Demographics/intuition_demo_viz.rnw'), include=FALSE>>=
 %@
 
-%<contentIntuition, child=here('Statistics/Intuition/intuition_viz.rnw'), include=FALSE>>=
-%@
+<<contentIntuition, child=here('Statistics/Intuition/intuition_viz.rnw'), include=FALSE>>=
+@
 
 %<contentOnlinesegMono, child=here('Statistics/Monolingual_lemma/target_syl_mono_viz.rnw'), include=FALSE>>=
 %@
@@ -36,94 +36,21 @@ set_parent(here('Asberry_Dissertation/figure_table.rnw'))
 %<contentOnlinesegL2, child=here('Statistics/L2_lemma/target_syl_l2_viz.rnw'), include=FALSE>>=
 %@
 
-<<contentOnlineDemo, child=here('Statistics/Demographics/online_demo_viz.rnw'), include=FALSE, cache.rebuild=TRUE>>=
-@
+%<contentOnlineDemo, child=here('Statistics/Demographics/online_demo_viz.rnw'), include=FALSE, cache.rebuild=TRUE>>=
+%@
 %----------------------------------------------------------------------------------------
 
 \chapter{Testing Figures} % Main chapter title
 
-See Table \ref{tab-prac-lab-seg} and \ref{tab-exp-lab-seg}
+%See Table \ref{tab-prac-lab-seg} and \ref{tab-exp-lab-seg}
 
-\begin{table}[h]
-\centering
-\begin{tabular}{llll}
-\toprule
-CV Stimuli & CVC Stimuli & Targets & Lexicality\\
-\midrule
-garaje & garganta & ga-gar & Word\\
-garele & garventa & ga-gar & Nonword\\
-joroba & jornada & jo-jor & Word\\
-joruma & jorteda & jo-jor & Nonword\\
-\bottomrule
-\end{tabular}
-\caption{The table lists the real-word and nonword practice stimuli used in Chapter \ref{ch-seg-online}}
-\label{tab-prac-online-seg}
-\end{table}
-
-\begin{table}
-\centering
-\begin{tabular}{ll}
-\toprule
-Word & Initial Syllable\\
-\midrule
-caldera	  & CAL\\
-cantera	  & CAN\\
-ciruela	  & CI\\
-culata	  & CU\\
-gustazo	  & GUS\\
-latencia  & LA\\
-pericia	  & PE\\
-pupila	  & PU\\
-sendero	  & SEN\\
-sordina	  & SOR\\
-\bottomrule
-\end{tabular}
-\caption{The table lists the practice stimuli used in Chapter \ref{ch-intuition}}
-\label{tab-prac-intuition}
-\end{table}
-
-\begin{table}
-\centering
-\begin{tabular}{llll}
-\toprule
-Word & Initial Syllable & Word & Initial Syllable\\
-\midrule
-balada	  & BA    &  jornada	  & JOR\\
-baldosa	  & BAL   &  joroba	    & JO\\
-bolero	  & BO    &  limosna	  & LI\\
-bolsillo  & BOL   &  limpieza   & LIM\\
-camisa	  & CA    &  linaje	    & LI\\
-campana	  & CAM   &  linterna   & LIN\\
-casilla	  & CA    &  moneda	    & MO\\
-castillo  & CAS   &  montaña	  & MON\\
-ceniza	  & CE    &  morcillo   & MOR\\
-centavo	  & CEN   &  morera	    & MO\\
-cereza	  & CE    &  muralla	  & MU\\
-cerveza	  & CER   &  murmullo   & MUR\\
-coraje	  & CO    &  palmera	  & PAL\\
-corbata	  & COR   &  paloma	    & PA\\
-corona	  & CO    &  pasaje	    & PA\\
-corteza	  & COR   &  pastilla   & PAS\\
-cosecha	  & CO    &  pereza	    & PE\\
-costilla  & COS   &  permiso	  & PER\\
-culebra	  & CU    &  peseta	    & PE\\
-culpable  & CUL   &  pestaña	  & PES\\
-ganancia  & GA    &  rosario	  & RO\\
-ganchillo	& GAN   &  rosquilla	& ROS\\
-garaje	  & GA    &  volante	  & VO\\
-garganta  & GAR   &  voltaje	  & VOL\\
-\bottomrule
-\end{tabular}
-\caption{The table lists the experimental stimuli used in Chapter \ref{ch-intuition}}
-\label{tab-exp-intuition}
-\end{table}
-
-%<table_anova_lab_learners, results='asis', include=TRUE>>=
-%xtable(lab_aov_learners_2$anova_table, 
-%       type = "latex", 
-%       caption = "This table shows the results of the 2 x (2) mixed-effects anova for one between subjects factor %\\textit{Group}, \\textit{group} in table. The \\textit{group} factor had two levels---native Spanish and native English. %The within subjects factor \\textit{Structure}, \\textit{syl\\_structure} in table also contained two levels---CV and CVC. %The logit transformed values of correct syllabification responses was the dependent variable.",
-%       label = "tab-anova-lab-learners")
-%@
+<<table_anova_intuition, results='asis', include=TRUE>>=
+xtable(aov_intuition_manu, 
+       type = "latex",
+       align = "lrrrrrrl",
+       caption = "This table shows the results of the 2 x (2) mixed-effects anova for one between-subjects factor \\textit{Group}, which had two levels---L1 Spanish and L1 English. The within-subjects factor \\textit{Structure} also contained two levels---CV and CVC. The logit transformed values of correct syllabification responses was the dependent variable. Significance codes: '***' 0.001 , '**' 0.01, '*' 0.05",
+       label = "tab-anova-intuition")
+@
 
 
 %\begin{table}

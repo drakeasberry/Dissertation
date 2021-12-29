@@ -14,6 +14,15 @@ library(ggplot2)
 # Create Color Scheme
 plt_color_2 <- c('darkorchid4', 'goldenrod4')
 
+# add significance asterisks to ANOVA table
+aov_manu <- function(data){
+  data %>% 
+    # This creates a column name that is equal to a one space, not ideal but working
+    mutate(` ` = case_when(`Pr(>F)`<0.001 ~ '***',
+                           `Pr(>F)`<0.01 ~ '**',
+                           `Pr(>F)`<0.05 ~ '*'))
+}
+
 # Descriptives box, point, violin plot 
 descriptive_plot <- function(data, x_data, y_data){
   data %>%

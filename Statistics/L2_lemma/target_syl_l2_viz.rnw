@@ -206,6 +206,9 @@ online_aov_learners_prt <- online_learners %>%
          within = c(online_grouping_pretty))
 online_aov_learners_prt
 
+# add significance asterisks to ANOVA table
+online_aov_learners_manu <- aov_manu(online_aov_learners_prt[["anova_table"]])
+
 # Significant Main Effect Exploration
 ## none to explore (explore matching trend)
 # Regroup to run paired t-test for matching/mismatching over all other conditions

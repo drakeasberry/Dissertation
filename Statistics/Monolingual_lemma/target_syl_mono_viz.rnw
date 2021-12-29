@@ -215,6 +215,9 @@ online_aov_natives_prt <- online_natives %>%
          within = c(online_grouping_pretty))
 online_aov_natives_prt
 
+# add significance asterisks to ANOVA table
+online_aov_natives_manu <- aov_manu(online_aov_natives_prt[["anova_table"]])
+
 # Regroup to run paired t-test for matching/mismatching over all other conditions
 online_l1_grouping_mat <- 
   online_l1_grouping[! online_l1_grouping %in% 

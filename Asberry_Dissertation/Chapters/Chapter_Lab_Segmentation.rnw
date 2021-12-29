@@ -511,16 +511,17 @@ lab_grp_sum["Spanish-CVC-CVC-nonword","n"]}}\\
 \end{table}
 
 \section{Results}
-\ttodo{mh: asterisks on ANOVA tables with significant results}
+\ttodo[inline]{mh: asterisks on ANOVA tables with significant results\newline da: added asterisks to table and code key to caption.}
 Table \ref{tab-lab-grp-rt-wd} reports the reaction time data for real words and Table \ref{tab-lab-grp-rt-nonwd} reports the reaction time data for nonwords. In both tables the reaction times are reported as a function of group---L1 Spanish and L1 English---and the four experimental conditions: CV target--matching, CV target--mismatching, CVC target--matching and CVC target--mismatching. Reaction times in these tables are reported as the median and standard deviation of both raw milliseconds and log transformed reaction times for each experimental condition.\ttodo[inline]{mh: tell the reader what they should be seeing above.\newline da: added prose to describe what should be seen in table even though it was already in the table caption}
 
 
 \subsection{L1 Spanish Group}
 <<table_anova_lab_natives, results='asis', include=TRUE>>=
-xtable(lab_aov_natives_prt$anova_table, 
+xtable(lab_aov_natives_manu, 
        type = "latex",
+       align = "lrrrrrrl",
        #table.placement = "hbt",
-       caption = "This table shows the L1 Spanish results of the (2) x (2) x (2) repeated measures ANOVA for three within subjects factors \\textit{Target}, \\textit{Matching} and \\textit{Lexicality}. The \\textit{Target} factor contained two levels---CV and CVC syllable structure. The \\textit{Matching} factor had two levels---Matching and Mismatching syllable structure. The \\textit{Lexicality} factor also included two levels---words and nonwords. The log transformed reaction time values was the dependent variable.",
+       caption = "This table shows the L1 Spanish results of the (2) x (2) x (2) repeated measures ANOVA for three within subjects factors \\textit{Target}, \\textit{Matching} and \\textit{Lexicality}. The \\textit{Target} factor contained two levels---CV and CVC syllable structure. The \\textit{Matching} factor had two levels---Matching and Mismatching syllable structure. The \\textit{Lexicality} factor also included two levels---words and nonwords. The log transformed reaction time values was the dependent variable. Significance codes: '***' 0.001 , '**' 0.01, '*' 0.05",
        label = "tab-anova-lab-natives")
 @
 
@@ -577,9 +578,10 @@ p < .05
 
 
 <<table_anova_lab_learners, results='asis', include=TRUE>>=
-xtable(lab_aov_learners_prt$anova_table, 
+xtable(lab_aov_learners_manu, 
        type = "latex", 
-       caption = "This table shows the L1 English results of the (2) x (2) x (2) repeated measures ANOVA for three within subjects factors \\textit{Target}, \\textit{Matching} and \\textit{Lexicality}. The \\textit{Target} factor contained two levels---CV and CVC syllable structure. The \\textit{Matching} factor had two levels---Matching and Mismatching syllable structure. The \\textit{Lexicality} factor also included two levels---words and nonwords. The log transformed reaction time values was the dependent variable.",
+       align = "lrrrrrrl",
+       caption = "This table shows the L1 English results of the (2) x (2) x (2) repeated measures ANOVA for three within subjects factors \\textit{Target}, \\textit{Matching} and \\textit{Lexicality}. The \\textit{Target} factor contained two levels---CV and CVC syllable structure. The \\textit{Matching} factor had two levels---Matching and Mismatching syllable structure. The \\textit{Lexicality} factor also included two levels---words and nonwords. The log transformed reaction time values was the dependent variable. Significance codes: '***' 0.001 , '**' 0.01, '*' 0.05",
        label = "tab-anova-lab-learners")
 @
 

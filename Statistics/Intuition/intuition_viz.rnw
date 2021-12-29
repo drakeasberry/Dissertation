@@ -269,6 +269,10 @@ aov_intuition_prt <- my_data_long %>%
          between = "Group")
 aov_intuition_prt
 
+# add significance asterisks to ANOVA table
+aov_intuition_manu <- aov_manu(aov_intuition_prt[["anova_table"]])
+
+
 # Significant Main Effect Exploration
 # Group main effect
 # Welch 2 sample t.test for group main effect

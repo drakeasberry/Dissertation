@@ -420,6 +420,8 @@ lab_aov_learners_prt <- lab_learners %>%
          within = c(lab_grouping_pretty))
 lab_aov_learners_prt
 
+# add significance asterisks to ANOVA table
+lab_aov_learners_manu <- aov_manu(lab_aov_learners_prt[["anova_table"]])
 
 # Regroup to run paired t-test for 
 # target syllable over all other conditions 
@@ -673,6 +675,11 @@ lab_aov_natives_prt <- lab_natives %>%
          ., 
          within = c(lab_grouping_pretty))
 lab_aov_natives_prt
+
+# add significance asterisks to ANOVA table
+lab_aov_natives_manu <- aov_manu(lab_aov_natives_prt[["anova_table"]])
+
+
 # Used in manuscript
 #lab_aov_natives$anova_table["word_status", "num Df"]
 #lab_aov_natives$anova_table["word_status", "den Df"]
