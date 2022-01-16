@@ -39,7 +39,7 @@ liststotoc, % Uncomment to add the list of figures/tables/etc to the table of co
 %nohyperref, % Uncomment to not load the hyperref package
 headsepline, % Uncomment to get a line under the header
 chapterinoneline, % Uncomment to place the chapter title next to the number on one line
-%consistentlayout, % Uncomment to change the layout of the declaration, abstract and acknowledgements pages to match the default layout
+consistentlayout, % Uncomment to change the layout of the declaration, abstract and acknowledgements pages to match the default layout
 openany, % eliminates all extra blank pages from entire document
 ]{DoctoralThesis} % The class file specifying the document structure
 
@@ -65,6 +65,7 @@ openany, % eliminates all extra blank pages from entire document
 \usepackage{tipa} % Required for IPA symbols
 
 \usepackage{multirow} % Required for multirow cells in tables
+
 %----------------------------------------------------------------------------------------
 % TODO PACKAGE
 %----------------------------------------------------------------------------------------
@@ -90,9 +91,70 @@ openany, % eliminates all extra blank pages from entire document
 	%showframe, % Uncomment to show how the type block is set on the page
 }
 
+%----------------------------------------------------------------------------------------
+%	TOC Formatting
+%----------------------------------------------------------------------------------------
 % Change the depth of numbering in (sub)sections and their display in the table of contents
-\setcounter{tocdepth}{4}
-\setcounter{secnumdepth}{4}
+%\setcounter{tocdepth}{4}
+%\setcounter{secnumdepth}{4}
+
+%\usepackage{tocloft,calc}
+%\renewcommand{\cftchappresnum}{\chaptername\space}
+%\setlength{\cftchapnumwidth}{\widthof{\textbf{Appendix~999~}}}
+%\makeatletter
+%\g@addto@macro\appendix{%
+%  \addtocontents{toc}{%
+%    \protect\renewcommand{\protect\cftchappresnum}{\appendixname\space}%
+%  }%
+%}
+
+%\usepackage{titlesec}
+%\usepackage{tocbasic}
+%
+%\DeclareTOCStyleEntry[
+%  entrynumberformat=\entrywithprefix{\chaptertitlename},
+%  dynnumwidth
+%]{tocline}{chapter}
+%\newcommand*\entrywithprefix[2]{#1~#2}
+
+%\usepackage[titletoc]{appendix}%
+%\usepackage{tocloft}%
+%
+%\setlength{\cftchapnumwidth}{65pt}%
+%
+%\renewcommand{\cftpartpresnum}{\partname\hspace{10pt}}
+%\renewcommand{\cftchappresnum}{\chaptername\hspace{5pt}}
+%\renewcommand{\cftchapaftersnum}{\hspace{5pt}}
+%
+%\let\oldappendices\appendices
+%\renewcommand{\appendices}{%
+%  \oldappendices
+%  \bookmarksetupnext{level=-1}
+%  \addtocontents{toc}{\protect\renewcommand\protect\cftpartpresnum{}}
+%  %\addcontentsline{toc}{part}{Appendices}
+%  \addtocontents{toc}{\protect\renewcommand\protect\cftchappresnum{}%
+%    \protect\setlength\protect\cftchapnumwidth{15pt}}%
+%}
+
+\usepackage{titlesec}
+\usepackage{titletoc}
+\usepackage{appendix}
+
+\makeatletter
+
+\titlecontents{chapter}%
+ [0em]% 
+ {}%
+ {\@chapapp\ \thecontentslabel\quad}% 
+ {\hspace{-0em}}% 
+ {\hfill\contentspage}% 
+ [\addvspace{0pt}]% 
+
+\g@addto@macro\appendices{%
+  \addtocontents{toc}{\protect\renewcommand{\protect\@chapapp}{\appendixname}}%
+}
+
+\makeatother
 
 %----------------------------------------------------------------------------------------
 %	THESIS INFORMATION
@@ -347,12 +409,13 @@ In the Graduate College \\  % University required text
 % a: all major sections with the document in a consistent manner
 % b: section headings in document must match their listings (exact words) in TOC
 %
+
 \tableofcontents % Prints the main table of contents
-%
+
 % Lists of figures and tables must include accurate page numbers
 \listoffigures % Prints the list of figures
-
 \listoftables % Prints the list of tables
+
 
 
 %----------------------------------------------------------------------------------------
@@ -431,13 +494,11 @@ In the Graduate College \\  % University required text
 %If no appendices are used, comment out all active lines in this section
 %\pagestyle{thesis}
 
-\renewcommand\thechapter{}
 
-\appendix % Cue to tell LaTeX that the following "chapters" are Appendices
-
+%\appendix % Cue to tell LaTeX that the following "chapters" are Appendices
 % Include the appendices of the thesis as separate files from the Appendices folder
 % Uncomment the lines as you write the Appendices
-
+\begin{appendices}
 \Sexpr{knit_child('Appendices/Appendix_BLP.rnw')}
 \Sexpr{knit_child('Appendices/Appendix_LexTALE.rnw')}
 \Sexpr{knit_child('Appendices/Appendix_LexTALE-Esp.rnw')}
@@ -447,7 +508,7 @@ In the Graduate College \\  % University required text
 \Sexpr{knit_child('Appendices/Appendix_Wuggy.rnw')}
 \Sexpr{knit_child('Appendices/Appendix_Software.rnw')}
 %\Sexpr{knit_child('Appendices/Revision_Comments.rnw')}
-
+\end{appendices}
 %----------------------------------------------------------------------------------------
 %	BIBLIOGRAPHY
 %----------------------------------------------------------------------------------------
